@@ -108,12 +108,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_map_map_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./components/map/map.component */ "./src/app/components/map/map.component.ts");
 /* harmony import */ var _components_resource_dialog_resource_dialog_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./components/resource-dialog/resource-dialog.component */ "./src/app/components/resource-dialog/resource-dialog.component.ts");
 /* harmony import */ var _components_upgrade_dialog_upgrade_dialog_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./components/upgrade-dialog/upgrade-dialog.component */ "./src/app/components/upgrade-dialog/upgrade-dialog.component.ts");
+/* harmony import */ var _directive_touch_touch_directive__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./directive/touch/touch.directive */ "./src/app/directive/touch/touch.directive.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -145,7 +147,8 @@ var AppModule = /** @class */ (function () {
                 _components_admin_debug_admin_debug_component__WEBPACK_IMPORTED_MODULE_12__["AdminDebugComponent"],
                 _components_map_map_component__WEBPACK_IMPORTED_MODULE_13__["MapComponent"],
                 _components_resource_dialog_resource_dialog_component__WEBPACK_IMPORTED_MODULE_14__["ResourceDialogComponent"],
-                _components_upgrade_dialog_upgrade_dialog_component__WEBPACK_IMPORTED_MODULE_15__["UpgradeDialogComponent"]
+                _components_upgrade_dialog_upgrade_dialog_component__WEBPACK_IMPORTED_MODULE_15__["UpgradeDialogComponent"],
+                _directive_touch_touch_directive__WEBPACK_IMPORTED_MODULE_16__["TouchDirective"],
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
@@ -328,7 +331,7 @@ module.exports = "/* ClickerMainComponent's private CSS styles */\r\n.resources 
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ul class=\"resources noselect\">\n  <mat-accordion multi=\"true\">\n    <mat-expansion-panel expanded=\"true\" *ngFor=\"let resourceType of resourceTypes | enumToArray\">\n      <mat-expansion-panel-header>\n        <mat-panel-title>\n          {{resourceType}}\n        </mat-panel-title>\n        <mat-panel-description>\n        </mat-panel-description>\n      </mat-expansion-panel-header>\n\n      <div *ngFor=\"let resource of resourcesOfType(resourceType, adminService.filterAccessible)\">\n        <button mat-raised-button class=\"resource-button\" [color]=\"resourcesService.canHarvest(resource.id) ? 'accent' : 'disabled'\"\n          [disabled]=\"!resourcesService.canHarvest(resource.id)\" (mousedown)='startHarvesting(resource.id)' (mouseup)='stopHarvesting(resource.id)'\n          (mouseleave)='stopHarvesting(resource.id)' matTooltip=\"{{getTooltipMessage(resource.id)}}\" matTooltipPosition=\"right\">\n          <mat-card-title>{{resource.name | titlecase }}</mat-card-title>\n          <mat-card-subtitle>{{resource.amount | number:'1.0-0'}}</mat-card-subtitle>\n          <mat-progress-bar [class.hidden]=\"resourceBeingHarvested !== resource.id\" class=\"harvest-progress\" [mode]=\"mode\" [value]=\"value\"></mat-progress-bar>\n          <img class=\"resource-img\" src=\"{{resource.iconPath}}\" alt=\"{{resource.name}}\" *ngIf=\"resource.iconPath !== ''\">\n        </button>\n        <div *ngIf=\"adminService.editMode\">\n          <br />\n          <button (click)=\"editResource(resource.id)\">Edit {{resource.name | titlecase}}</button>\n        </div>\n      </div>\n    </mat-expansion-panel>\n  </mat-accordion>\n</ul>\n"
+module.exports = "<ul class=\"resources noselect\">\n  <mat-accordion multi=\"true\">\n    <mat-expansion-panel expanded=\"true\" *ngFor=\"let resourceType of resourceTypes | enumToArray\">\n      <mat-expansion-panel-header>\n        <mat-panel-title>\n          {{resourceType}}\n        </mat-panel-title>\n        <mat-panel-description>\n        </mat-panel-description>\n      </mat-expansion-panel-header>\n\n      <div *ngFor=\"let resource of resourcesOfType(resourceType, adminService.filterAccessible)\">\n        <button appTouch mat-raised-button class=\"resource-button\" color=\"accent\" [disabled]=\"!resourcesService.canHarvest(resource.id)\" [id]=\"resource.id\"\n          (mouseleave)='stopHarvesting(resource.id)'\n          matTooltip=\"{{getTooltipMessage(resource.id)}}\" matTooltipPosition=\"right\">\n          <mat-card-title>{{resource.name | titlecase }}</mat-card-title>\n          <mat-card-subtitle>{{resource.amount | number:'1.0-0'}}</mat-card-subtitle>\n          <mat-progress-bar [class.hidden]=\"resourceBeingHarvested !== resource.id\" class=\"harvest-progress\" [mode]=\"mode\" [value]=\"value\"></mat-progress-bar>\n          <img class=\"resource-img\" src=\"{{resource.iconPath}}\" alt=\"{{resource.name}}\" *ngIf=\"resource.iconPath !== ''\">\n        </button>\n        <div *ngIf=\"adminService.editMode\">\n          <br />\n          <button (click)=\"editResource(resource.id)\">Edit {{resource.name | titlecase}}</button>\n        </div>\n      </div>\n    </mat-expansion-panel>\n  </mat-accordion>\n</ul>\n"
 
 /***/ }),
 
@@ -343,11 +346,10 @@ module.exports = "<ul class=\"resources noselect\">\n  <mat-accordion multi=\"tr
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ClickerMainComponent", function() { return ClickerMainComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm5/index.js");
-/* harmony import */ var _objects_resource__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../objects/resource */ "./src/app/objects/resource.ts");
-/* harmony import */ var _services_resources_resources_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../services/resources/resources.service */ "./src/app/services/resources/resources.service.ts");
-/* harmony import */ var _services_workers_workers_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../services/workers/workers.service */ "./src/app/services/workers/workers.service.ts");
-/* harmony import */ var _services_admin_admin_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../services/admin/admin.service */ "./src/app/services/admin/admin.service.ts");
+/* harmony import */ var _services_clicker_main_clicker_main_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./../../services/clicker-main/clicker-main.service */ "./src/app/services/clicker-main/clicker-main.service.ts");
+/* harmony import */ var _services_resources_resources_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../services/resources/resources.service */ "./src/app/services/resources/resources.service.ts");
+/* harmony import */ var _objects_resource__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../objects/resource */ "./src/app/objects/resource.ts");
+/* harmony import */ var _services_admin_admin_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./../../services/admin/admin.service */ "./src/app/services/admin/admin.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -362,23 +364,14 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
-
 var ClickerMainComponent = /** @class */ (function () {
-    function ClickerMainComponent(resourcesService, workersService, adminService) {
+    function ClickerMainComponent(clickerMainService, resourcesService, adminService) {
+        this.clickerMainService = clickerMainService;
         this.resourcesService = resourcesService;
-        this.workersService = workersService;
         this.adminService = adminService;
-        this.resourceBeingHarvested = -1;
-        this.value = 0;
-        this.mode = 'determinate';
-        this.millisecondsTotal = 1000;
-        this.progressBarUpdateDelay = 200;
-        this.resourceTypes = _objects_resource__WEBPACK_IMPORTED_MODULE_2__["ResourceType"];
+        this.resourceTypes = _objects_resource__WEBPACK_IMPORTED_MODULE_3__["ResourceType"];
     }
     ClickerMainComponent.prototype.ngOnInit = function () {
-        var _this = this;
-        var processSource = Object(rxjs__WEBPACK_IMPORTED_MODULE_1__["timer"])(1000, 1000);
-        var processSubscribe = processSource.subscribe(function (_) { return _this.workersService.processWorkers(); });
     };
     ClickerMainComponent.prototype.resourcesOfType = function (resourceType, filterByAccessible) {
         return this.resourcesService.resourcesOfType(this.resourceTypes[resourceType], false, filterByAccessible);
@@ -388,65 +381,74 @@ var ClickerMainComponent = /** @class */ (function () {
         return this.resourcesService.resourceTooltip(id, workerCount);
     };
     ClickerMainComponent.prototype.startHarvesting = function (id) {
-        var _this = this;
-        var resource = this.resourcesService.getResource(id);
-        this.harvestStartDate = Date.now();
-        if (!this.resourcesService.canHarvest(id)) {
-            return;
-        }
-        this.millisecondsTotal = resource.harvestMilliseconds;
-        this.harvestTimer = Object(rxjs__WEBPACK_IMPORTED_MODULE_1__["timer"])(this.millisecondsTotal, this.millisecondsTotal);
-        this.harvestSubscribe = this.harvestTimer.subscribe(function (_) { return _this.harvestResource(id); });
-        if (this.shouldAnimateProgressBar(id)) {
-            this.mode = 'determinate';
-            this.progressBarTimer = Object(rxjs__WEBPACK_IMPORTED_MODULE_1__["timer"])(0, this.progressBarUpdateDelay);
-            this.progressBarSubscribe = this.progressBarTimer.subscribe(function (_) { return _this.updateProgressBar(id); });
-        }
-        else {
-            this.mode = 'indeterminate';
-            this.value = 100;
-        }
-        this.resourceBeingHarvested = id;
+        this.clickerMainService.startHarvesting(id);
     };
     ClickerMainComponent.prototype.stopHarvesting = function (id) {
-        if (this.resourceBeingHarvested === -1) {
-            return;
-        }
-        if (this.shouldAnimateProgressBar(id)) {
-            this.progressBarSubscribe.unsubscribe();
-        }
-        this.harvestSubscribe.unsubscribe();
-        this.value = 0;
-        this.resourceBeingHarvested = -1;
+        this.clickerMainService.stopHarvesting(id);
     };
     ClickerMainComponent.prototype.updateProgressBar = function (id) {
-        this.value = Math.floor((Date.now() - this.harvestStartDate) / this.millisecondsTotal * 100);
+        this.clickerMainService.updateProgressBar(id);
     };
     ClickerMainComponent.prototype.shouldAnimateProgressBar = function (id) {
-        return this.resourcesService.getResource(id).harvestMilliseconds > this.progressBarUpdateDelay;
+        return this.clickerMainService.shouldAnimateProgressBar(id);
     };
     ClickerMainComponent.prototype.harvestResource = function (id) {
-        this.resourcesService.harvestResource(id);
-        this.harvestStartDate = Date.now();
-        if (this.shouldAnimateProgressBar(id)) {
-            this.value = 0;
-        }
-        if (!this.resourcesService.canHarvest(id)) {
-            this.stopHarvesting(id);
-        }
+        this.clickerMainService.harvestResource(id);
     };
     ClickerMainComponent.prototype.editResource = function (id) {
         this.adminService.openResourceDialog(id);
     };
+    Object.defineProperty(ClickerMainComponent.prototype, "resourceBeingHarvested", {
+        get: function () {
+            return this.clickerMainService.resourceBeingHarvested;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(ClickerMainComponent.prototype, "value", {
+        get: function () {
+            return this.clickerMainService.value;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(ClickerMainComponent.prototype, "mode", {
+        get: function () {
+            return this.clickerMainService.mode;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(ClickerMainComponent.prototype, "millisecondsTotal", {
+        get: function () {
+            return this.clickerMainService.millisecondsTotal;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(ClickerMainComponent.prototype, "harvestStartDate", {
+        get: function () {
+            return this.clickerMainService.harvestStartDate;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(ClickerMainComponent.prototype, "progressBarUpdateDelay", {
+        get: function () {
+            return this.clickerMainService.progressBarUpdateDelay;
+        },
+        enumerable: true,
+        configurable: true
+    });
     ClickerMainComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-clicker-main',
             template: __webpack_require__(/*! ./clicker-main.component.html */ "./src/app/components/clicker-main/clicker-main.component.html"),
             styles: [__webpack_require__(/*! ./clicker-main.component.css */ "./src/app/components/clicker-main/clicker-main.component.css")]
         }),
-        __metadata("design:paramtypes", [_services_resources_resources_service__WEBPACK_IMPORTED_MODULE_3__["ResourcesService"],
-            _services_workers_workers_service__WEBPACK_IMPORTED_MODULE_4__["WorkersService"],
-            _services_admin_admin_service__WEBPACK_IMPORTED_MODULE_5__["AdminService"]])
+        __metadata("design:paramtypes", [_services_clicker_main_clicker_main_service__WEBPACK_IMPORTED_MODULE_1__["ClickerMainService"],
+            _services_resources_resources_service__WEBPACK_IMPORTED_MODULE_2__["ResourcesService"],
+            _services_admin_admin_service__WEBPACK_IMPORTED_MODULE_4__["AdminService"]])
     ], ClickerMainComponent);
     return ClickerMainComponent;
 }());
@@ -1383,6 +1385,61 @@ var WorkersComponent = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/directive/touch/touch.directive.ts":
+/*!****************************************************!*\
+  !*** ./src/app/directive/touch/touch.directive.ts ***!
+  \****************************************************/
+/*! exports provided: TouchDirective */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TouchDirective", function() { return TouchDirective; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var hammerjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! hammerjs */ "./node_modules/hammerjs/hammer.js");
+/* harmony import */ var hammerjs__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(hammerjs__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _services_clicker_main_clicker_main_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./../../services/clicker-main/clicker-main.service */ "./src/app/services/clicker-main/clicker-main.service.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var TouchDirective = /** @class */ (function () {
+    function TouchDirective(element, renderer, clickerMainService) {
+        this.element = element;
+        this.renderer = renderer;
+        this.clickerMainService = clickerMainService;
+        hammerjs__WEBPACK_IMPORTED_MODULE_1__(element.nativeElement).on('press', function (event) {
+            var id = +element.nativeElement.attributes['id'].value;
+            clickerMainService.startHarvesting(id);
+        });
+        hammerjs__WEBPACK_IMPORTED_MODULE_1__(element.nativeElement).on('pressup', function (event) {
+            var id = +element.nativeElement.attributes['id'].value;
+            clickerMainService.stopHarvesting(id);
+        });
+    }
+    TouchDirective = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Directive"])({
+            selector: '[appTouch]'
+        }),
+        __metadata("design:paramtypes", [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ElementRef"],
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["Renderer2"],
+            _services_clicker_main_clicker_main_service__WEBPACK_IMPORTED_MODULE_2__["ClickerMainService"]])
+    ], TouchDirective);
+    return TouchDirective;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/material-import/material-import.module.ts":
 /*!***********************************************************!*\
   !*** ./src/app/material-import/material-import.module.ts ***!
@@ -1703,6 +1760,118 @@ var AdminService = /** @class */ (function () {
         __metadata("design:paramtypes", [_angular_material__WEBPACK_IMPORTED_MODULE_1__["MatDialog"]])
     ], AdminService);
     return AdminService;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/services/clicker-main/clicker-main.service.ts":
+/*!***************************************************************!*\
+  !*** ./src/app/services/clicker-main/clicker-main.service.ts ***!
+  \***************************************************************/
+/*! exports provided: ClickerMainService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ClickerMainService", function() { return ClickerMainService; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm5/index.js");
+/* harmony import */ var _resources_resources_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../resources/resources.service */ "./src/app/services/resources/resources.service.ts");
+/* harmony import */ var _workers_workers_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../workers/workers.service */ "./src/app/services/workers/workers.service.ts");
+/* harmony import */ var _admin_admin_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../admin/admin.service */ "./src/app/services/admin/admin.service.ts");
+/* harmony import */ var _objects_resource__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../objects/resource */ "./src/app/objects/resource.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+var ClickerMainService = /** @class */ (function () {
+    function ClickerMainService(resourcesService, workersService, adminService) {
+        var _this = this;
+        this.resourcesService = resourcesService;
+        this.workersService = workersService;
+        this.adminService = adminService;
+        this.resourceBeingHarvested = -1;
+        this.value = 0;
+        this.mode = 'determinate';
+        this.millisecondsTotal = 1000;
+        this.progressBarUpdateDelay = 200;
+        this.resourceTypes = _objects_resource__WEBPACK_IMPORTED_MODULE_5__["ResourceType"];
+        var processSource = Object(rxjs__WEBPACK_IMPORTED_MODULE_1__["timer"])(1000, 1000);
+        var processSubscribe = processSource.subscribe(function (_) { return _this.workersService.processWorkers(); });
+    }
+    ClickerMainService.prototype.startHarvesting = function (id) {
+        var _this = this;
+        var resource = this.resourcesService.getResource(id);
+        this.harvestStartDate = Date.now();
+        if (!this.resourcesService.canHarvest(id)) {
+            return;
+        }
+        if (this.harvestSubscribe !== undefined) {
+            this.harvestSubscribe.unsubscribe();
+        }
+        this.millisecondsTotal = resource.harvestMilliseconds;
+        this.harvestTimer = Object(rxjs__WEBPACK_IMPORTED_MODULE_1__["timer"])(this.millisecondsTotal, this.millisecondsTotal);
+        this.harvestSubscribe = this.harvestTimer.subscribe(function (_) { return _this.harvestResource(id); });
+        if (this.shouldAnimateProgressBar(id)) {
+            this.mode = 'determinate';
+            this.progressBarTimer = Object(rxjs__WEBPACK_IMPORTED_MODULE_1__["timer"])(0, this.progressBarUpdateDelay);
+            this.progressBarSubscribe = this.progressBarTimer.subscribe(function (_) { return _this.updateProgressBar(id); });
+        }
+        else {
+            this.mode = 'indeterminate';
+            this.value = 100;
+        }
+        this.resourceBeingHarvested = id;
+    };
+    ClickerMainService.prototype.stopHarvesting = function (id) {
+        if (this.resourceBeingHarvested === -1) {
+            return;
+        }
+        if (this.shouldAnimateProgressBar(id)) {
+            this.progressBarSubscribe.unsubscribe();
+        }
+        this.harvestSubscribe.unsubscribe();
+        this.value = 0;
+        this.resourceBeingHarvested = -1;
+    };
+    ClickerMainService.prototype.updateProgressBar = function (id) {
+        this.value = Math.floor((Date.now() - this.harvestStartDate) / this.millisecondsTotal * 100);
+    };
+    ClickerMainService.prototype.shouldAnimateProgressBar = function (id) {
+        return this.resourcesService.getResource(id).harvestMilliseconds > this.progressBarUpdateDelay;
+    };
+    ClickerMainService.prototype.harvestResource = function (id) {
+        this.resourcesService.harvestResource(id);
+        this.harvestStartDate = Date.now();
+        if (this.shouldAnimateProgressBar(id)) {
+            this.value = 0;
+        }
+        if (!this.resourcesService.canHarvest(id)) {
+            this.stopHarvesting(id);
+        }
+    };
+    ClickerMainService = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
+            providedIn: 'root'
+        }),
+        __metadata("design:paramtypes", [_resources_resources_service__WEBPACK_IMPORTED_MODULE_2__["ResourcesService"],
+            _workers_workers_service__WEBPACK_IMPORTED_MODULE_3__["WorkersService"],
+            _admin_admin_service__WEBPACK_IMPORTED_MODULE_4__["AdminService"]])
+    ], ClickerMainService);
+    return ClickerMainService;
 }());
 
 
