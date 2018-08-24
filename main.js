@@ -108,13 +108,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_map_map_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./components/map/map.component */ "./src/app/components/map/map.component.ts");
 /* harmony import */ var _components_resource_dialog_resource_dialog_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./components/resource-dialog/resource-dialog.component */ "./src/app/components/resource-dialog/resource-dialog.component.ts");
 /* harmony import */ var _components_upgrade_dialog_upgrade_dialog_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./components/upgrade-dialog/upgrade-dialog.component */ "./src/app/components/upgrade-dialog/upgrade-dialog.component.ts");
-/* harmony import */ var _directive_touch_touch_directive__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./directive/touch/touch.directive */ "./src/app/directive/touch/touch.directive.ts");
+/* harmony import */ var _directives_touch_touch_directive__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./directives/touch/touch.directive */ "./src/app/directives/touch/touch.directive.ts");
+/* harmony import */ var _directives_crop_crop_directive__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./directives/crop/crop.directive */ "./src/app/directives/crop/crop.directive.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -148,7 +150,8 @@ var AppModule = /** @class */ (function () {
                 _components_map_map_component__WEBPACK_IMPORTED_MODULE_13__["MapComponent"],
                 _components_resource_dialog_resource_dialog_component__WEBPACK_IMPORTED_MODULE_14__["ResourceDialogComponent"],
                 _components_upgrade_dialog_upgrade_dialog_component__WEBPACK_IMPORTED_MODULE_15__["UpgradeDialogComponent"],
-                _directive_touch_touch_directive__WEBPACK_IMPORTED_MODULE_16__["TouchDirective"],
+                _directives_touch_touch_directive__WEBPACK_IMPORTED_MODULE_16__["TouchDirective"],
+                _directives_crop_crop_directive__WEBPACK_IMPORTED_MODULE_17__["CropDirective"],
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
@@ -475,7 +478,7 @@ module.exports = ".building-img {\r\n  position: absolute;\r\n  z-index: 1;\r\n}
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"map noselect\" [ngStyle]=\"{ 'width.px': (adminService.clampMap ? windowWidth : getColumnCount()) * tilePixels}\">\n  <mat-grid-list [cols]=\"(adminService.clampMap ? windowHeight : getRowCount())\" gutterSize=\"0\" rowHeight=\"{{tilePixels}}\">\n    <mat-grid-tile *ngFor=\"let tile of getMap(adminService.clampMap)\">\n      <mat-card *ngIf=\"showSelectedTileDialog && selectedTile === tile\">\n        <mat-card-title>{{selectedBuilding.name}}</mat-card-title>\n        <mat-card-content>\n          {{selectedBuilding.description}}\n          <br />\n          <div *ngIf=\"selectedBuildingTile === undefined\">\n            <h3>Costs</h3>\n            <div *ngFor=\"let resourceCost of selectedBuilding.resourceCosts\">\n              {{resourcesService.getResource(resourceCost.resourceId).name | titlecase }}: {{resourceCost.resourceCost}}\n            </div>\n            <button mat-raised-button color=\"primary\" [disabled]=\"!canAffordBuilding(selectedBuilding.tileType)\" (click)=\"createBuilding(selectedTile, selectedBuilding.tileType)\">\n              Build\n            </button>\n          </div>\n          <div *ngIf=\"selectedBuildingTile !== undefined\">\n            <h3>Placed Building: {{selectedBuildingTile.name | titlecase}}</h3>\n            <button mat-raised-button color=\"warn\" (click)=\"clearBuilding(selectedTile)\">\n              Remove\n            </button>\n          </div>\n        </mat-card-content>\n      </mat-card>\n\n      <a (click)=\"selectTile(tile)\">\n        <img class=\"building-img\" *ngIf=\"tile.buildingTileType !== undefined\" src={{getBuildingTileSprite(tile)}} onmousedown=\"return false\">\n        <img class=\"map-img\" src={{getMapTileSprite(tile)}} onmousedown=\"return false\">\n\n        <div *ngIf=\"showSelectedTileDialog && selectedTile === tile\">\n          <img class=\"card-tail\" src=\"../../../assets/sprites/card_tail.png\" onmousedown=\"return false\">\n          <img class=\"selected-border\" src=\"../../../assets/sprites/selected_border.png\" onmousedown=\"return false\">\n        </div>\n      </a>\n    </mat-grid-tile>\n  </mat-grid-list>\n</div>\n"
+module.exports = "<div class=\"map noselect\" [ngStyle]=\"{ 'width.px': (adminService.clampMap ? windowWidth : getColumnCount()) * tilePixels}\">\n  <mat-grid-list [cols]=\"(adminService.clampMap ? windowHeight : getRowCount())\" gutterSize=\"0\" rowHeight=\"{{tilePixels}}\">\n    <mat-grid-tile *ngFor=\"let tile of getMap(adminService.clampMap)\">\n      <mat-card *ngIf=\"showSelectedTileDialog && selectedTile === tile\">\n        <mat-card-title>{{selectedBuilding.name}}</mat-card-title>\n        <mat-card-content>\n          {{selectedBuilding.description}}\n          <br />\n          <div *ngIf=\"selectedBuildingTile === undefined\">\n            <h3>Costs</h3>\n            <div *ngFor=\"let resourceCost of selectedBuilding.resourceCosts\">\n              {{resourcesService.getResource(resourceCost.resourceId).name | titlecase }}: {{resourceCost.resourceCost}}\n            </div>\n            <button mat-raised-button color=\"primary\" [disabled]=\"!canAffordBuilding(selectedBuilding.tileType)\" (click)=\"createBuilding(selectedTile, selectedBuilding.tileType)\">\n              Build\n            </button>\n          </div>\n          <div *ngIf=\"selectedBuildingTile !== undefined\">\n            <h3>Placed Building: {{selectedBuildingTile.name | titlecase}}</h3>\n            <button mat-raised-button color=\"warn\" (click)=\"clearBuilding(selectedTile)\">\n              Remove\n            </button>\n          </div>\n        </mat-card-content>\n      </mat-card>\n\n      <a (click)=\"selectTile(tile)\">\n        <img class=\"building-img\" *ngIf=\"tile.buildingTileType !== undefined\" src={{getBuildingTileSprite(tile)}} onmousedown=\"return false\">\n        <img class=\"map-img\" appcrop src='{{getMapTileSprite(tile)}}' onmousedown=\"return false\">\n\n        <div *ngIf=\"showSelectedTileDialog && selectedTile === tile\">\n          <img class=\"card-tail\" src=\"../../../assets/sprites/card_tail.png\" onmousedown=\"return false\">\n          <img class=\"selected-border\" src=\"../../../assets/sprites/selected_border.png\" onmousedown=\"return false\">\n        </div>\n      </a>\n    </mat-grid-tile>\n  </mat-grid-list>\n</div>\n"
 
 /***/ }),
 
@@ -1385,10 +1388,57 @@ var WorkersComponent = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "./src/app/directive/touch/touch.directive.ts":
-/*!****************************************************!*\
-  !*** ./src/app/directive/touch/touch.directive.ts ***!
-  \****************************************************/
+/***/ "./src/app/directives/crop/crop.directive.ts":
+/*!***************************************************!*\
+  !*** ./src/app/directives/crop/crop.directive.ts ***!
+  \***************************************************/
+/*! exports provided: CropDirective */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CropDirective", function() { return CropDirective; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _services_map_map_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./../../services/map/map.service */ "./src/app/services/map/map.service.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var CropDirective = /** @class */ (function () {
+    function CropDirective(element, renderer, mapService) {
+        // const tileCropDetail = this.mapService.getTile(
+        //   +element.nativeElement.attributes['x'].value, +element.nativeElement.attributes['y'].value);
+        this.element = element;
+        this.renderer = renderer;
+        this.mapService = mapService;
+        this.renderer.setStyle(element.nativeElement, 'clip', 'rect(0, 0, 16, 16)');
+    }
+    CropDirective = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Directive"])({
+            selector: '[appCrop]'
+        }),
+        __metadata("design:paramtypes", [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ElementRef"],
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["Renderer2"],
+            _services_map_map_service__WEBPACK_IMPORTED_MODULE_1__["MapService"]])
+    ], CropDirective);
+    return CropDirective;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/directives/touch/touch.directive.ts":
+/*!*****************************************************!*\
+  !*** ./src/app/directives/touch/touch.directive.ts ***!
+  \*****************************************************/
 /*! exports provided: TouchDirective */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -1416,11 +1466,13 @@ var TouchDirective = /** @class */ (function () {
         this.element = element;
         this.renderer = renderer;
         this.clickerMainService = clickerMainService;
-        hammerjs__WEBPACK_IMPORTED_MODULE_1__(element.nativeElement).on('press', function (event) {
+        var hammerControl = hammerjs__WEBPACK_IMPORTED_MODULE_1__(element.nativeElement);
+        hammerControl.get('press').set({ time: 0 });
+        hammerControl.on('press', function (event) {
             var id = +element.nativeElement.attributes['id'].value;
             clickerMainService.startHarvesting(id);
         });
-        hammerjs__WEBPACK_IMPORTED_MODULE_1__(element.nativeElement).on('pressup', function (event) {
+        hammerControl.on('pressup', function (event) {
             var id = +element.nativeElement.attributes['id'].value;
             clickerMainService.stopHarvesting(id);
         });
@@ -1917,6 +1969,7 @@ var MapService = /** @class */ (function () {
         var _tiledMap = [];
         var tileTypes = [_objects_tile__WEBPACK_IMPORTED_MODULE_2__["MapTileType"].Grass, _objects_tile__WEBPACK_IMPORTED_MODULE_2__["MapTileType"].Water, _objects_tile__WEBPACK_IMPORTED_MODULE_2__["MapTileType"].Mountain];
         var _mapWidth, _mapHeight;
+        var tileIds;
         var xmlRequest = new XMLHttpRequest();
         xmlRequest.onload = function () {
             var xmlDoc = new DOMParser().parseFromString(xmlRequest.responseText, 'text/xml');
@@ -1924,10 +1977,15 @@ var MapService = /** @class */ (function () {
             var layerData = xmlDoc.getElementsByTagName('layer')[0];
             _mapWidth = +layerData.attributes.getNamedItem('width').value;
             _mapHeight = +layerData.attributes.getNamedItem('height').value;
-            mapValues.split(',').map(function (tileIndex) { return _tiledMap.push({ mapTileType: tileTypes[+tileIndex - 1] }); });
+            tileIds = mapValues.split(',').map(function (tileId) { return +tileId; });
         };
         xmlRequest.open('GET', '../../../assets/tilemap/map.tmx', false);
         xmlRequest.send();
+        console.log(tileIds);
+        tileIds.map(function (tileIndex) {
+            return _tiledMap.push({ mapTileType: tileTypes[tileIndex - 1], tileCropDetail: { x: 0, y: 0, width: 0, height: 0 } });
+        });
+        // _tiledMap.push({mapTileType: this.getTileType(tileIndex), tileCropDetail: this.getTileCropDetail(tileIndex)}));
         this.tiledMap = _tiledMap;
         this.mapWidth = _mapWidth;
         this.mapHeight = _mapHeight;
@@ -2002,6 +2060,19 @@ var MapService = /** @class */ (function () {
         this.cameraY = newLocationY;
         this.cameraTile = this.getTile(newLocationX, newLocationY);
         return true;
+    };
+    MapService.prototype.getTileType = function (tileId) {
+        if (tileId in [37, 38, 39, 40, 41, 42, 43, 44, 54, 55, 56, 57, 58, 59, 60, 61, 71, 72, 73, 74, 75, 76, 77, 78, 88,
+            89, 90, 91, 92, 93, 94, 95, 105, 106, 107, 108, 109, 110, 111, 112, 123, 124, 125, 126, 127, 128, 129, 130]) {
+            return _objects_tile__WEBPACK_IMPORTED_MODULE_2__["MapTileType"].Grass;
+        }
+        else if (tileId in [53, 122]) {
+            return _objects_tile__WEBPACK_IMPORTED_MODULE_2__["MapTileType"].Water;
+        }
+        return _objects_tile__WEBPACK_IMPORTED_MODULE_2__["MapTileType"].Mountain;
+    };
+    MapService.prototype.getTileCropDetail = function (tileId) {
+        return { x: 0, y: 0, width: 16, height: 16 };
     };
     MapService = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
