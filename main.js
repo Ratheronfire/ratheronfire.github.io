@@ -30,7 +30,7 @@ webpackEmptyAsyncContext.id = "./src/$$_lazy_route_resource lazy recursive";
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "/* AppComponent's private CSS styles */\r\nh1 {\r\n  font-size: 1.2em;\r\n  color: #999;\r\n  margin-bottom: 0;\r\n}\r\nh2 {\r\n  font-size: 2em;\r\n  margin-top: 0;\r\n  padding-top: 0;\r\n}\r\nnav a {\r\n  padding: 5px 10px;\r\n  text-decoration: none;\r\n  margin-top: 10px;\r\n  display: inline-block;\r\n  background-color: #eee;\r\n  border-radius: 4px;\r\n}\r\nnav a:visited, a:link {\r\n  color: #607d8b;\r\n}\r\nnav a:hover {\r\n  color: #039be5;\r\n  background-color: #cfd8dc;\r\n}\r\nnav a.active {\r\n  color: #039be5;\r\n}\r\n.debug-pane {\r\n  position: absolute;\r\n  top: 0px;\r\n  right: 5%;\r\n}"
+module.exports = "/* AppComponent's private CSS styles */\r\nh1 {\r\n  font-size: 1.2em;\r\n  color: #999;\r\n  margin-bottom: 0;\r\n}\r\nh2 {\r\n  font-size: 2em;\r\n  margin-top: 0;\r\n  padding-top: 0;\r\n}\r\nnav a {\r\n  padding: 5px 10px;\r\n  text-decoration: none;\r\n  margin-top: 10px;\r\n  display: inline-block;\r\n  background-color: #eee;\r\n  border-radius: 4px;\r\n}\r\nnav a:visited, a:link {\r\n  color: #607d8b;\r\n}\r\nnav a:hover {\r\n  color: #039be5;\r\n  background-color: #cfd8dc;\r\n}\r\nnav a.active {\r\n  color: #039be5;\r\n}\r\n.main-pane {\r\n  float: left;\r\n}\r\n.tab-group {\r\n  float: left;\r\n  margin-left: 15px;\r\n}\r\n.debug-pane {\r\n  float: right;\r\n}\r\n"
 
 /***/ }),
 
@@ -41,7 +41,7 @@ module.exports = "/* AppComponent's private CSS styles */\r\nh1 {\r\n  font-size
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<h1>Clicker Game</h1>\n\n<app-clicker-main></app-clicker-main>\n\n<mat-tab-group dynamicHeight>\n  <mat-tab label=\"Explore\">\n    <app-map></app-map>\n  </mat-tab>\n  <mat-tab label=\"Workers\">\n    <app-workers></app-workers>\n  </mat-tab>\n  <mat-tab label=\"Store\">\n    <app-store></app-store>\n  </mat-tab>\n  <mat-tab label=\"Upgrades\">\n    <app-upgrades></app-upgrades>\n  </mat-tab>\n</mat-tab-group>\n\n<mat-card class=\"debug-pane\" *ngIf=\"debugMode\">\n  <h1>Admin Dashboard</h1>\n  <app-admin-debug></app-admin-debug>\n  <app-messages></app-messages>\n</mat-card>\n"
+module.exports = "<h1>Clicker Game</h1>\n\n<app-clicker-main class=\"main-pane\"></app-clicker-main>\n\n<mat-tab-group class=\"tab-group\" dynamicHeight>\n  <mat-tab label=\"Explore\">\n    <app-map></app-map>\n  </mat-tab>\n  <mat-tab label=\"Workers\">\n    <app-workers></app-workers>\n  </mat-tab>\n  <mat-tab label=\"Store\">\n    <app-store></app-store>\n  </mat-tab>\n  <mat-tab label=\"Upgrades\">\n    <app-upgrades></app-upgrades>\n  </mat-tab>\n  <mat-tab label=\"Settings\">\n    <app-settings></app-settings>\n  </mat-tab>\n</mat-tab-group>\n\n<mat-card class=\"debug-pane\" *ngIf=\"debugMode\">\n  <h1>Admin Dashboard</h1>\n  <app-admin-debug></app-admin-debug>\n  <app-messages></app-messages>\n</mat-card>\n"
 
 /***/ }),
 
@@ -66,7 +66,7 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 var AppComponent = /** @class */ (function () {
     function AppComponent() {
         this.title = 'clicker-game';
-        this.debugMode = false;
+        this.debugMode = true;
     }
     AppComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -92,24 +92,25 @@ var AppComponent = /** @class */ (function () {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppModule", function() { return AppModule; });
-/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/platform-browser */ "./node_modules/@angular/platform-browser/fesm5/platform-browser.js");
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/platform-browser */ "./node_modules/@angular/platform-browser/fesm5/platform-browser.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
 /* harmony import */ var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/platform-browser/animations */ "./node_modules/@angular/platform-browser/fesm5/animations.js");
-/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
-/* harmony import */ var _components_clicker_main_clicker_main_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/clicker-main/clicker-main.component */ "./src/app/components/clicker-main/clicker-main.component.ts");
-/* harmony import */ var _components_messages_messages_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/messages/messages.component */ "./src/app/components/messages/messages.component.ts");
-/* harmony import */ var _components_workers_workers_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/workers/workers.component */ "./src/app/components/workers/workers.component.ts");
-/* harmony import */ var _components_store_store_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/store/store.component */ "./src/app/components/store/store.component.ts");
-/* harmony import */ var _components_upgrades_upgrades_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./components/upgrades/upgrades.component */ "./src/app/components/upgrades/upgrades.component.ts");
-/* harmony import */ var _material_import_material_import_module__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./material-import/material-import.module */ "./src/app/material-import/material-import.module.ts");
-/* harmony import */ var src_app_pipe_pipe_module__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! src/app/pipe/pipe.module */ "./src/app/pipe/pipe.module.ts");
-/* harmony import */ var _components_admin_debug_admin_debug_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./components/admin-debug/admin-debug.component */ "./src/app/components/admin-debug/admin-debug.component.ts");
-/* harmony import */ var _components_map_map_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./components/map/map.component */ "./src/app/components/map/map.component.ts");
-/* harmony import */ var _components_resource_dialog_resource_dialog_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./components/resource-dialog/resource-dialog.component */ "./src/app/components/resource-dialog/resource-dialog.component.ts");
-/* harmony import */ var _components_upgrade_dialog_upgrade_dialog_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./components/upgrade-dialog/upgrade-dialog.component */ "./src/app/components/upgrade-dialog/upgrade-dialog.component.ts");
-/* harmony import */ var _directives_touch_touch_directive__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./directives/touch/touch.directive */ "./src/app/directives/touch/touch.directive.ts");
-/* harmony import */ var _directives_crop_crop_directive__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./directives/crop/crop.directive */ "./src/app/directives/crop/crop.directive.ts");
+/* harmony import */ var _material_import_material_import_module__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./material-import/material-import.module */ "./src/app/material-import/material-import.module.ts");
+/* harmony import */ var src_app_pipe_pipe_module__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! src/app/pipe/pipe.module */ "./src/app/pipe/pipe.module.ts");
+/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
+/* harmony import */ var _components_clicker_main_clicker_main_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/clicker-main/clicker-main.component */ "./src/app/components/clicker-main/clicker-main.component.ts");
+/* harmony import */ var _components_messages_messages_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/messages/messages.component */ "./src/app/components/messages/messages.component.ts");
+/* harmony import */ var _components_workers_workers_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./components/workers/workers.component */ "./src/app/components/workers/workers.component.ts");
+/* harmony import */ var _components_store_store_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./components/store/store.component */ "./src/app/components/store/store.component.ts");
+/* harmony import */ var _components_upgrades_upgrades_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./components/upgrades/upgrades.component */ "./src/app/components/upgrades/upgrades.component.ts");
+/* harmony import */ var _components_map_map_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./components/map/map.component */ "./src/app/components/map/map.component.ts");
+/* harmony import */ var _components_settings_settings_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./components/settings/settings.component */ "./src/app/components/settings/settings.component.ts");
+/* harmony import */ var _components_admin_debug_admin_debug_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./components/admin-debug/admin-debug.component */ "./src/app/components/admin-debug/admin-debug.component.ts");
+/* harmony import */ var _components_resource_dialog_resource_dialog_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./components/resource-dialog/resource-dialog.component */ "./src/app/components/resource-dialog/resource-dialog.component.ts");
+/* harmony import */ var _components_upgrade_dialog_upgrade_dialog_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./components/upgrade-dialog/upgrade-dialog.component */ "./src/app/components/upgrade-dialog/upgrade-dialog.component.ts");
+/* harmony import */ var _directives_touch_touch_directive__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./directives/touch/touch.directive */ "./src/app/directives/touch/touch.directive.ts");
+/* harmony import */ var _directives_crop_crop_directive__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./directives/crop/crop.directive */ "./src/app/directives/crop/crop.directive.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -134,39 +135,41 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 
 
+
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
     AppModule = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["NgModule"])({
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"])({
             declarations: [
-                _app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"],
-                _components_clicker_main_clicker_main_component__WEBPACK_IMPORTED_MODULE_5__["ClickerMainComponent"],
-                _components_messages_messages_component__WEBPACK_IMPORTED_MODULE_6__["MessagesComponent"],
-                _components_workers_workers_component__WEBPACK_IMPORTED_MODULE_7__["WorkersComponent"],
-                _components_store_store_component__WEBPACK_IMPORTED_MODULE_8__["StoreComponent"],
-                _components_upgrades_upgrades_component__WEBPACK_IMPORTED_MODULE_9__["UpgradesComponent"],
-                _components_admin_debug_admin_debug_component__WEBPACK_IMPORTED_MODULE_12__["AdminDebugComponent"],
-                _components_map_map_component__WEBPACK_IMPORTED_MODULE_13__["MapComponent"],
-                _components_resource_dialog_resource_dialog_component__WEBPACK_IMPORTED_MODULE_14__["ResourceDialogComponent"],
-                _components_upgrade_dialog_upgrade_dialog_component__WEBPACK_IMPORTED_MODULE_15__["UpgradeDialogComponent"],
-                _directives_touch_touch_directive__WEBPACK_IMPORTED_MODULE_16__["TouchDirective"],
-                _directives_crop_crop_directive__WEBPACK_IMPORTED_MODULE_17__["CropDirective"],
+                _app_component__WEBPACK_IMPORTED_MODULE_6__["AppComponent"],
+                _components_clicker_main_clicker_main_component__WEBPACK_IMPORTED_MODULE_7__["ClickerMainComponent"],
+                _components_messages_messages_component__WEBPACK_IMPORTED_MODULE_8__["MessagesComponent"],
+                _components_workers_workers_component__WEBPACK_IMPORTED_MODULE_9__["WorkersComponent"],
+                _components_store_store_component__WEBPACK_IMPORTED_MODULE_10__["StoreComponent"],
+                _components_upgrades_upgrades_component__WEBPACK_IMPORTED_MODULE_11__["UpgradesComponent"],
+                _components_settings_settings_component__WEBPACK_IMPORTED_MODULE_13__["SettingsComponent"],
+                _components_admin_debug_admin_debug_component__WEBPACK_IMPORTED_MODULE_14__["AdminDebugComponent"],
+                _components_map_map_component__WEBPACK_IMPORTED_MODULE_12__["MapComponent"],
+                _components_resource_dialog_resource_dialog_component__WEBPACK_IMPORTED_MODULE_15__["ResourceDialogComponent"],
+                _components_upgrade_dialog_upgrade_dialog_component__WEBPACK_IMPORTED_MODULE_16__["UpgradeDialogComponent"],
+                _directives_touch_touch_directive__WEBPACK_IMPORTED_MODULE_17__["TouchDirective"],
+                _directives_crop_crop_directive__WEBPACK_IMPORTED_MODULE_18__["CropDirective"]
             ],
             imports: [
-                _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
-                _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormsModule"],
-                _angular_forms__WEBPACK_IMPORTED_MODULE_1__["ReactiveFormsModule"],
+                _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
+                _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormsModule"],
+                _angular_forms__WEBPACK_IMPORTED_MODULE_2__["ReactiveFormsModule"],
                 _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_3__["BrowserAnimationsModule"],
-                _material_import_material_import_module__WEBPACK_IMPORTED_MODULE_10__["MaterialImportModule"],
-                src_app_pipe_pipe_module__WEBPACK_IMPORTED_MODULE_11__["PipeModule"]
+                _material_import_material_import_module__WEBPACK_IMPORTED_MODULE_4__["MaterialImportModule"],
+                src_app_pipe_pipe_module__WEBPACK_IMPORTED_MODULE_5__["PipeModule"]
             ],
             entryComponents: [
-                _components_resource_dialog_resource_dialog_component__WEBPACK_IMPORTED_MODULE_14__["ResourceDialogComponent"],
-                _components_upgrade_dialog_upgrade_dialog_component__WEBPACK_IMPORTED_MODULE_15__["UpgradeDialogComponent"]
+                _components_resource_dialog_resource_dialog_component__WEBPACK_IMPORTED_MODULE_15__["ResourceDialogComponent"],
+                _components_upgrade_dialog_upgrade_dialog_component__WEBPACK_IMPORTED_MODULE_16__["UpgradeDialogComponent"]
             ],
             providers: [],
-            bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"]]
+            bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_6__["AppComponent"]]
         })
     ], AppModule);
     return AppModule;
@@ -334,7 +337,7 @@ module.exports = "/* ClickerMainComponent's private CSS styles */\r\n.resources 
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ul class=\"resources noselect\">\n  <mat-accordion multi=\"true\">\n    <mat-expansion-panel expanded=\"true\" *ngFor=\"let resourceType of resourceTypes | enumToArray\">\n      <mat-expansion-panel-header>\n        <mat-panel-title>\n          {{resourceType}}\n        </mat-panel-title>\n        <mat-panel-description>\n        </mat-panel-description>\n      </mat-expansion-panel-header>\n\n      <div *ngFor=\"let resource of resourcesOfType(resourceType, adminService.filterAccessible)\">\n        <button appTouch mat-raised-button class=\"resource-button\" color=\"accent\" [disabled]=\"!resourcesService.canHarvest(resource.id)\" [id]=\"resource.id\"\n          (mouseleave)='stopHarvesting(resource.id)'\n          matTooltip=\"{{getTooltipMessage(resource.id)}}\" matTooltipPosition=\"right\">\n          <mat-card-title>{{resource.name | titlecase }}</mat-card-title>\n          <mat-card-subtitle>{{resource.amount | number:'1.0-0'}}</mat-card-subtitle>\n          <mat-progress-bar [class.hidden]=\"resourceBeingHarvested !== resource.id\" class=\"harvest-progress\" [mode]=\"mode\" [value]=\"value\"></mat-progress-bar>\n          <img class=\"resource-img\" src=\"{{resource.iconPath}}\" alt=\"{{resource.name}}\" *ngIf=\"resource.iconPath !== ''\">\n        </button>\n        <div *ngIf=\"adminService.editMode\">\n          <br />\n          <button (click)=\"editResource(resource.id)\">Edit {{resource.name | titlecase}}</button>\n        </div>\n      </div>\n    </mat-expansion-panel>\n  </mat-accordion>\n</ul>\n"
+module.exports = "<ul class=\"resources noselect\">\n  <mat-accordion multi=\"true\">\n    <mat-expansion-panel expanded=\"true\" *ngFor=\"let resourceType of resourceTypes | enumToArray\">\n      <mat-expansion-panel-header>\n        <mat-panel-title>\n          {{resourceType}}\n        </mat-panel-title>\n        <mat-panel-description>\n        </mat-panel-description>\n      </mat-expansion-panel-header>\n\n      <div *ngFor=\"let resource of resourcesOfType(resourceType, adminService.filterAccessible)\">\n        <button mat-raised-button class=\"resource-button\" color=\"accent\" [disabled]=\"resource.harvesting || !resourcesService.canHarvest(resource.id)\" [id]=\"resource.id\"\n          (click)='startHarvesting(resource.id)'\n          matTooltip=\"{{getTooltipMessage(resource.id)}}\" matTooltipPosition=\"right\">\n          <mat-card-title>{{resource.name | titlecase }}</mat-card-title>\n          <mat-card-subtitle>{{resource.amount | number:'1.0-0'}}</mat-card-subtitle>\n\n          <mat-progress-bar [class.hidden]=\"!resource.harvesting\" class=\"harvest-progress\" [mode]=\"progressBarMode\" [value]=\"resource.progressBarValue\"></mat-progress-bar>\n\n          <img class=\"resource-img\" src=\"{{resource.iconPath}}\" alt=\"{{resource.name}}\" *ngIf=\"resource.iconPath !== ''\">\n        </button>\n\n        <div *ngIf=\"adminService.editMode\">\n          <br />\n          <button (click)=\"editResource(resource.id)\">Edit {{resource.name | titlecase}}</button>\n        </div>\n      </div>\n    </mat-expansion-panel>\n  </mat-accordion>\n</ul>\n"
 
 /***/ }),
 
@@ -352,7 +355,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _services_clicker_main_clicker_main_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./../../services/clicker-main/clicker-main.service */ "./src/app/services/clicker-main/clicker-main.service.ts");
 /* harmony import */ var _services_resources_resources_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../services/resources/resources.service */ "./src/app/services/resources/resources.service.ts");
 /* harmony import */ var _objects_resource__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../objects/resource */ "./src/app/objects/resource.ts");
-/* harmony import */ var _services_admin_admin_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./../../services/admin/admin.service */ "./src/app/services/admin/admin.service.ts");
+/* harmony import */ var _services_workers_workers_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../services/workers/workers.service */ "./src/app/services/workers/workers.service.ts");
+/* harmony import */ var _services_tooltip_tooltip_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./../../services/tooltip/tooltip.service */ "./src/app/services/tooltip/tooltip.service.ts");
+/* harmony import */ var _services_admin_admin_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./../../services/admin/admin.service */ "./src/app/services/admin/admin.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -367,10 +372,14 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
+
 var ClickerMainComponent = /** @class */ (function () {
-    function ClickerMainComponent(clickerMainService, resourcesService, adminService) {
+    function ClickerMainComponent(clickerMainService, resourcesService, workersService, tooltipService, adminService) {
         this.clickerMainService = clickerMainService;
         this.resourcesService = resourcesService;
+        this.workersService = workersService;
+        this.tooltipService = tooltipService;
         this.adminService = adminService;
         this.resourceTypes = _objects_resource__WEBPACK_IMPORTED_MODULE_3__["ResourceType"];
     }
@@ -380,17 +389,13 @@ var ClickerMainComponent = /** @class */ (function () {
         return this.resourcesService.resourcesOfType(this.resourceTypes[resourceType], false, filterByAccessible);
     };
     ClickerMainComponent.prototype.getTooltipMessage = function (id) {
-        var workerCount = this.resourcesService.getResource(id).worker.workerCount;
-        return this.resourcesService.resourceTooltip(id, workerCount);
+        return this.tooltipService.getResourceTooltip(id);
     };
     ClickerMainComponent.prototype.startHarvesting = function (id) {
         this.clickerMainService.startHarvesting(id);
     };
     ClickerMainComponent.prototype.stopHarvesting = function (id) {
         this.clickerMainService.stopHarvesting(id);
-    };
-    ClickerMainComponent.prototype.updateProgressBar = function (id) {
-        this.clickerMainService.updateProgressBar(id);
     };
     ClickerMainComponent.prototype.shouldAnimateProgressBar = function (id) {
         return this.clickerMainService.shouldAnimateProgressBar(id);
@@ -401,48 +406,6 @@ var ClickerMainComponent = /** @class */ (function () {
     ClickerMainComponent.prototype.editResource = function (id) {
         this.adminService.openResourceDialog(id);
     };
-    Object.defineProperty(ClickerMainComponent.prototype, "resourceBeingHarvested", {
-        get: function () {
-            return this.clickerMainService.resourceBeingHarvested;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(ClickerMainComponent.prototype, "value", {
-        get: function () {
-            return this.clickerMainService.value;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(ClickerMainComponent.prototype, "mode", {
-        get: function () {
-            return this.clickerMainService.mode;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(ClickerMainComponent.prototype, "millisecondsTotal", {
-        get: function () {
-            return this.clickerMainService.millisecondsTotal;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(ClickerMainComponent.prototype, "harvestStartDate", {
-        get: function () {
-            return this.clickerMainService.harvestStartDate;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(ClickerMainComponent.prototype, "progressBarUpdateDelay", {
-        get: function () {
-            return this.clickerMainService.progressBarUpdateDelay;
-        },
-        enumerable: true,
-        configurable: true
-    });
     ClickerMainComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-clicker-main',
@@ -451,7 +414,9 @@ var ClickerMainComponent = /** @class */ (function () {
         }),
         __metadata("design:paramtypes", [_services_clicker_main_clicker_main_service__WEBPACK_IMPORTED_MODULE_1__["ClickerMainService"],
             _services_resources_resources_service__WEBPACK_IMPORTED_MODULE_2__["ResourcesService"],
-            _services_admin_admin_service__WEBPACK_IMPORTED_MODULE_4__["AdminService"]])
+            _services_workers_workers_service__WEBPACK_IMPORTED_MODULE_4__["WorkersService"],
+            _services_tooltip_tooltip_service__WEBPACK_IMPORTED_MODULE_5__["TooltipService"],
+            _services_admin_admin_service__WEBPACK_IMPORTED_MODULE_6__["AdminService"]])
     ], ClickerMainComponent);
     return ClickerMainComponent;
 }());
@@ -794,7 +759,10 @@ var ResourceDialogComponent = /** @class */ (function () {
             amount: 0,
             iconPath: '',
             resourceConsumes: [],
+            progressBarValue: 0,
             harvestable: true,
+            harvesting: false,
+            harvestStartDate: Date.now(),
             harvestYield: 1,
             harvestMilliseconds: 1000,
             workerYield: 1,
@@ -907,6 +875,97 @@ var ResourceDialogComponent = /** @class */ (function () {
             _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatDialogRef"], Object])
     ], ResourceDialogComponent);
     return ResourceDialogComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/components/settings/settings.component.css":
+/*!************************************************************!*\
+  !*** ./src/app/components/settings/settings.component.css ***!
+  \************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ""
+
+/***/ }),
+
+/***/ "./src/app/components/settings/settings.component.html":
+/*!*************************************************************!*\
+  !*** ./src/app/components/settings/settings.component.html ***!
+  \*************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<mat-accordion>\n  <mat-expansion-panel expanded=\"true\">\n    <mat-expansion-panel-header>\n      <mat-panel-title>\n        <mat-icon color=\"primary\">save</mat-icon>\n        Save/Load\n      </mat-panel-title>\n    </mat-expansion-panel-header>\n\n    <mat-form-field>\n      <mat-select placeholder=\"Autosave Interval (Minutes)\" [(value)]=\"autosaveInterval\" (valueChange)=\"setAutosave()\">\n        <mat-option [value]=\"-1\">Disable</mat-option>\n        <mat-option [value]=\"60000\">1</mat-option>\n        <mat-option [value]=\"900000\">15</mat-option>\n        <mat-option [value]=\"1800000\">30</mat-option>\n        <mat-option [value]=\"3600000\">60</mat-option>\n      </mat-select>\n    </mat-form-field>\n\n    <button mat-raised-button color=\"primary\" (click)=\"saveGame()\">Save</button>\n    <button mat-raised-button color=\"accent\" (click)=\"loadGame()\">Load</button>\n\n    <button mat-raised-button (click)=\"exportSave()\">Export Save</button>\n    <button mat-raised-button (click)=\"importSave()\">Import Save</button>\n  </mat-expansion-panel>\n\n</mat-accordion>\n"
+
+/***/ }),
+
+/***/ "./src/app/components/settings/settings.component.ts":
+/*!***********************************************************!*\
+  !*** ./src/app/components/settings/settings.component.ts ***!
+  \***********************************************************/
+/*! exports provided: SettingsComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SettingsComponent", function() { return SettingsComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _services_settings_settings_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../services/settings/settings.service */ "./src/app/services/settings/settings.service.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var SettingsComponent = /** @class */ (function () {
+    function SettingsComponent(settingsService) {
+        this.settingsService = settingsService;
+    }
+    SettingsComponent.prototype.ngOnInit = function () {
+    };
+    SettingsComponent.prototype.setAutosave = function () {
+        this.settingsService.setAutosave();
+    };
+    SettingsComponent.prototype.saveGame = function () {
+        this.settingsService.saveGame();
+    };
+    SettingsComponent.prototype.loadGame = function () {
+        this.settingsService.loadGame();
+    };
+    SettingsComponent.prototype.exportSave = function () {
+        alert(this.settingsService.exportSave());
+    };
+    SettingsComponent.prototype.importSave = function () {
+        this.settingsService.importSave(prompt('Paste Save Data'));
+    };
+    Object.defineProperty(SettingsComponent.prototype, "autosaveInterval", {
+        get: function () {
+            return this.settingsService.autosaveInterval;
+        },
+        set: function (value) {
+            this.settingsService.autosaveInterval = value;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    SettingsComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-settings',
+            template: __webpack_require__(/*! ./settings.component.html */ "./src/app/components/settings/settings.component.html"),
+            styles: [__webpack_require__(/*! ./settings.component.css */ "./src/app/components/settings/settings.component.css")]
+        }),
+        __metadata("design:paramtypes", [_services_settings_settings_service__WEBPACK_IMPORTED_MODULE_1__["SettingsService"]])
+    ], SettingsComponent);
+    return SettingsComponent;
 }());
 
 
@@ -1295,7 +1354,7 @@ module.exports = "/* WorkersComponent's private CSS styles */\r\n.workers {\r\n 
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ul class=\"workers\">\n  <mat-accordion multi=\"true\">\n    <mat-expansion-panel expanded=\"true\" *ngFor=\"let worker of getWorkers()\">\n      <mat-expansion-panel-header>\n        <mat-panel-title>\n          {{worker.resourceType | titlecase}}\n        </mat-panel-title>\n        <mat-panel-description>\n        </mat-panel-description>\n      </mat-expansion-panel-header>\n\n      <button mat-raised-button [color]=\"canAfford(worker.id) ? 'accent' : 'disabled'\" (click)=\"hireWorker(worker.id)\">\n        <mat-card-title>{{worker.workerCount}} Workers ({{worker.freeWorkers}} Idle)</mat-card-title>\n        <mat-card-subtitle>{{worker.cost}} Gold</mat-card-subtitle>\n      </button>\n\n      <div *ngFor=\"let resourceWorker of worker.workersByResource\">\n        <mat-card *ngIf=\"resourceWorker.workable || !adminService.filterAccessible\" matTooltip=\"{{getTooltipMessage(resourceWorker.resourceId)}}\"\n          matTooltipPosition=\"right\">\n          <mat-card-title>{{resourcesService.getResource(resourceWorker.resourceId).name | titlecase}}</mat-card-title>\n          <mat-card-subtitle>{{resourceWorker.workerCount}} Workers</mat-card-subtitle>\n          <mat-slider [color]=\"resourceWorker.sliderSettingValid ? 'accent' : 'warn'\" [id]=\"resourceWorker.resourceId\" [max]=\"worker.workerCount\"\n            [tickInterval]=\"1\" [thumbLabel]=\"true\" (input)=\"checkSliderValue($event)\" (change)=\"updateResourceWorkers($event)\">\n          </mat-slider>\n        </mat-card>\n      </div>\n    </mat-expansion-panel>\n  </mat-accordion>\n</ul>\n"
+module.exports = "<ul class=\"workers\">\n  <mat-accordion multi=\"true\">\n    <mat-expansion-panel expanded=\"true\" *ngFor=\"let worker of getWorkers()\">\n      <mat-expansion-panel-header>\n        <mat-panel-title>\n          {{worker.resourceType | titlecase}}\n        </mat-panel-title>\n        <mat-panel-description>\n        </mat-panel-description>\n      </mat-expansion-panel-header>\n\n      <button mat-raised-button [color]=\"canAfford(worker.id) ? 'accent' : 'disabled'\" (click)=\"hireWorker(worker.id)\">\n        <mat-card-title>{{worker.workerCount}} Workers ({{worker.freeWorkers}} Idle)</mat-card-title>\n        <mat-card-subtitle>{{worker.cost}} Gold</mat-card-subtitle>\n      </button>\n\n      <div *ngFor=\"let resourceWorker of worker.workersByResource\">\n        <mat-card *ngIf=\"resourceWorker.workable || !adminService.filterAccessible\" matTooltip=\"{{getTooltipMessage(resourceWorker.resourceId)}}\"\n          matTooltipPosition=\"right\">\n          <mat-card-title>{{resourcesService.getResource(resourceWorker.resourceId).name | titlecase}}</mat-card-title>\n          <mat-card-subtitle>{{resourceWorker.workerCount}} Workers</mat-card-subtitle>\n          <mat-slider [color]=\"resourceWorker.sliderSettingValid ? 'accent' : 'warn'\" [id]=\"resourceWorker.resourceId\" [max]=\"worker.workerCount\"\n             [tickInterval]=\"1\" [thumbLabel]=\"true\" (input)=\"checkSliderValue($event)\" (change)=\"updateResourceWorker($event)\">\n          </mat-slider>\n        </mat-card>\n      </div>\n    </mat-expansion-panel>\n  </mat-accordion>\n</ul>\n"
 
 /***/ }),
 
@@ -1313,7 +1372,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _objects_resource__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../objects/resource */ "./src/app/objects/resource.ts");
 /* harmony import */ var _services_resources_resources_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../services/resources/resources.service */ "./src/app/services/resources/resources.service.ts");
 /* harmony import */ var _services_workers_workers_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../services/workers/workers.service */ "./src/app/services/workers/workers.service.ts");
-/* harmony import */ var _services_admin_admin_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../services/admin/admin.service */ "./src/app/services/admin/admin.service.ts");
+/* harmony import */ var _services_tooltip_tooltip_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./../../services/tooltip/tooltip.service */ "./src/app/services/tooltip/tooltip.service.ts");
+/* harmony import */ var _services_admin_admin_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../services/admin/admin.service */ "./src/app/services/admin/admin.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1328,10 +1388,12 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
 var WorkersComponent = /** @class */ (function () {
-    function WorkersComponent(resourcesService, workersService, adminService) {
+    function WorkersComponent(resourcesService, workersService, tooltipService, adminService) {
         this.resourcesService = resourcesService;
         this.workersService = workersService;
+        this.tooltipService = tooltipService;
         this.adminService = adminService;
         this.resourceTypes = _objects_resource__WEBPACK_IMPORTED_MODULE_1__["ResourceType"];
     }
@@ -1347,7 +1409,7 @@ var WorkersComponent = /** @class */ (function () {
         return this.workersService.canAfford(id);
     };
     WorkersComponent.prototype.getTooltipMessage = function (id) {
-        return this.workersService.getResourceTooltipMessage(id);
+        return this.tooltipService.getWorkerTooltip(id);
     };
     WorkersComponent.prototype.hireWorker = function (id) {
         this.workersService.hireWorker(id);
@@ -1359,17 +1421,8 @@ var WorkersComponent = /** @class */ (function () {
         var newValue = +event.value;
         resourceWorker.sliderSettingValid = worker.freeWorkers + resourceWorker.workerCount - newValue >= 0;
     };
-    WorkersComponent.prototype.updateResourceWorkers = function (event) {
-        var resource = this.resourcesService.getResource(+event.source._elementRef.nativeElement.id);
-        var worker = this.getWorker(resource.resourceType);
-        var resourceWorker = worker.workersByResource.find(function (ws) { return ws.resourceId === resource.id; });
-        if (!resourceWorker.sliderSettingValid) {
-            return;
-        }
-        var newValue = +event.value;
-        var newFreeWorkers = worker.freeWorkers + resourceWorker.workerCount - newValue;
-        worker.freeWorkers = newFreeWorkers;
-        resourceWorker.workerCount = newValue;
+    WorkersComponent.prototype.updateResourceWorker = function (event) {
+        this.workersService.updateResourceWorker(+event.source._elementRef.nativeElement.id, +event.value);
     };
     WorkersComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -1379,7 +1432,8 @@ var WorkersComponent = /** @class */ (function () {
         }),
         __metadata("design:paramtypes", [_services_resources_resources_service__WEBPACK_IMPORTED_MODULE_2__["ResourcesService"],
             _services_workers_workers_service__WEBPACK_IMPORTED_MODULE_3__["WorkersService"],
-            _services_admin_admin_service__WEBPACK_IMPORTED_MODULE_4__["AdminService"]])
+            _services_tooltip_tooltip_service__WEBPACK_IMPORTED_MODULE_4__["TooltipService"],
+            _services_admin_admin_service__WEBPACK_IMPORTED_MODULE_5__["AdminService"]])
     ], WorkersComponent);
     return WorkersComponent;
 }());
@@ -1519,12 +1573,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_material_slider__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @angular/material/slider */ "./node_modules/@angular/material/esm5/slider.es5.js");
 /* harmony import */ var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @angular/material/dialog */ "./node_modules/@angular/material/esm5/dialog.es5.js");
 /* harmony import */ var _angular_material_stepper__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @angular/material/stepper */ "./node_modules/@angular/material/esm5/stepper.es5.js");
+/* harmony import */ var _angular_material_snack_bar__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @angular/material/snack-bar */ "./node_modules/@angular/material/esm5/snack-bar.es5.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -1559,7 +1615,8 @@ var modules = [
     _angular_material_list__WEBPACK_IMPORTED_MODULE_13__["MatListModule"],
     _angular_material_slider__WEBPACK_IMPORTED_MODULE_14__["MatSliderModule"],
     _angular_material_dialog__WEBPACK_IMPORTED_MODULE_15__["MatDialogModule"],
-    _angular_material_stepper__WEBPACK_IMPORTED_MODULE_16__["MatStepperModule"]
+    _angular_material_stepper__WEBPACK_IMPORTED_MODULE_16__["MatStepperModule"],
+    _angular_material_snack_bar__WEBPACK_IMPORTED_MODULE_17__["MatSnackBarModule"]
 ];
 var MaterialImportModule = /** @class */ (function () {
     function MaterialImportModule() {
@@ -1597,6 +1654,9 @@ var ResourceType;
 })(ResourceType || (ResourceType = {}));
 var Resource = /** @class */ (function () {
     function Resource() {
+        this.harvestStartDate = Date.now();
+        this.harvesting = false;
+        this.progressBarValue = 0;
     }
     return Resource;
 }());
@@ -1855,52 +1915,36 @@ var ClickerMainService = /** @class */ (function () {
         this.resourcesService = resourcesService;
         this.workersService = workersService;
         this.adminService = adminService;
-        this.resourceBeingHarvested = -1;
-        this.value = 0;
-        this.mode = 'determinate';
+        this.progressBarMode = 'determinate';
         this.millisecondsTotal = 1000;
         this.progressBarUpdateDelay = 200;
         this.resourceTypes = _objects_resource__WEBPACK_IMPORTED_MODULE_5__["ResourceType"];
         var processSource = Object(rxjs__WEBPACK_IMPORTED_MODULE_1__["timer"])(1000, 1000);
         var processSubscribe = processSource.subscribe(function (_) { return _this.workersService.processWorkers(); });
+        var progressBarTimer = Object(rxjs__WEBPACK_IMPORTED_MODULE_1__["timer"])(0, this.progressBarUpdateDelay);
+        progressBarTimer.subscribe(function (_) { return _this.updateProgressBars(); });
     }
     ClickerMainService.prototype.startHarvesting = function (id) {
         var _this = this;
         var resource = this.resourcesService.getResource(id);
-        this.harvestStartDate = Date.now();
+        resource.harvestStartDate = Date.now();
         if (!this.resourcesService.canHarvest(id)) {
             return;
         }
-        if (this.harvestSubscribe !== undefined) {
-            this.harvestSubscribe.unsubscribe();
-        }
-        this.millisecondsTotal = resource.harvestMilliseconds;
-        this.harvestTimer = Object(rxjs__WEBPACK_IMPORTED_MODULE_1__["timer"])(this.millisecondsTotal, this.millisecondsTotal);
-        this.harvestSubscribe = this.harvestTimer.subscribe(function (_) { return _this.harvestResource(id); });
-        if (this.shouldAnimateProgressBar(id)) {
-            this.mode = 'determinate';
-            this.progressBarTimer = Object(rxjs__WEBPACK_IMPORTED_MODULE_1__["timer"])(0, this.progressBarUpdateDelay);
-            this.progressBarSubscribe = this.progressBarTimer.subscribe(function (_) { return _this.updateProgressBar(id); });
-        }
-        else {
-            this.mode = 'indeterminate';
-            this.value = 100;
-        }
-        this.resourceBeingHarvested = id;
+        resource.harvesting = true;
+        var harvestTimer = Object(rxjs__WEBPACK_IMPORTED_MODULE_1__["timer"])(resource.harvestMilliseconds);
+        harvestTimer.subscribe(function (_) { return _this.harvestResource(id); });
     };
     ClickerMainService.prototype.stopHarvesting = function (id) {
-        if (this.resourceBeingHarvested === -1) {
-            return;
-        }
-        if (this.shouldAnimateProgressBar(id)) {
-            this.progressBarSubscribe.unsubscribe();
-        }
-        this.harvestSubscribe.unsubscribe();
-        this.value = 0;
-        this.resourceBeingHarvested = -1;
+        var resource = this.resourcesService.getResource(id);
+        resource.progressBarValue = 0;
+        resource.harvesting = false;
     };
-    ClickerMainService.prototype.updateProgressBar = function (id) {
-        this.value = Math.floor((Date.now() - this.harvestStartDate) / this.millisecondsTotal * 100);
+    ClickerMainService.prototype.updateProgressBars = function () {
+        for (var _i = 0, _a = this.resourcesService.resources.filter(function (_resource) { return _resource.harvesting; }); _i < _a.length; _i++) {
+            var resource = _a[_i];
+            resource.progressBarValue = Math.floor((Date.now() - resource.harvestStartDate) / resource.harvestMilliseconds * 100);
+        }
     };
     ClickerMainService.prototype.shouldAnimateProgressBar = function (id) {
         return this.resourcesService.getResource(id).harvestMilliseconds > this.progressBarUpdateDelay;
@@ -1909,11 +1953,9 @@ var ClickerMainService = /** @class */ (function () {
         this.resourcesService.harvestResource(id);
         this.harvestStartDate = Date.now();
         if (this.shouldAnimateProgressBar(id)) {
-            this.value = 0;
+            this.resourcesService.getResource(id).progressBarValue = 0;
         }
-        if (!this.resourcesService.canHarvest(id)) {
-            this.stopHarvesting(id);
-        }
+        this.stopHarvesting(id);
     };
     ClickerMainService = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
@@ -2237,6 +2279,174 @@ var ResourcesService = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/services/settings/settings.service.ts":
+/*!*******************************************************!*\
+  !*** ./src/app/services/settings/settings.service.ts ***!
+  \*******************************************************/
+/*! exports provided: SettingsService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SettingsService", function() { return SettingsService; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm5/index.js");
+/* harmony import */ var _resources_resources_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./../resources/resources.service */ "./src/app/services/resources/resources.service.ts");
+/* harmony import */ var _upgrades_upgrades_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./../upgrades/upgrades.service */ "./src/app/services/upgrades/upgrades.service.ts");
+/* harmony import */ var _workers_workers_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./../workers/workers.service */ "./src/app/services/workers/workers.service.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+var SettingsService = /** @class */ (function () {
+    function SettingsService(resourcesService, upgradesService, workersService, snackbar) {
+        this.resourcesService = resourcesService;
+        this.upgradesService = upgradesService;
+        this.workersService = workersService;
+        this.snackbar = snackbar;
+        this.autosaveInterval = 900000;
+        this.loadGame();
+    }
+    SettingsService.prototype.setAutosave = function () {
+        var _this = this;
+        if (this.autosaveSubscribe !== undefined) {
+            this.autosaveSubscribe.unsubscribe();
+        }
+        if (this.autosaveInterval <= 0) {
+            return;
+        }
+        this.autosaveSource = Object(rxjs__WEBPACK_IMPORTED_MODULE_2__["timer"])(this.autosaveInterval, this.autosaveInterval);
+        this.autosaveSubscribe = this.autosaveSource.subscribe(function (_) { return _this.saveGame(); });
+    };
+    SettingsService.prototype.saveGame = function () {
+        var saveData = this.exportSave();
+        localStorage.setItem('clickerGameSaveData', saveData);
+        this.snackbar.open('Game successfully saved!', '', { duration: 2000 });
+    };
+    SettingsService.prototype.loadGame = function () {
+        var saveData = localStorage.getItem('clickerGameSaveData');
+        this.importSave(saveData);
+        this.snackbar.open('Game successfully loaded!', '', { duration: 2000 });
+    };
+    SettingsService.prototype.exportSave = function () {
+        var saveData = {
+            resources: [],
+            upgrades: [],
+            workers: [],
+            autosaveInterval: this.autosaveInterval
+        };
+        for (var _i = 0, _a = this.resourcesService.resources; _i < _a.length; _i++) {
+            var resource = _a[_i];
+            saveData.resources.push({
+                id: resource.id,
+                amount: resource.amount,
+                harvestable: resource.harvestable,
+                harvestYield: resource.harvestYield,
+                sellable: resource.sellable,
+                sellsFor: resource.sellsFor,
+                resourceAccessible: resource.resourceAccessible
+            });
+        }
+        for (var _b = 0, _c = this.upgradesService.upgrades; _b < _c.length; _b++) {
+            var upgrade = _c[_b];
+            saveData.upgrades.push({
+                id: upgrade.id,
+                purchased: upgrade.purchased
+            });
+        }
+        for (var _d = 0, _e = this.workersService.workers; _d < _e.length; _d++) {
+            var worker = _e[_d];
+            var workerData = {
+                id: worker.id,
+                cost: worker.cost,
+                workerCount: worker.workerCount,
+                workersByResource: []
+            };
+            for (var _f = 0, _g = worker.workersByResource; _f < _g.length; _f++) {
+                var resourceWorker = _g[_f];
+                workerData.workersByResource.push({
+                    resourceId: resourceWorker.resourceId,
+                    workable: resourceWorker.workable,
+                    workerCount: resourceWorker.workerCount,
+                    workerYield: resourceWorker.workerYield
+                });
+            }
+            saveData.workers.push(workerData);
+        }
+        return btoa(JSON.stringify(saveData));
+    };
+    SettingsService.prototype.importSave = function (saveDataString) {
+        var backupSave = this.exportSave();
+        try {
+            var saveData = JSON.parse(atob(saveDataString));
+            for (var _i = 0, _a = saveData.resources; _i < _a.length; _i++) {
+                var resourceData = _a[_i];
+                var resource = this.resourcesService.getResource(resourceData.id);
+                resource.amount = resourceData.amount;
+                resource.harvestable = resourceData.harvestable;
+                resource.harvestYield = resourceData.harvestYield;
+                resource.sellable = resourceData.sellable;
+                resource.sellsFor = resourceData.sellsFor;
+                resource.resourceAccessible = resourceData.resourceAccessible;
+            }
+            for (var _b = 0, _c = saveData.upgrades; _b < _c.length; _b++) {
+                var upgradeData = _c[_b];
+                var upgrade = this.upgradesService.getUpgrade(upgradeData.id);
+                upgrade.purchased = upgradeData.purchased;
+            }
+            for (var _d = 0, _e = saveData.workers; _d < _e.length; _d++) {
+                var workerData = _e[_d];
+                var worker = this.workersService.getWorker(workerData.id);
+                worker.cost = workerData.cost;
+                worker.workerCount = workerData.workerCount;
+                worker.freeWorkers = workerData.workerCount;
+                for (var _f = 0, _g = workerData.workersByResource; _f < _g.length; _f++) {
+                    var resourceWorkerData = _g[_f];
+                    var resourceWorker = this.workersService.getResourceWorker(resourceWorkerData.resourceId);
+                    resourceWorker.workable = resourceWorkerData.workable;
+                    resourceWorker.workerYield = resourceWorkerData.workerYield;
+                    this.workersService.updateResourceWorker(resourceWorkerData.resourceId, resourceWorkerData.workerCount);
+                }
+                if (worker.freeWorkers < 0) {
+                    throw new Error('Invalid worker settings.');
+                }
+            }
+            this.autosaveInterval = saveData.autosaveInterval;
+        }
+        catch (error) {
+            this.snackbar.open("Error loading save data: " + error, '', { duration: 5000 });
+            this.importSave(backupSave);
+            console.error(error);
+        }
+    };
+    SettingsService = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
+            providedIn: 'root'
+        }),
+        __metadata("design:paramtypes", [_resources_resources_service__WEBPACK_IMPORTED_MODULE_3__["ResourcesService"],
+            _upgrades_upgrades_service__WEBPACK_IMPORTED_MODULE_4__["UpgradesService"],
+            _workers_workers_service__WEBPACK_IMPORTED_MODULE_5__["WorkersService"],
+            _angular_material__WEBPACK_IMPORTED_MODULE_1__["MatSnackBar"]])
+    ], SettingsService);
+    return SettingsService;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/services/store/store.service.ts":
 /*!*************************************************!*\
   !*** ./src/app/services/store/store.service.ts ***!
@@ -2306,6 +2516,96 @@ var StoreService = /** @class */ (function () {
             _messages_messages_service__WEBPACK_IMPORTED_MODULE_2__["MessagesService"]])
     ], StoreService);
     return StoreService;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/services/tooltip/tooltip.service.ts":
+/*!*****************************************************!*\
+  !*** ./src/app/services/tooltip/tooltip.service.ts ***!
+  \*****************************************************/
+/*! exports provided: TooltipService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TooltipService", function() { return TooltipService; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _resources_resources_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./../resources/resources.service */ "./src/app/services/resources/resources.service.ts");
+/* harmony import */ var _objects_upgrade__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../objects/upgrade */ "./src/app/objects/upgrade.ts");
+/* harmony import */ var _upgrades_upgrades_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../upgrades/upgrades.service */ "./src/app/services/upgrades/upgrades.service.ts");
+/* harmony import */ var _workers_workers_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./../workers/workers.service */ "./src/app/services/workers/workers.service.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+var TooltipService = /** @class */ (function () {
+    function TooltipService(resourcesService, upgradesService, workersService) {
+        this.resourcesService = resourcesService;
+        this.upgradesService = upgradesService;
+        this.workersService = workersService;
+    }
+    TooltipService.prototype.getResourceTooltip = function (resourceId) {
+        var resource = this.resourcesService.getResource(resourceId);
+        var worker = this.workersService.getResourceWorker(resourceId);
+        var tooltip = resource.resourceDescription + ".";
+        if (resourceId === 0) {
+            return tooltip;
+        }
+        var neededUpgrades = this.upgradesService.upgradesOfVariable(_objects_upgrade__WEBPACK_IMPORTED_MODULE_2__["UpgradeVariable"].Harvestability, false, true, false);
+        neededUpgrades = neededUpgrades.filter(function (upgrade) { return upgrade.upgradeEffects.some(function (ue) {
+            return (ue.resourceType === resource.resourceType || ue.resourceId === resourceId)
+                && ue.upgradeVariable === _objects_upgrade__WEBPACK_IMPORTED_MODULE_2__["UpgradeVariable"].Harvestability;
+        }); });
+        if (neededUpgrades.length) {
+            tooltip += '\nNeeded Upgrades:';
+            for (var _i = 0, neededUpgrades_1 = neededUpgrades; _i < neededUpgrades_1.length; _i++) {
+                var neededUpgrade = neededUpgrades_1[_i];
+                tooltip += " " + neededUpgrade.name + ",";
+            }
+            tooltip = tooltip.substring(0, tooltip.length - 1);
+            tooltip += '.';
+        }
+        if (resource.resourceConsumes.length) {
+            tooltip += '\nResources required:';
+            for (var _a = 0, _b = resource.resourceConsumes; _a < _b.length; _a++) {
+                var resourceConsume = _b[_a];
+                tooltip += " " + this.resourcesService.getResource(resourceConsume.resourceId).name + ": " + resourceConsume.cost + ",";
+            }
+            tooltip = tooltip.substring(0, tooltip.length - 1);
+            tooltip += '.';
+        }
+        tooltip += "\n" + Math.floor(100 * resource.harvestYield / resource.harvestMilliseconds * 1000) / 100 + " harvested per second;" +
+            (" " + Math.floor(100 * worker.workerYield * worker.workerCount) / 100 + " per second from workers.");
+        return tooltip;
+    };
+    TooltipService.prototype.getWorkerTooltip = function (resourceId) {
+        var resource = this.resourcesService.getResource(resourceId);
+        var resourceWorker = this.workersService.getResourceWorker(resourceId);
+        return resource.workerVerb + " " + resourceWorker.workerYield + " " +
+            ("" + resource.workerNoun + (resourceWorker.workerYield === 1 ? '' : 's') + " per second.");
+    };
+    TooltipService = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
+            providedIn: 'root'
+        }),
+        __metadata("design:paramtypes", [_resources_resources_service__WEBPACK_IMPORTED_MODULE_1__["ResourcesService"],
+            _upgrades_upgrades_service__WEBPACK_IMPORTED_MODULE_3__["UpgradesService"],
+            _workers_workers_service__WEBPACK_IMPORTED_MODULE_4__["WorkersService"]])
+    ], TooltipService);
+    return TooltipService;
 }());
 
 
@@ -2419,6 +2719,20 @@ var UpgradesService = /** @class */ (function () {
         }
         return upgrades;
     };
+    UpgradesService.prototype.upgradesOfVariable = function (upgradeVariable, filterByPurchased, filterByUnpurchased, filterByAccessible) {
+        var _this = this;
+        var upgrades = this.upgrades.filter(function (upgrade) { return upgrade.upgradeEffects.some(function (ue) { return ue.upgradeVariable === upgradeVariable; }); });
+        if (filterByPurchased) {
+            upgrades = upgrades.filter(function (upgrade) { return upgrade.purchased; });
+        }
+        if (filterByUnpurchased) {
+            upgrades = upgrades.filter(function (upgrade) { return !upgrade.purchased; });
+        }
+        if (filterByAccessible) {
+            upgrades = upgrades.filter(function (upgrade) { return upgrade.resourceCosts.every(function (rc) { return _this.resourcesService.getResource(rc.resourceId).resourceAccessible; }); });
+        }
+        return upgrades;
+    };
     UpgradesService.prototype.getUpgradeTypeString = function (id) {
         return _objects_upgrade__WEBPACK_IMPORTED_MODULE_1__["UpgradeType"][this.getUpgrade(id).upgradeType];
     };
@@ -2494,10 +2808,6 @@ var WorkersService = /** @class */ (function () {
         var worker = this.getWorker(id);
         return worker.cost <= this.resourcesService.getResource(0).amount;
     };
-    WorkersService.prototype.getResourceTooltipMessage = function (resourceId) {
-        var resource = this.resourcesService.getResource(resourceId);
-        return resource.workerVerb + " " + resource.workerYield + " " + resource.workerNoun + (resource.workerYield === 1 ? '' : 's') + " per second.";
-    };
     WorkersService.prototype.processWorkers = function () {
         for (var _i = 0, _a = this.workers; _i < _a.length; _i++) {
             var worker = _a[_i];
@@ -2509,6 +2819,17 @@ var WorkersService = /** @class */ (function () {
                 this.resourcesService.addResourceAmount(resourceWorker.resourceId, resourceWorker.workerYield * resourceWorker.workerCount);
             }
         }
+    };
+    WorkersService.prototype.updateResourceWorker = function (id, newWorkerCount) {
+        var resource = this.resourcesService.getResource(id);
+        var worker = this.getWorker(resource.resourceType);
+        var resourceWorker = worker.workersByResource.find(function (ws) { return ws.resourceId === resource.id; });
+        if (!resourceWorker.sliderSettingValid) {
+            return;
+        }
+        var newFreeWorkers = worker.freeWorkers + resourceWorker.workerCount - newWorkerCount;
+        worker.freeWorkers = newFreeWorkers;
+        resourceWorker.workerCount = newWorkerCount;
     };
     WorkersService.prototype.hireWorker = function (id) {
         if (!this.canAfford(id)) {
