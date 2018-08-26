@@ -109,14 +109,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_admin_debug_admin_debug_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./components/admin-debug/admin-debug.component */ "./src/app/components/admin-debug/admin-debug.component.ts");
 /* harmony import */ var _components_resource_dialog_resource_dialog_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./components/resource-dialog/resource-dialog.component */ "./src/app/components/resource-dialog/resource-dialog.component.ts");
 /* harmony import */ var _components_upgrade_dialog_upgrade_dialog_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./components/upgrade-dialog/upgrade-dialog.component */ "./src/app/components/upgrade-dialog/upgrade-dialog.component.ts");
-/* harmony import */ var _directives_touch_touch_directive__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./directives/touch/touch.directive */ "./src/app/directives/touch/touch.directive.ts");
-/* harmony import */ var _directives_crop_crop_directive__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./directives/crop/crop.directive */ "./src/app/directives/crop/crop.directive.ts");
+/* harmony import */ var _components_save_dialog_save_dialog_save_dialog_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./components/save-dialog/save-dialog/save-dialog.component */ "./src/app/components/save-dialog/save-dialog/save-dialog.component.ts");
+/* harmony import */ var _directives_touch_touch_directive__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./directives/touch/touch.directive */ "./src/app/directives/touch/touch.directive.ts");
+/* harmony import */ var _directives_crop_crop_directive__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./directives/crop/crop.directive */ "./src/app/directives/crop/crop.directive.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -153,8 +155,9 @@ var AppModule = /** @class */ (function () {
                 _components_map_map_component__WEBPACK_IMPORTED_MODULE_12__["MapComponent"],
                 _components_resource_dialog_resource_dialog_component__WEBPACK_IMPORTED_MODULE_15__["ResourceDialogComponent"],
                 _components_upgrade_dialog_upgrade_dialog_component__WEBPACK_IMPORTED_MODULE_16__["UpgradeDialogComponent"],
-                _directives_touch_touch_directive__WEBPACK_IMPORTED_MODULE_17__["TouchDirective"],
-                _directives_crop_crop_directive__WEBPACK_IMPORTED_MODULE_18__["CropDirective"]
+                _directives_touch_touch_directive__WEBPACK_IMPORTED_MODULE_18__["TouchDirective"],
+                _directives_crop_crop_directive__WEBPACK_IMPORTED_MODULE_19__["CropDirective"],
+                _components_save_dialog_save_dialog_save_dialog_component__WEBPACK_IMPORTED_MODULE_17__["SaveDialogComponent"]
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
@@ -166,7 +169,8 @@ var AppModule = /** @class */ (function () {
             ],
             entryComponents: [
                 _components_resource_dialog_resource_dialog_component__WEBPACK_IMPORTED_MODULE_15__["ResourceDialogComponent"],
-                _components_upgrade_dialog_upgrade_dialog_component__WEBPACK_IMPORTED_MODULE_16__["UpgradeDialogComponent"]
+                _components_upgrade_dialog_upgrade_dialog_component__WEBPACK_IMPORTED_MODULE_16__["UpgradeDialogComponent"],
+                _components_save_dialog_save_dialog_save_dialog_component__WEBPACK_IMPORTED_MODULE_17__["SaveDialogComponent"]
             ],
             providers: [],
             bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_6__["AppComponent"]]
@@ -896,6 +900,92 @@ var ResourceDialogComponent = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/components/save-dialog/save-dialog/save-dialog.component.css":
+/*!******************************************************************************!*\
+  !*** ./src/app/components/save-dialog/save-dialog/save-dialog.component.css ***!
+  \******************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ".full-width {\r\n  width: 100%;\r\n}\r\n"
+
+/***/ }),
+
+/***/ "./src/app/components/save-dialog/save-dialog/save-dialog.component.html":
+/*!*******************************************************************************!*\
+  !*** ./src/app/components/save-dialog/save-dialog/save-dialog.component.html ***!
+  \*******************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div *ngIf=\"!exportMode\">\n  Paste Save\n  <mat-form-field class=\"full-width\">\n    <input matInput placeholder=\"Save Data\" [(ngModel)]=\"saveData\" (submit)=\"exportData()\">\n  </mat-form-field>\n\n  <div>\n    <button mat-raised-button color=\"accent\" (click)=\"exportData()\">Load</button>\n    <button mat-raised-button (click)=\"onNoClick()\">Cancel</button>\n  </div>\n</div>\n\n<div *ngIf=\"exportMode\" style=\"word-wrap: break-word\">\n  <textarea readonly id=\"saveData\" class=\"full-width\">{{saveData}}</textarea>\n  <div>\n    <button mat-raised-button class=\"copy-button\" color=\"accent\" data-clipboard-action=\"copy\" data-clipboard-target=\"#saveData\">Copy to Clipboard</button>\n    <button mat-raised-button (click)=\"onNoClick()\">Close</button>\n  </div>\n</div>\n"
+
+/***/ }),
+
+/***/ "./src/app/components/save-dialog/save-dialog/save-dialog.component.ts":
+/*!*****************************************************************************!*\
+  !*** ./src/app/components/save-dialog/save-dialog/save-dialog.component.ts ***!
+  \*****************************************************************************/
+/*! exports provided: SaveDialogComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SaveDialogComponent", function() { return SaveDialogComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
+/* harmony import */ var clipboard__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! clipboard */ "./node_modules/clipboard/dist/clipboard.js");
+/* harmony import */ var clipboard__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(clipboard__WEBPACK_IMPORTED_MODULE_2__);
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var __param = (undefined && undefined.__param) || function (paramIndex, decorator) {
+    return function (target, key) { decorator(target, key, paramIndex); }
+};
+
+
+
+var SaveDialogComponent = /** @class */ (function () {
+    function SaveDialogComponent(dialogRef, data) {
+        this.dialogRef = dialogRef;
+        this.data = data;
+        this.exportMode = false;
+    }
+    SaveDialogComponent.prototype.ngOnInit = function () {
+        if (this.data.saveData !== undefined) {
+            this.saveData = this.data.saveData;
+            this.exportMode = true;
+            this.clipboard = new clipboard__WEBPACK_IMPORTED_MODULE_2__('.copy-button');
+        }
+    };
+    SaveDialogComponent.prototype.exportData = function () {
+        this.dialogRef.close(this.saveData);
+    };
+    SaveDialogComponent.prototype.onNoClick = function () {
+        this.dialogRef.close();
+    };
+    SaveDialogComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-save-dialog',
+            template: __webpack_require__(/*! ./save-dialog.component.html */ "./src/app/components/save-dialog/save-dialog/save-dialog.component.html"),
+            styles: [__webpack_require__(/*! ./save-dialog.component.css */ "./src/app/components/save-dialog/save-dialog/save-dialog.component.css")]
+        }),
+        __param(1, Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"])(_angular_material__WEBPACK_IMPORTED_MODULE_1__["MAT_DIALOG_DATA"])),
+        __metadata("design:paramtypes", [_angular_material__WEBPACK_IMPORTED_MODULE_1__["MatDialogRef"], Object])
+    ], SaveDialogComponent);
+    return SaveDialogComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/components/settings/settings.component.css":
 /*!************************************************************!*\
   !*** ./src/app/components/settings/settings.component.css ***!
@@ -962,10 +1052,11 @@ var SettingsComponent = /** @class */ (function () {
         }
     };
     SettingsComponent.prototype.exportSave = function () {
-        alert(this.settingsService.exportSave());
+        this.settingsService.openSaveDialog(this.settingsService.exportSave());
     };
     SettingsComponent.prototype.importSave = function () {
-        this.settingsService.importSave(prompt('Paste Save Data'));
+        this.settingsService.openSaveDialog();
+        // this.settingsService.importSave(prompt('Paste Save Data'));
     };
     Object.defineProperty(SettingsComponent.prototype, "autosaveInterval", {
         get: function () {
@@ -1380,7 +1471,7 @@ module.exports = "/* WorkersComponent's private CSS styles */\r\n.workers {\r\n 
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ul class=\"workers\">\n  <mat-accordion multi=\"true\">\n    <mat-expansion-panel expanded=\"true\" *ngFor=\"let worker of getWorkers(true)\">\n      <mat-expansion-panel-header>\n        <mat-panel-title>\n          {{worker.resourceType | titlecase}}\n        </mat-panel-title>\n        <mat-panel-description>\n        </mat-panel-description>\n      </mat-expansion-panel-header>\n\n      <button mat-raised-button [color]=\"canAfford(worker.id) ? 'accent' : 'disabled'\" (click)=\"hireWorker(worker.id)\">\n        <mat-card-title>{{worker.workerCount}} Workers ({{worker.freeWorkers}} Idle)</mat-card-title>\n        <mat-card-subtitle>{{worker.cost | number}} Gold</mat-card-subtitle>\n      </button>\n\n      <div *ngFor=\"let resourceWorker of getAccessibleResourceWorkers(worker)\">\n        <mat-card *ngIf=\"resourceWorker.workable || !adminService.filterAccessible\" matTooltip=\"{{getTooltipMessage(resourceWorker.resourceId)}}\"\n          matTooltipPosition=\"right\">\n          <mat-card-title>{{resourcesService.getResource(resourceWorker.resourceId).name | titlecase}}</mat-card-title>\n          <mat-card-subtitle>{{resourceWorker.workerCount}} Workers</mat-card-subtitle>\n          <mat-slider [color]=\"resourceWorker.sliderSettingValid ? 'accent' : 'warn'\" [id]=\"resourceWorker.resourceId\" [max]=\"worker.workerCount\"\n             [tickInterval]=\"1\" [thumbLabel]=\"true\" (input)=\"checkSliderValue($event)\" (change)=\"updateResourceWorker($event)\">\n          </mat-slider>\n        </mat-card>\n      </div>\n    </mat-expansion-panel>\n  </mat-accordion>\n</ul>\n"
+module.exports = "<ul class=\"workers\">\n  <mat-accordion multi=\"true\">\n    <mat-expansion-panel expanded=\"true\" *ngFor=\"let worker of getWorkers(true, true, true)\">\n      <mat-expansion-panel-header>\n        <mat-panel-title>\n          {{worker.resourceType | titlecase}}\n        </mat-panel-title>\n        <mat-panel-description>\n        </mat-panel-description>\n      </mat-expansion-panel-header>\n\n      <button mat-raised-button [color]=\"canAfford(worker.id) ? 'accent' : 'disabled'\" (click)=\"hireWorker(worker.id)\">\n        <mat-card-title>{{worker.workerCount}} Workers ({{worker.freeWorkers}} Idle)</mat-card-title>\n        <mat-card-subtitle>{{worker.cost | number}} Gold</mat-card-subtitle>\n      </button>\n\n      <div *ngFor=\"let resourceWorker of getAccessibleResourceWorkers(worker)\">\n        <mat-card *ngIf=\"resourceWorker.workable || !adminService.filterAccessible\" matTooltip=\"{{getTooltipMessage(resourceWorker.resourceId)}}\"\n          matTooltipPosition=\"right\">\n          <mat-card-title>{{resourcesService.getResource(resourceWorker.resourceId).name | titlecase}}</mat-card-title>\n          <mat-card-subtitle>{{resourceWorker.workerCount}} Workers</mat-card-subtitle>\n          <mat-slider [color]=\"resourceWorker.sliderSettingValid ? 'accent' : 'warn'\" [id]=\"resourceWorker.resourceId\" [max]=\"worker.workerCount\"\n             [tickInterval]=\"1\" [thumbLabel]=\"true\" (input)=\"checkSliderValue($event)\" (change)=\"updateResourceWorker($event)\">\n          </mat-slider>\n        </mat-card>\n      </div>\n    </mat-expansion-panel>\n  </mat-accordion>\n</ul>\n"
 
 /***/ }),
 
@@ -1425,8 +1516,8 @@ var WorkersComponent = /** @class */ (function () {
     }
     WorkersComponent.prototype.ngOnInit = function () {
     };
-    WorkersComponent.prototype.getWorkers = function (filterByAccessible) {
-        return this.workersService.getWorkers(filterByAccessible);
+    WorkersComponent.prototype.getWorkers = function (filterByAccessible, filterByWorkable, filterByHarvestable) {
+        return this.workersService.getWorkers(filterByAccessible, filterByWorkable, filterByHarvestable);
     };
     WorkersComponent.prototype.getWorker = function (idOrResourceType) {
         return this.workersService.getWorker(idOrResourceType);
@@ -2236,27 +2327,29 @@ var ResourcesService = /** @class */ (function () {
     ResourcesService.prototype.getResource = function (id) {
         return this.resources.find(function (resource) { return resource.id === id; });
     };
-    ResourcesService.prototype.harvestResource = function (id) {
+    ResourcesService.prototype.harvestResource = function (id, multiplier) {
+        if (multiplier === void 0) { multiplier = 1; }
         var resource = this.getResource(id);
-        if (!resource.harvestable || !this.canHarvest(id)) {
+        if (!resource.harvestable || !this.canHarvest(id, multiplier)) {
             return;
         }
         for (var _i = 0, _a = resource.resourceConsumes; _i < _a.length; _i++) {
             var resourceConsume = _a[_i];
-            this.addResourceAmount(resourceConsume.resourceId, -resourceConsume.cost);
+            this.addResourceAmount(resourceConsume.resourceId, -resourceConsume.cost * multiplier);
         }
         this.resources.filter(function (r) { return r.previousTier === resource.resourceTier && r.resourceType === resource.resourceType; })
             .map(function (r) { return r.resourceAccessible = true; });
-        this.addResourceAmount(resource.id, resource.harvestYield);
+        this.addResourceAmount(resource.id, resource.harvestYield * multiplier);
     };
-    ResourcesService.prototype.canHarvest = function (id) {
+    ResourcesService.prototype.canHarvest = function (id, multiplier) {
+        if (multiplier === void 0) { multiplier = 1; }
         var resource = this.getResource(id);
         if (!resource.harvestable) {
             return false;
         }
         for (var _i = 0, _a = resource.resourceConsumes; _i < _a.length; _i++) {
             var resourceConsume = _a[_i];
-            if (this.getResource(resourceConsume.resourceId).amount < resourceConsume.cost) {
+            if (this.getResource(resourceConsume.resourceId).amount < resourceConsume.cost * multiplier) {
                 return false;
             }
         }
@@ -2326,6 +2419,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _resources_resources_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./../resources/resources.service */ "./src/app/services/resources/resources.service.ts");
 /* harmony import */ var _upgrades_upgrades_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./../upgrades/upgrades.service */ "./src/app/services/upgrades/upgrades.service.ts");
 /* harmony import */ var _workers_workers_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./../workers/workers.service */ "./src/app/services/workers/workers.service.ts");
+/* harmony import */ var _components_save_dialog_save_dialog_save_dialog_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../components/save-dialog/save-dialog/save-dialog.component */ "./src/app/components/save-dialog/save-dialog/save-dialog.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2341,15 +2435,32 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
 var SettingsService = /** @class */ (function () {
-    function SettingsService(resourcesService, upgradesService, workersService, snackbar) {
+    function SettingsService(resourcesService, upgradesService, workersService, snackbar, dialog) {
         this.resourcesService = resourcesService;
         this.upgradesService = upgradesService;
         this.workersService = workersService;
         this.snackbar = snackbar;
+        this.dialog = dialog;
         this.autosaveInterval = 900000;
         this.loadGame();
     }
+    SettingsService.prototype.openSaveDialog = function (saveData) {
+        var _this = this;
+        var dialogRef = this.dialog.open(_components_save_dialog_save_dialog_save_dialog_component__WEBPACK_IMPORTED_MODULE_6__["SaveDialogComponent"], {
+            width: '750px',
+            height: '150px',
+            data: saveData === undefined ? {} : { saveData: saveData }
+        });
+        dialogRef.afterClosed().subscribe(function (result) {
+            if (result !== undefined) {
+                if (_this.importSave(result)) {
+                    _this.snackbar.open('Game successfully loaded!', '', { duration: 2000 });
+                }
+            }
+        });
+    };
     SettingsService.prototype.setAutosave = function () {
         var _this = this;
         if (this.autosaveSubscribe !== undefined) {
@@ -2371,8 +2482,9 @@ var SettingsService = /** @class */ (function () {
         if (saveData === null) {
             return;
         }
-        this.importSave(saveData);
-        this.snackbar.open('Game successfully loaded!', '', { duration: 2000 });
+        if (this.importSave(saveData)) {
+            this.snackbar.open('Game successfully loaded!', '', { duration: 2000 });
+        }
     };
     SettingsService.prototype.deleteSave = function () {
         localStorage.removeItem('clickerGameSaveData');
@@ -2462,11 +2574,13 @@ var SettingsService = /** @class */ (function () {
                 }
             }
             this.autosaveInterval = saveData.autosaveInterval;
+            return true;
         }
         catch (error) {
             this.snackbar.open("Error loading save data: " + error, '', { duration: 5000 });
             this.importSave(backupSave);
             console.error(error);
+            return false;
         }
     };
     SettingsService = __decorate([
@@ -2476,7 +2590,8 @@ var SettingsService = /** @class */ (function () {
         __metadata("design:paramtypes", [_resources_resources_service__WEBPACK_IMPORTED_MODULE_3__["ResourcesService"],
             _upgrades_upgrades_service__WEBPACK_IMPORTED_MODULE_4__["UpgradesService"],
             _workers_workers_service__WEBPACK_IMPORTED_MODULE_5__["WorkersService"],
-            _angular_material__WEBPACK_IMPORTED_MODULE_1__["MatSnackBar"]])
+            _angular_material__WEBPACK_IMPORTED_MODULE_1__["MatSnackBar"],
+            _angular_material__WEBPACK_IMPORTED_MODULE_1__["MatDialog"]])
     ], SettingsService);
     return SettingsService;
 }());
@@ -2846,12 +2961,19 @@ var WorkersService = /** @class */ (function () {
         this.messagesService = messagesService;
         this.workers = baseWorkers;
     }
-    WorkersService.prototype.getWorkers = function (filterByAccessible) {
+    WorkersService.prototype.getWorkers = function (filterByAccessible, filterByWorkable, filterByHarvestable) {
         var _this = this;
+        var workers = this.workers;
         if (filterByAccessible) {
-            return this.workers.filter(function (worker) { return worker.workersByResource.some(function (rw) { return _this.resourcesService.getResource(rw.resourceId).resourceAccessible; }); });
+            workers = this.workers.filter(function (worker) { return worker.workersByResource.some(function (rw) { return _this.resourcesService.getResource(rw.resourceId).resourceAccessible; }); });
         }
-        return this.workers;
+        if (filterByWorkable) {
+            workers = this.workers.filter(function (worker) { return worker.workersByResource.some(function (rw) { return rw.workable; }); });
+        }
+        if (filterByHarvestable) {
+            workers = this.workers.filter(function (worker) { return worker.workersByResource.some(function (rw) { return _this.resourcesService.getResource(rw.resourceId).harvestable; }); });
+        }
+        return workers;
     };
     WorkersService.prototype.getWorker = function (idOrResourceType) {
         return typeof idOrResourceType === 'number' ?
@@ -2878,7 +3000,7 @@ var WorkersService = /** @class */ (function () {
                 if (resourceWorker.workerCount === 0) {
                     continue;
                 }
-                this.resourcesService.addResourceAmount(resourceWorker.resourceId, resourceWorker.workerYield * resourceWorker.workerCount);
+                this.resourcesService.harvestResource(resourceWorker.resourceId, resourceWorker.workerYield * resourceWorker.workerCount);
             }
         }
     };
@@ -2960,7 +3082,7 @@ module.exports = [{"id":0,"upgradeType":"RESOURCE","name":"Refined Iron Axe","de
 /*! exports provided: 0, 1, 2, default */
 /***/ (function(module) {
 
-module.exports = [{"id":0,"cost":500,"resourceType":"WOOD","workerCount":0,"freeWorkers":0,"workersByResource":[{"resourceId":1,"workable":true,"workerCount":0,"workerYield":1,"sliderSettingValid":true},{"resourceId":7,"workable":true,"workerCount":0,"workerYield":1,"sliderSettingValid":true},{"resourceId":8,"workable":false,"workerCount":0,"workerYield":1,"sliderSettingValid":true},{"resourceId":9,"workable":false,"workerCount":0,"workerYield":1,"sliderSettingValid":true},{"resourceId":15,"workable":false,"workerCount":0,"workerYield":1,"sliderSettingValid":true},{"resourceId":25,"workable":false,"workerCount":0,"workerYield":1,"sliderSettingValid":true},{"resourceId":16,"workable":false,"workerCount":0,"workerYield":1,"sliderSettingValid":true},{"resourceId":17,"workable":false,"workerCount":0,"workerYield":1,"sliderSettingValid":true}]},{"id":1,"cost":2000,"resourceType":"METAL","workerCount":0,"freeWorkers":0,"workersByResource":[{"resourceId":2,"workable":true,"workerCount":0,"workerYield":1,"sliderSettingValid":true},{"resourceId":3,"workable":true,"workerCount":0,"workerYield":1,"sliderSettingValid":true},{"resourceId":4,"workable":false,"workerCount":0,"workerYield":1,"sliderSettingValid":true},{"resourceId":5,"workable":false,"workerCount":0,"workerYield":1,"sliderSettingValid":true},{"resourceId":6,"workable":false,"workerCount":0,"workerYield":1,"sliderSettingValid":true},{"resourceId":10,"workable":false,"workerCount":0,"workerYield":1,"sliderSettingValid":true},{"resourceId":11,"workable":false,"workerCount":0,"workerYield":1,"sliderSettingValid":true},{"resourceId":12,"workable":false,"workerCount":0,"workerYield":1,"sliderSettingValid":true},{"resourceId":18,"workable":false,"workerCount":0,"workerYield":1,"sliderSettingValid":true},{"resourceId":19,"workable":false,"workerCount":0,"workerYield":1,"sliderSettingValid":true},{"resourceId":20,"workable":false,"workerCount":0,"workerYield":1,"sliderSettingValid":true},{"resourceId":21,"workable":false,"workerCount":0,"workerYield":1,"sliderSettingValid":true},{"resourceId":22,"workable":false,"workerCount":0,"workerYield":1,"sliderSettingValid":true},{"resourceId":23,"workable":false,"workerCount":0,"workerYield":1,"sliderSettingValid":true},{"resourceId":24,"workable":false,"workerCount":0,"workerYield":1,"sliderSettingValid":true}]},{"id":2,"cost":1350,"resourceType":"MINERAL","workerCount":0,"freeWorkers":0,"workersByResource":[{"resourceId":13,"workable":true,"workerCount":0,"workerYield":1,"sliderSettingValid":true},{"resourceId":26,"workable":false,"workerCount":0,"workerYield":1,"sliderSettingValid":true},{"resourceId":27,"workable":false,"workerCount":0,"workerYield":1,"sliderSettingValid":true},{"resourceId":28,"workable":false,"workerCount":0,"workerYield":1,"sliderSettingValid":true},{"resourceId":29,"workable":false,"workerCount":0,"workerYield":1,"sliderSettingValid":true},{"resourceId":30,"workable":false,"workerCount":0,"workerYield":1,"sliderSettingValid":true},{"resourceId":31,"workable":false,"workerCount":0,"workerYield":1,"sliderSettingValid":true}]}];
+module.exports = [{"id":0,"cost":500,"resourceType":"WOOD","workerCount":0,"freeWorkers":0,"workersByResource":[{"resourceId":1,"workable":true,"workerCount":0,"workerYield":1,"sliderSettingValid":true},{"resourceId":7,"workable":false,"workerCount":0,"workerYield":1,"sliderSettingValid":true},{"resourceId":8,"workable":false,"workerCount":0,"workerYield":1,"sliderSettingValid":true},{"resourceId":9,"workable":false,"workerCount":0,"workerYield":1,"sliderSettingValid":true},{"resourceId":15,"workable":false,"workerCount":0,"workerYield":1,"sliderSettingValid":true},{"resourceId":25,"workable":false,"workerCount":0,"workerYield":1,"sliderSettingValid":true},{"resourceId":16,"workable":false,"workerCount":0,"workerYield":1,"sliderSettingValid":true},{"resourceId":17,"workable":false,"workerCount":0,"workerYield":1,"sliderSettingValid":true}]},{"id":1,"cost":2000,"resourceType":"METAL","workerCount":0,"freeWorkers":0,"workersByResource":[{"resourceId":2,"workable":false,"workerCount":0,"workerYield":1,"sliderSettingValid":true},{"resourceId":3,"workable":false,"workerCount":0,"workerYield":1,"sliderSettingValid":true},{"resourceId":4,"workable":false,"workerCount":0,"workerYield":1,"sliderSettingValid":true},{"resourceId":5,"workable":false,"workerCount":0,"workerYield":1,"sliderSettingValid":true},{"resourceId":6,"workable":false,"workerCount":0,"workerYield":1,"sliderSettingValid":true},{"resourceId":10,"workable":false,"workerCount":0,"workerYield":1,"sliderSettingValid":true},{"resourceId":11,"workable":false,"workerCount":0,"workerYield":1,"sliderSettingValid":true},{"resourceId":12,"workable":false,"workerCount":0,"workerYield":1,"sliderSettingValid":true},{"resourceId":18,"workable":false,"workerCount":0,"workerYield":1,"sliderSettingValid":true},{"resourceId":19,"workable":false,"workerCount":0,"workerYield":1,"sliderSettingValid":true},{"resourceId":20,"workable":false,"workerCount":0,"workerYield":1,"sliderSettingValid":true},{"resourceId":21,"workable":false,"workerCount":0,"workerYield":1,"sliderSettingValid":true},{"resourceId":22,"workable":false,"workerCount":0,"workerYield":1,"sliderSettingValid":true},{"resourceId":23,"workable":false,"workerCount":0,"workerYield":1,"sliderSettingValid":true},{"resourceId":24,"workable":false,"workerCount":0,"workerYield":1,"sliderSettingValid":true}]},{"id":2,"cost":1350,"resourceType":"MINERAL","workerCount":0,"freeWorkers":0,"workersByResource":[{"resourceId":13,"workable":false,"workerCount":0,"workerYield":1,"sliderSettingValid":true},{"resourceId":26,"workable":false,"workerCount":0,"workerYield":1,"sliderSettingValid":true},{"resourceId":27,"workable":false,"workerCount":0,"workerYield":1,"sliderSettingValid":true},{"resourceId":28,"workable":false,"workerCount":0,"workerYield":1,"sliderSettingValid":true},{"resourceId":29,"workable":false,"workerCount":0,"workerYield":1,"sliderSettingValid":true},{"resourceId":30,"workable":false,"workerCount":0,"workerYield":1,"sliderSettingValid":true},{"resourceId":31,"workable":false,"workerCount":0,"workerYield":1,"sliderSettingValid":true}]}];
 
 /***/ }),
 
