@@ -96,22 +96,26 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/platform-browser */ "./node_modules/@angular/platform-browser/fesm5/platform-browser.js");
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
 /* harmony import */ var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/platform-browser/animations */ "./node_modules/@angular/platform-browser/fesm5/animations.js");
-/* harmony import */ var _material_import_material_import_module__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./material-import/material-import.module */ "./src/app/material-import/material-import.module.ts");
-/* harmony import */ var src_app_pipe_pipe_module__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! src/app/pipe/pipe.module */ "./src/app/pipe/pipe.module.ts");
-/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
-/* harmony import */ var _components_clicker_main_clicker_main_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/clicker-main/clicker-main.component */ "./src/app/components/clicker-main/clicker-main.component.ts");
-/* harmony import */ var _components_messages_messages_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/messages/messages.component */ "./src/app/components/messages/messages.component.ts");
-/* harmony import */ var _components_workers_workers_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./components/workers/workers.component */ "./src/app/components/workers/workers.component.ts");
-/* harmony import */ var _components_store_store_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./components/store/store.component */ "./src/app/components/store/store.component.ts");
-/* harmony import */ var _components_upgrades_upgrades_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./components/upgrades/upgrades.component */ "./src/app/components/upgrades/upgrades.component.ts");
-/* harmony import */ var _components_map_map_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./components/map/map.component */ "./src/app/components/map/map.component.ts");
-/* harmony import */ var _components_settings_settings_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./components/settings/settings.component */ "./src/app/components/settings/settings.component.ts");
-/* harmony import */ var _components_admin_debug_admin_debug_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./components/admin-debug/admin-debug.component */ "./src/app/components/admin-debug/admin-debug.component.ts");
-/* harmony import */ var _components_resource_dialog_resource_dialog_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./components/resource-dialog/resource-dialog.component */ "./src/app/components/resource-dialog/resource-dialog.component.ts");
-/* harmony import */ var _components_upgrade_dialog_upgrade_dialog_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./components/upgrade-dialog/upgrade-dialog.component */ "./src/app/components/upgrade-dialog/upgrade-dialog.component.ts");
-/* harmony import */ var _components_save_dialog_save_dialog_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./components/save-dialog/save-dialog.component */ "./src/app/components/save-dialog/save-dialog.component.ts");
-/* harmony import */ var _directives_touch_touch_directive__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./directives/touch/touch.directive */ "./src/app/directives/touch/touch.directive.ts");
-/* harmony import */ var _directives_crop_crop_directive__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./directives/crop/crop.directive */ "./src/app/directives/crop/crop.directive.ts");
+/* harmony import */ var _durwella_zoomable_canvas__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @durwella/zoomable-canvas */ "./node_modules/@durwella/zoomable-canvas/index.js");
+/* harmony import */ var _durwella_zoomable_canvas__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_durwella_zoomable_canvas__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _material_import_material_import_module__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./material-import/material-import.module */ "./src/app/material-import/material-import.module.ts");
+/* harmony import */ var src_app_pipe_pipe_module__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! src/app/pipe/pipe.module */ "./src/app/pipe/pipe.module.ts");
+/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
+/* harmony import */ var _components_clicker_main_clicker_main_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/clicker-main/clicker-main.component */ "./src/app/components/clicker-main/clicker-main.component.ts");
+/* harmony import */ var _components_messages_messages_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./components/messages/messages.component */ "./src/app/components/messages/messages.component.ts");
+/* harmony import */ var _components_workers_workers_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./components/workers/workers.component */ "./src/app/components/workers/workers.component.ts");
+/* harmony import */ var _components_store_store_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./components/store/store.component */ "./src/app/components/store/store.component.ts");
+/* harmony import */ var _components_upgrades_upgrades_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./components/upgrades/upgrades.component */ "./src/app/components/upgrades/upgrades.component.ts");
+/* harmony import */ var _components_map_map_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./components/map/map.component */ "./src/app/components/map/map.component.ts");
+/* harmony import */ var _components_settings_settings_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./components/settings/settings.component */ "./src/app/components/settings/settings.component.ts");
+/* harmony import */ var _components_admin_debug_admin_debug_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./components/admin-debug/admin-debug.component */ "./src/app/components/admin-debug/admin-debug.component.ts");
+/* harmony import */ var _components_resource_dialog_resource_dialog_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./components/resource-dialog/resource-dialog.component */ "./src/app/components/resource-dialog/resource-dialog.component.ts");
+/* harmony import */ var _components_upgrade_dialog_upgrade_dialog_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./components/upgrade-dialog/upgrade-dialog.component */ "./src/app/components/upgrade-dialog/upgrade-dialog.component.ts");
+/* harmony import */ var _components_save_dialog_save_dialog_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./components/save-dialog/save-dialog.component */ "./src/app/components/save-dialog/save-dialog.component.ts");
+/* harmony import */ var _directives_touch_touch_directive__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./directives/touch/touch.directive */ "./src/app/directives/touch/touch.directive.ts");
+/* harmony import */ var _directives_crop_crop_directive__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./directives/crop/crop.directive */ "./src/app/directives/crop/crop.directive.ts");
+/* harmony import */ var _directives_map_map_directive__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./directives/map/map.directive */ "./src/app/directives/map/map.directive.ts");
+/* harmony import */ var _directives_no_scroll_no_scroll_directive__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./directives/no-scroll/no-scroll.directive */ "./src/app/directives/no-scroll/no-scroll.directive.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -138,42 +142,48 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 
 
+
+
+
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
     AppModule = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"])({
             declarations: [
-                _app_component__WEBPACK_IMPORTED_MODULE_6__["AppComponent"],
-                _components_clicker_main_clicker_main_component__WEBPACK_IMPORTED_MODULE_7__["ClickerMainComponent"],
-                _components_messages_messages_component__WEBPACK_IMPORTED_MODULE_8__["MessagesComponent"],
-                _components_workers_workers_component__WEBPACK_IMPORTED_MODULE_9__["WorkersComponent"],
-                _components_store_store_component__WEBPACK_IMPORTED_MODULE_10__["StoreComponent"],
-                _components_upgrades_upgrades_component__WEBPACK_IMPORTED_MODULE_11__["UpgradesComponent"],
-                _components_settings_settings_component__WEBPACK_IMPORTED_MODULE_13__["SettingsComponent"],
-                _components_admin_debug_admin_debug_component__WEBPACK_IMPORTED_MODULE_14__["AdminDebugComponent"],
-                _components_map_map_component__WEBPACK_IMPORTED_MODULE_12__["MapComponent"],
-                _components_resource_dialog_resource_dialog_component__WEBPACK_IMPORTED_MODULE_15__["ResourceDialogComponent"],
-                _components_upgrade_dialog_upgrade_dialog_component__WEBPACK_IMPORTED_MODULE_16__["UpgradeDialogComponent"],
-                _directives_touch_touch_directive__WEBPACK_IMPORTED_MODULE_18__["TouchDirective"],
-                _directives_crop_crop_directive__WEBPACK_IMPORTED_MODULE_19__["CropDirective"],
-                _components_save_dialog_save_dialog_component__WEBPACK_IMPORTED_MODULE_17__["SaveDialogComponent"]
+                _app_component__WEBPACK_IMPORTED_MODULE_7__["AppComponent"],
+                _durwella_zoomable_canvas__WEBPACK_IMPORTED_MODULE_4__["ZoomableCanvasComponent"],
+                _components_clicker_main_clicker_main_component__WEBPACK_IMPORTED_MODULE_8__["ClickerMainComponent"],
+                _components_messages_messages_component__WEBPACK_IMPORTED_MODULE_9__["MessagesComponent"],
+                _components_workers_workers_component__WEBPACK_IMPORTED_MODULE_10__["WorkersComponent"],
+                _components_store_store_component__WEBPACK_IMPORTED_MODULE_11__["StoreComponent"],
+                _components_upgrades_upgrades_component__WEBPACK_IMPORTED_MODULE_12__["UpgradesComponent"],
+                _components_settings_settings_component__WEBPACK_IMPORTED_MODULE_14__["SettingsComponent"],
+                _components_admin_debug_admin_debug_component__WEBPACK_IMPORTED_MODULE_15__["AdminDebugComponent"],
+                _components_map_map_component__WEBPACK_IMPORTED_MODULE_13__["MapComponent"],
+                _components_resource_dialog_resource_dialog_component__WEBPACK_IMPORTED_MODULE_16__["ResourceDialogComponent"],
+                _components_upgrade_dialog_upgrade_dialog_component__WEBPACK_IMPORTED_MODULE_17__["UpgradeDialogComponent"],
+                _directives_touch_touch_directive__WEBPACK_IMPORTED_MODULE_19__["TouchDirective"],
+                _directives_crop_crop_directive__WEBPACK_IMPORTED_MODULE_20__["CropDirective"],
+                _components_save_dialog_save_dialog_component__WEBPACK_IMPORTED_MODULE_18__["SaveDialogComponent"],
+                _directives_map_map_directive__WEBPACK_IMPORTED_MODULE_21__["MapDirective"],
+                _directives_no_scroll_no_scroll_directive__WEBPACK_IMPORTED_MODULE_22__["NoScrollDirective"]
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
                 _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormsModule"],
                 _angular_forms__WEBPACK_IMPORTED_MODULE_2__["ReactiveFormsModule"],
                 _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_3__["BrowserAnimationsModule"],
-                _material_import_material_import_module__WEBPACK_IMPORTED_MODULE_4__["MaterialImportModule"],
-                src_app_pipe_pipe_module__WEBPACK_IMPORTED_MODULE_5__["PipeModule"]
+                _material_import_material_import_module__WEBPACK_IMPORTED_MODULE_5__["MaterialImportModule"],
+                src_app_pipe_pipe_module__WEBPACK_IMPORTED_MODULE_6__["PipeModule"]
             ],
             entryComponents: [
-                _components_resource_dialog_resource_dialog_component__WEBPACK_IMPORTED_MODULE_15__["ResourceDialogComponent"],
-                _components_upgrade_dialog_upgrade_dialog_component__WEBPACK_IMPORTED_MODULE_16__["UpgradeDialogComponent"],
-                _components_save_dialog_save_dialog_component__WEBPACK_IMPORTED_MODULE_17__["SaveDialogComponent"]
+                _components_resource_dialog_resource_dialog_component__WEBPACK_IMPORTED_MODULE_16__["ResourceDialogComponent"],
+                _components_upgrade_dialog_upgrade_dialog_component__WEBPACK_IMPORTED_MODULE_17__["UpgradeDialogComponent"],
+                _components_save_dialog_save_dialog_component__WEBPACK_IMPORTED_MODULE_18__["SaveDialogComponent"]
             ],
             providers: [],
-            bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_6__["AppComponent"]]
+            bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_7__["AppComponent"]]
         })
     ], AppModule);
     return AppModule;
@@ -451,7 +461,7 @@ var ClickerMainComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".building-img {\r\n  position: absolute;\r\n  z-index: 1;\r\n}\r\n\r\n.map-img {\r\n  z-index: -2;\r\n}\r\n\r\nmat-card {\r\n  position: absolute;\r\n  left: 120%;\r\n  z-index: 2;\r\n\r\n  width: intrinsic;\r\n  width: -moz-max-content;\r\n  width: -webkit-max-content;\r\n}\r\n\r\nmat-grid-tile {\r\n  overflow: visible;\r\n}\r\n\r\n.card-tail {\r\n  position: absolute;\r\n  z-index: 2;\r\n  right: -10px;\r\n  top: 14px;\r\n}\r\n\r\n.selected-border {\r\n  position: absolute;\r\n  z-index: 2;\r\n  top: -2px;\r\n}\r\n"
+module.exports = ".building-img {\r\n  position: absolute;\r\n  z-index: 1;\r\n}\r\n\r\n.canvas-container {\r\n  width: 1000px;\r\n  height: 1000px;\r\n}\r\n\r\n.map-img {\r\n  z-index: -2;\r\n}\r\n\r\nmat-card {\r\n  position: absolute;\r\n  left: 120%;\r\n  z-index: 2;\r\n\r\n  width: intrinsic;\r\n  width: -moz-max-content;\r\n  width: -webkit-max-content;\r\n}\r\n\r\nmat-grid-tile {\r\n  overflow: visible;\r\n}\r\n\r\n.card-tail {\r\n  position: absolute;\r\n  z-index: 2;\r\n  right: -10px;\r\n  top: 14px;\r\n}\r\n\r\n.selected-border {\r\n  position: absolute;\r\n  z-index: 2;\r\n  top: -2px;\r\n}\r\n"
 
 /***/ }),
 
@@ -462,7 +472,7 @@ module.exports = ".building-img {\r\n  position: absolute;\r\n  z-index: 1;\r\n}
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"map noselect\" [ngStyle]=\"{ 'width.px': (adminService.clampMap ? windowWidth : getColumnCount()) * tilePixels}\">\n  <mat-grid-list [cols]=\"(adminService.clampMap ? windowHeight : getRowCount())\" gutterSize=\"0\" rowHeight=\"{{tilePixels}}\">\n    <mat-grid-tile *ngFor=\"let tile of getMap(adminService.clampMap)\">\n      <mat-card *ngIf=\"showSelectedTileDialog && selectedTile === tile\">\n        <mat-card-title>{{selectedBuilding.name}}</mat-card-title>\n        <mat-card-content>\n          {{selectedBuilding.description}}\n          <br />\n          <div *ngIf=\"selectedBuildingTile === undefined\">\n            <h3>Costs</h3>\n            <div *ngFor=\"let resourceCost of selectedBuilding.resourceCosts\">\n              {{resourcesService.getResource(resourceCost.resourceId).name | titlecase }}: {{resourceCost.resourceCost}}\n            </div>\n            <button mat-raised-button color=\"primary\" [disabled]=\"!canAffordBuilding(selectedBuilding.tileType)\" (click)=\"createBuilding(selectedTile, selectedBuilding.tileType)\">\n              Build\n            </button>\n          </div>\n          <div *ngIf=\"selectedBuildingTile !== undefined\">\n            <h3>Placed Building: {{selectedBuildingTile.name | titlecase}}</h3>\n            <button mat-raised-button color=\"warn\" (click)=\"clearBuilding(selectedTile)\">\n              Remove\n            </button>\n          </div>\n        </mat-card-content>\n      </mat-card>\n\n      <a (click)=\"selectTile(tile)\">\n        <img class=\"building-img\" *ngIf=\"tile.buildingTileType !== undefined\" src={{getBuildingTileSprite(tile)}} onmousedown=\"return false\">\n        <img class=\"map-img\" appcrop src='{{getMapTileSprite(tile)}}' onmousedown=\"return false\">\n\n        <div *ngIf=\"showSelectedTileDialog && selectedTile === tile\">\n          <img class=\"card-tail\" src=\"../../../assets/sprites/card_tail.png\" onmousedown=\"return false\">\n          <img class=\"selected-border\" src=\"../../../assets/sprites/selected_border.png\" onmousedown=\"return false\">\n        </div>\n      </a>\n    </mat-grid-tile>\n  </mat-grid-list>\n</div>\n"
+module.exports = "<div style=\"display: none\">\r\n  <img id=\"map\" src=\"../../../assets/tilemap/MapTest.png\">\r\n  <img id=\"test\" src=\"../../../assets/sprites/birch.png\">\r\n  <img id=\"grass\" src=\"../../../assets/sprites/grass.png\">\r\n  <img id=\"mountain\" src=\"../../../assets/sprites/mountain.png\">\r\n  <img id=\"water\" src=\"../../../assets/sprites/water.png\">\r\n  <img id=\"wall\" src=\"../../../assets/sprites/wall.png\">\r\n</div>\r\n<canvas appNoScroll appMap width=\"960\" height=\"750\"></canvas>\r\n<br />\r\n<br />\r\n\r\n<div>\r\n  <mat-checkbox [(ngModel)]=\"deleteMode\" color=\"warn\">Delete Buildings</mat-checkbox>\r\n\r\n  <div *ngFor=\"let buildingTile of buildingTileArray\">\r\n    <button mat-raised-button [color]=\"selectedBuilding === buildingTile && !deleteMode ? 'accent' : ''\">\r\n      <mat-card-title>{{buildingTile.name}}</mat-card-title>\r\n      <mat-card-subtitle>{{buildingTile.description}}</mat-card-subtitle>\r\n      <mat-card-content>\r\n        <h3>Costs</h3>\r\n        <div *ngFor=\"let resourceCost of buildingTile.resourceCosts\">\r\n          {{resourcesService.getResource(resourceCost.resourceId).name | titlecase }}: {{resourceCost.resourceCost}}\r\n        </div>\r\n        <b><mat-icon *ngIf=\"canAffordBuilding(buildingTile.tileType)\" color=\"primary\">check</mat-icon></b>\r\n      </mat-card-content>\r\n    </button>\r\n  </div>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -502,51 +512,74 @@ var MapComponent = /** @class */ (function () {
         this.adminService = adminService;
         this.mapTileTypes = _objects_tile__WEBPACK_IMPORTED_MODULE_1__["MapTileType"];
         this.buildingTileTypes = _objects_tile__WEBPACK_IMPORTED_MODULE_1__["BuildingTileType"];
-        this.showSelectedTileDialog = false;
+        this.deleteMode = false;
         this.tilePixels = 48;
         this.topLeftX = 0;
         this.topLeftY = 0;
         this.windowWidth = 15;
         this.windowHeight = 15;
+        this.transform = d3.zoomIdentity;
+        this.images = [{ name: 'map', x: 0, y: 0, width: 1600, height: 1600 }];
     }
     MapComponent.prototype.ngOnInit = function () {
-        this.setCameraLocation(0, 0);
-        this.selectedBuilding = this.mapService.buildingTiles[_objects_tile__WEBPACK_IMPORTED_MODULE_1__["BuildingTileType"].Wall];
+        this.selectedBuilding = this.buildingTiles[_objects_tile__WEBPACK_IMPORTED_MODULE_1__["BuildingTileType"].Wall];
     };
-    MapComponent.prototype.processMapInput = function (event) {
-        switch (event.key) {
-            case 'w':
-            case 'W':
-            case 'ArrowUp':
-                this.setCameraLocation(0, -1);
-                break;
-            case 'a':
-            case 'A':
-            case 'ArrowLeft':
-                this.setCameraLocation(-1, 0);
-                break;
-            case 's':
-            case 'S':
-            case 'ArrowDown':
-                this.setCameraLocation(0, 1);
-                break;
-            case 'd':
-            case 'D':
-            case 'ArrowRight':
-                this.setCameraLocation(1, 0);
-                break;
-        }
+    MapComponent.prototype.ngAfterViewInit = function () {
+        this.canvas = d3.select('canvas');
+        this.context = this.canvas.node().getContext('2d');
+        this.width = this.canvas.property('width');
+        this.height = this.canvas.property('height');
+        this.canvas.call(d3.zoom()
+            .scaleExtent([1 / 2, 4])
+            .translateExtent([[0, 0], [2400, 2400]])
+            .on('zoom', this.zoomed(this)));
+        this.canvas.on('click', this.clickTile(this));
+        this.context.save();
+        this.context.clearRect(0, 0, this.width, this.height);
+        this.context.translate(this.transform.x, this.transform.y);
+        this.context.scale(this.transform.k, this.transform.k);
+        this.drawCanvas();
+        this.context.restore();
     };
-    MapComponent.prototype.selectTile = function (tile) {
-        this.selectedTile = tile;
-        this.showSelectedTileDialog = true;
+    MapComponent.prototype.zoomed = function (self) {
+        return function (d) {
+            self.transform = d3.event.transform;
+            self.context.save();
+            self.context.clearRect(0, 0, self.width, self.height);
+            self.context.translate(self.transform.x, self.transform.y);
+            self.context.scale(self.transform.k, self.transform.k);
+            self.drawCanvas();
+            self.context.restore();
+        };
+    };
+    MapComponent.prototype.clickTile = function (self) {
+        return function (d) {
+            var coordinates = d3.mouse(this);
+            coordinates[0] = Math.floor(self.transform.invertX(coordinates[0]) / 16);
+            coordinates[1] = Math.floor(self.transform.invertY(coordinates[1]) / 16);
+            var tile = self.mapService.tiledMap[coordinates[0] + coordinates[1] * self.mapService.mapWidth];
+            if (self.deleteMode) {
+                self.clearBuilding(tile);
+            }
+            else {
+                self.createBuilding(tile, self.selectedBuilding.tileType);
+            }
+            self.context.save();
+            self.context.clearRect(0, 0, self.width, self.height);
+            self.context.translate(self.transform.x, self.transform.y);
+            self.context.scale(self.transform.k, self.transform.k);
+            self.drawCanvas();
+            self.context.restore();
+        };
+    };
+    MapComponent.prototype.drawCanvas = function () {
+        this.mapService.loadImages();
     };
     MapComponent.prototype.canAffordBuilding = function (buildingType) {
-        return this.mapService.canAffordBuilding(this.mapService.buildingTiles[buildingType]);
+        return this.mapService.canAffordBuilding(this.buildingTiles[buildingType]);
     };
     MapComponent.prototype.createBuilding = function (tile, buildingType) {
         var buildingCreated = this.mapService.createBuilding(tile, buildingType);
-        this.showSelectedTileDialog = !buildingCreated;
     };
     MapComponent.prototype.clearBuilding = function (tile) {
         this.mapService.clearBuilding(tile);
@@ -554,78 +587,38 @@ var MapComponent = /** @class */ (function () {
     MapComponent.prototype.getMap = function (clampToWindow) {
         return this.mapService.getMap(clampToWindow, this.topLeftX, this.topLeftY, this.windowWidth, this.windowHeight);
     };
-    MapComponent.prototype.getMapTileSprite = function (tile) {
-        return this.mapService.getMapTileSprite(tile);
-    };
-    MapComponent.prototype.getBuildingTileSprite = function (tile) {
-        return this.mapService.getBuildingTileSprite(tile);
-    };
-    MapComponent.prototype.getCameraLocation = function () {
-        return this.mapService.getCameraLocation();
-    };
-    MapComponent.prototype.setCameraLocation = function (xOffset, yOffset) {
-        var moveSuccessful = this.mapService.setCameraLocation(xOffset, yOffset);
-        if (!moveSuccessful) {
-            return;
-        }
-        this.topLeftX = Math.floor(this.mapService.cameraX - this.windowWidth / 2);
-        this.topLeftY = Math.floor(this.mapService.cameraY - this.windowHeight / 2);
-        if (this.topLeftX < 0) {
-            this.topLeftX = 0;
-        }
-        else if (this.topLeftX + this.windowWidth > this.mapService.mapWidth) {
-            this.topLeftX = this.mapService.mapWidth - this.windowWidth;
-        }
-        if (this.topLeftY < 0) {
-            this.topLeftY = 0;
-        }
-        else if (this.topLeftY + this.windowHeight > this.mapService.mapHeight) {
-            this.topLeftY = this.mapService.mapHeight - this.windowHeight;
-        }
-        var cameraCenter = this.getCameraLocation();
-        var distanceFromCenterX = Math.abs(cameraCenter[0] - (this.topLeftX + this.windowWidth / 2));
-        var distanceFromCenterY = Math.abs(cameraCenter[1] - (this.topLeftY + this.windowHeight / 2));
-        var newCameraX = this.topLeftX + xOffset;
-        var newCameraY = this.topLeftY + yOffset;
-        if (newCameraX >= 0 && newCameraX + this.windowWidth <= this.getColumnCount() && distanceFromCenterX >= 1) {
-            this.topLeftX = newCameraX;
-        }
-        if (newCameraY >= 0 && newCameraY + this.windowHeight <= this.getRowCount() && distanceFromCenterY >= 1) {
-            this.topLeftY = newCameraY;
-        }
-    };
-    Object.defineProperty(MapComponent.prototype, "selectedMapTile", {
+    Object.defineProperty(MapComponent.prototype, "buildingTiles", {
         get: function () {
-            if (this.selectedTile === undefined) {
-                return undefined;
-            }
-            return this.mapService.mapTiles[this.selectedTile.mapTileType];
+            return this.mapService.buildingTiles;
         },
         enumerable: true,
         configurable: true
     });
-    Object.defineProperty(MapComponent.prototype, "selectedBuildingTile", {
+    Object.defineProperty(MapComponent.prototype, "buildingTileArray", {
         get: function () {
-            if (this.selectedTile === undefined || this.selectedTile.buildingTileType === undefined) {
-                return undefined;
+            var buildingTiles = [];
+            for (var key in this.buildingTiles) {
+                buildingTiles.push(this.buildingTiles[key]);
             }
-            return this.mapService.buildingTiles[this.selectedTile.buildingTileType];
+            return buildingTiles;
         },
         enumerable: true,
         configurable: true
     });
-    MapComponent.prototype.getRowCount = function () {
-        return this.mapService.getRowCount();
-    };
-    MapComponent.prototype.getColumnCount = function () {
-        return this.mapService.getColumnCount();
-    };
-    __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["HostListener"])('document:keypress', ['$event']),
-        __metadata("design:type", Function),
-        __metadata("design:paramtypes", [KeyboardEvent]),
-        __metadata("design:returntype", void 0)
-    ], MapComponent.prototype, "processMapInput", null);
+    Object.defineProperty(MapComponent.prototype, "rowCount", {
+        get: function () {
+            return this.mapService.getRowCount();
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(MapComponent.prototype, "columnCount", {
+        get: function () {
+            return this.mapService.getColumnCount();
+        },
+        enumerable: true,
+        configurable: true
+    });
     MapComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-map',
@@ -1611,6 +1604,98 @@ var CropDirective = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/directives/map/map.directive.ts":
+/*!*************************************************!*\
+  !*** ./src/app/directives/map/map.directive.ts ***!
+  \*************************************************/
+/*! exports provided: MapDirective */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MapDirective", function() { return MapDirective; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _services_map_map_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./../../services/map/map.service */ "./src/app/services/map/map.service.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var MapDirective = /** @class */ (function () {
+    function MapDirective(element, renderer, mapService) {
+        this.element = element;
+        this.renderer = renderer;
+        this.mapService = mapService;
+    }
+    MapDirective.prototype.ngAfterViewInit = function () {
+        this.canvas = this.element.nativeElement;
+        this.context = this.canvas.getContext('2d');
+        this.mapService.context = this.context;
+    };
+    MapDirective = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Directive"])({
+            selector: '[appMap]'
+        }),
+        __metadata("design:paramtypes", [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ElementRef"],
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["Renderer2"],
+            _services_map_map_service__WEBPACK_IMPORTED_MODULE_1__["MapService"]])
+    ], MapDirective);
+    return MapDirective;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/directives/no-scroll/no-scroll.directive.ts":
+/*!*************************************************************!*\
+  !*** ./src/app/directives/no-scroll/no-scroll.directive.ts ***!
+  \*************************************************************/
+/*! exports provided: NoScrollDirective */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "NoScrollDirective", function() { return NoScrollDirective; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var NoScrollDirective = /** @class */ (function () {
+    function NoScrollDirective(element, renderer) {
+        this.element = element;
+        this.renderer = renderer;
+        element.nativeElement.addEventListener('mousewheel', function (e) {
+            e.preventDefault();
+        });
+    }
+    NoScrollDirective = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Directive"])({
+            selector: '[appNoScroll]'
+        }),
+        __metadata("design:paramtypes", [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ElementRef"],
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["Renderer2"]])
+    ], NoScrollDirective);
+    return NoScrollDirective;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/directives/touch/touch.directive.ts":
 /*!*****************************************************!*\
   !*** ./src/app/directives/touch/touch.directive.ts ***!
@@ -2132,9 +2217,9 @@ var MapService = /** @class */ (function () {
         this.cameraY = 100;
         this.cameraX = 100;
         var _tiledMap = [];
-        var tileTypes = [_objects_tile__WEBPACK_IMPORTED_MODULE_2__["MapTileType"].Grass, _objects_tile__WEBPACK_IMPORTED_MODULE_2__["MapTileType"].Water, _objects_tile__WEBPACK_IMPORTED_MODULE_2__["MapTileType"].Mountain];
-        var _mapWidth, _mapHeight;
         var tileIds;
+        var _mapWidth, _mapHeight;
+        var tileTypes = [_objects_tile__WEBPACK_IMPORTED_MODULE_2__["MapTileType"].Grass, _objects_tile__WEBPACK_IMPORTED_MODULE_2__["MapTileType"].Water, _objects_tile__WEBPACK_IMPORTED_MODULE_2__["MapTileType"].Mountain];
         var xmlRequest = new XMLHttpRequest();
         xmlRequest.onload = function () {
             var xmlDoc = new DOMParser().parseFromString(xmlRequest.responseText, 'text/xml');
@@ -2146,14 +2231,29 @@ var MapService = /** @class */ (function () {
         };
         xmlRequest.open('GET', '../../../assets/tilemap/map.tmx', false);
         xmlRequest.send();
-        tileIds.map(function (tileIndex) {
-            return _tiledMap.push({ mapTileType: tileTypes[tileIndex - 1], tileCropDetail: { x: 0, y: 0, width: 0, height: 0 } });
-        });
-        // _tiledMap.push({mapTileType: this.getTileType(tileIndex), tileCropDetail: this.getTileCropDetail(tileIndex)}));
+        for (var _i = 0, tileIds_1 = tileIds; _i < tileIds_1.length; _i++) {
+            var tileId = tileIds_1[_i];
+            _tiledMap.push({ mapTileType: tileTypes[tileId - 1],
+                x: 16 * (_tiledMap.length % _mapWidth),
+                y: 16 * Math.floor(_tiledMap.length / _mapWidth),
+                tileCropDetail: { x: 0, y: 0, width: 16, height: 16 } });
+        }
         this.tiledMap = _tiledMap;
         this.mapWidth = _mapWidth;
         this.mapHeight = _mapHeight;
     }
+    MapService.prototype.loadImages = function () {
+        for (var _i = 0, _a = this.tiledMap; _i < _a.length; _i++) {
+            var tile = _a[_i];
+            var mapTileImage = document.getElementById(tile.mapTileType.toLowerCase());
+            this.context.drawImage(mapTileImage, tile.x, tile.y, 16, 16);
+            if (tile.buildingTileType) {
+                console.log(tile.buildingTileType);
+                var buildingTileImage = document.getElementById(tile.buildingTileType.toLowerCase());
+                this.context.drawImage(buildingTileImage, tile.x, tile.y, 16, 16);
+            }
+        }
+    };
     MapService.prototype.createBuilding = function (tile, buildingType) {
         var buildingTile = this.buildingTiles[buildingType];
         if (tile.buildingTileType !== undefined ||
@@ -2200,30 +2300,6 @@ var MapService = /** @class */ (function () {
             }
         }
         return submap;
-    };
-    MapService.prototype.getMapTileSprite = function (tile) {
-        return this.mapTiles[tile.mapTileType].spritePath;
-    };
-    MapService.prototype.getBuildingTileSprite = function (tile) {
-        return this.buildingTiles[tile.buildingTileType].spritePath;
-    };
-    MapService.prototype.canMove = function (newLocationX, newLocationY) {
-        return newLocationX >= 0 && newLocationX < this.mapWidth &&
-            newLocationY >= 0 && newLocationY < this.mapHeight;
-    };
-    MapService.prototype.getCameraLocation = function () {
-        return [this.cameraX, this.cameraY];
-    };
-    MapService.prototype.setCameraLocation = function (xOffset, yOffset) {
-        var newLocationX = this.cameraX + xOffset;
-        var newLocationY = this.cameraY + yOffset;
-        if (!this.canMove(newLocationX, newLocationY)) {
-            return false;
-        }
-        this.cameraX = newLocationX;
-        this.cameraY = newLocationY;
-        this.cameraTile = this.getTile(newLocationX, newLocationY);
-        return true;
     };
     MapService.prototype.getTileType = function (tileId) {
         if (tileId in [37, 38, 39, 40, 41, 42, 43, 44, 54, 55, 56, 57, 58, 59, 60, 61, 71, 72, 73, 74, 75, 76, 77, 78, 88,
@@ -3067,7 +3143,7 @@ module.exports = [{"id":0,"name":"gold","resourceType":"CURRENCY","iconPath":"..
 /*! exports provided: mapTiles, buildingTiles, default */
 /***/ (function(module) {
 
-module.exports = {"mapTiles":{"GRASS":{"tileType":"GRASS","name":"Grass","spritePath":"../../../assets/sprites/grass.png","walkable":true},"WATER":{"tileType":"WATER","name":"Water","spritePath":"../../../assets/sprites/water.png","walkable":false},"MOUNTAIN":{"tileType":"MOUNTAIN","name":"Mountain","spritePath":"../../../assets/sprites/mountain.png","walkable":false}},"buildingTiles":{"WALL":{"tileType":"WALL","spritePath":"../../../assets/sprites/wall.png","name":"Wall","description":"Keeps invaders out.","resourceCosts":[{"resourceId":1,"resourceCost":20}],"buildableSurfaces":["GRASS"]}}};
+module.exports = {"mapTiles":{"GRASS":{"tileType":"GRASS","name":"Grass","walkable":true},"WATER":{"tileType":"WATER","name":"Water","walkable":false},"MOUNTAIN":{"tileType":"MOUNTAIN","name":"Mountain","walkable":false}},"buildingTiles":{"WALL":{"tileType":"WALL","name":"Wall","description":"Keeps invaders out.","resourceCosts":[{"resourceId":1,"resourceCost":20}],"buildableSurfaces":["GRASS"]}}};
 
 /***/ }),
 
