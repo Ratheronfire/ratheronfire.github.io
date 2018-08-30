@@ -2918,6 +2918,9 @@ var SettingsService = /** @class */ (function () {
             for (var _i = 0, _a = saveData.resources; _i < _a.length; _i++) {
                 var resourceData = _a[_i];
                 var resource = this.resourcesService.getResource(resourceData.id);
+                if (resource === undefined) {
+                    continue;
+                }
                 resource.amount = resourceData.amount;
                 resource.harvestable = resourceData.harvestable;
                 resource.harvestYield = resourceData.harvestYield;
@@ -2928,6 +2931,9 @@ var SettingsService = /** @class */ (function () {
             for (var _b = 0, _c = saveData.upgrades; _b < _c.length; _b++) {
                 var upgradeData = _c[_b];
                 var upgrade = this.upgradesService.getUpgrade(upgradeData.id);
+                if (upgrade === undefined) {
+                    continue;
+                }
                 this.upgradesService.applyUpgrade(upgrade);
                 upgrade.purchased = upgradeData.purchased;
             }
@@ -2952,6 +2958,9 @@ var SettingsService = /** @class */ (function () {
             }
             var _loop_1 = function (tileData) {
                 var tile = this_1.mapService.tiledMap.find(function (tile) { return tile.id === tileData.id; });
+                if (tile === undefined) {
+                    return "continue";
+                }
                 tile.resourceTileType = tileData.resourceTileType;
                 tile.buildingTileType = tileData.buildingTileType;
                 tile.buildingPath = tileData.buildingPath;
