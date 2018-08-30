@@ -66,7 +66,7 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 var AppComponent = /** @class */ (function () {
     function AppComponent() {
         this.title = 'clicker-game';
-        this.debugMode = false;
+        this.debugMode = true;
     }
     AppComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -2914,63 +2914,70 @@ var SettingsService = /** @class */ (function () {
         var backupSave = this.exportSave();
         try {
             var saveData = JSON.parse(atob(saveDataString));
-            console.log(saveData);
-            for (var _i = 0, _a = saveData.resources; _i < _a.length; _i++) {
-                var resourceData = _a[_i];
-                var resource = this.resourcesService.getResource(resourceData.id);
-                if (resource === undefined) {
-                    continue;
-                }
-                resource.amount = resourceData.amount;
-                resource.harvestable = resourceData.harvestable;
-                resource.harvestYield = resourceData.harvestYield;
-                resource.sellable = resourceData.sellable;
-                resource.sellsFor = resourceData.sellsFor;
-                resource.resourceAccessible = resourceData.resourceAccessible;
-            }
-            for (var _b = 0, _c = saveData.upgrades; _b < _c.length; _b++) {
-                var upgradeData = _c[_b];
-                var upgrade = this.upgradesService.getUpgrade(upgradeData.id);
-                if (upgrade === undefined) {
-                    continue;
-                }
-                this.upgradesService.applyUpgrade(upgrade);
-                upgrade.purchased = upgradeData.purchased;
-            }
-            for (var _d = 0, _e = saveData.workers; _d < _e.length; _d++) {
-                var workerData = _e[_d];
-                var worker = this.workersService.getWorker(workerData.id);
-                worker.cost = workerData.cost;
-                worker.workerCount = workerData.workerCount;
-                worker.freeWorkers = workerData.workerCount;
-                for (var _f = 0, _g = workerData.workersByResource; _f < _g.length; _f++) {
-                    var resourceWorkerData = _g[_f];
-                    var resourceWorker = this.workersService.getResourceWorker(resourceWorkerData.resourceId);
-                    resourceWorker.workable = resourceWorkerData.workable;
-                    resourceWorker.workerYield = resourceWorkerData.workerYield;
-                    resourceWorker.workerCount = 0;
-                    resourceWorker.sliderSetting = resourceWorkerData.workerCount;
-                    this.workersService.updateResourceWorker(resourceWorkerData.resourceId, resourceWorkerData.workerCount);
-                }
-                if (worker.freeWorkers < 0) {
-                    throw new Error('Invalid worker settings.');
+            if (saveData.resources) {
+                for (var _i = 0, _a = saveData.resources; _i < _a.length; _i++) {
+                    var resourceData = _a[_i];
+                    var resource = this.resourcesService.getResource(resourceData.id);
+                    if (resource === undefined) {
+                        continue;
+                    }
+                    resource.amount = resourceData.amount;
+                    resource.harvestable = resourceData.harvestable;
+                    resource.harvestYield = resourceData.harvestYield;
+                    resource.sellable = resourceData.sellable;
+                    resource.sellsFor = resourceData.sellsFor;
+                    resource.resourceAccessible = resourceData.resourceAccessible;
                 }
             }
-            var _loop_1 = function (tileData) {
-                var tile = this_1.mapService.tiledMap.find(function (tile) { return tile.id === tileData.id; });
-                if (tile === undefined) {
-                    return "continue";
+            if (saveData.upgrades) {
+                for (var _b = 0, _c = saveData.upgrades; _b < _c.length; _b++) {
+                    var upgradeData = _c[_b];
+                    var upgrade = this.upgradesService.getUpgrade(upgradeData.id);
+                    if (upgrade === undefined) {
+                        continue;
+                    }
+                    this.upgradesService.applyUpgrade(upgrade);
+                    upgrade.purchased = upgradeData.purchased;
                 }
-                tile.resourceTileType = tileData.resourceTileType;
-                tile.buildingTileType = tileData.buildingTileType;
-                tile.buildingPath = tileData.buildingPath;
-                tile.buildingRemovable = tileData.buildingRemovable;
-                tile.tileCropDetail = tileData.tileCropDetail;
-            };
-            var this_1 = this;
-            for (var _h = 0, _j = saveData.tiles; _h < _j.length; _h++) {
-                var tileData = _j[_h];
-                _loop_1(tileData);
+            }
+            if (saveData.workers) {
+                for (var _d = 0, _e = saveData.workers; _d < _e.length; _d++) {
+                    var workerData = _e[_d];
+                    var worker = this.workersService.getWorker(workerData.id);
+                    worker.cost = workerData.cost;
+                    worker.workerCount = workerData.workerCount;
+                    worker.freeWorkers = workerData.workerCount;
+                    for (var _f = 0, _g = workerData.workersByResource; _f < _g.length; _f++) {
+                        var resourceWorkerData = _g[_f];
+                        var resourceWorker = this.workersService.getResourceWorker(resourceWorkerData.resourceId);
+                        resourceWorker.workable = resourceWorkerData.workable;
+                        resourceWorker.workerYield = resourceWorkerData.workerYield;
+                        resourceWorker.workerCount = 0;
+                        resourceWorker.sliderSetting = resourceWorkerData.workerCount;
+                        this.workersService.updateResourceWorker(resourceWorkerData.resourceId, resourceWorkerData.workerCount);
+                    }
+                    if (worker.freeWorkers < 0) {
+                        throw new Error('Invalid worker settings.');
+                    }
+                }
+            }
+            if (saveData.tiles) {
+                var _loop_1 = function (tileData) {
+                    var tile = this_1.mapService.tiledMap.find(function (tile) { return tile.id === tileData.id; });
+                    if (tile === undefined) {
+                        return "continue";
+                    }
+                    tile.resourceTileType = tileData.resourceTileType;
+                    tile.buildingTileType = tileData.buildingTileType;
+                    tile.buildingPath = tileData.buildingPath;
+                    tile.buildingRemovable = tileData.buildingRemovable;
+                    tile.tileCropDetail = tileData.tileCropDetail;
+                };
+                var this_1 = this;
+                for (var _h = 0, _j = saveData.tiles; _h < _j.length; _h++) {
+                    var tileData = _j[_h];
+                    _loop_1(tileData);
+                }
             }
             this.autosaveInterval = saveData.autosaveInterval;
             this.mapService.calculateResourceConnections();
@@ -3225,7 +3232,6 @@ var UpgradesService = /** @class */ (function () {
             if (upgradeEffect.upgradeIsForWholeType) {
                 resourcesToUpgrade = this_1.resourcesService.resourcesOfType(upgradeEffect.resourceType, false, false);
                 workersToUpgrade = this_1.workersService.getWorker(upgradeEffect.resourceType).workersByResource;
-                console.log(upgradeEffect.maxTier);
                 if (upgradeEffect.maxTier >= 0) {
                     resourcesToUpgrade = resourcesToUpgrade.filter(function (resource) { return resource.resourceTier <= upgradeEffect.maxTier; });
                     workersToUpgrade = workersToUpgrade.filter(function (worker) {
