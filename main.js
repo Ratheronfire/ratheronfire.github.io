@@ -30,7 +30,7 @@ webpackEmptyAsyncContext.id = "./src/$$_lazy_route_resource lazy recursive";
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "/* AppComponent's private CSS styles */\r\nh1 {\r\n  font-size: 1.2em;\r\n  color: #999;\r\n  margin-bottom: 0;\r\n}\r\nh2 {\r\n  font-size: 2em;\r\n  margin-top: 0;\r\n  padding-top: 0;\r\n}\r\nnav a {\r\n  padding: 5px 10px;\r\n  text-decoration: none;\r\n  margin-top: 10px;\r\n  display: inline-block;\r\n  background-color: #eee;\r\n  border-radius: 4px;\r\n}\r\nnav a:visited, a:link {\r\n  color: #607d8b;\r\n}\r\nnav a:hover {\r\n  color: #039be5;\r\n  background-color: #cfd8dc;\r\n}\r\nnav a.active {\r\n  color: #039be5;\r\n}\r\n.main-pane {\r\n  float: left;\r\n}\r\n.tab-group {\r\n  float: left;\r\n  margin-left: 15px;\r\n}\r\n.debug-pane {\r\n  float: right;\r\n}\r\n"
+module.exports = "/* AppComponent's private CSS styles */\r\nh1 {\r\n  font-size: 1.2em;\r\n  color: #999;\r\n  margin-bottom: 0;\r\n}\r\nh2 {\r\n  font-size: 2em;\r\n  margin-top: 0;\r\n  padding-top: 0;\r\n}\r\nnav a {\r\n  padding: 5px 10px;\r\n  text-decoration: none;\r\n  margin-top: 10px;\r\n  display: inline-block;\r\n  background-color: #eee;\r\n  border-radius: 4px;\r\n}\r\nnav a:visited, a:link {\r\n  color: #607d8b;\r\n}\r\nnav a:hover {\r\n  color: #039be5;\r\n  background-color: #cfd8dc;\r\n}\r\nnav a.active {\r\n  color: #039be5;\r\n}\r\n.main-pane {\r\n  float: left;\r\n}\r\n.tab-group {\r\n  margin-left: 15px;\r\n}\r\n.debug-pane {\r\n  float: right;\r\n}\r\n"
 
 /***/ }),
 
@@ -41,7 +41,7 @@ module.exports = "/* AppComponent's private CSS styles */\r\nh1 {\r\n  font-size
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<h1>Clicker Game</h1>\n\n<app-clicker-main class=\"main-pane\"></app-clicker-main>\n\n<mat-tab-group class=\"tab-group\" dynamicHeight>\n  <mat-tab label=\"Explore\">\n    <app-map></app-map>\n  </mat-tab>\n  <mat-tab label=\"Workers\">\n    <app-workers></app-workers>\n  </mat-tab>\n  <mat-tab label=\"Store\">\n    <app-store></app-store>\n  </mat-tab>\n  <mat-tab label=\"Upgrades\">\n    <app-upgrades></app-upgrades>\n  </mat-tab>\n  <mat-tab label=\"Settings\">\n    <app-settings></app-settings>\n  </mat-tab>\n</mat-tab-group>\n\n<mat-card class=\"debug-pane\" *ngIf=\"debugMode\">\n  <h1>Admin Dashboard</h1>\n  <app-admin-debug></app-admin-debug>\n  <app-messages></app-messages>\n</mat-card>\n"
+module.exports = "<h1>Clicker Game</h1>\n\n<app-clicker-main class=\"main-pane\"></app-clicker-main>\n\n<mat-tab-group class=\"tab-group\" dynamicHeight [matBadge]=\"affordableUpgradeCount\" [matBadgeHidden]=\"affordableUpgradeCount <= 0\" matBadgePosition=\"before\" matBadgeColor=\"accent\">\n  <mat-tab label=\"Explore\">\n    <app-map></app-map>\n  </mat-tab>\n  <mat-tab label=\"Workers\">\n    <app-workers></app-workers>\n  </mat-tab>\n  <mat-tab label=\"Store\">\n    <app-store></app-store>\n  </mat-tab>\n  <mat-tab label=\"Upgrades\">\n    <app-upgrades></app-upgrades>\n  </mat-tab>\n  <mat-tab label=\"Settings\">\n    <app-settings></app-settings>\n  </mat-tab>\n</mat-tab-group>\n\n<mat-card class=\"debug-pane\" *ngIf=\"debugMode\">\n  <h1>Admin Dashboard</h1>\n  <app-admin-debug></app-admin-debug>\n  <app-messages></app-messages>\n</mat-card>\n"
 
 /***/ }),
 
@@ -56,24 +56,41 @@ module.exports = "<h1>Clicker Game</h1>\n\n<app-clicker-main class=\"main-pane\"
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppComponent", function() { return AppComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _services_upgrades_upgrades_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./services/upgrades/upgrades.service */ "./src/app/services/upgrades/upgrades.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
 
 var AppComponent = /** @class */ (function () {
-    function AppComponent() {
+    function AppComponent(upgradesService) {
+        this.upgradesService = upgradesService;
         this.title = 'clicker-game';
-        this.debugMode = false;
+        this.debugMode = true;
     }
+    Object.defineProperty(AppComponent.prototype, "affordableUpgradeCount", {
+        get: function () {
+            var _this = this;
+            var upgrades = this.upgradesService.getUpgrades(false, true, true);
+            var affordableUpgrades = upgrades.filter(function (upgrade) { return _this.upgradesService.canAffordUpgrade(upgrade.id); });
+            return affordableUpgrades.length;
+        },
+        enumerable: true,
+        configurable: true
+    });
     AppComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-root',
             template: __webpack_require__(/*! ./app.component.html */ "./src/app/app.component.html"),
             styles: [__webpack_require__(/*! ./app.component.css */ "./src/app/app.component.css")]
-        })
+        }),
+        __metadata("design:paramtypes", [_services_upgrades_upgrades_service__WEBPACK_IMPORTED_MODULE_1__["UpgradesService"]])
     ], AppComponent);
     return AppComponent;
 }());
@@ -468,7 +485,7 @@ var ClickerMainComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".canvas-container {\r\n  width: 1000px;\r\n  height: 1000px;\r\n}\r\n\r\n.building-list {\r\n  display: flex;\r\n  max-width: 1000px;\r\n  overflow-x: scroll;\r\n}\r\n"
+module.exports = ".building-list {\r\n  display: flex;\r\n  max-width: 1000px;\r\n  overflow-x: scroll;\r\n  height: 230px;\r\n}\r\n\r\n.resource-list {\r\n  text-align: center;\r\n}\r\n\r\n.resource-list div {\r\n  display: inline-block;\r\n}\r\n\r\n.resource-list img {\r\n  width: 16px;\r\n  height: 16px;\r\n}\r\n\r\nbutton {\r\n  height: 180px;\r\n}\r\n"
 
 /***/ }),
 
@@ -479,7 +496,7 @@ module.exports = ".canvas-container {\r\n  width: 1000px;\r\n  height: 1000px;\r
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<canvas appNoScroll appMap width=\"960\" height=\"750\"></canvas>\r\n<br />\r\n<br />\r\n\r\n<mat-checkbox [(ngModel)]=\"deleteMode\" color=\"warn\">Delete Buildings</mat-checkbox>\r\n<div class=\"building-list\">\r\n  <div *ngFor=\"let buildingTile of getBuildingTileArray(true)\">\r\n    <button mat-raised-button [color]=\"selectedBuilding === buildingTile && !deleteMode ? 'accent' : ''\"\r\n        (click)=\"selectBuilding(buildingTile)\">\r\n      <mat-card-title>{{buildingTile.name}}</mat-card-title>\r\n      <mat-card-subtitle>{{buildingTile.description}}</mat-card-subtitle>\r\n      <mat-card-content>\r\n        <h3>Costs</h3>\r\n        <div *ngFor=\"let resourceCost of buildingTile.resourceCosts\">\r\n          {{resourcesService.getResource(resourceCost.resourceId).name | titlecase }}: {{resourceCost.resourceCost}}\r\n        </div>\r\n        <b><mat-icon *ngIf=\"canAffordBuilding(buildingTile.tileType)\" color=\"primary\">check</mat-icon></b>\r\n      </mat-card-content>\r\n    </button>\r\n  </div>\r\n</div>\r\n"
+module.exports = "<canvas appNoScroll appMap width=\"960\" height=\"750\"></canvas>\r\n<br />\r\n<br />\r\n\r\n<mat-checkbox [(ngModel)]=\"deleteMode\" color=\"warn\">Delete Buildings</mat-checkbox>\r\n<div class=\"building-list\">\r\n  <div *ngFor=\"let buildingTile of getBuildingTileArray(true)\">\r\n    <button mat-raised-button [color]=\"selectedBuilding === buildingTile && !deleteMode ? 'accent' : ''\" (click)=\"selectBuilding(buildingTile)\">\r\n      <mat-card-title>{{buildingTile.name}}</mat-card-title>\r\n      <mat-card-subtitle>{{buildingTile.description}}</mat-card-subtitle>\r\n      <mat-card-content>\r\n        <h3>Costs</h3>\r\n        <div class=\"resource-list\">\r\n          <b><mat-icon *ngIf=\"canAffordBuilding(buildingTile.tileType)\" color=\"primary\">check</mat-icon>\r\n          </b>\r\n          <div *ngFor=\"let resourceCost of buildingTile.resourceCosts\" matTooltip=\"{{resourceCost.resourceCost}} {{getResource(resourceCost.resourceId).name | titlecase}}\" matTooltipPosition=\"below\">\r\n            <img src=\"{{getResource(resourceCost.resourceId).iconPath}}\" alt=\"{{getResource(resourceCost.resourceId).name}}\"> {{resourceCost.resourceCost}}\r\n          </div>\r\n        </div>\r\n      </mat-card-content>\r\n    </button>\r\n  </div>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -554,6 +571,9 @@ var MapComponent = /** @class */ (function () {
             tiles = tiles.filter(function (tile) { return tile.placeable; });
         }
         return tiles;
+    };
+    MapComponent.prototype.getResource = function (resourceId) {
+        return this.resourcesService.getResource(resourceId);
     };
     Object.defineProperty(MapComponent.prototype, "deleteMode", {
         get: function () {
@@ -1325,7 +1345,7 @@ var UpgradeDialogComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "/* UpgradesComponent's private CSS styles */\r\n.upgrades {\r\n  margin: 0 0 2em 0;\r\n  list-style-type: none;\r\n  padding: 0;\r\n  width: 25em;\r\n}\r\n.upgrades mat-expansion-panel {\r\n  margin: 0;\r\n}\r\n.upgrades mat-expansion-panel-header {\r\n  height: 30px !important;\r\n}\r\n.upgrades mat-card-subtitle {\r\n  position: absolute;\r\n  top: 10px;\r\n  right: 10px;\r\n  font-weight: bold;\r\n}\r\n.upgrades button {\r\n  position: relative;\r\n  cursor: pointer;\r\n  margin: .5em;\r\n  padding: .4em 0;\r\n  height: 3.6em;\r\n  width: 100%;\r\n  border-radius: 4px;\r\n}\r\n.upgrades button:hover {\r\n  left: .1em;\r\n}\r\n.upgrades button.mat-disabled {\r\n  cursor: default;\r\n}\r\n.upgrades .badge {\r\n  display: inline-block;\r\n  font-size: small;\r\n  color: white;\r\n  padding: 0.8em 0.7em 0 0.7em;\r\n  background-color: #607D8B;\r\n  line-height: 1em;\r\n  position: absolute;\r\n  right: -9px;\r\n  top: 1px;\r\n  height: 1.8em;\r\n  min-width: 16px;\r\n  text-align: center;\r\n  margin-right: .8em;\r\n  border-radius: 0 4px 4px 0;\r\n}\r\nbutton {\r\n  background-color: #eee;\r\n  border: none;\r\n  padding: 5px 10px;\r\n  border-radius: 4px;\r\n  cursor: pointer;\r\n  cursor: hand;\r\n  font-family: Arial;\r\n}\r\n.harvest-progress {\r\n  display: flex;\r\n  align-content: center;\r\n  align-items: center;\r\n  \r\n  height: 100%;\r\n  top: 0px;\r\n  \r\n  position: absolute;\r\n  opacity: 0.5;\r\n}"
+module.exports = "/* UpgradesComponent's private CSS styles */\r\n.upgrades {\r\n  margin: 0 0 2em 0;\r\n  list-style-type: none;\r\n  padding: 0;\r\n  /* width: 25em; */\r\n}\r\n.upgrades mat-expansion-panel {\r\n  margin: 0;\r\n}\r\n.upgrades mat-expansion-panel-header {\r\n  height: 30px !important;\r\n}\r\n.upgrades mat-card-subtitle {\r\n  position: absolute;\r\n  top: 10px;\r\n  right: 10px;\r\n  font-weight: bold;\r\n}\r\n.upgrades button {\r\n  position: relative;\r\n  cursor: pointer;\r\n  margin: .5em;\r\n  padding: .4em 0;\r\n  height: 3.6em;\r\n  width: 100%;\r\n  border-radius: 4px;\r\n}\r\n.upgrades button:hover {\r\n  left: .1em;\r\n}\r\n.upgrades button.mat-disabled {\r\n  cursor: default;\r\n}\r\n.upgrades .badge {\r\n  display: inline-block;\r\n  font-size: small;\r\n  color: white;\r\n  padding: 0.8em 0.7em 0 0.7em;\r\n  background-color: #607D8B;\r\n  line-height: 1em;\r\n  position: absolute;\r\n  right: -9px;\r\n  top: 1px;\r\n  height: 1.8em;\r\n  min-width: 16px;\r\n  text-align: center;\r\n  margin-right: .8em;\r\n  border-radius: 0 4px 4px 0;\r\n}\r\nbutton {\r\n  background-color: #eee;\r\n  border: none;\r\n  padding: 5px 10px;\r\n  border-radius: 4px;\r\n  cursor: pointer;\r\n  cursor: hand;\r\n  font-family: Arial;\r\n}\r\n.upgrades {\r\n  text-align: center;\r\n}\r\n.upgrade {\r\n  display: inline-block;\r\n  max-width: 300px;\r\n}\r\n.resource-list {\r\n  text-align: center;\r\n}\r\n.resource-list div {\r\n  display: inline-block;\r\n}\r\n.resource-list img {\r\n  width: 16px;\r\n  height: 16px;\r\n}\r\n"
 
 /***/ }),
 
@@ -1336,7 +1356,7 @@ module.exports = "/* UpgradesComponent's private CSS styles */\r\n.upgrades {\r\
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<mat-checkbox class=\"hidePurchased\" checked=\"true\" [(ngModel)]=\"hidePurchased\">Hide Purchased Upgrades</mat-checkbox>\n<br />\n<br />\n\n<div class=\"upgrades\">\n  <mat-accordion multi=\"true\">\n    <mat-expansion-panel expanded=\"true\" *ngFor=\"let upgradeType of upgradeTypes | enumToArray\">\n      <mat-expansion-panel-header>\n        <mat-panel-title>\n          {{upgradeType}}\n        </mat-panel-title>\n        <mat-panel-description>\n        </mat-panel-description>\n      </mat-expansion-panel-header>\n\n      <div *ngFor=\"let upgrade of upgradesOfType(upgradeType, false, hidePurchased, adminService.filterAccessible)\">\n        <mat-divider></mat-divider>\n        <button mat-raised-button color=\"accent\" [disabled]='upgrade.purchased || !canAffordUpgrade(upgrade.id)' (click)='purchaseUpgrade(upgrade.id)'>\n          <mat-card-title>\n            <b><mat-icon *ngIf=\"upgrade.purchased\" color=\"primary\">check</mat-icon></b>\n            {{upgrade.name}}\n          </mat-card-title>\n        </button>\n        <mat-card-subtitle>{{upgradesService.getUpgradeTypeString(upgrade.id)}}</mat-card-subtitle>\n        <mat-card-content>\n          {{upgrade.description}}\n          <br />\n          <h3>Costs</h3>\n          <div *ngFor=\"let resourceCost of upgrade.resourceCosts\">\n            {{resourcesService.getResource(resourceCost.resourceId).name | titlecase }}: {{resourceCost.resourceCost}}\n          </div>\n        </mat-card-content>\n        <div *ngIf=\"adminService.editMode\">\n          <button (click)=\"editUpgrade(upgrade.id)\">Edit {{upgrade.name | titlecase}}</button>\n        </div>\n      </div>\n    </mat-expansion-panel>\n  </mat-accordion>\n</div>\n"
+module.exports = "<mat-checkbox class=\"hidePurchased\" checked=\"true\" [(ngModel)]=\"hidePurchased\">Hide Purchased Upgrades</mat-checkbox>\n<br />\n<br />\n\n<div class=\"upgrades\">\n  <mat-card class=\"upgrade\" *ngFor=\"let upgrade of getUpgrades(false, hidePurchased, adminService.filterAccessible)\">\n    <button mat-raised-button color=\"accent\" [disabled]='upgrade.purchased || !canAffordUpgrade(upgrade.id)' (click)='purchaseUpgrade(upgrade.id)'>\n      <mat-card-title>\n        <b>\n          <mat-icon *ngIf=\"upgrade.purchased\" color=\"primary\">check</mat-icon>\n        </b>\n        {{upgrade.name}}\n      </mat-card-title>\n    </button>\n    <mat-card-subtitle>{{upgradesService.getUpgradeTypeString(upgrade.id)}}</mat-card-subtitle>\n    <mat-card-content>\n      {{upgrade.description}}\n      <div class=\"resource-list\">\n        <div *ngFor=\"let resourceCost of upgrade.resourceCosts\" matTooltip=\"{{resourceCost.resourceCost}} {{getResource(resourceCost.resourceId).name | titlecase}}\"\n          matTooltipPosition=\"below\">\n          <img src=\"{{getResource(resourceCost.resourceId).iconPath}}\" alt=\"{{getResource(resourceCost.resourceId).name}}\"> {{resourceCost.resourceCost}}\n        </div>\n      </div>\n    </mat-card-content>\n    <div *ngIf=\"adminService.editMode\">\n      <button (click)=\"editUpgrade(upgrade.id)\">Edit {{upgrade.name | titlecase}}</button>\n    </div>\n  </mat-card>\n</div>\n"
 
 /***/ }),
 
@@ -1382,6 +1402,9 @@ var UpgradesComponent = /** @class */ (function () {
     UpgradesComponent.prototype.canAffordUpgrade = function (id) {
         return this.upgradesService.canAffordUpgrade(id);
     };
+    UpgradesComponent.prototype.getUpgrades = function (filterByPurchased, filterByUnpurchased, filterByAccessible) {
+        return this.upgradesService.getUpgrades(filterByPurchased, filterByUnpurchased, filterByAccessible);
+    };
     UpgradesComponent.prototype.upgradesOfType = function (upgradeType, filterByPurchased, filterByUnpurchased, filterByAccessible) {
         return this.upgradesService.upgradesOfType(this.upgradeTypes[upgradeType], filterByPurchased, filterByUnpurchased, filterByAccessible);
     };
@@ -1400,6 +1423,9 @@ var UpgradesComponent = /** @class */ (function () {
     };
     UpgradesComponent.prototype.editUpgrade = function (id) {
         this.adminService.openUpgradeDialog(id);
+    };
+    UpgradesComponent.prototype.getResource = function (resourceId) {
+        return this.resourcesService.getResource(resourceId);
     };
     UpgradesComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -1841,12 +1867,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @angular/material/dialog */ "./node_modules/@angular/material/esm5/dialog.es5.js");
 /* harmony import */ var _angular_material_stepper__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @angular/material/stepper */ "./node_modules/@angular/material/esm5/stepper.es5.js");
 /* harmony import */ var _angular_material_snack_bar__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @angular/material/snack-bar */ "./node_modules/@angular/material/esm5/snack-bar.es5.js");
+/* harmony import */ var _angular_material_badge__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @angular/material/badge */ "./node_modules/@angular/material/esm5/badge.es5.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -1883,7 +1911,8 @@ var modules = [
     _angular_material_slider__WEBPACK_IMPORTED_MODULE_14__["MatSliderModule"],
     _angular_material_dialog__WEBPACK_IMPORTED_MODULE_15__["MatDialogModule"],
     _angular_material_stepper__WEBPACK_IMPORTED_MODULE_16__["MatStepperModule"],
-    _angular_material_snack_bar__WEBPACK_IMPORTED_MODULE_17__["MatSnackBarModule"]
+    _angular_material_snack_bar__WEBPACK_IMPORTED_MODULE_17__["MatSnackBarModule"],
+    _angular_material_badge__WEBPACK_IMPORTED_MODULE_18__["MatBadgeModule"]
 ];
 var MaterialImportModule = /** @class */ (function () {
     function MaterialImportModule() {
@@ -3290,6 +3319,20 @@ var UpgradesService = /** @class */ (function () {
             }
         }
         return true;
+    };
+    UpgradesService.prototype.getUpgrades = function (filterByPurchased, filterByUnpurchased, filterByAccessible) {
+        var _this = this;
+        var upgrades = this.upgrades;
+        if (filterByPurchased) {
+            upgrades = upgrades.filter(function (upgrade) { return upgrade.purchased; });
+        }
+        if (filterByUnpurchased) {
+            upgrades = upgrades.filter(function (upgrade) { return !upgrade.purchased; });
+        }
+        if (filterByAccessible) {
+            upgrades = upgrades.filter(function (upgrade) { return upgrade.resourceCosts.every(function (rc) { return _this.resourcesService.getResource(rc.resourceId).resourceAccessible; }); });
+        }
+        return upgrades;
     };
     UpgradesService.prototype.upgradesOfType = function (upgradeType, filterByPurchased, filterByUnpurchased, filterByAccessible) {
         var _this = this;
