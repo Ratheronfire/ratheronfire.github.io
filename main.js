@@ -72,7 +72,7 @@ var AppComponent = /** @class */ (function () {
     function AppComponent(upgradesService) {
         this.upgradesService = upgradesService;
         this.title = 'clicker-game';
-        this.debugMode = true;
+        this.debugMode = false;
     }
     Object.defineProperty(AppComponent.prototype, "affordableUpgradeCount", {
         get: function () {
