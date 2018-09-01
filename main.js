@@ -200,7 +200,7 @@ var AppModule = /** @class */ (function () {
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
                 _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormsModule"],
                 _angular_forms__WEBPACK_IMPORTED_MODULE_2__["ReactiveFormsModule"],
-                _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_3__["NoopAnimationsModule"],
+                _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_3__["BrowserAnimationsModule"],
                 _material_import_material_import_module__WEBPACK_IMPORTED_MODULE_5__["MaterialImportModule"],
                 src_app_pipe_pipe_module__WEBPACK_IMPORTED_MODULE_6__["PipeModule"]
             ],
@@ -1000,7 +1000,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<mat-accordion multi=\"true\">\n  <mat-expansion-panel expanded=\"true\">\n    <mat-expansion-panel-header>\n      <mat-panel-title>\n        <mat-icon color=\"primary\">save</mat-icon>\n        Save/Load\n      </mat-panel-title>\n    </mat-expansion-panel-header>\n\n    <mat-form-field>\n      <mat-select placeholder=\"Autosave Interval (Minutes)\" [(value)]=\"autosaveInterval\" (valueChange)=\"setAutosave()\">\n        <mat-option [value]=\"-1\">Disable</mat-option>\n        <mat-option [value]=\"60000\">1</mat-option>\n        <mat-option [value]=\"900000\">15</mat-option>\n        <mat-option [value]=\"1800000\">30</mat-option>\n        <mat-option [value]=\"3600000\">60</mat-option>\n      </mat-select>\n    </mat-form-field>\n\n    <button mat-raised-button color=\"primary\" (click)=\"saveGame()\">Save</button>\n    <button mat-raised-button color=\"warn\" (click)=\"deleteGame()\">Delete Save</button>\n\n    <button mat-raised-button (click)=\"exportSave()\">Export Save</button>\n    <button mat-raised-button (click)=\"importSave()\">Import Save</button>\n  </mat-expansion-panel>\n\n  <mat-expansion-panel expanded=\"true\">\n    <mat-expansion-panel-header>\n      <mat-panel-title>\n        <mat-icon color=\"primary\">bug_report</mat-icon>\n        Debug\n      </mat-panel-title>\n    </mat-expansion-panel-header>\n\n    <mat-checkbox [(ngModel)]=\"debugMode\">Debug Mode</mat-checkbox>\n  </mat-expansion-panel>\n</mat-accordion>\n"
+module.exports = "<mat-accordion multi=\"true\">\n  <mat-expansion-panel expanded=\"true\">\n    <mat-expansion-panel-header>\n      <mat-panel-title>\n        <mat-icon color=\"primary\">save</mat-icon>\n        Save/Load\n      </mat-panel-title>\n    </mat-expansion-panel-header>\n\n    <mat-form-field>\n      <mat-select placeholder=\"Autosave Interval (Minutes)\" [(value)]=\"autosaveInterval\" (valueChange)=\"setAutosave()\">\n        <mat-option [value]=\"-1\">Disable</mat-option>\n        <mat-option [value]=\"60000\">1</mat-option>\n        <mat-option [value]=\"900000\">15</mat-option>\n        <mat-option [value]=\"1800000\">30</mat-option>\n        <mat-option [value]=\"3600000\">60</mat-option>\n      </mat-select>\n    </mat-form-field>\n\n    <button mat-raised-button color=\"primary\" (click)=\"saveGame()\">Save</button>\n    <button mat-raised-button color=\"warn\" (click)=\"deleteGame()\">Delete Save</button>\n\n    <button mat-raised-button (click)=\"exportSave()\">Export Save</button>\n    <button mat-raised-button (click)=\"importSave()\">Import Save</button>\n  </mat-expansion-panel>\n\n  <mat-expansion-panel expanded=\"true\">\n    <mat-expansion-panel-header>\n      <mat-panel-title>\n        <mat-icon color=\"primary\">map</mat-icon>\n        Map\n      </mat-panel-title>\n    </mat-expansion-panel-header>\n\n    <mat-checkbox [(ngModel)]=\"mapDetailMode\">Detail Mode</mat-checkbox>\n    <br />\n    <mat-checkbox [(ngModel)]=\"mapLowFramerate\">Limit Framerate</mat-checkbox>\n  </mat-expansion-panel>\n\n  <mat-expansion-panel expanded=\"true\">\n    <mat-expansion-panel-header>\n      <mat-panel-title>\n        <mat-icon color=\"primary\">bug_report</mat-icon>\n        Debug\n      </mat-panel-title>\n    </mat-expansion-panel-header>\n\n    <mat-checkbox [(ngModel)]=\"debugMode\">Debug Mode</mat-checkbox>\n  </mat-expansion-panel>\n</mat-accordion>\n"
 
 /***/ }),
 
@@ -1065,8 +1065,31 @@ var SettingsComponent = /** @class */ (function () {
         configurable: true
     });
     Object.defineProperty(SettingsComponent.prototype, "debugMode", {
+        get: function () {
+            return this.settingsService.debugMode;
+        },
         set: function (value) {
             this.settingsService.debugMode = value;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(SettingsComponent.prototype, "mapDetailMode", {
+        get: function () {
+            return this.settingsService.mapDetailMode;
+        },
+        set: function (value) {
+            this.settingsService.mapDetailMode = value;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(SettingsComponent.prototype, "mapLowFramerate", {
+        get: function () {
+            return this.settingsService.mapLowFramerate;
+        },
+        set: function (value) {
+            this.settingsService.mapLowFramerate = value;
         },
         enumerable: true,
         configurable: true
@@ -1637,7 +1660,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MapDirective", function() { return MapDirective; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _services_resources_resources_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./../../services/resources/resources.service */ "./src/app/services/resources/resources.service.ts");
-/* harmony import */ var _services_map_map_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./../../services/map/map.service */ "./src/app/services/map/map.service.ts");
+/* harmony import */ var _services_settings_settings_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./../../services/settings/settings.service */ "./src/app/services/settings/settings.service.ts");
+/* harmony import */ var _services_map_map_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./../../services/map/map.service */ "./src/app/services/map/map.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1650,15 +1674,20 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
 var MapDirective = /** @class */ (function () {
-    function MapDirective(element, renderer, resourcesService, mapService) {
+    function MapDirective(element, renderer, resourcesService, settingsService, mapService) {
         this.element = element;
         this.renderer = renderer;
         this.resourcesService = resourcesService;
+        this.settingsService = settingsService;
         this.mapService = mapService;
         this.transform = d3.zoomIdentity;
         this.lastAnimationTime = Date.now();
         this.tileAnimationSpeed = 0.003;
+        this.lowFramerateActive = false;
+        this.highFramerate = 25;
+        this.lowFramerate = 125;
         this.tilePixelSize = 16;
         this.gridWidth = 150;
         this.gridHeight = 150;
@@ -1667,6 +1696,7 @@ var MapDirective = /** @class */ (function () {
     MapDirective.prototype.ngAfterViewInit = function () {
         this.canvas = d3.select('canvas');
         this.context = this.canvas.node().getContext('2d');
+        this.context.font = '4px Arial';
         this.canvasPixelWidth = this.canvas.property('width');
         this.canvasPixelHeight = this.canvas.property('height');
         this.canvas.call(d3.zoom()
@@ -1674,7 +1704,7 @@ var MapDirective = /** @class */ (function () {
             .translateExtent([[0, 0], [this.gridWidth * this.tilePixelSize, this.gridHeight * this.tilePixelSize]])
             .on('zoom', this.zoomed(this)));
         this.canvas.on('click', this.clickTile(this));
-        d3.interval(this.updateResourceAnimations(this), 25);
+        this.refreshTimer = d3.interval(this.updateResourceAnimations(this), 25);
     };
     MapDirective.prototype.zoomed = function (self) {
         return function (d) {
@@ -1699,6 +1729,11 @@ var MapDirective = /** @class */ (function () {
     };
     MapDirective.prototype.updateResourceAnimations = function (self) {
         return function (d) {
+            if (self.lowFramerateActive !== self.settingsService.mapLowFramerate) {
+                self.lowFramerateActive = self.settingsService.mapLowFramerate;
+                self.refreshTimer.stop();
+                self.refreshTimer = d3.interval(self.updateResourceAnimations(self), self.lowFramerateActive ? self.lowFramerate : self.highFramerate);
+            }
             var deltaTime = Date.now() - self.lastAnimationTime;
             for (var _i = 0, _a = self.mapService.resourceAnimations; _i < _a.length; _i++) {
                 var resourceAnimation = _a[_i];
@@ -1712,7 +1747,7 @@ var MapDirective = /** @class */ (function () {
                     Math.abs(resourceAnimation.y - currentTile.y) >= self.tilePixelSize / 2) {
                     resourceAnimation.pathStep++;
                     if (resourceAnimation.pathStep === resourceAnimation.buildingPath.length - 1) {
-                        self.resourcesService.finishResourceAnimation(resourceAnimation.resourceId, resourceAnimation.spawnedByPlayer);
+                        self.resourcesService.finishResourceAnimation(resourceAnimation.resourceId, resourceAnimation.multiplier, resourceAnimation.spawnedByPlayer);
                         resourceAnimation.done = true;
                     }
                 }
@@ -1731,7 +1766,6 @@ var MapDirective = /** @class */ (function () {
         this.context.restore();
     };
     MapDirective.prototype.drawCanvas = function () {
-        var tilesDrawn = 0;
         var upperLeftPixel = [(-this.transform.x - this.tilePixelSize * 5) / this.transform.k,
             (-this.transform.y - this.tilePixelSize * 5) / this.transform.k];
         var lowerRightPixel = [upperLeftPixel[0] + (this.canvasPixelWidth + this.tilePixelSize * 5) / this.transform.k,
@@ -1745,19 +1779,32 @@ var MapDirective = /** @class */ (function () {
             var mapTileImage = document.getElementById(tile.mapTileType.toLowerCase());
             this.context.drawImage(mapTileImage, tile.x, tile.y, this.tilePixelSize, this.tilePixelSize);
             if (tile.resourceTileType) {
-                var resourceTileImage = document.getElementById(tile.resourceTileType.toLowerCase());
+                var resourceTileImage = document.getElementById(tile.resourceTileType.toLowerCase().replace(' ', '-'));
                 this.context.drawImage(resourceTileImage, tile.x, tile.y, this.tilePixelSize, this.tilePixelSize);
             }
             if (tile.buildingTileType) {
                 var buildingTileImage = document.getElementById(tile.buildingTileType.toLowerCase());
                 this.context.drawImage(buildingTileImage, tile.x, tile.y, this.tilePixelSize, this.tilePixelSize);
             }
-            tilesDrawn++;
         }
         for (var _b = 0, _c = this.mapService.resourceAnimations; _b < _c.length; _b++) {
             var resourceAnimation = _c[_b];
             var resourceTileImage = document.getElementById(this.resourcesService.getResource(resourceAnimation.resourceId).name.toLowerCase().replace(' ', '-'));
             this.context.drawImage(resourceTileImage, resourceAnimation.x, resourceAnimation.y, this.tilePixelSize / 2, this.tilePixelSize / 2);
+            if (!this.settingsService.mapDetailMode) {
+                continue;
+            }
+            this.context.fillStyle = resourceAnimation.spawnedByPlayer ? 'yellow' : 'blue';
+            this.context.fillText(Math.floor(resourceAnimation.multiplier).toString(), resourceAnimation.x + this.tilePixelSize / 2, resourceAnimation.y + this.tilePixelSize / 2);
+        }
+        if (!this.settingsService.mapDetailMode) {
+            return;
+        }
+        for (var _d = 0, _e = this.mapService.getResourceTiles(); _d < _e.length; _d++) {
+            var tile = _e[_d];
+            this.context.fillStyle = 'black';
+            var resourceTile = this.mapService.resourceTiles[tile.resourceTileType];
+            this.context.fillText(resourceTile.name, tile.x + this.tilePixelSize / 2, tile.y - this.tilePixelSize / 4);
         }
     };
     MapDirective = __decorate([
@@ -1767,7 +1814,8 @@ var MapDirective = /** @class */ (function () {
         __metadata("design:paramtypes", [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ElementRef"],
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["Renderer2"],
             _services_resources_resources_service__WEBPACK_IMPORTED_MODULE_1__["ResourcesService"],
-            _services_map_map_service__WEBPACK_IMPORTED_MODULE_2__["MapService"]])
+            _services_settings_settings_service__WEBPACK_IMPORTED_MODULE_2__["SettingsService"],
+            _services_map_map_service__WEBPACK_IMPORTED_MODULE_3__["MapService"]])
     ], MapDirective);
     return MapDirective;
 }());
@@ -2330,11 +2378,12 @@ var ClickerMainService = /** @class */ (function () {
     };
     ClickerMainService.prototype.harvestResource = function (id) {
         this.harvestStartDate = Date.now();
-        this.resourcesService.getResource(id).amountTravelling++;
+        var resource = this.resourcesService.getResource(id);
+        resource.amountTravelling++;
         if (this.shouldAnimateProgressBar(id)) {
-            this.resourcesService.getResource(id).progressBarValue = 0;
+            resource.progressBarValue = 0;
         }
-        this.mapService.spawnResourceAnimation(id, 1, true);
+        this.mapService.spawnResourceAnimation(id, resource.harvestYield, true);
         this.stopHarvesting(id);
     };
     ClickerMainService = __decorate([
@@ -2719,12 +2768,13 @@ var ResourcesService = /** @class */ (function () {
     ResourcesService.prototype.getResource = function (id) {
         return this.resources.find(function (resource) { return resource.id === id; });
     };
-    ResourcesService.prototype.finishResourceAnimation = function (id, spawnedByPlayer) {
+    ResourcesService.prototype.finishResourceAnimation = function (id, multiplier, spawnedByPlayer) {
+        if (multiplier === void 0) { multiplier = 1; }
         var resource = this.getResource(id);
         if (spawnedByPlayer) {
             resource.amountTravelling--;
         }
-        this.harvestResource(id, 1, true);
+        this.harvestResource(id, multiplier, true);
     };
     ResourcesService.prototype.harvestResource = function (id, multiplier, forceHarvest) {
         if (multiplier === void 0) { multiplier = 1; }
@@ -2739,7 +2789,7 @@ var ResourcesService = /** @class */ (function () {
         }
         this.resources.filter(function (r) { return r.previousTier === resource.resourceTier && r.resourceType === resource.resourceType; })
             .map(function (r) { return r.resourceAccessible = true; });
-        this.addResourceAmount(resource.id, resource.harvestYield * multiplier);
+        this.addResourceAmount(resource.id, multiplier);
     };
     ResourcesService.prototype.canHarvest = function (id, multiplier) {
         if (multiplier === void 0) { multiplier = 1; }
@@ -2849,6 +2899,8 @@ var SettingsService = /** @class */ (function () {
         this.gameVersion = '1.2';
         this.autosaveInterval = 900000;
         this.debugMode = false;
+        this.mapDetailMode = true;
+        this.mapLowFramerate = false;
         this.loadGame();
     }
     SettingsService.prototype.openSaveDialog = function (saveData) {
@@ -2903,7 +2955,9 @@ var SettingsService = /** @class */ (function () {
             tiles: [],
             settings: {
                 autosaveInterval: this.autosaveInterval,
-                debugMode: this.debugMode
+                debugMode: this.debugMode,
+                mapDetailMode: this.mapDetailMode,
+                mapLowFramerate: this.mapLowFramerate
             },
             gameVersion: this.gameVersion
         };
@@ -2965,6 +3019,7 @@ var SettingsService = /** @class */ (function () {
             }
             saveData.tiles.push(tileData);
         }
+        console.log(saveData);
         return btoa(JSON.stringify(saveData));
     };
     SettingsService.prototype.importSave = function (saveDataString) {
@@ -3041,6 +3096,8 @@ var SettingsService = /** @class */ (function () {
             }
             this.autosaveInterval = saveData.settings.autosaveInterval;
             this.debugMode = saveData.settings.debugMode;
+            this.mapDetailMode = saveData.settings.mapDetailMode;
+            this.mapLowFramerate = saveData.settings.mapLowFramerate;
             this.mapService.calculateResourceConnections();
             return true;
         }
@@ -3555,7 +3612,7 @@ module.exports = [{"id":0,"name":"gold","resourceType":"CURRENCY","iconPath":"..
 /*! exports provided: tileTypes, mapTiles, buildingTiles, resourceTiles, default */
 /***/ (function(module) {
 
-module.exports = {"tileTypes":{"1":"GRASS","2":"WATER","3":"MOUNTAIN","7":"OAKTREE","8":"PINETREE","9":"BIRCHTREE","10":"EUCALYPTUSTREE","11":"WILLOWTREE","12":"TEAKTREE","13":"DEADENT","14":"STONEMINE","15":"GRAPHITEMINE","16":"LIMESTONEMINE","17":"MARBLEMINE","18":"QUARTZMINE","19":"OBSIDIANMINE","20":"DIAMONDMINE","21":"COPPERMINE","22":"TINMINE","23":"IRONMINE","24":"GOLDMINE","25":"LATINUMMINE","26":"UNBELIEVIUMMINE","27":"LUSTRIALMINE","28":"SPECTRUSMINE","29":"CRACKEDFORGE","30":"STONEFORGE","31":"IRONFORGE","32":"GOLDFORGE","33":"LATINUMFORGE","34":"TEMPROUSDISTILLERY","71":"HOME","72":"WALL","73":"ROAD","74":"BRIDGE"},"mapTiles":{"GRASS":{"tileType":"GRASS","name":"Grass","walkable":true},"WATER":{"tileType":"WATER","name":"Water","walkable":false},"MOUNTAIN":{"tileType":"MOUNTAIN","name":"Mountain","walkable":false}},"buildingTiles":{"HOME":{"tileType":"HOME","name":"Home","description":"","placeable":false,"resourceCosts":[],"buildableSurfaces":[],"resourcePathable":true},"WALL":{"tileType":"WALL","name":"Wall","description":"Keeps invaders out.","placeable":true,"resourceCosts":[{"resourceId":1,"resourceCost":20}],"buildableSurfaces":["GRASS"],"resourcePathable":false},"ROAD":{"tileType":"ROAD","name":"Road","description":"Allows access between buildings.","placeable":true,"resourceCosts":[{"resourceId":13,"resourceCost":20}],"buildableSurfaces":["GRASS"],"resourcePathable":true},"BRIDGE":{"tileType":"BRIDGE","name":"Bridge","description":"Allows access between islands.","placeable":true,"resourceCosts":[{"resourceId":7,"resourceCost":40}],"buildableSurfaces":["WATER"],"resourcePathable":true},"CRACKEDFORGE":{"tileType":"CRACKEDFORGE","name":"Cracked Forge","description":"An old, weary forge. Bronze ingots are probably all this thing is capable of producing.","placeable":true,"resourceCosts":[{"resourceId":0,"resourceCost":150}],"buildableSurfaces":["GRASS"],"placesResourceTile":true,"resourceTileType":"CRACKEDFORGE","resourcePathable":true},"STONEFORGE":{"tileType":"STONEFORGE","name":"Stone Forge","description":"This forge burns hotter, allowing you to create more precious ingots.","placeable":true,"resourceCosts":[{"resourceId":0,"resourceCost":150},{"resourceId":13,"resourceCost":50},{"resourceId":7,"resourceCost":75},{"resourceId":4,"resourceCost":20}],"buildableSurfaces":["GRASS"],"placesResourceTile":true,"resourceTileType":"STONEFORGE","resourcePathable":true},"IRONFORGE":{"tileType":"IRONFORGE","name":"Iron Forge","description":"This forge burns hotter, allowing you to create more precious ingots.","placeable":true,"resourceCosts":[{"resourceId":6,"resourceCost":500},{"resourceId":9,"resourceCost":700},{"resourceId":28,"resourceCost":250}],"buildableSurfaces":["GRASS"],"placesResourceTile":true,"resourceTileType":"IRONFORGE","resourcePathable":true},"GOLDFORGE":{"tileType":"GOLDFORGE","name":"Gold Forge","description":"For reasons unknown to science, gold forges are particularly effective in forging latinum.","placeable":true,"resourceCosts":[{"resourceId":12,"resourceCost":1200},{"resourceId":15,"resourceCost":1500},{"resourceId":29,"resourceCost":250}],"buildableSurfaces":["GRASS"],"placesResourceTile":true,"resourceTileType":"GOLDFORGE","resourcePathable":true},"LATINUMFORGE":{"tileType":"LATINUMFORGE","name":"Latinum Forge","description":"A forge that burns hot enough to fuse together the world's most precious and rare metals.","placeable":true,"resourceCosts":[{"resourceId":19,"resourceCost":2500},{"resourceId":25,"resourceCost":1500},{"resourceId":30,"resourceCost":700}],"buildableSurfaces":["GRASS"],"placesResourceTile":true,"resourceTileType":"LATINUMFORGE","resourcePathable":true},"TEMPROUSDISTILLERY":{"tileType":"TEMPROUSDISTILLERY","name":"Temprous Distillery","description":"With this device, all impurities can be removed from temprous ingots, unlocking their limitless potential.","placeable":true,"resourceCosts":[{"resourceId":23,"resourceCost":5000},{"resourceId":16,"resourceCost":500},{"resourceId":31,"resourceCost":1200}],"buildableSurfaces":["GRASS"],"placesResourceTile":true,"resourceTileType":"TEMPROUSDISTILLERY","resourcePathable":true}},"resourceTiles":{"OAKTREE":{"tileType":"OAKTREE","name":"OakTree","placeable":false,"resourceIds":[1]},"PINETREE":{"tileType":"PINETREE","name":"PineTree","placeable":false,"resourceIds":[7]},"BIRCHTREE":{"tileType":"BIRCHTREE","name":"BirchTree","placeable":false,"resourceIds":[8]},"EUCALYPTUSTREE":{"tileType":"EUCALYPTUSTREE","name":"EucalptusTree","placeable":false,"resourceIds":[9]},"WILLOWTREE":{"tileType":"WILLOWTREE","name":"WillowTree","placeable":false,"resourceIds":[15]},"TEAKTREE":{"tileType":"TEAKTREE","name":"TeakTree","placeable":false,"resourceIds":[25]},"DEADENT":{"tileType":"DEADENT","name":"DeadEnt","placeable":false,"resourceIds":[16,17]},"STONEMINE":{"tileType":"STONEMINE","name":"StoneMine","placeable":false,"resourceIds":[13]},"GRAPHITEMINE":{"tileType":"GRAPHITEMINE","name":"GraphiteMine","placeable":false,"resourceIds":[26]},"LIMESTONEMINE":{"tileType":"LIMESTONEMINE","name":"LimestoneMine","placeable":false,"resourceIds":[27]},"MARBLEMINE":{"tileType":"MARBLEMINE","name":"MarbleMine","placeable":false,"resourceIds":[28]},"QUARTZMINE":{"tileType":"QUARTZMINE","name":"QuartzMine","placeable":false,"resourceIds":[29]},"OBSIDIANMINE":{"tileType":"OBSIDIANMINE","name":"ObsidianMine","placeable":false,"resourceIds":[30]},"DIAMONDMINE":{"tileType":"DIAMONDMINE","name":"DiamondMine","placeable":false,"resourceIds":[31]},"COPPERMINE":{"tileType":"COPPERMINE","name":"CopperMine","placeable":false,"resourceIds":[2]},"TINMINE":{"tileType":"TINMINE","name":"TinMine","placeable":false,"resourceIds":[3]},"IRONMINE":{"tileType":"IRONMINE","name":"IronMine","placeable":false,"resourceIds":[5]},"GOLDMINE":{"tileType":"GOLDMINE","name":"GoldMine","placeable":false,"resourceIds":[11]},"LATINUMMINE":{"tileType":"LATINUMMINE","name":"LatinumMine","placeable":false,"resourceIds":[18]},"UNBELIEVIUMMINE":{"tileType":"UNBELIEVIUMMINE","name":"UnbelieviumMine","placeable":false,"resourceIds":[20]},"LUSTRIALMINE":{"tileType":"LUSTRIALMINE","name":"LustrialMine","placeable":false,"resourceIds":[21]},"SPECTRUSMINE":{"tileType":"SPECTRUSMINE","name":"SpectrusMine","placeable":false,"resourceIds":[22]},"CRACKEDFORGE":{"tileType":"CRACKEDFORGE","name":"CrackedForge","placeable":true,"resourceIds":[4]},"STONEFORGE":{"tileType":"STONEFORGE","name":"StoneForge","placeable":true,"resourceIds":[4,6]},"IRONFORGE":{"tileType":"IRONFORGE","name":"IronForge","placeable":true,"resourceIds":[4,6,10,12]},"GOLDFORGE":{"tileType":"GOLDFORGE","name":"GoldForge","placeable":true,"resourceIds":[4,6,10,12,19]},"LATINUMFORGE":{"tileType":"LATINUMFORGE","name":"LatinumForge","placeable":true,"resourceIds":[4,6,10,12,19,23]},"TEMPROUSDISTILLERY":{"tileType":"TEMPROUSDISTILLERY","name":"TemprousDistillery","placeable":true,"resourceIds":[24]}}};
+module.exports = {"tileTypes":{"1":"GRASS","2":"WATER","3":"MOUNTAIN","7":"OAKTREE","8":"PINETREE","9":"BIRCHTREE","10":"EUCALYPTUSTREE","11":"WILLOWTREE","12":"TEAKTREE","13":"DEADENT","14":"STONEMINE","15":"GRAPHITEMINE","16":"LIMESTONEMINE","17":"MARBLEMINE","18":"QUARTZMINE","19":"OBSIDIANMINE","20":"DIAMONDMINE","21":"COPPERMINE","22":"TINMINE","23":"IRONMINE","24":"GOLDMINE","25":"LATINUMMINE","26":"UNBELIEVIUMMINE","27":"LUSTRIALMINE","28":"SPECTRUSMINE","29":"CRACKEDFORGE","30":"STONEFORGE","31":"IRONFORGE","32":"GOLDFORGE","33":"LATINUMFORGE","34":"TEMPROUSDISTILLERY","71":"HOME","72":"WALL","73":"ROAD","74":"BRIDGE"},"mapTiles":{"GRASS":{"tileType":"GRASS","name":"Grass","walkable":true},"WATER":{"tileType":"WATER","name":"Water","walkable":false},"MOUNTAIN":{"tileType":"MOUNTAIN","name":"Mountain","walkable":false}},"buildingTiles":{"HOME":{"tileType":"HOME","name":"Home","description":"","placeable":false,"resourceCosts":[],"buildableSurfaces":[],"resourcePathable":true},"WALL":{"tileType":"WALL","name":"Wall","description":"Keeps invaders out.","placeable":true,"resourceCosts":[{"resourceId":1,"resourceCost":20}],"buildableSurfaces":["GRASS"],"resourcePathable":false},"ROAD":{"tileType":"ROAD","name":"Road","description":"Allows access between buildings.","placeable":true,"resourceCosts":[{"resourceId":13,"resourceCost":20}],"buildableSurfaces":["GRASS"],"resourcePathable":true},"BRIDGE":{"tileType":"BRIDGE","name":"Bridge","description":"Allows access between islands.","placeable":true,"resourceCosts":[{"resourceId":7,"resourceCost":40}],"buildableSurfaces":["WATER"],"resourcePathable":true},"CRACKEDFORGE":{"tileType":"CRACKEDFORGE","name":"Cracked Forge","description":"An old, weary forge. Bronze ingots are probably all this thing is capable of producing.","placeable":true,"resourceCosts":[{"resourceId":0,"resourceCost":150}],"buildableSurfaces":["GRASS"],"placesResourceTile":true,"resourceTileType":"CRACKEDFORGE","resourcePathable":true},"STONEFORGE":{"tileType":"STONEFORGE","name":"Stone Forge","description":"This forge burns hotter, allowing you to create more precious ingots.","placeable":true,"resourceCosts":[{"resourceId":0,"resourceCost":150},{"resourceId":13,"resourceCost":50},{"resourceId":7,"resourceCost":75},{"resourceId":4,"resourceCost":20}],"buildableSurfaces":["GRASS"],"placesResourceTile":true,"resourceTileType":"STONEFORGE","resourcePathable":true},"IRONFORGE":{"tileType":"IRONFORGE","name":"Iron Forge","description":"This forge burns hotter, allowing you to create more precious ingots.","placeable":true,"resourceCosts":[{"resourceId":6,"resourceCost":500},{"resourceId":9,"resourceCost":700},{"resourceId":28,"resourceCost":250}],"buildableSurfaces":["GRASS"],"placesResourceTile":true,"resourceTileType":"IRONFORGE","resourcePathable":true},"GOLDFORGE":{"tileType":"GOLDFORGE","name":"Gold Forge","description":"For reasons unknown to science, gold forges are particularly effective in forging latinum.","placeable":true,"resourceCosts":[{"resourceId":12,"resourceCost":1200},{"resourceId":15,"resourceCost":1500},{"resourceId":29,"resourceCost":250}],"buildableSurfaces":["GRASS"],"placesResourceTile":true,"resourceTileType":"GOLDFORGE","resourcePathable":true},"LATINUMFORGE":{"tileType":"LATINUMFORGE","name":"Latinum Forge","description":"A forge that burns hot enough to fuse together the world's most precious and rare metals.","placeable":true,"resourceCosts":[{"resourceId":19,"resourceCost":2500},{"resourceId":25,"resourceCost":1500},{"resourceId":30,"resourceCost":700}],"buildableSurfaces":["GRASS"],"placesResourceTile":true,"resourceTileType":"LATINUMFORGE","resourcePathable":true},"TEMPROUSDISTILLERY":{"tileType":"TEMPROUSDISTILLERY","name":"Temprous Distillery","description":"With this device, all impurities can be removed from temprous ingots, unlocking their limitless potential.","placeable":true,"resourceCosts":[{"resourceId":23,"resourceCost":5000},{"resourceId":16,"resourceCost":500},{"resourceId":31,"resourceCost":1200}],"buildableSurfaces":["GRASS"],"placesResourceTile":true,"resourceTileType":"TEMPROUSDISTILLERY","resourcePathable":true}},"resourceTiles":{"OAKTREE":{"tileType":"OAKTREE","name":"Oak Tree","placeable":false,"resourceIds":[1]},"PINETREE":{"tileType":"PINETREE","name":"Pine Tree","placeable":false,"resourceIds":[7]},"BIRCHTREE":{"tileType":"BIRCHTREE","name":"Birch Tree","placeable":false,"resourceIds":[8]},"EUCALYPTUSTREE":{"tileType":"EUCALYPTUSTREE","name":"Eucalptus Tree","placeable":false,"resourceIds":[9]},"WILLOWTREE":{"tileType":"WILLOWTREE","name":"Willow Tree","placeable":false,"resourceIds":[15]},"TEAKTREE":{"tileType":"TEAKTREE","name":"Teak Tree","placeable":false,"resourceIds":[25]},"DEADENT":{"tileType":"DEADENT","name":"Dead Ent","placeable":false,"resourceIds":[16,17]},"STONEMINE":{"tileType":"STONEMINE","name":"Stone Mine","placeable":false,"resourceIds":[13]},"GRAPHITEMINE":{"tileType":"GRAPHITEMINE","name":"Graphite Mine","placeable":false,"resourceIds":[26]},"LIMESTONEMINE":{"tileType":"LIMESTONEMINE","name":"Limestone Mine","placeable":false,"resourceIds":[27]},"MARBLEMINE":{"tileType":"MARBLEMINE","name":"Marble Mine","placeable":false,"resourceIds":[28]},"QUARTZMINE":{"tileType":"QUARTZMINE","name":"Quartz Mine","placeable":false,"resourceIds":[29]},"OBSIDIANMINE":{"tileType":"OBSIDIANMINE","name":"Obsidian Mine","placeable":false,"resourceIds":[30]},"DIAMONDMINE":{"tileType":"DIAMONDMINE","name":"Diamond Mine","placeable":false,"resourceIds":[31]},"COPPERMINE":{"tileType":"COPPERMINE","name":"Copper Mine","placeable":false,"resourceIds":[2]},"TINMINE":{"tileType":"TINMINE","name":"Tin Mine","placeable":false,"resourceIds":[3]},"IRONMINE":{"tileType":"IRONMINE","name":"Iron Mine","placeable":false,"resourceIds":[5]},"GOLDMINE":{"tileType":"GOLDMINE","name":"Gold Mine","placeable":false,"resourceIds":[11]},"LATINUMMINE":{"tileType":"LATINUMMINE","name":"Latinum Mine","placeable":false,"resourceIds":[18]},"UNBELIEVIUMMINE":{"tileType":"UNBELIEVIUMMINE","name":"Unbelievium Mine","placeable":false,"resourceIds":[20]},"LUSTRIALMINE":{"tileType":"LUSTRIALMINE","name":"Lustrial Mine","placeable":false,"resourceIds":[21]},"SPECTRUSMINE":{"tileType":"SPECTRUSMINE","name":"Spectrus Mine","placeable":false,"resourceIds":[22]},"CRACKEDFORGE":{"tileType":"CRACKEDFORGE","name":"Cracked Forge","placeable":true,"resourceIds":[4]},"STONEFORGE":{"tileType":"STONEFORGE","name":"Stone Forge","placeable":true,"resourceIds":[4,6]},"IRONFORGE":{"tileType":"IRONFORGE","name":"Iron Forge","placeable":true,"resourceIds":[4,6,10,12]},"GOLDFORGE":{"tileType":"GOLDFORGE","name":"Gold Forge","placeable":true,"resourceIds":[4,6,10,12,19]},"LATINUMFORGE":{"tileType":"LATINUMFORGE","name":"Latinum Forge","placeable":true,"resourceIds":[4,6,10,12,19,23]},"TEMPROUSDISTILLERY":{"tileType":"TEMPROUSDISTILLERY","name":"Temprous Distillery","placeable":true,"resourceIds":[24]}}};
 
 /***/ }),
 
