@@ -57,6 +57,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppComponent", function() { return AppComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _services_upgrades_upgrades_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./services/upgrades/upgrades.service */ "./src/app/services/upgrades/upgrades.service.ts");
+/* harmony import */ var _services_settings_settings_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./services/settings/settings.service */ "./src/app/services/settings/settings.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -68,11 +69,12 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 };
 
 
+
 var AppComponent = /** @class */ (function () {
-    function AppComponent(upgradesService) {
+    function AppComponent(upgradesService, settingsService) {
         this.upgradesService = upgradesService;
+        this.settingsService = settingsService;
         this.title = 'clicker-game';
-        this.debugMode = false;
     }
     Object.defineProperty(AppComponent.prototype, "affordableUpgradeCount", {
         get: function () {
@@ -84,13 +86,21 @@ var AppComponent = /** @class */ (function () {
         enumerable: true,
         configurable: true
     });
+    Object.defineProperty(AppComponent.prototype, "debugMode", {
+        get: function () {
+            return this.settingsService.debugMode;
+        },
+        enumerable: true,
+        configurable: true
+    });
     AppComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-root',
             template: __webpack_require__(/*! ./app.component.html */ "./src/app/app.component.html"),
             styles: [__webpack_require__(/*! ./app.component.css */ "./src/app/app.component.css")]
         }),
-        __metadata("design:paramtypes", [_services_upgrades_upgrades_service__WEBPACK_IMPORTED_MODULE_1__["UpgradesService"]])
+        __metadata("design:paramtypes", [_services_upgrades_upgrades_service__WEBPACK_IMPORTED_MODULE_1__["UpgradesService"],
+            _services_settings_settings_service__WEBPACK_IMPORTED_MODULE_2__["SettingsService"]])
     ], AppComponent);
     return AppComponent;
 }());
@@ -190,7 +200,7 @@ var AppModule = /** @class */ (function () {
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
                 _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormsModule"],
                 _angular_forms__WEBPACK_IMPORTED_MODULE_2__["ReactiveFormsModule"],
-                _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_3__["BrowserAnimationsModule"],
+                _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_3__["NoopAnimationsModule"],
                 _material_import_material_import_module__WEBPACK_IMPORTED_MODULE_5__["MaterialImportModule"],
                 src_app_pipe_pipe_module__WEBPACK_IMPORTED_MODULE_6__["PipeModule"]
             ],
@@ -441,7 +451,7 @@ var ClickerMainComponent = /** @class */ (function () {
         return this.tooltipService.getResourceTooltip(id);
     };
     ClickerMainComponent.prototype.canHarvest = function (id) {
-        return this.resourcesService.canHarvest(id) && this.mapService.resourceTileUsable(id);
+        return this.resourcesService.canHarvest(id);
     };
     ClickerMainComponent.prototype.startHarvesting = function (id) {
         this.clickerMainService.startHarvesting(id);
@@ -763,6 +773,7 @@ var ResourceDialogComponent = /** @class */ (function () {
             iconPath: '',
             resourceConsumes: [],
             progressBarValue: 0,
+            pathAvailable: false,
             harvestable: true,
             harvesting: false,
             harvestStartDate: Date.now(),
@@ -989,7 +1000,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<mat-accordion>\n  <mat-expansion-panel expanded=\"true\">\n    <mat-expansion-panel-header>\n      <mat-panel-title>\n        <mat-icon color=\"primary\">save</mat-icon>\n        Save/Load\n      </mat-panel-title>\n    </mat-expansion-panel-header>\n\n    <mat-form-field>\n      <mat-select placeholder=\"Autosave Interval (Minutes)\" [(value)]=\"autosaveInterval\" (valueChange)=\"setAutosave()\">\n        <mat-option [value]=\"-1\">Disable</mat-option>\n        <mat-option [value]=\"60000\">1</mat-option>\n        <mat-option [value]=\"900000\">15</mat-option>\n        <mat-option [value]=\"1800000\">30</mat-option>\n        <mat-option [value]=\"3600000\">60</mat-option>\n      </mat-select>\n    </mat-form-field>\n\n    <button mat-raised-button color=\"primary\" (click)=\"saveGame()\">Save</button>\n    <button mat-raised-button color=\"warn\" (click)=\"deleteGame()\">Delete Save</button>\n\n    <button mat-raised-button (click)=\"exportSave()\">Export Save</button>\n    <button mat-raised-button (click)=\"importSave()\">Import Save</button>\n  </mat-expansion-panel>\n\n</mat-accordion>\n"
+module.exports = "<mat-accordion multi=\"true\">\n  <mat-expansion-panel expanded=\"true\">\n    <mat-expansion-panel-header>\n      <mat-panel-title>\n        <mat-icon color=\"primary\">save</mat-icon>\n        Save/Load\n      </mat-panel-title>\n    </mat-expansion-panel-header>\n\n    <mat-form-field>\n      <mat-select placeholder=\"Autosave Interval (Minutes)\" [(value)]=\"autosaveInterval\" (valueChange)=\"setAutosave()\">\n        <mat-option [value]=\"-1\">Disable</mat-option>\n        <mat-option [value]=\"60000\">1</mat-option>\n        <mat-option [value]=\"900000\">15</mat-option>\n        <mat-option [value]=\"1800000\">30</mat-option>\n        <mat-option [value]=\"3600000\">60</mat-option>\n      </mat-select>\n    </mat-form-field>\n\n    <button mat-raised-button color=\"primary\" (click)=\"saveGame()\">Save</button>\n    <button mat-raised-button color=\"warn\" (click)=\"deleteGame()\">Delete Save</button>\n\n    <button mat-raised-button (click)=\"exportSave()\">Export Save</button>\n    <button mat-raised-button (click)=\"importSave()\">Import Save</button>\n  </mat-expansion-panel>\n\n  <mat-expansion-panel expanded=\"true\">\n    <mat-expansion-panel-header>\n      <mat-panel-title>\n        <mat-icon color=\"primary\">bug_report</mat-icon>\n        Debug\n      </mat-panel-title>\n    </mat-expansion-panel-header>\n\n    <mat-checkbox [(ngModel)]=\"debugMode\">Debug Mode</mat-checkbox>\n  </mat-expansion-panel>\n</mat-accordion>\n"
 
 /***/ }),
 
@@ -1049,6 +1060,13 @@ var SettingsComponent = /** @class */ (function () {
         },
         set: function (value) {
             this.settingsService.autosaveInterval = value;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(SettingsComponent.prototype, "debugMode", {
+        set: function (value) {
+            this.settingsService.debugMode = value;
         },
         enumerable: true,
         configurable: true
@@ -1451,7 +1469,7 @@ var UpgradesComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "/* WorkersComponent's private CSS styles */\r\n.workers {\r\n  margin: 0 0 2em 0;\r\n  list-style-type: none;\r\n  padding: 0;\r\n  width: 25em;\r\n}\r\n.workers mat-expansion-panel {\r\n  margin: 0;\r\n}\r\n.workers mat-expansion-panel-header {\r\n  height: 30px !important;\r\n}\r\n.workers mat-card-title {\r\n  text-align: left;\r\n}\r\n.workers mat-card-subtitle {\r\n  position: absolute;\r\n  top: 10px;\r\n  right: 10px;\r\n}\r\n.workers mat-slider {\r\n  width: 100%;\r\n  top: -22px;\r\n}\r\n.workers mat-card {\r\n  position: relative;\r\n  cursor: pointer;\r\n  margin: .5em;\r\n  padding: .4em 0;\r\n  height: 3.6em;\r\n  width: 100%;\r\n  border-radius: 4px;\r\n}\r\n.workers button {\r\n  position: relative;\r\n  cursor: pointer;\r\n  margin: .5em;\r\n  padding: .4em 0;\r\n  height: 3.6em;\r\n  width: 100%;\r\n  border-radius: 4px;\r\n}\r\n.workers button:hover {\r\n  color: #607D8B;\r\n  background-color: #DDD;\r\n  left: .1em;\r\n}\r\n.workers a {\r\n  color: #888;\r\n  text-decoration: none;\r\n  position: relative;\r\n  display: block;\r\n  width: 250px;\r\n}\r\n.workers a:hover {\r\n  color:#607D8B;\r\n}\r\n.workers .harvestable {\r\n  background-color: antiquewhite;\r\n}\r\n.workers .harvestable:hover {\r\n  background-color: blanchedalmond;\r\n}\r\n.workers .badge {\r\n  display: inline-block;\r\n  font-size: small;\r\n  color: white;\r\n  padding: 0.8em 0.7em 0 0.7em;\r\n  background-color: #607D8B;\r\n  line-height: 1em;\r\n  position: absolute;\r\n  right: -9px;\r\n  top: 1px;\r\n  height: 1.8em;\r\n  min-width: 16px;\r\n  text-align: center;\r\n  margin-right: .8em;\r\n  border-radius: 0 4px 4px 0;\r\n}\r\nbutton {\r\n  background-color: #eee;\r\n  border: none;\r\n  padding: 5px 10px;\r\n  border-radius: 4px;\r\n  cursor: pointer;\r\n  cursor: hand;\r\n  font-family: Arial;\r\n}\r\nbutton:hover {\r\n  background-color: #cfd8dc;\r\n}\r\nbutton.delete {\r\n  position: relative;\r\n  left: 194px;\r\n  top: -32px;\r\n  background-color: gray !important;\r\n  color: white;\r\n}\r\n"
+module.exports = "/* WorkersComponent's private CSS styles */\r\n.workers {\r\n  margin: 0 0 2em 0;\r\n  list-style-type: none;\r\n  padding: 0;\r\n  width: 25em;\r\n}\r\n.workers mat-expansion-panel {\r\n  margin: 0;\r\n}\r\n.workers mat-expansion-panel-header {\r\n  height: 30px !important;\r\n}\r\n.workers mat-card-title {\r\n  text-align: left;\r\n}\r\n.workers mat-card-subtitle {\r\n  position: absolute;\r\n  top: 10px;\r\n  right: 10px;\r\n}\r\n.workers mat-slider {\r\n  width: 100%;\r\n  top: -22px;\r\n}\r\n.workers mat-card {\r\n  position: relative;\r\n  cursor: pointer;\r\n  margin: .5em;\r\n  padding: .4em 0;\r\n  height: 3.6em;\r\n  width: 100%;\r\n  border-radius: 4px;\r\n}\r\n.workers button {\r\n  position: relative;\r\n  cursor: pointer;\r\n  margin: .5em;\r\n  padding: .4em 0;\r\n  height: 3.6em;\r\n  width: 100%;\r\n  border-radius: 4px;\r\n}\r\n.workers button:hover {\r\n  color: #607D8B;\r\n  background-color: #DDD;\r\n  left: .1em;\r\n}\r\n.workers a {\r\n  color: #888;\r\n  text-decoration: none;\r\n  position: relative;\r\n  display: block;\r\n  width: 250px;\r\n}\r\n.workers a:hover {\r\n  color:#607D8B;\r\n}\r\n.workers .harvestable {\r\n  background-color: antiquewhite;\r\n}\r\n.workers .harvestable:hover {\r\n  background-color: blanchedalmond;\r\n}\r\n.workers .badge {\r\n  display: inline-block;\r\n  font-size: small;\r\n  color: white;\r\n  padding: 0.8em 0.7em 0 0.7em;\r\n  background-color: #607D8B;\r\n  line-height: 1em;\r\n  position: absolute;\r\n  right: -9px;\r\n  top: 1px;\r\n  height: 1.8em;\r\n  min-width: 16px;\r\n  text-align: center;\r\n  margin-right: .8em;\r\n  border-radius: 0 4px 4px 0;\r\n}\r\n.path-broken-warn {\r\n  position: absolute;\r\n  top: 5px;\r\n  right: 85px;\r\n}\r\nbutton {\r\n  background-color: #eee;\r\n  border: none;\r\n  padding: 5px 10px;\r\n  border-radius: 4px;\r\n  cursor: pointer;\r\n  cursor: hand;\r\n  font-family: Arial;\r\n}\r\nbutton:hover {\r\n  background-color: #cfd8dc;\r\n}\r\nbutton.delete {\r\n  position: relative;\r\n  left: 194px;\r\n  top: -32px;\r\n  background-color: gray !important;\r\n  color: white;\r\n}\r\n"
 
 /***/ }),
 
@@ -1462,7 +1480,7 @@ module.exports = "/* WorkersComponent's private CSS styles */\r\n.workers {\r\n 
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ul class=\"workers\">\n  <mat-accordion multi=\"true\">\n    <mat-expansion-panel expanded=\"true\" *ngFor=\"let worker of getWorkers(true, true, true)\">\n      <mat-expansion-panel-header>\n        <mat-panel-title>\n          {{worker.resourceType | titlecase}}\n        </mat-panel-title>\n        <mat-panel-description>\n        </mat-panel-description>\n      </mat-expansion-panel-header>\n\n      <button mat-raised-button [color]=\"canAfford(worker.id) ? 'accent' : 'disabled'\" (click)=\"hireWorker(worker.id)\">\n        <mat-card-title>{{worker.workerCount}} Workers ({{worker.freeWorkers}} Idle)</mat-card-title>\n        <mat-card-subtitle>{{worker.cost | number}} Gold</mat-card-subtitle>\n      </button>\n\n      <div *ngFor=\"let resourceWorker of getAccessibleResourceWorkers(worker)\">\n        <mat-card *ngIf=\"resourceWorker.workable || !adminService.filterAccessible\" matTooltip=\"{{getTooltipMessage(resourceWorker.resourceId)}}\"\n          matTooltipPosition=\"right\">\n          <mat-card-title>{{resourcesService.getResource(resourceWorker.resourceId).name | titlecase}}</mat-card-title>\n          <mat-card-subtitle>{{resourceWorker.workerCount}} Workers</mat-card-subtitle>\n          <mat-slider [color]=\"resourceWorker.sliderSettingValid ? 'accent' : 'warn'\" [id]=\"resourceWorker.resourceId\" [max]=\"worker.workerCount\"\n             [tickInterval]=\"1\" [thumbLabel]=\"true\" [(ngModel)]=\"resourceWorker.sliderSetting\" (input)=\"checkSliderValue($event)\" (change)=\"updateResourceWorker($event)\">\n          </mat-slider>\n        </mat-card>\n      </div>\n    </mat-expansion-panel>\n  </mat-accordion>\n</ul>\n"
+module.exports = "<ul class=\"workers\">\n  <mat-accordion multi=\"true\">\n    <mat-expansion-panel expanded=\"true\" *ngFor=\"let worker of getWorkers(true, true, true)\">\n      <mat-expansion-panel-header>\n        <mat-panel-title>\n          {{worker.resourceType | titlecase}}\n        </mat-panel-title>\n        <mat-panel-description>\n        </mat-panel-description>\n      </mat-expansion-panel-header>\n\n      <button mat-raised-button [color]=\"canAfford(worker.id) ? 'accent' : 'disabled'\" (click)=\"hireWorker(worker.id)\">\n        <mat-card-title>{{worker.workerCount}} Workers ({{worker.freeWorkers}} Idle)</mat-card-title>\n        <mat-card-subtitle>{{worker.cost | number}} Gold</mat-card-subtitle>\n      </button>\n\n      <div *ngFor=\"let resourceWorker of getAccessibleResourceWorkers(worker)\">\n        <mat-card *ngIf=\"resourceWorker.workable || !adminService.filterAccessible\" matTooltip=\"{{getTooltipMessage(resourceWorker.resourceId)}}\"\n          matTooltipPosition=\"right\">\n          <mat-card-title>{{getResource(resourceWorker.resourceId).name | titlecase}}</mat-card-title>\n          <div class=\"path-broken-warn\" *ngIf=\"!pathAvailable(resourceWorker.resourceId)\">(Path Broken)</div>\n          <mat-card-subtitle>{{resourceWorker.workerCount}} Workers</mat-card-subtitle>\n          <mat-slider [color]=\"resourceWorker.sliderSettingValid ? 'accent' : 'warn'\" [id]=\"resourceWorker.resourceId\" [max]=\"worker.workerCount\"\n              [disabled]=\"!pathAvailable(resourceWorker.resourceId)\" [tickInterval]=\"1\" [thumbLabel]=\"true\" [(ngModel)]=\"resourceWorker.sliderSetting\"\n              (input)=\"checkSliderValue($event)\" (change)=\"updateResourceWorker($event)\">\n          </mat-slider>\n        </mat-card>\n      </div>\n    </mat-expansion-panel>\n  </mat-accordion>\n</ul>\n"
 
 /***/ }),
 
@@ -1535,6 +1553,12 @@ var WorkersComponent = /** @class */ (function () {
     };
     WorkersComponent.prototype.updateResourceWorker = function (event) {
         this.workersService.updateResourceWorker(+event.source._elementRef.nativeElement.id, +event.value);
+    };
+    WorkersComponent.prototype.pathAvailable = function (id) {
+        return this.getResource(id).pathAvailable;
+    };
+    WorkersComponent.prototype.getResource = function (id) {
+        return this.resourcesService.getResource(id);
     };
     WorkersComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -1635,19 +1659,22 @@ var MapDirective = /** @class */ (function () {
         this.transform = d3.zoomIdentity;
         this.lastAnimationTime = Date.now();
         this.tileAnimationSpeed = 0.003;
-        this.images = [{ name: 'map', x: 0, y: 0, width: 1600, height: 1600 }];
+        this.tilePixelSize = 16;
+        this.gridWidth = 150;
+        this.gridHeight = 150;
+        this.images = [{ name: 'map', x: 0, y: 0, width: this.gridWidth * this.tilePixelSize, height: this.gridHeight * this.tilePixelSize }];
     }
     MapDirective.prototype.ngAfterViewInit = function () {
         this.canvas = d3.select('canvas');
         this.context = this.canvas.node().getContext('2d');
-        this.width = this.canvas.property('width');
-        this.height = this.canvas.property('height');
+        this.canvasPixelWidth = this.canvas.property('width');
+        this.canvasPixelHeight = this.canvas.property('height');
         this.canvas.call(d3.zoom()
-            .scaleExtent([1 / 3, 4])
-            .translateExtent([[0, 0], [2400, 2400]])
+            .scaleExtent([2 / 3, 5])
+            .translateExtent([[0, 0], [this.gridWidth * this.tilePixelSize, this.gridHeight * this.tilePixelSize]])
             .on('zoom', this.zoomed(this)));
         this.canvas.on('click', this.clickTile(this));
-        d3.timer(this.updateResourceAnimations(this), 125);
+        d3.interval(this.updateResourceAnimations(this), 25);
     };
     MapDirective.prototype.zoomed = function (self) {
         return function (d) {
@@ -1658,8 +1685,8 @@ var MapDirective = /** @class */ (function () {
     MapDirective.prototype.clickTile = function (self) {
         return function (d) {
             var coordinates = d3.mouse(this);
-            coordinates[0] = Math.floor(self.transform.invertX(coordinates[0]) / 16);
-            coordinates[1] = Math.floor(self.transform.invertY(coordinates[1]) / 16);
+            coordinates[0] = Math.floor(self.transform.invertX(coordinates[0]) / self.tilePixelSize);
+            coordinates[1] = Math.floor(self.transform.invertY(coordinates[1]) / self.tilePixelSize);
             var tile = self.mapService.tiledMap[coordinates[0] + coordinates[1] * self.mapService.mapWidth];
             if (self.mapService.deleteMode) {
                 self.mapService.clearBuilding(tile);
@@ -1681,11 +1708,11 @@ var MapDirective = /** @class */ (function () {
                 var endPos = [destinationTile.x, destinationTile.y];
                 resourceAnimation.x += (endPos[0] - startPos[0]) * deltaTime * self.tileAnimationSpeed;
                 resourceAnimation.y += (endPos[1] - startPos[1]) * deltaTime * self.tileAnimationSpeed;
-                if (Math.abs(resourceAnimation.x - currentTile.x) >= 8 ||
-                    Math.abs(resourceAnimation.y - currentTile.y) >= 8) {
+                if (Math.abs(resourceAnimation.x - currentTile.x) >= self.tilePixelSize / 2 ||
+                    Math.abs(resourceAnimation.y - currentTile.y) >= self.tilePixelSize / 2) {
                     resourceAnimation.pathStep++;
                     if (resourceAnimation.pathStep === resourceAnimation.buildingPath.length - 1) {
-                        self.resourcesService.finishResourceAnimation(resourceAnimation.resourceId);
+                        self.resourcesService.finishResourceAnimation(resourceAnimation.resourceId, resourceAnimation.spawnedByPlayer);
                         resourceAnimation.done = true;
                     }
                 }
@@ -1697,30 +1724,40 @@ var MapDirective = /** @class */ (function () {
     };
     MapDirective.prototype.refreshCanvas = function () {
         this.context.save();
-        this.context.clearRect(0, 0, this.width, this.height);
+        this.context.clearRect(0, 0, this.canvasPixelWidth, this.canvasPixelHeight);
         this.context.translate(this.transform.x, this.transform.y);
         this.context.scale(this.transform.k, this.transform.k);
         this.drawCanvas();
         this.context.restore();
     };
     MapDirective.prototype.drawCanvas = function () {
+        var tilesDrawn = 0;
+        var upperLeftPixel = [(-this.transform.x - this.tilePixelSize * 5) / this.transform.k,
+            (-this.transform.y - this.tilePixelSize * 5) / this.transform.k];
+        var lowerRightPixel = [upperLeftPixel[0] + (this.canvasPixelWidth + this.tilePixelSize * 5) / this.transform.k,
+            upperLeftPixel[1] + (this.canvasPixelHeight + this.tilePixelSize * 5) / this.transform.k];
         for (var _i = 0, _a = this.mapService.tiledMap; _i < _a.length; _i++) {
             var tile = _a[_i];
+            if (tile.x < upperLeftPixel[0] || tile.x > lowerRightPixel[0] ||
+                tile.y < upperLeftPixel[1] || tile.y > lowerRightPixel[1]) {
+                continue;
+            }
             var mapTileImage = document.getElementById(tile.mapTileType.toLowerCase());
-            this.context.drawImage(mapTileImage, tile.x, tile.y, 16, 16);
+            this.context.drawImage(mapTileImage, tile.x, tile.y, this.tilePixelSize, this.tilePixelSize);
             if (tile.resourceTileType) {
                 var resourceTileImage = document.getElementById(tile.resourceTileType.toLowerCase());
-                this.context.drawImage(resourceTileImage, tile.x, tile.y, 16, 16);
+                this.context.drawImage(resourceTileImage, tile.x, tile.y, this.tilePixelSize, this.tilePixelSize);
             }
             if (tile.buildingTileType) {
                 var buildingTileImage = document.getElementById(tile.buildingTileType.toLowerCase());
-                this.context.drawImage(buildingTileImage, tile.x, tile.y, 16, 16);
+                this.context.drawImage(buildingTileImage, tile.x, tile.y, this.tilePixelSize, this.tilePixelSize);
             }
+            tilesDrawn++;
         }
         for (var _b = 0, _c = this.mapService.resourceAnimations; _b < _c.length; _b++) {
             var resourceAnimation = _c[_b];
             var resourceTileImage = document.getElementById(this.resourcesService.getResource(resourceAnimation.resourceId).name.toLowerCase().replace(' ', '-'));
-            this.context.drawImage(resourceTileImage, resourceAnimation.x, resourceAnimation.y, 8, 8);
+            this.context.drawImage(resourceTileImage, resourceAnimation.x, resourceAnimation.y, this.tilePixelSize / 2, this.tilePixelSize / 2);
         }
     };
     MapDirective = __decorate([
@@ -2297,7 +2334,7 @@ var ClickerMainService = /** @class */ (function () {
         if (this.shouldAnimateProgressBar(id)) {
             this.resourcesService.getResource(id).progressBarValue = 0;
         }
-        this.mapService.spawnResourceAnimation(id);
+        this.mapService.spawnResourceAnimation(id, 1, true);
         this.stopHarvesting(id);
     };
     ClickerMainService = __decorate([
@@ -2350,27 +2387,30 @@ var MapService = /** @class */ (function () {
         this.mapTiles = baseTiles.mapTiles;
         this.buildingTiles = baseTiles.buildingTiles;
         this.resourceTiles = baseTiles.resourceTiles;
+        this.mapTileArray = [];
+        this.buildingTileArray = [];
+        this.resourceTileArray = [];
         this.tiledMap = [];
         this.resourceAnimations = [];
         this.deleteMode = false;
         var _tiledMap = [];
         var mapTileIds, resourceTileIds, buildingTileIds;
         var _mapWidth, _mapHeight;
-        // const tileTypes = {1: MapTileType.Grass, 2: MapTileType.Water, 3: MapTileType.Mountain,
-        //   7: ResourceTileType.OakTree, 8: ResourceTileType.PineTree, 9: ResourceTileType.BirchTree, 10: ResourceTileType.EucalyptusTree,
-        //   11: ResourceTileType.WillowTree, 12: ResourceTileType.TeakTree, 13: ResourceTileType.DeadEnt, 14: ResourceTileType.StoneMine,
-        //   15: ResourceTileType.GraphiteMine, 16: ResourceTileType.LimestoneMine, 17: ResourceTileType.MarbleMine,
-        //   18: ResourceTileType.QuartzMine, 19: ResourceTileType.ObsidianMine, 20: ResourceTileType.DiamondMine,
-        //   21: ResourceTileType.CopperMine, 22: ResourceTileType.TinMine, 23: ResourceTileType.IronMine, 24: ResourceTileType.GoldMine,
-        //   25: ResourceTileType.LatinumMine, 26: ResourceTileType.UnbelieviumMine, 27: ResourceTileType.LustrialMine,
-        //   28: ResourceTileType.SpectrusMine, 29: ResourceTileType.CrackedForge, 30: ResourceTileType.StoneForge,
-        //   31: ResourceTileType.IronForge, 32: ResourceTileType.GoldForge, 33: ResourceTileType.LatinumForge,
-        //   34: ResourceTileType.TemprousDistillery, 71: BuildingTileType.Home, 72: BuildingTileType.Wall,
-        //   73: BuildingTileType.Road, 74: BuildingTileType.Bridge
-        // };
-        // const resourceIds = {7: [1], 8: [7], 9: [8], 10: [9], 11: [15], 12: [25], 13: [16], 14: [13], 15: [26], 16: [27],
-        //   17: [28], 18: [29], 19: [30], 20: [31], 21: [2], 22: [3], 23: [5], 24: [11], 25: [18], 26: [20], 27: [21], 28: [22],
-        //   29: [4, 5], 30: [4, 5, 6], 31: [4, 5, 6, 10, 12], 32: [4, 5, 6, 10, 12, 19], 33: [4, 5, 6, 10, 12, 19, 23], 34: [24]};
+        for (var key in this.mapTiles) {
+            if (this.mapTiles.hasOwnProperty(key)) {
+                this.mapTileArray.push(this.mapTiles[key]);
+            }
+        }
+        for (var key in this.buildingTiles) {
+            if (this.buildingTiles.hasOwnProperty(key)) {
+                this.buildingTileArray.push(this.buildingTiles[key]);
+            }
+        }
+        for (var key in this.resourceTiles) {
+            if (this.resourceTiles.hasOwnProperty(key)) {
+                this.resourceTileArray.push(this.resourceTiles[key]);
+            }
+        }
         var xmlRequest = new XMLHttpRequest();
         xmlRequest.onload = function () {
             var xmlDoc = new DOMParser().parseFromString(xmlRequest.responseText, 'text/xml');
@@ -2463,16 +2503,21 @@ var MapService = /** @class */ (function () {
         this.calculateResourceConnections();
     };
     MapService.prototype.calculateResourceConnections = function () {
+        var _this = this;
         var resourceTiles = this.getResourceTiles();
-        for (var _i = 0, resourceTiles_1 = resourceTiles; _i < resourceTiles_1.length; _i++) {
-            var resourceTile = resourceTiles_1[_i];
+        for (var _i = 0, _a = this.resourcesService.resources; _i < _a.length; _i++) {
+            var resource = _a[_i];
+            resource.pathAvailable = false;
+        }
+        for (var _b = 0, resourceTiles_1 = resourceTiles; _b < resourceTiles_1.length; _b++) {
+            var resourceTile = resourceTiles_1[_b];
             resourceTile.buildingPath = [];
             var visitedTiles = [];
             var tileQueue = [];
             var nodeMap = new Map();
             var currentNode = void 0;
-            for (var _a = 0, _b = this.getNeighborTiles(resourceTile); _a < _b.length; _a++) {
-                var neighbor = _b[_a];
+            for (var _c = 0, _d = this.getNeighborTiles(resourceTile); _c < _d.length; _c++) {
+                var neighbor = _d[_c];
                 if (neighbor.buildingTileType && this.buildingTiles[neighbor.buildingTileType].resourcePathable) {
                     tileQueue.push(neighbor);
                 }
@@ -2489,10 +2534,15 @@ var MapService = /** @class */ (function () {
                     }
                     buildingPath.push(backtrackNode);
                     resourceTile.buildingPath = buildingPath.reverse();
+                    var resources = this.resourceTiles[resourceTile.resourceTileType].resourceIds.map(function (id) { return _this.resourcesService.getResource(id); });
+                    for (var _e = 0, resources_1 = resources; _e < resources_1.length; _e++) {
+                        var resource = resources_1[_e];
+                        resource.pathAvailable = true;
+                    }
                     tileQueue = [];
                 }
-                for (var _c = 0, _d = this.getNeighborTiles(currentNode); _c < _d.length; _c++) {
-                    var neighbor = _d[_c];
+                for (var _f = 0, _g = this.getNeighborTiles(currentNode); _f < _g.length; _f++) {
+                    var neighbor = _g[_f];
                     if (!visitedTiles.includes(neighbor) && neighbor.buildingTileType &&
                         this.buildingTiles[neighbor.buildingTileType].resourcePathable) {
                         nodeMap.set(neighbor, currentNode);
@@ -2503,14 +2553,20 @@ var MapService = /** @class */ (function () {
             }
         }
     };
-    MapService.prototype.spawnResourceAnimation = function (resourceId) {
-        var matchingTiles = this.getTilesForResource(resourceId).filter(function (tile) { return tile.buildingPath.length > 0; });
+    MapService.prototype.spawnResourceAnimation = function (resourceId, multiplier, spawnedByPlayer) {
+        if (multiplier === void 0) { multiplier = 1; }
+        var matchingTiles = this.getTilesForResource(resourceId).filter(function (_tile) { return _tile.buildingPath.length > 0; });
         var tile = matchingTiles[Math.floor(Math.random() * matchingTiles.length)];
+        if (tile === undefined) {
+            return;
+        }
         this.resourceAnimations.push({
             resourceId: resourceId,
+            multiplier: multiplier,
+            spawnedByPlayer: spawnedByPlayer,
             x: tile.x + 4,
             y: tile.y + 4,
-            buildingPath: tile.buildingPath.map(function (tile) { return tile; }),
+            buildingPath: tile.buildingPath.map(function (_tile) { return _tile; }),
             pathStep: 0,
             done: false
         });
@@ -2557,10 +2613,6 @@ var MapService = /** @class */ (function () {
         }
         return tiles;
     };
-    MapService.prototype.resourceTileUsable = function (resourceId) {
-        var matchingTiles = this.getTilesForResource(resourceId);
-        return (matchingTiles.length > 0 && matchingTiles.some(function (tile) { return tile.buildingPath.length > 0; }));
-    };
     MapService.prototype.getTileType = function (tileId) {
         if (tileId in [37, 38, 39, 40, 41, 42, 43, 44, 54, 55, 56, 57, 58, 59, 60, 61, 71, 72, 73, 74, 75, 76, 77, 78, 88,
             89, 90, 91, 92, 93, 94, 95, 105, 106, 107, 108, 109, 110, 111, 112, 123, 124, 125, 126, 127, 128, 129, 130]) {
@@ -2574,43 +2626,10 @@ var MapService = /** @class */ (function () {
     MapService.prototype.getTileCropDetail = function (tileId) {
         return { x: 0, y: 0, width: 16, height: 16 };
     };
-    Object.defineProperty(MapService.prototype, "mapTileArray", {
-        get: function () {
-            var tiles = [];
-            for (var key in this.mapTiles) {
-                tiles.push(this.mapTiles[key]);
-            }
-            return tiles;
-        },
-        enumerable: true,
-        configurable: true
-    });
     MapService.prototype.getTilesForResource = function (resourceId) {
         var matchingTypes = this.resourceTileArray.filter(function (tile) { return tile.resourceIds.includes(resourceId); }).map(function (tile) { return tile.tileType; });
         return this.tiledMap.filter(function (tile) { return matchingTypes.includes(tile.resourceTileType); });
     };
-    Object.defineProperty(MapService.prototype, "buildingTileArray", {
-        get: function () {
-            var tiles = [];
-            for (var key in this.buildingTiles) {
-                tiles.push(this.buildingTiles[key]);
-            }
-            return tiles;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(MapService.prototype, "resourceTileArray", {
-        get: function () {
-            var tiles = [];
-            for (var key in this.resourceTiles) {
-                tiles.push(this.resourceTiles[key]);
-            }
-            return tiles;
-        },
-        enumerable: true,
-        configurable: true
-    });
     MapService = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
             providedIn: 'root'
@@ -2700,9 +2719,11 @@ var ResourcesService = /** @class */ (function () {
     ResourcesService.prototype.getResource = function (id) {
         return this.resources.find(function (resource) { return resource.id === id; });
     };
-    ResourcesService.prototype.finishResourceAnimation = function (id) {
+    ResourcesService.prototype.finishResourceAnimation = function (id, spawnedByPlayer) {
         var resource = this.getResource(id);
-        resource.amountTravelling--;
+        if (spawnedByPlayer) {
+            resource.amountTravelling--;
+        }
         this.harvestResource(id, 1, true);
     };
     ResourcesService.prototype.harvestResource = function (id, multiplier, forceHarvest) {
@@ -2723,7 +2744,7 @@ var ResourcesService = /** @class */ (function () {
     ResourcesService.prototype.canHarvest = function (id, multiplier) {
         if (multiplier === void 0) { multiplier = 1; }
         var resource = this.getResource(id);
-        if (!resource.harvestable || resource.harvesting) {
+        if (!resource.harvestable || resource.harvesting || !resource.pathAvailable) {
             return false;
         }
         for (var _i = 0, _a = resource.resourceConsumes; _i < _a.length; _i++) {
@@ -2825,7 +2846,9 @@ var SettingsService = /** @class */ (function () {
         this.mapService = mapService;
         this.snackbar = snackbar;
         this.dialog = dialog;
+        this.gameVersion = '1.2';
         this.autosaveInterval = 900000;
+        this.debugMode = false;
         this.loadGame();
     }
     SettingsService.prototype.openSaveDialog = function (saveData) {
@@ -2878,7 +2901,11 @@ var SettingsService = /** @class */ (function () {
             upgrades: [],
             workers: [],
             tiles: [],
-            autosaveInterval: this.autosaveInterval
+            settings: {
+                autosaveInterval: this.autosaveInterval,
+                debugMode: this.debugMode
+            },
+            gameVersion: this.gameVersion
         };
         for (var _i = 0, _a = this.resourcesService.resources; _i < _a.length; _i++) {
             var resource = _a[_i];
@@ -2887,6 +2914,7 @@ var SettingsService = /** @class */ (function () {
                 amount: resource.amount,
                 harvestable: resource.harvestable,
                 harvestYield: resource.harvestYield,
+                harvestMilliseconds: resource.harvestMilliseconds,
                 sellable: resource.sellable,
                 sellsFor: resource.sellsFor,
                 resourceAccessible: resource.resourceAccessible
@@ -2943,6 +2971,9 @@ var SettingsService = /** @class */ (function () {
         var backupSave = this.exportSave();
         try {
             var saveData = JSON.parse(atob(saveDataString));
+            if (saveData.gameVersion !== this.gameVersion) {
+                throw new Error('Save is from a different version of the game.');
+            }
             if (saveData.resources) {
                 for (var _i = 0, _a = saveData.resources; _i < _a.length; _i++) {
                     var resourceData = _a[_i];
@@ -2953,6 +2984,7 @@ var SettingsService = /** @class */ (function () {
                     resource.amount = resourceData.amount;
                     resource.harvestable = resourceData.harvestable;
                     resource.harvestYield = resourceData.harvestYield;
+                    resource.harvestMilliseconds = resourceData.harvestMilliseconds;
                     resource.sellable = resourceData.sellable;
                     resource.sellsFor = resourceData.sellsFor;
                     resource.resourceAccessible = resourceData.resourceAccessible;
@@ -2965,7 +2997,6 @@ var SettingsService = /** @class */ (function () {
                     if (upgrade === undefined) {
                         continue;
                     }
-                    this.upgradesService.applyUpgrade(upgrade);
                     upgrade.purchased = upgradeData.purchased;
                 }
             }
@@ -3008,7 +3039,8 @@ var SettingsService = /** @class */ (function () {
                     _loop_1(tileData);
                 }
             }
-            this.autosaveInterval = saveData.autosaveInterval;
+            this.autosaveInterval = saveData.settings.autosaveInterval;
+            this.debugMode = saveData.settings.debugMode;
             this.mapService.calculateResourceConnections();
             return true;
         }
@@ -3172,8 +3204,9 @@ var TooltipService = /** @class */ (function () {
             tooltip = tooltip.substring(0, tooltip.length - 1);
             tooltip += '.';
         }
-        tooltip += "\n" + Math.floor(100 * resource.harvestYield / resource.harvestMilliseconds * 1000) / 100 + " harvested per second;" +
-            (" " + Math.floor(100 * worker.workerYield * worker.workerCount) / 100 + " per second from workers.");
+        tooltip += "\n" + Math.floor(resource.harvestYield * 100) / 100 + " harvested per click " +
+            ("(" + Math.floor(resource.harvestMilliseconds) / 1000 + " seconds per harvest).") +
+            ("\n" + Math.floor(100 * worker.workerYield * worker.workerCount) / 100 + " per second from workers.");
         return tooltip;
     };
     TooltipService.prototype.getWorkerTooltip = function (resourceId) {
@@ -3398,7 +3431,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "WorkersService", function() { return WorkersService; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _resources_resources_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../resources/resources.service */ "./src/app/services/resources/resources.service.ts");
-/* harmony import */ var _messages_messages_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../messages/messages.service */ "./src/app/services/messages/messages.service.ts");
+/* harmony import */ var _map_map_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./../map/map.service */ "./src/app/services/map/map.service.ts");
+/* harmony import */ var _messages_messages_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../messages/messages.service */ "./src/app/services/messages/messages.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -3411,10 +3445,12 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
 var baseWorkers = __webpack_require__(/*! ../../../assets/json/workers.json */ "./src/assets/json/workers.json");
 var WorkersService = /** @class */ (function () {
-    function WorkersService(resourcesService, messagesService) {
+    function WorkersService(resourcesService, mapService, messagesService) {
         this.resourcesService = resourcesService;
+        this.mapService = mapService;
         this.messagesService = messagesService;
         this.workers = baseWorkers;
     }
@@ -3457,7 +3493,7 @@ var WorkersService = /** @class */ (function () {
                 if (resourceWorker.workerCount === 0) {
                     continue;
                 }
-                this.resourcesService.harvestResource(resourceWorker.resourceId, resourceWorker.workerYield * resourceWorker.workerCount);
+                this.mapService.spawnResourceAnimation(resourceWorker.resourceId, resourceWorker.workerYield * resourceWorker.workerCount, false);
             }
         }
     };
@@ -3491,7 +3527,8 @@ var WorkersService = /** @class */ (function () {
             providedIn: 'root'
         }),
         __metadata("design:paramtypes", [_resources_resources_service__WEBPACK_IMPORTED_MODULE_1__["ResourcesService"],
-            _messages_messages_service__WEBPACK_IMPORTED_MODULE_2__["MessagesService"]])
+            _map_map_service__WEBPACK_IMPORTED_MODULE_2__["MapService"],
+            _messages_messages_service__WEBPACK_IMPORTED_MODULE_3__["MessagesService"]])
     ], WorkersService);
     return WorkersService;
 }());
@@ -3507,7 +3544,7 @@ var WorkersService = /** @class */ (function () {
 /*! exports provided: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, default */
 /***/ (function(module) {
 
-module.exports = [{"id":0,"name":"gold","resourceType":"CURRENCY","iconPath":"../../../assets/sprites/coin.png","amount":0,"amountTravelling":0,"resourceConsumes":[],"harvestable":false,"sellable":false,"resourceDescription":"Shiny and valuable.","workerVerb":"","workerNoun":"gold ore","resourceAccessible":true,"resourceTier":0,"previousTier":0,"worker":{"workable":false,"workerCount":0,"cost":0},"harvestYield":0,"harvestMilliseconds":0,"workerYield":0,"sellsFor":0},{"id":1,"name":"oak","resourceType":"WOOD","iconPath":"../../../assets/sprites/oak.png","amount":0,"amountTravelling":0,"resourceConsumes":[],"harvestable":true,"harvestYield":1,"harvestMilliseconds":1000,"workerYield":1,"sellable":true,"sellsFor":5,"resourceDescription":"Sturdy oak logs.","workerVerb":"Fells","workerNoun":"oak tree","resourceAccessible":true,"resourceTier":0,"previousTier":0,"worker":{"workable":true,"workerCount":0,"cost":50}},{"id":7,"name":"pine","resourceType":"WOOD","iconPath":"../../../assets/sprites/pine.png","amount":0,"amountTravelling":0,"resourceConsumes":[],"harvestable":false,"harvestYield":1,"harvestMilliseconds":1250,"workerYield":1,"sellable":true,"sellsFor":10,"resourceDescription":"Strong pine logs.","workerVerb":"Fells","workerNoun":"pine tree","resourceAccessible":false,"resourceTier":1,"previousTier":0,"worker":{"workable":true,"workerCount":0,"cost":75}},{"id":8,"name":"birch","resourceType":"WOOD","iconPath":"../../../assets/sprites/birch.png","amount":0,"amountTravelling":0,"resourceConsumes":[],"harvestable":false,"harvestYield":1,"harvestMilliseconds":1500,"workerYield":1,"sellable":true,"sellsFor":15,"resourceDescription":"Sometimes it feels like it's watching you...","workerVerb":"Fells","workerNoun":"birch tree","resourceAccessible":false,"resourceTier":2,"previousTier":1,"worker":{"workable":false,"workerCount":0,"cost":150}},{"id":9,"name":"eucalyptus","resourceType":"WOOD","iconPath":"../../../assets/sprites/eucalyptus.png","amount":0,"amountTravelling":0,"resourceConsumes":[],"harvestable":false,"harvestYield":1,"harvestMilliseconds":2000,"workerYield":1,"sellable":true,"sellsFor":20,"resourceDescription":"Logs as strong as their name is long.","workerVerb":"Fells","workerNoun":"eucalyptus tree","resourceAccessible":false,"resourceTier":3,"previousTier":2,"worker":{"workable":false,"workerCount":0,"cost":200}},{"id":15,"name":"willow","resourceType":"WOOD","iconPath":"../../../assets/sprites/willow.png","amount":0,"amountTravelling":0,"resourceConsumes":[],"harvestable":false,"harvestYield":1,"harvestMilliseconds":2500,"workerYield":1,"sellable":true,"sellsFor":35,"resourceDescription":"The saddest tree in the forest (because you chopped down its parents).","workerVerb":"Fells","workerNoun":"willow tree","resourceAccessible":false,"resourceTier":4,"previousTier":3,"worker":{"workable":false,"workerCount":0,"cost":200}},{"id":25,"name":"teak","resourceType":"WOOD","iconPath":"../../../assets/sprites/teak.png","amount":0,"amountTravelling":0,"resourceConsumes":[],"harvestable":false,"harvestYield":1,"harvestMilliseconds":3000,"workerYield":1,"sellable":true,"sellsFor":40,"resourceDescription":"Bright, thin logs; surprisingly resillient considering their appearance.","workerVerb":"Fells","workerNoun":"teak tree","resourceAccessible":false,"resourceTier":5,"previousTier":4,"worker":{"workable":false,"workerCount":0,"cost":200}},{"id":16,"name":"ent soul","resourceType":"WOOD","iconPath":"../../../assets/sprites/ent_soul.png","amount":0,"amountTravelling":0,"resourceConsumes":[{"resourceId":1,"cost":10},{"resourceId":7,"cost":10},{"resourceId":8,"cost":10},{"resourceId":9,"cost":10},{"resourceId":15,"cost":10},{"resourceId":25,"cost":10}],"harvestable":false,"harvestYield":1,"harvestMilliseconds":8000,"workerYield":1,"sellable":false,"sellsFor":50,"resourceDescription":"The spirit of a long-dead ent, still contained where it last took root.","workerVerb":"Releases","workerNoun":"ent spirit","resourceAccessible":false,"resourceTier":6,"previousTier":5,"worker":{"workable":false,"workerCount":0,"cost":200}},{"id":17,"name":"reanimated ent","resourceType":"WOOD","iconPath":"../../../assets/sprites/reanimated_ent.png","amount":0,"amountTravelling":0,"resourceConsumes":[{"resourceId":16,"cost":1}],"harvestable":false,"harvestYield":1,"harvestMilliseconds":20000,"workerYield":1,"sellable":false,"sellsFor":100,"resourceDescription":"An ancient ent warrior, given life once more to fight for you.","workerVerb":"Reanimates","workerNoun":"ent","resourceAccessible":false,"resourceTier":7,"previousTier":6,"worker":{"workable":false,"workerCount":0,"cost":200}},{"id":2,"name":"copper ore","resourceType":"METAL","iconPath":"../../../assets/sprites/copper_ore.png","amount":0,"amountTravelling":0,"resourceConsumes":[],"harvestable":false,"harvestYield":1,"harvestMilliseconds":1250,"workerYield":1,"sellable":true,"sellsFor":7,"resourceDescription":"Can be forged into bronze along with tin.","workerVerb":"Mines","workerNoun":"copper ore","resourceAccessible":true,"resourceTier":0,"previousTier":0,"worker":{"workable":true,"workerCount":0,"cost":75}},{"id":3,"name":"tin ore","resourceType":"METAL","iconPath":"../../../assets/sprites/tin_ore.png","amount":0,"amountTravelling":0,"resourceConsumes":[],"harvestable":false,"harvestYield":1,"harvestMilliseconds":1250,"workerYield":1,"sellable":true,"sellsFor":7,"resourceDescription":"Can be forged into bronze along with copper.","workerVerb":"Mines","workerNoun":"tin ore","resourceAccessible":true,"resourceTier":0,"previousTier":0,"worker":{"workable":true,"workerCount":0,"cost":75}},{"id":4,"name":"bronze ingot","resourceType":"METAL","iconPath":"../../../assets/sprites/bronze_ingot.png","amount":0,"amountTravelling":0,"resourceConsumes":[{"resourceId":2,"cost":1},{"resourceId":3,"cost":1}],"harvestable":true,"harvestYield":1,"harvestMilliseconds":2000,"workerYield":1,"sellable":true,"sellsFor":7,"resourceDescription":"Somewhat brittle ingots.","workerVerb":"Forges","workerNoun":"bronze ingot","resourceAccessible":false,"resourceTier":1,"previousTier":0,"worker":{"workable":false,"workerCount":0,"cost":100}},{"id":5,"name":"iron ore","resourceType":"METAL","iconPath":"../../../assets/sprites/iron_ore.png","amount":0,"amountTravelling":0,"resourceConsumes":[],"harvestable":false,"harvestYield":1,"harvestMilliseconds":2000,"workerYield":1,"sellable":true,"sellsFor":15,"resourceDescription":"Unrefined extracts of iron.","workerVerb":"Mines","workerNoun":"iron ore","resourceAccessible":false,"resourceTier":2,"previousTier":1,"worker":{"workable":false,"workerCount":0,"cost":150}},{"id":6,"name":"iron ingot","resourceType":"METAL","iconPath":"../../../assets/sprites/iron_ingot.png","amount":0,"amountTravelling":0,"resourceConsumes":[{"resourceId":5,"cost":1}],"harvestable":true,"harvestYield":1,"harvestMilliseconds":3000,"workerYield":1,"sellable":true,"sellsFor":25,"resourceDescription":"Dim but sturdy ingots.","workerVerb":"Forges","workerNoun":"iron ingot","resourceAccessible":false,"resourceTier":3,"previousTier":2,"worker":{"workable":false,"workerCount":0,"cost":250}},{"id":10,"name":"steel ingot","resourceType":"METAL","iconPath":"../../../assets/sprites/steel_ingot.png","amount":0,"amountTravelling":0,"resourceConsumes":[{"resourceId":6,"cost":2}],"harvestable":true,"harvestYield":1,"harvestMilliseconds":4000,"workerYield":1,"sellable":true,"sellsFor":40,"resourceDescription":"Refined and purified iron.","workerVerb":"Forges","workerNoun":"steel ingot","resourceAccessible":false,"resourceTier":4,"previousTier":3,"worker":{"workable":false,"workerCount":0,"cost":350}},{"id":11,"name":"gold ore","resourceType":"METAL","iconPath":"../../../assets/sprites/gold_ore.png","amount":0,"amountTravelling":0,"resourceConsumes":[],"harvestable":false,"harvestYield":1,"harvestMilliseconds":2500,"workerYield":1,"sellable":true,"sellsFor":25,"resourceDescription":"Unrefined extracts of gold.","workerVerb":"Mines","workerNoun":"gold","resourceAccessible":false,"resourceTier":3,"previousTier":2,"worker":{"workable":false,"workerCount":0,"cost":150}},{"id":12,"name":"gold ingot","resourceType":"METAL","iconPath":"../../../assets/sprites/gold_ingot.png","amount":0,"amountTravelling":0,"resourceConsumes":[{"resourceId":11,"cost":1}],"harvestable":true,"harvestYield":1,"harvestMilliseconds":4000,"workerYield":1,"sellable":true,"sellsFor":60,"resourceDescription":"Highly valuable and malleable.","workerVerb":"Forges","workerNoun":"gold ingot","resourceAccessible":false,"resourceTier":4,"previousTier":3,"worker":{"workable":false,"workerCount":0,"cost":400}},{"id":18,"name":"latinum ore","resourceType":"METAL","iconPath":"../../../assets/sprites/latinum_ore.png","amount":0,"amountTravelling":0,"resourceConsumes":[],"harvestable":false,"harvestYield":1,"harvestMilliseconds":4500,"workerYield":1,"sellable":true,"sellsFor":75,"resourceDescription":"Said to be highly valued by indivudals with large ears.","workerVerb":"Mines","workerNoun":"latinum ore","resourceAccessible":false,"resourceTier":4,"previousTier":3,"worker":{"workable":false,"workerCount":0,"cost":400}},{"id":19,"name":"latinum ingot","resourceType":"METAL","iconPath":"../../../assets/sprites/latinum_ingot.png","amount":0,"amountTravelling":0,"resourceConsumes":[{"resourceId":10,"cost":1},{"resourceId":12,"cost":1},{"resourceId":18,"cost":1}],"harvestable":true,"harvestYield":1,"harvestMilliseconds":5000,"workerYield":1,"sellable":true,"sellsFor":100,"resourceDescription":"QUARK!!!","workerVerb":"Forges","workerNoun":"latinum ingot","resourceAccessible":false,"resourceTier":5,"previousTier":4,"worker":{"workable":false,"workerCount":0,"cost":400}},{"id":20,"name":"unbelievium ore","resourceType":"METAL","iconPath":"../../../assets/sprites/unbelievium_ore.png","amount":0,"amountTravelling":0,"resourceConsumes":[],"harvestable":false,"harvestYield":1,"harvestMilliseconds":5500,"workerYield":1,"sellable":true,"sellsFor":80,"resourceDescription":"I can't believe it's not unobtainium!","workerVerb":"Mines","workerNoun":"unbelievium ore","resourceAccessible":false,"resourceTier":5,"previousTier":4,"worker":{"workable":false,"workerCount":0,"cost":400}},{"id":21,"name":"lustrial ore","resourceType":"METAL","iconPath":"../../../assets/sprites/lustrial_ore.png","amount":0,"amountTravelling":0,"resourceConsumes":[],"harvestable":false,"harvestYield":1,"harvestMilliseconds":5500,"workerYield":1,"sellable":true,"sellsFor":80,"resourceDescription":"Even in its unrefined form, it shines as bright as the sun.","workerVerb":"Mines","workerNoun":"lustrial ore","resourceAccessible":false,"resourceTier":5,"previousTier":4,"worker":{"workable":false,"workerCount":0,"cost":400}},{"id":22,"name":"spectrus ore","resourceType":"METAL","iconPath":"../../../assets/sprites/spectrus_ore.png","amount":0,"amountTravelling":0,"resourceConsumes":[],"harvestable":false,"harvestYield":1,"harvestMilliseconds":5500,"workerYield":1,"sellable":true,"sellsFor":80,"resourceDescription":"A peculiar energy eminates from the rock...","workerVerb":"Mines","workerNoun":"spectrus ore","resourceAccessible":false,"resourceTier":5,"previousTier":4,"worker":{"workable":false,"workerCount":0,"cost":400}},{"id":23,"name":"temprous ingot","resourceType":"METAL","iconPath":"../../../assets/sprites/temprous_ingot.png","amount":0,"amountTravelling":0,"resourceConsumes":[{"resourceId":19,"cost":2},{"resourceId":20,"cost":2},{"resourceId":21,"cost":2},{"resourceId":22,"cost":2}],"harvestable":true,"harvestYield":1,"harvestMilliseconds":8000,"workerYield":1,"sellable":true,"sellsFor":250,"resourceDescription":"Could this metal hold the secret of time itself?","workerVerb":"Forges","workerNoun":"temprous ingot","resourceAccessible":false,"resourceTier":6,"previousTier":5,"worker":{"workable":false,"workerCount":0,"cost":400}},{"id":24,"name":"refined temprous","resourceType":"METAL","iconPath":"../../../assets/sprites/refined_temprous.png","amount":0,"amountTravelling":0,"resourceConsumes":[{"resourceId":23,"cost":15},{"resourceId":31,"cost":30}],"harvestable":true,"harvestYield":1,"harvestMilliseconds":15000,"workerYield":1,"sellable":true,"sellsFor":350,"resourceDescription":"Memories of ages past imbue the metal with seemingly endless power.","workerVerb":"Refines","workerNoun":"temprous ingot","resourceAccessible":false,"resourceTier":5,"previousTier":4,"worker":{"workable":false,"workerCount":0,"cost":400}},{"id":13,"name":"Stone","resourceType":"MINERAL","iconPath":"../../../assets/sprites/stone.png","amount":0,"amountTravelling":0,"resourceConsumes":[],"harvestable":false,"harvestYield":1,"harvestMilliseconds":1000,"workerYield":1,"sellable":true,"sellsFor":5,"resourceDescription":"Hard and sturdy, well suitied to basic construction projects.","workerVerb":"Mines","workerNoun":"stone","resourceAccessible":true,"resourceTier":0,"previousTier":0,"worker":{"workable":true,"workerCount":0,"cost":80}},{"id":26,"name":"Graphite","resourceType":"MINERAL","amount":0,"amountTravelling":0,"iconPath":"../../../assets/sprites/graphite.png","resourceConsumes":[],"harvestable":false,"harvestYield":1,"harvestMilliseconds":2500,"workerYield":1,"sellable":true,"sellsFor":45,"resourceDescription":"A rough mineral with many uses.","workerVerb":"Mines","workerNoun":"graphite","resourceAccessible":false,"resourceTier":1,"previousTier":0,"worker":{"workable":true,"workerCount":0,"cost":80}},{"id":27,"name":"Limestone","resourceType":"MINERAL","amount":0,"amountTravelling":0,"iconPath":"../../../assets/sprites/limestone.png","resourceConsumes":[],"harvestable":false,"harvestYield":1,"harvestMilliseconds":3000,"workerYield":1,"sellable":true,"sellsFor":55,"resourceDescription":"Hardened stone with a hint of lime.","workerVerb":"Mines","workerNoun":"limestone","resourceAccessible":false,"resourceTier":2,"previousTier":1,"worker":{"workable":true,"workerCount":0,"cost":80}},{"id":28,"name":"Marble","resourceType":"MINERAL","amount":0,"amountTravelling":0,"iconPath":"../../../assets/sprites/marble.png","resourceConsumes":[],"harvestable":false,"harvestYield":1,"harvestMilliseconds":4000,"workerYield":1,"sellable":true,"sellsFor":70,"resourceDescription":"Beautiful, crystalline rock. Highly valued for construction projects.","workerVerb":"Mines","workerNoun":"marble","resourceAccessible":false,"resourceTier":3,"previousTier":2,"worker":{"workable":true,"workerCount":0,"cost":80}},{"id":29,"name":"Quartz","resourceType":"MINERAL","amount":0,"amountTravelling":0,"iconPath":"../../../assets/sprites/quartz.png","resourceConsumes":[],"harvestable":false,"harvestYield":1,"harvestMilliseconds":5000,"workerYield":1,"sellable":true,"sellsFor":90,"resourceDescription":"A bright, shiny structure hides under the rock's rough surface.","workerVerb":"Mines","workerNoun":"qaurtz","resourceAccessible":false,"resourceTier":4,"previousTier":3,"worker":{"workable":true,"workerCount":0,"cost":80}},{"id":30,"name":"Obsidian","resourceType":"MINERAL","amount":0,"amountTravelling":0,"iconPath":"../../../assets/sprites/obsidian.png","resourceConsumes":[],"harvestable":false,"harvestYield":1,"harvestMilliseconds":6500,"workerYield":1,"sellable":true,"sellsFor":125,"resourceDescription":"Hardened rock formed in the heart of a volcano.","workerVerb":"Mines","workerNoun":"obsidian","resourceAccessible":false,"resourceTier":5,"previousTier":4,"worker":{"workable":true,"workerCount":0,"cost":80}},{"id":31,"name":"Diamond","resourceType":"MINERAL","amount":0,"amountTravelling":0,"iconPath":"../../../assets/sprites/diamond.png","resourceConsumes":[],"harvestable":false,"harvestYield":1,"harvestMilliseconds":7500,"workerYield":1,"sellable":true,"sellsFor":175,"resourceDescription":"An incredibly beautiful and tough resource.","workerVerb":"Mines","workerNoun":"diamond","resourceAccessible":false,"resourceTier":6,"previousTier":5,"worker":{"workable":true,"workerCount":0,"cost":80}}];
+module.exports = [{"id":0,"name":"gold","resourceType":"CURRENCY","iconPath":"../../../assets/sprites/coin.png","amount":0,"amountTravelling":0,"resourceConsumes":[],"harvestable":false,"pathAvailable":false,"sellable":false,"resourceDescription":"Shiny and valuable.","workerVerb":"","workerNoun":"gold ore","resourceAccessible":true,"resourceTier":0,"previousTier":0,"worker":{"workable":false,"workerCount":0,"cost":0},"harvestYield":0,"harvestMilliseconds":0,"workerYield":0,"sellsFor":0},{"id":1,"name":"oak","resourceType":"WOOD","iconPath":"../../../assets/sprites/oak.png","amount":0,"amountTravelling":0,"resourceConsumes":[],"harvestable":true,"harvestYield":1,"harvestMilliseconds":1000,"workerYield":1,"sellable":true,"sellsFor":5,"resourceDescription":"Sturdy oak logs.","workerVerb":"Fells","workerNoun":"oak tree","resourceAccessible":true,"resourceTier":0,"previousTier":0,"worker":{"workable":true,"workerCount":0,"cost":50}},{"id":7,"name":"pine","resourceType":"WOOD","iconPath":"../../../assets/sprites/pine.png","amount":0,"amountTravelling":0,"resourceConsumes":[],"harvestable":false,"pathAvailable":false,"harvestYield":1,"harvestMilliseconds":1250,"workerYield":1,"sellable":true,"sellsFor":10,"resourceDescription":"Strong pine logs.","workerVerb":"Fells","workerNoun":"pine tree","resourceAccessible":false,"resourceTier":1,"previousTier":0,"worker":{"workable":true,"workerCount":0,"cost":75}},{"id":8,"name":"birch","resourceType":"WOOD","iconPath":"../../../assets/sprites/birch.png","amount":0,"amountTravelling":0,"resourceConsumes":[],"harvestable":false,"pathAvailable":false,"harvestYield":1,"harvestMilliseconds":1500,"workerYield":1,"sellable":true,"sellsFor":15,"resourceDescription":"Sometimes it feels like it's watching you...","workerVerb":"Fells","workerNoun":"birch tree","resourceAccessible":false,"resourceTier":2,"previousTier":1,"worker":{"workable":false,"workerCount":0,"cost":150}},{"id":9,"name":"eucalyptus","resourceType":"WOOD","iconPath":"../../../assets/sprites/eucalyptus.png","amount":0,"amountTravelling":0,"resourceConsumes":[],"harvestable":false,"pathAvailable":false,"harvestYield":1,"harvestMilliseconds":2000,"workerYield":1,"sellable":true,"sellsFor":20,"resourceDescription":"Logs as strong as their name is long.","workerVerb":"Fells","workerNoun":"eucalyptus tree","resourceAccessible":false,"resourceTier":3,"previousTier":2,"worker":{"workable":false,"workerCount":0,"cost":200}},{"id":15,"name":"willow","resourceType":"WOOD","iconPath":"../../../assets/sprites/willow.png","amount":0,"amountTravelling":0,"resourceConsumes":[],"harvestable":false,"pathAvailable":false,"harvestYield":1,"harvestMilliseconds":2500,"workerYield":1,"sellable":true,"sellsFor":35,"resourceDescription":"The saddest tree in the forest (because you chopped down its parents).","workerVerb":"Fells","workerNoun":"willow tree","resourceAccessible":false,"resourceTier":4,"previousTier":3,"worker":{"workable":false,"workerCount":0,"cost":200}},{"id":25,"name":"teak","resourceType":"WOOD","iconPath":"../../../assets/sprites/teak.png","amount":0,"amountTravelling":0,"resourceConsumes":[],"harvestable":false,"pathAvailable":false,"harvestYield":1,"harvestMilliseconds":3000,"workerYield":1,"sellable":true,"sellsFor":40,"resourceDescription":"Bright, thin logs; surprisingly resillient considering their appearance.","workerVerb":"Fells","workerNoun":"teak tree","resourceAccessible":false,"resourceTier":5,"previousTier":4,"worker":{"workable":false,"workerCount":0,"cost":200}},{"id":16,"name":"ent soul","resourceType":"WOOD","iconPath":"../../../assets/sprites/ent_soul.png","amount":0,"amountTravelling":0,"resourceConsumes":[{"resourceId":1,"cost":10},{"resourceId":7,"cost":10},{"resourceId":8,"cost":10},{"resourceId":9,"cost":10},{"resourceId":15,"cost":10},{"resourceId":25,"cost":10}],"harvestable":false,"pathAvailable":false,"harvestYield":1,"harvestMilliseconds":8000,"workerYield":1,"sellable":false,"sellsFor":50,"resourceDescription":"The spirit of a long-dead ent, still contained where it last took root.","workerVerb":"Releases","workerNoun":"ent spirit","resourceAccessible":false,"resourceTier":6,"previousTier":5,"worker":{"workable":false,"workerCount":0,"cost":200}},{"id":17,"name":"reanimated ent","resourceType":"WOOD","iconPath":"../../../assets/sprites/reanimated_ent.png","amount":0,"amountTravelling":0,"resourceConsumes":[{"resourceId":16,"cost":1}],"harvestable":false,"pathAvailable":false,"harvestYield":1,"harvestMilliseconds":20000,"workerYield":1,"sellable":false,"sellsFor":100,"resourceDescription":"An ancient ent warrior, given life once more to fight for you.","workerVerb":"Reanimates","workerNoun":"ent","resourceAccessible":false,"resourceTier":7,"previousTier":6,"worker":{"workable":false,"workerCount":0,"cost":200}},{"id":2,"name":"copper ore","resourceType":"METAL","iconPath":"../../../assets/sprites/copper_ore.png","amount":0,"amountTravelling":0,"resourceConsumes":[],"harvestable":false,"pathAvailable":false,"harvestYield":1,"harvestMilliseconds":1250,"workerYield":1,"sellable":true,"sellsFor":7,"resourceDescription":"Can be forged into bronze along with tin.","workerVerb":"Mines","workerNoun":"copper ore","resourceAccessible":true,"resourceTier":0,"previousTier":0,"worker":{"workable":true,"workerCount":0,"cost":75}},{"id":3,"name":"tin ore","resourceType":"METAL","iconPath":"../../../assets/sprites/tin_ore.png","amount":0,"amountTravelling":0,"resourceConsumes":[],"harvestable":false,"pathAvailable":false,"harvestYield":1,"harvestMilliseconds":1250,"workerYield":1,"sellable":true,"sellsFor":7,"resourceDescription":"Can be forged into bronze along with copper.","workerVerb":"Mines","workerNoun":"tin ore","resourceAccessible":true,"resourceTier":0,"previousTier":0,"worker":{"workable":true,"workerCount":0,"cost":75}},{"id":4,"name":"bronze ingot","resourceType":"METAL","iconPath":"../../../assets/sprites/bronze_ingot.png","amount":0,"amountTravelling":0,"resourceConsumes":[{"resourceId":2,"cost":1},{"resourceId":3,"cost":1}],"harvestable":true,"harvestYield":1,"harvestMilliseconds":2000,"workerYield":1,"sellable":true,"sellsFor":7,"resourceDescription":"Somewhat brittle ingots.","workerVerb":"Forges","workerNoun":"bronze ingot","resourceAccessible":false,"resourceTier":1,"previousTier":0,"worker":{"workable":false,"workerCount":0,"cost":100}},{"id":5,"name":"iron ore","resourceType":"METAL","iconPath":"../../../assets/sprites/iron_ore.png","amount":0,"amountTravelling":0,"resourceConsumes":[],"harvestable":false,"pathAvailable":false,"harvestYield":1,"harvestMilliseconds":2000,"workerYield":1,"sellable":true,"sellsFor":15,"resourceDescription":"Unrefined extracts of iron.","workerVerb":"Mines","workerNoun":"iron ore","resourceAccessible":false,"resourceTier":2,"previousTier":1,"worker":{"workable":false,"workerCount":0,"cost":150}},{"id":6,"name":"iron ingot","resourceType":"METAL","iconPath":"../../../assets/sprites/iron_ingot.png","amount":0,"amountTravelling":0,"resourceConsumes":[{"resourceId":5,"cost":1}],"harvestable":true,"harvestYield":1,"harvestMilliseconds":3000,"workerYield":1,"sellable":true,"sellsFor":25,"resourceDescription":"Dim but sturdy ingots.","workerVerb":"Forges","workerNoun":"iron ingot","resourceAccessible":false,"resourceTier":3,"previousTier":2,"worker":{"workable":false,"workerCount":0,"cost":250}},{"id":10,"name":"steel ingot","resourceType":"METAL","iconPath":"../../../assets/sprites/steel_ingot.png","amount":0,"amountTravelling":0,"resourceConsumes":[{"resourceId":6,"cost":2}],"harvestable":true,"harvestYield":1,"harvestMilliseconds":4000,"workerYield":1,"sellable":true,"sellsFor":40,"resourceDescription":"Refined and purified iron.","workerVerb":"Forges","workerNoun":"steel ingot","resourceAccessible":false,"resourceTier":4,"previousTier":3,"worker":{"workable":false,"workerCount":0,"cost":350}},{"id":11,"name":"gold ore","resourceType":"METAL","iconPath":"../../../assets/sprites/gold_ore.png","amount":0,"amountTravelling":0,"resourceConsumes":[],"harvestable":false,"pathAvailable":false,"harvestYield":1,"harvestMilliseconds":2500,"workerYield":1,"sellable":true,"sellsFor":25,"resourceDescription":"Unrefined extracts of gold.","workerVerb":"Mines","workerNoun":"gold","resourceAccessible":false,"resourceTier":3,"previousTier":2,"worker":{"workable":false,"workerCount":0,"cost":150}},{"id":12,"name":"gold ingot","resourceType":"METAL","iconPath":"../../../assets/sprites/gold_ingot.png","amount":0,"amountTravelling":0,"resourceConsumes":[{"resourceId":11,"cost":1}],"harvestable":true,"harvestYield":1,"harvestMilliseconds":4000,"workerYield":1,"sellable":true,"sellsFor":60,"resourceDescription":"Highly valuable and malleable.","workerVerb":"Forges","workerNoun":"gold ingot","resourceAccessible":false,"resourceTier":4,"previousTier":3,"worker":{"workable":false,"workerCount":0,"cost":400}},{"id":18,"name":"latinum ore","resourceType":"METAL","iconPath":"../../../assets/sprites/latinum_ore.png","amount":0,"amountTravelling":0,"resourceConsumes":[],"harvestable":false,"pathAvailable":false,"harvestYield":1,"harvestMilliseconds":4500,"workerYield":1,"sellable":true,"sellsFor":75,"resourceDescription":"Said to be highly valued by indivudals with large ears.","workerVerb":"Mines","workerNoun":"latinum ore","resourceAccessible":false,"resourceTier":4,"previousTier":3,"worker":{"workable":false,"workerCount":0,"cost":400}},{"id":19,"name":"latinum ingot","resourceType":"METAL","iconPath":"../../../assets/sprites/latinum_ingot.png","amount":0,"amountTravelling":0,"resourceConsumes":[{"resourceId":10,"cost":1},{"resourceId":12,"cost":1},{"resourceId":18,"cost":1}],"harvestable":true,"harvestYield":1,"harvestMilliseconds":5000,"workerYield":1,"sellable":true,"sellsFor":100,"resourceDescription":"QUARK!!!","workerVerb":"Forges","workerNoun":"latinum ingot","resourceAccessible":false,"resourceTier":5,"previousTier":4,"worker":{"workable":false,"workerCount":0,"cost":400}},{"id":20,"name":"unbelievium ore","resourceType":"METAL","iconPath":"../../../assets/sprites/unbelievium_ore.png","amount":0,"amountTravelling":0,"resourceConsumes":[],"harvestable":false,"pathAvailable":false,"harvestYield":1,"harvestMilliseconds":5500,"workerYield":1,"sellable":true,"sellsFor":80,"resourceDescription":"I can't believe it's not unobtainium!","workerVerb":"Mines","workerNoun":"unbelievium ore","resourceAccessible":false,"resourceTier":5,"previousTier":4,"worker":{"workable":false,"workerCount":0,"cost":400}},{"id":21,"name":"lustrial ore","resourceType":"METAL","iconPath":"../../../assets/sprites/lustrial_ore.png","amount":0,"amountTravelling":0,"resourceConsumes":[],"harvestable":false,"pathAvailable":false,"harvestYield":1,"harvestMilliseconds":5500,"workerYield":1,"sellable":true,"sellsFor":80,"resourceDescription":"Even in its unrefined form, it shines as bright as the sun.","workerVerb":"Mines","workerNoun":"lustrial ore","resourceAccessible":false,"resourceTier":5,"previousTier":4,"worker":{"workable":false,"workerCount":0,"cost":400}},{"id":22,"name":"spectrus ore","resourceType":"METAL","iconPath":"../../../assets/sprites/spectrus_ore.png","amount":0,"amountTravelling":0,"resourceConsumes":[],"harvestable":false,"pathAvailable":false,"harvestYield":1,"harvestMilliseconds":5500,"workerYield":1,"sellable":true,"sellsFor":80,"resourceDescription":"A peculiar energy eminates from the rock...","workerVerb":"Mines","workerNoun":"spectrus ore","resourceAccessible":false,"resourceTier":5,"previousTier":4,"worker":{"workable":false,"workerCount":0,"cost":400}},{"id":23,"name":"temprous ingot","resourceType":"METAL","iconPath":"../../../assets/sprites/temprous_ingot.png","amount":0,"amountTravelling":0,"resourceConsumes":[{"resourceId":19,"cost":2},{"resourceId":20,"cost":2},{"resourceId":21,"cost":2},{"resourceId":22,"cost":2}],"harvestable":true,"harvestYield":1,"harvestMilliseconds":8000,"workerYield":1,"sellable":true,"sellsFor":250,"resourceDescription":"Could this metal hold the secret of time itself?","workerVerb":"Forges","workerNoun":"temprous ingot","resourceAccessible":false,"resourceTier":6,"previousTier":5,"worker":{"workable":false,"workerCount":0,"cost":400}},{"id":24,"name":"refined temprous","resourceType":"METAL","iconPath":"../../../assets/sprites/refined_temprous.png","amount":0,"amountTravelling":0,"resourceConsumes":[{"resourceId":23,"cost":15},{"resourceId":31,"cost":30}],"harvestable":true,"harvestYield":1,"harvestMilliseconds":15000,"workerYield":1,"sellable":true,"sellsFor":350,"resourceDescription":"Memories of ages past imbue the metal with seemingly endless power.","workerVerb":"Refines","workerNoun":"temprous ingot","resourceAccessible":false,"resourceTier":5,"previousTier":4,"worker":{"workable":false,"workerCount":0,"cost":400}},{"id":13,"name":"Stone","resourceType":"MINERAL","iconPath":"../../../assets/sprites/stone.png","amount":0,"amountTravelling":0,"resourceConsumes":[],"harvestable":false,"pathAvailable":false,"harvestYield":1,"harvestMilliseconds":1000,"workerYield":1,"sellable":true,"sellsFor":5,"resourceDescription":"Hard and sturdy, well suitied to basic construction projects.","workerVerb":"Mines","workerNoun":"stone","resourceAccessible":true,"resourceTier":0,"previousTier":0,"worker":{"workable":true,"workerCount":0,"cost":80}},{"id":26,"name":"Graphite","resourceType":"MINERAL","amount":0,"amountTravelling":0,"iconPath":"../../../assets/sprites/graphite.png","resourceConsumes":[],"harvestable":false,"pathAvailable":false,"harvestYield":1,"harvestMilliseconds":2500,"workerYield":1,"sellable":true,"sellsFor":45,"resourceDescription":"A rough mineral with many uses.","workerVerb":"Mines","workerNoun":"graphite","resourceAccessible":false,"resourceTier":1,"previousTier":0,"worker":{"workable":true,"workerCount":0,"cost":80}},{"id":27,"name":"Limestone","resourceType":"MINERAL","amount":0,"amountTravelling":0,"iconPath":"../../../assets/sprites/limestone.png","resourceConsumes":[],"harvestable":false,"pathAvailable":false,"harvestYield":1,"harvestMilliseconds":3000,"workerYield":1,"sellable":true,"sellsFor":55,"resourceDescription":"Hardened stone with a hint of lime.","workerVerb":"Mines","workerNoun":"limestone","resourceAccessible":false,"resourceTier":2,"previousTier":1,"worker":{"workable":true,"workerCount":0,"cost":80}},{"id":28,"name":"Marble","resourceType":"MINERAL","amount":0,"amountTravelling":0,"iconPath":"../../../assets/sprites/marble.png","resourceConsumes":[],"harvestable":false,"pathAvailable":false,"harvestYield":1,"harvestMilliseconds":4000,"workerYield":1,"sellable":true,"sellsFor":70,"resourceDescription":"Beautiful, crystalline rock. Highly valued for construction projects.","workerVerb":"Mines","workerNoun":"marble","resourceAccessible":false,"resourceTier":3,"previousTier":2,"worker":{"workable":true,"workerCount":0,"cost":80}},{"id":29,"name":"Quartz","resourceType":"MINERAL","amount":0,"amountTravelling":0,"iconPath":"../../../assets/sprites/quartz.png","resourceConsumes":[],"harvestable":false,"pathAvailable":false,"harvestYield":1,"harvestMilliseconds":5000,"workerYield":1,"sellable":true,"sellsFor":90,"resourceDescription":"A bright, shiny structure hides under the rock's rough surface.","workerVerb":"Mines","workerNoun":"qaurtz","resourceAccessible":false,"resourceTier":4,"previousTier":3,"worker":{"workable":true,"workerCount":0,"cost":80}},{"id":30,"name":"Obsidian","resourceType":"MINERAL","amount":0,"amountTravelling":0,"iconPath":"../../../assets/sprites/obsidian.png","resourceConsumes":[],"harvestable":false,"pathAvailable":false,"harvestYield":1,"harvestMilliseconds":6500,"workerYield":1,"sellable":true,"sellsFor":125,"resourceDescription":"Hardened rock formed in the heart of a volcano.","workerVerb":"Mines","workerNoun":"obsidian","resourceAccessible":false,"resourceTier":5,"previousTier":4,"worker":{"workable":true,"workerCount":0,"cost":80}},{"id":31,"name":"Diamond","resourceType":"MINERAL","amount":0,"amountTravelling":0,"iconPath":"../../../assets/sprites/diamond.png","resourceConsumes":[],"harvestable":false,"pathAvailable":false,"harvestYield":1,"harvestMilliseconds":7500,"workerYield":1,"sellable":true,"sellsFor":175,"resourceDescription":"An incredibly beautiful and tough resource.","workerVerb":"Mines","workerNoun":"diamond","resourceAccessible":false,"resourceTier":6,"previousTier":5,"worker":{"workable":true,"workerCount":0,"cost":80}}];
 
 /***/ }),
 
