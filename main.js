@@ -463,7 +463,8 @@ var ClickerMainComponent = /** @class */ (function () {
         return this.tooltipService.getResourceTooltip(id);
     };
     ClickerMainComponent.prototype.canHarvest = function (id, multiplier) {
-        return this.resourcesService.canHarvest(id, multiplier);
+        var resource = this.resourcesService.getResource(id);
+        return !resource.harvesting && this.resourcesService.canHarvest(id, multiplier);
     };
     ClickerMainComponent.prototype.startHarvesting = function (id) {
         this.clickerMainService.startHarvesting(id);
@@ -3427,7 +3428,7 @@ var ResourcesService = /** @class */ (function () {
     ResourcesService.prototype.canHarvest = function (id, multiplier) {
         if (multiplier === void 0) { multiplier = 1; }
         var resource = this.getResource(id);
-        if (!resource.harvestable || resource.harvesting || !resource.pathAvailable) {
+        if (!resource.harvestable || !resource.pathAvailable) {
             return false;
         }
         return this.canAffordResource(id, multiplier);
@@ -3955,7 +3956,9 @@ var TooltipService = /** @class */ (function () {
                 var _worker = _a[_i];
                 for (var _b = 0, _c = _worker.workersByResource; _b < _c.length; _b++) {
                     var rw = _c[_b];
-                    totalCost += rw.recurringCost * rw.workerCount;
+                    if (this.resourcesService.canHarvest(rw.resourceId) && this.workersService.canAffordToHarvest(rw.resourceId)) {
+                        totalCost += rw.recurringCost * rw.workerCount;
+                    }
                 }
             }
             tooltip += "\n" + totalCost + " spent on workers per second.";
