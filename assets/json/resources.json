@@ -13,15 +13,10 @@
   "resourceAccessible": true,
   "resourceTier": 0,
   "previousTier": 0,
-  "worker": {
-    "workable": false,
-    "workerCount": 0,
-    "cost": 0
-  },
   "harvestYield": 0,
   "harvestMilliseconds": 0,
   "workerYield": 0,
-  "sellsFor": 0
+  "resourceBeingStolen": false, "sellsFor": 0
 }, {
   "id": 1,
   "name": "oak",
@@ -34,18 +29,13 @@
   "harvestMilliseconds": 1000,
   "workerYield": 1,
   "sellable": true,
-  "sellsFor": 5,
+  "resourceBeingStolen": false, "sellsFor": 5,
   "resourceDescription": "Sturdy oak logs.",
   "workerVerb": "Fells",
   "workerNoun": "oak tree",
   "resourceAccessible": true,
   "resourceTier": 0,
-  "previousTier": 0,
-  "worker": {
-    "workable": true,
-    "workerCount": 0,
-    "cost": 50
-  }
+  "previousTier": 0
 }, {
   "id": 7,
   "name": "pine",
@@ -58,18 +48,13 @@
   "harvestMilliseconds": 1250,
   "workerYield": 1,
   "sellable": true,
-  "sellsFor": 10,
+  "resourceBeingStolen": false, "sellsFor": 10,
   "resourceDescription": "Strong pine logs.",
   "workerVerb": "Fells",
   "workerNoun": "pine tree",
   "resourceAccessible": false,
   "resourceTier": 1,
-  "previousTier": 0,
-  "worker": {
-    "workable": true,
-    "workerCount": 0,
-    "cost": 75
-  }
+  "previousTier": 0
 }, {
   "id": 8,
   "name": "birch",
@@ -82,18 +67,13 @@
   "harvestMilliseconds": 1500,
   "workerYield": 1,
   "sellable": true,
-  "sellsFor": 15,
+  "resourceBeingStolen": false, "sellsFor": 15,
   "resourceDescription": "Sometimes it feels like it's watching you...",
   "workerVerb": "Fells",
   "workerNoun": "birch tree",
   "resourceAccessible": false,
   "resourceTier": 2,
-  "previousTier": 1,
-  "worker": {
-    "workable": false,
-    "workerCount": 0,
-    "cost": 150
-  }
+  "previousTier": 1
 }, {
   "id": 9,
   "name": "eucalyptus",
@@ -106,18 +86,13 @@
   "harvestMilliseconds": 2000,
   "workerYield": 1,
   "sellable": true,
-  "sellsFor": 20,
+  "resourceBeingStolen": false, "sellsFor": 20,
   "resourceDescription": "Logs as strong as their name is long.",
   "workerVerb": "Fells",
   "workerNoun": "eucalyptus tree",
   "resourceAccessible": false,
   "resourceTier": 3,
-  "previousTier": 2,
-  "worker": {
-    "workable": false,
-    "workerCount": 0,
-    "cost": 200
-  }
+  "previousTier": 2
 }, {
   "id": 15,
   "name": "willow",
@@ -130,18 +105,13 @@
   "harvestMilliseconds": 2500,
   "workerYield": 1,
   "sellable": true,
-  "sellsFor": 35,
+  "resourceBeingStolen": false, "sellsFor": 35,
   "resourceDescription": "The saddest tree in the forest (because you chopped down its parents).",
   "workerVerb": "Fells",
   "workerNoun": "willow tree",
   "resourceAccessible": false,
   "resourceTier": 4,
-  "previousTier": 3,
-  "worker": {
-    "workable": false,
-    "workerCount": 0,
-    "cost": 200
-  }
+  "previousTier": 3
 }, {
   "id": 25,
   "name": "teak",
@@ -154,18 +124,13 @@
   "harvestMilliseconds": 3000,
   "workerYield": 1,
   "sellable": true,
-  "sellsFor": 40,
+  "resourceBeingStolen": false, "sellsFor": 40,
   "resourceDescription": "Bright, thin logs; surprisingly resillient considering their appearance.",
   "workerVerb": "Fells",
   "workerNoun": "teak tree",
   "resourceAccessible": false,
   "resourceTier": 5,
-  "previousTier": 4,
-  "worker": {
-    "workable": false,
-    "workerCount": 0,
-    "cost": 200
-  }
+  "previousTier": 4
 }, {
   "id": 16,
   "name": "ent soul",
@@ -196,18 +161,13 @@
   "harvestMilliseconds": 8000,
   "workerYield": 1,
   "sellable": false,
-  "sellsFor": 50,
+  "resourceBeingStolen": false, "sellsFor": 50,
   "resourceDescription": "The spirit of a long-dead ent, still contained where it last took root.",
   "workerVerb": "Releases",
   "workerNoun": "ent spirit",
   "resourceAccessible": false,
   "resourceTier": 6,
-  "previousTier": 5,
-  "worker": {
-    "workable": false,
-    "workerCount": 0,
-    "cost": 200
-  }
+  "previousTier": 5
 }, {
   "id": 17,
   "name": "reanimated ent",
@@ -223,18 +183,13 @@
   "harvestMilliseconds": 20000,
   "workerYield": 1,
   "sellable": false,
-  "sellsFor": 100,
+  "resourceBeingStolen": false, "sellsFor": 100,
   "resourceDescription": "An ancient ent warrior, given life once more to fight for you.",
   "workerVerb": "Reanimates",
   "workerNoun": "ent",
   "resourceAccessible": false,
   "resourceTier": 7,
-  "previousTier": 6,
-  "worker": {
-    "workable": false,
-    "workerCount": 0,
-    "cost": 200
-  }
+  "previousTier": 6
 }, {
   "id": 2,
   "name": "copper ore",
@@ -247,18 +202,13 @@
   "harvestMilliseconds": 1250,
   "workerYield": 1,
   "sellable": true,
-  "sellsFor": 7,
+  "resourceBeingStolen": false, "sellsFor": 7,
   "resourceDescription": "Can be forged into bronze along with tin.",
   "workerVerb": "Mines",
   "workerNoun": "copper ore",
   "resourceAccessible": true,
   "resourceTier": 0,
-  "previousTier": 0,
-  "worker": {
-    "workable": true,
-    "workerCount": 0,
-    "cost": 75
-  }
+  "previousTier": 0
 }, {
   "id": 3,
   "name": "tin ore",
@@ -271,18 +221,13 @@
   "harvestMilliseconds": 1250,
   "workerYield": 1,
   "sellable": true,
-  "sellsFor": 7,
+  "resourceBeingStolen": false, "sellsFor": 7,
   "resourceDescription": "Can be forged into bronze along with copper.",
   "workerVerb": "Mines",
   "workerNoun": "tin ore",
   "resourceAccessible": true,
   "resourceTier": 0,
-  "previousTier": 0,
-  "worker": {
-    "workable": true,
-    "workerCount": 0,
-    "cost": 75
-  }
+  "previousTier": 0
 }, {
   "id": 4,
   "name": "bronze ingot",
@@ -301,18 +246,13 @@
   "harvestMilliseconds": 2000,
   "workerYield": 1,
   "sellable": true,
-  "sellsFor": 7,
+  "resourceBeingStolen": false, "sellsFor": 7,
   "resourceDescription": "Somewhat brittle ingots.",
   "workerVerb": "Forges",
   "workerNoun": "bronze ingot",
   "resourceAccessible": false,
   "resourceTier": 1,
-  "previousTier": 0,
-  "worker": {
-    "workable": false,
-    "workerCount": 0,
-    "cost": 100
-  }
+  "previousTier": 0
 }, {
   "id": 5,
   "name": "iron ore",
@@ -325,18 +265,13 @@
   "harvestMilliseconds": 2000,
   "workerYield": 1,
   "sellable": true,
-  "sellsFor": 15,
+  "resourceBeingStolen": false, "sellsFor": 15,
   "resourceDescription": "Unrefined extracts of iron.",
   "workerVerb": "Mines",
   "workerNoun": "iron ore",
   "resourceAccessible": false,
   "resourceTier": 2,
-  "previousTier": 1,
-  "worker": {
-    "workable": false,
-    "workerCount": 0,
-    "cost": 150
-  }
+  "previousTier": 1
 }, {
   "id": 6,
   "name": "iron ingot",
@@ -352,18 +287,13 @@
   "harvestMilliseconds": 3000,
   "workerYield": 1,
   "sellable": true,
-  "sellsFor": 25,
+  "resourceBeingStolen": false, "sellsFor": 25,
   "resourceDescription": "Dim but sturdy ingots.",
   "workerVerb": "Forges",
   "workerNoun": "iron ingot",
   "resourceAccessible": false,
   "resourceTier": 3,
-  "previousTier": 2,
-  "worker": {
-    "workable": false,
-    "workerCount": 0,
-    "cost": 250
-  }
+  "previousTier": 2
 }, {
   "id": 10,
   "name": "steel ingot",
@@ -379,18 +309,13 @@
   "harvestMilliseconds": 4000,
   "workerYield": 1,
   "sellable": true,
-  "sellsFor": 40,
+  "resourceBeingStolen": false, "sellsFor": 40,
   "resourceDescription": "Refined and purified iron.",
   "workerVerb": "Forges",
   "workerNoun": "steel ingot",
   "resourceAccessible": false,
   "resourceTier": 4,
-  "previousTier": 3,
-  "worker": {
-    "workable": false,
-    "workerCount": 0,
-    "cost": 350
-  }
+  "previousTier": 3
 }, {
   "id": 11,
   "name": "gold ore",
@@ -403,18 +328,13 @@
   "harvestMilliseconds": 2500,
   "workerYield": 1,
   "sellable": true,
-  "sellsFor": 25,
+  "resourceBeingStolen": false, "sellsFor": 25,
   "resourceDescription": "Unrefined extracts of gold.",
   "workerVerb": "Mines",
   "workerNoun": "gold",
   "resourceAccessible": false,
   "resourceTier": 3,
-  "previousTier": 2,
-  "worker": {
-    "workable": false,
-    "workerCount": 0,
-    "cost": 150
-  }
+  "previousTier": 2
 }, {
   "id": 12,
   "name": "gold ingot",
@@ -430,18 +350,13 @@
   "harvestMilliseconds": 4000,
   "workerYield": 1,
   "sellable": true,
-  "sellsFor": 60,
+  "resourceBeingStolen": false, "sellsFor": 60,
   "resourceDescription": "Highly valuable and malleable.",
   "workerVerb": "Forges",
   "workerNoun": "gold ingot",
   "resourceAccessible": false,
   "resourceTier": 4,
-  "previousTier": 3,
-  "worker": {
-    "workable": false,
-    "workerCount": 0,
-    "cost": 400
-  }
+  "previousTier": 3
 }, {
   "id": 18,
   "name": "latinum ore",
@@ -454,18 +369,13 @@
   "harvestMilliseconds": 4500,
   "workerYield": 1,
   "sellable": true,
-  "sellsFor": 75,
+  "resourceBeingStolen": false, "sellsFor": 75,
   "resourceDescription": "Said to be highly valued by indivudals with large ears.",
   "workerVerb": "Mines",
   "workerNoun": "latinum ore",
   "resourceAccessible": false,
   "resourceTier": 4,
-  "previousTier": 3,
-  "worker": {
-    "workable": false,
-    "workerCount": 0,
-    "cost": 400
-  }
+  "previousTier": 3
 }, {
   "id": 19,
   "name": "latinum ingot",
@@ -487,18 +397,13 @@
   "harvestMilliseconds": 5000,
   "workerYield": 1,
   "sellable": true,
-  "sellsFor": 100,
+  "resourceBeingStolen": false, "sellsFor": 100,
   "resourceDescription": "QUARK!!!",
   "workerVerb": "Forges",
   "workerNoun": "latinum ingot",
   "resourceAccessible": false,
   "resourceTier": 5,
-  "previousTier": 4,
-  "worker": {
-    "workable": false,
-    "workerCount": 0,
-    "cost": 400
-  }
+  "previousTier": 4
 }, {
   "id": 20,
   "name": "unbelievium ore",
@@ -511,18 +416,13 @@
   "harvestMilliseconds": 5500,
   "workerYield": 1,
   "sellable": true,
-  "sellsFor": 80,
+  "resourceBeingStolen": false, "sellsFor": 80,
   "resourceDescription": "I can't believe it's not unobtainium!",
   "workerVerb": "Mines",
   "workerNoun": "unbelievium ore",
   "resourceAccessible": false,
   "resourceTier": 5,
-  "previousTier": 4,
-  "worker": {
-    "workable": false,
-    "workerCount": 0,
-    "cost": 400
-  }
+  "previousTier": 4
 }, {
   "id": 21,
   "name": "lustrial ore",
@@ -535,18 +435,13 @@
   "harvestMilliseconds": 5500,
   "workerYield": 1,
   "sellable": true,
-  "sellsFor": 80,
+  "resourceBeingStolen": false, "sellsFor": 80,
   "resourceDescription": "Even in its unrefined form, it shines as bright as the sun.",
   "workerVerb": "Mines",
   "workerNoun": "lustrial ore",
   "resourceAccessible": false,
   "resourceTier": 5,
-  "previousTier": 4,
-  "worker": {
-    "workable": false,
-    "workerCount": 0,
-    "cost": 400
-  }
+  "previousTier": 4
 }, {
   "id": 22,
   "name": "spectrus ore",
@@ -559,18 +454,13 @@
   "harvestMilliseconds": 5500,
   "workerYield": 1,
   "sellable": true,
-  "sellsFor": 80,
+  "resourceBeingStolen": false, "sellsFor": 80,
   "resourceDescription": "A peculiar energy eminates from the rock...",
   "workerVerb": "Mines",
   "workerNoun": "spectrus ore",
   "resourceAccessible": false,
   "resourceTier": 5,
-  "previousTier": 4,
-  "worker": {
-    "workable": false,
-    "workerCount": 0,
-    "cost": 400
-  }
+  "previousTier": 4
 }, {
   "id": 23,
   "name": "temprous ingot",
@@ -595,18 +485,13 @@
   "harvestMilliseconds": 8000,
   "workerYield": 1,
   "sellable": true,
-  "sellsFor": 250,
+  "resourceBeingStolen": false, "sellsFor": 250,
   "resourceDescription": "Could this metal hold the secret of time itself?",
   "workerVerb": "Forges",
   "workerNoun": "temprous ingot",
   "resourceAccessible": false,
   "resourceTier": 6,
-  "previousTier": 5,
-  "worker": {
-    "workable": false,
-    "workerCount": 0,
-    "cost": 400
-  }
+  "previousTier": 5
 }, {
   "id": 24,
   "name": "refined temprous",
@@ -625,18 +510,13 @@
   "harvestMilliseconds": 15000,
   "workerYield": 1,
   "sellable": true,
-  "sellsFor": 350,
+  "resourceBeingStolen": false, "sellsFor": 350,
   "resourceDescription": "Memories of ages past imbue the metal with seemingly endless power.",
   "workerVerb": "Refines",
   "workerNoun": "temprous ingot",
   "resourceAccessible": false,
-  "resourceTier": 5,
-  "previousTier": 4,
-  "worker": {
-    "workable": false,
-    "workerCount": 0,
-    "cost": 400
-  }
+  "resourceTier": 7,
+  "previousTier": 6
 }, {
   "id": 13,
   "name": "Stone",
@@ -649,18 +529,13 @@
   "harvestMilliseconds": 1000,
   "workerYield": 1,
   "sellable": true,
-  "sellsFor": 5,
+  "resourceBeingStolen": false, "sellsFor": 5,
   "resourceDescription": "Hard and sturdy, well suitied to basic construction projects.",
   "workerVerb": "Mines",
   "workerNoun": "stone",
   "resourceAccessible": true,
   "resourceTier": 0,
-  "previousTier": 0,
-  "worker": {
-    "workable": true,
-    "workerCount": 0,
-    "cost": 80
-  }
+  "previousTier": 0
 }, {
   "id": 26,
   "name": "Graphite",
@@ -673,18 +548,13 @@
   "harvestMilliseconds": 2500,
   "workerYield": 1,
   "sellable": true,
-  "sellsFor": 45,
+  "resourceBeingStolen": false, "sellsFor": 45,
   "resourceDescription": "A rough mineral with many uses.",
   "workerVerb": "Mines",
   "workerNoun": "graphite",
   "resourceAccessible": false,
   "resourceTier": 1,
-  "previousTier": 0,
-  "worker": {
-    "workable": true,
-    "workerCount": 0,
-    "cost": 80
-  }
+  "previousTier": 0
 }, {
   "id": 27,
   "name": "Limestone",
@@ -697,18 +567,13 @@
   "harvestMilliseconds": 3000,
   "workerYield": 1,
   "sellable": true,
-  "sellsFor": 55,
+  "resourceBeingStolen": false, "sellsFor": 55,
   "resourceDescription": "Hardened stone with a hint of lime.",
   "workerVerb": "Mines",
   "workerNoun": "limestone",
   "resourceAccessible": false,
   "resourceTier": 2,
-  "previousTier": 1,
-  "worker": {
-    "workable": true,
-    "workerCount": 0,
-    "cost": 80
-  }
+  "previousTier": 1
 }, {
   "id": 28,
   "name": "Marble",
@@ -721,18 +586,13 @@
   "harvestMilliseconds": 4000,
   "workerYield": 1,
   "sellable": true,
-  "sellsFor": 70,
+  "resourceBeingStolen": false, "sellsFor": 70,
   "resourceDescription": "Beautiful, crystalline rock. Highly valued for construction projects.",
   "workerVerb": "Mines",
   "workerNoun": "marble",
   "resourceAccessible": false,
   "resourceTier": 3,
-  "previousTier": 2,
-  "worker": {
-    "workable": true,
-    "workerCount": 0,
-    "cost": 80
-  }
+  "previousTier": 2
 }, {
   "id": 29,
   "name": "Quartz",
@@ -745,18 +605,13 @@
   "harvestMilliseconds": 5000,
   "workerYield": 1,
   "sellable": true,
-  "sellsFor": 90,
+  "resourceBeingStolen": false, "sellsFor": 90,
   "resourceDescription": "A bright, shiny structure hides under the rock's rough surface.",
   "workerVerb": "Mines",
   "workerNoun": "qaurtz",
   "resourceAccessible": false,
   "resourceTier": 4,
-  "previousTier": 3,
-  "worker": {
-    "workable": true,
-    "workerCount": 0,
-    "cost": 80
-  }
+  "previousTier": 3
 }, {
   "id": 30,
   "name": "Obsidian",
@@ -769,18 +624,13 @@
   "harvestMilliseconds": 6500,
   "workerYield": 1,
   "sellable": true,
-  "sellsFor": 125,
+  "resourceBeingStolen": false, "sellsFor": 125,
   "resourceDescription": "Hardened rock formed in the heart of a volcano.",
   "workerVerb": "Mines",
   "workerNoun": "obsidian",
   "resourceAccessible": false,
   "resourceTier": 5,
-  "previousTier": 4,
-  "worker": {
-    "workable": true,
-    "workerCount": 0,
-    "cost": 80
-  }
+  "previousTier": 4
 }, {
   "id": 31,
   "name": "Diamond",
@@ -793,16 +643,11 @@
   "harvestMilliseconds": 7500,
   "workerYield": 1,
   "sellable": true,
-  "sellsFor": 175,
+  "resourceBeingStolen": false, "sellsFor": 175,
   "resourceDescription": "An incredibly beautiful and tough resource.",
   "workerVerb": "Mines",
   "workerNoun": "diamond",
   "resourceAccessible": false,
   "resourceTier": 6,
-  "previousTier": 5,
-  "worker": {
-    "workable": true,
-    "workerCount": 0,
-    "cost": 80
-  }
+  "previousTier": 5
 }]
