@@ -30,7 +30,7 @@ webpackEmptyAsyncContext.id = "./src/$$_lazy_route_resource lazy recursive";
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "/* AppComponent's private CSS styles */\r\nh1 {\r\n  font-size: 1.2em;\r\n  color: #999;\r\n  margin-bottom: 0;\r\n  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;\r\n}\r\nh2 {\r\n  font-size: 2em;\r\n  margin-top: 0;\r\n  padding-top: 0;\r\n}\r\nnav a {\r\n  padding: 5px 10px;\r\n  text-decoration: none;\r\n  margin-top: 10px;\r\n  display: inline-block;\r\n  background-color: #eee;\r\n  border-radius: 4px;\r\n}\r\nnav a:visited, a:link {\r\n  color: #607d8b;\r\n}\r\nnav a:hover {\r\n  color: #039be5;\r\n  background-color: #cfd8dc;\r\n}\r\nnav a.active {\r\n  color: #039be5;\r\n}\r\n.main-pane {\r\n  float: left;\r\n}\r\n.resource-list {\r\n  float: left;\r\n}\r\n.map {\r\n  float: right;\r\n}\r\n.tab-group {\r\n  margin-left: 15px;\r\n}\r\n.debug-pane {\r\n  float: left;\r\n}\r\n.game-container {\r\n  display: flex;\r\n  flex-direction: column;\r\n  position: absolute;\r\n  top: 0;\r\n  bottom: 0;\r\n  left: 0;\r\n  right: 0;\r\n}\r\n.game-is-mobile .game-toolbar {\r\n  position: fixed;\r\n  /* Make sure the toolbar will stay on top of the content as it scrolls past. */\r\n  z-index: 2;\r\n}\r\nh1.game-app-name {\r\n  margin-left: 8px;\r\n}\r\n.game-sidenav-container {\r\n  /* When the sidenav is not fixed, stretch the sidenav container to fill the available space. This\r\n     causes `<mat-sidenav-content>` to act as our scrolling element for desktop layouts. */\r\n  flex: 1;\r\n}\r\n.game-sidenav-container mat-sidenav {\r\n  width: 1200px;\r\n}\r\n.game-is-mobile .game-sidenav-container mat-sidenav {\r\n  width: 100%;\r\n}\r\n.game-is-mobile .game-sidenav-container {\r\n  /* When the sidenav is fixed, don't constrain the height of the sidenav container. This allows the\r\n     `<body>` to be our scrolling element for mobile layouts. */\r\n  flex: 1 0 auto;\r\n}\r\n.sidenav-buttons {\r\n  position: absolute;\r\n  right: 0;\r\n}\r\n"
+module.exports = "/* AppComponent's private CSS styles */\r\nh1 {\r\n  font-size: 1.2em;\r\n  color: #999;\r\n  margin-bottom: 0;\r\n  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;\r\n}\r\nh2 {\r\n  font-size: 2em;\r\n  margin-top: 0;\r\n  padding-top: 0;\r\n}\r\nnav a {\r\n  padding: 5px 10px;\r\n  text-decoration: none;\r\n  margin-top: 10px;\r\n  display: inline-block;\r\n  background-color: #eee;\r\n  border-radius: 4px;\r\n}\r\nnav a:visited, a:link {\r\n  color: #607d8b;\r\n}\r\nnav a:hover {\r\n  color: #039be5;\r\n  background-color: #cfd8dc;\r\n}\r\nnav a.active {\r\n  color: #039be5;\r\n}\r\n.resource-list {\r\n  float: left;\r\n}\r\n.tab-group {\r\n  margin-left: 15px;\r\n}\r\n.game-container {\r\n  display: flex;\r\n  flex-direction: column;\r\n  position: absolute;\r\n  top: 0;\r\n  bottom: 0;\r\n  left: 0;\r\n  right: 0;\r\n}\r\n.game-is-mobile .game-toolbar {\r\n  position: fixed;\r\n  /* Make sure the toolbar will stay on top of the content as it scrolls past. */\r\n  z-index: 2;\r\n}\r\nh1.game-app-name {\r\n  margin-left: 8px;\r\n}\r\n.game-sidenav-container {\r\n  /* When the sidenav is not fixed, stretch the sidenav container to fill the available space. This\r\n     causes `<mat-sidenav-content>` to act as our scrolling element for desktop layouts. */\r\n  flex: 1;\r\n}\r\n.game-sidenav-container mat-sidenav {\r\n  width: 800px;\r\n}\r\n.game-is-mobile .game-sidenav-container mat-sidenav {\r\n  width: auto;\r\n}\r\n.game-is-mobile .game-sidenav-container {\r\n  /* When the sidenav is fixed, don't constrain the height of the sidenav container. This allows the\r\n     `<body>` to be our scrolling element for mobile layouts. */\r\n  flex: 1 0 auto;\r\n}\r\n.sidenav-buttons {\r\n  position: absolute;\r\n  right: 0;\r\n}\r\n"
 
 /***/ }),
 
@@ -41,7 +41,7 @@ module.exports = "/* AppComponent's private CSS styles */\r\nh1 {\r\n  font-size
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"game-container\" [class.game-is-mobile]=\"mobileQuery.matches\">\n  <mat-toolbar color=\"primary\" class=\"game-toolbar\">\n    <h1 class=\"game-app-name\">Age of Clicking - Version {{settingsService.gameVersion}}</h1>\n    <div class=\"sidenav-buttons\">\n      <button mat-icon-button [style.display]=\"!mobileQuery.matches ? 'none': ''\" (click)=\"hideResourceList = !hideResourceList\">\n        <mat-icon>map</mat-icon>\n      </button>\n      <button mat-icon-button (click)=\"snav.toggle()\">\n        <mat-icon>menu</mat-icon>\n      </button>\n    </div>\n  </mat-toolbar>\n\n  <mat-sidenav-container class=\"game-sidenav-container\" [style.marginTop.px]=\"mobileQuery.matches ? 56 : 0\">\n    <mat-sidenav #snav [mode]=\"mobileQuery.matches ? 'over' : 'side'\" [fixedInViewport]=\"mobileQuery.matches\" position=\"end\"\n      fixedTopGap=\"56\">\n      <mat-nav-list>\n        <mat-tab-group class=\"tab-group\" dynamicHeight [matBadge]=\"affordableUpgradeCount\" [matBadgeHidden]=\"affordableUpgradeCount <= 0\"\n          matBadgePosition=\"before\" matBadgeColor=\"accent\">\n          <mat-tab label=\"Workers\">\n            <app-workers></app-workers>\n          </mat-tab>\n          <mat-tab label=\"Store\">\n            <app-store></app-store>\n          </mat-tab>\n          <mat-tab label=\"Upgrades\">\n            <app-upgrades></app-upgrades>\n          </mat-tab>\n          <mat-tab label=\"Settings\">\n            <app-settings></app-settings>\n          </mat-tab>\n          <mat-tab label=\"Debug\" *ngIf=\"debugMode\">\n            <app-admin-debug></app-admin-debug>\n            <app-messages></app-messages>\n          </mat-tab>\n        </mat-tab-group>\n      </mat-nav-list>\n    </mat-sidenav>\n    <mat-sidenav-content>\n      <div class=\"main-pane\">\n        <app-clicker-main class=\"resource-list\" [style.display]=\"mobileQuery.matches && hideResourceList? 'none': ''\"></app-clicker-main>\n        <app-map class=\"map\" [style.display]=\"mobileQuery.matches && !hideResourceList? 'none': ''\"></app-map>\n        <!-- <app-enemy></app-enemy> -->\n        <!-- <app-fighter></app-fighter> -->\n      </div>\n    </mat-sidenav-content>\n  </mat-sidenav-container>\n</div>\n"
+module.exports = "<div class=\"game-container\" [class.game-is-mobile]=\"mobileQuery.matches\">\n  <mat-toolbar color=\"primary\" class=\"game-toolbar\">\n    <h1 class=\"game-app-name\">Age of Clicking</h1>\n    <div class=\"sidenav-buttons\">\n      <button mat-icon-button [style.display]=\"!mobileQuery.matches ? 'none': ''\" (click)=\"hideResourceList = !hideResourceList\">\n        <mat-icon>map</mat-icon>\n      </button>\n      <button mat-icon-button (click)=\"snav.toggle()\">\n        <mat-icon>menu</mat-icon>\n      </button>\n    </div>\n  </mat-toolbar>\n\n  <mat-sidenav-container class=\"game-sidenav-container\" [style.marginTop.px]=\"mobileQuery.matches ? 56 : 0\">\n    <mat-sidenav #snav [mode]=\"mobileQuery.matches ? 'over' : 'side'\" [opened]=\"!mobileQuery.matches\" [fixedInViewport]=\"mobileQuery.matches\" position=\"end\"\n      fixedTopGap=\"56\">\n      <mat-nav-list>\n        <mat-tab-group class=\"tab-group\" dynamicHeight [matBadge]=\"affordableUpgradeCount\" [matBadgeHidden]=\"affordableUpgradeCount <= 0\"\n          matBadgePosition=\"before\" matBadgeColor=\"accent\">\n          <mat-tab label=\"Workers\">\n            <app-workers></app-workers>\n          </mat-tab>\n          <mat-tab label=\"Store\">\n            <app-store></app-store>\n          </mat-tab>\n          <mat-tab label=\"Upgrades\">\n            <app-upgrades></app-upgrades>\n          </mat-tab>\n          <mat-tab label=\"Settings\">\n            <app-settings></app-settings>\n          </mat-tab>\n          <mat-tab label=\"Debug\" *ngIf=\"debugMode\">\n            <app-admin-debug></app-admin-debug>\n            <app-messages></app-messages>\n          </mat-tab>\n        </mat-tab-group>\n      </mat-nav-list>\n    </mat-sidenav>\n    <mat-sidenav-content>\n      <div class=\"main-pane\">\n        <app-clicker-main class=\"resource-list\" [style.display]=\"mobileQuery.matches && hideResourceList? 'none': ''\"></app-clicker-main>\n        <app-map class=\"map\" [style.display]=\"mobileQuery.matches && !hideResourceList? 'none': ''\"></app-map>\n        <!-- <app-enemy></app-enemy> -->\n        <!-- <app-fighter></app-fighter> -->\n      </div>\n    </mat-sidenav-content>\n  </mat-sidenav-container>\n</div>\n"
 
 /***/ }),
 
@@ -78,6 +78,7 @@ var AppComponent = /** @class */ (function () {
         this.settingsService = settingsService;
         this.changeDetectorRef = changeDetectorRef;
         this.media = media;
+        this.sidebarWidth = 600;
         this.hideResourceList = false;
         this.mobileQuery = media.matchMedia('(max-width: 600px)');
         this._mobileQueryListener = function () { return changeDetectorRef.detectChanges(); };
@@ -684,7 +685,7 @@ var FighterComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "/* MapComponent's private CSS styles */\r\nh1 {\r\n  font-size: 1.2em;\r\n  color: #999;\r\n  margin-bottom: 0;\r\n  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;\r\n}\r\nh2 {\r\n  font-size: 2em;\r\n  margin-top: 0;\r\n  padding-top: 0;\r\n}\r\nh3 {\r\n  font-family: Arial, Helvetica, sans-serif;\r\n}\r\nnav a {\r\n  padding: 5px 10px;\r\n  text-decoration: none;\r\n  margin-top: 10px;\r\n  display: inline-block;\r\n  background-color: #eee;\r\n  border-radius: 4px;\r\n}\r\nnav a:visited, a:link {\r\n  color: #607d8b;\r\n}\r\nnav a:hover {\r\n  color: #039be5;\r\n  background-color: #cfd8dc;\r\n}\r\nnav a.active {\r\n  color: #039be5;\r\n}\r\n.building-list {\r\n  display: flex;\r\n  max-width: 750px;\r\n  overflow-x: scroll;\r\n  height: 230px;\r\n}\r\n.resource-list {\r\n  text-align: center;\r\n}\r\n.resource-list div {\r\n  display: inline-block;\r\n}\r\n.resource-list img {\r\n  width: 16px;\r\n  height: 16px;\r\n}\r\nbutton {\r\n  height: 180px;\r\n}\r\n"
+module.exports = "/* MapComponent's private CSS styles */\r\nh1 {\r\n  font-size: 1.2em;\r\n  color: #999;\r\n  margin-bottom: 0;\r\n  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;\r\n}\r\nh2 {\r\n  font-size: 2em;\r\n  margin-top: 0;\r\n  padding-top: 0;\r\n}\r\nh3 {\r\n  font-family: Arial, Helvetica, sans-serif;\r\n}\r\nnav a {\r\n  padding: 5px 10px;\r\n  text-decoration: none;\r\n  margin-top: 10px;\r\n  display: inline-block;\r\n  background-color: #eee;\r\n  border-radius: 4px;\r\n}\r\nnav a:visited, a:link {\r\n  color: #607d8b;\r\n}\r\nnav a:hover {\r\n  color: #039be5;\r\n  background-color: #cfd8dc;\r\n}\r\nnav a.active {\r\n  color: #039be5;\r\n}\r\n.building-list {\r\n  display: flex;\r\n  overflow-x: scroll;\r\n  height: 230px;\r\n}\r\n.resource-list {\r\n  text-align: center;\r\n}\r\n.resource-list div {\r\n  display: inline-block;\r\n}\r\n.resource-list img {\r\n  width: 16px;\r\n  height: 16px;\r\n}\r\nbutton {\r\n  height: 180px;\r\n}\r\n#canvas-container {\r\n  display: flex;\r\n}\r\n"
 
 /***/ }),
 
@@ -695,7 +696,7 @@ module.exports = "/* MapComponent's private CSS styles */\r\nh1 {\r\n  font-size
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<canvas class=\"noselect\" appNoScroll appMap width=\"{{canvasWidth}}\" height=\"{{canvasHeight}}\" oncontextmenu=\"return false\"></canvas>\r\n\r\n<h3>Buildings (Click & drag to place, Ctrl + click to delete)</h3>\r\n\r\n<div class=\"building-list\">\r\n  <div *ngFor=\"let buildingTile of getBuildingTileArray(true)\">\r\n    <button mat-raised-button [color]=\"selectedBuilding === buildingTile && !deleteMode ? 'accent' : ''\" (click)=\"selectBuilding(buildingTile)\">\r\n      <mat-card-title>{{buildingTile.name}}</mat-card-title>\r\n      <mat-card-subtitle>{{buildingTile.description}}</mat-card-subtitle>\r\n      <mat-card-content>\r\n        <h3>Costs</h3>\r\n        <div class=\"resource-list\">\r\n          <b><mat-icon *ngIf=\"canAffordBuilding(buildingTile.tileType)\" color=\"primary\">check</mat-icon>\r\n          </b>\r\n          <div *ngFor=\"let resourceCost of buildingTile.resourceCosts\" matTooltip=\"{{resourceCost.resourceCost}} {{getResource(resourceCost.resourceId).name | titlecase}}\" matTooltipPosition=\"below\">\r\n            <img src=\"{{getResource(resourceCost.resourceId).iconPath}}\" alt=\"{{getResource(resourceCost.resourceId).name}}\"> {{resourceCost.resourceCost}}\r\n          </div>\r\n        </div>\r\n      </mat-card-content>\r\n    </button>\r\n  </div>\r\n</div>\r\n"
+module.exports = "<div id=\"canvas-container\">\r\n  <canvas class=\"noselect\" appNoScroll appMap width=\"{{canvasWidth}}\" height=\"{{canvasHeight}}\" oncontextmenu=\"return false\"></canvas>\r\n</div>\r\n\r\n<h3>Buildings (Click & drag to place, Ctrl + click to delete)</h3>\r\n\r\n<div class=\"building-list\">\r\n  <div class=\"building-cell\" *ngFor=\"let buildingTile of getBuildingTileArray(true)\">\r\n    <button mat-raised-button [color]=\"selectedBuilding === buildingTile && !deleteMode ? 'accent' : ''\" (click)=\"selectBuilding(buildingTile)\">\r\n      <mat-card-title>{{buildingTile.name}}</mat-card-title>\r\n      <mat-card-subtitle>{{buildingTile.description}}</mat-card-subtitle>\r\n      <mat-card-content>\r\n        <h3>Costs</h3>\r\n        <div class=\"resource-list\">\r\n          <b><mat-icon *ngIf=\"canAffordBuilding(buildingTile.tileType)\" color=\"primary\">check</mat-icon>\r\n          </b>\r\n          <div *ngFor=\"let resourceCost of buildingTile.resourceCosts\" matTooltip=\"{{resourceCost.resourceCost}} {{getResource(resourceCost.resourceId).name | titlecase}}\" matTooltipPosition=\"below\">\r\n            <img src=\"{{getResource(resourceCost.resourceId).iconPath}}\" alt=\"{{getResource(resourceCost.resourceId).name}}\"> {{resourceCost.resourceCost}}\r\n          </div>\r\n        </div>\r\n      </mat-card-content>\r\n    </button>\r\n  </div>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -741,7 +742,12 @@ var MapComponent = /** @class */ (function () {
     MapComponent.prototype.ngAfterViewInit = function () {
     };
     MapComponent.prototype.selectBuilding = function (buildingTile) {
-        this.selectedBuilding = buildingTile;
+        if (this.selectedBuilding !== undefined) {
+            this.selectedBuilding = undefined;
+        }
+        else {
+            this.selectedBuilding = buildingTile;
+        }
     };
     MapComponent.prototype.canAffordBuilding = function (buildingType) {
         return this.mapService.canAffordBuilding(this.buildingTiles[buildingType]);
@@ -1200,7 +1206,7 @@ module.exports = ".color-input {\r\n    width: auto;\r\n    color: rgb(108, 88, 
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<mat-accordion multi=\"true\">\n  <mat-expansion-panel expanded=\"true\">\n    <mat-expansion-panel-header>\n      <mat-panel-title>\n        <mat-icon color=\"primary\">save</mat-icon>\n        Save/Load\n      </mat-panel-title>\n    </mat-expansion-panel-header>\n\n    <mat-form-field>\n      <mat-select placeholder=\"Autosave Interval (Minutes)\" [(value)]=\"autosaveInterval\" (valueChange)=\"setAutosave()\">\n        <mat-option [value]=\"-1\">Disable</mat-option>\n        <mat-option [value]=\"60000\">1</mat-option>\n        <mat-option [value]=\"900000\">15</mat-option>\n        <mat-option [value]=\"1800000\">30</mat-option>\n        <mat-option [value]=\"3600000\">60</mat-option>\n      </mat-select>\n    </mat-form-field>\n\n    <button mat-raised-button color=\"primary\" (click)=\"saveGame()\">Save</button>\n    <button mat-raised-button color=\"warn\" (click)=\"deleteGame()\">Delete Save</button>\n\n    <button mat-raised-button (click)=\"exportSave()\">Export Save</button>\n    <button mat-raised-button (click)=\"importSave()\">Import Save</button>\n  </mat-expansion-panel>\n\n  <mat-expansion-panel expanded=\"true\">\n    <mat-expansion-panel-header>\n      <mat-panel-title>\n        <mat-icon color=\"primary\">map</mat-icon>\n        Map\n      </mat-panel-title>\n    </mat-expansion-panel-header>\n\n    <mat-checkbox [(ngModel)]=\"mapDetailMode\">Detail Mode</mat-checkbox>\n    <br />\n    <mat-checkbox [(ngModel)]=\"mapLowFramerate\">Limit Framerate</mat-checkbox>\n    <br />\n    <br />\n\n    <mat-form-field>\n      <input class=\"color-input\" matInput placeholder=\"Resource Name Color\" [(colorPicker)]=\"resourceDetailColor\" [style.background]=\"resourceDetailColor\" [value]=\"resourceDetailColor\"/>\n    </mat-form-field>\n    \n    <mat-form-field>\n      <input class=\"color-input\" matInput placeholder=\"Player Harvest Color\" [(colorPicker)]=\"harvestDetailColor\" [style.background]=\"harvestDetailColor\" [value]=\"harvestDetailColor\"/>\n    </mat-form-field>\n    \n    <mat-form-field>\n      <input class=\"color-input\" matInput placeholder=\"Worker Harvest Color\" [(colorPicker)]=\"workerDetailColor\" [style.background]=\"workerDetailColor\" [value]=\"workerDetailColor\"/>\n    </mat-form-field>\n  </mat-expansion-panel>\n\n  <mat-expansion-panel expanded=\"true\">\n    <mat-expansion-panel-header>\n      <mat-panel-title>\n        <mat-icon color=\"primary\">bug_report</mat-icon>\n        Debug\n      </mat-panel-title>\n    </mat-expansion-panel-header>\n\n    <mat-checkbox [(ngModel)]=\"debugMode\">Debug Mode</mat-checkbox>\n  </mat-expansion-panel>\n</mat-accordion>\n"
+module.exports = "<h3>Version {{settingsService.gameVersion}}</h3>\n\n<mat-accordion multi=\"true\">\n  <mat-expansion-panel expanded=\"true\">\n    <mat-expansion-panel-header>\n      <mat-panel-title>\n        <mat-icon color=\"primary\">save</mat-icon>\n        Save/Load\n      </mat-panel-title>\n    </mat-expansion-panel-header>\n\n    <mat-form-field>\n      <mat-select placeholder=\"Autosave Interval (Minutes)\" [(value)]=\"autosaveInterval\" (valueChange)=\"setAutosave()\">\n        <mat-option [value]=\"-1\">Disable</mat-option>\n        <mat-option [value]=\"60000\">1</mat-option>\n        <mat-option [value]=\"900000\">15</mat-option>\n        <mat-option [value]=\"1800000\">30</mat-option>\n        <mat-option [value]=\"3600000\">60</mat-option>\n      </mat-select>\n    </mat-form-field>\n\n    <button mat-raised-button color=\"primary\" (click)=\"saveGame()\">Save</button>\n    <button mat-raised-button color=\"warn\" (click)=\"deleteGame()\">Delete Save</button>\n\n    <button mat-raised-button (click)=\"exportSave()\">Export Save</button>\n    <button mat-raised-button (click)=\"importSave()\">Import Save</button>\n  </mat-expansion-panel>\n\n  <mat-expansion-panel expanded=\"true\">\n    <mat-expansion-panel-header>\n      <mat-panel-title>\n        <mat-icon color=\"primary\">map</mat-icon>\n        Map\n      </mat-panel-title>\n    </mat-expansion-panel-header>\n\n    <mat-checkbox [(ngModel)]=\"mapDetailMode\">Detail Mode</mat-checkbox>\n    <br />\n    <mat-checkbox [(ngModel)]=\"mapLowFramerate\">Limit Framerate</mat-checkbox>\n    <br />\n    <br />\n\n    <mat-form-field>\n      <input class=\"color-input\" matInput placeholder=\"Resource Name Color\" [(colorPicker)]=\"resourceDetailColor\" [style.background]=\"resourceDetailColor\" [value]=\"resourceDetailColor\"/>\n    </mat-form-field>\n\n    <mat-form-field>\n      <input class=\"color-input\" matInput placeholder=\"Player Harvest Color\" [(colorPicker)]=\"harvestDetailColor\" [style.background]=\"harvestDetailColor\" [value]=\"harvestDetailColor\"/>\n    </mat-form-field>\n\n    <mat-form-field>\n      <input class=\"color-input\" matInput placeholder=\"Worker Harvest Color\" [(colorPicker)]=\"workerDetailColor\" [style.background]=\"workerDetailColor\" [value]=\"workerDetailColor\"/>\n    </mat-form-field>\n  </mat-expansion-panel>\n\n  <mat-expansion-panel expanded=\"true\">\n    <mat-expansion-panel-header>\n      <mat-panel-title>\n        <mat-icon color=\"primary\">bug_report</mat-icon>\n        Debug\n      </mat-panel-title>\n    </mat-expansion-panel-header>\n\n    <mat-checkbox [(ngModel)]=\"debugMode\">Debug Mode</mat-checkbox>\n  </mat-expansion-panel>\n</mat-accordion>\n"
 
 /***/ }),
 
@@ -1402,14 +1408,14 @@ var StoreComponent = /** @class */ (function () {
     StoreComponent.prototype.ngOnInit = function () {
     };
     StoreComponent.prototype.canSellResource = function (id) {
-        return this.storeService.canSellResource(id, this.sellAmount);
+        return this.storeService.canSellResource(id, +this.sellAmount);
     };
     StoreComponent.prototype.resourcesOfType = function (resourceType, filterBySellable, filterByAccessible) {
         return this.storeService.resourcesOfType(resourceType, filterBySellable, filterByAccessible);
     };
     StoreComponent.prototype.sellResource = function (id) {
         var resource = this.resourcesService.getResource(id);
-        this.storeService.sellResource(id, this.sellAmount);
+        this.storeService.sellResource(id, +this.sellAmount);
     };
     StoreComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -1944,6 +1950,7 @@ var MapDirective = /** @class */ (function () {
     MapDirective.prototype.ngAfterViewInit = function () {
         this.canvas = d3.select('canvas');
         this.context = this.canvas.node().getContext('2d');
+        this.canvasContainer = document.getElementById('canvas-container');
         this.context.font = 'bold 4px Arial';
         this.mapService.canvasPixelWidth = this.canvas.property('width');
         this.mapService.canvasPixelHeight = this.canvas.property('height');
@@ -2068,6 +2075,8 @@ var MapDirective = /** @class */ (function () {
         }
     };
     MapDirective.prototype.refreshCanvas = function () {
+        this.canvas.property('width', this.canvasContainer.clientWidth);
+        this.mapService.canvasPixelWidth = this.canvas.property('width');
         this.context.save();
         this.context.clearRect(0, 0, this.mapService.canvasPixelWidth, this.mapService.canvasPixelHeight);
         this.context.translate(this.transform.x, this.transform.y);
@@ -3512,7 +3521,11 @@ var ResourcesService = /** @class */ (function () {
         return resource.resourceDescription + ". " + resource.harvestYield / resource.harvestMilliseconds * 1000 + "\n     harvested per second; " + resource.workerYield * workerCount + " per second from workers.";
     };
     ResourcesService.prototype.addResourceAmount = function (id, amount) {
-        this.getResource(id).amount += amount;
+        var resource = this.getResource(id);
+        resource.amount += amount;
+        if (resource.amount < 0) {
+            resource.amount = 0;
+        }
     };
     ResourcesService.prototype.canAfford = function (id) {
         return (this.getResource(0).amount >= this.getResource(id).worker.cost);
@@ -4327,7 +4340,7 @@ var WorkersService = /** @class */ (function () {
                 if (resourceWorker.workerCount === 0 || !this.canAffordToHarvest(resourceWorker.resourceId)) {
                     continue;
                 }
-                this.resourcesService.addResourceAmount(0, -resourceWorker.recurringCost);
+                this.resourcesService.addResourceAmount(0, -resourceWorker.recurringCost * resourceWorker.workerCount);
                 this.mapService.spawnResourceAnimation(resourceWorker.resourceId, resourceWorker.workerYield * resourceWorker.workerCount, false);
             }
         }
