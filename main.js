@@ -30,7 +30,7 @@ webpackEmptyAsyncContext.id = "./src/$$_lazy_route_resource lazy recursive";
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "/* AppComponent's private CSS styles */\r\nh1 {\r\n  font-size: 1.2em;\r\n  color: #999;\r\n  margin-bottom: 0;\r\n  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;\r\n}\r\nh2 {\r\n  font-size: 2em;\r\n  margin-top: 0;\r\n  padding-top: 0;\r\n}\r\nnav a {\r\n  padding: 5px 10px;\r\n  text-decoration: none;\r\n  margin-top: 10px;\r\n  display: inline-block;\r\n  background-color: #eee;\r\n  border-radius: 4px;\r\n}\r\nnav a:visited, a:link {\r\n  color: #607d8b;\r\n}\r\nnav a:hover {\r\n  color: #039be5;\r\n  background-color: #cfd8dc;\r\n}\r\nnav a.active {\r\n  color: #039be5;\r\n}\r\n.resource-list {\r\n  float: left;\r\n}\r\n.tab-group {\r\n  margin-left: 15px;\r\n}\r\n.game-container {\r\n  display: flex;\r\n  flex-direction: column;\r\n  position: absolute;\r\n  top: 0;\r\n  bottom: 0;\r\n  left: 0;\r\n  right: 0;\r\n}\r\n.game-is-mobile .game-toolbar {\r\n  position: fixed;\r\n  /* Make sure the toolbar will stay on top of the content as it scrolls past. */\r\n  z-index: 2;\r\n}\r\nh1.game-app-name {\r\n  margin-left: 8px;\r\n}\r\n.game-sidenav-container {\r\n  /* When the sidenav is not fixed, stretch the sidenav container to fill the available space. This\r\n     causes `<mat-sidenav-content>` to act as our scrolling element for desktop layouts. */\r\n  flex: 1;\r\n}\r\n.game-sidenav-container mat-sidenav {\r\n  width: 800px;\r\n}\r\n.game-is-mobile .game-sidenav-container mat-sidenav {\r\n  width: auto;\r\n}\r\n.game-is-mobile .game-sidenav-container {\r\n  /* When the sidenav is fixed, don't constrain the height of the sidenav container. This allows the\r\n     `<body>` to be our scrolling element for mobile layouts. */\r\n  flex: 1 0 auto;\r\n}\r\n.sidenav-buttons {\r\n  position: absolute;\r\n  right: 0;\r\n}\r\n"
+module.exports = "/* AppComponent's private CSS styles */\r\nh1 {\r\n  font-size: 1.2em;\r\n  color: #999;\r\n  margin-bottom: 0;\r\n  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;\r\n}\r\nh2 {\r\n  font-size: 2em;\r\n  margin-top: 0;\r\n  padding-top: 0;\r\n}\r\nnav a {\r\n  padding: 5px 10px;\r\n  text-decoration: none;\r\n  margin-top: 10px;\r\n  display: inline-block;\r\n  background-color: #eee;\r\n  border-radius: 4px;\r\n}\r\nnav a:visited, a:link {\r\n  color: #607d8b;\r\n}\r\nnav a:hover {\r\n  color: #039be5;\r\n  background-color: #cfd8dc;\r\n}\r\nnav a.active {\r\n  color: #039be5;\r\n}\r\n.resource-list {\r\n  float: left;\r\n}\r\n.tab-group {\r\n  margin-left: 15px;\r\n}\r\n.game-container {\r\n  display: flex;\r\n  flex-direction: column;\r\n  position: absolute;\r\n  top: 0;\r\n  bottom: 0;\r\n  left: 0;\r\n  right: 0;\r\n}\r\n.game-is-mobile .game-toolbar {\r\n  position: fixed;\r\n  /* Make sure the toolbar will stay on top of the content as it scrolls past. */\r\n  z-index: 2;\r\n}\r\nh1.game-app-name {\r\n  margin-left: 8px;\r\n}\r\n.game-sidenav-container {\r\n  /* When the sidenav is not fixed, stretch the sidenav container to fill the available space. This\r\n     causes `<mat-sidenav-content>` to act as our scrolling element for desktop layouts. */\r\n  flex: 1;\r\n}\r\n.game-sidenav-container mat-sidenav {\r\n  width: 800px;\r\n}\r\n.game-is-mobile .game-sidenav-container mat-sidenav {\r\n  width: 100%;\r\n}\r\n.game-is-mobile .game-sidenav-container {\r\n  /* When the sidenav is fixed, don't constrain the height of the sidenav container. This allows the\r\n     `<body>` to be our scrolling element for mobile layouts. */\r\n  flex: 1 0 auto;\r\n}\r\n.sidenav-buttons {\r\n  position: absolute;\r\n  right: 0;\r\n}\r\n.toolbar-button-text {\r\n  display: inline-block;\r\n}\r\n.main-pane {\r\n  height: 100%;\r\n}\r\napp-clicker-main {\r\n  overflow-y: scroll;\r\n  max-height: 100%;\r\n}\r\n"
 
 /***/ }),
 
@@ -41,7 +41,7 @@ module.exports = "/* AppComponent's private CSS styles */\r\nh1 {\r\n  font-size
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"game-container\" [class.game-is-mobile]=\"mobileQuery.matches\">\n  <mat-toolbar color=\"primary\" class=\"game-toolbar\">\n    <h1 class=\"game-app-name\">Age of Clicking</h1>\n    <div class=\"sidenav-buttons\">\n      <button mat-icon-button [style.display]=\"!mobileQuery.matches ? 'none': ''\" (click)=\"hideResourceList = !hideResourceList\">\n        <mat-icon>map</mat-icon>\n      </button>\n      <button mat-icon-button (click)=\"snav.toggle()\">\n        <mat-icon>menu</mat-icon>\n      </button>\n    </div>\n  </mat-toolbar>\n\n  <mat-sidenav-container class=\"game-sidenav-container\" [style.marginTop.px]=\"mobileQuery.matches ? 56 : 0\">\n    <mat-sidenav #snav [mode]=\"mobileQuery.matches ? 'over' : 'side'\" [opened]=\"!mobileQuery.matches\" [fixedInViewport]=\"mobileQuery.matches\" position=\"end\"\n      fixedTopGap=\"56\">\n      <mat-nav-list>\n        <mat-tab-group class=\"tab-group\" dynamicHeight [matBadge]=\"affordableUpgradeCount\" [matBadgeHidden]=\"affordableUpgradeCount <= 0\"\n          matBadgePosition=\"before\" matBadgeColor=\"accent\">\n          <mat-tab label=\"Workers\">\n            <app-workers></app-workers>\n          </mat-tab>\n          <mat-tab label=\"Store\">\n            <app-store></app-store>\n          </mat-tab>\n          <mat-tab label=\"Upgrades\">\n            <app-upgrades></app-upgrades>\n          </mat-tab>\n          <mat-tab label=\"Settings\">\n            <app-settings></app-settings>\n          </mat-tab>\n          <mat-tab label=\"Debug\" *ngIf=\"debugMode\">\n            <app-admin-debug></app-admin-debug>\n            <app-messages></app-messages>\n          </mat-tab>\n        </mat-tab-group>\n      </mat-nav-list>\n    </mat-sidenav>\n    <mat-sidenav-content>\n      <div class=\"main-pane\">\n        <app-clicker-main class=\"resource-list\" [style.display]=\"mobileQuery.matches && hideResourceList? 'none': ''\"></app-clicker-main>\n        <app-map class=\"map\" [style.display]=\"mobileQuery.matches && !hideResourceList? 'none': ''\"></app-map>\n        <!-- <app-enemy></app-enemy> -->\n        <!-- <app-fighter></app-fighter> -->\n      </div>\n    </mat-sidenav-content>\n  </mat-sidenav-container>\n</div>\n"
+module.exports = "<div class=\"game-container\" [class.game-is-mobile]=\"mobileQuery.matches\">\n  <mat-toolbar color=\"primary\" class=\"game-toolbar\">\n    <h1 class=\"game-app-name\">Age of Clicking</h1>\n    <div class=\"sidenav-buttons\">\n      <button mat-flat-button (click)=\"hideResourceList = !hideResourceList\">\n        <mat-icon>map</mat-icon><p class=\"toolbar-button-text\" *ngIf=\"!mobileQuery.matches\">Expand Map</p>\n      </button>\n      <button mat-flat-button (click)=\"snav.toggle()\" [matBadge]=\"affordableUpgradeCount\" [matBadgeHidden]=\"affordableUpgradeCount <= 0\" matBadgePosition=\"before\" matBadgeColor=\"accent\">\n        <mat-icon>menu</mat-icon><p class=\"toolbar-button-text\" *ngIf=\"!mobileQuery.matches\">Menu</p>\n      </button>\n    </div>\n  </mat-toolbar>\n\n  <mat-sidenav-container class=\"game-sidenav-container\" [style.marginTop.px]=\"mobileQuery.matches ? 56 : 0\">\n    <mat-sidenav #snav [mode]=\"mobileQuery.matches ? 'over' : 'side'\" [opened]=\"!mobileQuery.matches\" [fixedInViewport]=\"mobileQuery.matches\" position=\"end\"\n      fixedTopGap=\"56\">\n      <mat-nav-list>\n        <mat-tab-group class=\"tab-group\" dynamicHeight>\n          <mat-tab label=\"Buildings\">\n            <app-buildings></app-buildings>\n          </mat-tab>\n          <mat-tab label=\"Workers\">\n            <app-workers></app-workers>\n          </mat-tab>\n          <mat-tab label=\"Store\">\n            <app-store></app-store>\n          </mat-tab>\n          <mat-tab label=\"Upgrades{{affordableUpgradeCount > 0 ? ' (' + affordableUpgradeCount + ')' : ''}}\">\n            <app-upgrades></app-upgrades>\n          </mat-tab>\n          <mat-tab label=\"Settings\">\n            <app-settings></app-settings>\n          </mat-tab>\n          <mat-tab label=\"Debug\" *ngIf=\"debugMode\">\n            <app-admin-debug></app-admin-debug>\n            <app-messages></app-messages>\n          </mat-tab>\n        </mat-tab-group>\n      </mat-nav-list>\n    </mat-sidenav>\n    <mat-sidenav-content>\n      <div class=\"main-pane\">\n        <app-clicker-main class=\"resource-list\" [style.display]=\"hideResourceList? 'none': ''\"></app-clicker-main>\n        <app-map class=\"map\" [style.display]=\"mobileQuery.matches && !hideResourceList? 'none': ''\"></app-map>\n        <!-- <app-enemy></app-enemy> -->\n        <!-- <app-fighter></app-fighter> -->\n      </div>\n    </mat-sidenav-content>\n  </mat-sidenav-container>\n</div>\n"
 
 /***/ }),
 
@@ -156,12 +156,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _directives_no_scroll_no_scroll_directive__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./directives/no-scroll/no-scroll.directive */ "./src/app/directives/no-scroll/no-scroll.directive.ts");
 /* harmony import */ var _components_enemy_enemy_component__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./components/enemy/enemy.component */ "./src/app/components/enemy/enemy.component.ts");
 /* harmony import */ var _components_fighter_fighter_component__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./components/fighter/fighter.component */ "./src/app/components/fighter/fighter.component.ts");
+/* harmony import */ var _components_buildings_buildings_buildings_component__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./components/buildings/buildings/buildings.component */ "./src/app/components/buildings/buildings/buildings.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -212,7 +214,8 @@ var AppModule = /** @class */ (function () {
                 _directives_map_map_directive__WEBPACK_IMPORTED_MODULE_22__["MapDirective"],
                 _directives_no_scroll_no_scroll_directive__WEBPACK_IMPORTED_MODULE_23__["NoScrollDirective"],
                 _components_enemy_enemy_component__WEBPACK_IMPORTED_MODULE_24__["EnemyComponent"],
-                _components_fighter_fighter_component__WEBPACK_IMPORTED_MODULE_25__["FighterComponent"]
+                _components_fighter_fighter_component__WEBPACK_IMPORTED_MODULE_25__["FighterComponent"],
+                _components_buildings_buildings_buildings_component__WEBPACK_IMPORTED_MODULE_26__["BuildingsComponent"]
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
@@ -389,6 +392,120 @@ var AdminDebugComponent = /** @class */ (function () {
             _services_admin_admin_service__WEBPACK_IMPORTED_MODULE_1__["AdminService"]])
     ], AdminDebugComponent);
     return AdminDebugComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/components/buildings/buildings/buildings.component.css":
+/*!************************************************************************!*\
+  !*** ./src/app/components/buildings/buildings/buildings.component.css ***!
+  \************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/* BuildingsComponent's private CSS styles */\r\n.buildings {\r\n  margin: 0 0 2em 0;\r\n  list-style-type: none;\r\n  padding: 0;\r\n}\r\n.buildings mat-expansion-panel {\r\n  margin: 0;\r\n}\r\n.buildings mat-expansion-panel-header {\r\n  height: 30px !important;\r\n}\r\n.buildings mat-card-subtitle {\r\n  position: absolute;\r\n  top: 10px;\r\n  right: 10px;\r\n  font-weight: bold;\r\n}\r\n.buildings button {\r\n  position: relative;\r\n  cursor: pointer;\r\n  margin: .5em;\r\n  padding: .4em 0;\r\n  height: 3.6em;\r\n  width: 100%;\r\n  border-radius: 4px;\r\n}\r\n.buildings button:hover {\r\n  left: .1em;\r\n}\r\n.buildings button.mat-disabled {\r\n  cursor: default;\r\n}\r\n.buildings .badge {\r\n  display: inline-block;\r\n  font-size: small;\r\n  color: white;\r\n  padding: 0.8em 0.7em 0 0.7em;\r\n  background-color: #607D8B;\r\n  line-height: 1em;\r\n  position: absolute;\r\n  right: -9px;\r\n  top: 1px;\r\n  height: 1.8em;\r\n  min-width: 16px;\r\n  text-align: center;\r\n  margin-right: .8em;\r\n  border-radius: 0 4px 4px 0;\r\n}\r\nbutton {\r\n  background-color: #eee;\r\n  border: none;\r\n  padding: 5px 10px;\r\n  border-radius: 4px;\r\n  cursor: pointer;\r\n  cursor: hand;\r\n  font-family: Arial;\r\n}\r\n.buildings {\r\n  text-align: center;\r\n}\r\n.building {\r\n  display: inline-block;\r\n  max-width: 300px;\r\n}\r\n.resource-list {\r\n  text-align: center;\r\n}\r\n.resource-list div {\r\n  display: inline-block;\r\n}\r\n.resource-list img {\r\n  width: 16px;\r\n  height: 16px;\r\n}\r\n"
+
+/***/ }),
+
+/***/ "./src/app/components/buildings/buildings/buildings.component.html":
+/*!*************************************************************************!*\
+  !*** ./src/app/components/buildings/buildings/buildings.component.html ***!
+  \*************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"buildings\">\n  <mat-card class=\"building\" *ngFor=\"let buildingTile of getBuildingTileArray(true)\">\n    <button mat-raised-button [color]=\"selectedBuilding === buildingTile ? 'accent' : ''\" [disabled]=\"!canAffordBuilding(buildingTile.tileType)\"\n      (click)=\"selectBuilding(buildingTile)\">\n      <mat-card-title>{{buildingTile.name}}</mat-card-title>\n    </button>\n    <mat-card-subtitle></mat-card-subtitle>\n    <mat-card-content>\n      {{buildingTile.description}}\n      <div class=\"resource-list\">\n        <div *ngFor=\"let resourceCost of buildingTile.resourceCosts\" matTooltip=\"{{resourceCost.resourceCost}} {{getResource(resourceCost.resourceId).name | titlecase}}\"\n          matTooltipPosition=\"below\">\n          <img src=\"{{getResource(resourceCost.resourceId).iconPath}}\" alt=\"{{getResource(resourceCost.resourceId).name}}\">\n          {{resourceCost.resourceCost}}\n        </div>\n      </div>\n    </mat-card-content>\n  </mat-card>\n</div>\n"
+
+/***/ }),
+
+/***/ "./src/app/components/buildings/buildings/buildings.component.ts":
+/*!***********************************************************************!*\
+  !*** ./src/app/components/buildings/buildings/buildings.component.ts ***!
+  \***********************************************************************/
+/*! exports provided: BuildingsComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BuildingsComponent", function() { return BuildingsComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _services_resources_resources_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../services/resources/resources.service */ "./src/app/services/resources/resources.service.ts");
+/* harmony import */ var _services_map_map_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../services/map/map.service */ "./src/app/services/map/map.service.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var BuildingsComponent = /** @class */ (function () {
+    function BuildingsComponent(resourcesService, mapService) {
+        this.resourcesService = resourcesService;
+        this.mapService = mapService;
+    }
+    BuildingsComponent.prototype.ngOnInit = function () {
+    };
+    BuildingsComponent.prototype.selectBuilding = function (buildingTile) {
+        if (this.selectedBuilding === buildingTile) {
+            this.selectedBuilding = undefined;
+        }
+        else {
+            this.selectedBuilding = buildingTile;
+        }
+    };
+    BuildingsComponent.prototype.canAffordBuilding = function (buildingType) {
+        return this.mapService.canAffordBuilding(this.buildingTiles[buildingType]);
+    };
+    BuildingsComponent.prototype.createBuilding = function (tile, buildingType) {
+        var buildingCreated = this.mapService.createBuilding(tile, buildingType);
+    };
+    BuildingsComponent.prototype.clearBuilding = function (tile) {
+        this.mapService.clearBuilding(tile);
+    };
+    Object.defineProperty(BuildingsComponent.prototype, "buildingTiles", {
+        get: function () {
+            return this.mapService.buildingTiles;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    BuildingsComponent.prototype.getBuildingTileArray = function (filterByPlaceable) {
+        var tiles = this.mapService.buildingTileArray;
+        if (filterByPlaceable) {
+            tiles = tiles.filter(function (tile) { return tile.placeable; });
+        }
+        return tiles;
+    };
+    BuildingsComponent.prototype.getResource = function (resourceId) {
+        return this.resourcesService.getResource(resourceId);
+    };
+    Object.defineProperty(BuildingsComponent.prototype, "selectedBuilding", {
+        get: function () {
+            return this.mapService.selectedBuilding;
+        },
+        set: function (value) {
+            this.mapService.selectedBuilding = value;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    BuildingsComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-buildings',
+            template: __webpack_require__(/*! ./buildings.component.html */ "./src/app/components/buildings/buildings/buildings.component.html"),
+            styles: [__webpack_require__(/*! ./buildings.component.css */ "./src/app/components/buildings/buildings/buildings.component.css")]
+        }),
+        __metadata("design:paramtypes", [_services_resources_resources_service__WEBPACK_IMPORTED_MODULE_1__["ResourcesService"],
+            _services_map_map_service__WEBPACK_IMPORTED_MODULE_2__["MapService"]])
+    ], BuildingsComponent);
+    return BuildingsComponent;
 }());
 
 
@@ -685,7 +802,7 @@ var FighterComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "/* MapComponent's private CSS styles */\r\nh1 {\r\n  font-size: 1.2em;\r\n  color: #999;\r\n  margin-bottom: 0;\r\n  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;\r\n}\r\nh2 {\r\n  font-size: 2em;\r\n  margin-top: 0;\r\n  padding-top: 0;\r\n}\r\nh3 {\r\n  font-family: Arial, Helvetica, sans-serif;\r\n}\r\nnav a {\r\n  padding: 5px 10px;\r\n  text-decoration: none;\r\n  margin-top: 10px;\r\n  display: inline-block;\r\n  background-color: #eee;\r\n  border-radius: 4px;\r\n}\r\nnav a:visited, a:link {\r\n  color: #607d8b;\r\n}\r\nnav a:hover {\r\n  color: #039be5;\r\n  background-color: #cfd8dc;\r\n}\r\nnav a.active {\r\n  color: #039be5;\r\n}\r\n.building-list {\r\n  display: flex;\r\n  overflow-x: scroll;\r\n  height: 230px;\r\n}\r\n.resource-list {\r\n  text-align: center;\r\n}\r\n.resource-list div {\r\n  display: inline-block;\r\n}\r\n.resource-list img {\r\n  width: 16px;\r\n  height: 16px;\r\n}\r\nbutton {\r\n  height: 180px;\r\n}\r\n#canvas-container {\r\n  display: flex;\r\n}\r\n"
+module.exports = "/* MapComponent's private CSS styles */\r\nh1 {\r\n  font-size: 1.2em;\r\n  color: #999;\r\n  margin-bottom: 0;\r\n  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;\r\n}\r\nh2 {\r\n  font-size: 2em;\r\n  margin-top: 0;\r\n  padding-top: 0;\r\n}\r\nh3 {\r\n  font-family: Arial, Helvetica, sans-serif;\r\n}\r\nnav a {\r\n  padding: 5px 10px;\r\n  text-decoration: none;\r\n  margin-top: 10px;\r\n  display: inline-block;\r\n  background-color: #eee;\r\n  border-radius: 4px;\r\n}\r\nnav a:visited, a:link {\r\n  color: #607d8b;\r\n}\r\nnav a:hover {\r\n  color: #039be5;\r\n  background-color: #cfd8dc;\r\n}\r\nnav a.active {\r\n  color: #039be5;\r\n}\r\n#canvas-container {\r\n  display: flex;\r\n  height: 100%;\r\n}\r\n"
 
 /***/ }),
 
@@ -696,7 +813,7 @@ module.exports = "/* MapComponent's private CSS styles */\r\nh1 {\r\n  font-size
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div id=\"canvas-container\">\r\n  <canvas class=\"noselect\" appNoScroll appMap width=\"{{canvasWidth}}\" height=\"{{canvasHeight}}\" oncontextmenu=\"return false\"></canvas>\r\n</div>\r\n\r\n<h3>Buildings (Click & drag to place, Ctrl + click to delete)</h3>\r\n\r\n<div class=\"building-list\">\r\n  <div class=\"building-cell\" *ngFor=\"let buildingTile of getBuildingTileArray(true)\">\r\n    <button mat-raised-button [color]=\"selectedBuilding === buildingTile && !deleteMode ? 'accent' : ''\" (click)=\"selectBuilding(buildingTile)\">\r\n      <mat-card-title>{{buildingTile.name}}</mat-card-title>\r\n      <mat-card-subtitle>{{buildingTile.description}}</mat-card-subtitle>\r\n      <mat-card-content>\r\n        <h3>Costs</h3>\r\n        <div class=\"resource-list\">\r\n          <b><mat-icon *ngIf=\"canAffordBuilding(buildingTile.tileType)\" color=\"primary\">check</mat-icon>\r\n          </b>\r\n          <div *ngFor=\"let resourceCost of buildingTile.resourceCosts\" matTooltip=\"{{resourceCost.resourceCost}} {{getResource(resourceCost.resourceId).name | titlecase}}\" matTooltipPosition=\"below\">\r\n            <img src=\"{{getResource(resourceCost.resourceId).iconPath}}\" alt=\"{{getResource(resourceCost.resourceId).name}}\"> {{resourceCost.resourceCost}}\r\n          </div>\r\n        </div>\r\n      </mat-card-content>\r\n    </button>\r\n  </div>\r\n</div>\r\n"
+module.exports = "<div id=\"canvas-container\">\r\n  <canvas class=\"noselect\" appNoScroll appMap width=\"{{canvasWidth}}\" height=\"{{canvasHeight}}\" oncontextmenu=\"return false\"></canvas>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -1940,6 +2057,8 @@ var MapDirective = /** @class */ (function () {
         this.enemyService = enemyService;
         this.fighterService = fighterService;
         this.mapService = mapService;
+        this.headerPixels = 64;
+        this.imageElements = {};
         this.transform = d3.zoomIdentity;
         this.lowFramerateActive = false;
         this.images = [
@@ -1951,12 +2070,17 @@ var MapDirective = /** @class */ (function () {
         this.canvas = d3.select('canvas');
         this.context = this.canvas.node().getContext('2d');
         this.canvasContainer = document.getElementById('canvas-container');
+        var imageElementContainer = document.getElementById('tile-images');
+        for (var i = 0; i < imageElementContainer.children.length; i++) {
+            var imageElement = imageElementContainer.children[i];
+            this.imageElements[imageElement.id] = imageElement;
+        }
         this.context.font = 'bold 4px Arial';
-        this.mapService.canvasPixelWidth = this.canvas.property('width');
-        this.mapService.canvasPixelHeight = this.canvas.property('height');
+        this.resizeCanvas();
+        this.transform.k = 2;
         this.canvas.call(d3.zoom()
             .filter(this.scrollFilter(this))
-            .scaleExtent([2 / 3, 5])
+            .scaleExtent([2, 5])
             .translateExtent([[0, 0], [this.mapService.gridWidth * this.mapService.tilePixelSize,
                 this.mapService.gridHeight * this.mapService.tilePixelSize]])
             .on('zoom', this.zoomed(this)));
@@ -2074,9 +2198,14 @@ var MapDirective = /** @class */ (function () {
             }
         }
     };
+    MapDirective.prototype.resizeCanvas = function () {
+        this.element.nativeElement.width = window.innerWidth;
+        this.element.nativeElement.height = window.innerHeight - this.headerPixels;
+        this.mapService.canvasPixelWidth = window.innerWidth;
+        this.mapService.canvasPixelHeight = window.innerHeight - this.headerPixels;
+    };
     MapDirective.prototype.refreshCanvas = function () {
-        this.canvas.property('width', this.canvasContainer.clientWidth);
-        this.mapService.canvasPixelWidth = this.canvas.property('width');
+        this.resizeCanvas();
         this.context.save();
         this.context.clearRect(0, 0, this.mapService.canvasPixelWidth, this.mapService.canvasPixelHeight);
         this.context.translate(this.transform.x, this.transform.y);
@@ -2095,20 +2224,20 @@ var MapDirective = /** @class */ (function () {
                 tile.y < upperLeftPixel[1] || tile.y > lowerRightPixel[1]) {
                 continue;
             }
-            var mapTileImage = document.getElementById(tile.mapTileType.toLowerCase());
+            var mapTileImage = this.imageElements[tile.mapTileType.toLowerCase()];
             this.context.drawImage(mapTileImage, tile.x, tile.y, this.mapService.tilePixelSize, this.mapService.tilePixelSize);
             if (tile.resourceTileType) {
-                var resourceTileImage = document.getElementById(tile.resourceTileType.toLowerCase().replace(' ', '-'));
+                var resourceTileImage = this.imageElements[tile.resourceTileType.toLowerCase().replace(' ', '-')];
                 this.context.drawImage(resourceTileImage, tile.x, tile.y, this.mapService.tilePixelSize, this.mapService.tilePixelSize);
             }
             if (tile.buildingTileType) {
-                var buildingTileImage = document.getElementById(tile.buildingTileType.toLowerCase());
+                var buildingTileImage = this.imageElements[tile.buildingTileType.toLowerCase()];
                 this.context.drawImage(buildingTileImage, tile.x, tile.y, this.mapService.tilePixelSize, this.mapService.tilePixelSize);
             }
         }
         for (var _b = 0, _c = this.mapService.resourceAnimations; _b < _c.length; _b++) {
             var resourceAnimation = _c[_b];
-            var resourceTileImage = document.getElementById(this.resourcesService.getResource(resourceAnimation.resourceId).name.toLowerCase().replace(' ', '-'));
+            var resourceTileImage = this.imageElements[this.resourcesService.getResource(resourceAnimation.resourceId).name.toLowerCase().replace(' ', '-')];
             this.context.drawImage(resourceTileImage, resourceAnimation.x, resourceAnimation.y, this.mapService.tilePixelSize / 2, this.mapService.tilePixelSize / 2);
             if (!this.settingsService.mapDetailMode) {
                 continue;
@@ -2119,12 +2248,12 @@ var MapDirective = /** @class */ (function () {
         }
         for (var _d = 0, _e = this.enemyService.enemies; _d < _e.length; _d++) {
             var enemy = _e[_d];
-            var enemyTileImage = document.getElementById(enemy.name.toLowerCase().replace(' ', '-'));
+            var enemyTileImage = this.imageElements[enemy.name.toLowerCase().replace(' ', '-')];
             this.context.drawImage(enemyTileImage, enemy.x, enemy.y, this.mapService.tilePixelSize, this.mapService.tilePixelSize);
         }
         for (var _f = 0, _g = this.fighterService.fighters; _f < _g.length; _f++) {
             var fighter = _g[_f];
-            var fighterTileImage = document.getElementById(fighter.name.toLowerCase().replace(' ', '-'));
+            var fighterTileImage = this.imageElements[fighter.name.toLowerCase().replace(' ', '-')];
             this.context.drawImage(fighterTileImage, fighter.x, fighter.y, this.mapService.tilePixelSize, this.mapService.tilePixelSize);
         }
         if (this.settingsService.mapDetailMode) {
@@ -2137,7 +2266,7 @@ var MapDirective = /** @class */ (function () {
         }
         for (var _k = 0, _l = this.mapService.projectiles; _k < _l.length; _k++) {
             var projectile = _l[_k];
-            var projectileTileImage = document.getElementById(projectile.name.toLowerCase().replace(' ', '-'));
+            var projectileTileImage = this.imageElements[projectile.name.toLowerCase().replace(' ', '-')];
             this.context.translate(projectile.x, projectile.y);
             this.context.rotate(projectile.rotation);
             this.context.drawImage(projectileTileImage, -this.mapService.tilePixelSize / 2, -this.mapService.tilePixelSize / 2, this.mapService.tilePixelSize, this.mapService.tilePixelSize);
