@@ -30,7 +30,7 @@ webpackEmptyAsyncContext.id = "./src/$$_lazy_route_resource lazy recursive";
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "/* AppComponent's private CSS styles */\r\nh1 {\r\n  font-size: 1.2em;\r\n  color: #999;\r\n  margin-bottom: 0;\r\n  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;\r\n}\r\nh2 {\r\n  font-size: 2em;\r\n  margin-top: 0;\r\n  padding-top: 0;\r\n}\r\nnav a {\r\n  padding: 5px 10px;\r\n  text-decoration: none;\r\n  margin-top: 10px;\r\n  display: inline-block;\r\n  background-color: #eee;\r\n  border-radius: 4px;\r\n}\r\nnav a:visited, a:link {\r\n  color: #607d8b;\r\n}\r\nnav a:hover {\r\n  color: #039be5;\r\n  background-color: #cfd8dc;\r\n}\r\nnav a.active {\r\n  color: #039be5;\r\n}\r\n.resource-list {\r\n  float: left;\r\n}\r\n.tab-group {\r\n  margin-left: 15px;\r\n}\r\n.game-container {\r\n  display: flex;\r\n  flex-direction: column;\r\n  position: absolute;\r\n  top: 0;\r\n  bottom: 0;\r\n  left: 0;\r\n  right: 0;\r\n}\r\n.game-is-mobile .game-toolbar {\r\n  position: fixed;\r\n  /* Make sure the toolbar will stay on top of the content as it scrolls past. */\r\n  z-index: 2;\r\n}\r\nh1.game-app-name {\r\n  margin-left: 8px;\r\n}\r\n.game-sidenav-container {\r\n  /* When the sidenav is not fixed, stretch the sidenav container to fill the available space. This\r\n     causes `<mat-sidenav-content>` to act as our scrolling element for desktop layouts. */\r\n  flex: 1;\r\n}\r\n.game-sidenav-container mat-sidenav {\r\n  width: 800px;\r\n}\r\n.game-is-mobile .game-sidenav-container mat-sidenav {\r\n  width: 100%;\r\n}\r\n.game-is-mobile .game-sidenav-container {\r\n  /* When the sidenav is fixed, don't constrain the height of the sidenav container. This allows the\r\n     `<body>` to be our scrolling element for mobile layouts. */\r\n  flex: 1 0 auto;\r\n}\r\n.sidenav-buttons {\r\n  position: absolute;\r\n  right: 0;\r\n}\r\n.toolbar-button-text {\r\n  display: inline-block;\r\n}\r\n.main-pane {\r\n  height: 100%;\r\n}\r\napp-clicker-main {\r\n  overflow-y: scroll;\r\n  max-height: 100%;\r\n}\r\n"
+module.exports = "/* AppComponent's private CSS styles */\r\nh1 {\r\n  font-size: 1.2em;\r\n  color: #999;\r\n  margin-bottom: 0;\r\n  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;\r\n}\r\nh2 {\r\n  font-size: 2em;\r\n  margin-top: 0;\r\n  padding-top: 0;\r\n}\r\nnav a {\r\n  padding: 5px 10px;\r\n  text-decoration: none;\r\n  margin-top: 10px;\r\n  display: inline-block;\r\n  background-color: #eee;\r\n  border-radius: 4px;\r\n}\r\nnav a:visited, a:link {\r\n  color: #607d8b;\r\n}\r\nnav a:hover {\r\n  color: #039be5;\r\n  background-color: #cfd8dc;\r\n}\r\nnav a.active {\r\n  color: #039be5;\r\n}\r\n.resource-list {\r\n  float: left;\r\n}\r\n.tab-group {\r\n  margin-left: 15px;\r\n}\r\n.game-container {\r\n  display: flex;\r\n  flex-direction: column;\r\n  position: absolute;\r\n  top: 0;\r\n  bottom: 0;\r\n  left: 0;\r\n  right: 0;\r\n}\r\n.game-is-mobile .game-toolbar {\r\n  position: fixed;\r\n  /* Make sure the toolbar will stay on top of the content as it scrolls past. */\r\n  z-index: 2;\r\n}\r\nh1.game-app-name {\r\n  margin-left: 8px;\r\n}\r\n.game-sidenav-container {\r\n  /* When the sidenav is not fixed, stretch the sidenav container to fill the available space. This\r\n     causes `<mat-sidenav-content>` to act as our scrolling element for desktop layouts. */\r\n  flex: 1;\r\n}\r\n.game-sidenav-container mat-sidenav {\r\n  width: 500px;\r\n}\r\n.game-is-mobile .game-sidenav-container mat-sidenav {\r\n  width: 100%;\r\n}\r\n.game-is-mobile .game-sidenav-container {\r\n  /* When the sidenav is fixed, don't constrain the height of the sidenav container. This allows the\r\n     `<body>` to be our scrolling element for mobile layouts. */\r\n  flex: 1 0 auto;\r\n}\r\n.sidenav-buttons {\r\n  position: absolute;\r\n  right: 0;\r\n}\r\n.toolbar-button-text {\r\n  display: inline-block;\r\n}\r\n.main-pane {\r\n  height: 100%;\r\n}\r\napp-clicker-main {\r\n  overflow-y: scroll;\r\n  max-height: 100%;\r\n}\r\n"
 
 /***/ }),
 
@@ -41,7 +41,7 @@ module.exports = "/* AppComponent's private CSS styles */\r\nh1 {\r\n  font-size
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"game-container\" [class.game-is-mobile]=\"mobileQuery.matches\">\n  <mat-toolbar color=\"primary\" class=\"game-toolbar\">\n    <h1 class=\"game-app-name\">Age of Clicking</h1>\n    <div class=\"sidenav-buttons\">\n      <button mat-flat-button (click)=\"hideResourceList = !hideResourceList\">\n        <mat-icon>map</mat-icon><p class=\"toolbar-button-text\" *ngIf=\"!mobileQuery.matches\">Expand Map</p>\n      </button>\n      <button mat-flat-button (click)=\"snav.toggle()\" [matBadge]=\"affordableUpgradeCount\" [matBadgeHidden]=\"affordableUpgradeCount <= 0\" matBadgePosition=\"before\" matBadgeColor=\"accent\">\n        <mat-icon>menu</mat-icon><p class=\"toolbar-button-text\" *ngIf=\"!mobileQuery.matches\">Menu</p>\n      </button>\n    </div>\n  </mat-toolbar>\n\n  <mat-sidenav-container class=\"game-sidenav-container\" [style.marginTop.px]=\"mobileQuery.matches ? 56 : 0\">\n    <mat-sidenav #snav [mode]=\"mobileQuery.matches ? 'over' : 'side'\" [opened]=\"!mobileQuery.matches\" [fixedInViewport]=\"mobileQuery.matches\" position=\"end\"\n      fixedTopGap=\"56\">\n      <mat-nav-list>\n        <mat-tab-group class=\"tab-group\" dynamicHeight>\n          <mat-tab label=\"Buildings\">\n            <app-buildings></app-buildings>\n          </mat-tab>\n          <mat-tab label=\"Workers\">\n            <app-workers></app-workers>\n          </mat-tab>\n          <mat-tab label=\"Store\">\n            <app-store></app-store>\n          </mat-tab>\n          <mat-tab label=\"Upgrades{{affordableUpgradeCount > 0 ? ' (' + affordableUpgradeCount + ')' : ''}}\">\n            <app-upgrades></app-upgrades>\n          </mat-tab>\n          <mat-tab label=\"Settings\">\n            <app-settings></app-settings>\n          </mat-tab>\n          <mat-tab label=\"Debug\" *ngIf=\"debugMode\">\n            <app-admin-debug></app-admin-debug>\n            <app-messages></app-messages>\n          </mat-tab>\n        </mat-tab-group>\n      </mat-nav-list>\n    </mat-sidenav>\n    <mat-sidenav-content>\n      <div class=\"main-pane\">\n        <app-clicker-main class=\"resource-list\" [style.display]=\"hideResourceList? 'none': ''\"></app-clicker-main>\n        <app-map class=\"map\" [style.display]=\"mobileQuery.matches && !hideResourceList? 'none': ''\"></app-map>\n        <!-- <app-enemy></app-enemy> -->\n        <!-- <app-fighter></app-fighter> -->\n      </div>\n    </mat-sidenav-content>\n  </mat-sidenav-container>\n</div>\n"
+module.exports = "<div class=\"game-container\" [class.game-is-mobile]=\"mobileQuery.matches\" [@.disabled]=\"disableAnimations\">\n  <mat-toolbar color=\"primary\" class=\"game-toolbar\">\n    <h1 class=\"game-app-name\">Age of Clicking</h1>\n    <div class=\"sidenav-buttons\">\n      <button mat-flat-button (click)=\"hideResourceList = !hideResourceList\">\n        <mat-icon>map</mat-icon><p class=\"toolbar-button-text\" *ngIf=\"!mobileQuery.matches\">Expand Map</p>\n      </button>\n      <button mat-flat-button (click)=\"snav.toggle()\" [matBadge]=\"affordableUpgradeCount\" [matBadgeHidden]=\"affordableUpgradeCount <= 0\" matBadgePosition=\"before\" matBadgeColor=\"accent\">\n        <mat-icon>menu</mat-icon><p class=\"toolbar-button-text\" *ngIf=\"!mobileQuery.matches\">Menu</p>\n      </button>\n    </div>\n  </mat-toolbar>\n\n  <mat-sidenav-container class=\"game-sidenav-container\" [style.marginTop.px]=\"mobileQuery.matches ? 56 : 0\">\n    <mat-sidenav #snav [mode]=\"mobileQuery.matches ? 'over' : 'side'\" [opened]=\"!mobileQuery.matches\" [fixedInViewport]=\"mobileQuery.matches\" position=\"end\"\n      fixedTopGap=\"56\">\n      <mat-nav-list>\n        <mat-tab-group class=\"tab-group\" dynamicHeight>\n          <mat-tab label=\"Buildings\">\n            <app-buildings></app-buildings>\n          </mat-tab>\n          <mat-tab label=\"Fighters\">\n            <app-fighter></app-fighter>\n          </mat-tab>\n          <mat-tab label=\"Workers\">\n            <app-workers></app-workers>\n          </mat-tab>\n          <mat-tab label=\"Store\">\n            <app-store></app-store>\n          </mat-tab>\n          <mat-tab label=\"Upgrades{{affordableUpgradeCount > 0 ? ' (' + affordableUpgradeCount + ')' : ''}}\">\n            <app-upgrades></app-upgrades>\n          </mat-tab>\n          <mat-tab label=\"Log\">\n            <app-messages></app-messages>\n          </mat-tab>\n          <mat-tab label=\"Settings\">\n            <app-settings></app-settings>\n            <app-admin-debug *ngIf=\"debugMode\"></app-admin-debug>\n          </mat-tab>\n        </mat-tab-group>\n      </mat-nav-list>\n    </mat-sidenav>\n    <mat-sidenav-content>\n      <div class=\"main-pane\">\n        <app-clicker-main class=\"resource-list\" [style.display]=\"hideResourceList? 'none': ''\"></app-clicker-main>\n        <app-map class=\"map\" [style.display]=\"mobileQuery.matches && !hideResourceList? 'none': ''\"></app-map>\n      </div>\n    </mat-sidenav-content>\n  </mat-sidenav-container>\n</div>\n"
 
 /***/ }),
 
@@ -90,6 +90,13 @@ var AppComponent = /** @class */ (function () {
             var upgrades = this.upgradesService.getUpgrades(false, true, true);
             var affordableUpgrades = upgrades.filter(function (upgrade) { return _this.upgradesService.canAffordUpgrade(upgrade.id); });
             return affordableUpgrades.length;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(AppComponent.prototype, "disableAnimations", {
+        get: function () {
+            return this.settingsService.disableAnimations;
         },
         enumerable: true,
         configurable: true
@@ -405,7 +412,7 @@ var AdminDebugComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "/* BuildingsComponent's private CSS styles */\r\n.buildings {\r\n  margin: 0 0 2em 0;\r\n  list-style-type: none;\r\n  padding: 0;\r\n}\r\n.buildings mat-expansion-panel {\r\n  margin: 0;\r\n}\r\n.buildings mat-expansion-panel-header {\r\n  height: 30px !important;\r\n}\r\n.buildings mat-card-subtitle {\r\n  position: absolute;\r\n  top: 10px;\r\n  right: 10px;\r\n  font-weight: bold;\r\n}\r\n.buildings button {\r\n  position: relative;\r\n  cursor: pointer;\r\n  margin: .5em;\r\n  padding: .4em 0;\r\n  height: 3.6em;\r\n  width: 100%;\r\n  border-radius: 4px;\r\n}\r\n.buildings button:hover {\r\n  left: .1em;\r\n}\r\n.buildings button.mat-disabled {\r\n  cursor: default;\r\n}\r\n.buildings .badge {\r\n  display: inline-block;\r\n  font-size: small;\r\n  color: white;\r\n  padding: 0.8em 0.7em 0 0.7em;\r\n  background-color: #607D8B;\r\n  line-height: 1em;\r\n  position: absolute;\r\n  right: -9px;\r\n  top: 1px;\r\n  height: 1.8em;\r\n  min-width: 16px;\r\n  text-align: center;\r\n  margin-right: .8em;\r\n  border-radius: 0 4px 4px 0;\r\n}\r\nbutton {\r\n  background-color: #eee;\r\n  border: none;\r\n  padding: 5px 10px;\r\n  border-radius: 4px;\r\n  cursor: pointer;\r\n  cursor: hand;\r\n  font-family: Arial;\r\n}\r\n.buildings {\r\n  text-align: center;\r\n}\r\n.building {\r\n  display: inline-block;\r\n  max-width: 300px;\r\n}\r\n.resource-list {\r\n  text-align: center;\r\n}\r\n.resource-list div {\r\n  display: inline-block;\r\n}\r\n.resource-list img {\r\n  width: 16px;\r\n  height: 16px;\r\n}\r\n"
+module.exports = "/* BuildingsComponent's private CSS styles */\r\n.buildings {\r\n  margin: 0 0 2em 0;\r\n  list-style-type: none;\r\n  padding: 0;\r\n}\r\n.buildings mat-expansion-panel {\r\n  margin: 0;\r\n}\r\n.buildings mat-expansion-panel-header {\r\n  height: 30px !important;\r\n}\r\n.buildings mat-card-subtitle {\r\n  position: absolute;\r\n  top: 10px;\r\n  right: 10px;\r\n  font-weight: bold;\r\n}\r\n.buildings button {\r\n  position: relative;\r\n  cursor: pointer;\r\n  margin: .5em;\r\n  padding: .4em 0;\r\n  height: 3.6em;\r\n  width: 100%;\r\n  border-radius: 4px;\r\n}\r\n.buildings button:hover {\r\n  left: .1em;\r\n}\r\n.buildings button.mat-disabled {\r\n  cursor: default;\r\n}\r\n.buildings .badge {\r\n  display: inline-block;\r\n  font-size: small;\r\n  color: white;\r\n  padding: 0.8em 0.7em 0 0.7em;\r\n  background-color: #607D8B;\r\n  line-height: 1em;\r\n  position: absolute;\r\n  right: -9px;\r\n  top: 1px;\r\n  height: 1.8em;\r\n  min-width: 16px;\r\n  text-align: center;\r\n  margin-right: .8em;\r\n  border-radius: 0 4px 4px 0;\r\n}\r\nbutton {\r\n  background-color: #eee;\r\n  border: none;\r\n  padding: 5px 10px;\r\n  border-radius: 4px;\r\n  cursor: pointer;\r\n  cursor: hand;\r\n  font-family: Arial;\r\n}\r\n.buildings {\r\n  text-align: center;\r\n}\r\n.buildings.slim-interface button {\r\n  width: auto;\r\n  height: auto;\r\n}\r\n.building {\r\n  display: inline-block;\r\n  max-width: 300px;\r\n  width: 15vw;\r\n}\r\n.resource-list {\r\n  text-align: center;\r\n}\r\n.resource-list div {\r\n  display: inline-block;\r\n}\r\n.resource-list img {\r\n  width: 16px;\r\n  height: 16px;\r\n}\r\n"
 
 /***/ }),
 
@@ -416,7 +423,7 @@ module.exports = "/* BuildingsComponent's private CSS styles */\r\n.buildings {\
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"buildings\">\n  <mat-card class=\"building\" *ngFor=\"let buildingTile of getBuildingTileArray(true)\">\n    <button mat-raised-button [color]=\"selectedBuilding === buildingTile ? 'accent' : ''\" [disabled]=\"!canAffordBuilding(buildingTile.tileType)\"\n      (click)=\"selectBuilding(buildingTile)\">\n      <mat-card-title>{{buildingTile.name}}</mat-card-title>\n    </button>\n    <mat-card-subtitle></mat-card-subtitle>\n    <mat-card-content>\n      {{buildingTile.description}}\n      <div class=\"resource-list\">\n        <div *ngFor=\"let resourceCost of buildingTile.resourceCosts\" matTooltip=\"{{resourceCost.resourceCost}} {{getResource(resourceCost.resourceId).name | titlecase}}\"\n          matTooltipPosition=\"below\">\n          <img src=\"{{getResource(resourceCost.resourceId).iconPath}}\" alt=\"{{getResource(resourceCost.resourceId).name}}\">\n          {{resourceCost.resourceCost}}\n        </div>\n      </div>\n    </mat-card-content>\n  </mat-card>\n</div>\n"
+module.exports = "<div class=\"buildings\" [ngClass]=\"{'slim-interface': settingsService.slimInterface}\">\n  <div *ngIf=\"!settingsService.slimInterface\">\n    <mat-card class=\"building\" *ngFor=\"let buildingTile of getBuildingTileArray(true)\">\n      <button mat-raised-button [color]=\"selectedBuilding === buildingTile ? 'accent' : ''\" [disabled]=\"!canAffordBuilding(buildingTile.tileType)\"\n        (click)=\"selectBuilding(buildingTile)\">\n        <mat-card-title>{{buildingTile.name}}</mat-card-title>\n      </button>\n      <mat-card-content>\n        {{buildingTile.description}}\n        <div class=\"resource-list\">\n          <div *ngFor=\"let resourceCost of buildingTile.resourceCosts\" matTooltip=\"{{resourceCost.resourceCost}} {{getResource(resourceCost.resourceId).name | titlecase}}\"\n            matTooltipPosition=\"below\">\n            <img src=\"{{getResource(resourceCost.resourceId).iconPath}}\" alt=\"{{getResource(resourceCost.resourceId).name}}\">\n            {{resourceCost.resourceCost}}\n          </div>\n        </div>\n      </mat-card-content>\n    </mat-card>\n  </div>\n  <div *ngIf=\"settingsService.slimInterface\">\n    <button mat-raised-button *ngFor=\"let buildingTile of getBuildingTileArray(true)\" (click)=\"selectBuilding(buildingTile)\"\n      [color]=\"selectedBuilding === buildingTile ? 'accent' : ''\" [disabled]=\"!canAffordBuilding(buildingTile.tileType)\">\n      <div class=\"title\" matTooltip=\"{{buildingTile.description}}\" matTooltipPosition=\"above\">\n        {{buildingTile.name}}\n      </div>\n      <div class=\"resource-list\">\n        <div *ngFor=\"let resourceCost of buildingTile.resourceCosts\" matTooltip=\"{{resourceCost.resourceCost}} {{getResource(resourceCost.resourceId).name | titlecase}}\"\n          matTooltipPosition=\"below\">\n          <img src=\"{{getResource(resourceCost.resourceId).iconPath}}\" alt=\"{{getResource(resourceCost.resourceId).name}}\">\n          {{resourceCost.resourceCost}}\n        </div>\n      </div>\n    </button>\n  </div>\n</div>\n"
 
 /***/ }),
 
@@ -432,7 +439,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BuildingsComponent", function() { return BuildingsComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _services_resources_resources_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../services/resources/resources.service */ "./src/app/services/resources/resources.service.ts");
-/* harmony import */ var _services_map_map_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../services/map/map.service */ "./src/app/services/map/map.service.ts");
+/* harmony import */ var _services_buildings_buildings_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../services/buildings/buildings.service */ "./src/app/services/buildings/buildings.service.ts");
+/* harmony import */ var _services_fighter_fighter_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./../../../services/fighter/fighter.service */ "./src/app/services/fighter/fighter.service.ts");
+/* harmony import */ var _services_settings_settings_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../services/settings/settings.service */ "./src/app/services/settings/settings.service.ts");
+/* harmony import */ var _services_map_map_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../services/map/map.service */ "./src/app/services/map/map.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -445,9 +455,15 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
+
+
 var BuildingsComponent = /** @class */ (function () {
-    function BuildingsComponent(resourcesService, mapService) {
+    function BuildingsComponent(resourcesService, buildingsService, fighterService, settingsService, mapService) {
         this.resourcesService = resourcesService;
+        this.buildingsService = buildingsService;
+        this.fighterService = fighterService;
+        this.settingsService = settingsService;
         this.mapService = mapService;
     }
     BuildingsComponent.prototype.ngOnInit = function () {
@@ -457,17 +473,18 @@ var BuildingsComponent = /** @class */ (function () {
             this.selectedBuilding = undefined;
         }
         else {
+            this.fighterService.selectedFighterType = undefined;
             this.selectedBuilding = buildingTile;
         }
     };
     BuildingsComponent.prototype.canAffordBuilding = function (buildingType) {
-        return this.mapService.canAffordBuilding(this.buildingTiles[buildingType]);
+        return this.buildingsService.canAffordBuilding(this.buildingTiles[buildingType]);
     };
     BuildingsComponent.prototype.createBuilding = function (tile, buildingType) {
-        var buildingCreated = this.mapService.createBuilding(tile, buildingType);
+        var buildingCreated = this.buildingsService.createBuilding(tile, buildingType);
     };
     BuildingsComponent.prototype.clearBuilding = function (tile) {
-        this.mapService.clearBuilding(tile);
+        this.buildingsService.clearBuilding(tile);
     };
     Object.defineProperty(BuildingsComponent.prototype, "buildingTiles", {
         get: function () {
@@ -488,10 +505,10 @@ var BuildingsComponent = /** @class */ (function () {
     };
     Object.defineProperty(BuildingsComponent.prototype, "selectedBuilding", {
         get: function () {
-            return this.mapService.selectedBuilding;
+            return this.buildingsService.selectedBuilding;
         },
         set: function (value) {
-            this.mapService.selectedBuilding = value;
+            this.buildingsService.selectedBuilding = value;
         },
         enumerable: true,
         configurable: true
@@ -503,7 +520,10 @@ var BuildingsComponent = /** @class */ (function () {
             styles: [__webpack_require__(/*! ./buildings.component.css */ "./src/app/components/buildings/buildings/buildings.component.css")]
         }),
         __metadata("design:paramtypes", [_services_resources_resources_service__WEBPACK_IMPORTED_MODULE_1__["ResourcesService"],
-            _services_map_map_service__WEBPACK_IMPORTED_MODULE_2__["MapService"]])
+            _services_buildings_buildings_service__WEBPACK_IMPORTED_MODULE_2__["BuildingsService"],
+            _services_fighter_fighter_service__WEBPACK_IMPORTED_MODULE_3__["FighterService"],
+            _services_settings_settings_service__WEBPACK_IMPORTED_MODULE_4__["SettingsService"],
+            _services_map_map_service__WEBPACK_IMPORTED_MODULE_5__["MapService"]])
     ], BuildingsComponent);
     return BuildingsComponent;
 }());
@@ -651,7 +671,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ""
+module.exports = "<button (click)=\"enemyService.spawnEnemy()\">Spawn Enemy</button>\r\n"
 
 /***/ }),
 
@@ -706,7 +726,7 @@ var EnemyComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".fighter-list {\r\n  display: flex;\r\n  max-width: 1000px;\r\n  overflow-x: scroll;\r\n  height: 230px;\r\n}\r\n\r\n.fighter-cost {\r\n  text-align: center;\r\n}\r\n\r\n.fighter-cost div {\r\n  display: inline-block;\r\n}\r\n\r\n.fighter-cost img {\r\n  width: 16px;\r\n  height: 16px;\r\n}\r\n\r\nbutton {\r\n  height: 180px;\r\n}\r\n"
+module.exports = "/* FighterComponent's private CSS styles */\r\n.fighters {\r\n  margin: 0 0 2em 0;\r\n  list-style-type: none;\r\n  padding: 0;\r\n}\r\n.fighters mat-expansion-panel {\r\n  margin: 0;\r\n}\r\n.fighters mat-expansion-panel-header {\r\n  height: 30px !important;\r\n}\r\n.fighters mat-card-subtitle {\r\n  position: absolute;\r\n  top: 10px;\r\n  right: 10px;\r\n  font-weight: bold;\r\n}\r\n.fighters button {\r\n  position: relative;\r\n  cursor: pointer;\r\n  margin: .5em;\r\n  padding: .4em 0;\r\n  height: 3.6em;\r\n  width: 100%;\r\n  border-radius: 4px;\r\n}\r\n.fighters button:hover {\r\n  left: .1em;\r\n}\r\n.fighters button.mat-disabled {\r\n  cursor: default;\r\n}\r\n.fighters .badge {\r\n  display: inline-block;\r\n  font-size: small;\r\n  color: white;\r\n  padding: 0.8em 0.7em 0 0.7em;\r\n  background-color: #607D8B;\r\n  line-height: 1em;\r\n  position: absolute;\r\n  right: -9px;\r\n  top: 1px;\r\n  height: 1.8em;\r\n  min-width: 16px;\r\n  text-align: center;\r\n  margin-right: .8em;\r\n  border-radius: 0 4px 4px 0;\r\n}\r\nbutton {\r\n  background-color: #eee;\r\n  border: none;\r\n  padding: 5px 10px;\r\n  border-radius: 4px;\r\n  cursor: pointer;\r\n  cursor: hand;\r\n  font-family: Arial;\r\n}\r\n.fighters {\r\n  text-align: center;\r\n}\r\n.fighters.slim-interface button {\r\n  width: auto;\r\n  height: auto;\r\n}\r\n.fighter {\r\n  display: inline-block;\r\n  max-width: 300px;\r\n  width: 15vw;\r\n}\r\n.fighter-cost {\r\n  text-align: center;\r\n}\r\n.fighter-cost div {\r\n  display: inline-block;\r\n}\r\n.fighter-cost img {\r\n  width: 16px;\r\n  height: 16px;\r\n}\r\n"
 
 /***/ }),
 
@@ -717,7 +737,7 @@ module.exports = ".fighter-list {\r\n  display: flex;\r\n  max-width: 1000px;\r\
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<h3>Fighters (Shift + Click to place)</h3>\r\n\r\n<div class=\"fighter-list\">\r\n  <div *ngFor=\"let fighterType of fighterTypes\">\r\n    <button mat-raised-button [color]=\"selectedFighterType === fighterType ? 'accent' : ''\" (click)=\"selectFigherType(fighterType)\">\r\n      <mat-card-title>{{fighterType.name}}</mat-card-title>\r\n      <mat-card-content>\r\n        <h3>Cost</h3>\r\n        <div class=\"fighter-cost\">\r\n          <b><mat-icon *ngIf=\"canAffordFighter(fighterType)\" color=\"primary\">check</mat-icon></b>\r\n          <div matTooltip=\"{{fighterType.cost}} {{getResource(0).name | titlecase}}\" matTooltipPosition=\"below\">\r\n            <img src=\"{{getResource(0).iconPath}}\" alt=\"{{getResource(0).name}}\"> {{fighterType.cost}}\r\n          </div>\r\n        </div>\r\n      </mat-card-content>\r\n    </button>\r\n  </div>\r\n</div>\r\n"
+module.exports = "<div class=\"fighters\" [ngClass]=\"{'slim-interface': settingsService.slimInterface}\">\r\n    <div *ngIf=\"!settingsService.slimInterface\">\r\n      <mat-card class=\"fighter\" *ngFor=\"let fighterType of fighterTypes\">\r\n        <button mat-raised-button [color]=\"selectedFighterType === fighterType ? 'accent' : ''\" [disabled]=\"!canAffordFighter(fighterType)\"\r\n          (click)=\"selectFigherType(fighterType)\">\r\n          <mat-card-title>{{fighterType.name}}</mat-card-title>\r\n        </button>\r\n        <mat-card-content>\r\n          {{fighterType.description}}\r\n          <div class=\"fighter-cost\">\r\n            <div matTooltip=\"{{fighterType.cost}} {{getResource(0).name | titlecase}}\" matTooltipPosition=\"below\">\r\n              <img src=\"{{getResource(0).iconPath}}\" alt=\"{{getResource(0).name}}\"> {{fighterType.cost}}\r\n            </div>\r\n          </div>\r\n        </mat-card-content>\r\n      </mat-card>\r\n    </div>\r\n    <div *ngIf=\"settingsService.slimInterface\">\r\n      <button mat-raised-button *ngFor=\"let fighterType of fighterTypes\" (click)=\"selectFigherType(fighterType)\"\r\n        [color]=\"selectedFighterType === fighterType ? 'accent' : ''\" [disabled]=\"!canAffordFighter(fighterType)\">\r\n        <div class=\"title\" matTooltip=\"{{fighterType.description}}\" matTooltipPosition=\"above\">\r\n          {{fighterType.name}}\r\n        </div>\r\n        <div class=\"fighter-cost\">\r\n          <div matTooltip=\"{{fighterType.cost}} {{getResource(0).name | titlecase}}\" matTooltipPosition=\"below\">\r\n            <img src=\"{{getResource(0).iconPath}}\" alt=\"{{getResource(0).name}}\">\r\n            {{fighterType.cost}}\r\n          </div>\r\n        </div>\r\n      </button>\r\n    </div>\r\n  </div>\r\n"
 
 /***/ }),
 
@@ -732,8 +752,10 @@ module.exports = "<h3>Fighters (Shift + Click to place)</h3>\r\n\r\n<div class=\
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FighterComponent", function() { return FighterComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _services_fighter_fighter_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../services/fighter/fighter.service */ "./src/app/services/fighter/fighter.service.ts");
-/* harmony import */ var _services_resources_resources_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../services/resources/resources.service */ "./src/app/services/resources/resources.service.ts");
+/* harmony import */ var _services_buildings_buildings_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./../../services/buildings/buildings.service */ "./src/app/services/buildings/buildings.service.ts");
+/* harmony import */ var _services_fighter_fighter_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../services/fighter/fighter.service */ "./src/app/services/fighter/fighter.service.ts");
+/* harmony import */ var _services_settings_settings_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../services/settings/settings.service */ "./src/app/services/settings/settings.service.ts");
+/* harmony import */ var _services_resources_resources_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../services/resources/resources.service */ "./src/app/services/resources/resources.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -746,9 +768,13 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
+
 var FighterComponent = /** @class */ (function () {
-    function FighterComponent(resourcesService, fighterService) {
+    function FighterComponent(resourcesService, settingsService, buildingsService, fighterService) {
         this.resourcesService = resourcesService;
+        this.settingsService = settingsService;
+        this.buildingsService = buildingsService;
         this.fighterService = fighterService;
     }
     FighterComponent.prototype.ngOnInit = function () {
@@ -757,18 +783,14 @@ var FighterComponent = /** @class */ (function () {
         return this.resourcesService.getResource(0).amount >= fighterType.cost;
     };
     FighterComponent.prototype.selectFigherType = function (fighterType) {
-        this.fighterService.selectedFighterType = fighterType;
+        if (this.selectedFighterType === fighterType) {
+            this.selectedFighterType = undefined;
+        }
+        else {
+            this.buildingsService.selectedBuilding = undefined;
+            this.selectedFighterType = fighterType;
+        }
     };
-    Object.defineProperty(FighterComponent.prototype, "selectedFighterType", {
-        get: function () {
-            return this.fighterService.selectedFighterType;
-        },
-        set: function (value) {
-            this.fighterService.selectedFighterType = value;
-        },
-        enumerable: true,
-        configurable: true
-    });
     FighterComponent.prototype.getResource = function (id) {
         return this.resourcesService.getResource(id);
     };
@@ -779,14 +801,26 @@ var FighterComponent = /** @class */ (function () {
         enumerable: true,
         configurable: true
     });
+    Object.defineProperty(FighterComponent.prototype, "selectedFighterType", {
+        get: function () {
+            return this.fighterService.selectedFighterType;
+        },
+        set: function (value) {
+            this.fighterService.selectedFighterType = value;
+        },
+        enumerable: true,
+        configurable: true
+    });
     FighterComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-fighter',
             template: __webpack_require__(/*! ./fighter.component.html */ "./src/app/components/fighter/fighter.component.html"),
             styles: [__webpack_require__(/*! ./fighter.component.css */ "./src/app/components/fighter/fighter.component.css")]
         }),
-        __metadata("design:paramtypes", [_services_resources_resources_service__WEBPACK_IMPORTED_MODULE_2__["ResourcesService"],
-            _services_fighter_fighter_service__WEBPACK_IMPORTED_MODULE_1__["FighterService"]])
+        __metadata("design:paramtypes", [_services_resources_resources_service__WEBPACK_IMPORTED_MODULE_4__["ResourcesService"],
+            _services_settings_settings_service__WEBPACK_IMPORTED_MODULE_3__["SettingsService"],
+            _services_buildings_buildings_service__WEBPACK_IMPORTED_MODULE_1__["BuildingsService"],
+            _services_fighter_fighter_service__WEBPACK_IMPORTED_MODULE_2__["FighterService"]])
     ], FighterComponent);
     return FighterComponent;
 }());
@@ -858,23 +892,6 @@ var MapComponent = /** @class */ (function () {
     };
     MapComponent.prototype.ngAfterViewInit = function () {
     };
-    MapComponent.prototype.selectBuilding = function (buildingTile) {
-        if (this.selectedBuilding !== undefined) {
-            this.selectedBuilding = undefined;
-        }
-        else {
-            this.selectedBuilding = buildingTile;
-        }
-    };
-    MapComponent.prototype.canAffordBuilding = function (buildingType) {
-        return this.mapService.canAffordBuilding(this.buildingTiles[buildingType]);
-    };
-    MapComponent.prototype.createBuilding = function (tile, buildingType) {
-        var buildingCreated = this.mapService.createBuilding(tile, buildingType);
-    };
-    MapComponent.prototype.clearBuilding = function (tile) {
-        this.mapService.clearBuilding(tile);
-    };
     Object.defineProperty(MapComponent.prototype, "buildingTiles", {
         get: function () {
             return this.mapService.buildingTiles;
@@ -912,16 +929,6 @@ var MapComponent = /** @class */ (function () {
         },
         set: function (value) {
             this.mapService.deleteMode = value;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(MapComponent.prototype, "selectedBuilding", {
-        get: function () {
-            return this.mapService.selectedBuilding;
-        },
-        set: function (value) {
-            this.mapService.selectedBuilding = value;
         },
         enumerable: true,
         configurable: true
@@ -964,7 +971,7 @@ var MapComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "/* MessagesComponent's private CSS styles */\r\nh2 {\r\n  color: red;\r\n  font-family: Arial, Helvetica, sans-serif;\r\n  font-weight: lighter;\r\n}\r\nbody {\r\n  margin: 2em;\r\n}\r\nbody, input[text], button {\r\n  color: crimson;\r\n  font-family: Cambria, Georgia;\r\n}\r\nbutton.clear {\r\n  font-family: Arial;\r\n  background-color: #eee;\r\n  border: none;\r\n  padding: 5px 10px;\r\n  border-radius: 4px;\r\n  cursor: pointer;\r\n  cursor: hand;\r\n}\r\nbutton:hover {\r\n  background-color: #cfd8dc;\r\n}\r\nbutton:disabled {\r\n  background-color: #eee;\r\n  color: #aaa;\r\n  cursor: auto;\r\n}\r\nbutton.clear {\r\n  color: #888;\r\n  margin-bottom: 12px;\r\n}"
+module.exports = "/* MessagesComponent's private CSS styles */\r\nh2 {\r\n  color: red;\r\n  font-family: Arial, Helvetica, sans-serif;\r\n  font-weight: lighter;\r\n}\r\nbody {\r\n  margin: 2em;\r\n}\r\nbody, input[text], button {\r\n  color: crimson;\r\n  font-family: Cambria, Georgia;\r\n}\r\nbutton.clear {\r\n  font-family: Arial;\r\n  background-color: #eee;\r\n  border: none;\r\n  padding: 5px 10px;\r\n  border-radius: 4px;\r\n  cursor: pointer;\r\n  cursor: hand;\r\n}\r\nbutton:hover {\r\n  background-color: #cfd8dc;\r\n}\r\nbutton:disabled {\r\n  background-color: #eee;\r\n  color: #aaa;\r\n  cursor: auto;\r\n}\r\nbutton.clear {\r\n  color: #888;\r\n  margin-bottom: 12px;\r\n}\r\ntable.message-table {\r\n  width: 100%;\r\n}\r\n"
 
 /***/ }),
 
@@ -975,7 +982,7 @@ module.exports = "/* MessagesComponent's private CSS styles */\r\nh2 {\r\n  colo
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!-- <div *ngIf=\"messagesService.messages.length\"> -->\n\n\t<h2>Messages</h2>\n\t<button class=\"clear\"\n\t\t\t(click)=\"messagesService.clear()\">clear</button>\n\t<div *ngFor='let message of messagesService.messages'> {{message}} </div>\n\n<!-- </div> -->"
+module.exports = "<button class=\"clear\" (click)=\"messagesService.clear()\">clear</button>\n\n<table mat-table [dataSource]=\"messagesService.messagesDataSource\" matSort matSortActive=\"timestamp\" matSortDirection=\"desc\" class=\"message-table mat-elevation-z8\">\n    <ng-container matColumnDef=\"source\">\n      <mat-header-cell *matHeaderCellDef mat-sort-header> Source </mat-header-cell>\n      <mat-cell *matCellDef=\"let message\"> {{message.source | titlecase}} </mat-cell>\n    </ng-container>\n\n    <ng-container matColumnDef=\"timestamp\">\n        <mat-header-cell *matHeaderCellDef mat-sort-header> Timestamp </mat-header-cell>\n        <mat-cell *matCellDef=\"let message\"> {{message.timestamp | date:'h:mm a'}} </mat-cell>\n    </ng-container>\n\n    <ng-container matColumnDef=\"message\">\n      <mat-header-cell *matHeaderCellDef mat-sort-header> Message </mat-header-cell>\n      <mat-cell *matCellDef=\"let message\"> {{message.message}} </mat-cell>\n    </ng-container>\n\n    <mat-header-row *matHeaderRowDef=\"displayedColumns\"></mat-header-row>\n    <mat-row *matRowDef=\"let row; columns: displayedColumns;\"></mat-row>\n  </table>\n"
 
 /***/ }),
 
@@ -990,7 +997,8 @@ module.exports = "<!-- <div *ngIf=\"messagesService.messages.length\"> -->\n\n\t
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MessagesComponent", function() { return MessagesComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _services_messages_messages_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../services/messages/messages.service */ "./src/app/services/messages/messages.service.ts");
+/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
+/* harmony import */ var _services_messages_messages_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../services/messages/messages.service */ "./src/app/services/messages/messages.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1002,18 +1010,39 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 };
 
 
+
 var MessagesComponent = /** @class */ (function () {
     function MessagesComponent(messagesService) {
         this.messagesService = messagesService;
     }
-    MessagesComponent.prototype.ngOnInit = function () { };
+    MessagesComponent.prototype.ngOnInit = function () {
+        this.messagesService.messagesDataSource.sort = this.sort;
+    };
+    Object.defineProperty(MessagesComponent.prototype, "messages", {
+        get: function () {
+            return this.messagesService.messages;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(MessagesComponent.prototype, "displayedColumns", {
+        get: function () {
+            return ['source', 'timestamp', 'message'];
+        },
+        enumerable: true,
+        configurable: true
+    });
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewChild"])(_angular_material__WEBPACK_IMPORTED_MODULE_1__["MatSort"]),
+        __metadata("design:type", _angular_material__WEBPACK_IMPORTED_MODULE_1__["MatSort"])
+    ], MessagesComponent.prototype, "sort", void 0);
     MessagesComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-messages',
             template: __webpack_require__(/*! ./messages.component.html */ "./src/app/components/messages/messages.component.html"),
             styles: [__webpack_require__(/*! ./messages.component.css */ "./src/app/components/messages/messages.component.css")]
         }),
-        __metadata("design:paramtypes", [_services_messages_messages_service__WEBPACK_IMPORTED_MODULE_1__["MessagesService"]])
+        __metadata("design:paramtypes", [_services_messages_messages_service__WEBPACK_IMPORTED_MODULE_2__["MessagesService"]])
     ], MessagesComponent);
     return MessagesComponent;
 }());
@@ -1323,7 +1352,7 @@ module.exports = ".color-input {\r\n    width: auto;\r\n    color: rgb(108, 88, 
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<h3>Version {{settingsService.gameVersion}}</h3>\n\n<mat-accordion multi=\"true\">\n  <mat-expansion-panel expanded=\"true\">\n    <mat-expansion-panel-header>\n      <mat-panel-title>\n        <mat-icon color=\"primary\">save</mat-icon>\n        Save/Load\n      </mat-panel-title>\n    </mat-expansion-panel-header>\n\n    <mat-form-field>\n      <mat-select placeholder=\"Autosave Interval (Minutes)\" [(value)]=\"autosaveInterval\" (valueChange)=\"setAutosave()\">\n        <mat-option [value]=\"-1\">Disable</mat-option>\n        <mat-option [value]=\"60000\">1</mat-option>\n        <mat-option [value]=\"900000\">15</mat-option>\n        <mat-option [value]=\"1800000\">30</mat-option>\n        <mat-option [value]=\"3600000\">60</mat-option>\n      </mat-select>\n    </mat-form-field>\n\n    <button mat-raised-button color=\"primary\" (click)=\"saveGame()\">Save</button>\n    <button mat-raised-button color=\"warn\" (click)=\"deleteGame()\">Delete Save</button>\n\n    <button mat-raised-button (click)=\"exportSave()\">Export Save</button>\n    <button mat-raised-button (click)=\"importSave()\">Import Save</button>\n  </mat-expansion-panel>\n\n  <mat-expansion-panel expanded=\"true\">\n    <mat-expansion-panel-header>\n      <mat-panel-title>\n        <mat-icon color=\"primary\">map</mat-icon>\n        Map\n      </mat-panel-title>\n    </mat-expansion-panel-header>\n\n    <mat-checkbox [(ngModel)]=\"mapDetailMode\">Detail Mode</mat-checkbox>\n    <br />\n    <mat-checkbox [(ngModel)]=\"mapLowFramerate\">Limit Framerate</mat-checkbox>\n    <br />\n    <br />\n\n    <mat-form-field>\n      <input class=\"color-input\" matInput placeholder=\"Resource Name Color\" [(colorPicker)]=\"resourceDetailColor\" [style.background]=\"resourceDetailColor\" [value]=\"resourceDetailColor\"/>\n    </mat-form-field>\n\n    <mat-form-field>\n      <input class=\"color-input\" matInput placeholder=\"Player Harvest Color\" [(colorPicker)]=\"harvestDetailColor\" [style.background]=\"harvestDetailColor\" [value]=\"harvestDetailColor\"/>\n    </mat-form-field>\n\n    <mat-form-field>\n      <input class=\"color-input\" matInput placeholder=\"Worker Harvest Color\" [(colorPicker)]=\"workerDetailColor\" [style.background]=\"workerDetailColor\" [value]=\"workerDetailColor\"/>\n    </mat-form-field>\n  </mat-expansion-panel>\n\n  <mat-expansion-panel expanded=\"true\">\n    <mat-expansion-panel-header>\n      <mat-panel-title>\n        <mat-icon color=\"primary\">bug_report</mat-icon>\n        Debug\n      </mat-panel-title>\n    </mat-expansion-panel-header>\n\n    <mat-checkbox [(ngModel)]=\"debugMode\">Debug Mode</mat-checkbox>\n  </mat-expansion-panel>\n</mat-accordion>\n"
+module.exports = "<h3>Version {{settingsService.gameVersion}}</h3>\n\n<mat-accordion multi=\"true\">\n  <mat-expansion-panel expanded=\"true\">\n    <mat-expansion-panel-header>\n      <mat-panel-title>\n        <mat-icon color=\"primary\">save</mat-icon>\n        Save/Load\n      </mat-panel-title>\n    </mat-expansion-panel-header>\n\n    <mat-form-field>\n      <mat-select placeholder=\"Autosave Interval (Minutes)\" [(value)]=\"autosaveInterval\" (valueChange)=\"setAutosave()\">\n        <mat-option [value]=\"-1\">Disable</mat-option>\n        <mat-option [value]=\"60000\">1</mat-option>\n        <mat-option [value]=\"900000\">15</mat-option>\n        <mat-option [value]=\"1800000\">30</mat-option>\n        <mat-option [value]=\"3600000\">60</mat-option>\n      </mat-select>\n    </mat-form-field>\n\n    <button mat-raised-button color=\"primary\" (click)=\"saveGame()\">Save</button>\n    <button mat-raised-button color=\"warn\" (click)=\"deleteGame()\">Delete Save</button>\n\n    <button mat-raised-button (click)=\"exportSave()\">Export Save</button>\n    <button mat-raised-button (click)=\"importSave()\">Import Save</button>\n  </mat-expansion-panel>\n\n  <mat-expansion-panel expanded=\"true\">\n      <mat-expansion-panel-header>\n        <mat-panel-title>\n          <mat-icon color=\"primary\">list</mat-icon>\n          Interface\n        </mat-panel-title>\n      </mat-expansion-panel-header>\n\n      <mat-checkbox [(ngModel)]=\"slimInterface\">Slim Mode</mat-checkbox>\n      <!-- <br />\n      <mat-checkbox [(ngModel)]=\"disableAnimations\">Disable Animations</mat-checkbox> -->\n    </mat-expansion-panel>\n\n  <mat-expansion-panel expanded=\"true\">\n    <mat-expansion-panel-header>\n      <mat-panel-title>\n        <mat-icon color=\"primary\">map</mat-icon>\n        Map\n      </mat-panel-title>\n    </mat-expansion-panel-header>\n\n    <mat-checkbox [(ngModel)]=\"mapDetailMode\">Detail Mode</mat-checkbox>\n    <br />\n    <mat-checkbox [(ngModel)]=\"mapLowFramerate\">Limit Framerate</mat-checkbox>\n    <br />\n    <br />\n\n    <mat-form-field>\n      <input class=\"color-input\" matInput placeholder=\"Resource Name Color\" [(colorPicker)]=\"resourceDetailColor\" [style.background]=\"resourceDetailColor\" [value]=\"resourceDetailColor\"/>\n    </mat-form-field>\n\n    <mat-form-field>\n      <input class=\"color-input\" matInput placeholder=\"Player Harvest Color\" [(colorPicker)]=\"harvestDetailColor\" [style.background]=\"harvestDetailColor\" [value]=\"harvestDetailColor\"/>\n    </mat-form-field>\n\n    <mat-form-field>\n      <input class=\"color-input\" matInput placeholder=\"Worker Harvest Color\" [(colorPicker)]=\"workerDetailColor\" [style.background]=\"workerDetailColor\" [value]=\"workerDetailColor\"/>\n    </mat-form-field>\n  </mat-expansion-panel>\n\n  <mat-expansion-panel expanded=\"true\">\n    <mat-expansion-panel-header>\n      <mat-panel-title>\n        <mat-icon color=\"primary\">bug_report</mat-icon>\n        Debug\n      </mat-panel-title>\n    </mat-expansion-panel-header>\n\n    <mat-checkbox [(ngModel)]=\"debugMode\">Debug Mode</mat-checkbox>\n  </mat-expansion-panel>\n</mat-accordion>\n"
 
 /***/ }),
 
@@ -1447,6 +1476,26 @@ var SettingsComponent = /** @class */ (function () {
         enumerable: true,
         configurable: true
     });
+    Object.defineProperty(SettingsComponent.prototype, "slimInterface", {
+        get: function () {
+            return this.settingsService.slimInterface;
+        },
+        set: function (value) {
+            this.settingsService.slimInterface = value;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(SettingsComponent.prototype, "disableAnimations", {
+        get: function () {
+            return this.settingsService.disableAnimations;
+        },
+        set: function (value) {
+            this.settingsService.disableAnimations = value;
+        },
+        enumerable: true,
+        configurable: true
+    });
     SettingsComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-settings',
@@ -1469,7 +1518,7 @@ var SettingsComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "/* StoreComponent's private CSS styles */\r\n.store {\r\n  margin: 0 0 2em 0;\r\n  list-style-type: none;\r\n  padding: 0;\r\n  width: 25em;\r\n}\r\n.store mat-expansion-panel {\r\n  margin: 0;\r\n}\r\n.store mat-expansion-panel-header {\r\n  height: 30px !important;\r\n}\r\n.store mat-card-subtitle {\r\n  position: absolute;\r\n  top: 10px;\r\n  right: 10px;\r\n}\r\n.store mat-card {\r\n  position: relative;\r\n  cursor: pointer;\r\n  background-color: #EEE;\r\n  margin: .5em;\r\n  padding: .4em 0;\r\n  height: 1.6em;\r\n  border-radius: 4px;\r\n}\r\n.store mat-card:hover {\r\n  color: #607D8B;\r\n  background-color: #DDD;\r\n  left: .1em;\r\n}\r\n.store a {\r\n  color: #888;\r\n  text-decoration: none;\r\n  position: relative;\r\n  display: block;\r\n  width: 250px;\r\n}\r\n.store a:hover {\r\n  color:#607D8B;\r\n}\r\n.store .harvestable {\r\n  background-color: antiquewhite;\r\n}\r\n.store .harvestable:hover {\r\n  background-color: blanchedalmond;\r\n}\r\n.store .badge {\r\n  display: inline-block;\r\n  font-size: small;\r\n  color: white;\r\n  padding: 0.8em 0.7em 0 0.7em;\r\n  background-color: #607D8B;\r\n  line-height: 1em;\r\n  position: absolute;\r\n  right: -9px;\r\n  top: 1px;\r\n  height: 1.8em;\r\n  min-width: 16px;\r\n  text-align: center;\r\n  margin-right: .8em;\r\n  border-radius: 0 4px 4px 0;\r\n}\r\n.right {\r\n  position: absolute;\r\n  right: 3px;\r\n  top: 3px;\r\n}\r\nbutton {\r\n  min-width: unset;\r\n  height: 27px;\r\n  line-height: unset;\r\n}\r\nbutton:hover {\r\n  background-color: #cfd8dc;\r\n}\r\nbutton.delete {\r\n  position: relative;\r\n  left: 194px;\r\n  top: -32px;\r\n  background-color: gray !important;\r\n  color: white;\r\n}\r\n.full-width {\r\n  width: 100%;\r\n}\r\n"
+module.exports = "/* StoreComponent's private CSS styles */\r\n.store {\r\n  margin: 0 0 2em 0;\r\n  list-style-type: none;\r\n  padding: 0;\r\n  width: 100%;\r\n}\r\n.store mat-expansion-panel {\r\n  margin: 0;\r\n}\r\n.store mat-expansion-panel-header {\r\n  height: 30px !important;\r\n}\r\n.store mat-card-subtitle {\r\n  position: absolute;\r\n  top: 10px;\r\n  right: 10px;\r\n}\r\n.store mat-card {\r\n  position: relative;\r\n  cursor: pointer;\r\n  background-color: #EEE;\r\n  margin: .5em;\r\n  padding: .4em 0;\r\n  height: 1.6em;\r\n  border-radius: 4px;\r\n}\r\n.store mat-card:hover {\r\n  color: #607D8B;\r\n  background-color: #DDD;\r\n  left: .1em;\r\n}\r\n.store a {\r\n  color: #888;\r\n  text-decoration: none;\r\n  position: relative;\r\n  display: block;\r\n  width: 250px;\r\n}\r\n.store a:hover {\r\n  color:#607D8B;\r\n}\r\n.store .harvestable {\r\n  background-color: antiquewhite;\r\n}\r\n.store .harvestable:hover {\r\n  background-color: blanchedalmond;\r\n}\r\n.store .badge {\r\n  display: inline-block;\r\n  font-size: small;\r\n  color: white;\r\n  padding: 0.8em 0.7em 0 0.7em;\r\n  background-color: #607D8B;\r\n  line-height: 1em;\r\n  position: absolute;\r\n  right: -9px;\r\n  top: 1px;\r\n  height: 1.8em;\r\n  min-width: 16px;\r\n  text-align: center;\r\n  margin-right: .8em;\r\n  border-radius: 0 4px 4px 0;\r\n}\r\n.right {\r\n  position: absolute;\r\n  right: 3px;\r\n  top: 3px;\r\n}\r\nbutton {\r\n  min-width: unset;\r\n  height: 27px;\r\n  line-height: unset;\r\n}\r\nbutton:hover {\r\n  background-color: #cfd8dc;\r\n}\r\nbutton.delete {\r\n  position: relative;\r\n  left: 194px;\r\n  top: -32px;\r\n  background-color: gray !important;\r\n  color: white;\r\n}\r\n.full-width {\r\n  width: 100%;\r\n}\r\n"
 
 /***/ }),
 
@@ -1741,7 +1790,7 @@ var UpgradeDialogComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "/* UpgradesComponent's private CSS styles */\r\n.upgrades {\r\n  margin: 0 0 2em 0;\r\n  list-style-type: none;\r\n  padding: 0;\r\n  /* width: 25em; */\r\n}\r\n.upgrades mat-expansion-panel {\r\n  margin: 0;\r\n}\r\n.upgrades mat-expansion-panel-header {\r\n  height: 30px !important;\r\n}\r\n.upgrades mat-card-subtitle {\r\n  position: absolute;\r\n  top: 10px;\r\n  right: 10px;\r\n  font-weight: bold;\r\n}\r\n.upgrades button {\r\n  position: relative;\r\n  cursor: pointer;\r\n  margin: .5em;\r\n  padding: .4em 0;\r\n  height: 3.6em;\r\n  width: 100%;\r\n  border-radius: 4px;\r\n}\r\n.upgrades button:hover {\r\n  left: .1em;\r\n}\r\n.upgrades button.mat-disabled {\r\n  cursor: default;\r\n}\r\n.upgrades .badge {\r\n  display: inline-block;\r\n  font-size: small;\r\n  color: white;\r\n  padding: 0.8em 0.7em 0 0.7em;\r\n  background-color: #607D8B;\r\n  line-height: 1em;\r\n  position: absolute;\r\n  right: -9px;\r\n  top: 1px;\r\n  height: 1.8em;\r\n  min-width: 16px;\r\n  text-align: center;\r\n  margin-right: .8em;\r\n  border-radius: 0 4px 4px 0;\r\n}\r\nbutton {\r\n  background-color: #eee;\r\n  border: none;\r\n  padding: 5px 10px;\r\n  border-radius: 4px;\r\n  cursor: pointer;\r\n  cursor: hand;\r\n  font-family: Arial;\r\n}\r\n.upgrades {\r\n  text-align: center;\r\n}\r\n.upgrade {\r\n  display: inline-block;\r\n  max-width: 300px;\r\n}\r\n.resource-list {\r\n  text-align: center;\r\n}\r\n.resource-list div {\r\n  display: inline-block;\r\n}\r\n.resource-list img {\r\n  width: 16px;\r\n  height: 16px;\r\n}\r\n"
+module.exports = "/* UpgradesComponent's private CSS styles */\r\n.upgrades {\r\n  margin: 0 0 2em 0;\r\n  list-style-type: none;\r\n  padding: 0;\r\n  /* width: 25em; */\r\n}\r\n.upgrades mat-expansion-panel {\r\n  margin: 0;\r\n}\r\n.upgrades mat-expansion-panel-header {\r\n  height: 30px !important;\r\n}\r\n.upgrades mat-card-subtitle {\r\n  position: absolute;\r\n  top: 10px;\r\n  right: 10px;\r\n  font-weight: bold;\r\n}\r\n.upgrades button {\r\n  position: relative;\r\n  cursor: pointer;\r\n  margin: .5em;\r\n  padding: .4em 0;\r\n  height: 3.6em;\r\n  width: 100%;\r\n  border-radius: 4px;\r\n}\r\n.upgrades button:hover {\r\n  left: .1em;\r\n}\r\n.upgrades button.mat-disabled {\r\n  cursor: default;\r\n}\r\n.upgrades .badge {\r\n  display: inline-block;\r\n  font-size: small;\r\n  color: white;\r\n  padding: 0.8em 0.7em 0 0.7em;\r\n  background-color: #607D8B;\r\n  line-height: 1em;\r\n  position: absolute;\r\n  right: -9px;\r\n  top: 1px;\r\n  height: 1.8em;\r\n  min-width: 16px;\r\n  text-align: center;\r\n  margin-right: .8em;\r\n  border-radius: 0 4px 4px 0;\r\n}\r\nbutton {\r\n  background-color: #eee;\r\n  border: none;\r\n  padding: 5px 10px;\r\n  border-radius: 4px;\r\n  cursor: pointer;\r\n  cursor: hand;\r\n  font-family: Arial;\r\n}\r\n.upgrades {\r\n  text-align: center;\r\n}\r\n.upgrades.slim-interface button {\r\n  width: auto;\r\n  height: auto;\r\n}\r\n.upgrade {\r\n  display: inline-block;\r\n  max-width: 300px;\r\n  width: 15vw;\r\n}\r\n.resource-list {\r\n  text-align: center;\r\n}\r\n.resource-list div {\r\n  display: inline-block;\r\n}\r\n.resource-list img {\r\n  width: 16px;\r\n  height: 16px;\r\n}\r\n"
 
 /***/ }),
 
@@ -1752,7 +1801,7 @@ module.exports = "/* UpgradesComponent's private CSS styles */\r\n.upgrades {\r\
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<mat-checkbox class=\"hidePurchased\" checked=\"true\" [(ngModel)]=\"hidePurchased\">Hide Purchased Upgrades</mat-checkbox>\n<br />\n<br />\n\n<div class=\"upgrades\">\n  <mat-card class=\"upgrade\" *ngFor=\"let upgrade of getUpgrades(false, hidePurchased, adminService.filterAccessible)\">\n    <button mat-raised-button color=\"accent\" [disabled]='upgrade.purchased || !canAffordUpgrade(upgrade.id)' (click)='purchaseUpgrade(upgrade.id)'>\n      <mat-card-title>\n        <b>\n          <mat-icon *ngIf=\"upgrade.purchased\" color=\"primary\">check</mat-icon>\n        </b>\n        {{upgrade.name}}\n      </mat-card-title>\n    </button>\n    <mat-card-subtitle>{{upgradesService.getUpgradeTypeString(upgrade.id)}}</mat-card-subtitle>\n    <mat-card-content>\n      {{upgrade.description}}\n      <div class=\"resource-list\">\n        <div *ngFor=\"let resourceCost of upgrade.resourceCosts\" matTooltip=\"{{resourceCost.resourceCost}} {{getResource(resourceCost.resourceId).name | titlecase}}\"\n          matTooltipPosition=\"below\">\n          <img src=\"{{getResource(resourceCost.resourceId).iconPath}}\" alt=\"{{getResource(resourceCost.resourceId).name}}\"> {{resourceCost.resourceCost}}\n        </div>\n      </div>\n    </mat-card-content>\n    <div *ngIf=\"adminService.editMode\">\n      <button (click)=\"editUpgrade(upgrade.id)\">Edit {{upgrade.name | titlecase}}</button>\n    </div>\n  </mat-card>\n</div>\n"
+module.exports = "<mat-checkbox class=\"hidePurchased\" checked=\"true\" [(ngModel)]=\"hidePurchased\">Hide Purchased Upgrades</mat-checkbox>\n<br />\n<br />\n\n<div class=\"upgrades\" [ngClass]=\"{'slim-interface': settingsService.slimInterface}\">\n  <div *ngIf=\"!settingsService.slimInterface\">\n    <mat-card class=\"upgrade\" *ngFor=\"let upgrade of getUpgrades(false, hidePurchased, adminService.filterAccessible)\">\n      <button mat-raised-button color=\"accent\" [disabled]='upgrade.purchased || !canAffordUpgrade(upgrade.id)' (click)='purchaseUpgrade(upgrade.id)'>\n        <mat-card-title>\n          <b>\n            <mat-icon *ngIf=\"upgrade.purchased\" color=\"primary\">check</mat-icon>\n          </b>\n          {{upgrade.name}}\n        </mat-card-title>\n      </button>\n      <mat-card-subtitle>{{upgradesService.getUpgradeTypeString(upgrade.id)}}</mat-card-subtitle>\n      <mat-card-content>\n        {{upgrade.description}}\n        <div class=\"resource-list\">\n          <div *ngFor=\"let resourceCost of upgrade.resourceCosts\" matTooltip=\"{{resourceCost.resourceCost}} {{getResource(resourceCost.resourceId).name | titlecase}}\"\n            matTooltipPosition=\"below\">\n            <img src=\"{{getResource(resourceCost.resourceId).iconPath}}\" alt=\"{{getResource(resourceCost.resourceId).name}}\"> {{resourceCost.resourceCost}}\n          </div>\n        </div>\n      </mat-card-content>\n      <div *ngIf=\"adminService.editMode\">\n        <button (click)=\"editUpgrade(upgrade.id)\">Edit {{upgrade.name | titlecase}}</button>\n      </div>\n    </mat-card>\n  </div>\n  <div *ngIf=\"settingsService.slimInterface\">\n    <button mat-raised-button *ngFor=\"let upgrade of getUpgrades(false, hidePurchased, adminService.filterAccessible)\" color=\"accent\"\n      [disabled]='upgrade.purchased || !canAffordUpgrade(upgrade.id)' (click)='purchaseUpgrade(upgrade.id)'>\n    <div class=\"title\" matTooltip=\"{{upgrade.description}}\" matTooltipPosition=\"above\">\n      <b>\n        <mat-icon *ngIf=\"upgrade.purchased\" color=\"primary\">check</mat-icon>\n      </b>\n      {{upgrade.name}}\n    </div>\n    <div class=\"resource-list\">\n      <div *ngFor=\"let resourceCost of upgrade.resourceCosts\" matTooltip=\"{{resourceCost.resourceCost}} {{getResource(resourceCost.resourceId).name | titlecase}}\"\n        matTooltipPosition=\"below\">\n        <img src=\"{{getResource(resourceCost.resourceId).iconPath}}\" alt=\"{{getResource(resourceCost.resourceId).name}}\">\n        {{resourceCost.resourceCost}}\n      </div>\n    </div>\n  </button>\n  </div>\n</div>\n"
 
 /***/ }),
 
@@ -1770,7 +1819,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _services_resources_resources_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../services/resources/resources.service */ "./src/app/services/resources/resources.service.ts");
 /* harmony import */ var _objects_upgrade__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../objects/upgrade */ "./src/app/objects/upgrade.ts");
 /* harmony import */ var _services_upgrades_upgrades_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../services/upgrades/upgrades.service */ "./src/app/services/upgrades/upgrades.service.ts");
-/* harmony import */ var _services_admin_admin_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../services/admin/admin.service */ "./src/app/services/admin/admin.service.ts");
+/* harmony import */ var _services_settings_settings_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../services/settings/settings.service */ "./src/app/services/settings/settings.service.ts");
+/* harmony import */ var _services_admin_admin_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../services/admin/admin.service */ "./src/app/services/admin/admin.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1785,10 +1835,12 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
 var UpgradesComponent = /** @class */ (function () {
-    function UpgradesComponent(resourcesService, upgradesService, adminService) {
+    function UpgradesComponent(resourcesService, upgradesService, settingsService, adminService) {
         this.resourcesService = resourcesService;
         this.upgradesService = upgradesService;
+        this.settingsService = settingsService;
         this.adminService = adminService;
         this.upgradeTypes = _objects_upgrade__WEBPACK_IMPORTED_MODULE_2__["UpgradeType"];
         this.hidePurchased = true;
@@ -1831,7 +1883,8 @@ var UpgradesComponent = /** @class */ (function () {
         }),
         __metadata("design:paramtypes", [_services_resources_resources_service__WEBPACK_IMPORTED_MODULE_1__["ResourcesService"],
             _services_upgrades_upgrades_service__WEBPACK_IMPORTED_MODULE_3__["UpgradesService"],
-            _services_admin_admin_service__WEBPACK_IMPORTED_MODULE_4__["AdminService"]])
+            _services_settings_settings_service__WEBPACK_IMPORTED_MODULE_4__["SettingsService"],
+            _services_admin_admin_service__WEBPACK_IMPORTED_MODULE_5__["AdminService"]])
     ], UpgradesComponent);
     return UpgradesComponent;
 }());
@@ -1847,7 +1900,7 @@ var UpgradesComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "/* WorkersComponent's private CSS styles */\r\n.workers {\r\n  margin: 0 0 2em 0;\r\n  list-style-type: none;\r\n  padding: 0;\r\n  width: 25em;\r\n}\r\n.workers mat-expansion-panel {\r\n  margin: 0;\r\n}\r\n.workers mat-expansion-panel-header {\r\n  height: 30px !important;\r\n}\r\n.workers mat-card-title {\r\n  text-align: left;\r\n}\r\n.workers mat-card-subtitle {\r\n  position: absolute;\r\n  top: 10px;\r\n  right: 10px;\r\n}\r\n.workers mat-slider {\r\n  width: 100%;\r\n  top: -22px;\r\n}\r\n.workers mat-card {\r\n  position: relative;\r\n  cursor: pointer;\r\n  margin: .5em;\r\n  padding: .4em 0;\r\n  height: 3.6em;\r\n  width: 100%;\r\n  border-radius: 4px;\r\n  background: antiquewhite;\r\n}\r\n.workers button {\r\n  position: relative;\r\n  cursor: pointer;\r\n  margin: .5em;\r\n  padding: .4em 0;\r\n  height: 3.6em;\r\n  width: 100%;\r\n  border-radius: 4px;\r\n}\r\n.workers button:hover {\r\n  color: #607D8B;\r\n  background-color: #DDD;\r\n  left: .1em;\r\n}\r\n.workers a {\r\n  color: #888;\r\n  text-decoration: none;\r\n  position: relative;\r\n  display: block;\r\n  width: 250px;\r\n}\r\n.workers a:hover {\r\n  color:#607D8B;\r\n}\r\n.workers .harvestable {\r\n  background-color: antiquewhite;\r\n}\r\n.workers .harvestable:hover {\r\n  background-color: blanchedalmond;\r\n}\r\nmat-card.mat-card.resource-disabled {\r\n  background: indianred;\r\n}\r\n.worker-input {\r\n  width: 50px;\r\n  border: none;\r\n}\r\n.mat-card-subtitle {\r\n  z-index: 1;\r\n}\r\n.workers .badge {\r\n  display: inline-block;\r\n  font-size: small;\r\n  color: white;\r\n  padding: 0.8em 0.7em 0 0.7em;\r\n  background-color: #607D8B;\r\n  line-height: 1em;\r\n  position: absolute;\r\n  right: -9px;\r\n  top: 1px;\r\n  height: 1.8em;\r\n  min-width: 16px;\r\n  text-align: center;\r\n  margin-right: .8em;\r\n  border-radius: 0 4px 4px 0;\r\n}\r\n.path-broken-warn {\r\n  position: absolute;\r\n  top: 5px;\r\n  right: 125px;\r\n}\r\nbutton {\r\n  background-color: #eee;\r\n  border: none;\r\n  padding: 5px 10px;\r\n  border-radius: 4px;\r\n  cursor: pointer;\r\n  cursor: hand;\r\n  font-family: Arial;\r\n}\r\nbutton:hover {\r\n  background-color: #cfd8dc;\r\n}\r\nbutton.delete {\r\n  position: relative;\r\n  left: 194px;\r\n  top: -32px;\r\n  background-color: gray !important;\r\n  color: white;\r\n}\r\n"
+module.exports = "/* WorkersComponent's private CSS styles */\r\n.workers {\r\n  margin: 0 0 2em 0;\r\n  list-style-type: none;\r\n  padding: 0;\r\n  width: 100%;\r\n}\r\n.workers mat-expansion-panel {\r\n  margin: 0;\r\n}\r\n.workers mat-expansion-panel-header {\r\n  height: 30px !important;\r\n}\r\n.workers mat-card-title {\r\n  text-align: left;\r\n}\r\n.workers mat-card-subtitle {\r\n  position: absolute;\r\n  top: 10px;\r\n  right: 10px;\r\n}\r\n.workers mat-slider {\r\n  width: 100%;\r\n  top: -22px;\r\n}\r\n.workers mat-card {\r\n  position: relative;\r\n  cursor: pointer;\r\n  margin: .5em;\r\n  padding: .4em 0;\r\n  height: 3.6em;\r\n  width: 100%;\r\n  border-radius: 4px;\r\n  background: antiquewhite;\r\n}\r\n.workers button {\r\n  position: relative;\r\n  cursor: pointer;\r\n  margin: .5em;\r\n  padding: .4em 0;\r\n  height: 3.6em;\r\n  width: 100%;\r\n  border-radius: 4px;\r\n}\r\n.workers button:hover {\r\n  color: #607D8B;\r\n  background-color: #DDD;\r\n  left: .1em;\r\n}\r\n.workers a {\r\n  color: #888;\r\n  text-decoration: none;\r\n  position: relative;\r\n  display: block;\r\n  width: 250px;\r\n}\r\n.workers a:hover {\r\n  color:#607D8B;\r\n}\r\n.workers .harvestable {\r\n  background-color: antiquewhite;\r\n}\r\n.workers .harvestable:hover {\r\n  background-color: blanchedalmond;\r\n}\r\nmat-card.mat-card.resource-disabled {\r\n  background: indianred;\r\n}\r\n.worker-input {\r\n  width: 50px;\r\n  border: none;\r\n}\r\n.mat-card-subtitle {\r\n  z-index: 1;\r\n}\r\n.workers .badge {\r\n  display: inline-block;\r\n  font-size: small;\r\n  color: white;\r\n  padding: 0.8em 0.7em 0 0.7em;\r\n  background-color: #607D8B;\r\n  line-height: 1em;\r\n  position: absolute;\r\n  right: -9px;\r\n  top: 1px;\r\n  height: 1.8em;\r\n  min-width: 16px;\r\n  text-align: center;\r\n  margin-right: .8em;\r\n  border-radius: 0 4px 4px 0;\r\n}\r\n.path-broken-warn {\r\n  position: absolute;\r\n  top: 5px;\r\n  right: 125px;\r\n}\r\nbutton {\r\n  background-color: #eee;\r\n  border: none;\r\n  padding: 5px 10px;\r\n  border-radius: 4px;\r\n  cursor: pointer;\r\n  cursor: hand;\r\n  font-family: Arial;\r\n}\r\nbutton:hover {\r\n  background-color: #cfd8dc;\r\n}\r\nbutton.delete {\r\n  position: relative;\r\n  left: 194px;\r\n  top: -32px;\r\n  background-color: gray !important;\r\n  color: white;\r\n}\r\n"
 
 /***/ }),
 
@@ -2028,11 +2081,13 @@ var CropDirective = /** @class */ (function () {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MapDirective", function() { return MapDirective; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _services_resources_resources_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./../../services/resources/resources.service */ "./src/app/services/resources/resources.service.ts");
-/* harmony import */ var _services_settings_settings_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./../../services/settings/settings.service */ "./src/app/services/settings/settings.service.ts");
-/* harmony import */ var _services_enemy_enemy_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../services/enemy/enemy.service */ "./src/app/services/enemy/enemy.service.ts");
-/* harmony import */ var _services_fighter_fighter_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./../../services/fighter/fighter.service */ "./src/app/services/fighter/fighter.service.ts");
-/* harmony import */ var _services_map_map_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./../../services/map/map.service */ "./src/app/services/map/map.service.ts");
+/* harmony import */ var _objects_vector__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../objects/vector */ "./src/app/objects/vector.ts");
+/* harmony import */ var _services_resources_resources_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./../../services/resources/resources.service */ "./src/app/services/resources/resources.service.ts");
+/* harmony import */ var _services_settings_settings_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./../../services/settings/settings.service */ "./src/app/services/settings/settings.service.ts");
+/* harmony import */ var _services_enemy_enemy_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../services/enemy/enemy.service */ "./src/app/services/enemy/enemy.service.ts");
+/* harmony import */ var _services_fighter_fighter_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./../../services/fighter/fighter.service */ "./src/app/services/fighter/fighter.service.ts");
+/* harmony import */ var _services_buildings_buildings_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./../../services/buildings/buildings.service */ "./src/app/services/buildings/buildings.service.ts");
+/* harmony import */ var _services_map_map_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./../../services/map/map.service */ "./src/app/services/map/map.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2042,6 +2097,43 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 var __metadata = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+var __awaiter = (undefined && undefined.__awaiter) || function (thisArg, _arguments, P, generator) {
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+var __generator = (undefined && undefined.__generator) || function (thisArg, body) {
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    function verb(n) { return function (v) { return step([n, v]); }; }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while (_) try {
+            if (f = 1, y && (t = y[op[0] & 2 ? "return" : op[0] ? "throw" : "next"]) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [0, t.value];
+            switch (op[0]) {
+                case 0: case 1: t = op; break;
+                case 4: _.label++; return { value: op[1], done: false };
+                case 5: _.label++; y = op[1]; op = [0]; continue;
+                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop(); continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+    }
+};
+
+
 
 
 
@@ -2049,13 +2141,14 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 var MapDirective = /** @class */ (function () {
-    function MapDirective(element, renderer, resourcesService, settingsService, enemyService, fighterService, mapService) {
+    function MapDirective(element, renderer, resourcesService, settingsService, enemyService, fighterService, buildingsService, mapService) {
         this.element = element;
         this.renderer = renderer;
         this.resourcesService = resourcesService;
         this.settingsService = settingsService;
         this.enemyService = enemyService;
         this.fighterService = fighterService;
+        this.buildingsService = buildingsService;
         this.mapService = mapService;
         this.headerPixels = 64;
         this.imageElements = {};
@@ -2080,11 +2173,11 @@ var MapDirective = /** @class */ (function () {
         this.transform.k = 2;
         this.canvas.call(d3.zoom()
             .filter(this.scrollFilter(this))
-            .scaleExtent([2, 5])
+            .scaleExtent([1, 5])
             .translateExtent([[0, 0], [this.mapService.gridWidth * this.mapService.tilePixelSize,
                 this.mapService.gridHeight * this.mapService.tilePixelSize]])
             .on('zoom', this.zoomed(this)));
-        this.canvas.on('mousedown mousemove', this.clickTile(this));
+        this.canvas.on('mousedown mousemove mouseup', this.clickTile(this));
         this.refreshTimer = d3.interval(this.updateEntities(this), 25);
     };
     MapDirective.prototype.scrollFilter = function (self) {
@@ -2100,25 +2193,38 @@ var MapDirective = /** @class */ (function () {
     };
     MapDirective.prototype.clickTile = function (self) {
         return function (elapsed) {
-            if (!d3.event.buttons) {
-                return;
-            }
-            var coordinates = d3.mouse(this);
-            coordinates[0] = Math.floor(self.transform.invertX(coordinates[0]) / self.mapService.tilePixelSize);
-            coordinates[1] = Math.floor(self.transform.invertY(coordinates[1]) / self.mapService.tilePixelSize);
-            var tile = self.mapService.tiledMap[coordinates[0] + coordinates[1] * self.mapService.mapWidth];
-            var deleteMode = d3.event.ctrlKey;
-            var fighterMode = d3.event.shiftKey;
-            if (!fighterMode && deleteMode && tile.buildingTileType !== undefined) {
-                self.mapService.clearBuilding(tile);
-            }
-            else if (!fighterMode && !deleteMode && self.mapService.selectedBuilding !== undefined) {
-                self.mapService.createBuilding(tile, self.mapService.selectedBuilding.tileType);
-            }
-            else if (fighterMode && d3.event.type !== 'mousemove' && self.fighterService.selectedFighterType !== undefined) {
-                // self.fighterService.createFighter(tile, self.fighterService.selectedFighterType);
-            }
-            self.refreshCanvas();
+            return __awaiter(this, void 0, void 0, function () {
+                var coordinates, tile, deleteMode;
+                return __generator(this, function (_a) {
+                    switch (_a.label) {
+                        case 0:
+                            if (!!d3.event.buttons) return [3 /*break*/, 3];
+                            if (!(d3.event.type === 'mouseup')) return [3 /*break*/, 2];
+                            return [4 /*yield*/, self.enemyService.recalculateTargets()];
+                        case 1:
+                            _a.sent();
+                            _a.label = 2;
+                        case 2: return [2 /*return*/];
+                        case 3:
+                            coordinates = d3.mouse(this);
+                            coordinates[0] = Math.floor(self.transform.invertX(coordinates[0]) / self.mapService.tilePixelSize);
+                            coordinates[1] = Math.floor(self.transform.invertY(coordinates[1]) / self.mapService.tilePixelSize);
+                            tile = self.mapService.tiledMap[coordinates[0] + coordinates[1] * self.mapService.mapWidth];
+                            deleteMode = d3.event.ctrlKey;
+                            if (deleteMode && tile.buildingTileType !== undefined) {
+                                self.buildingsService.clearBuilding(tile);
+                            }
+                            else if (!deleteMode && self.buildingsService.selectedBuilding !== undefined) {
+                                self.buildingsService.createBuilding(tile, self.buildingsService.selectedBuilding.tileType);
+                            }
+                            else if (d3.event.type !== 'mousemove' && self.fighterService.selectedFighterType !== undefined) {
+                                self.fighterService.createFighter(tile, self.fighterService.selectedFighterType);
+                            }
+                            self.refreshCanvas();
+                            return [2 /*return*/];
+                    }
+                });
+            });
         };
     };
     MapDirective.prototype.updateEntities = function (self) {
@@ -2128,20 +2234,11 @@ var MapDirective = /** @class */ (function () {
                 self.refreshTimer.stop();
                 self.refreshTimer = d3.interval(self.updateEntities(self), self.lowFramerateActive ? self.mapService.lowFramerate : self.mapService.highFramerate);
             }
-            var _loop_1 = function (enemy) {
-                if (enemy.health <= 0) {
-                    for (var i = 0; i < enemy.resourcesHeld.length; i++) {
-                        var amount = enemy.resourcesHeld[i];
-                        if (amount > 0) {
-                            self.resourcesService.addResourceAmount(i, amount);
-                        }
-                    }
-                    self.enemyService.enemies = self.enemyService.enemies.filter(function (_enemy) { return _enemy !== enemy; });
-                }
-            };
             for (var _i = 0, _a = self.enemyService.enemies; _i < _a.length; _i++) {
                 var enemy = _a[_i];
-                _loop_1(enemy);
+                if (enemy.health <= 0) {
+                    self.enemyService.killEnemy(enemy);
+                }
             }
             self.fighterService.fighters = self.fighterService.fighters.filter(function (fighter) { return fighter.health > 0; });
             var deltaTime = elapsed - self.mapService.lastAnimationTime;
@@ -2160,22 +2257,24 @@ var MapDirective = /** @class */ (function () {
                 var enemy = _e[_d];
                 self.updateEntityPathPosition(enemy, self.mapService.enemyAnimationSpeed, deltaTime);
             }
-            var _loop_2 = function (projectile) {
-                var xDistance = projectile.target.x - projectile.x;
-                var yDistance = projectile.target.y - projectile.y;
-                var magnitude = Math.sqrt(Math.pow(xDistance, 2) + Math.pow(yDistance, 2));
-                if (magnitude < self.mapService.tilePixelSize) {
-                    // projectile.target.health -= projectile.owner.attack;
+            var _loop_1 = function (projectile) {
+                var distance = projectile.target.position.subtract(projectile.position);
+                var totalDistance = projectile.target.position.subtract(projectile.spawnPosition);
+                if (distance.magnitude < self.mapService.tilePixelSize) {
+                    projectile.target.health -= projectile.owner.attack;
                     self.mapService.projectiles = self.mapService.projectiles.filter(function (_projectile) { return _projectile !== projectile; });
                 }
-                var angle = Math.acos(yDistance > 0 ? xDistance / yDistance : xDistance / yDistance) - (Math.PI / 2);
-                projectile.x += xDistance * self.mapService.projectileAnimationSpeed * deltaTime;
-                projectile.y += yDistance * self.mapService.projectileAnimationSpeed * deltaTime;
+                var gradientY = projectile.target.y - projectile.y;
+                var gradientX = projectile.target.x - projectile.x;
+                var angle = Math.atan2(gradientY, gradientX) + (Math.PI / 2);
+                totalDistance.x *= self.mapService.projectileAnimationSpeed * deltaTime;
+                totalDistance.y *= self.mapService.projectileAnimationSpeed * deltaTime;
+                projectile.position = projectile.position.add(totalDistance);
                 projectile.rotation = angle;
             };
             for (var _f = 0, _g = self.mapService.projectiles; _f < _g.length; _f++) {
                 var projectile = _g[_f];
-                _loop_2(projectile);
+                _loop_1(projectile);
             }
             self.mapService.lastAnimationTime = elapsed;
             self.refreshCanvas();
@@ -2185,23 +2284,28 @@ var MapDirective = /** @class */ (function () {
         if (entity.tilePath === undefined || entity.pathStep >= entity.tilePath.length - 1) {
             return;
         }
-        var currentTile = entity.tilePath[entity.pathStep];
-        var destinationTile = entity.tilePath[entity.pathStep + 1];
-        entity.x += (destinationTile.x - currentTile.x) * deltaTime * animationSpeed;
-        entity.y += (destinationTile.y - currentTile.y) * deltaTime * animationSpeed;
-        var xOffset = Math.abs(entity.x - currentTile.x);
-        var yOffset = Math.abs(entity.y - currentTile.y);
-        if (xOffset >= this.mapService.tilePixelSize || yOffset >= this.mapService.tilePixelSize) {
-            entity.pathStep++;
-            if (entity.pathStep === entity.tilePath.length - 1) {
-                entity.pathingDone = true;
+        var totalDistance = animationSpeed * deltaTime;
+        while (totalDistance > 0) {
+            var stepDistance = Math.min(1, totalDistance);
+            totalDistance -= 1;
+            var currentTile = entity.tilePath[entity.pathStep];
+            var destinationTile = entity.tilePath[entity.pathStep + 1];
+            entity.x += (destinationTile.x - currentTile.x) * stepDistance;
+            entity.y += (destinationTile.y - currentTile.y) * stepDistance;
+            var offset = entity.position.subtract(new _objects_vector__WEBPACK_IMPORTED_MODULE_1__["Vector"](currentTile.x, currentTile.y));
+            if (Math.abs(offset.x) >= this.mapService.tilePixelSize || Math.abs(offset.y) >= this.mapService.tilePixelSize) {
+                entity.pathStep++;
+                if (entity.pathStep === entity.tilePath.length - 1) {
+                    entity.pathingDone = true;
+                    break;
+                }
             }
         }
     };
     MapDirective.prototype.resizeCanvas = function () {
-        this.element.nativeElement.width = window.innerWidth;
+        this.element.nativeElement.width = this.canvasContainer.clientWidth;
         this.element.nativeElement.height = window.innerHeight - this.headerPixels;
-        this.mapService.canvasPixelWidth = window.innerWidth;
+        this.mapService.canvasPixelWidth = this.canvasContainer.clientWidth;
         this.mapService.canvasPixelHeight = window.innerHeight - this.headerPixels;
     };
     MapDirective.prototype.refreshCanvas = function () {
@@ -2280,11 +2384,12 @@ var MapDirective = /** @class */ (function () {
         }),
         __metadata("design:paramtypes", [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ElementRef"],
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["Renderer2"],
-            _services_resources_resources_service__WEBPACK_IMPORTED_MODULE_1__["ResourcesService"],
-            _services_settings_settings_service__WEBPACK_IMPORTED_MODULE_2__["SettingsService"],
-            _services_enemy_enemy_service__WEBPACK_IMPORTED_MODULE_3__["EnemyService"],
-            _services_fighter_fighter_service__WEBPACK_IMPORTED_MODULE_4__["FighterService"],
-            _services_map_map_service__WEBPACK_IMPORTED_MODULE_5__["MapService"]])
+            _services_resources_resources_service__WEBPACK_IMPORTED_MODULE_2__["ResourcesService"],
+            _services_settings_settings_service__WEBPACK_IMPORTED_MODULE_3__["SettingsService"],
+            _services_enemy_enemy_service__WEBPACK_IMPORTED_MODULE_4__["EnemyService"],
+            _services_fighter_fighter_service__WEBPACK_IMPORTED_MODULE_5__["FighterService"],
+            _services_buildings_buildings_service__WEBPACK_IMPORTED_MODULE_6__["BuildingsService"],
+            _services_map_map_service__WEBPACK_IMPORTED_MODULE_7__["MapService"]])
     ], MapDirective);
     return MapDirective;
 }());
@@ -2425,12 +2530,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_material_button_toggle__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! @angular/material/button-toggle */ "./node_modules/@angular/material/esm5/button-toggle.es5.js");
 /* harmony import */ var _angular_material_sidenav__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! @angular/material/sidenav */ "./node_modules/@angular/material/esm5/sidenav.es5.js");
 /* harmony import */ var _angular_material_toolbar__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! @angular/material/toolbar */ "./node_modules/@angular/material/esm5/toolbar.es5.js");
+/* harmony import */ var _angular_material_table__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! @angular/material/table */ "./node_modules/@angular/material/esm5/table.es5.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -2475,7 +2582,9 @@ var modules = [
     _angular_material_badge__WEBPACK_IMPORTED_MODULE_18__["MatBadgeModule"],
     _angular_material_button_toggle__WEBPACK_IMPORTED_MODULE_19__["MatButtonToggleModule"],
     _angular_material_sidenav__WEBPACK_IMPORTED_MODULE_20__["MatSidenavModule"],
-    _angular_material_toolbar__WEBPACK_IMPORTED_MODULE_21__["MatToolbarModule"]
+    _angular_material_toolbar__WEBPACK_IMPORTED_MODULE_21__["MatToolbarModule"],
+    _angular_material_table__WEBPACK_IMPORTED_MODULE_22__["MatTableModule"],
+    _angular_material__WEBPACK_IMPORTED_MODULE_1__["MatSortModule"]
 ];
 var MaterialImportModule = /** @class */ (function () {
     function MaterialImportModule() {
@@ -2487,6 +2596,176 @@ var MaterialImportModule = /** @class */ (function () {
         })
     ], MaterialImportModule);
     return MaterialImportModule;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/objects/entity.ts":
+/*!***********************************!*\
+  !*** ./src/app/objects/entity.ts ***!
+  \***********************************/
+/*! exports provided: Entity, Actor, Enemy, Fighter, Projectile, ResourceAnimation */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Entity", function() { return Entity; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Actor", function() { return Actor; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Enemy", function() { return Enemy; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Fighter", function() { return Fighter; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Projectile", function() { return Projectile; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ResourceAnimation", function() { return ResourceAnimation; });
+/* harmony import */ var _vector__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./vector */ "./src/app/objects/vector.ts");
+var __extends = (undefined && undefined.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+
+var Entity = /** @class */ (function () {
+    function Entity(name, position, currentTile, health, tilePath) {
+        if (tilePath === void 0) { tilePath = []; }
+        this.pathingDone = false;
+        this.name = name;
+        this.position = position;
+        this.spawnPosition = new _vector__WEBPACK_IMPORTED_MODULE_0__["Vector"](position.x, position.y);
+        this.currentTile = currentTile;
+        this.tilePath = tilePath;
+        this.pathStep = 0;
+        this.pathingDone = false;
+        this.health = health;
+        this.maxHealth = health;
+    }
+    Object.defineProperty(Entity.prototype, "x", {
+        get: function () {
+            return this.position.x;
+        },
+        set: function (value) {
+            this.position.x = value;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(Entity.prototype, "y", {
+        get: function () {
+            return this.position.y;
+        },
+        set: function (value) {
+            this.position.y = value;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    return Entity;
+}());
+
+var Actor = /** @class */ (function (_super) {
+    __extends(Actor, _super);
+    function Actor(name, position, currentTile, health, attack, defense, attackRange) {
+        var _this = _super.call(this, name, position, currentTile, health) || this;
+        _this.attack = attack;
+        _this.defense = defense;
+        _this.attackRange = attackRange;
+        return _this;
+    }
+    return Actor;
+}(Entity));
+
+var Enemy = /** @class */ (function (_super) {
+    __extends(Enemy, _super);
+    function Enemy(name, position, currentTile, health, attack, defense, attackRange, targetableBuildingTypes, resourcesToSteal, stealMax, resourceCapacity) {
+        var _this = _super.call(this, name, position, currentTile, health, attack, defense, attackRange) || this;
+        _this.targetableBuildingTypes = targetableBuildingTypes;
+        _this.targets = [];
+        _this.targetIndex = 0;
+        _this.pathAttempt = 0;
+        _this.resourcesToSteal = resourcesToSteal;
+        _this.resourcesHeld = [];
+        _this.totalHeld = 0;
+        _this.stealMax = stealMax;
+        _this.resourceCapacity = resourceCapacity;
+        return _this;
+    }
+    return Enemy;
+}(Actor));
+
+var Fighter = /** @class */ (function (_super) {
+    __extends(Fighter, _super);
+    function Fighter(name, position, currentTile, health, attack, defense, attackRange, description, cost, moveable) {
+        var _this = _super.call(this, name, position, currentTile, health, attack, defense, attackRange) || this;
+        _this.cost = cost;
+        _this.moveable = moveable;
+        return _this;
+    }
+    return Fighter;
+}(Actor));
+
+var Projectile = /** @class */ (function (_super) {
+    __extends(Projectile, _super);
+    function Projectile(name, position, currentTile, owner, target) {
+        var _this = _super.call(this, name, position, currentTile, 1) || this;
+        _this.owner = owner;
+        _this.target = target;
+        return _this;
+    }
+    return Projectile;
+}(Entity));
+
+var ResourceAnimation = /** @class */ (function (_super) {
+    __extends(ResourceAnimation, _super);
+    function ResourceAnimation(position, currentTile, resourceId, multiplier, spawnedByPlayer, tilePath) {
+        var _this = _super.call(this, '', position, currentTile, -1, tilePath) || this;
+        _this.resourceId = resourceId;
+        _this.multiplier = multiplier;
+        _this.spawnedByPlayer = spawnedByPlayer;
+        return _this;
+    }
+    return ResourceAnimation;
+}(Entity));
+
+
+
+/***/ }),
+
+/***/ "./src/app/objects/message.ts":
+/*!************************************!*\
+  !*** ./src/app/objects/message.ts ***!
+  \************************************/
+/*! exports provided: MessageSource, Message */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MessageSource", function() { return MessageSource; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Message", function() { return Message; });
+var MessageSource;
+(function (MessageSource) {
+    MessageSource["Admin"] = "ADMIN";
+    MessageSource["Buildings"] = "BUILDINGS";
+    MessageSource["Main"] = "MAIN";
+    MessageSource["Enemy"] = "ENEMY";
+    MessageSource["Fighter"] = "FIGHTER";
+    MessageSource["Map"] = "MAP";
+    MessageSource["Resources"] = "RESOURCES";
+    MessageSource["Settings"] = "SETTINGS";
+    MessageSource["Store"] = "STORE";
+    MessageSource["Upgrades"] = "UPGRADES";
+    MessageSource["Workers"] = "WORKERS";
+})(MessageSource || (MessageSource = {}));
+var Message = /** @class */ (function () {
+    function Message(source, message) {
+        this.source = source;
+        this.message = message;
+        this.timestamp = Date.now();
+    }
+    return Message;
 }());
 
 
@@ -2590,8 +2869,38 @@ var BuildingTileType;
     BuildingTileType["EnemyPortal"] = "ENEMYPORTAL";
 })(BuildingTileType || (BuildingTileType = {}));
 var Tile = /** @class */ (function () {
-    function Tile() {
+    function Tile(id, mapTileType, resourceTileType, buildingTileType, buildingRemovable, position, tileCropDetail, health) {
+        if (health === void 0) { health = -1; }
+        this.id = id;
+        this.mapTileType = mapTileType;
+        this.resourceTileType = resourceTileType;
+        this.buildingTileType = buildingTileType;
+        this.buildingPath = [];
+        this.buildingRemovable = buildingRemovable;
+        this.health = health;
+        this.position = position;
+        this.tileCropDetail = tileCropDetail;
     }
+    Object.defineProperty(Tile.prototype, "x", {
+        get: function () {
+            return this.position.x;
+        },
+        set: function (value) {
+            this.position.x = value;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(Tile.prototype, "y", {
+        get: function () {
+            return this.position.y;
+        },
+        set: function (value) {
+            this.position.y = value;
+        },
+        enumerable: true,
+        configurable: true
+    });
     return Tile;
 }());
 
@@ -2629,6 +2938,48 @@ var Upgrade = /** @class */ (function () {
     function Upgrade() {
     }
     return Upgrade;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/objects/vector.ts":
+/*!***********************************!*\
+  !*** ./src/app/objects/vector.ts ***!
+  \***********************************/
+/*! exports provided: Vector */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Vector", function() { return Vector; });
+var Vector = /** @class */ (function () {
+    function Vector(x, y) {
+        this.x = x;
+        this.y = y;
+    }
+    Object.defineProperty(Vector.prototype, "magnitude", {
+        get: function () {
+            return Math.sqrt(Math.pow(this.x, 2) + Math.pow(this.y, 2));
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Vector.prototype.add = function (other) {
+        return new Vector(this.x + other.x, this.y + other.y);
+    };
+    Vector.prototype.subtract = function (other) {
+        return new Vector(this.x - other.x, this.y - other.y);
+    };
+    Object.defineProperty(Vector, "identity", {
+        get: function () {
+            return new Vector(1, 1);
+        },
+        enumerable: true,
+        configurable: true
+    });
+    return Vector;
 }());
 
 
@@ -2781,6 +3132,94 @@ var AdminService = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/services/buildings/buildings.service.ts":
+/*!*********************************************************!*\
+  !*** ./src/app/services/buildings/buildings.service.ts ***!
+  \*********************************************************/
+/*! exports provided: BuildingsService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BuildingsService", function() { return BuildingsService; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _resources_resources_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./../resources/resources.service */ "./src/app/services/resources/resources.service.ts");
+/* harmony import */ var _map_map_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../map/map.service */ "./src/app/services/map/map.service.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var BuildingsService = /** @class */ (function () {
+    function BuildingsService(resourcesService, mapService) {
+        this.resourcesService = resourcesService;
+        this.mapService = mapService;
+    }
+    BuildingsService.prototype.createBuilding = function (tile, buildingType) {
+        var buildingTile = this.mapService.buildingTiles[buildingType];
+        if (tile.buildingTileType !== undefined ||
+            tile.resourceTileType !== undefined ||
+            !buildingTile.buildableSurfaces.some(function (bs) { return bs === tile.mapTileType; }) ||
+            !this.canAffordBuilding(buildingTile)) {
+            return false;
+        }
+        for (var _i = 0, _a = buildingTile.resourceCosts; _i < _a.length; _i++) {
+            var resourceCost = _a[_i];
+            this.resourcesService.addResourceAmount(resourceCost.resourceId, -resourceCost.resourceCost);
+        }
+        if (buildingTile.placesResourceTile) {
+            tile.resourceTileType = buildingTile.resourceTileType;
+        }
+        tile.buildingRemovable = true;
+        tile.buildingTileType = buildingType;
+        this.mapService.calculateResourceConnections();
+        return true;
+    };
+    BuildingsService.prototype.canAffordBuilding = function (buildingTile) {
+        for (var _i = 0, _a = buildingTile.resourceCosts; _i < _a.length; _i++) {
+            var resourceCost = _a[_i];
+            if (this.resourcesService.getResource(resourceCost.resourceId).amount < resourceCost.resourceCost) {
+                return false;
+            }
+        }
+        return true;
+    };
+    BuildingsService.prototype.clearBuilding = function (tile) {
+        if (!tile.buildingRemovable) {
+            return;
+        }
+        var buildingTile = this.mapService.buildingTiles[tile.buildingTileType];
+        if (buildingTile.placesResourceTile) {
+            tile.resourceTileType = undefined;
+        }
+        tile.buildingTileType = undefined;
+        for (var _i = 0, _a = buildingTile.resourceCosts; _i < _a.length; _i++) {
+            var resourceCost = _a[_i];
+            this.resourcesService.addResourceAmount(resourceCost.resourceId, resourceCost.resourceCost * 0.85);
+        }
+        this.mapService.calculateResourceConnections();
+    };
+    BuildingsService = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
+            providedIn: 'root'
+        }),
+        __metadata("design:paramtypes", [_resources_resources_service__WEBPACK_IMPORTED_MODULE_1__["ResourcesService"],
+            _map_map_service__WEBPACK_IMPORTED_MODULE_2__["MapService"]])
+    ], BuildingsService);
+    return BuildingsService;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/services/clicker-main/clicker-main.service.ts":
 /*!***************************************************************!*\
   !*** ./src/app/services/clicker-main/clicker-main.service.ts ***!
@@ -2796,8 +3235,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _resources_resources_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../resources/resources.service */ "./src/app/services/resources/resources.service.ts");
 /* harmony import */ var _workers_workers_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../workers/workers.service */ "./src/app/services/workers/workers.service.ts");
 /* harmony import */ var _map_map_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../map/map.service */ "./src/app/services/map/map.service.ts");
-/* harmony import */ var _admin_admin_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../admin/admin.service */ "./src/app/services/admin/admin.service.ts");
-/* harmony import */ var _objects_resource__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../objects/resource */ "./src/app/objects/resource.ts");
+/* harmony import */ var _enemy_enemy_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./../enemy/enemy.service */ "./src/app/services/enemy/enemy.service.ts");
+/* harmony import */ var _messages_messages_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../messages/messages.service */ "./src/app/services/messages/messages.service.ts");
+/* harmony import */ var _admin_admin_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../admin/admin.service */ "./src/app/services/admin/admin.service.ts");
+/* harmony import */ var _objects_resource__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../objects/resource */ "./src/app/objects/resource.ts");
+/* harmony import */ var _objects_message__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../objects/message */ "./src/app/objects/message.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2814,17 +3256,22 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
+
+
 var ClickerMainService = /** @class */ (function () {
-    function ClickerMainService(resourcesService, workersService, mapService, adminService) {
+    function ClickerMainService(resourcesService, workersService, mapService, enemyService, messagesService, adminService) {
         var _this = this;
         this.resourcesService = resourcesService;
         this.workersService = workersService;
         this.mapService = mapService;
+        this.enemyService = enemyService;
+        this.messagesService = messagesService;
         this.adminService = adminService;
         this.progressBarMode = 'determinate';
         this.millisecondsTotal = 1000;
         this.progressBarUpdateDelay = 125;
-        this.resourceTypes = _objects_resource__WEBPACK_IMPORTED_MODULE_6__["ResourceType"];
+        this.resourceTypes = _objects_resource__WEBPACK_IMPORTED_MODULE_8__["ResourceType"];
         var progressBarTimer = Object(rxjs__WEBPACK_IMPORTED_MODULE_1__["timer"])(0, this.progressBarUpdateDelay);
         progressBarTimer.subscribe(function (iteration) { return _this.updateProgressBars(iteration); });
     }
@@ -2863,7 +3310,14 @@ var ClickerMainService = /** @class */ (function () {
             resource.progressBarValue = 0;
         }
         this.mapService.spawnResourceAnimation(id, resource.harvestYield, true);
+        if (resource.resourceTier > 3 && !this.enemyService.enemiesActive) {
+            this.enemyService.enemiesActive = true;
+            this.log('Your base has begun attracting unwanted attention...');
+        }
         this.stopHarvesting(id);
+    };
+    ClickerMainService.prototype.log = function (message) {
+        this.messagesService.add(_objects_message__WEBPACK_IMPORTED_MODULE_9__["MessageSource"].Main, message);
     };
     ClickerMainService = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
@@ -2872,7 +3326,9 @@ var ClickerMainService = /** @class */ (function () {
         __metadata("design:paramtypes", [_resources_resources_service__WEBPACK_IMPORTED_MODULE_2__["ResourcesService"],
             _workers_workers_service__WEBPACK_IMPORTED_MODULE_3__["WorkersService"],
             _map_map_service__WEBPACK_IMPORTED_MODULE_4__["MapService"],
-            _admin_admin_service__WEBPACK_IMPORTED_MODULE_5__["AdminService"]])
+            _enemy_enemy_service__WEBPACK_IMPORTED_MODULE_5__["EnemyService"],
+            _messages_messages_service__WEBPACK_IMPORTED_MODULE_6__["MessagesService"],
+            _admin_admin_service__WEBPACK_IMPORTED_MODULE_7__["AdminService"]])
     ], ClickerMainService);
     return ClickerMainService;
 }());
@@ -2892,9 +3348,15 @@ var ClickerMainService = /** @class */ (function () {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "EnemyService", function() { return EnemyService; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _resources_resources_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../resources/resources.service */ "./src/app/services/resources/resources.service.ts");
-/* harmony import */ var _map_map_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../map/map.service */ "./src/app/services/map/map.service.ts");
-/* harmony import */ var _objects_tile__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../objects/tile */ "./src/app/objects/tile.ts");
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm5/index.js");
+/* harmony import */ var _objects_entity__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./../../objects/entity */ "./src/app/objects/entity.ts");
+/* harmony import */ var _objects_vector__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../objects/vector */ "./src/app/objects/vector.ts");
+/* harmony import */ var _map_map_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../map/map.service */ "./src/app/services/map/map.service.ts");
+/* harmony import */ var _objects_tile__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../objects/tile */ "./src/app/objects/tile.ts");
+/* harmony import */ var _objects_message__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../objects/message */ "./src/app/objects/message.ts");
+/* harmony import */ var _buildings_buildings_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../buildings/buildings.service */ "./src/app/services/buildings/buildings.service.ts");
+/* harmony import */ var _resources_resources_service__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../resources/resources.service */ "./src/app/services/resources/resources.service.ts");
+/* harmony import */ var _messages_messages_service__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../messages/messages.service */ "./src/app/services/messages/messages.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2904,42 +3366,109 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 var __metadata = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+var __awaiter = (undefined && undefined.__awaiter) || function (thisArg, _arguments, P, generator) {
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+var __generator = (undefined && undefined.__generator) || function (thisArg, body) {
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    function verb(n) { return function (v) { return step([n, v]); }; }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while (_) try {
+            if (f = 1, y && (t = y[op[0] & 2 ? "return" : op[0] ? "throw" : "next"]) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [0, t.value];
+            switch (op[0]) {
+                case 0: case 1: t = op; break;
+                case 4: _.label++; return { value: op[1], done: false };
+                case 5: _.label++; y = op[1]; op = [0]; continue;
+                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop(); continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+    }
+};
+
+
+
+
+
+
 
 
 
 
 var baseEnemyTypes = __webpack_require__(/*! ../../../assets/json/enemies.json */ "./src/assets/json/enemies.json");
 var EnemyService = /** @class */ (function () {
-    function EnemyService(resourcesService, mapService) {
+    function EnemyService(resourcesService, buildingsService, mapService, messagesService) {
+        var _this = this;
         this.resourcesService = resourcesService;
+        this.buildingsService = buildingsService;
         this.mapService = mapService;
+        this.messagesService = messagesService;
         this.enemyTypes = baseEnemyTypes;
         this.enemies = [];
+        this.reprocessing = false;
+        this.minimumResourceAmount = 500;
+        this.maxPathRetryCount = 10;
+        this.maxEnemyCount = 5;
         this.openPortal(this.mapService.enemySpawnTiles[0]);
-        // const spawnSource = timer(45000, 45000);
-        // const spawnSubscribe = spawnSource.subscribe(_ => this.spawnEnemy());
-        // const processSource = timer(1000, 1000);
-        // const processSubscribe = processSource.subscribe(_ => this.processEnemies());
+        var spawnSource = Object(rxjs__WEBPACK_IMPORTED_MODULE_1__["timer"])(45000, 45000);
+        var spawnSubscribe = spawnSource.subscribe(function (_) { return _this.spawnEnemy(); });
+        var processSource = Object(rxjs__WEBPACK_IMPORTED_MODULE_1__["timer"])(1000, 1000);
+        var processSubscribe = processSource.subscribe(function (_) { return _this.processEnemies(); });
     }
     EnemyService.prototype.pickTarget = function (enemy) {
-        var sortedTargets = enemy.targets.sort(function (a, b) {
-            var aDist = Math.abs(a.x - enemy.x) + Math.abs(a.y - enemy.y);
-            var bDist = Math.abs(b.x - enemy.x) + Math.abs(b.y - enemy.y);
-            return aDist - bDist;
-        });
-        var targetIndex = enemy.targets.indexOf(sortedTargets[0]);
+        // const sortedTargets = enemy.targets.filter(target => target.accessible).sort((a, b) => {
+        //   const aDist = Math.abs(a.tile.x - enemy.x) + Math.abs(a.tile.y - enemy.y);
+        //   const bDist = Math.abs(b.tile.x - enemy.x) + Math.abs(b.tile.y - enemy.y);
+        var _this = this;
+        //   return aDist - bDist;
+        // });
+        var accessibleTargets = enemy.targets.filter(function (target) { return target.accessible; });
+        var selectedTarget = accessibleTargets[Math.floor(Math.random() * accessibleTargets.length)];
+        enemy.targetIndex = enemy.targets.indexOf(selectedTarget);
         enemy.pathStep = 0;
         enemy.pathingDone = false;
-        enemy.targetIndex = targetIndex;
         enemy.currentTile = this.getTilePosition(enemy);
-        this.snapToTile(enemy, enemy.currentTile);
-        enemy.tilePath = this.mapService.findPath(enemy.currentTile, enemy.targets[targetIndex], false, true);
+        if (!this.mapService.mapTiles[enemy.currentTile.mapTileType].walkable) {
+            enemy.position = new _objects_vector__WEBPACK_IMPORTED_MODULE_3__["Vector"](enemy.spawnPosition.x, enemy.spawnPosition.y);
+            enemy.currentTile = this.getTilePosition(enemy);
+        }
+        if (enemy.targetIndex < 0) {
+            enemy.targets = enemy.targets.filter(function (target) { return !target.wanderTarget; });
+            enemy.targets.push({ tile: this.mapService.getRandomTile([_objects_tile__WEBPACK_IMPORTED_MODULE_5__["MapTileType"].Grass]), accessible: true, wanderTarget: true });
+            enemy.targetIndex = enemy.targets.length - 1;
+        }
+        this.mapService.findPath(enemy.currentTile, enemy.targets[enemy.targetIndex].tile, false, true).subscribe(function (tilePath) {
+            enemy.tilePath = tilePath;
+            if (!enemy.tilePath.length) {
+                enemy.pathAttempt++;
+                if (enemy.pathAttempt >= _this.maxPathRetryCount) {
+                    _this.killEnemy(enemy);
+                }
+                _this.finishTask(enemy);
+            }
+        });
     };
     EnemyService.prototype.openPortal = function (tile) {
         if (this.activePortalTile) {
             this.activePortalTile.buildingTileType = undefined;
         }
-        tile.buildingTileType = _objects_tile__WEBPACK_IMPORTED_MODULE_3__["BuildingTileType"].EnemyPortal;
+        tile.buildingTileType = _objects_tile__WEBPACK_IMPORTED_MODULE_5__["BuildingTileType"].EnemyPortal;
         this.activePortalTile = tile;
     };
     EnemyService.prototype.getTilePosition = function (enemy) {
@@ -2956,51 +3485,69 @@ var EnemyService = /** @class */ (function () {
             var spawnIndex = Math.floor(Math.random() * this.mapService.enemySpawnTiles.length);
             this.openPortal(this.mapService.enemySpawnTiles[spawnIndex]);
         }
+        if (this.enemies.length >= this.maxEnemyCount || !this.enemiesActive) {
+            return;
+        }
         var enemyIndex = Math.floor(Math.random() * this.enemyTypes.length);
         var spawnPoint = this.activePortalTile;
         var enemyType = this.enemyTypes[enemyIndex];
-        var enemy = {
-            name: enemyType.name,
-            x: spawnPoint.x,
-            y: spawnPoint.y,
-            currentTile: spawnPoint,
-            tilePath: [],
-            pathStep: 0,
-            pathingDone: false,
-            health: enemyType.health,
-            maxHealth: enemyType.maxHealth,
-            attackRange: enemyType.attackRange,
-            targetableBuildingTypes: enemyType.targetableBuildingTypes,
-            targets: [],
-            targetIndex: 0,
-            attack: enemyType.attack,
-            defense: enemyType.defense,
-            resourcesToSteal: enemyType.resourcesToSteal,
-            resourcesHeld: this.resourcesService.resources.map(function (resource) { return 0; }),
-            totalHeld: 0,
-            stealMax: enemyType.stealMax,
-            resourceCapacity: enemyType.resourceCapacity
-        };
+        var enemy = new _objects_entity__WEBPACK_IMPORTED_MODULE_2__["Enemy"](enemyType.name, new _objects_vector__WEBPACK_IMPORTED_MODULE_3__["Vector"](spawnPoint.x, spawnPoint.y), spawnPoint, enemyType.health, enemyType.attack, enemyType.defense, enemyType.attackRange, enemyType.targetableBuildingTypes, enemyType.resourcesToSteal, enemyType.stealMax, enemyType.resourceCapacity);
+        this.findTargets(enemy);
+        this.pickTarget(enemy);
+        this.log('An enemy has appeared!');
+        this.enemies.push(enemy);
+    };
+    EnemyService.prototype.findTargets = function (enemy) {
         var _loop_1 = function (buildingType) {
-            this_1.mapService.tiledMap.filter(function (tile) { return tile.buildingTileType === buildingType; }).map(function (tile) { return enemy.targets.push(tile); });
+            var _loop_2 = function (tile) {
+                if (!enemy.targets.some(function (target) { return target.tile === tile; })) {
+                    enemy.targets.push({ tile: tile, accessible: true, wanderTarget: false });
+                }
+            };
+            for (var _i = 0, _a = this_1.mapService.tiledMap.filter(function (_tile) { return _tile.buildingTileType === buildingType; }); _i < _a.length; _i++) {
+                var tile = _a[_i];
+                _loop_2(tile);
+            }
         };
         var this_1 = this;
         for (var _i = 0, _a = enemy.targetableBuildingTypes; _i < _a.length; _i++) {
             var buildingType = _a[_i];
             _loop_1(buildingType);
         }
-        this.pickTarget(enemy);
-        this.enemies.push(enemy);
+        if (enemy.targets[enemy.targetIndex].wanderTarget) {
+            this.finishTask(enemy);
+        }
+    };
+    EnemyService.prototype.recalculateTargets = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            var _this = this;
+            return __generator(this, function (_a) {
+                if (this.reprocessing) {
+                    return [2 /*return*/];
+                }
+                this.reprocessing = true;
+                this.enemies.map(function (enemy) { return _this.findTargets(enemy); });
+                this.reprocessing = false;
+                return [2 /*return*/];
+            });
+        });
+    };
+    EnemyService.prototype.finishTask = function (enemy) {
+        enemy.targets[enemy.targetIndex].accessible = false;
+        if (enemy.targets) {
+            this.pickTarget(enemy);
+        }
     };
     EnemyService.prototype.processEnemies = function () {
         for (var _i = 0, _a = this.enemies; _i < _a.length; _i++) {
             var enemy = _a[_i];
             var target = enemy.targets[enemy.targetIndex];
-            if (target.buildingTileType === undefined) {
+            if (target === undefined || ((!target.wanderTarget || enemy.pathingDone) && target.tile.buildingTileType === undefined)) {
                 this.finishTask(enemy);
+                continue;
             }
             if (enemy.pathingDone) {
-                if (target.buildingTileType === _objects_tile__WEBPACK_IMPORTED_MODULE_3__["BuildingTileType"].Home) {
+                if (target.tile.buildingTileType === _objects_tile__WEBPACK_IMPORTED_MODULE_5__["BuildingTileType"].Home) {
                     for (var _b = 0, _c = enemy.resourcesToSteal; _b < _c.length; _b++) {
                         var id = _c[_b];
                         this.resourcesService.getResource(id).resourceBeingStolen = true;
@@ -3014,40 +3561,68 @@ var EnemyService = /** @class */ (function () {
                     }
                     var resourceIndex = Math.floor(Math.random() * enemy.resourcesToSteal.length);
                     var resourceToSteal = this.resourcesService.getResource(enemy.resourcesToSteal[resourceIndex]);
-                    var amountToSteal = Math.random() * enemy.stealMax;
-                    if (amountToSteal > resourceToSteal.amount) {
-                        amountToSteal = resourceToSteal.amount;
+                    if (resourceToSteal.amount > this.minimumResourceAmount) {
+                        var amountToSteal = Math.floor(Math.random() * enemy.stealMax);
+                        if (resourceToSteal.amount - amountToSteal < this.minimumResourceAmount) {
+                            amountToSteal = resourceToSteal.amount - this.minimumResourceAmount;
+                        }
+                        if (enemy.resourcesHeld[resourceToSteal.id] === undefined) {
+                            enemy.resourcesHeld[resourceToSteal.id] = amountToSteal;
+                        }
+                        else {
+                            enemy.resourcesHeld[resourceToSteal.id] += amountToSteal;
+                        }
+                        if (amountToSteal > 0) {
+                            enemy.totalHeld += amountToSteal;
+                            this.resourcesService.addResourceAmount(resourceToSteal.id, -amountToSteal);
+                            this.log("An enemy stole " + Math.floor(amountToSteal) + " " + resourceToSteal.name + "!");
+                        }
                     }
-                    enemy.resourcesHeld[resourceToSteal.id] += amountToSteal;
-                    enemy.totalHeld += amountToSteal;
-                    this.resourcesService.addResourceAmount(resourceToSteal.id, -amountToSteal);
-                    // console.log(`An enemy stole ${amountToSteal} ${resourceToSteal.name}!`);
-                    continue;
                 }
-                target.health -= enemy.attack;
-                if (target.health <= 0) {
-                    this.mapService.clearBuilding(target);
-                    this.finishTask(enemy);
+                else {
+                    target.tile.health -= enemy.attack;
+                    if (target.tile.health <= 0) {
+                        this.buildingsService.clearBuilding(target.tile);
+                        this.finishTask(enemy);
+                    }
                 }
             }
         }
     };
-    EnemyService.prototype.finishTask = function (enemy) {
-        enemy.targets = enemy.targets.filter(function (target) { return target !== enemy.targets[enemy.targetIndex]; });
-        if (enemy.targets) {
-            this.pickTarget(enemy);
+    EnemyService.prototype.killEnemy = function (enemy) {
+        var enemyDefeatedMessage = 'An enemy has been defeated!';
+        if (enemy.totalHeld > 0) {
+            enemyDefeatedMessage += ' Resources recovered:';
+            for (var i = 0; i < enemy.resourcesHeld.length; i++) {
+                var stolenAmount = enemy.resourcesHeld[i];
+                if (isNaN(stolenAmount) || stolenAmount <= 0) {
+                    continue;
+                }
+                var resource = this.resourcesService.getResource(i);
+                this.resourcesService.addResourceAmount(i, stolenAmount);
+                enemyDefeatedMessage += " " + Math.floor(stolenAmount) + " " + resource.name + ",";
+            }
+            enemyDefeatedMessage = enemyDefeatedMessage.slice(0, enemyDefeatedMessage.length - 1) + '.';
         }
+        this.log(enemyDefeatedMessage);
+        this.enemies = this.enemies.filter(function (_enemy) { return _enemy !== enemy; });
     };
     EnemyService.prototype.resourceIsBeingStolen = function (id) {
-        var activeEnemies = this.enemies.filter(function (enemy) { return enemy.pathingDone && enemy.targets[enemy.targetIndex].buildingTileType === _objects_tile__WEBPACK_IMPORTED_MODULE_3__["BuildingTileType"].Home; });
+        var activeEnemies = this.enemies.filter(function (enemy) { return enemy.pathingDone && enemy.targets.length &&
+            enemy.targets[enemy.targetIndex].tile.buildingTileType === _objects_tile__WEBPACK_IMPORTED_MODULE_5__["BuildingTileType"].Home; });
         return activeEnemies.some(function (enemy) { return id in enemy.resourcesToSteal; });
+    };
+    EnemyService.prototype.log = function (message) {
+        this.messagesService.add(_objects_message__WEBPACK_IMPORTED_MODULE_6__["MessageSource"].Enemy, message);
     };
     EnemyService = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
             providedIn: 'root'
         }),
-        __metadata("design:paramtypes", [_resources_resources_service__WEBPACK_IMPORTED_MODULE_1__["ResourcesService"],
-            _map_map_service__WEBPACK_IMPORTED_MODULE_2__["MapService"]])
+        __metadata("design:paramtypes", [_resources_resources_service__WEBPACK_IMPORTED_MODULE_8__["ResourcesService"],
+            _buildings_buildings_service__WEBPACK_IMPORTED_MODULE_7__["BuildingsService"],
+            _map_map_service__WEBPACK_IMPORTED_MODULE_4__["MapService"],
+            _messages_messages_service__WEBPACK_IMPORTED_MODULE_9__["MessagesService"]])
     ], EnemyService);
     return EnemyService;
 }());
@@ -3068,9 +3643,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FighterService", function() { return FighterService; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm5/index.js");
-/* harmony import */ var _resources_resources_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../resources/resources.service */ "./src/app/services/resources/resources.service.ts");
-/* harmony import */ var _enemy_enemy_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./../enemy/enemy.service */ "./src/app/services/enemy/enemy.service.ts");
-/* harmony import */ var _map_map_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../map/map.service */ "./src/app/services/map/map.service.ts");
+/* harmony import */ var _objects_entity__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../objects/entity */ "./src/app/objects/entity.ts");
+/* harmony import */ var _objects_vector__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../objects/vector */ "./src/app/objects/vector.ts");
+/* harmony import */ var _resources_resources_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../resources/resources.service */ "./src/app/services/resources/resources.service.ts");
+/* harmony import */ var _enemy_enemy_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./../enemy/enemy.service */ "./src/app/services/enemy/enemy.service.ts");
+/* harmony import */ var _map_map_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../map/map.service */ "./src/app/services/map/map.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -3085,6 +3662,8 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
+
 var baseFighterTypes = __webpack_require__(/*! ../../../assets/json/fighters.json */ "./src/assets/json/fighters.json");
 var FighterService = /** @class */ (function () {
     function FighterService(resourcesService, enemyService, mapService) {
@@ -3094,7 +3673,6 @@ var FighterService = /** @class */ (function () {
         this.mapService = mapService;
         this.fighterTypes = baseFighterTypes;
         this.fighters = [];
-        this.selectedFighterType = this.fighterTypes[0];
         var processSource = Object(rxjs__WEBPACK_IMPORTED_MODULE_1__["timer"])(1000, 1000);
         var processSubscribe = processSource.subscribe(function (_) { return _this.processFighters(); });
     }
@@ -3115,36 +3693,21 @@ var FighterService = /** @class */ (function () {
     FighterService.prototype.createFighter = function (tile, fighterType) {
         var goldResource = this.resourcesService.getResource(0);
         var mapTile = this.mapService.mapTiles[tile.mapTileType];
-        if (goldResource.amount < fighterType.cost || !mapTile.walkable) {
+        var overlaps = this.fighters.filter(function (_fighter) { return !_fighter.moveable && _fighter.currentTile === tile; });
+        if (goldResource.amount < fighterType.cost || !mapTile.walkable || overlaps.length) {
             return;
         }
         this.resourcesService.addResourceAmount(0, -fighterType.cost);
-        var fighter = {
-            name: fighterType.name,
-            x: tile.x,
-            y: tile.y,
-            currentTile: tile,
-            tilePath: [],
-            pathStep: 0,
-            pathingDone: false,
-            health: fighterType.health,
-            maxHealth: fighterType.maxHealth,
-            targetEnemy: undefined,
-            cost: fighterType.cost,
-            attack: fighterType.attack,
-            defense: fighterType.defense,
-            moveable: fighterType.moveable,
-            attackRange: fighterType.attackRange
-        };
+        var fighter = new _objects_entity__WEBPACK_IMPORTED_MODULE_2__["Fighter"](fighterType.name, new _objects_vector__WEBPACK_IMPORTED_MODULE_3__["Vector"](tile.x, tile.y), tile, fighterType.health, fighterType.attack, fighterType.defense, fighterType.attackRange, fighterType.description, fighterType.cost, fighterType.moveable);
         this.fighters.push(fighter);
     };
     FighterService = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
             providedIn: 'root'
         }),
-        __metadata("design:paramtypes", [_resources_resources_service__WEBPACK_IMPORTED_MODULE_2__["ResourcesService"],
-            _enemy_enemy_service__WEBPACK_IMPORTED_MODULE_3__["EnemyService"],
-            _map_map_service__WEBPACK_IMPORTED_MODULE_4__["MapService"]])
+        __metadata("design:paramtypes", [_resources_resources_service__WEBPACK_IMPORTED_MODULE_4__["ResourcesService"],
+            _enemy_enemy_service__WEBPACK_IMPORTED_MODULE_5__["EnemyService"],
+            _map_map_service__WEBPACK_IMPORTED_MODULE_6__["MapService"]])
     ], FighterService);
     return FighterService;
 }());
@@ -3164,8 +3727,11 @@ var FighterService = /** @class */ (function () {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MapService", function() { return MapService; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _resources_resources_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../resources/resources.service */ "./src/app/services/resources/resources.service.ts");
-/* harmony import */ var _objects_tile__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../objects/tile */ "./src/app/objects/tile.ts");
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm5/index.js");
+/* harmony import */ var _resources_resources_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../resources/resources.service */ "./src/app/services/resources/resources.service.ts");
+/* harmony import */ var _objects_tile__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../objects/tile */ "./src/app/objects/tile.ts");
+/* harmony import */ var _objects_entity__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../objects/entity */ "./src/app/objects/entity.ts");
+/* harmony import */ var _objects_vector__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../objects/vector */ "./src/app/objects/vector.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -3175,6 +3741,9 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 var __metadata = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+
+
+
 
 
 
@@ -3195,7 +3764,6 @@ var MapService = /** @class */ (function () {
         this.resourceAnimations = [];
         this.projectiles = [];
         this.deleteMode = false;
-        this.selectedBuilding = this.buildingTiles[_objects_tile__WEBPACK_IMPORTED_MODULE_2__["BuildingTileType"].Road];
         this.lastAnimationTime = 0;
         this.tileAnimationSpeed = 0.003;
         this.enemyAnimationSpeed = 0.003;
@@ -3260,23 +3828,18 @@ var MapService = /** @class */ (function () {
             var resourceTileId = resourceTileIds[i];
             var buildingTileId = buildingTileIds[i];
             var flagTileId = flagTileIds[i];
-            var tile = {
-                id: _tiledMap.length,
-                mapTileType: this.tileTypes[mapTileId],
-                health: 50,
-                x: 16 * (_tiledMap.length % _mapWidth),
-                y: 16 * Math.floor(_tiledMap.length / _mapWidth),
-                tileCropDetail: { x: 0, y: 0, width: 16, height: 16 },
-                buildingRemovable: false
-            };
+            var position = new _objects_vector__WEBPACK_IMPORTED_MODULE_5__["Vector"](16 * (_tiledMap.length % _mapWidth), 16 * Math.floor(_tiledMap.length / _mapWidth));
+            var tileCropDetail = { x: 0, y: 0, width: 16, height: 16 };
+            var resourceTileType = void 0, buildingTileType = void 0;
             if (resourceTileId > 0) {
-                tile.resourceTileType = this.tileTypes[resourceTileId];
+                resourceTileType = this.tileTypes[resourceTileId];
             }
             if (buildingTileId > 0) {
-                tile.buildingTileType = this.tileTypes[buildingTileId];
+                buildingTileType = this.tileTypes[buildingTileId];
             }
+            var tile = new _objects_tile__WEBPACK_IMPORTED_MODULE_3__["Tile"](_tiledMap.length, this.tileTypes[mapTileId], resourceTileType, buildingTileType, false, position, tileCropDetail, 50);
             var flagTileType = this.tileTypes[flagTileId];
-            if (flagTileType === _objects_tile__WEBPACK_IMPORTED_MODULE_2__["BuildingTileType"].EnemyPortal) {
+            if (flagTileType === _objects_tile__WEBPACK_IMPORTED_MODULE_3__["BuildingTileType"].EnemyPortal) {
                 this.enemySpawnTiles.push(tile);
             }
             _tiledMap.push(tile);
@@ -3286,46 +3849,6 @@ var MapService = /** @class */ (function () {
         this.mapHeight = _mapHeight;
         this.calculateResourceConnections();
     }
-    MapService.prototype.createBuilding = function (tile, buildingType) {
-        var buildingTile = this.buildingTiles[buildingType];
-        if (tile.buildingTileType !== undefined ||
-            tile.resourceTileType !== undefined ||
-            !buildingTile.buildableSurfaces.some(function (bs) { return bs === tile.mapTileType; }) ||
-            !this.canAffordBuilding(buildingTile)) {
-            return false;
-        }
-        for (var _i = 0, _a = buildingTile.resourceCosts; _i < _a.length; _i++) {
-            var resourceCost = _a[_i];
-            this.resourcesService.addResourceAmount(resourceCost.resourceId, -resourceCost.resourceCost);
-        }
-        if (buildingTile.placesResourceTile) {
-            tile.resourceTileType = buildingTile.resourceTileType;
-        }
-        tile.buildingRemovable = true;
-        tile.buildingTileType = buildingType;
-        this.calculateResourceConnections();
-        return true;
-    };
-    MapService.prototype.canAffordBuilding = function (buildingTile) {
-        for (var _i = 0, _a = buildingTile.resourceCosts; _i < _a.length; _i++) {
-            var resourceCost = _a[_i];
-            if (this.resourcesService.getResource(resourceCost.resourceId).amount < resourceCost.resourceCost) {
-                return false;
-            }
-        }
-        return true;
-    };
-    MapService.prototype.clearBuilding = function (tile) {
-        if (!tile.buildingRemovable) {
-            return;
-        }
-        var buildingTile = this.buildingTiles[tile.buildingTileType];
-        if (buildingTile.placesResourceTile) {
-            tile.resourceTileType = undefined;
-        }
-        tile.buildingTileType = undefined;
-        this.calculateResourceConnections();
-    };
     MapService.prototype.calculateResourceConnections = function () {
         var _this = this;
         var resourceTiles = this.getResourceTiles();
@@ -3333,31 +3856,36 @@ var MapService = /** @class */ (function () {
             var resource = _a[_i];
             resource.pathAvailable = false;
         }
-        var homeTile = this.tiledMap.filter(function (tile) { return tile.buildingTileType === _objects_tile__WEBPACK_IMPORTED_MODULE_2__["BuildingTileType"].Home; })[0];
+        var homeTile = this.tiledMap.filter(function (tile) { return tile.buildingTileType === _objects_tile__WEBPACK_IMPORTED_MODULE_3__["BuildingTileType"].Home; })[0];
+        var _loop_1 = function (resourceTile) {
+            this_1.findPath(resourceTile, homeTile, true, true).subscribe(function (tilePath) {
+                resourceTile.buildingPath = tilePath;
+                if (resourceTile.buildingPath.length) {
+                    var resources = _this.resourceTiles[resourceTile.resourceTileType].resourceIds.map(function (id) { return _this.resourcesService.getResource(id); });
+                    for (var _i = 0, resources_1 = resources; _i < resources_1.length; _i++) {
+                        var resource = resources_1[_i];
+                        resource.pathAvailable = true;
+                    }
+                }
+            });
+        };
+        var this_1 = this;
         for (var _b = 0, resourceTiles_1 = resourceTiles; _b < resourceTiles_1.length; _b++) {
             var resourceTile = resourceTiles_1[_b];
-            resourceTile.buildingPath = this.findPath(resourceTile, homeTile, true, true);
-            if (!resourceTile.buildingPath.length) {
-                continue;
-            }
-            var resources = this.resourceTiles[resourceTile.resourceTileType].resourceIds.map(function (id) { return _this.resourcesService.getResource(id); });
-            for (var _c = 0, resources_1 = resources; _c < resources_1.length; _c++) {
-                var resource = resources_1[_c];
-                resource.pathAvailable = true;
-            }
+            _loop_1(resourceTile);
         }
     };
     MapService.prototype.findPath = function (startTile, targetTile, onlyPathable, onlyWalkable) {
-        var _this = this;
         var visitedTiles = [];
         var tileQueue = [];
-        var tileDistances = this.tiledMap.map(function (_) { return _this.tiledMap.length + 1; });
+        var tileDistances = this.tiledMap.map(function (_) { return Infinity; });
+        var tileHeuristicDistances = this.tiledMap.map(function (_) { return Infinity; });
         var nodeMap = new Map();
         var currentNode;
         tileDistances[startTile.id] = 0;
         tileQueue.push(startTile);
         while (tileQueue.length) {
-            currentNode = tileQueue.sort(function (a, b) { return tileDistances[a.id] - tileDistances[b.id]; })[0];
+            currentNode = tileQueue.sort(function (a, b) { return tileHeuristicDistances[a.id] - tileHeuristicDistances[b.id]; })[0];
             tileQueue = tileQueue.filter(function (tile) { return tile !== currentNode; });
             if (currentNode === targetTile) {
                 var buildingPath = [];
@@ -3367,7 +3895,7 @@ var MapService = /** @class */ (function () {
                     backtrackNode = nodeMap.get(backtrackNode);
                 }
                 buildingPath.push(backtrackNode);
-                return buildingPath.reverse();
+                return Object(rxjs__WEBPACK_IMPORTED_MODULE_1__["of"])(buildingPath.reverse());
             }
             var neighborDistance = tileDistances[currentNode.id] + 1;
             for (var _i = 0, _a = this.getNeighborTiles(currentNode); _i < _a.length; _i++) {
@@ -3378,12 +3906,20 @@ var MapService = /** @class */ (function () {
                     tileDistances[neighbor.id] > neighborDistance) {
                     nodeMap.set(neighbor, currentNode);
                     tileDistances[neighbor.id] = neighborDistance;
+                    tileHeuristicDistances[neighbor.id] = neighborDistance + targetTile.position.subtract(neighbor.position).magnitude;
                     tileQueue.push(neighbor);
                 }
             }
             visitedTiles.push(currentNode);
         }
-        return [];
+        return Object(rxjs__WEBPACK_IMPORTED_MODULE_1__["of"])([]);
+    };
+    MapService.prototype.getRandomTile = function (tileTypes) {
+        var tiles = this.tiledMap;
+        if (tileTypes) {
+            tiles = tiles.filter(function (tile) { return tileTypes.some(function (tileType) { return tileType === tile.mapTileType; }); });
+        }
+        return tiles[Math.floor(Math.random() * tiles.length)];
     };
     MapService.prototype.spawnResourceAnimation = function (resourceId, multiplier, spawnedByPlayer) {
         if (multiplier === void 0) { multiplier = 1; }
@@ -3396,36 +3932,13 @@ var MapService = /** @class */ (function () {
         if (tile === undefined) {
             return;
         }
-        this.resourceAnimations.push({
-            name: '',
-            resourceId: resourceId,
-            multiplier: multiplier,
-            spawnedByPlayer: spawnedByPlayer,
-            x: tile.x + 4,
-            y: tile.y + 4,
-            currentTile: tile,
-            tilePath: tile.buildingPath.map(function (_tile) { return _tile; }),
-            pathStep: 0,
-            pathingDone: false,
-            health: -1,
-            maxHealth: -1
-        });
+        var tilePathCopy = tile.buildingPath.map(function (_tile) { return _tile; });
+        var resourceAnimation = new _objects_entity__WEBPACK_IMPORTED_MODULE_4__["ResourceAnimation"](new _objects_vector__WEBPACK_IMPORTED_MODULE_5__["Vector"](tile.x, tile.y), tile, resourceId, multiplier, spawnedByPlayer, tilePathCopy);
+        this.resourceAnimations.push(resourceAnimation);
     };
     MapService.prototype.spawnProjectile = function (owner, target) {
-        this.projectiles.push({
-            name: 'Arrow',
-            x: owner.x,
-            y: owner.y,
-            currentTile: owner.currentTile,
-            tilePath: [],
-            pathStep: -1,
-            pathingDone: true,
-            health: 1,
-            maxHealth: 1,
-            owner: owner,
-            target: target,
-            rotation: 0
-        });
+        var projectile = new _objects_entity__WEBPACK_IMPORTED_MODULE_4__["Projectile"]('Arrow', new _objects_vector__WEBPACK_IMPORTED_MODULE_5__["Vector"](owner.x, owner.y), owner.currentTile, owner, target);
+        this.projectiles.push(projectile);
     };
     MapService.prototype.getNeighborTiles = function (tile) {
         var tileCoordinates = this.getTileCoordinates(tile);
@@ -3475,12 +3988,12 @@ var MapService = /** @class */ (function () {
     MapService.prototype.getTileType = function (tileId) {
         if (tileId in [37, 38, 39, 40, 41, 42, 43, 44, 54, 55, 56, 57, 58, 59, 60, 61, 71, 72, 73, 74, 75, 76, 77, 78, 88,
             89, 90, 91, 92, 93, 94, 95, 105, 106, 107, 108, 109, 110, 111, 112, 123, 124, 125, 126, 127, 128, 129, 130]) {
-            return _objects_tile__WEBPACK_IMPORTED_MODULE_2__["MapTileType"].Grass;
+            return _objects_tile__WEBPACK_IMPORTED_MODULE_3__["MapTileType"].Grass;
         }
         else if (tileId in [53, 122]) {
-            return _objects_tile__WEBPACK_IMPORTED_MODULE_2__["MapTileType"].Water;
+            return _objects_tile__WEBPACK_IMPORTED_MODULE_3__["MapTileType"].Water;
         }
-        return _objects_tile__WEBPACK_IMPORTED_MODULE_2__["MapTileType"].Mountain;
+        return _objects_tile__WEBPACK_IMPORTED_MODULE_3__["MapTileType"].Mountain;
     };
     MapService.prototype.getTileCropDetail = function (tileId) {
         return { x: 0, y: 0, width: 16, height: 16 };
@@ -3493,7 +4006,7 @@ var MapService = /** @class */ (function () {
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
             providedIn: 'root'
         }),
-        __metadata("design:paramtypes", [_resources_resources_service__WEBPACK_IMPORTED_MODULE_1__["ResourcesService"]])
+        __metadata("design:paramtypes", [_resources_resources_service__WEBPACK_IMPORTED_MODULE_2__["ResourcesService"]])
     ], MapService);
     return MapService;
 }());
@@ -3513,6 +4026,8 @@ var MapService = /** @class */ (function () {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MessagesService", function() { return MessagesService; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
+/* harmony import */ var _objects_message__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./../../objects/message */ "./src/app/objects/message.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -3523,15 +4038,27 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
+
 var MessagesService = /** @class */ (function () {
     function MessagesService() {
         this.messages = [];
+        this.messagesDataSource = new _angular_material__WEBPACK_IMPORTED_MODULE_1__["MatTableDataSource"](this.messages);
+        this.messageLimit = 50;
     }
-    MessagesService.prototype.add = function (message) {
-        this.messages.push(message);
+    MessagesService.prototype.add = function (source, message) {
+        if (this.messages.length >= this.messageLimit) {
+            this.messages = this.messages.slice(1);
+        }
+        this.messages.push(new _objects_message__WEBPACK_IMPORTED_MODULE_2__["Message"](source, message));
+        this.messagesDataSource.data = this.messages.slice();
     };
     MessagesService.prototype.clear = function () {
         this.messages = [];
+        this.messagesDataSource.data = [];
+    };
+    MessagesService.prototype.getFilteredMessages = function (sources) {
+        return this.messages.filter(function (message) { return message.source in sources; });
     };
     MessagesService = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
@@ -3557,7 +4084,8 @@ var MessagesService = /** @class */ (function () {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ResourcesService", function() { return ResourcesService; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _messages_messages_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../messages/messages.service */ "./src/app/services/messages/messages.service.ts");
+/* harmony import */ var _objects_message__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../objects/message */ "./src/app/objects/message.ts");
+/* harmony import */ var _messages_messages_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../messages/messages.service */ "./src/app/services/messages/messages.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -3567,6 +4095,7 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 var __metadata = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+
 
 
 var baseResources = __webpack_require__(/*! ../../../assets/json/resources.json */ "./src/assets/json/resources.json");
@@ -3660,13 +4189,13 @@ var ResourcesService = /** @class */ (function () {
         return (this.getResource(0).amount >= this.getResource(id).worker.cost);
     };
     ResourcesService.prototype.log = function (message) {
-        this.messagesService.add("ResourcesService: " + message);
+        this.messagesService.add(_objects_message__WEBPACK_IMPORTED_MODULE_1__["MessageSource"].Resources, message);
     };
     ResourcesService = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
             providedIn: 'root'
         }),
-        __metadata("design:paramtypes", [_messages_messages_service__WEBPACK_IMPORTED_MODULE_1__["MessagesService"]])
+        __metadata("design:paramtypes", [_messages_messages_service__WEBPACK_IMPORTED_MODULE_2__["MessagesService"]])
     ], ResourcesService);
     return ResourcesService;
 }());
@@ -3691,9 +4220,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _resources_resources_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./../resources/resources.service */ "./src/app/services/resources/resources.service.ts");
 /* harmony import */ var _upgrades_upgrades_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./../upgrades/upgrades.service */ "./src/app/services/upgrades/upgrades.service.ts");
 /* harmony import */ var _workers_workers_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./../workers/workers.service */ "./src/app/services/workers/workers.service.ts");
-/* harmony import */ var _map_map_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./../map/map.service */ "./src/app/services/map/map.service.ts");
-/* harmony import */ var _components_save_dialog_save_dialog_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../components/save-dialog/save-dialog.component */ "./src/app/components/save-dialog/save-dialog.component.ts");
-/* harmony import */ var _objects_tile__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../objects/tile */ "./src/app/objects/tile.ts");
+/* harmony import */ var _messages_messages_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../messages/messages.service */ "./src/app/services/messages/messages.service.ts");
+/* harmony import */ var _map_map_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./../map/map.service */ "./src/app/services/map/map.service.ts");
+/* harmony import */ var _enemy_enemy_service__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./../enemy/enemy.service */ "./src/app/services/enemy/enemy.service.ts");
+/* harmony import */ var _fighter_fighter_service__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./../fighter/fighter.service */ "./src/app/services/fighter/fighter.service.ts");
+/* harmony import */ var _components_save_dialog_save_dialog_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../components/save-dialog/save-dialog.component */ "./src/app/components/save-dialog/save-dialog.component.ts");
+/* harmony import */ var _objects_tile__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../../objects/tile */ "./src/app/objects/tile.ts");
+/* harmony import */ var _objects_entity__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../../objects/entity */ "./src/app/objects/entity.ts");
+/* harmony import */ var _objects_message__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./../../objects/message */ "./src/app/objects/message.ts");
+/* harmony import */ var _objects_vector__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../../objects/vector */ "./src/app/objects/vector.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -3712,27 +4247,39 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
+
+
+
+
+
 var SettingsService = /** @class */ (function () {
-    function SettingsService(resourcesService, upgradesService, workersService, mapService, snackbar, dialog) {
+    function SettingsService(resourcesService, upgradesService, workersService, mapService, enemyService, fighterService, messagesService, snackbar, dialog) {
         this.resourcesService = resourcesService;
         this.upgradesService = upgradesService;
         this.workersService = workersService;
         this.mapService = mapService;
+        this.enemyService = enemyService;
+        this.fighterService = fighterService;
+        this.messagesService = messagesService;
         this.snackbar = snackbar;
         this.dialog = dialog;
         this.gameVersion = '1.2';
         this.autosaveInterval = 900000;
         this.debugMode = false;
+        this.disableAnimations = false;
+        this.slimInterface = false;
         this.mapDetailMode = true;
         this.mapLowFramerate = false;
         this.resourceDetailColor = '#000000';
         this.harvestDetailColor = '#a4ff89';
         this.workerDetailColor = '#ae89ff';
         this.loadGame();
+        this.setAutosave();
     }
     SettingsService.prototype.openSaveDialog = function (saveData) {
         var _this = this;
-        var dialogRef = this.dialog.open(_components_save_dialog_save_dialog_component__WEBPACK_IMPORTED_MODULE_7__["SaveDialogComponent"], {
+        var dialogRef = this.dialog.open(_components_save_dialog_save_dialog_component__WEBPACK_IMPORTED_MODULE_10__["SaveDialogComponent"], {
             width: '750px',
             height: '150px',
             data: saveData === undefined ? {} : { saveData: saveData }
@@ -3741,6 +4288,7 @@ var SettingsService = /** @class */ (function () {
             if (result !== undefined) {
                 if (_this.importSave(result)) {
                     _this.snackbar.open('Game successfully loaded!', '', { duration: 2000 });
+                    _this.log('Game successfully loaded!');
                 }
             }
         });
@@ -3760,6 +4308,7 @@ var SettingsService = /** @class */ (function () {
         var saveData = this.exportSave();
         localStorage.setItem('clickerGameSaveData', saveData);
         this.snackbar.open('Game successfully saved!', '', { duration: 2000 });
+        this.log('Game successfully saved!');
     };
     SettingsService.prototype.loadGame = function () {
         var saveData = localStorage.getItem('clickerGameSaveData');
@@ -3768,11 +4317,13 @@ var SettingsService = /** @class */ (function () {
         }
         if (this.importSave(saveData)) {
             this.snackbar.open('Game successfully loaded!', '', { duration: 2000 });
+            this.log('Game successfully loaded!');
         }
     };
     SettingsService.prototype.deleteSave = function () {
         localStorage.removeItem('clickerGameSaveData');
         this.snackbar.open('Game save deleted.', '', { duration: 2000 });
+        this.log('Game save deleted.');
     };
     SettingsService.prototype.exportSave = function () {
         var saveData = {
@@ -3780,9 +4331,13 @@ var SettingsService = /** @class */ (function () {
             upgrades: [],
             workers: [],
             tiles: [],
+            enemies: [],
+            fighters: [],
             settings: {
                 autosaveInterval: this.autosaveInterval,
                 debugMode: this.debugMode,
+                enemiesActive: this.enemyService.enemiesActive,
+                slimInterface: this.slimInterface,
                 mapDetailMode: this.mapDetailMode,
                 mapLowFramerate: this.mapLowFramerate,
                 resourceDetailColor: this.resourceDetailColor,
@@ -3832,7 +4387,7 @@ var SettingsService = /** @class */ (function () {
         }
         for (var _h = 0, _j = this.mapService.tiledMap; _h < _j.length; _h++) {
             var tile = _j[_h];
-            if (tile.buildingTileType === undefined && tile.buildingTileType !== _objects_tile__WEBPACK_IMPORTED_MODULE_8__["BuildingTileType"].EnemyPortal) {
+            if (tile.buildingTileType === undefined && tile.buildingTileType !== _objects_tile__WEBPACK_IMPORTED_MODULE_11__["BuildingTileType"].EnemyPortal) {
                 continue;
             }
             var tileData = {
@@ -3847,6 +4402,39 @@ var SettingsService = /** @class */ (function () {
                 tileData.buildingTileType = tile.buildingTileType;
             }
             saveData.tiles.push(tileData);
+        }
+        for (var _k = 0, _l = this.enemyService.enemies; _k < _l.length; _k++) {
+            var enemy = _l[_k];
+            saveData.enemies.push({
+                name: enemy.name,
+                position: enemy.position,
+                spawnPosition: enemy.spawnPosition,
+                health: enemy.health,
+                maxHealth: enemy.maxHealth,
+                attack: enemy.attack,
+                defense: enemy.defense,
+                attackRange: enemy.attackRange,
+                targetableBuildingTypes: enemy.targetableBuildingTypes,
+                resourcesToSteal: enemy.resourcesToSteal,
+                resorucesHeld: enemy.resourcesHeld,
+                stealMax: enemy.stealMax,
+                resourceCapacity: enemy.resourceCapacity
+            });
+        }
+        for (var _m = 0, _o = this.fighterService.fighters; _m < _o.length; _m++) {
+            var fighter = _o[_m];
+            saveData.fighters.push({
+                name: fighter.name,
+                description: fighter.description,
+                position: fighter.position,
+                spawnPosition: fighter.spawnPosition,
+                health: fighter.health,
+                maxHealth: fighter.maxHealth,
+                attack: fighter.attack,
+                defense: fighter.defense,
+                attackRange: fighter.attackRange,
+                moveable: fighter.moveable
+            });
         }
         console.log(saveData);
         return btoa(JSON.stringify(saveData));
@@ -3922,9 +4510,32 @@ var SettingsService = /** @class */ (function () {
                     _loop_1(tileData);
                 }
             }
+            if (saveData.enemies !== undefined) {
+                for (var _k = 0, _l = saveData.enemies; _k < _l.length; _k++) {
+                    var enemyData = _l[_k];
+                    var tilePosition = this.mapService.clampTileCoordinates(enemyData.position.x, enemyData.position.y);
+                    var tile = this.mapService.getTile(tilePosition[0], tilePosition[1]);
+                    var enemy = new _objects_entity__WEBPACK_IMPORTED_MODULE_12__["Enemy"](enemyData.name, new _objects_vector__WEBPACK_IMPORTED_MODULE_14__["Vector"](enemyData.position.x, enemyData.position.y), tile, enemyData.health, enemyData.attack, enemyData.defense, enemyData.attackRange, enemyData.targetableBuildingTypes, enemyData.resourcesToSteal, enemyData.stealMax, enemyData.resourceCapacity);
+                    enemy.spawnPosition = new _objects_vector__WEBPACK_IMPORTED_MODULE_14__["Vector"](enemyData.spawnPosition.x, enemyData.spawnPosition.y);
+                    this.enemyService.findTargets(enemy);
+                    this.enemyService.pickTarget(enemy);
+                    this.enemyService.enemies.push(enemy);
+                }
+            }
+            if (saveData.fighters !== undefined) {
+                for (var _m = 0, _o = saveData.fighters; _m < _o.length; _m++) {
+                    var fighterData = _o[_m];
+                    var tilePosition = this.mapService.clampTileCoordinates(fighterData.position.x, fighterData.position.y);
+                    var tile = this.mapService.getTile(tilePosition[0], tilePosition[1]);
+                    var fighter = new _objects_entity__WEBPACK_IMPORTED_MODULE_12__["Fighter"](fighterData.name, new _objects_vector__WEBPACK_IMPORTED_MODULE_14__["Vector"](fighterData.position.x, fighterData.position.y), tile, fighterData.health, fighterData.attack, fighterData.defense, fighterData.attackRange, fighterData.description, 0, fighterData.moveable);
+                    this.fighterService.fighters.push(fighter);
+                }
+            }
             if (saveData.settings !== undefined) {
                 this.autosaveInterval = saveData.settings.autosaveInterval ? saveData.settings.autosaveInterval : 900000;
                 this.debugMode = saveData.settings.debugMode ? saveData.settings.debugMode : false;
+                this.enemyService.enemiesActive = saveData.settings.enemiesActive ? saveData.settings.enemiesActive : false;
+                this.slimInterface = saveData.settings.slimInterface ? saveData.settings.slimInterface : false;
                 this.mapDetailMode = saveData.settings.mapDetailMode ? saveData.settings.mapDetailMode : true;
                 this.mapLowFramerate = saveData.settings.mapLowFramerate ? saveData.settings.mapLowFramerate : false;
                 this.resourceDetailColor = saveData.settings.resourceDetailColor ? saveData.settings.resourceDetailColor : '#000000';
@@ -3936,10 +4547,14 @@ var SettingsService = /** @class */ (function () {
         }
         catch (error) {
             this.snackbar.open("Error loading save data: " + error, '', { duration: 5000 });
+            this.log('Error loading save data.');
             this.importSave(backupSave);
             console.error(error);
             return false;
         }
+    };
+    SettingsService.prototype.log = function (message) {
+        this.messagesService.add(_objects_message__WEBPACK_IMPORTED_MODULE_13__["MessageSource"].Settings, message);
     };
     SettingsService = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
@@ -3948,7 +4563,10 @@ var SettingsService = /** @class */ (function () {
         __metadata("design:paramtypes", [_resources_resources_service__WEBPACK_IMPORTED_MODULE_3__["ResourcesService"],
             _upgrades_upgrades_service__WEBPACK_IMPORTED_MODULE_4__["UpgradesService"],
             _workers_workers_service__WEBPACK_IMPORTED_MODULE_5__["WorkersService"],
-            _map_map_service__WEBPACK_IMPORTED_MODULE_6__["MapService"],
+            _map_map_service__WEBPACK_IMPORTED_MODULE_7__["MapService"],
+            _enemy_enemy_service__WEBPACK_IMPORTED_MODULE_8__["EnemyService"],
+            _fighter_fighter_service__WEBPACK_IMPORTED_MODULE_9__["FighterService"],
+            _messages_messages_service__WEBPACK_IMPORTED_MODULE_6__["MessagesService"],
             _angular_material__WEBPACK_IMPORTED_MODULE_1__["MatSnackBar"],
             _angular_material__WEBPACK_IMPORTED_MODULE_1__["MatDialog"]])
     ], SettingsService);
@@ -3970,8 +4588,9 @@ var SettingsService = /** @class */ (function () {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "StoreService", function() { return StoreService; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _resources_resources_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../resources/resources.service */ "./src/app/services/resources/resources.service.ts");
-/* harmony import */ var _messages_messages_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../messages/messages.service */ "./src/app/services/messages/messages.service.ts");
+/* harmony import */ var _objects_message__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../objects/message */ "./src/app/objects/message.ts");
+/* harmony import */ var _resources_resources_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../resources/resources.service */ "./src/app/services/resources/resources.service.ts");
+/* harmony import */ var _messages_messages_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../messages/messages.service */ "./src/app/services/messages/messages.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -3981,6 +4600,7 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 var __metadata = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+
 
 
 
@@ -4018,14 +4638,14 @@ var StoreService = /** @class */ (function () {
         return resources;
     };
     StoreService.prototype.log = function (message) {
-        this.messagesService.add("ResourcesService: " + message);
+        this.messagesService.add(_objects_message__WEBPACK_IMPORTED_MODULE_1__["MessageSource"].Store, message);
     };
     StoreService = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
             providedIn: 'root'
         }),
-        __metadata("design:paramtypes", [_resources_resources_service__WEBPACK_IMPORTED_MODULE_1__["ResourcesService"],
-            _messages_messages_service__WEBPACK_IMPORTED_MODULE_2__["MessagesService"]])
+        __metadata("design:paramtypes", [_resources_resources_service__WEBPACK_IMPORTED_MODULE_2__["ResourcesService"],
+            _messages_messages_service__WEBPACK_IMPORTED_MODULE_3__["MessagesService"]])
     ], StoreService);
     return StoreService;
 }());
@@ -4209,9 +4829,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UpgradesService", function() { return UpgradesService; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _objects_upgrade__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../objects/upgrade */ "./src/app/objects/upgrade.ts");
-/* harmony import */ var _resources_resources_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../resources/resources.service */ "./src/app/services/resources/resources.service.ts");
-/* harmony import */ var _workers_workers_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./../workers/workers.service */ "./src/app/services/workers/workers.service.ts");
-/* harmony import */ var _messages_messages_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../messages/messages.service */ "./src/app/services/messages/messages.service.ts");
+/* harmony import */ var _objects_message__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../objects/message */ "./src/app/objects/message.ts");
+/* harmony import */ var _resources_resources_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../resources/resources.service */ "./src/app/services/resources/resources.service.ts");
+/* harmony import */ var _workers_workers_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./../workers/workers.service */ "./src/app/services/workers/workers.service.ts");
+/* harmony import */ var _messages_messages_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../messages/messages.service */ "./src/app/services/messages/messages.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -4221,6 +4842,7 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 var __metadata = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+
 
 
 
@@ -4310,6 +4932,7 @@ var UpgradesService = /** @class */ (function () {
             var upgradeEffect = _a[_i];
             _loop_1(upgradeEffect);
         }
+        this.log('Purchased upgrade: ' + upgrade.name);
     };
     UpgradesService.prototype.canAffordUpgrade = function (id) {
         for (var _i = 0, _a = this.getUpgrade(id).resourceCosts; _i < _a.length; _i++) {
@@ -4369,15 +4992,15 @@ var UpgradesService = /** @class */ (function () {
         return _objects_upgrade__WEBPACK_IMPORTED_MODULE_1__["UpgradeVariable"][this.getUpgrade(upgradeId).upgradeEffects[effectId].upgradeVariable];
     };
     UpgradesService.prototype.log = function (message) {
-        this.messagesService.add("UpgradesService: " + message);
+        this.messagesService.add(_objects_message__WEBPACK_IMPORTED_MODULE_2__["MessageSource"].Upgrades, message);
     };
     UpgradesService = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
             providedIn: 'root'
         }),
-        __metadata("design:paramtypes", [_resources_resources_service__WEBPACK_IMPORTED_MODULE_2__["ResourcesService"],
-            _workers_workers_service__WEBPACK_IMPORTED_MODULE_3__["WorkersService"],
-            _messages_messages_service__WEBPACK_IMPORTED_MODULE_4__["MessagesService"]])
+        __metadata("design:paramtypes", [_resources_resources_service__WEBPACK_IMPORTED_MODULE_3__["ResourcesService"],
+            _workers_workers_service__WEBPACK_IMPORTED_MODULE_4__["WorkersService"],
+            _messages_messages_service__WEBPACK_IMPORTED_MODULE_5__["MessagesService"]])
     ], UpgradesService);
     return UpgradesService;
 }());
@@ -4398,9 +5021,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "WorkersService", function() { return WorkersService; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm5/index.js");
-/* harmony import */ var _resources_resources_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../resources/resources.service */ "./src/app/services/resources/resources.service.ts");
-/* harmony import */ var _map_map_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./../map/map.service */ "./src/app/services/map/map.service.ts");
-/* harmony import */ var _messages_messages_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../messages/messages.service */ "./src/app/services/messages/messages.service.ts");
+/* harmony import */ var _objects_message__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../objects/message */ "./src/app/objects/message.ts");
+/* harmony import */ var _resources_resources_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../resources/resources.service */ "./src/app/services/resources/resources.service.ts");
+/* harmony import */ var _map_map_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./../map/map.service */ "./src/app/services/map/map.service.ts");
+/* harmony import */ var _messages_messages_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../messages/messages.service */ "./src/app/services/messages/messages.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -4410,6 +5034,7 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 var __metadata = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+
 
 
 
@@ -4470,6 +5095,9 @@ var WorkersService = /** @class */ (function () {
                     continue;
                 }
                 this.resourcesService.addResourceAmount(0, -resourceWorker.recurringCost * resourceWorker.workerCount);
+                if (!this.canAffordToHarvest(resourceWorker.resourceId)) {
+                    this.log("No more money available for " + this.resourcesService.getResource(resourceWorker.resourceId).name + ".");
+                }
                 this.mapService.spawnResourceAnimation(resourceWorker.resourceId, resourceWorker.workerYield * resourceWorker.workerCount, false);
             }
         }
@@ -4497,15 +5125,15 @@ var WorkersService = /** @class */ (function () {
         worker.freeWorkers++;
     };
     WorkersService.prototype.log = function (message) {
-        this.messagesService.add("WorkersService: " + message);
+        this.messagesService.add(_objects_message__WEBPACK_IMPORTED_MODULE_2__["MessageSource"].Workers, message);
     };
     WorkersService = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
             providedIn: 'root'
         }),
-        __metadata("design:paramtypes", [_resources_resources_service__WEBPACK_IMPORTED_MODULE_2__["ResourcesService"],
-            _map_map_service__WEBPACK_IMPORTED_MODULE_3__["MapService"],
-            _messages_messages_service__WEBPACK_IMPORTED_MODULE_4__["MessagesService"]])
+        __metadata("design:paramtypes", [_resources_resources_service__WEBPACK_IMPORTED_MODULE_3__["ResourcesService"],
+            _map_map_service__WEBPACK_IMPORTED_MODULE_4__["MapService"],
+            _messages_messages_service__WEBPACK_IMPORTED_MODULE_5__["MessagesService"]])
     ], WorkersService);
     return WorkersService;
 }());
@@ -4521,7 +5149,7 @@ var WorkersService = /** @class */ (function () {
 /*! exports provided: 0, default */
 /***/ (function(module) {
 
-module.exports = [{"name":"Base Enemy","health":15,"maxHealth":15,"targetableBuildingTypes":["HOME","CRACKEDFORGE"],"attack":5,"defense":1,"attackRange":2,"resourcesToSteal":[1,2],"stealMax":25,"resourceCapacity":200}];
+module.exports = [{"name":"Base Enemy","health":15,"maxHealth":15,"targetableBuildingTypes":["HOME","CRACKEDFORGE"],"attack":5,"defense":1,"attackRange":2,"resourcesToSteal":[1,2,3],"stealMax":25,"resourceCapacity":200}];
 
 /***/ }),
 
@@ -4532,7 +5160,7 @@ module.exports = [{"name":"Base Enemy","health":15,"maxHealth":15,"targetableBui
 /*! exports provided: 0, default */
 /***/ (function(module) {
 
-module.exports = [{"name":"Sentry","health":15,"maxHealth":15,"cost":50,"attack":5,"defense":5,"movable":false,"attackRange":3}];
+module.exports = [{"name":"Sentry","description":"A stationary archer, capable of shooting at one target per second.","health":15,"maxHealth":15,"cost":50,"attack":5,"defense":5,"movable":false,"attackRange":3}];
 
 /***/ }),
 
