@@ -41,7 +41,7 @@ module.exports = "/* AppComponent's private CSS styles */\r\nh1 {\r\n  font-size
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"game-container\" [class.game-is-mobile]=\"mobileQuery.matches\" [@.disabled]=\"disableAnimations\">\n  <mat-toolbar color=\"primary\" class=\"game-toolbar\">\n    <h1 class=\"game-app-name\">Age of Clicking</h1>\n    <div class=\"sidenav-buttons\">\n      <button mat-flat-button (click)=\"hideResourceList = !hideResourceList\">\n        <mat-icon>map</mat-icon><p class=\"toolbar-button-text\" *ngIf=\"!mobileQuery.matches\">Expand Map</p>\n      </button>\n      <button mat-flat-button (click)=\"snav.toggle()\" [matBadge]=\"affordableUpgradeCount\" [matBadgeHidden]=\"affordableUpgradeCount <= 0\" matBadgePosition=\"before\" matBadgeColor=\"accent\">\n        <mat-icon>menu</mat-icon><p class=\"toolbar-button-text\" *ngIf=\"!mobileQuery.matches\">Menu</p>\n      </button>\n    </div>\n  </mat-toolbar>\n\n  <mat-sidenav-container class=\"game-sidenav-container\" [style.marginTop.px]=\"mobileQuery.matches ? 56 : 0\">\n    <mat-sidenav #snav [mode]=\"mobileQuery.matches ? 'over' : 'side'\" [opened]=\"!mobileQuery.matches\" [fixedInViewport]=\"mobileQuery.matches\" position=\"end\"\n      fixedTopGap=\"56\">\n      <mat-nav-list>\n        <mat-tab-group class=\"tab-group\" dynamicHeight>\n          <mat-tab label=\"Buildings\">\n            <app-buildings></app-buildings>\n          </mat-tab>\n          <mat-tab label=\"Fighters\">\n            <app-fighter></app-fighter>\n          </mat-tab>\n          <mat-tab label=\"Workers\">\n            <app-workers></app-workers>\n          </mat-tab>\n          <mat-tab label=\"Store\">\n            <app-store></app-store>\n          </mat-tab>\n          <mat-tab label=\"Upgrades{{affordableUpgradeCount > 0 ? ' (' + affordableUpgradeCount + ')' : ''}}\">\n            <app-upgrades></app-upgrades>\n          </mat-tab>\n          <mat-tab label=\"Log\">\n            <app-messages></app-messages>\n          </mat-tab>\n          <mat-tab label=\"Settings\">\n            <app-settings></app-settings>\n            <app-admin-debug *ngIf=\"debugMode\"></app-admin-debug>\n          </mat-tab>\n        </mat-tab-group>\n      </mat-nav-list>\n    </mat-sidenav>\n    <mat-sidenav-content>\n      <div class=\"main-pane\">\n        <app-clicker-main class=\"resource-list\" [style.display]=\"hideResourceList? 'none': ''\"></app-clicker-main>\n        <app-map class=\"map\" [style.display]=\"mobileQuery.matches && !hideResourceList? 'none': ''\"></app-map>\n      </div>\n    </mat-sidenav-content>\n  </mat-sidenav-container>\n</div>\n"
+module.exports = "<div class=\"game-container\" [class.game-is-mobile]=\"mobileQuery.matches\" [@.disabled]=\"disableAnimations\">\n  <mat-toolbar color=\"primary\" class=\"game-toolbar\">\n    <h1 class=\"game-app-name\">Age of Clicking</h1>\n    <div class=\"sidenav-buttons\">\n      <button mat-flat-button (click)=\"hideResourceList = !hideResourceList\">\n        <mat-icon>map</mat-icon><p class=\"toolbar-button-text\" *ngIf=\"!mobileQuery.matches\">Expand Map</p>\n      </button>\n      <button mat-flat-button (click)=\"snav.toggle()\" [matBadge]=\"affordableUpgradeCount\" [matBadgeHidden]=\"affordableUpgradeCount <= 0\" matBadgePosition=\"before\" matBadgeColor=\"accent\">\n        <mat-icon>menu</mat-icon><p class=\"toolbar-button-text\" *ngIf=\"!mobileQuery.matches\">Menu</p>\n      </button>\n    </div>\n  </mat-toolbar>\n\n  <mat-sidenav-container class=\"game-sidenav-container\" [style.marginTop.px]=\"mobileQuery.matches ? 56 : 0\">\n    <mat-sidenav #snav [mode]=\"mobileQuery.matches ? 'over' : 'side'\" [opened]=\"!mobileQuery.matches\" [fixedInViewport]=\"mobileQuery.matches\" position=\"end\"\n      fixedTopGap=\"56\">\n      <mat-nav-list>\n        <mat-tab-group class=\"tab-group\" dynamicHeight>\n          <mat-tab label=\"Buildings\">\n            <app-buildings></app-buildings>\n          </mat-tab>\n          <mat-tab label=\"Fighters\" *ngIf=\"enemyService.enemiesActive\">\n            <app-fighter></app-fighter>\n          </mat-tab>\n          <mat-tab label=\"Workers\">\n            <app-workers></app-workers>\n          </mat-tab>\n          <mat-tab label=\"Store\">\n            <app-store></app-store>\n          </mat-tab>\n          <mat-tab label=\"Upgrades{{affordableUpgradeCount > 0 ? ' (' + affordableUpgradeCount + ')' : ''}}\">\n            <app-upgrades></app-upgrades>\n          </mat-tab>\n          <mat-tab label=\"Log\">\n            <app-messages></app-messages>\n          </mat-tab>\n          <mat-tab label=\"Settings\">\n            <app-settings></app-settings>\n            <app-admin-debug *ngIf=\"debugMode\"></app-admin-debug>\n          </mat-tab>\n        </mat-tab-group>\n      </mat-nav-list>\n    </mat-sidenav>\n    <mat-sidenav-content>\n      <div class=\"main-pane\">\n        <app-clicker-main class=\"resource-list\" [style.display]=\"hideResourceList? 'none': ''\"></app-clicker-main>\n        <app-map class=\"map\" [style.display]=\"mobileQuery.matches && !hideResourceList? 'none': ''\"></app-map>\n      </div>\n    </mat-sidenav-content>\n  </mat-sidenav-container>\n</div>\n"
 
 /***/ }),
 
@@ -58,7 +58,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_cdk_layout__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/cdk/layout */ "./node_modules/@angular/cdk/esm5/layout.es5.js");
 /* harmony import */ var _services_upgrades_upgrades_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./services/upgrades/upgrades.service */ "./src/app/services/upgrades/upgrades.service.ts");
-/* harmony import */ var _services_settings_settings_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./services/settings/settings.service */ "./src/app/services/settings/settings.service.ts");
+/* harmony import */ var _services_enemy_enemy_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./services/enemy/enemy.service */ "./src/app/services/enemy/enemy.service.ts");
+/* harmony import */ var _services_settings_settings_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./services/settings/settings.service */ "./src/app/services/settings/settings.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -72,9 +73,11 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
 var AppComponent = /** @class */ (function () {
-    function AppComponent(upgradesService, settingsService, changeDetectorRef, media) {
+    function AppComponent(upgradesService, enemyService, settingsService, changeDetectorRef, media) {
         this.upgradesService = upgradesService;
+        this.enemyService = enemyService;
         this.settingsService = settingsService;
         this.changeDetectorRef = changeDetectorRef;
         this.media = media;
@@ -115,7 +118,8 @@ var AppComponent = /** @class */ (function () {
             styles: [__webpack_require__(/*! ./app.component.css */ "./src/app/app.component.css")]
         }),
         __metadata("design:paramtypes", [_services_upgrades_upgrades_service__WEBPACK_IMPORTED_MODULE_2__["UpgradesService"],
-            _services_settings_settings_service__WEBPACK_IMPORTED_MODULE_3__["SettingsService"],
+            _services_enemy_enemy_service__WEBPACK_IMPORTED_MODULE_3__["EnemyService"],
+            _services_settings_settings_service__WEBPACK_IMPORTED_MODULE_4__["SettingsService"],
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ChangeDetectorRef"],
             _angular_cdk_layout__WEBPACK_IMPORTED_MODULE_1__["MediaMatcher"]])
     ], AppComponent);
@@ -836,7 +840,7 @@ var FighterComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "/* MapComponent's private CSS styles */\r\nh1 {\r\n  font-size: 1.2em;\r\n  color: #999;\r\n  margin-bottom: 0;\r\n  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;\r\n}\r\nh2 {\r\n  font-size: 2em;\r\n  margin-top: 0;\r\n  padding-top: 0;\r\n}\r\nh3 {\r\n  font-family: Arial, Helvetica, sans-serif;\r\n}\r\nnav a {\r\n  padding: 5px 10px;\r\n  text-decoration: none;\r\n  margin-top: 10px;\r\n  display: inline-block;\r\n  background-color: #eee;\r\n  border-radius: 4px;\r\n}\r\nnav a:visited, a:link {\r\n  color: #607d8b;\r\n}\r\nnav a:hover {\r\n  color: #039be5;\r\n  background-color: #cfd8dc;\r\n}\r\nnav a.active {\r\n  color: #039be5;\r\n}\r\n#canvas-container {\r\n  display: flex;\r\n  height: 100%;\r\n}\r\n"
+module.exports = "/* MapComponent's private CSS styles */\r\n:root {\r\n  --detail-tooltip-top: 0px;\r\n  --detail-tooltip-left: 0px;\r\n}\r\nh1 {\r\n  font-size: 1.2em;\r\n  color: #999;\r\n  margin-bottom: 0;\r\n  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;\r\n}\r\nh2 {\r\n  font-size: 2em;\r\n  margin-top: 0;\r\n  padding-top: 0;\r\n}\r\nh3 {\r\n  font-family: Arial, Helvetica, sans-serif;\r\n}\r\nnav a {\r\n  padding: 5px 10px;\r\n  text-decoration: none;\r\n  margin-top: 10px;\r\n  display: inline-block;\r\n  background-color: #eee;\r\n  border-radius: 4px;\r\n}\r\nnav a:visited, a:link {\r\n  color: #607d8b;\r\n}\r\nnav a:hover {\r\n  color: #039be5;\r\n  background-color: #cfd8dc;\r\n}\r\nnav a.active {\r\n  color: #039be5;\r\n}\r\n#canvas-container {\r\n  display: flex;\r\n  height: 100%;\r\n}\r\n#detail-tooltip {\r\n  top: var(--detail-tooltip-top);\r\n  left: var(--detail-tooltip-left);\r\n\r\n  position: absolute;\r\n}\r\nmat-card {\r\n  text-align: center;\r\n  max-width: 300px;\r\n}\r\n.resource-list div {\r\n  display: inline-block;\r\n}\r\n.resource-list img {\r\n  width: 16px;\r\n  height: 16px;\r\n}\r\n.cursor-tools {\r\n  position: absolute;\r\n  top: 0;\r\n\r\n  background: white;\r\n}\r\n"
 
 /***/ }),
 
@@ -847,7 +851,7 @@ module.exports = "/* MapComponent's private CSS styles */\r\nh1 {\r\n  font-size
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div id=\"canvas-container\">\r\n  <canvas class=\"noselect\" appNoScroll appMap width=\"{{canvasWidth}}\" height=\"{{canvasHeight}}\" oncontextmenu=\"return false\"></canvas>\r\n</div>\r\n"
+module.exports = "<div id=\"canvas-container\" (keyup.esc)=\"clearFocus()\" tabindex=\"1\">\r\n  <canvas class=\"noselect\" appNoScroll appMap width=\"{{canvasWidth}}\" height=\"{{canvasHeight}}\" oncontextmenu=\"return false\"></canvas>\r\n\r\n  <mat-button-toggle-group #group=\"matButtonToggleGroup\" [(ngModel)]=\"mapService.cursorTool\" class=\"cursor-tools\">\r\n    <mat-button-toggle value=\"PLACEBUILDINGS\" class=\"cursor-tool\">\r\n      <mat-icon color=\"primary\">add_photo_alternate</mat-icon>\r\n      <br />\r\n      Place Buildings\r\n    </mat-button-toggle>\r\n    <mat-button-toggle value=\"DETAILMODE\" class=\"cursor-tool\">\r\n      <mat-icon color=\"primary\">mode_comment</mat-icon>\r\n      <br />\r\n      Tile Details\r\n    </mat-button-toggle>\r\n  </mat-button-toggle-group>\r\n</div>\r\n\r\n<mat-card [ngClass]=\"{'hidden': !focusedBuildingTile && !focusedResourceTile}\" id=\"detail-tooltip\">\r\n  <div *ngIf=\"focusedBuildingTile\">\r\n    <mat-card-title>{{focusedBuildingTile.name}}</mat-card-title>\r\n    <mat-card-subtitle>{{focusedBuildingTile.description}}</mat-card-subtitle>\r\n    {{focusedTile.health}}/{{focusedTile.maxHealth}} Health\r\n  </div>\r\n\r\n  <div *ngIf=\"!focusedBuildingTile && focusedResourceTile\">\r\n    <mat-card-title>{{focusedResourceTile.name}}</mat-card-title>\r\n  </div>\r\n\r\n  <mat-card-content>\r\n    <div *ngIf=\"focusedResourceTile\" class=\"resource-list\">\r\n      Travel Time: {{focusedTile.buildingPath.length / this.mapService.tileAnimationSpeed / 1000 | number:'0.0-2'}}\r\n      Seconds\r\n      <br />\r\n      Produces:\r\n      <div *ngFor=\"let resource of focusedResources\">\r\n        <img src=\"{{resource.iconPath}}\" alt=\"{{resource.name}}\"> {{resource.name | titlecase}}\r\n      </div>\r\n    </div>\r\n    <div *ngIf=\"focusedBuildingTile && focusedBuildingTile.upgradeBuilding\">\r\n      <br />\r\n      Upgrade:\r\n      <br />\r\n      <button mat-raised-button (click)=\"upgradeBuilding(focusedTile)\" color=\"accent\" [disabled]=\"!canAffordUpgrade(this.mapService.buildingTiles[focusedBuildingTile.upgradeBuilding])\">\r\n        <div class=\"title\" matTooltip=\"{{this.mapService.buildingTiles[focusedBuildingTile.upgradeBuilding].description}}\"\r\n          matTooltipPosition=\"above\">\r\n          {{this.mapService.buildingTiles[focusedBuildingTile.upgradeBuilding].name}}\r\n        </div>\r\n        <div class=\"resource-list\">\r\n          <div *ngFor=\"let resourceCost of mapService.buildingTiles[focusedBuildingTile.upgradeBuilding].resourceCosts\"\r\n            matTooltip=\"{{resourceCost.resourceCost}} {{getResource(resourceCost.resourceId).name | titlecase}}\"\r\n            matTooltipPosition=\"below\">\r\n            <img src=\"{{getResource(resourceCost.resourceId).iconPath}}\" alt=\"{{getResource(resourceCost.resourceId).name}}\">\r\n            {{resourceCost.resourceCost}}\r\n          </div>\r\n        </div>\r\n      </button>\r\n    </div>\r\n  </mat-card-content>\r\n</mat-card>\r\n"
 
 /***/ }),
 
@@ -864,8 +868,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _objects_tile__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../objects/tile */ "./src/app/objects/tile.ts");
 /* harmony import */ var _services_map_map_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../services/map/map.service */ "./src/app/services/map/map.service.ts");
-/* harmony import */ var _services_admin_admin_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../services/admin/admin.service */ "./src/app/services/admin/admin.service.ts");
-/* harmony import */ var _services_resources_resources_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../services/resources/resources.service */ "./src/app/services/resources/resources.service.ts");
+/* harmony import */ var _services_buildings_buildings_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./../../services/buildings/buildings.service */ "./src/app/services/buildings/buildings.service.ts");
+/* harmony import */ var _services_admin_admin_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../services/admin/admin.service */ "./src/app/services/admin/admin.service.ts");
+/* harmony import */ var _services_resources_resources_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../services/resources/resources.service */ "./src/app/services/resources/resources.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -880,9 +885,11 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
 var MapComponent = /** @class */ (function () {
-    function MapComponent(mapService, resourcesService, adminService) {
+    function MapComponent(mapService, buildingsService, resourcesService, adminService) {
         this.mapService = mapService;
+        this.buildingsService = buildingsService;
         this.resourcesService = resourcesService;
         this.adminService = adminService;
         this.mapTileTypes = _objects_tile__WEBPACK_IMPORTED_MODULE_1__["MapTileType"];
@@ -908,6 +915,28 @@ var MapComponent = /** @class */ (function () {
     };
     MapComponent.prototype.getResource = function (resourceId) {
         return this.resourcesService.getResource(resourceId);
+    };
+    MapComponent.prototype.canAffordUpgrade = function (upgradeBuilding) {
+        for (var _i = 0, _a = upgradeBuilding.resourceCosts; _i < _a.length; _i++) {
+            var resourceCost = _a[_i];
+            if (this.resourcesService.getResource(resourceCost.resourceId).amount < resourceCost.resourceCost) {
+                return false;
+            }
+        }
+        return true;
+    };
+    MapComponent.prototype.upgradeBuilding = function (tile) {
+        var currentBuilding = this.mapService.buildingTiles[tile.buildingTileType];
+        this.buildingsService.clearBuilding(tile);
+        this.buildingsService.createBuilding(tile, currentBuilding.upgradeBuilding);
+        this.focusedBuildingTile = this.mapService.buildingTiles[tile.buildingTileType];
+        this.focusedResourceTile = this.mapService.resourceTiles[tile.resourceTileType];
+    };
+    MapComponent.prototype.clearFocus = function () {
+        this.focusedTile = undefined;
+        this.focusedBuildingTile = undefined;
+        this.focusedResourceTile = undefined;
+        this.focusedResources = undefined;
     };
     Object.defineProperty(MapComponent.prototype, "canvasWidth", {
         get: function () {
@@ -947,6 +976,46 @@ var MapComponent = /** @class */ (function () {
         enumerable: true,
         configurable: true
     });
+    Object.defineProperty(MapComponent.prototype, "focusedTile", {
+        get: function () {
+            return this.mapService.focusedTile;
+        },
+        set: function (value) {
+            this.mapService.focusedTile = value;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(MapComponent.prototype, "focusedBuildingTile", {
+        get: function () {
+            return this.mapService.focusedBuildingTile;
+        },
+        set: function (value) {
+            this.mapService.focusedBuildingTile = value;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(MapComponent.prototype, "focusedResourceTile", {
+        get: function () {
+            return this.mapService.focusedResourceTile;
+        },
+        set: function (value) {
+            this.mapService.focusedResourceTile = value;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(MapComponent.prototype, "focusedResources", {
+        get: function () {
+            return this.mapService.focusedResources;
+        },
+        set: function (value) {
+            this.mapService.focusedResources = value;
+        },
+        enumerable: true,
+        configurable: true
+    });
     MapComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-map',
@@ -954,8 +1023,9 @@ var MapComponent = /** @class */ (function () {
             styles: [__webpack_require__(/*! ./map.component.css */ "./src/app/components/map/map.component.css")]
         }),
         __metadata("design:paramtypes", [_services_map_map_service__WEBPACK_IMPORTED_MODULE_2__["MapService"],
-            _services_resources_resources_service__WEBPACK_IMPORTED_MODULE_4__["ResourcesService"],
-            _services_admin_admin_service__WEBPACK_IMPORTED_MODULE_3__["AdminService"]])
+            _services_buildings_buildings_service__WEBPACK_IMPORTED_MODULE_3__["BuildingsService"],
+            _services_resources_resources_service__WEBPACK_IMPORTED_MODULE_5__["ResourcesService"],
+            _services_admin_admin_service__WEBPACK_IMPORTED_MODULE_4__["AdminService"]])
     ], MapComponent);
     return MapComponent;
 }());
@@ -982,7 +1052,7 @@ module.exports = "/* MessagesComponent's private CSS styles */\r\nh2 {\r\n  colo
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<button class=\"clear\" (click)=\"messagesService.clear()\">clear</button>\n\n<table mat-table [dataSource]=\"messagesService.messagesDataSource\" matSort matSortActive=\"timestamp\" matSortDirection=\"desc\" class=\"message-table mat-elevation-z8\">\n    <ng-container matColumnDef=\"source\">\n      <mat-header-cell *matHeaderCellDef mat-sort-header> Source </mat-header-cell>\n      <mat-cell *matCellDef=\"let message\"> {{message.source | titlecase}} </mat-cell>\n    </ng-container>\n\n    <ng-container matColumnDef=\"timestamp\">\n        <mat-header-cell *matHeaderCellDef mat-sort-header> Timestamp </mat-header-cell>\n        <mat-cell *matCellDef=\"let message\"> {{message.timestamp | date:'h:mm a'}} </mat-cell>\n    </ng-container>\n\n    <ng-container matColumnDef=\"message\">\n      <mat-header-cell *matHeaderCellDef mat-sort-header> Message </mat-header-cell>\n      <mat-cell *matCellDef=\"let message\"> {{message.message}} </mat-cell>\n    </ng-container>\n\n    <mat-header-row *matHeaderRowDef=\"displayedColumns\"></mat-header-row>\n    <mat-row *matRowDef=\"let row; columns: displayedColumns;\"></mat-row>\n  </table>\n"
+module.exports = "<table mat-table [dataSource]=\"messagesService.messagesDataSource\" matSort matSortActive=\"timestamp\" matSortDirection=\"desc\" class=\"message-table mat-elevation-z8\">\n    <ng-container matColumnDef=\"source\">\n      <mat-header-cell *matHeaderCellDef mat-sort-header> Source </mat-header-cell>\n      <mat-cell *matCellDef=\"let message\"> {{message.source | titlecase}} </mat-cell>\n    </ng-container>\n\n    <ng-container matColumnDef=\"timestamp\">\n        <mat-header-cell *matHeaderCellDef mat-sort-header> Timestamp </mat-header-cell>\n        <mat-cell *matCellDef=\"let message\"> {{message.timestamp | date:'h:mm a'}} </mat-cell>\n    </ng-container>\n\n    <ng-container matColumnDef=\"message\">\n      <mat-header-cell *matHeaderCellDef mat-sort-header> Message </mat-header-cell>\n      <mat-cell *matCellDef=\"let message\"> {{message.message}} </mat-cell>\n    </ng-container>\n\n    <mat-header-row *matHeaderRowDef=\"displayedColumns\"></mat-header-row>\n    <mat-row *matRowDef=\"let row; columns: displayedColumns;\"></mat-row>\n  </table>\n"
 
 /***/ }),
 
@@ -1341,7 +1411,7 @@ var SaveDialogComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".color-input {\r\n    width: auto;\r\n    color: rgb(108, 88, 88);\r\n    font-weight: bolder;\r\n}\r\n"
+module.exports = "mat-panel-title {\r\n  display: -ms-grid;\r\n  display: grid;\r\n}\r\n\r\n.color-input {\r\n    color: rgb(108, 88, 88);\r\n    font-weight: bolder;\r\n}\r\n\r\n.full-width {\r\n  width: 100%;\r\n}\r\n"
 
 /***/ }),
 
@@ -1352,7 +1422,7 @@ module.exports = ".color-input {\r\n    width: auto;\r\n    color: rgb(108, 88, 
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<h3>Version {{settingsService.gameVersion}}</h3>\n\n<mat-accordion multi=\"true\">\n  <mat-expansion-panel expanded=\"true\">\n    <mat-expansion-panel-header>\n      <mat-panel-title>\n        <mat-icon color=\"primary\">save</mat-icon>\n        Save/Load\n      </mat-panel-title>\n    </mat-expansion-panel-header>\n\n    <mat-form-field>\n      <mat-select placeholder=\"Autosave Interval (Minutes)\" [(value)]=\"autosaveInterval\" (valueChange)=\"setAutosave()\">\n        <mat-option [value]=\"-1\">Disable</mat-option>\n        <mat-option [value]=\"60000\">1</mat-option>\n        <mat-option [value]=\"900000\">15</mat-option>\n        <mat-option [value]=\"1800000\">30</mat-option>\n        <mat-option [value]=\"3600000\">60</mat-option>\n      </mat-select>\n    </mat-form-field>\n\n    <button mat-raised-button color=\"primary\" (click)=\"saveGame()\">Save</button>\n    <button mat-raised-button color=\"warn\" (click)=\"deleteGame()\">Delete Save</button>\n\n    <button mat-raised-button (click)=\"exportSave()\">Export Save</button>\n    <button mat-raised-button (click)=\"importSave()\">Import Save</button>\n  </mat-expansion-panel>\n\n  <mat-expansion-panel expanded=\"true\">\n      <mat-expansion-panel-header>\n        <mat-panel-title>\n          <mat-icon color=\"primary\">list</mat-icon>\n          Interface\n        </mat-panel-title>\n      </mat-expansion-panel-header>\n\n      <mat-checkbox [(ngModel)]=\"slimInterface\">Slim Mode</mat-checkbox>\n      <!-- <br />\n      <mat-checkbox [(ngModel)]=\"disableAnimations\">Disable Animations</mat-checkbox> -->\n    </mat-expansion-panel>\n\n  <mat-expansion-panel expanded=\"true\">\n    <mat-expansion-panel-header>\n      <mat-panel-title>\n        <mat-icon color=\"primary\">map</mat-icon>\n        Map\n      </mat-panel-title>\n    </mat-expansion-panel-header>\n\n    <mat-checkbox [(ngModel)]=\"mapDetailMode\">Detail Mode</mat-checkbox>\n    <br />\n    <mat-checkbox [(ngModel)]=\"mapLowFramerate\">Limit Framerate</mat-checkbox>\n    <br />\n    <br />\n\n    <mat-form-field>\n      <input class=\"color-input\" matInput placeholder=\"Resource Name Color\" [(colorPicker)]=\"resourceDetailColor\" [style.background]=\"resourceDetailColor\" [value]=\"resourceDetailColor\"/>\n    </mat-form-field>\n\n    <mat-form-field>\n      <input class=\"color-input\" matInput placeholder=\"Player Harvest Color\" [(colorPicker)]=\"harvestDetailColor\" [style.background]=\"harvestDetailColor\" [value]=\"harvestDetailColor\"/>\n    </mat-form-field>\n\n    <mat-form-field>\n      <input class=\"color-input\" matInput placeholder=\"Worker Harvest Color\" [(colorPicker)]=\"workerDetailColor\" [style.background]=\"workerDetailColor\" [value]=\"workerDetailColor\"/>\n    </mat-form-field>\n  </mat-expansion-panel>\n\n  <mat-expansion-panel expanded=\"true\">\n    <mat-expansion-panel-header>\n      <mat-panel-title>\n        <mat-icon color=\"primary\">bug_report</mat-icon>\n        Debug\n      </mat-panel-title>\n    </mat-expansion-panel-header>\n\n    <mat-checkbox [(ngModel)]=\"debugMode\">Debug Mode</mat-checkbox>\n  </mat-expansion-panel>\n</mat-accordion>\n"
+module.exports = "<h3>Version {{settingsService.gameVersion}}</h3>\n\n<mat-accordion multi=\"true\">\n  <mat-expansion-panel expanded=\"true\">\n    <mat-expansion-panel-header>\n      <mat-panel-title>\n        <mat-icon color=\"primary\">save</mat-icon>\n        Save/Load\n      </mat-panel-title>\n    </mat-expansion-panel-header>\n\n    <mat-form-field class=\"full-width\">\n      <mat-select placeholder=\"Autosave Interval (Minutes)\" [(value)]=\"autosaveInterval\" (valueChange)=\"setAutosave()\">\n        <mat-option [value]=\"-1\">Disable</mat-option>\n        <mat-option [value]=\"60000\">1</mat-option>\n        <mat-option [value]=\"900000\">15</mat-option>\n        <mat-option [value]=\"1800000\">30</mat-option>\n        <mat-option [value]=\"3600000\">60</mat-option>\n      </mat-select>\n    </mat-form-field>\n\n    <button mat-raised-button color=\"primary\" (click)=\"saveGame()\">Save</button>\n    <button mat-raised-button color=\"warn\" (click)=\"deleteGame()\">Delete Save</button>\n\n    <button mat-raised-button (click)=\"exportSave()\">Export Save</button>\n    <button mat-raised-button (click)=\"importSave()\">Import Save</button>\n  </mat-expansion-panel>\n\n  <mat-expansion-panel expanded=\"true\">\n      <mat-expansion-panel-header>\n        <mat-panel-title>\n          <mat-icon color=\"primary\">list</mat-icon>\n          Interface\n        </mat-panel-title>\n      </mat-expansion-panel-header>\n\n      <mat-checkbox [(ngModel)]=\"slimInterface\">Slim Mode</mat-checkbox>\n      <!-- <br />\n      <mat-checkbox [(ngModel)]=\"disableAnimations\">Disable Animations</mat-checkbox> -->\n    </mat-expansion-panel>\n\n  <mat-expansion-panel expanded=\"true\">\n    <mat-expansion-panel-header>\n      <mat-panel-title>\n        <mat-icon color=\"primary\">map</mat-icon>\n        Map\n      </mat-panel-title>\n    </mat-expansion-panel-header>\n\n    <mat-checkbox [(ngModel)]=\"mapLowFramerate\">Limit Framerate</mat-checkbox>\n    <br />\n\n    <mat-form-field class=\"full-width\">\n      <input class=\"color-input\" matInput placeholder=\"Player Harvest Color\" [(colorPicker)]=\"harvestDetailColor\" [style.background]=\"harvestDetailColor\" [value]=\"harvestDetailColor\"/>\n    </mat-form-field>\n\n    <mat-form-field class=\"full-width\">\n      <input class=\"color-input\" matInput placeholder=\"Worker Harvest Color\" [(colorPicker)]=\"workerDetailColor\" [style.background]=\"workerDetailColor\" [value]=\"workerDetailColor\"/>\n    </mat-form-field>\n  </mat-expansion-panel>\n\n  <mat-expansion-panel expanded=\"true\">\n    <mat-expansion-panel-header>\n      <mat-panel-title>\n        <mat-icon color=\"primary\">assessment</mat-icon>\n        Log\n      </mat-panel-title>\n    </mat-expansion-panel-header>\n\n    <button mat-raised-button (click)=\"messagesService.clear()\">Clear</button>\n\n    <br />\n\n    <mat-form-field class=\"full-width\">\n      <input matInput type=\"number\" placeholder=\"Log History\" min=\"0\" max=\"10000\" [(ngModel)]=\"messagesService.messageLimit\">\n    </mat-form-field>\n\n    <br />\n\n    <mat-form-field class=\"full-width\">\n      <mat-select placeholder=\"Visible Log Sources\" [(ngModel)]=\"messagesService.visibleSources\" (ngModelChange)=\"messagesService.getFilteredMessages()\" multiple>\n        <mat-option *ngFor=\"let messageSource of messageSources | enumToArray\" [(value)]=\"messageSources[messageSource]\">\n          {{messageSource | titlecase}}\n        </mat-option>\n      </mat-select>\n    </mat-form-field>\n  </mat-expansion-panel>\n\n  <mat-expansion-panel expanded=\"true\">\n    <mat-expansion-panel-header>\n      <mat-panel-title>\n        <mat-icon color=\"primary\">bug_report</mat-icon>\n        Debug\n      </mat-panel-title>\n    </mat-expansion-panel-header>\n\n    <mat-checkbox [(ngModel)]=\"debugMode\">Debug Mode</mat-checkbox>\n  </mat-expansion-panel>\n</mat-accordion>\n"
 
 /***/ }),
 
@@ -1367,7 +1437,10 @@ module.exports = "<h3>Version {{settingsService.gameVersion}}</h3>\n\n<mat-accor
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SettingsComponent", function() { return SettingsComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _services_settings_settings_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../services/settings/settings.service */ "./src/app/services/settings/settings.service.ts");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+/* harmony import */ var _services_settings_settings_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../services/settings/settings.service */ "./src/app/services/settings/settings.service.ts");
+/* harmony import */ var _services_messages_messages_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./../../services/messages/messages.service */ "./src/app/services/messages/messages.service.ts");
+/* harmony import */ var _objects_message__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./../../objects/message */ "./src/app/objects/message.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1379,9 +1452,15 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 };
 
 
+
+
+
 var SettingsComponent = /** @class */ (function () {
-    function SettingsComponent(settingsService) {
+    function SettingsComponent(settingsService, messagesService) {
         this.settingsService = settingsService;
+        this.messagesService = messagesService;
+        this.sources = new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"]();
+        this.messageSources = _objects_message__WEBPACK_IMPORTED_MODULE_4__["MessageSource"];
     }
     SettingsComponent.prototype.ngOnInit = function () {
     };
@@ -1426,32 +1505,12 @@ var SettingsComponent = /** @class */ (function () {
         enumerable: true,
         configurable: true
     });
-    Object.defineProperty(SettingsComponent.prototype, "mapDetailMode", {
-        get: function () {
-            return this.settingsService.mapDetailMode;
-        },
-        set: function (value) {
-            this.settingsService.mapDetailMode = value;
-        },
-        enumerable: true,
-        configurable: true
-    });
     Object.defineProperty(SettingsComponent.prototype, "mapLowFramerate", {
         get: function () {
             return this.settingsService.mapLowFramerate;
         },
         set: function (value) {
             this.settingsService.mapLowFramerate = value;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(SettingsComponent.prototype, "resourceDetailColor", {
-        get: function () {
-            return this.settingsService.resourceDetailColor;
-        },
-        set: function (value) {
-            this.settingsService.resourceDetailColor = value;
         },
         enumerable: true,
         configurable: true
@@ -1502,7 +1561,8 @@ var SettingsComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./settings.component.html */ "./src/app/components/settings/settings.component.html"),
             styles: [__webpack_require__(/*! ./settings.component.css */ "./src/app/components/settings/settings.component.css")]
         }),
-        __metadata("design:paramtypes", [_services_settings_settings_service__WEBPACK_IMPORTED_MODULE_1__["SettingsService"]])
+        __metadata("design:paramtypes", [_services_settings_settings_service__WEBPACK_IMPORTED_MODULE_2__["SettingsService"],
+            _services_messages_messages_service__WEBPACK_IMPORTED_MODULE_3__["MessagesService"]])
     ], SettingsComponent);
     return SettingsComponent;
 }());
@@ -2163,6 +2223,7 @@ var MapDirective = /** @class */ (function () {
         this.canvas = d3.select('canvas');
         this.context = this.canvas.node().getContext('2d');
         this.canvasContainer = document.getElementById('canvas-container');
+        this.detailTooltip = document.getElementById('detail-tooltip');
         var imageElementContainer = document.getElementById('tile-images');
         for (var i = 0; i < imageElementContainer.children.length; i++) {
             var imageElement = imageElementContainer.children[i];
@@ -2206,19 +2267,25 @@ var MapDirective = /** @class */ (function () {
                             _a.label = 2;
                         case 2: return [2 /*return*/];
                         case 3:
-                            coordinates = d3.mouse(this);
-                            coordinates[0] = Math.floor(self.transform.invertX(coordinates[0]) / self.mapService.tilePixelSize);
-                            coordinates[1] = Math.floor(self.transform.invertY(coordinates[1]) / self.mapService.tilePixelSize);
-                            tile = self.mapService.tiledMap[coordinates[0] + coordinates[1] * self.mapService.mapWidth];
-                            deleteMode = d3.event.ctrlKey;
-                            if (deleteMode && tile.buildingTileType !== undefined) {
-                                self.buildingsService.clearBuilding(tile);
+                            if (d3.event.type === 'mousedown' && self.mapService.cursorTool === _services_map_map_service__WEBPACK_IMPORTED_MODULE_7__["CursorTool"].DetailMode) {
+                                self.updateTooltip(d3.mouse(this));
+                                return [2 /*return*/];
                             }
-                            else if (!deleteMode && self.buildingsService.selectedBuilding !== undefined) {
-                                self.buildingsService.createBuilding(tile, self.buildingsService.selectedBuilding.tileType);
-                            }
-                            else if (d3.event.type !== 'mousemove' && self.fighterService.selectedFighterType !== undefined) {
-                                self.fighterService.createFighter(tile, self.fighterService.selectedFighterType);
+                            else if (self.mapService.cursorTool === _services_map_map_service__WEBPACK_IMPORTED_MODULE_7__["CursorTool"].PlaceBuildings) {
+                                coordinates = d3.mouse(this);
+                                coordinates[0] = Math.floor(self.transform.invertX(coordinates[0]) / self.mapService.tilePixelSize);
+                                coordinates[1] = Math.floor(self.transform.invertY(coordinates[1]) / self.mapService.tilePixelSize);
+                                tile = self.mapService.tiledMap[coordinates[0] + coordinates[1] * self.mapService.mapWidth];
+                                deleteMode = d3.event.ctrlKey;
+                                if (deleteMode && tile.buildingTileType !== undefined) {
+                                    self.buildingsService.clearBuilding(tile);
+                                }
+                                else if (!deleteMode && self.buildingsService.selectedBuilding !== undefined) {
+                                    self.buildingsService.createBuilding(tile, self.buildingsService.selectedBuilding.tileType);
+                                }
+                                else if (d3.event.type !== 'mousemove' && self.fighterService.selectedFighterType !== undefined) {
+                                    self.fighterService.createFighter(tile, self.fighterService.selectedFighterType);
+                                }
                             }
                             self.refreshCanvas();
                             return [2 /*return*/];
@@ -2226,6 +2293,25 @@ var MapDirective = /** @class */ (function () {
                 });
             });
         };
+    };
+    MapDirective.prototype.updateTooltip = function (mouseCoordinates) {
+        var _this = this;
+        var tileCoordinates = [Math.floor(this.transform.invertX(mouseCoordinates[0]) / this.mapService.tilePixelSize),
+            Math.floor(this.transform.invertY(mouseCoordinates[1]) / this.mapService.tilePixelSize)];
+        var focusedTile = this.mapService.tiledMap[tileCoordinates[0] + tileCoordinates[1] * this.mapService.mapWidth];
+        if (focusedTile.buildingTileType || focusedTile.resourceTileType) {
+            this.mapService.focusedTile = focusedTile;
+            this.mapService.focusedBuildingTile = this.mapService.buildingTiles[focusedTile.buildingTileType];
+            this.mapService.focusedResourceTile = this.mapService.resourceTiles[focusedTile.resourceTileType];
+            this.mapService.focusedResources = this.mapService.focusedResourceTile ?
+                this.mapService.focusedResourceTile.resourceIds.map(function (id) { return _this.resourcesService.getResource(id); }) : undefined;
+        }
+        else {
+            this.mapService.focusedTile = undefined;
+            this.mapService.focusedBuildingTile = undefined;
+            this.mapService.focusedResourceTile = undefined;
+            this.mapService.focusedResources = undefined;
+        }
     };
     MapDirective.prototype.updateEntities = function (self) {
         return function (elapsed) {
@@ -2329,23 +2415,21 @@ var MapDirective = /** @class */ (function () {
                 continue;
             }
             var mapTileImage = this.imageElements[tile.mapTileType.toLowerCase()];
-            this.context.drawImage(mapTileImage, tile.x, tile.y, this.mapService.tilePixelSize, this.mapService.tilePixelSize);
-            if (tile.resourceTileType) {
-                var resourceTileImage = this.imageElements[tile.resourceTileType.toLowerCase().replace(' ', '-')];
-                this.context.drawImage(resourceTileImage, tile.x, tile.y, this.mapService.tilePixelSize, this.mapService.tilePixelSize);
-            }
+            this.drawTile(tile.position, mapTileImage);
             if (tile.buildingTileType) {
                 var buildingTileImage = this.imageElements[tile.buildingTileType.toLowerCase()];
-                this.context.drawImage(buildingTileImage, tile.x, tile.y, this.mapService.tilePixelSize, this.mapService.tilePixelSize);
+                this.drawTile(tile.position, buildingTileImage);
+            }
+            if (tile.resourceTileType) {
+                var resourceTileImage = this.imageElements[tile.resourceTileType.toLowerCase().replace(' ', '-')];
+                this.drawTile(tile.position, resourceTileImage, 1, tile.health / tile.maxHealth);
             }
         }
         for (var _b = 0, _c = this.mapService.resourceAnimations; _b < _c.length; _b++) {
             var resourceAnimation = _c[_b];
             var resourceTileImage = this.imageElements[this.resourcesService.getResource(resourceAnimation.resourceId).name.toLowerCase().replace(' ', '-')];
             this.context.drawImage(resourceTileImage, resourceAnimation.x, resourceAnimation.y, this.mapService.tilePixelSize / 2, this.mapService.tilePixelSize / 2);
-            if (!this.settingsService.mapDetailMode) {
-                continue;
-            }
+            this.drawTile(resourceAnimation.position, resourceTileImage, 0.5);
             this.context.fillStyle = resourceAnimation.spawnedByPlayer ?
                 this.settingsService.harvestDetailColor : this.settingsService.workerDetailColor;
             this.context.fillText(Math.floor(resourceAnimation.multiplier).toString(), resourceAnimation.x + this.mapService.tilePixelSize / 2, resourceAnimation.y + this.mapService.tilePixelSize / 2);
@@ -2354,28 +2438,48 @@ var MapDirective = /** @class */ (function () {
             var enemy = _e[_d];
             var enemyTileImage = this.imageElements[enemy.name.toLowerCase().replace(' ', '-')];
             this.context.drawImage(enemyTileImage, enemy.x, enemy.y, this.mapService.tilePixelSize, this.mapService.tilePixelSize);
+            this.drawTile(enemy.position, enemyTileImage, 1, enemy.health / enemy.maxHealth);
         }
         for (var _f = 0, _g = this.fighterService.fighters; _f < _g.length; _f++) {
             var fighter = _g[_f];
             var fighterTileImage = this.imageElements[fighter.name.toLowerCase().replace(' ', '-')];
             this.context.drawImage(fighterTileImage, fighter.x, fighter.y, this.mapService.tilePixelSize, this.mapService.tilePixelSize);
+            this.drawTile(fighter.position, fighterTileImage, 1, fighter.health / fighter.maxHealth);
         }
-        if (this.settingsService.mapDetailMode) {
-            for (var _h = 0, _j = this.mapService.getResourceTiles(); _h < _j.length; _h++) {
-                var tile = _j[_h];
-                this.context.fillStyle = this.settingsService.resourceDetailColor;
-                var resourceTile = this.mapService.resourceTiles[tile.resourceTileType];
-                this.context.fillText(resourceTile.name, tile.x + this.mapService.tilePixelSize / 2, tile.y - this.mapService.tilePixelSize / 4);
-            }
-        }
-        for (var _k = 0, _l = this.mapService.projectiles; _k < _l.length; _k++) {
-            var projectile = _l[_k];
+        for (var _h = 0, _j = this.mapService.projectiles; _h < _j.length; _h++) {
+            var projectile = _j[_h];
             var projectileTileImage = this.imageElements[projectile.name.toLowerCase().replace(' ', '-')];
             this.context.translate(projectile.x, projectile.y);
             this.context.rotate(projectile.rotation);
             this.context.drawImage(projectileTileImage, -this.mapService.tilePixelSize / 2, -this.mapService.tilePixelSize / 2, this.mapService.tilePixelSize, this.mapService.tilePixelSize);
+            this.drawTile(new _objects_vector__WEBPACK_IMPORTED_MODULE_1__["Vector"](-this.mapService.tilePixelSize / 2, -this.mapService.tilePixelSize / 2), projectileTileImage);
             this.context.rotate(-projectile.rotation);
             this.context.translate(-projectile.x, -projectile.y);
+        }
+        if (!this.mapService.focusedTile) {
+            return;
+        }
+        this.detailTooltip.style.setProperty('--detail-tooltip-top', this.mapService.focusedTile.y * this.transform.k + this.transform.y - this.detailTooltip.clientHeight + 'px');
+        this.detailTooltip.style.setProperty('--detail-tooltip-left', (this.mapService.focusedTile.x + this.mapService.tilePixelSize) * this.transform.k + this.transform.x +
+            this.element.nativeElement.getBoundingClientRect().left + 'px');
+        this.context.globalAlpha = 0.5;
+        this.context.fillStyle = 'cyan';
+        for (var _k = 0, _l = this.mapService.focusedTile.buildingPath; _k < _l.length; _k++) {
+            var pathTile = _l[_k];
+            this.context.fillRect(pathTile.x, pathTile.y, this.mapService.tilePixelSize, this.mapService.tilePixelSize);
+        }
+        this.context.fillStyle = 'black';
+        this.context.globalAlpha = 1;
+    };
+    MapDirective.prototype.drawTile = function (position, image, scale, healthRatio) {
+        if (scale === void 0) { scale = 1; }
+        if (healthRatio === void 0) { healthRatio = 1; }
+        this.context.drawImage(image, position.x, position.y, this.mapService.tilePixelSize * scale, this.mapService.tilePixelSize * scale);
+        if (healthRatio > 0 && healthRatio < 1) {
+            this.context.fillStyle = 'red';
+            this.context.fillRect(position.x, position.y + this.mapService.tilePixelSize, this.mapService.tilePixelSize * healthRatio, -2);
+            this.context.fillStyle = 'black';
+            this.context.strokeRect(position.x, position.y + this.mapService.tilePixelSize, this.mapService.tilePixelSize, -2);
         }
     };
     MapDirective = __decorate([
@@ -2878,6 +2982,7 @@ var Tile = /** @class */ (function () {
         this.buildingPath = [];
         this.buildingRemovable = buildingRemovable;
         this.health = health;
+        this.maxHealth = health;
         this.position = position;
         this.tileCropDetail = tileCropDetail;
     }
@@ -3720,11 +3825,12 @@ var FighterService = /** @class */ (function () {
 /*!*********************************************!*\
   !*** ./src/app/services/map/map.service.ts ***!
   \*********************************************/
-/*! exports provided: MapService */
+/*! exports provided: CursorTool, MapService */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CursorTool", function() { return CursorTool; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MapService", function() { return MapService; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm5/index.js");
@@ -3749,6 +3855,11 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 var Jimp = __webpack_require__(/*! jimp */ "./node_modules/jimp/browser/lib/jimp.js");
 var baseTiles = __webpack_require__(/*! ../../../assets/json/tileTypes.json */ "./src/assets/json/tileTypes.json");
+var CursorTool;
+(function (CursorTool) {
+    CursorTool["PlaceBuildings"] = "PLACEBUILDINGS";
+    CursorTool["DetailMode"] = "DETAILMODE";
+})(CursorTool || (CursorTool = {}));
 var MapService = /** @class */ (function () {
     function MapService(resourcesService) {
         this.resourcesService = resourcesService;
@@ -3759,6 +3870,7 @@ var MapService = /** @class */ (function () {
         this.mapTileArray = [];
         this.buildingTileArray = [];
         this.resourceTileArray = [];
+        this.cursorTool = CursorTool.PlaceBuildings;
         this.enemySpawnTiles = [];
         this.tiledMap = [];
         this.resourceAnimations = [];
@@ -4043,6 +4155,9 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 var MessagesService = /** @class */ (function () {
     function MessagesService() {
         this.messages = [];
+        this.visibleSources = [_objects_message__WEBPACK_IMPORTED_MODULE_2__["MessageSource"].Admin, _objects_message__WEBPACK_IMPORTED_MODULE_2__["MessageSource"].Buildings, _objects_message__WEBPACK_IMPORTED_MODULE_2__["MessageSource"].Main, _objects_message__WEBPACK_IMPORTED_MODULE_2__["MessageSource"].Enemy,
+            _objects_message__WEBPACK_IMPORTED_MODULE_2__["MessageSource"].Fighter, _objects_message__WEBPACK_IMPORTED_MODULE_2__["MessageSource"].Map, _objects_message__WEBPACK_IMPORTED_MODULE_2__["MessageSource"].Resources, _objects_message__WEBPACK_IMPORTED_MODULE_2__["MessageSource"].Settings,
+            _objects_message__WEBPACK_IMPORTED_MODULE_2__["MessageSource"].Store, _objects_message__WEBPACK_IMPORTED_MODULE_2__["MessageSource"].Upgrades, _objects_message__WEBPACK_IMPORTED_MODULE_2__["MessageSource"].Workers];
         this.messagesDataSource = new _angular_material__WEBPACK_IMPORTED_MODULE_1__["MatTableDataSource"](this.messages);
         this.messageLimit = 50;
     }
@@ -4051,14 +4166,15 @@ var MessagesService = /** @class */ (function () {
             this.messages = this.messages.slice(1);
         }
         this.messages.push(new _objects_message__WEBPACK_IMPORTED_MODULE_2__["Message"](source, message));
-        this.messagesDataSource.data = this.messages.slice();
+        this.getFilteredMessages();
     };
     MessagesService.prototype.clear = function () {
         this.messages = [];
         this.messagesDataSource.data = [];
     };
-    MessagesService.prototype.getFilteredMessages = function (sources) {
-        return this.messages.filter(function (message) { return message.source in sources; });
+    MessagesService.prototype.getFilteredMessages = function () {
+        var _this = this;
+        this.messagesDataSource.data = this.messages.filter(function (message) { return _this.visibleSources.includes(message.source); });
     };
     MessagesService = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
@@ -4338,9 +4454,7 @@ var SettingsService = /** @class */ (function () {
                 debugMode: this.debugMode,
                 enemiesActive: this.enemyService.enemiesActive,
                 slimInterface: this.slimInterface,
-                mapDetailMode: this.mapDetailMode,
                 mapLowFramerate: this.mapLowFramerate,
-                resourceDetailColor: this.resourceDetailColor,
                 harvestDetailColor: this.harvestDetailColor,
                 workerDetailColor: this.workerDetailColor
             },
@@ -4392,6 +4506,8 @@ var SettingsService = /** @class */ (function () {
             }
             var tileData = {
                 id: tile.id,
+                health: tile.health,
+                maxHealth: tile.maxHealth,
                 buildingRemovable: tile.buildingRemovable,
                 tileCropDetail: tile.tileCropDetail
             };
@@ -4436,7 +4552,6 @@ var SettingsService = /** @class */ (function () {
                 moveable: fighter.moveable
             });
         }
-        console.log(saveData);
         return btoa(JSON.stringify(saveData));
     };
     SettingsService.prototype.importSave = function (saveDataString) {
@@ -4499,6 +4614,8 @@ var SettingsService = /** @class */ (function () {
                     if (tile === undefined) {
                         return "continue";
                     }
+                    // tile.health = tileData.health;
+                    // tile.maxHealth = tileData.maxHealth;
                     tile.resourceTileType = tileData.resourceTileType;
                     tile.buildingTileType = tileData.buildingTileType;
                     tile.buildingRemovable = tileData.buildingRemovable;
@@ -4536,9 +4653,7 @@ var SettingsService = /** @class */ (function () {
                 this.debugMode = saveData.settings.debugMode ? saveData.settings.debugMode : false;
                 this.enemyService.enemiesActive = saveData.settings.enemiesActive ? saveData.settings.enemiesActive : false;
                 this.slimInterface = saveData.settings.slimInterface ? saveData.settings.slimInterface : false;
-                this.mapDetailMode = saveData.settings.mapDetailMode ? saveData.settings.mapDetailMode : true;
                 this.mapLowFramerate = saveData.settings.mapLowFramerate ? saveData.settings.mapLowFramerate : false;
-                this.resourceDetailColor = saveData.settings.resourceDetailColor ? saveData.settings.resourceDetailColor : '#000000';
                 this.harvestDetailColor = saveData.settings.harvestDetailColor ? saveData.settings.harvestDetailColor : '#a4ff89';
                 this.workerDetailColor = saveData.settings.workerDetailColor ? saveData.settings.workerDetailColor : '#ae89ff';
             }
@@ -5182,7 +5297,7 @@ module.exports = [{"id":0,"name":"gold","resourceType":"CURRENCY","iconPath":"..
 /*! exports provided: tileTypes, mapTiles, buildingTiles, resourceTiles, default */
 /***/ (function(module) {
 
-module.exports = {"tileTypes":{"1":"GRASS","2":"WATER","3":"MOUNTAIN","5":"OAKTREE","6":"PINETREE","7":"BIRCHTREE","8":"EUCALYPTUSTREE","9":"WILLOWTREE","10":"TEAKTREE","11":"DEADENT","12":"STONEMINE","13":"GRAPHITEMINE","14":"LIMESTONEMINE","15":"MARBLEMINE","16":"QUARTZMINE","17":"OBSIDIANMINE","18":"DIAMONDMINE","19":"COPPERMINE","20":"TINMINE","21":"IRONMINE","22":"GOLDMINE","23":"LATINUMMINE","24":"UNBELIEVIUMMINE","25":"LUSTRIALMINE","26":"SPECTRUSMINE","27":"CRACKEDFORGE","28":"STONEFORGE","29":"IRONFORGE","30":"GOLDFORGE","31":"LATINUMFORGE","32":"TEMPROUSDISTILLERY","69":"HOME","70":"WALL","71":"ROAD","72":"BRIDGE","73":"ENEMYPORTAL"},"mapTiles":{"GRASS":{"tileType":"GRASS","name":"Grass","walkable":true},"WATER":{"tileType":"WATER","name":"Water","walkable":false},"MOUNTAIN":{"tileType":"MOUNTAIN","name":"Mountain","walkable":false}},"buildingTiles":{"HOME":{"tileType":"HOME","name":"Home","description":"","placeable":false,"resourceCosts":[],"buildableSurfaces":[],"resourcePathable":true},"WALL":{"tileType":"WALL","name":"Wall","description":"Keeps invaders out.","placeable":true,"resourceCosts":[{"resourceId":1,"resourceCost":20}],"buildableSurfaces":["GRASS"],"resourcePathable":false},"ROAD":{"tileType":"ROAD","name":"Road","description":"Allows access between buildings.","placeable":true,"resourceCosts":[{"resourceId":13,"resourceCost":20}],"buildableSurfaces":["GRASS"],"resourcePathable":true},"BRIDGE":{"tileType":"BRIDGE","name":"Bridge","description":"Allows access between islands.","placeable":true,"resourceCosts":[{"resourceId":7,"resourceCost":40}],"buildableSurfaces":["WATER"],"resourcePathable":true},"CRACKEDFORGE":{"tileType":"CRACKEDFORGE","name":"Cracked Forge","description":"An old, weary forge. Bronze ingots are probably all this thing is capable of producing.","placeable":true,"resourceCosts":[{"resourceId":0,"resourceCost":150}],"buildableSurfaces":["GRASS"],"placesResourceTile":true,"resourceTileType":"CRACKEDFORGE","resourcePathable":true},"STONEFORGE":{"tileType":"STONEFORGE","name":"Stone Forge","description":"This forge burns hotter, allowing you to create more precious ingots.","placeable":true,"resourceCosts":[{"resourceId":0,"resourceCost":150},{"resourceId":13,"resourceCost":50},{"resourceId":7,"resourceCost":75},{"resourceId":4,"resourceCost":20}],"buildableSurfaces":["GRASS"],"placesResourceTile":true,"resourceTileType":"STONEFORGE","resourcePathable":true},"IRONFORGE":{"tileType":"IRONFORGE","name":"Iron Forge","description":"This forge burns hotter, allowing you to create more precious ingots.","placeable":true,"resourceCosts":[{"resourceId":6,"resourceCost":500},{"resourceId":9,"resourceCost":700},{"resourceId":28,"resourceCost":250}],"buildableSurfaces":["GRASS"],"placesResourceTile":true,"resourceTileType":"IRONFORGE","resourcePathable":true},"GOLDFORGE":{"tileType":"GOLDFORGE","name":"Gold Forge","description":"For reasons unknown to science, gold forges are particularly effective in forging latinum.","placeable":true,"resourceCosts":[{"resourceId":12,"resourceCost":1200},{"resourceId":15,"resourceCost":1500},{"resourceId":29,"resourceCost":250}],"buildableSurfaces":["GRASS"],"placesResourceTile":true,"resourceTileType":"GOLDFORGE","resourcePathable":true},"LATINUMFORGE":{"tileType":"LATINUMFORGE","name":"Latinum Forge","description":"A forge that burns hot enough to fuse together the world's most precious and rare metals.","placeable":true,"resourceCosts":[{"resourceId":19,"resourceCost":2500},{"resourceId":25,"resourceCost":1500},{"resourceId":30,"resourceCost":700}],"buildableSurfaces":["GRASS"],"placesResourceTile":true,"resourceTileType":"LATINUMFORGE","resourcePathable":true},"TEMPROUSDISTILLERY":{"tileType":"TEMPROUSDISTILLERY","name":"Temprous Distillery","description":"With this device, all impurities can be removed from temprous ingots, unlocking their limitless potential.","placeable":true,"resourceCosts":[{"resourceId":23,"resourceCost":5000},{"resourceId":16,"resourceCost":500},{"resourceId":31,"resourceCost":1200}],"buildableSurfaces":["GRASS"],"placesResourceTile":true,"resourceTileType":"TEMPROUSDISTILLERY","resourcePathable":true},"ENEMYPORTAL":{"tileType":"ENEMYPORTAL","name":"Enemy Portal","description":"","placeable":false,"resourceCosts":[],"buildableSurfaces":[],"resourcePathable":true}},"resourceTiles":{"OAKTREE":{"tileType":"OAKTREE","name":"Oak Tree","placeable":false,"resourceIds":[1]},"PINETREE":{"tileType":"PINETREE","name":"Pine Tree","placeable":false,"resourceIds":[7]},"BIRCHTREE":{"tileType":"BIRCHTREE","name":"Birch Tree","placeable":false,"resourceIds":[8]},"EUCALYPTUSTREE":{"tileType":"EUCALYPTUSTREE","name":"Eucalptus Tree","placeable":false,"resourceIds":[9]},"WILLOWTREE":{"tileType":"WILLOWTREE","name":"Willow Tree","placeable":false,"resourceIds":[15]},"TEAKTREE":{"tileType":"TEAKTREE","name":"Teak Tree","placeable":false,"resourceIds":[25]},"DEADENT":{"tileType":"DEADENT","name":"Dead Ent","placeable":false,"resourceIds":[16,17]},"STONEMINE":{"tileType":"STONEMINE","name":"Stone Mine","placeable":false,"resourceIds":[13]},"GRAPHITEMINE":{"tileType":"GRAPHITEMINE","name":"Graphite Mine","placeable":false,"resourceIds":[26]},"LIMESTONEMINE":{"tileType":"LIMESTONEMINE","name":"Limestone Mine","placeable":false,"resourceIds":[27]},"MARBLEMINE":{"tileType":"MARBLEMINE","name":"Marble Mine","placeable":false,"resourceIds":[28]},"QUARTZMINE":{"tileType":"QUARTZMINE","name":"Quartz Mine","placeable":false,"resourceIds":[29]},"OBSIDIANMINE":{"tileType":"OBSIDIANMINE","name":"Obsidian Mine","placeable":false,"resourceIds":[30]},"DIAMONDMINE":{"tileType":"DIAMONDMINE","name":"Diamond Mine","placeable":false,"resourceIds":[31]},"COPPERMINE":{"tileType":"COPPERMINE","name":"Copper Mine","placeable":false,"resourceIds":[2]},"TINMINE":{"tileType":"TINMINE","name":"Tin Mine","placeable":false,"resourceIds":[3]},"IRONMINE":{"tileType":"IRONMINE","name":"Iron Mine","placeable":false,"resourceIds":[5]},"GOLDMINE":{"tileType":"GOLDMINE","name":"Gold Mine","placeable":false,"resourceIds":[11]},"LATINUMMINE":{"tileType":"LATINUMMINE","name":"Latinum Mine","placeable":false,"resourceIds":[18]},"UNBELIEVIUMMINE":{"tileType":"UNBELIEVIUMMINE","name":"Unbelievium Mine","placeable":false,"resourceIds":[20]},"LUSTRIALMINE":{"tileType":"LUSTRIALMINE","name":"Lustrial Mine","placeable":false,"resourceIds":[21]},"SPECTRUSMINE":{"tileType":"SPECTRUSMINE","name":"Spectrus Mine","placeable":false,"resourceIds":[22]},"CRACKEDFORGE":{"tileType":"CRACKEDFORGE","name":"Cracked Forge","placeable":true,"resourceIds":[4]},"STONEFORGE":{"tileType":"STONEFORGE","name":"Stone Forge","placeable":true,"resourceIds":[4,6]},"IRONFORGE":{"tileType":"IRONFORGE","name":"Iron Forge","placeable":true,"resourceIds":[4,6,10,12]},"GOLDFORGE":{"tileType":"GOLDFORGE","name":"Gold Forge","placeable":true,"resourceIds":[4,6,10,12,19]},"LATINUMFORGE":{"tileType":"LATINUMFORGE","name":"Latinum Forge","placeable":true,"resourceIds":[4,6,10,12,19,23]},"TEMPROUSDISTILLERY":{"tileType":"TEMPROUSDISTILLERY","name":"Temprous Distillery","placeable":true,"resourceIds":[4,6,10,12,19,23,24]}}};
+module.exports = {"tileTypes":{"1":"GRASS","2":"WATER","3":"MOUNTAIN","5":"OAKTREE","6":"PINETREE","7":"BIRCHTREE","8":"EUCALYPTUSTREE","9":"WILLOWTREE","10":"TEAKTREE","11":"DEADENT","12":"STONEMINE","13":"GRAPHITEMINE","14":"LIMESTONEMINE","15":"MARBLEMINE","16":"QUARTZMINE","17":"OBSIDIANMINE","18":"DIAMONDMINE","19":"COPPERMINE","20":"TINMINE","21":"IRONMINE","22":"GOLDMINE","23":"LATINUMMINE","24":"UNBELIEVIUMMINE","25":"LUSTRIALMINE","26":"SPECTRUSMINE","27":"CRACKEDFORGE","28":"STONEFORGE","29":"IRONFORGE","30":"GOLDFORGE","31":"LATINUMFORGE","32":"TEMPROUSDISTILLERY","69":"HOME","70":"WALL","71":"ROAD","72":"BRIDGE","73":"ENEMYPORTAL"},"mapTiles":{"GRASS":{"tileType":"GRASS","name":"Grass","walkable":true},"WATER":{"tileType":"WATER","name":"Water","walkable":false},"MOUNTAIN":{"tileType":"MOUNTAIN","name":"Mountain","walkable":false}},"buildingTiles":{"HOME":{"tileType":"HOME","name":"Home","description":"","placeable":false,"resourceCosts":[],"buildableSurfaces":[],"resourcePathable":true},"WALL":{"tileType":"WALL","name":"Wall","description":"Keeps invaders out.","placeable":true,"resourceCosts":[{"resourceId":1,"resourceCost":20}],"buildableSurfaces":["GRASS"],"resourcePathable":false},"ROAD":{"tileType":"ROAD","name":"Road","description":"Allows access between buildings.","placeable":true,"resourceCosts":[{"resourceId":13,"resourceCost":20}],"buildableSurfaces":["GRASS"],"resourcePathable":true},"BRIDGE":{"tileType":"BRIDGE","name":"Bridge","description":"Allows access between islands.","placeable":true,"resourceCosts":[{"resourceId":7,"resourceCost":40}],"buildableSurfaces":["WATER"],"resourcePathable":true},"CRACKEDFORGE":{"tileType":"CRACKEDFORGE","name":"Cracked Forge","description":"An old, weary forge. Bronze ingots are probably all this thing is capable of producing.","placeable":true,"upgradeBuilding":"STONEFORGE","resourceCosts":[{"resourceId":0,"resourceCost":150}],"buildableSurfaces":["GRASS"],"placesResourceTile":true,"resourceTileType":"CRACKEDFORGE","resourcePathable":true},"STONEFORGE":{"tileType":"STONEFORGE","name":"Stone Forge","description":"This forge burns hotter, allowing you to create more precious ingots.","placeable":false,"upgradeBuilding":"IRONFORGE","resourceCosts":[{"resourceId":0,"resourceCost":150},{"resourceId":13,"resourceCost":50},{"resourceId":7,"resourceCost":75},{"resourceId":4,"resourceCost":20}],"buildableSurfaces":["GRASS"],"placesResourceTile":true,"resourceTileType":"STONEFORGE","resourcePathable":true},"IRONFORGE":{"tileType":"IRONFORGE","name":"Iron Forge","description":"This forge burns hotter, allowing you to create more precious ingots.","placeable":false,"upgradeBuilding":"GOLDFORGE","resourceCosts":[{"resourceId":6,"resourceCost":500},{"resourceId":9,"resourceCost":700},{"resourceId":28,"resourceCost":250}],"buildableSurfaces":["GRASS"],"placesResourceTile":true,"resourceTileType":"IRONFORGE","resourcePathable":true},"GOLDFORGE":{"tileType":"GOLDFORGE","name":"Gold Forge","description":"For reasons unknown to science, gold forges are particularly effective in forging latinum.","placeable":false,"upgradeBuilding":"LATINUMFORGE","resourceCosts":[{"resourceId":12,"resourceCost":1200},{"resourceId":15,"resourceCost":1500},{"resourceId":29,"resourceCost":250}],"buildableSurfaces":["GRASS"],"placesResourceTile":true,"resourceTileType":"GOLDFORGE","resourcePathable":true},"LATINUMFORGE":{"tileType":"LATINUMFORGE","name":"Latinum Forge","description":"A forge that burns hot enough to fuse together the world's most precious and rare metals.","placeable":false,"upgradeBuilding":"TEMPROUSDISTILLERY","resourceCosts":[{"resourceId":19,"resourceCost":2500},{"resourceId":25,"resourceCost":1500},{"resourceId":30,"resourceCost":700}],"buildableSurfaces":["GRASS"],"placesResourceTile":true,"resourceTileType":"LATINUMFORGE","resourcePathable":true},"TEMPROUSDISTILLERY":{"tileType":"TEMPROUSDISTILLERY","name":"Temprous Distillery","description":"With this device, all impurities can be removed from temprous ingots, unlocking their limitless potential.","placeable":false,"resourceCosts":[{"resourceId":23,"resourceCost":5000},{"resourceId":16,"resourceCost":500},{"resourceId":31,"resourceCost":1200}],"buildableSurfaces":["GRASS"],"placesResourceTile":true,"resourceTileType":"TEMPROUSDISTILLERY","resourcePathable":true},"ENEMYPORTAL":{"tileType":"ENEMYPORTAL","name":"Enemy Portal","description":"","placeable":false,"resourceCosts":[],"buildableSurfaces":[],"resourcePathable":true}},"resourceTiles":{"OAKTREE":{"tileType":"OAKTREE","name":"Oak Tree","placeable":false,"resourceIds":[1]},"PINETREE":{"tileType":"PINETREE","name":"Pine Tree","placeable":false,"resourceIds":[7]},"BIRCHTREE":{"tileType":"BIRCHTREE","name":"Birch Tree","placeable":false,"resourceIds":[8]},"EUCALYPTUSTREE":{"tileType":"EUCALYPTUSTREE","name":"Eucalptus Tree","placeable":false,"resourceIds":[9]},"WILLOWTREE":{"tileType":"WILLOWTREE","name":"Willow Tree","placeable":false,"resourceIds":[15]},"TEAKTREE":{"tileType":"TEAKTREE","name":"Teak Tree","placeable":false,"resourceIds":[25]},"DEADENT":{"tileType":"DEADENT","name":"Dead Ent","placeable":false,"resourceIds":[16,17]},"STONEMINE":{"tileType":"STONEMINE","name":"Stone Mine","placeable":false,"resourceIds":[13]},"GRAPHITEMINE":{"tileType":"GRAPHITEMINE","name":"Graphite Mine","placeable":false,"resourceIds":[26]},"LIMESTONEMINE":{"tileType":"LIMESTONEMINE","name":"Limestone Mine","placeable":false,"resourceIds":[27]},"MARBLEMINE":{"tileType":"MARBLEMINE","name":"Marble Mine","placeable":false,"resourceIds":[28]},"QUARTZMINE":{"tileType":"QUARTZMINE","name":"Quartz Mine","placeable":false,"resourceIds":[29]},"OBSIDIANMINE":{"tileType":"OBSIDIANMINE","name":"Obsidian Mine","placeable":false,"resourceIds":[30]},"DIAMONDMINE":{"tileType":"DIAMONDMINE","name":"Diamond Mine","placeable":false,"resourceIds":[31]},"COPPERMINE":{"tileType":"COPPERMINE","name":"Copper Mine","placeable":false,"resourceIds":[2]},"TINMINE":{"tileType":"TINMINE","name":"Tin Mine","placeable":false,"resourceIds":[3]},"IRONMINE":{"tileType":"IRONMINE","name":"Iron Mine","placeable":false,"resourceIds":[5]},"GOLDMINE":{"tileType":"GOLDMINE","name":"Gold Mine","placeable":false,"resourceIds":[11]},"LATINUMMINE":{"tileType":"LATINUMMINE","name":"Latinum Mine","placeable":false,"resourceIds":[18]},"UNBELIEVIUMMINE":{"tileType":"UNBELIEVIUMMINE","name":"Unbelievium Mine","placeable":false,"resourceIds":[20]},"LUSTRIALMINE":{"tileType":"LUSTRIALMINE","name":"Lustrial Mine","placeable":false,"resourceIds":[21]},"SPECTRUSMINE":{"tileType":"SPECTRUSMINE","name":"Spectrus Mine","placeable":false,"resourceIds":[22]},"CRACKEDFORGE":{"tileType":"CRACKEDFORGE","name":"Cracked Forge","placeable":true,"resourceIds":[4]},"STONEFORGE":{"tileType":"STONEFORGE","name":"Stone Forge","placeable":true,"resourceIds":[4,6]},"IRONFORGE":{"tileType":"IRONFORGE","name":"Iron Forge","placeable":true,"resourceIds":[4,6,10,12]},"GOLDFORGE":{"tileType":"GOLDFORGE","name":"Gold Forge","placeable":true,"resourceIds":[4,6,10,12,19]},"LATINUMFORGE":{"tileType":"LATINUMFORGE","name":"Latinum Forge","placeable":true,"resourceIds":[4,6,10,12,19,23]},"TEMPROUSDISTILLERY":{"tileType":"TEMPROUSDISTILLERY","name":"Temprous Distillery","placeable":true,"resourceIds":[4,6,10,12,19,23,24]}}};
 
 /***/ }),
 
