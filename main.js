@@ -86,6 +86,9 @@ var AppComponent = /** @class */ (function () {
         this.mobileQuery = media.matchMedia('(max-width: 600px)');
         this._mobileQueryListener = function () { return changeDetectorRef.detectChanges(); };
         this.mobileQuery.addListener(this._mobileQueryListener);
+        window.onbeforeunload = function (_) {
+            return '';
+        };
     }
     Object.defineProperty(AppComponent.prototype, "affordableUpgradeCount", {
         get: function () {
@@ -2210,6 +2213,8 @@ var MapDirective = /** @class */ (function () {
         this.fighterService = fighterService;
         this.buildingsService = buildingsService;
         this.mapService = mapService;
+        this.lastEnemyReprosessTime = Date.now();
+        this.enemyReprocessDelay = 2000;
         this.headerPixels = 64;
         this.imageElements = {};
         this.transform = d3.zoomIdentity;
@@ -2255,18 +2260,14 @@ var MapDirective = /** @class */ (function () {
     MapDirective.prototype.clickTile = function (self) {
         return function (elapsed) {
             return __awaiter(this, void 0, void 0, function () {
-                var coordinates, tile, deleteMode;
+                var shouldUpdateEnemies, coordinates, tile, deleteMode, buildingCleared, buildingCreated;
                 return __generator(this, function (_a) {
                     switch (_a.label) {
                         case 0:
-                            if (!!d3.event.buttons) return [3 /*break*/, 3];
-                            if (!(d3.event.type === 'mouseup')) return [3 /*break*/, 2];
-                            return [4 /*yield*/, self.enemyService.recalculateTargets()];
-                        case 1:
-                            _a.sent();
-                            _a.label = 2;
-                        case 2: return [2 /*return*/];
-                        case 3:
+                            if (!d3.event.buttons && d3.event.type !== 'mouseup') {
+                                return [2 /*return*/];
+                            }
+                            shouldUpdateEnemies = d3.event.type === 'mouseup';
                             if (d3.event.type === 'mousedown' && self.mapService.cursorTool === _services_map_map_service__WEBPACK_IMPORTED_MODULE_7__["CursorTool"].DetailMode) {
                                 self.updateTooltip(d3.mouse(this));
                                 return [2 /*return*/];
@@ -2277,16 +2278,26 @@ var MapDirective = /** @class */ (function () {
                                 coordinates[1] = Math.floor(self.transform.invertY(coordinates[1]) / self.mapService.tilePixelSize);
                                 tile = self.mapService.tiledMap[coordinates[0] + coordinates[1] * self.mapService.mapWidth];
                                 deleteMode = d3.event.ctrlKey;
-                                if (deleteMode && tile.buildingTileType !== undefined) {
-                                    self.buildingsService.clearBuilding(tile);
+                                if (deleteMode && !self.fighterService.selectedFighterType) {
+                                    buildingCleared = self.buildingsService.clearBuilding(tile);
+                                    shouldUpdateEnemies = shouldUpdateEnemies && buildingCleared;
                                 }
-                                else if (!deleteMode && self.buildingsService.selectedBuilding !== undefined) {
-                                    self.buildingsService.createBuilding(tile, self.buildingsService.selectedBuilding.tileType);
+                                else if (!deleteMode && self.buildingsService.selectedBuilding) {
+                                    buildingCreated = self.buildingsService.createBuilding(tile, self.buildingsService.selectedBuilding.tileType);
+                                    shouldUpdateEnemies = shouldUpdateEnemies && buildingCreated;
                                 }
-                                else if (d3.event.type !== 'mousemove' && self.fighterService.selectedFighterType !== undefined) {
+                                else if (d3.event.type !== 'mousemove' && self.fighterService.selectedFighterType) {
                                     self.fighterService.createFighter(tile, self.fighterService.selectedFighterType);
+                                    shouldUpdateEnemies = false;
                                 }
                             }
+                            if (!(shouldUpdateEnemies && Date.now() - self.lastEnemyReprosessTime > self.enemyReprocessDelay)) return [3 /*break*/, 2];
+                            self.lastEnemyReprosessTime = Date.now();
+                            return [4 /*yield*/, self.enemyService.recalculateTargets()];
+                        case 1:
+                            _a.sent();
+                            _a.label = 2;
+                        case 2:
                             self.refreshCanvas();
                             return [2 /*return*/];
                     }
@@ -3297,8 +3308,8 @@ var BuildingsService = /** @class */ (function () {
         return true;
     };
     BuildingsService.prototype.clearBuilding = function (tile) {
-        if (!tile.buildingRemovable) {
-            return;
+        if (!tile.buildingRemovable || !tile.buildingTileType) {
+            return false;
         }
         var buildingTile = this.mapService.buildingTiles[tile.buildingTileType];
         if (buildingTile.placesResourceTile) {
@@ -3310,6 +3321,7 @@ var BuildingsService = /** @class */ (function () {
             this.resourcesService.addResourceAmount(resourceCost.resourceId, resourceCost.resourceCost * 0.85);
         }
         this.mapService.calculateResourceConnections();
+        return true;
     };
     BuildingsService = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
@@ -3526,10 +3538,9 @@ var EnemyService = /** @class */ (function () {
         this.messagesService = messagesService;
         this.enemyTypes = baseEnemyTypes;
         this.enemies = [];
-        this.reprocessing = false;
         this.minimumResourceAmount = 500;
-        this.maxPathRetryCount = 10;
-        this.maxEnemyCount = 5;
+        this.maxPathRetryCount = 25;
+        this.maxEnemyCount = 25;
         this.openPortal(this.mapService.enemySpawnTiles[0]);
         var spawnSource = Object(rxjs__WEBPACK_IMPORTED_MODULE_1__["timer"])(45000, 45000);
         var spawnSubscribe = spawnSource.subscribe(function (_) { return _this.spawnEnemy(); });
@@ -3549,19 +3560,16 @@ var EnemyService = /** @class */ (function () {
         enemy.pathStep = 0;
         enemy.pathingDone = false;
         enemy.currentTile = this.getTilePosition(enemy);
-        if (!this.mapService.mapTiles[enemy.currentTile.mapTileType].walkable) {
-            enemy.position = new _objects_vector__WEBPACK_IMPORTED_MODULE_3__["Vector"](enemy.spawnPosition.x, enemy.spawnPosition.y);
-            enemy.currentTile = this.getTilePosition(enemy);
-        }
         if (enemy.targetIndex < 0) {
             enemy.targets = enemy.targets.filter(function (target) { return !target.wanderTarget; });
             enemy.targets.push({ tile: this.mapService.getRandomTile([_objects_tile__WEBPACK_IMPORTED_MODULE_5__["MapTileType"].Grass]), accessible: true, wanderTarget: true });
             enemy.targetIndex = enemy.targets.length - 1;
         }
-        this.mapService.findPath(enemy.currentTile, enemy.targets[enemy.targetIndex].tile, false, true).subscribe(function (tilePath) {
+        this.mapService.findPath(enemy.currentTile, enemy.targets[enemy.targetIndex].tile, false, true, 250).subscribe(function (tilePath) {
             enemy.tilePath = tilePath;
             if (!enemy.tilePath.length) {
                 enemy.pathAttempt++;
+                enemy.targets[enemy.targetIndex].accessible = false;
                 if (enemy.pathAttempt >= _this.maxPathRetryCount) {
                     _this.killEnemy(enemy);
                 }
@@ -3581,10 +3589,6 @@ var EnemyService = /** @class */ (function () {
         var y = Math.floor(enemy.y / 16) * 16;
         return this.mapService.tiledMap.filter(function (tile) { return tile.x === x && tile.y === y; })[0];
     };
-    EnemyService.prototype.snapToTile = function (enemy, tile) {
-        enemy.x = tile.x;
-        enemy.y = tile.y;
-    };
     EnemyService.prototype.spawnEnemy = function () {
         if (Math.random() > 0.2) {
             var spawnIndex = Math.floor(Math.random() * this.mapService.enemySpawnTiles.length);
@@ -3603,6 +3607,7 @@ var EnemyService = /** @class */ (function () {
         this.enemies.push(enemy);
     };
     EnemyService.prototype.findTargets = function (enemy) {
+        var _this = this;
         var _loop_1 = function (buildingType) {
             var _loop_2 = function (tile) {
                 if (!enemy.targets.some(function (target) { return target.tile === tile; })) {
@@ -3619,7 +3624,8 @@ var EnemyService = /** @class */ (function () {
             var buildingType = _a[_i];
             _loop_1(buildingType);
         }
-        if (enemy.targets[enemy.targetIndex].wanderTarget) {
+        if (enemy.targets[enemy.targetIndex].wanderTarget ||
+            enemy.tilePath.some(function (tile) { return !tile.buildingTileType || !_this.mapService.mapTiles[tile.mapTileType].walkable; })) {
             this.finishTask(enemy);
         }
     };
@@ -3627,12 +3633,7 @@ var EnemyService = /** @class */ (function () {
         return __awaiter(this, void 0, void 0, function () {
             var _this = this;
             return __generator(this, function (_a) {
-                if (this.reprocessing) {
-                    return [2 /*return*/];
-                }
-                this.reprocessing = true;
                 this.enemies.map(function (enemy) { return _this.findTargets(enemy); });
-                this.reprocessing = false;
                 return [2 /*return*/];
             });
         });
@@ -3987,7 +3988,8 @@ var MapService = /** @class */ (function () {
             _loop_1(resourceTile);
         }
     };
-    MapService.prototype.findPath = function (startTile, targetTile, onlyPathable, onlyWalkable) {
+    MapService.prototype.findPath = function (startTile, targetTile, onlyPathable, onlyWalkable, maxAttempts) {
+        if (maxAttempts === void 0) { maxAttempts = Infinity; }
         var visitedTiles = [];
         var tileQueue = [];
         var tileDistances = this.tiledMap.map(function (_) { return Infinity; });
@@ -3996,7 +3998,12 @@ var MapService = /** @class */ (function () {
         var currentNode;
         tileDistances[startTile.id] = 0;
         tileQueue.push(startTile);
+        var nodesProcessed = 0;
         while (tileQueue.length) {
+            nodesProcessed++;
+            if (nodesProcessed > maxAttempts) {
+                break;
+            }
             currentNode = tileQueue.sort(function (a, b) { return tileHeuristicDistances[a.id] - tileHeuristicDistances[b.id]; })[0];
             tileQueue = tileQueue.filter(function (tile) { return tile !== currentNode; });
             if (currentNode === targetTile) {
