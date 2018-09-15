@@ -86,8 +86,13 @@ var AppComponent = /** @class */ (function () {
         this.mobileQuery = media.matchMedia('(max-width: 600px)');
         this._mobileQueryListener = function () { return changeDetectorRef.detectChanges(); };
         this.mobileQuery.addListener(this._mobileQueryListener);
-        window.onbeforeunload = function (_) {
-            return '';
+        window.onbeforeunload = function (event) {
+            var message = 'Are you sure you want to leave this page? Unsaved data will be lost.';
+            if (!event) {
+                event = window.event;
+            }
+            event.returnValue = message;
+            return message;
         };
     }
     Object.defineProperty(AppComponent.prototype, "affordableUpgradeCount", {
