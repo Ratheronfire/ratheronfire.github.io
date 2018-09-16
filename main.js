@@ -41,7 +41,7 @@ module.exports = "/* AppComponent's private CSS styles */\r\nh1 {\r\n  font-size
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"game-container\" [class.game-is-mobile]=\"mobileQuery.matches\" [@.disabled]=\"disableAnimations\">\n  <mat-toolbar color=\"primary\" class=\"game-toolbar\">\n    <h1 class=\"game-app-name\">Age of Clicking</h1>\n    <div class=\"sidenav-buttons\">\n      <button mat-flat-button (click)=\"hideResourceList = !hideResourceList\">\n        <mat-icon>map</mat-icon><p class=\"toolbar-button-text\" *ngIf=\"!mobileQuery.matches\">Expand Map</p>\n      </button>\n      <button mat-flat-button (click)=\"snav.toggle()\" [matBadge]=\"affordableUpgradeCount\" [matBadgeHidden]=\"affordableUpgradeCount <= 0\" matBadgePosition=\"before\" matBadgeColor=\"accent\">\n        <mat-icon>menu</mat-icon><p class=\"toolbar-button-text\" *ngIf=\"!mobileQuery.matches\">Menu</p>\n      </button>\n    </div>\n  </mat-toolbar>\n\n  <mat-sidenav-container class=\"game-sidenav-container\" [style.marginTop.px]=\"mobileQuery.matches ? 56 : 0\">\n    <mat-sidenav #snav [mode]=\"mobileQuery.matches ? 'over' : 'side'\" [opened]=\"!mobileQuery.matches\" [fixedInViewport]=\"mobileQuery.matches\" position=\"end\"\n      fixedTopGap=\"56\">\n      <mat-nav-list>\n        <mat-tab-group class=\"tab-group\" dynamicHeight>\n          <mat-tab label=\"Buildings\">\n            <app-buildings></app-buildings>\n          </mat-tab>\n          <mat-tab label=\"Fighters\" *ngIf=\"enemyService.enemiesActive\">\n            <app-fighter></app-fighter>\n          </mat-tab>\n          <mat-tab label=\"Workers\">\n            <app-workers></app-workers>\n          </mat-tab>\n          <mat-tab label=\"Store\">\n            <app-store></app-store>\n          </mat-tab>\n          <mat-tab label=\"Upgrades{{affordableUpgradeCount > 0 ? ' (' + affordableUpgradeCount + ')' : ''}}\">\n            <app-upgrades></app-upgrades>\n          </mat-tab>\n          <mat-tab label=\"Log\">\n            <app-messages></app-messages>\n          </mat-tab>\n          <mat-tab label=\"Settings\">\n            <app-settings></app-settings>\n            <app-admin-debug *ngIf=\"debugMode\"></app-admin-debug>\n          </mat-tab>\n        </mat-tab-group>\n      </mat-nav-list>\n    </mat-sidenav>\n    <mat-sidenav-content>\n      <div class=\"main-pane\">\n        <app-clicker-main class=\"resource-list\" [style.display]=\"hideResourceList? 'none': ''\"></app-clicker-main>\n        <app-map class=\"map\" [style.display]=\"mobileQuery.matches && !hideResourceList? 'none': ''\"></app-map>\n      </div>\n    </mat-sidenav-content>\n  </mat-sidenav-container>\n</div>\n"
+module.exports = "<div class=\"game-container\" [class.game-is-mobile]=\"mobileQuery.matches\" [@.disabled]=\"disableAnimations\">\n  <mat-toolbar color=\"primary\" class=\"game-toolbar\">\n    <h1 class=\"game-app-name\">Age of Clicking</h1>\n    <div class=\"sidenav-buttons\">\n      <button mat-flat-button (click)=\"hideResourceList = !hideResourceList\">\n        <mat-icon>map</mat-icon><p class=\"toolbar-button-text\" *ngIf=\"!mobileQuery.matches\">Expand Map</p>\n      </button>\n      <button mat-flat-button (click)=\"snav.toggle()\" [matBadge]=\"affordableUpgradeCount\" [matBadgeHidden]=\"affordableUpgradeCount <= 0\" matBadgePosition=\"before\" matBadgeColor=\"accent\">\n        <mat-icon>menu</mat-icon><p class=\"toolbar-button-text\" *ngIf=\"!mobileQuery.matches\">Menu</p>\n      </button>\n    </div>\n  </mat-toolbar>\n\n  <mat-sidenav-container class=\"game-sidenav-container\" [style.marginTop.px]=\"mobileQuery.matches ? 56 : 0\">\n    <mat-sidenav #snav [mode]=\"mobileQuery.matches ? 'over' : 'side'\" [opened]=\"!mobileQuery.matches\" [fixedInViewport]=\"mobileQuery.matches\" position=\"end\"\n      fixedTopGap=\"56\">\n      <mat-nav-list>\n        <mat-tab-group class=\"tab-group\" dynamicHeight>\n          <mat-tab label=\"Workers\">\n            <app-workers></app-workers>\n          </mat-tab>\n          <mat-tab label=\"Store\">\n            <app-store></app-store>\n          </mat-tab>\n          <mat-tab label=\"Upgrades{{affordableUpgradeCount > 0 ? ' (' + affordableUpgradeCount + ')' : ''}}\">\n            <app-upgrades></app-upgrades>\n          </mat-tab>\n          <mat-tab label=\"Log\">\n            <app-messages></app-messages>\n          </mat-tab>\n          <mat-tab label=\"Settings\">\n            <app-settings></app-settings>\n            <app-admin-debug *ngIf=\"debugMode\"></app-admin-debug>\n          </mat-tab>\n        </mat-tab-group>\n      </mat-nav-list>\n    </mat-sidenav>\n    <mat-sidenav-content>\n      <div class=\"main-pane\">\n        <app-clicker-main class=\"resource-list\" [style.display]=\"hideResourceList? 'none': ''\"></app-clicker-main>\n        <app-map class=\"map\" [style.display]=\"mobileQuery.matches && !hideResourceList? 'none': ''\"></app-map>\n      </div>\n    </mat-sidenav-content>\n  </mat-sidenav-container>\n</div>\n"
 
 /***/ }),
 
@@ -176,12 +176,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_enemy_enemy_component__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./components/enemy/enemy.component */ "./src/app/components/enemy/enemy.component.ts");
 /* harmony import */ var _components_fighter_fighter_component__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./components/fighter/fighter.component */ "./src/app/components/fighter/fighter.component.ts");
 /* harmony import */ var _components_buildings_buildings_buildings_component__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./components/buildings/buildings/buildings.component */ "./src/app/components/buildings/buildings/buildings.component.ts");
+/* harmony import */ var _components_tile_detail_tile_detail_component__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./components/tile-detail/tile-detail.component */ "./src/app/components/tile-detail/tile-detail.component.ts");
+/* harmony import */ var _components_fighter_detail_fighter_detail_component__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./components/fighter-detail/fighter-detail.component */ "./src/app/components/fighter-detail/fighter-detail.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
+
 
 
 
@@ -234,7 +238,9 @@ var AppModule = /** @class */ (function () {
                 _directives_no_scroll_no_scroll_directive__WEBPACK_IMPORTED_MODULE_23__["NoScrollDirective"],
                 _components_enemy_enemy_component__WEBPACK_IMPORTED_MODULE_24__["EnemyComponent"],
                 _components_fighter_fighter_component__WEBPACK_IMPORTED_MODULE_25__["FighterComponent"],
-                _components_buildings_buildings_buildings_component__WEBPACK_IMPORTED_MODULE_26__["BuildingsComponent"]
+                _components_buildings_buildings_buildings_component__WEBPACK_IMPORTED_MODULE_26__["BuildingsComponent"],
+                _components_tile_detail_tile_detail_component__WEBPACK_IMPORTED_MODULE_27__["TileDetailComponent"],
+                _components_fighter_detail_fighter_detail_component__WEBPACK_IMPORTED_MODULE_28__["FighterDetailComponent"]
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
@@ -424,7 +430,7 @@ var AdminDebugComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "/* BuildingsComponent's private CSS styles */\r\n.buildings {\r\n  margin: 0 0 2em 0;\r\n  list-style-type: none;\r\n  padding: 0;\r\n}\r\n.buildings mat-expansion-panel {\r\n  margin: 0;\r\n}\r\n.buildings mat-expansion-panel-header {\r\n  height: 30px !important;\r\n}\r\n.buildings mat-card-subtitle {\r\n  position: absolute;\r\n  top: 10px;\r\n  right: 10px;\r\n  font-weight: bold;\r\n}\r\n.buildings button {\r\n  position: relative;\r\n  cursor: pointer;\r\n  margin: .5em;\r\n  padding: .4em 0;\r\n  height: 3.6em;\r\n  width: 100%;\r\n  border-radius: 4px;\r\n}\r\n.buildings button:hover {\r\n  left: .1em;\r\n}\r\n.buildings button.mat-disabled {\r\n  cursor: default;\r\n}\r\n.buildings .badge {\r\n  display: inline-block;\r\n  font-size: small;\r\n  color: white;\r\n  padding: 0.8em 0.7em 0 0.7em;\r\n  background-color: #607D8B;\r\n  line-height: 1em;\r\n  position: absolute;\r\n  right: -9px;\r\n  top: 1px;\r\n  height: 1.8em;\r\n  min-width: 16px;\r\n  text-align: center;\r\n  margin-right: .8em;\r\n  border-radius: 0 4px 4px 0;\r\n}\r\nbutton {\r\n  background-color: #eee;\r\n  border: none;\r\n  padding: 5px 10px;\r\n  border-radius: 4px;\r\n  cursor: pointer;\r\n  cursor: hand;\r\n  font-family: Arial;\r\n}\r\n.buildings {\r\n  text-align: center;\r\n}\r\n.buildings.slim-interface button {\r\n  width: auto;\r\n  height: auto;\r\n}\r\n.building {\r\n  display: inline-block;\r\n  max-width: 300px;\r\n  width: 15vw;\r\n}\r\n.resource-list {\r\n  text-align: center;\r\n}\r\n.resource-list div {\r\n  display: inline-block;\r\n}\r\n.resource-list img {\r\n  width: 16px;\r\n  height: 16px;\r\n}\r\n"
+module.exports = "/* BuildingsComponent's private CSS styles */\r\n.buildings {\r\n  position: absolute;\r\n  top: 72px;\r\n  display: -ms-grid;\r\n  display: grid;\r\n\r\n  background: white;\r\n}\r\nbutton {\r\n  background-color: #eee;\r\n  border: none;\r\n  padding: 5px 10px;\r\n  border-radius: 4px;\r\n  cursor: pointer;\r\n  cursor: hand;\r\n  font-family: Arial;\r\n}\r\n.resource-list {\r\n  text-align: center;\r\n}\r\n.resource-list div {\r\n  display: inline-block;\r\n}\r\n.resource-list img {\r\n  width: 16px;\r\n  height: 16px;\r\n}\r\n"
 
 /***/ }),
 
@@ -435,7 +441,7 @@ module.exports = "/* BuildingsComponent's private CSS styles */\r\n.buildings {\
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"buildings\" [ngClass]=\"{'slim-interface': settingsService.slimInterface}\">\n  <div *ngIf=\"!settingsService.slimInterface\">\n    <mat-card class=\"building\" *ngFor=\"let buildingTile of getBuildingTileArray(true)\">\n      <button mat-raised-button [color]=\"selectedBuilding === buildingTile ? 'accent' : ''\" [disabled]=\"!canAffordBuilding(buildingTile.tileType)\"\n        (click)=\"selectBuilding(buildingTile)\">\n        <mat-card-title>{{buildingTile.name}}</mat-card-title>\n      </button>\n      <mat-card-content>\n        {{buildingTile.description}}\n        <div class=\"resource-list\">\n          <div *ngFor=\"let resourceCost of buildingTile.resourceCosts\" matTooltip=\"{{resourceCost.resourceCost}} {{getResource(resourceCost.resourceId).name | titlecase}}\"\n            matTooltipPosition=\"below\">\n            <img src=\"{{getResource(resourceCost.resourceId).iconPath}}\" alt=\"{{getResource(resourceCost.resourceId).name}}\">\n            {{resourceCost.resourceCost}}\n          </div>\n        </div>\n      </mat-card-content>\n    </mat-card>\n  </div>\n  <div *ngIf=\"settingsService.slimInterface\">\n    <button mat-raised-button *ngFor=\"let buildingTile of getBuildingTileArray(true)\" (click)=\"selectBuilding(buildingTile)\"\n      [color]=\"selectedBuilding === buildingTile ? 'accent' : ''\" [disabled]=\"!canAffordBuilding(buildingTile.tileType)\">\n      <div class=\"title\" matTooltip=\"{{buildingTile.description}}\" matTooltipPosition=\"above\">\n        {{buildingTile.name}}\n      </div>\n      <div class=\"resource-list\">\n        <div *ngFor=\"let resourceCost of buildingTile.resourceCosts\" matTooltip=\"{{resourceCost.resourceCost}} {{getResource(resourceCost.resourceId).name | titlecase}}\"\n          matTooltipPosition=\"below\">\n          <img src=\"{{getResource(resourceCost.resourceId).iconPath}}\" alt=\"{{getResource(resourceCost.resourceId).name}}\">\n          {{resourceCost.resourceCost}}\n        </div>\n      </div>\n    </button>\n  </div>\n</div>\n"
+module.exports = "<mat-button-toggle-group #group=\"matButtonToggleGroup\" [(ngModel)]=\"selectedBuilding\"\nclass=\"buildings\">\n<mat-button-toggle *ngFor=\"let buildingTile of getBuildingTileArray(true)\" [value]=\"buildingTile\" class=\"building\"\n  [disabled]=\"!canAffordBuilding(buildingTile.tileType)\" (click)=\"mapService.buildingListVisible = false\">\n  <div class=\"title\" matTooltip=\"{{buildingTile.description}}\" matTooltipPosition=\"above\">\n    {{buildingTile.name}}\n  </div>\n  <div class=\"resource-list\">\n    <div *ngFor=\"let resourceCost of buildingTile.resourceCosts\" matTooltip=\"{{resourceCost.resourceCost}} {{getResource(resourceCost.resourceId).name | titlecase}}\"\n      matTooltipPosition=\"below\">\n      <img src=\"{{getResource(resourceCost.resourceId).iconPath}}\" alt=\"{{getResource(resourceCost.resourceId).name}}\">\n      {{resourceCost.resourceCost}}\n    </div>\n  </div>\n</mat-button-toggle>\n</mat-button-toggle-group>\n"
 
 /***/ }),
 
@@ -731,6 +737,103 @@ var EnemyComponent = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/components/fighter-detail/fighter-detail.component.css":
+/*!************************************************************************!*\
+  !*** ./src/app/components/fighter-detail/fighter-detail.component.css ***!
+  \************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "#fighter-tooltip {\r\n  top: var(--detail-tooltip-top);\r\n  left: var(--detail-tooltip-left);\r\n\r\n  position: absolute;\r\n}\r\n\r\nmat-card {\r\n  text-align: center;\r\n  max-width: 300px;\r\n}\r\n\r\n.resource-list div {\r\n  display: inline-block;\r\n}\r\n\r\n.resource-list img {\r\n  width: 16px;\r\n  height: 16px;\r\n}\r\n\r\n.repair-container {\r\n  display: inline-flex;\r\n  white-space: pre-wrap;\r\n}\r\n\r\n.repair-container button {\r\n  position: relative;\r\n  top: -25%;\r\n}\r\n"
+
+/***/ }),
+
+/***/ "./src/app/components/fighter-detail/fighter-detail.component.html":
+/*!*************************************************************************!*\
+  !*** ./src/app/components/fighter-detail/fighter-detail.component.html ***!
+  \*************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<mat-card id=\"fighter-tooltip\">\n  <div *ngIf=\"focusedFighter\">\n    <mat-card-title>{{focusedFighter.name}}</mat-card-title>\n    <mat-card-subtitle>{{focusedFighter.description}}</mat-card-subtitle>\n    <div class=\"repair-container\">\n      {{focusedFighter.health}}/{{focusedFighter.maxHealth}} Health\n      <div *ngIf=\"focusedFighter.health < focusedFighter.maxHealth\">\n        <!-- <button mat-raised-button (click)=\"repairBuilding(focusedTile)\" color=\"accent\" [disabled]=\"!canRepairBuilding(focusedTile)\">\n          Heal\n          <div class=\"resource-list\">\n            <div matTooltip=\"{{focusedBuildingTile.repairCostPerPoint * (focusedTile.maxHealth - focusedTile.health)}} {{getResource(focusedBuildingTile.repairResource).name | titlecase}}\"\n              matTooltipPosition=\"below\">\n              <img src=\"{{getResource(focusedBuildingTile.repairResource).iconPath}}\" alt=\"{{getResource(focusedBuildingTile.repairResource).name}}\">\n              {{focusedBuildingTile.repairCostPerPoint * (focusedTile.maxHealth - focusedTile.health)}}\n            </div>\n          </div>\n        </button> -->\n      </div>\n    </div>\n\n    <mat-card-content>\n      <!-- <br />\n    Upgrade:\n    <br />\n    <button mat-raised-button (click)=\"upgradeBuilding(focusedTile)\" color=\"accent\" [disabled]=\"!canAffordUpgrade(this.mapService.buildingTiles[focusedBuildingTile.upgradeBuilding])\">\n      <div class=\"title\" matTooltip=\"{{this.mapService.buildingTiles[focusedBuildingTile.upgradeBuilding].description}}\"\n        matTooltipPosition=\"above\">\n        {{this.mapService.buildingTiles[focusedBuildingTile.upgradeBuilding].name}}\n      </div>\n      <div class=\"resource-list\">\n        <div *ngFor=\"let resourceCost of mapService.buildingTiles[focusedBuildingTile.upgradeBuilding].resourceCosts\"\n          matTooltip=\"{{resourceCost.resourceCost}} {{getResource(resourceCost.resourceId).name | titlecase}}\"\n          matTooltipPosition=\"below\">\n          <img src=\"{{getResource(resourceCost.resourceId).iconPath}}\" alt=\"{{getResource(resourceCost.resourceId).name}}\">\n          {{resourceCost.resourceCost}}\n        </div>\n      </div>\n    </button> -->\n    </mat-card-content>\n  </div>\n</mat-card>\n"
+
+/***/ }),
+
+/***/ "./src/app/components/fighter-detail/fighter-detail.component.ts":
+/*!***********************************************************************!*\
+  !*** ./src/app/components/fighter-detail/fighter-detail.component.ts ***!
+  \***********************************************************************/
+/*! exports provided: FighterDetailComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FighterDetailComponent", function() { return FighterDetailComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _services_map_map_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../services/map/map.service */ "./src/app/services/map/map.service.ts");
+/* harmony import */ var _services_buildings_buildings_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../services/buildings/buildings.service */ "./src/app/services/buildings/buildings.service.ts");
+/* harmony import */ var _services_resources_resources_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../services/resources/resources.service */ "./src/app/services/resources/resources.service.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+var FighterDetailComponent = /** @class */ (function () {
+    function FighterDetailComponent(mapService, buildingsService, resourcesService) {
+        this.mapService = mapService;
+        this.buildingsService = buildingsService;
+        this.resourcesService = resourcesService;
+    }
+    FighterDetailComponent.prototype.ngOnInit = function () {
+    };
+    FighterDetailComponent.prototype.getResource = function (resourceId) {
+        return this.resourcesService.getResource(resourceId);
+    };
+    Object.defineProperty(FighterDetailComponent.prototype, "focusedTile", {
+        get: function () {
+            return this.mapService.focusedTile;
+        },
+        set: function (value) {
+            this.mapService.focusedTile = value;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(FighterDetailComponent.prototype, "focusedFighter", {
+        get: function () {
+            return this.mapService.focusedFighter;
+        },
+        set: function (value) {
+            this.mapService.focusedFighter = value;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    FighterDetailComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-fighter-detail',
+            template: __webpack_require__(/*! ./fighter-detail.component.html */ "./src/app/components/fighter-detail/fighter-detail.component.html"),
+            styles: [__webpack_require__(/*! ./fighter-detail.component.css */ "./src/app/components/fighter-detail/fighter-detail.component.css")]
+        }),
+        __metadata("design:paramtypes", [_services_map_map_service__WEBPACK_IMPORTED_MODULE_1__["MapService"],
+            _services_buildings_buildings_service__WEBPACK_IMPORTED_MODULE_2__["BuildingsService"],
+            _services_resources_resources_service__WEBPACK_IMPORTED_MODULE_3__["ResourcesService"]])
+    ], FighterDetailComponent);
+    return FighterDetailComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/components/fighter/fighter.component.css":
 /*!**********************************************************!*\
   !*** ./src/app/components/fighter/fighter.component.css ***!
@@ -738,7 +841,7 @@ var EnemyComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "/* FighterComponent's private CSS styles */\r\n.fighters {\r\n  margin: 0 0 2em 0;\r\n  list-style-type: none;\r\n  padding: 0;\r\n}\r\n.fighters mat-expansion-panel {\r\n  margin: 0;\r\n}\r\n.fighters mat-expansion-panel-header {\r\n  height: 30px !important;\r\n}\r\n.fighters mat-card-subtitle {\r\n  position: absolute;\r\n  top: 10px;\r\n  right: 10px;\r\n  font-weight: bold;\r\n}\r\n.fighters button {\r\n  position: relative;\r\n  cursor: pointer;\r\n  margin: .5em;\r\n  padding: .4em 0;\r\n  height: 3.6em;\r\n  width: 100%;\r\n  border-radius: 4px;\r\n}\r\n.fighters button:hover {\r\n  left: .1em;\r\n}\r\n.fighters button.mat-disabled {\r\n  cursor: default;\r\n}\r\n.fighters .badge {\r\n  display: inline-block;\r\n  font-size: small;\r\n  color: white;\r\n  padding: 0.8em 0.7em 0 0.7em;\r\n  background-color: #607D8B;\r\n  line-height: 1em;\r\n  position: absolute;\r\n  right: -9px;\r\n  top: 1px;\r\n  height: 1.8em;\r\n  min-width: 16px;\r\n  text-align: center;\r\n  margin-right: .8em;\r\n  border-radius: 0 4px 4px 0;\r\n}\r\nbutton {\r\n  background-color: #eee;\r\n  border: none;\r\n  padding: 5px 10px;\r\n  border-radius: 4px;\r\n  cursor: pointer;\r\n  cursor: hand;\r\n  font-family: Arial;\r\n}\r\n.fighters {\r\n  text-align: center;\r\n}\r\n.fighters.slim-interface button {\r\n  width: auto;\r\n  height: auto;\r\n}\r\n.fighter {\r\n  display: inline-block;\r\n  max-width: 300px;\r\n  width: 15vw;\r\n}\r\n.fighter-cost {\r\n  text-align: center;\r\n}\r\n.fighter-cost div {\r\n  display: inline-block;\r\n}\r\n.fighter-cost img {\r\n  width: 16px;\r\n  height: 16px;\r\n}\r\n"
+module.exports = "/* FightersComponent's private CSS styles */\r\n.fighters {\r\n  position: absolute;\r\n  top: 72px;\r\n  left: 392px;\r\n  display: -ms-grid;\r\n  display: grid;\r\n\r\n  background: white;\r\n}\r\nbutton {\r\n  background-color: #eee;\r\n  border: none;\r\n  padding: 5px 10px;\r\n  border-radius: 4px;\r\n  cursor: pointer;\r\n  cursor: hand;\r\n  font-family: Arial;\r\n}\r\n.resource-list {\r\n  text-align: center;\r\n}\r\n.resource-list div {\r\n  display: inline-block;\r\n}\r\n.resource-list img {\r\n  width: 16px;\r\n  height: 16px;\r\n}\r\n"
 
 /***/ }),
 
@@ -749,7 +852,7 @@ module.exports = "/* FighterComponent's private CSS styles */\r\n.fighters {\r\n
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"fighters\" [ngClass]=\"{'slim-interface': settingsService.slimInterface}\">\r\n    <div *ngIf=\"!settingsService.slimInterface\">\r\n      <mat-card class=\"fighter\" *ngFor=\"let fighterType of fighterTypes\">\r\n        <button mat-raised-button [color]=\"selectedFighterType === fighterType ? 'accent' : ''\" [disabled]=\"!canAffordFighter(fighterType)\"\r\n          (click)=\"selectFigherType(fighterType)\">\r\n          <mat-card-title>{{fighterType.name}}</mat-card-title>\r\n        </button>\r\n        <mat-card-content>\r\n          {{fighterType.description}}\r\n          <div class=\"fighter-cost\">\r\n            <div matTooltip=\"{{fighterType.cost}} {{getResource(0).name | titlecase}}\" matTooltipPosition=\"below\">\r\n              <img src=\"{{getResource(0).iconPath}}\" alt=\"{{getResource(0).name}}\"> {{fighterType.cost}}\r\n            </div>\r\n          </div>\r\n        </mat-card-content>\r\n      </mat-card>\r\n    </div>\r\n    <div *ngIf=\"settingsService.slimInterface\">\r\n      <button mat-raised-button *ngFor=\"let fighterType of fighterTypes\" (click)=\"selectFigherType(fighterType)\"\r\n        [color]=\"selectedFighterType === fighterType ? 'accent' : ''\" [disabled]=\"!canAffordFighter(fighterType)\">\r\n        <div class=\"title\" matTooltip=\"{{fighterType.description}}\" matTooltipPosition=\"above\">\r\n          {{fighterType.name}}\r\n        </div>\r\n        <div class=\"fighter-cost\">\r\n          <div matTooltip=\"{{fighterType.cost}} {{getResource(0).name | titlecase}}\" matTooltipPosition=\"below\">\r\n            <img src=\"{{getResource(0).iconPath}}\" alt=\"{{getResource(0).name}}\">\r\n            {{fighterType.cost}}\r\n          </div>\r\n        </div>\r\n      </button>\r\n    </div>\r\n  </div>\r\n"
+module.exports = "<mat-button-toggle-group #group=\"matButtonToggleGroup\" [(ngModel)]=\"selectedFighterType\" class=\"fighters\">\r\n  <mat-button-toggle *ngFor=\"let fighterType of fighterService.fighterTypes\" [value]=\"fighterType\" class=\"fighter\"\r\n    [disabled]=\"!canAffordFighter(fighterType)\" (click)=\"mapService.fighterListVisible = false\">\r\n    <div class=\"title\" matTooltip=\"{{fighterType.description}}\" matTooltipPosition=\"above\">\r\n      {{fighterType.name}}\r\n    </div>\r\n    <div class=\"resource-list\">\r\n      <div matTooltip=\"{{fighterType.cost}} {{getResource(0).name | titlecase}}\"\r\n        matTooltipPosition=\"below\">\r\n        <img src=\"{{getResource(0).iconPath}}\" alt=\"{{getResource(0).name}}\">\r\n        {{fighterType.cost}}\r\n      </div>\r\n    </div>\r\n  </mat-button-toggle>\r\n</mat-button-toggle-group>\r\n"
 
 /***/ }),
 
@@ -768,6 +871,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _services_fighter_fighter_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../services/fighter/fighter.service */ "./src/app/services/fighter/fighter.service.ts");
 /* harmony import */ var _services_settings_settings_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../services/settings/settings.service */ "./src/app/services/settings/settings.service.ts");
 /* harmony import */ var _services_resources_resources_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../services/resources/resources.service */ "./src/app/services/resources/resources.service.ts");
+/* harmony import */ var _services_map_map_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../services/map/map.service */ "./src/app/services/map/map.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -782,12 +886,14 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
 var FighterComponent = /** @class */ (function () {
-    function FighterComponent(resourcesService, settingsService, buildingsService, fighterService) {
+    function FighterComponent(resourcesService, settingsService, buildingsService, fighterService, mapService) {
         this.resourcesService = resourcesService;
         this.settingsService = settingsService;
         this.buildingsService = buildingsService;
         this.fighterService = fighterService;
+        this.mapService = mapService;
     }
     FighterComponent.prototype.ngOnInit = function () {
     };
@@ -832,7 +938,8 @@ var FighterComponent = /** @class */ (function () {
         __metadata("design:paramtypes", [_services_resources_resources_service__WEBPACK_IMPORTED_MODULE_4__["ResourcesService"],
             _services_settings_settings_service__WEBPACK_IMPORTED_MODULE_3__["SettingsService"],
             _services_buildings_buildings_service__WEBPACK_IMPORTED_MODULE_1__["BuildingsService"],
-            _services_fighter_fighter_service__WEBPACK_IMPORTED_MODULE_2__["FighterService"]])
+            _services_fighter_fighter_service__WEBPACK_IMPORTED_MODULE_2__["FighterService"],
+            _services_map_map_service__WEBPACK_IMPORTED_MODULE_5__["MapService"]])
     ], FighterComponent);
     return FighterComponent;
 }());
@@ -848,7 +955,7 @@ var FighterComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "/* MapComponent's private CSS styles */\r\n:root {\r\n  --detail-tooltip-top: 0px;\r\n  --detail-tooltip-left: 0px;\r\n}\r\nh1 {\r\n  font-size: 1.2em;\r\n  color: #999;\r\n  margin-bottom: 0;\r\n  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;\r\n}\r\nh2 {\r\n  font-size: 2em;\r\n  margin-top: 0;\r\n  padding-top: 0;\r\n}\r\nh3 {\r\n  font-family: Arial, Helvetica, sans-serif;\r\n}\r\nnav a {\r\n  padding: 5px 10px;\r\n  text-decoration: none;\r\n  margin-top: 10px;\r\n  display: inline-block;\r\n  background-color: #eee;\r\n  border-radius: 4px;\r\n}\r\nnav a:visited, a:link {\r\n  color: #607d8b;\r\n}\r\nnav a:hover {\r\n  color: #039be5;\r\n  background-color: #cfd8dc;\r\n}\r\nnav a.active {\r\n  color: #039be5;\r\n}\r\n#canvas-container {\r\n  display: flex;\r\n  height: 100%;\r\n}\r\n#detail-tooltip {\r\n  top: var(--detail-tooltip-top);\r\n  left: var(--detail-tooltip-left);\r\n\r\n  position: absolute;\r\n}\r\nmat-card {\r\n  text-align: center;\r\n  max-width: 300px;\r\n}\r\n.resource-list div {\r\n  display: inline-block;\r\n}\r\n.resource-list img {\r\n  width: 16px;\r\n  height: 16px;\r\n}\r\n.repair-container {\r\n  display: inline-flex;\r\n}\r\n.repair-container button {\r\n  position: relative;\r\n  top: -25%;\r\n}\r\n.cursor-tools {\r\n  position: absolute;\r\n  top: 0;\r\n\r\n  background: white;\r\n}\r\n"
+module.exports = "/* MapComponent's private CSS styles */\r\nh1 {\r\n  font-size: 1.2em;\r\n  color: #999;\r\n  margin-bottom: 0;\r\n  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;\r\n}\r\nh2 {\r\n  font-size: 2em;\r\n  margin-top: 0;\r\n  padding-top: 0;\r\n}\r\nh3 {\r\n  font-family: Arial, Helvetica, sans-serif;\r\n}\r\nnav a {\r\n  padding: 5px 10px;\r\n  text-decoration: none;\r\n  margin-top: 10px;\r\n  display: inline-block;\r\n  background-color: #eee;\r\n  border-radius: 4px;\r\n}\r\nnav a:visited, a:link {\r\n  color: #607d8b;\r\n}\r\nnav a:hover {\r\n  color: #039be5;\r\n  background-color: #cfd8dc;\r\n}\r\nnav a.active {\r\n  color: #039be5;\r\n}\r\n#canvas-container {\r\n  display: flex;\r\n  height: 100%;\r\n}\r\n.cursor-tools {\r\n  position: absolute;\r\n  top: 0;\r\n\r\n  background: white;\r\n}\r\n"
 
 /***/ }),
 
@@ -859,7 +966,7 @@ module.exports = "/* MapComponent's private CSS styles */\r\n:root {\r\n  --deta
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div id=\"canvas-container\" (keyup.esc)=\"clearFocus()\" tabindex=\"1\">\r\n  <canvas class=\"noselect\" appNoScroll appMap width=\"{{canvasWidth}}\" height=\"{{canvasHeight}}\" oncontextmenu=\"return false\"></canvas>\r\n\r\n  <mat-button-toggle-group #group=\"matButtonToggleGroup\" [(ngModel)]=\"mapService.cursorTool\" class=\"cursor-tools\">\r\n    <mat-button-toggle value=\"PLACEBUILDINGS\" class=\"cursor-tool\">\r\n      <mat-icon color=\"primary\">add_photo_alternate</mat-icon>\r\n      <br />\r\n      Place Buildings\r\n    </mat-button-toggle>\r\n    <mat-button-toggle value=\"DETAILMODE\" class=\"cursor-tool\">\r\n      <mat-icon color=\"primary\">mode_comment</mat-icon>\r\n      <br />\r\n      Tile Details\r\n    </mat-button-toggle>\r\n  </mat-button-toggle-group>\r\n</div>\r\n\r\n<mat-card [ngClass]=\"{'hidden': !focusedBuildingTile && !focusedResourceTile}\" id=\"detail-tooltip\">\r\n  <div *ngIf=\"focusedBuildingTile\">\r\n    <mat-card-title>{{focusedBuildingTile.name}}</mat-card-title>\r\n    <mat-card-subtitle>{{focusedBuildingTile.description}}</mat-card-subtitle>\r\n    <div class=\"repair-container\">\r\n      {{focusedTile.health}}/{{focusedTile.maxHealth}} Health\r\n      <div *ngIf=\"focusedTile.health < focusedTile.maxHealth\">\r\n        <button mat-raised-button (click)=\"repairBuilding(focusedTile)\" color=\"accent\" [disabled]=\"!canRepairBuilding(focusedTile)\">\r\n          Repair\r\n          <div class=\"resource-list\">\r\n            <div matTooltip=\"{{focusedBuildingTile.repairCostPerPoint * (focusedTile.maxHealth - focusedTile.health)}} {{getResource(focusedBuildingTile.repairResource).name | titlecase}}\"\r\n              matTooltipPosition=\"below\">\r\n              <img src=\"{{getResource(focusedBuildingTile.repairResource).iconPath}}\" alt=\"{{getResource(focusedBuildingTile.repairResource).name}}\">\r\n              {{focusedBuildingTile.repairCostPerPoint * (focusedTile.maxHealth - focusedTile.health)}}\r\n            </div>\r\n          </div>\r\n        </button>\r\n      </div>\r\n    </div>\r\n  </div>\r\n\r\n  <div *ngIf=\"!focusedBuildingTile && focusedResourceTile\">\r\n    <mat-card-title>{{focusedResourceTile.name}}</mat-card-title>\r\n  </div>\r\n\r\n  <mat-card-content>\r\n    <div *ngIf=\"focusedResourceTile\" class=\"resource-list\">\r\n      Travel Time: {{focusedTile.buildingPath.length / this.mapService.tileAnimationSpeed / 1000 | number:'0.0-2'}}\r\n      Seconds\r\n      <br />\r\n      Produces:\r\n      <div *ngFor=\"let resource of focusedResources\">\r\n        <img src=\"{{resource.iconPath}}\" alt=\"{{resource.name}}\"> {{resource.name | titlecase}}\r\n      </div>\r\n    </div>\r\n    <div *ngIf=\"focusedBuildingTile && focusedBuildingTile.upgradeBuilding\">\r\n      <br />\r\n      Upgrade:\r\n      <br />\r\n      <button mat-raised-button (click)=\"upgradeBuilding(focusedTile)\" color=\"accent\" [disabled]=\"!canAffordUpgrade(this.mapService.buildingTiles[focusedBuildingTile.upgradeBuilding])\">\r\n        <div class=\"title\" matTooltip=\"{{this.mapService.buildingTiles[focusedBuildingTile.upgradeBuilding].description}}\"\r\n          matTooltipPosition=\"above\">\r\n          {{this.mapService.buildingTiles[focusedBuildingTile.upgradeBuilding].name}}\r\n        </div>\r\n        <div class=\"resource-list\">\r\n          <div *ngFor=\"let resourceCost of mapService.buildingTiles[focusedBuildingTile.upgradeBuilding].resourceCosts\"\r\n            matTooltip=\"{{resourceCost.resourceCost}} {{getResource(resourceCost.resourceId).name | titlecase}}\"\r\n            matTooltipPosition=\"below\">\r\n            <img src=\"{{getResource(resourceCost.resourceId).iconPath}}\" alt=\"{{getResource(resourceCost.resourceId).name}}\">\r\n            {{resourceCost.resourceCost}}\r\n          </div>\r\n        </div>\r\n      </button>\r\n    </div>\r\n  </mat-card-content>\r\n</mat-card>\r\n"
+module.exports = "<div id=\"canvas-container\" tabindex=\"1\">\r\n  <canvas class=\"noselect\" appNoScroll appMap width=\"{{canvasWidth}}\" height=\"{{canvasHeight}}\" oncontextmenu=\"return false\"></canvas>\r\n\r\n  <mat-button-toggle-group #group=\"matButtonToggleGroup\" [(ngModel)]=\"mapService.cursorTool\" class=\"cursor-tools\">\r\n    <mat-button-toggle value=\"PLACEBUILDINGS\" class=\"cursor-tool\" (click)=\"setPlacementGroupVisibility(!mapService.buildingListVisible, false)\">\r\n      <mat-icon color=\"primary\">add_photo_alternate</mat-icon>\r\n      <br />\r\n      Place Buildings\r\n    </mat-button-toggle>\r\n    <mat-button-toggle value=\"CLEARBUILDINGS\" class=\"cursor-tool\" (click)=\"setPlacementGroupVisibility(false, false)\">\r\n      <mat-icon color=\"primary\">delete</mat-icon>\r\n      <br />\r\n      Clear Buildings\r\n    </mat-button-toggle>\r\n    <mat-button-toggle value=\"TILEDETAIL\" class=\"cursor-tool\" (click)=\"setPlacementGroupVisibility(false, false)\">\r\n      <mat-icon color=\"primary\">mode_comment</mat-icon>\r\n      <br />\r\n      Tile Details\r\n    </mat-button-toggle>\r\n    <mat-button-toggle *ngIf=\"enemyService.enemiesActive\" value=\"PLACEFIGHTERS\" class=\"cursor-tool\" (click)=\"setPlacementGroupVisibility(false, !this.mapService.fighterListVisible)\">\r\n      <mat-icon color=\"primary\">directions_walk</mat-icon>\r\n      <br />\r\n      Place Fighters\r\n    </mat-button-toggle>\r\n    <mat-button-toggle *ngIf=\"enemyService.enemiesActive\" value=\"FIGHTERDETAIL\" class=\"cursor-tool\" (click)=\"setPlacementGroupVisibility(false, false)\">\r\n      <mat-icon color=\"primary\">directions_run</mat-icon>\r\n      <br />\r\n      Fighter Details\r\n    </mat-button-toggle>\r\n  </mat-button-toggle-group>\r\n\r\n  <app-buildings *ngIf=\"mapService.buildingListVisible\"></app-buildings>\r\n  <app-fighter *ngIf=\"mapService.fighterListVisible\"></app-fighter>\r\n</div>\r\n\r\n<app-tile-detail [ngClass]=\"{'hidden': !mapService.focusedBuildingTile && !mapService.focusedResourceTile}\"></app-tile-detail>\r\n<app-fighter-detail [ngClass]=\"{'hidden': !mapService.focusedFighter}\"></app-fighter-detail>\r\n"
 
 /***/ }),
 
@@ -877,8 +984,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _objects_tile__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../objects/tile */ "./src/app/objects/tile.ts");
 /* harmony import */ var _services_map_map_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../services/map/map.service */ "./src/app/services/map/map.service.ts");
 /* harmony import */ var _services_buildings_buildings_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./../../services/buildings/buildings.service */ "./src/app/services/buildings/buildings.service.ts");
-/* harmony import */ var _services_admin_admin_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../services/admin/admin.service */ "./src/app/services/admin/admin.service.ts");
-/* harmony import */ var _services_resources_resources_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../services/resources/resources.service */ "./src/app/services/resources/resources.service.ts");
+/* harmony import */ var _services_enemy_enemy_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./../../services/enemy/enemy.service */ "./src/app/services/enemy/enemy.service.ts");
+/* harmony import */ var _services_admin_admin_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../services/admin/admin.service */ "./src/app/services/admin/admin.service.ts");
+/* harmony import */ var _services_resources_resources_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../services/resources/resources.service */ "./src/app/services/resources/resources.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -894,63 +1002,22 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
 var MapComponent = /** @class */ (function () {
-    function MapComponent(mapService, buildingsService, resourcesService, adminService) {
+    function MapComponent(mapService, buildingsService, resourcesService, enemyService, adminService) {
         this.mapService = mapService;
         this.buildingsService = buildingsService;
         this.resourcesService = resourcesService;
+        this.enemyService = enemyService;
         this.adminService = adminService;
         this.mapTileTypes = _objects_tile__WEBPACK_IMPORTED_MODULE_1__["MapTileType"];
         this.buildingTileTypes = _objects_tile__WEBPACK_IMPORTED_MODULE_1__["BuildingTileType"];
     }
     MapComponent.prototype.ngOnInit = function () {
     };
-    MapComponent.prototype.ngAfterViewInit = function () {
-    };
-    Object.defineProperty(MapComponent.prototype, "buildingTiles", {
-        get: function () {
-            return this.mapService.buildingTiles;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    MapComponent.prototype.getBuildingTileArray = function (filterByPlaceable) {
-        var tiles = this.mapService.buildingTileArray;
-        if (filterByPlaceable) {
-            tiles = tiles.filter(function (tile) { return tile.placeable; });
-        }
-        return tiles;
-    };
-    MapComponent.prototype.getResource = function (resourceId) {
-        return this.resourcesService.getResource(resourceId);
-    };
-    MapComponent.prototype.canAffordUpgrade = function (upgradeBuilding) {
-        for (var _i = 0, _a = upgradeBuilding.resourceCosts; _i < _a.length; _i++) {
-            var resourceCost = _a[_i];
-            if (this.resourcesService.getResource(resourceCost.resourceId).amount < resourceCost.resourceCost) {
-                return false;
-            }
-        }
-        return true;
-    };
-    MapComponent.prototype.upgradeBuilding = function (tile) {
-        var currentBuilding = this.mapService.buildingTiles[tile.buildingTileType];
-        this.buildingsService.clearBuilding(tile);
-        this.buildingsService.createBuilding(tile, currentBuilding.upgradeBuilding);
-        this.focusedBuildingTile = this.mapService.buildingTiles[tile.buildingTileType];
-        this.focusedResourceTile = this.mapService.resourceTiles[tile.resourceTileType];
-    };
-    MapComponent.prototype.canRepairBuilding = function (tile) {
-        return this.buildingsService.canRepairBuilding(tile);
-    };
-    MapComponent.prototype.repairBuilding = function (tile) {
-        this.buildingsService.repairBuilding(tile);
-    };
-    MapComponent.prototype.clearFocus = function () {
-        this.focusedTile = undefined;
-        this.focusedBuildingTile = undefined;
-        this.focusedResourceTile = undefined;
-        this.focusedResources = undefined;
+    MapComponent.prototype.setPlacementGroupVisibility = function (buildingVisibility, fighterVisibility) {
+        this.mapService.buildingListVisible = buildingVisibility;
+        this.mapService.fighterListVisible = fighterVisibility;
     };
     Object.defineProperty(MapComponent.prototype, "canvasWidth", {
         get: function () {
@@ -990,46 +1057,6 @@ var MapComponent = /** @class */ (function () {
         enumerable: true,
         configurable: true
     });
-    Object.defineProperty(MapComponent.prototype, "focusedTile", {
-        get: function () {
-            return this.mapService.focusedTile;
-        },
-        set: function (value) {
-            this.mapService.focusedTile = value;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(MapComponent.prototype, "focusedBuildingTile", {
-        get: function () {
-            return this.mapService.focusedBuildingTile;
-        },
-        set: function (value) {
-            this.mapService.focusedBuildingTile = value;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(MapComponent.prototype, "focusedResourceTile", {
-        get: function () {
-            return this.mapService.focusedResourceTile;
-        },
-        set: function (value) {
-            this.mapService.focusedResourceTile = value;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(MapComponent.prototype, "focusedResources", {
-        get: function () {
-            return this.mapService.focusedResources;
-        },
-        set: function (value) {
-            this.mapService.focusedResources = value;
-        },
-        enumerable: true,
-        configurable: true
-    });
     MapComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-map',
@@ -1038,8 +1065,9 @@ var MapComponent = /** @class */ (function () {
         }),
         __metadata("design:paramtypes", [_services_map_map_service__WEBPACK_IMPORTED_MODULE_2__["MapService"],
             _services_buildings_buildings_service__WEBPACK_IMPORTED_MODULE_3__["BuildingsService"],
-            _services_resources_resources_service__WEBPACK_IMPORTED_MODULE_5__["ResourcesService"],
-            _services_admin_admin_service__WEBPACK_IMPORTED_MODULE_4__["AdminService"]])
+            _services_resources_resources_service__WEBPACK_IMPORTED_MODULE_6__["ResourcesService"],
+            _services_enemy_enemy_service__WEBPACK_IMPORTED_MODULE_4__["EnemyService"],
+            _services_admin_admin_service__WEBPACK_IMPORTED_MODULE_5__["AdminService"]])
     ], MapComponent);
     return MapComponent;
 }());
@@ -1674,6 +1702,171 @@ var StoreComponent = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/components/tile-detail/tile-detail.component.css":
+/*!******************************************************************!*\
+  !*** ./src/app/components/tile-detail/tile-detail.component.css ***!
+  \******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "#tile-tooltip {\r\n  top: var(--detail-tooltip-top);\r\n  left: var(--detail-tooltip-left);\r\n\r\n  position: absolute;\r\n}\r\n\r\nmat-card {\r\n  text-align: center;\r\n  max-width: 300px;\r\n}\r\n\r\n.resource-list div {\r\n  display: inline-block;\r\n}\r\n\r\n.resource-list img {\r\n  width: 16px;\r\n  height: 16px;\r\n}\r\n\r\n.repair-container {\r\n  display: inline-flex;\r\n  white-space: pre-wrap;\r\n}\r\n\r\n.repair-container button {\r\n  position: relative;\r\n  top: -25%;\r\n}\r\n"
+
+/***/ }),
+
+/***/ "./src/app/components/tile-detail/tile-detail.component.html":
+/*!*******************************************************************!*\
+  !*** ./src/app/components/tile-detail/tile-detail.component.html ***!
+  \*******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<mat-card id=\"tile-tooltip\">\n  <div *ngIf=\"focusedBuildingTile\">\n    <mat-card-title>{{focusedBuildingTile.name}}</mat-card-title>\n    <mat-card-subtitle>{{focusedBuildingTile.description}}</mat-card-subtitle>\n    <div class=\"repair-container\">\n      {{focusedTile.health}}/{{focusedTile.maxHealth}} Health\n      <div *ngIf=\"focusedTile.health < focusedTile.maxHealth\">\n        <button mat-raised-button (click)=\"repairBuilding(focusedTile)\" color=\"accent\" [disabled]=\"!canRepairBuilding(focusedTile)\">\n          Repair\n          <div class=\"resource-list\">\n            <div matTooltip=\"{{focusedBuildingTile.repairCostPerPoint * (focusedTile.maxHealth - focusedTile.health)}} {{getResource(focusedBuildingTile.repairResource).name | titlecase}}\"\n              matTooltipPosition=\"below\">\n              <img src=\"{{getResource(focusedBuildingTile.repairResource).iconPath}}\" alt=\"{{getResource(focusedBuildingTile.repairResource).name}}\">\n              {{focusedBuildingTile.repairCostPerPoint * (focusedTile.maxHealth - focusedTile.health)}}\n            </div>\n          </div>\n        </button>\n      </div>\n    </div>\n  </div>\n\n  <div *ngIf=\"!focusedBuildingTile && focusedResourceTile\">\n    <mat-card-title>{{focusedResourceTile.name}}</mat-card-title>\n  </div>\n\n  <mat-card-content>\n    <div *ngIf=\"focusedResourceTile\" class=\"resource-list\">\n      Travel Time: {{focusedTile.buildingPath.length / this.mapService.tileAnimationSpeed / 1000 | number:'0.0-2'}}\n      Seconds\n      <br />\n      Produces:\n      <div *ngFor=\"let resource of focusedResources\">\n        <img src=\"{{resource.iconPath}}\" alt=\"{{resource.name}}\"> {{resource.name | titlecase}}\n      </div>\n    </div>\n    <div *ngIf=\"focusedBuildingTile && focusedBuildingTile.upgradeBuilding\">\n      <br />\n      Upgrade:\n      <br />\n      <button mat-raised-button (click)=\"upgradeBuilding(focusedTile)\" color=\"accent\" [disabled]=\"!canAffordUpgrade(this.mapService.buildingTiles[focusedBuildingTile.upgradeBuilding])\">\n        <div class=\"title\" matTooltip=\"{{this.mapService.buildingTiles[focusedBuildingTile.upgradeBuilding].description}}\"\n          matTooltipPosition=\"above\">\n          {{this.mapService.buildingTiles[focusedBuildingTile.upgradeBuilding].name}}\n        </div>\n        <div class=\"resource-list\">\n          <div *ngFor=\"let resourceCost of mapService.buildingTiles[focusedBuildingTile.upgradeBuilding].resourceCosts\"\n            matTooltip=\"{{resourceCost.resourceCost}} {{getResource(resourceCost.resourceId).name | titlecase}}\"\n            matTooltipPosition=\"below\">\n            <img src=\"{{getResource(resourceCost.resourceId).iconPath}}\" alt=\"{{getResource(resourceCost.resourceId).name}}\">\n            {{resourceCost.resourceCost}}\n          </div>\n        </div>\n      </button>\n    </div>\n  </mat-card-content>\n</mat-card>\n"
+
+/***/ }),
+
+/***/ "./src/app/components/tile-detail/tile-detail.component.ts":
+/*!*****************************************************************!*\
+  !*** ./src/app/components/tile-detail/tile-detail.component.ts ***!
+  \*****************************************************************/
+/*! exports provided: TileDetailComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TileDetailComponent", function() { return TileDetailComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _services_map_map_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../services/map/map.service */ "./src/app/services/map/map.service.ts");
+/* harmony import */ var _services_buildings_buildings_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../services/buildings/buildings.service */ "./src/app/services/buildings/buildings.service.ts");
+/* harmony import */ var _services_resources_resources_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../services/resources/resources.service */ "./src/app/services/resources/resources.service.ts");
+/* harmony import */ var _objects_tile__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../objects/tile */ "./src/app/objects/tile.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+var TileDetailComponent = /** @class */ (function () {
+    function TileDetailComponent(mapService, buildingsService, resourcesService) {
+        this.mapService = mapService;
+        this.buildingsService = buildingsService;
+        this.resourcesService = resourcesService;
+        this.buildingTileTypes = _objects_tile__WEBPACK_IMPORTED_MODULE_4__["BuildingTileType"];
+    }
+    TileDetailComponent.prototype.ngOnInit = function () {
+    };
+    TileDetailComponent.prototype.getResource = function (resourceId) {
+        return this.resourcesService.getResource(resourceId);
+    };
+    TileDetailComponent.prototype.clearFocus = function () {
+        this.focusedTile = undefined;
+        this.focusedBuildingTile = undefined;
+        this.focusedResourceTile = undefined;
+        this.focusedResources = undefined;
+    };
+    TileDetailComponent.prototype.canAffordUpgrade = function (upgradeBuilding) {
+        for (var _i = 0, _a = upgradeBuilding.resourceCosts; _i < _a.length; _i++) {
+            var resourceCost = _a[_i];
+            if (this.resourcesService.getResource(resourceCost.resourceId).amount < resourceCost.resourceCost) {
+                return false;
+            }
+        }
+        return true;
+    };
+    Object.defineProperty(TileDetailComponent.prototype, "buildingTiles", {
+        get: function () {
+            return this.mapService.buildingTiles;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    TileDetailComponent.prototype.getBuildingTileArray = function (filterByPlaceable) {
+        var tiles = this.mapService.buildingTileArray;
+        if (filterByPlaceable) {
+            tiles = tiles.filter(function (tile) { return tile.placeable; });
+        }
+        return tiles;
+    };
+    TileDetailComponent.prototype.canAffordBuilding = function (buildingType) {
+        return this.buildingsService.canAffordBuilding(this.buildingTiles[buildingType]);
+    };
+    TileDetailComponent.prototype.upgradeBuilding = function (tile) {
+        var currentBuilding = this.mapService.buildingTiles[tile.buildingTileType];
+        this.buildingsService.clearBuilding(tile);
+        this.buildingsService.createBuilding(tile, currentBuilding.upgradeBuilding);
+        this.focusedBuildingTile = this.mapService.buildingTiles[tile.buildingTileType];
+        this.focusedResourceTile = this.mapService.resourceTiles[tile.resourceTileType];
+    };
+    TileDetailComponent.prototype.canRepairBuilding = function (tile) {
+        return this.buildingsService.canRepairBuilding(tile);
+    };
+    TileDetailComponent.prototype.repairBuilding = function (tile) {
+        this.buildingsService.repairBuilding(tile);
+    };
+    Object.defineProperty(TileDetailComponent.prototype, "focusedTile", {
+        get: function () {
+            return this.mapService.focusedTile;
+        },
+        set: function (value) {
+            this.mapService.focusedTile = value;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(TileDetailComponent.prototype, "focusedBuildingTile", {
+        get: function () {
+            return this.mapService.focusedBuildingTile;
+        },
+        set: function (value) {
+            this.mapService.focusedBuildingTile = value;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(TileDetailComponent.prototype, "focusedResourceTile", {
+        get: function () {
+            return this.mapService.focusedResourceTile;
+        },
+        set: function (value) {
+            this.mapService.focusedResourceTile = value;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(TileDetailComponent.prototype, "focusedResources", {
+        get: function () {
+            return this.mapService.focusedResources;
+        },
+        set: function (value) {
+            this.mapService.focusedResources = value;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    TileDetailComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-tile-detail',
+            template: __webpack_require__(/*! ./tile-detail.component.html */ "./src/app/components/tile-detail/tile-detail.component.html"),
+            styles: [__webpack_require__(/*! ./tile-detail.component.css */ "./src/app/components/tile-detail/tile-detail.component.css")]
+        }),
+        __metadata("design:paramtypes", [_services_map_map_service__WEBPACK_IMPORTED_MODULE_1__["MapService"],
+            _services_buildings_buildings_service__WEBPACK_IMPORTED_MODULE_2__["BuildingsService"],
+            _services_resources_resources_service__WEBPACK_IMPORTED_MODULE_3__["ResourcesService"]])
+    ], TileDetailComponent);
+    return TileDetailComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/components/upgrade-dialog/upgrade-dialog.component.css":
 /*!************************************************************************!*\
   !*** ./src/app/components/upgrade-dialog/upgrade-dialog.component.css ***!
@@ -2239,7 +2432,8 @@ var MapDirective = /** @class */ (function () {
         this.canvas = d3.select('canvas');
         this.context = this.canvas.node().getContext('2d');
         this.canvasContainer = document.getElementById('canvas-container');
-        this.detailTooltip = document.getElementById('detail-tooltip');
+        this.tileTooltip = document.getElementById('tile-tooltip');
+        this.fighterTooltip = document.getElementById('fighter-tooltip');
         var imageElementContainer = document.getElementById('tile-images');
         for (var i = 0; i < imageElementContainer.children.length; i++) {
             var imageElement = imageElementContainer.children[i];
@@ -2271,36 +2465,35 @@ var MapDirective = /** @class */ (function () {
     MapDirective.prototype.clickTile = function (self) {
         return function (elapsed) {
             return __awaiter(this, void 0, void 0, function () {
-                var shouldUpdateEnemies, coordinates, tile, deleteMode, buildingCleared, buildingCreated;
+                var coordinates, tile, shouldUpdateEnemies, buildingCreated, buildingCleared;
                 return __generator(this, function (_a) {
                     switch (_a.label) {
                         case 0:
                             if (!d3.event.buttons && d3.event.type !== 'mouseup') {
                                 return [2 /*return*/];
                             }
-                            shouldUpdateEnemies = d3.event.type === 'mouseup';
-                            if (d3.event.type === 'mousedown' && self.mapService.cursorTool === _services_map_map_service__WEBPACK_IMPORTED_MODULE_7__["CursorTool"].DetailMode) {
-                                self.updateTooltip(d3.mouse(this));
-                                return [2 /*return*/];
+                            coordinates = d3.mouse(this);
+                            coordinates[0] = Math.floor(self.transform.invertX(coordinates[0]) / self.mapService.tilePixelSize);
+                            coordinates[1] = Math.floor(self.transform.invertY(coordinates[1]) / self.mapService.tilePixelSize);
+                            tile = self.mapService.tiledMap[coordinates[0] + coordinates[1] * self.mapService.mapWidth];
+                            shouldUpdateEnemies = false;
+                            if (d3.event.type === 'mousedown' && self.mapService.cursorTool === _services_map_map_service__WEBPACK_IMPORTED_MODULE_7__["CursorTool"].TileDetail) {
+                                self.updateTileTooltip(coordinates);
                             }
-                            else if (self.mapService.cursorTool === _services_map_map_service__WEBPACK_IMPORTED_MODULE_7__["CursorTool"].PlaceBuildings) {
-                                coordinates = d3.mouse(this);
-                                coordinates[0] = Math.floor(self.transform.invertX(coordinates[0]) / self.mapService.tilePixelSize);
-                                coordinates[1] = Math.floor(self.transform.invertY(coordinates[1]) / self.mapService.tilePixelSize);
-                                tile = self.mapService.tiledMap[coordinates[0] + coordinates[1] * self.mapService.mapWidth];
-                                deleteMode = d3.event.ctrlKey;
-                                if (deleteMode && !self.fighterService.selectedFighterType) {
-                                    buildingCleared = self.buildingsService.clearBuilding(tile);
-                                    shouldUpdateEnemies = shouldUpdateEnemies && buildingCleared;
-                                }
-                                else if (!deleteMode && self.buildingsService.selectedBuilding) {
-                                    buildingCreated = self.buildingsService.createBuilding(tile, self.buildingsService.selectedBuilding.tileType);
-                                    shouldUpdateEnemies = shouldUpdateEnemies && buildingCreated;
-                                }
-                                else if (d3.event.type !== 'mousemove' && self.fighterService.selectedFighterType) {
-                                    self.fighterService.createFighter(tile, self.fighterService.selectedFighterType);
-                                    shouldUpdateEnemies = false;
-                                }
+                            else if (d3.event.type === 'mousedown' && self.mapService.cursorTool === _services_map_map_service__WEBPACK_IMPORTED_MODULE_7__["CursorTool"].FighterDetail) {
+                                self.updateFighterTooltip(coordinates);
+                            }
+                            else if (self.mapService.cursorTool === _services_map_map_service__WEBPACK_IMPORTED_MODULE_7__["CursorTool"].PlaceBuildings && self.buildingsService.selectedBuilding) {
+                                buildingCreated = self.buildingsService.createBuilding(tile, self.buildingsService.selectedBuilding.tileType);
+                                shouldUpdateEnemies = d3.event.type === 'mouseup' && buildingCreated;
+                            }
+                            else if (self.mapService.cursorTool === _services_map_map_service__WEBPACK_IMPORTED_MODULE_7__["CursorTool"].ClearBuildings) {
+                                buildingCleared = self.buildingsService.clearBuilding(tile);
+                                shouldUpdateEnemies = d3.event.type === 'mouseup' && buildingCleared;
+                            }
+                            else if (d3.event.type === 'mousedown' &&
+                                self.mapService.cursorTool === _services_map_map_service__WEBPACK_IMPORTED_MODULE_7__["CursorTool"].PlaceFighters && self.fighterService.selectedFighterType) {
+                                self.fighterService.createFighter(tile, self.fighterService.selectedFighterType);
                             }
                             if (!(shouldUpdateEnemies && Date.now() - self.lastEnemyReprosessTime > self.enemyReprocessDelay)) return [3 /*break*/, 2];
                             self.lastEnemyReprosessTime = Date.now();
@@ -2316,11 +2509,9 @@ var MapDirective = /** @class */ (function () {
             });
         };
     };
-    MapDirective.prototype.updateTooltip = function (mouseCoordinates) {
+    MapDirective.prototype.updateTileTooltip = function (coordinates) {
         var _this = this;
-        var tileCoordinates = [Math.floor(this.transform.invertX(mouseCoordinates[0]) / this.mapService.tilePixelSize),
-            Math.floor(this.transform.invertY(mouseCoordinates[1]) / this.mapService.tilePixelSize)];
-        var focusedTile = this.mapService.tiledMap[tileCoordinates[0] + tileCoordinates[1] * this.mapService.mapWidth];
+        var focusedTile = this.mapService.tiledMap[coordinates[0] + coordinates[1] * this.mapService.mapWidth];
         if (focusedTile.buildingTileType || focusedTile.resourceTileType) {
             this.mapService.focusedTile = focusedTile;
             this.mapService.focusedBuildingTile = this.mapService.buildingTiles[focusedTile.buildingTileType];
@@ -2333,6 +2524,18 @@ var MapDirective = /** @class */ (function () {
             this.mapService.focusedBuildingTile = undefined;
             this.mapService.focusedResourceTile = undefined;
             this.mapService.focusedResources = undefined;
+        }
+    };
+    MapDirective.prototype.updateFighterTooltip = function (coordinates) {
+        var focusedTile = this.mapService.tiledMap[coordinates[0] + coordinates[1] * this.mapService.mapWidth];
+        var focusedFighter = this.fighterService.fighters.find(function (fighter) { return fighter.currentTile === focusedTile; });
+        if (focusedFighter) {
+            this.mapService.focusedTile = focusedTile;
+            this.mapService.focusedFighter = focusedFighter;
+        }
+        else {
+            this.mapService.focusedTile = undefined;
+            this.mapService.focusedFighter = undefined;
         }
     };
     MapDirective.prototype.updateEntities = function (self) {
@@ -2403,6 +2606,7 @@ var MapDirective = /** @class */ (function () {
             var offset = entity.position.subtract(new _objects_vector__WEBPACK_IMPORTED_MODULE_1__["Vector"](currentTile.x, currentTile.y));
             if (Math.abs(offset.x) >= this.mapService.tilePixelSize || Math.abs(offset.y) >= this.mapService.tilePixelSize) {
                 entity.pathStep++;
+                entity.currentTile = destinationTile;
                 if (entity.pathStep === entity.tilePath.length - 1) {
                     entity.pathingDone = true;
                     break;
@@ -2483,20 +2687,24 @@ var MapDirective = /** @class */ (function () {
             this.context.rotate(-projectile.rotation);
             this.context.translate(-projectile.x, -projectile.y);
         }
-        if (!this.mapService.focusedTile) {
-            return;
+        if (this.mapService.focusedTile) {
+            this.tileTooltip.style.setProperty('--detail-tooltip-top', this.mapService.focusedTile.y * this.transform.k + this.transform.y - this.tileTooltip.clientHeight + 'px');
+            this.tileTooltip.style.setProperty('--detail-tooltip-left', (this.mapService.focusedTile.x + this.mapService.tilePixelSize) * this.transform.k + this.transform.x +
+                this.element.nativeElement.getBoundingClientRect().left + 'px');
+            this.context.globalAlpha = 0.5;
+            this.context.fillStyle = 'cyan';
+            for (var _k = 0, _l = this.mapService.focusedTile.buildingPath; _k < _l.length; _k++) {
+                var pathTile = _l[_k];
+                this.context.fillRect(pathTile.x, pathTile.y, this.mapService.tilePixelSize, this.mapService.tilePixelSize);
+            }
+            this.context.fillStyle = 'black';
+            this.context.globalAlpha = 1;
         }
-        this.detailTooltip.style.setProperty('--detail-tooltip-top', this.mapService.focusedTile.y * this.transform.k + this.transform.y - this.detailTooltip.clientHeight + 'px');
-        this.detailTooltip.style.setProperty('--detail-tooltip-left', (this.mapService.focusedTile.x + this.mapService.tilePixelSize) * this.transform.k + this.transform.x +
-            this.element.nativeElement.getBoundingClientRect().left + 'px');
-        this.context.globalAlpha = 0.5;
-        this.context.fillStyle = 'cyan';
-        for (var _k = 0, _l = this.mapService.focusedTile.buildingPath; _k < _l.length; _k++) {
-            var pathTile = _l[_k];
-            this.context.fillRect(pathTile.x, pathTile.y, this.mapService.tilePixelSize, this.mapService.tilePixelSize);
+        if (this.mapService.focusedFighter) {
+            this.fighterTooltip.style.setProperty('--detail-tooltip-top', this.mapService.focusedFighter.y * this.transform.k + this.transform.y - this.tileTooltip.clientHeight + 'px');
+            this.fighterTooltip.style.setProperty('--detail-tooltip-left', (this.mapService.focusedFighter.x + this.mapService.tilePixelSize) * this.transform.k + this.transform.x +
+                this.element.nativeElement.getBoundingClientRect().left + 'px');
         }
-        this.context.fillStyle = 'black';
-        this.context.globalAlpha = 1;
     };
     MapDirective.prototype.drawTile = function (position, image, scale, healthRatio) {
         if (scale === void 0) { scale = 1; }
@@ -3896,7 +4104,10 @@ var baseTiles = __webpack_require__(/*! ../../../assets/json/tileTypes.json */ "
 var CursorTool;
 (function (CursorTool) {
     CursorTool["PlaceBuildings"] = "PLACEBUILDINGS";
-    CursorTool["DetailMode"] = "DETAILMODE";
+    CursorTool["ClearBuildings"] = "CLEARBUILDINGS";
+    CursorTool["TileDetail"] = "TILEDETAIL";
+    CursorTool["PlaceFighters"] = "PLACEFIGHTERS";
+    CursorTool["FighterDetail"] = "FIGHTERDETAIL";
 })(CursorTool || (CursorTool = {}));
 var MapService = /** @class */ (function () {
     function MapService(resourcesService) {
@@ -3908,7 +4119,8 @@ var MapService = /** @class */ (function () {
         this.mapTileArray = [];
         this.buildingTileArray = [];
         this.resourceTileArray = [];
-        this.cursorTool = CursorTool.PlaceBuildings;
+        this.buildingListVisible = false;
+        this.fighterListVisible = false;
         this.enemySpawnTiles = [];
         this.tiledMap = [];
         this.resourceAnimations = [];
@@ -4661,8 +4873,8 @@ var SettingsService = /** @class */ (function () {
                     if (tile === undefined) {
                         return "continue";
                     }
-                    tile.health = tileData.health;
-                    tile.maxHealth = tileData.maxHealth;
+                    tile.health = tileData.health ? tileData.health : 50;
+                    tile.maxHealth = tileData.maxHealth ? tileData.maxHealth : 50;
                     tile.resourceTileType = tileData.resourceTileType;
                     tile.buildingTileType = tileData.buildingTileType;
                     tile.buildingRemovable = tileData.buildingRemovable;
