@@ -169,22 +169,20 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_resource_dialog_resource_dialog_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./components/resource-dialog/resource-dialog.component */ "./src/app/components/resource-dialog/resource-dialog.component.ts");
 /* harmony import */ var _components_upgrade_dialog_upgrade_dialog_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./components/upgrade-dialog/upgrade-dialog.component */ "./src/app/components/upgrade-dialog/upgrade-dialog.component.ts");
 /* harmony import */ var _components_save_dialog_save_dialog_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./components/save-dialog/save-dialog.component */ "./src/app/components/save-dialog/save-dialog.component.ts");
-/* harmony import */ var _directives_touch_touch_directive__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./directives/touch/touch.directive */ "./src/app/directives/touch/touch.directive.ts");
-/* harmony import */ var _directives_crop_crop_directive__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./directives/crop/crop.directive */ "./src/app/directives/crop/crop.directive.ts");
-/* harmony import */ var _directives_map_map_directive__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./directives/map/map.directive */ "./src/app/directives/map/map.directive.ts");
-/* harmony import */ var _directives_no_scroll_no_scroll_directive__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./directives/no-scroll/no-scroll.directive */ "./src/app/directives/no-scroll/no-scroll.directive.ts");
-/* harmony import */ var _components_enemy_enemy_component__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./components/enemy/enemy.component */ "./src/app/components/enemy/enemy.component.ts");
-/* harmony import */ var _components_fighter_fighter_component__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./components/fighter/fighter.component */ "./src/app/components/fighter/fighter.component.ts");
-/* harmony import */ var _components_buildings_buildings_buildings_component__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./components/buildings/buildings/buildings.component */ "./src/app/components/buildings/buildings/buildings.component.ts");
-/* harmony import */ var _components_tile_detail_tile_detail_component__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./components/tile-detail/tile-detail.component */ "./src/app/components/tile-detail/tile-detail.component.ts");
-/* harmony import */ var _components_fighter_detail_fighter_detail_component__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./components/fighter-detail/fighter-detail.component */ "./src/app/components/fighter-detail/fighter-detail.component.ts");
+/* harmony import */ var _directives_crop_crop_directive__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./directives/crop/crop.directive */ "./src/app/directives/crop/crop.directive.ts");
+/* harmony import */ var _directives_map_map_directive__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./directives/map/map.directive */ "./src/app/directives/map/map.directive.ts");
+/* harmony import */ var _directives_no_scroll_no_scroll_directive__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./directives/no-scroll/no-scroll.directive */ "./src/app/directives/no-scroll/no-scroll.directive.ts");
+/* harmony import */ var _components_enemy_enemy_component__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./components/enemy/enemy.component */ "./src/app/components/enemy/enemy.component.ts");
+/* harmony import */ var _components_fighter_fighter_component__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./components/fighter/fighter.component */ "./src/app/components/fighter/fighter.component.ts");
+/* harmony import */ var _components_buildings_buildings_buildings_component__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./components/buildings/buildings/buildings.component */ "./src/app/components/buildings/buildings/buildings.component.ts");
+/* harmony import */ var _components_tile_detail_tile_detail_component__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./components/tile-detail/tile-detail.component */ "./src/app/components/tile-detail/tile-detail.component.ts");
+/* harmony import */ var _components_fighter_detail_fighter_detail_component__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./components/fighter-detail/fighter-detail.component */ "./src/app/components/fighter-detail/fighter-detail.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-
 
 
 
@@ -231,16 +229,15 @@ var AppModule = /** @class */ (function () {
                 _components_map_map_component__WEBPACK_IMPORTED_MODULE_14__["MapComponent"],
                 _components_resource_dialog_resource_dialog_component__WEBPACK_IMPORTED_MODULE_17__["ResourceDialogComponent"],
                 _components_upgrade_dialog_upgrade_dialog_component__WEBPACK_IMPORTED_MODULE_18__["UpgradeDialogComponent"],
-                _directives_touch_touch_directive__WEBPACK_IMPORTED_MODULE_20__["TouchDirective"],
-                _directives_crop_crop_directive__WEBPACK_IMPORTED_MODULE_21__["CropDirective"],
+                _directives_crop_crop_directive__WEBPACK_IMPORTED_MODULE_20__["CropDirective"],
                 _components_save_dialog_save_dialog_component__WEBPACK_IMPORTED_MODULE_19__["SaveDialogComponent"],
-                _directives_map_map_directive__WEBPACK_IMPORTED_MODULE_22__["MapDirective"],
-                _directives_no_scroll_no_scroll_directive__WEBPACK_IMPORTED_MODULE_23__["NoScrollDirective"],
-                _components_enemy_enemy_component__WEBPACK_IMPORTED_MODULE_24__["EnemyComponent"],
-                _components_fighter_fighter_component__WEBPACK_IMPORTED_MODULE_25__["FighterComponent"],
-                _components_buildings_buildings_buildings_component__WEBPACK_IMPORTED_MODULE_26__["BuildingsComponent"],
-                _components_tile_detail_tile_detail_component__WEBPACK_IMPORTED_MODULE_27__["TileDetailComponent"],
-                _components_fighter_detail_fighter_detail_component__WEBPACK_IMPORTED_MODULE_28__["FighterDetailComponent"]
+                _directives_map_map_directive__WEBPACK_IMPORTED_MODULE_21__["MapDirective"],
+                _directives_no_scroll_no_scroll_directive__WEBPACK_IMPORTED_MODULE_22__["NoScrollDirective"],
+                _components_enemy_enemy_component__WEBPACK_IMPORTED_MODULE_23__["EnemyComponent"],
+                _components_fighter_fighter_component__WEBPACK_IMPORTED_MODULE_24__["FighterComponent"],
+                _components_buildings_buildings_buildings_component__WEBPACK_IMPORTED_MODULE_25__["BuildingsComponent"],
+                _components_tile_detail_tile_detail_component__WEBPACK_IMPORTED_MODULE_26__["TileDetailComponent"],
+                _components_fighter_detail_fighter_detail_component__WEBPACK_IMPORTED_MODULE_27__["FighterDetailComponent"]
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
@@ -430,7 +427,7 @@ var AdminDebugComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "/* BuildingsComponent's private CSS styles */\r\n.buildings {\r\n  position: absolute;\r\n  top: 72px;\r\n  display: -ms-grid;\r\n  display: grid;\r\n\r\n  background: white;\r\n}\r\nbutton {\r\n  background-color: #eee;\r\n  border: none;\r\n  padding: 5px 10px;\r\n  border-radius: 4px;\r\n  cursor: pointer;\r\n  cursor: hand;\r\n  font-family: Arial;\r\n}\r\n.resource-list {\r\n  text-align: center;\r\n}\r\n.resource-list div {\r\n  display: inline-block;\r\n}\r\n.resource-list img {\r\n  width: 16px;\r\n  height: 16px;\r\n}\r\n"
+module.exports = "/* BuildingsComponent's private CSS styles */\r\n.buildings {\r\n  position: absolute;\r\n  top: 72px;\r\n  width: 140px;\r\n  display: -ms-grid;\r\n  display: grid;\r\n\r\n  background: white;\r\n}\r\nbutton {\r\n  background-color: #eee;\r\n  border: none;\r\n  padding: 5px 10px;\r\n  border-radius: 4px;\r\n  cursor: pointer;\r\n  cursor: hand;\r\n  font-family: Arial;\r\n}\r\n.resource-list {\r\n  text-align: center;\r\n}\r\n.resource-list div {\r\n  display: inline-block;\r\n}\r\n.resource-list img {\r\n  width: 16px;\r\n  height: 16px;\r\n}\r\n"
 
 /***/ }),
 
@@ -591,6 +588,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _services_map_map_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./../../services/map/map.service */ "./src/app/services/map/map.service.ts");
 /* harmony import */ var _services_enemy_enemy_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./../../services/enemy/enemy.service */ "./src/app/services/enemy/enemy.service.ts");
 /* harmony import */ var _services_admin_admin_service__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./../../services/admin/admin.service */ "./src/app/services/admin/admin.service.ts");
+/* harmony import */ var _services_tick_tick_service__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./../../services/tick/tick.service */ "./src/app/services/tick/tick.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -609,8 +607,9 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
 var ClickerMainComponent = /** @class */ (function () {
-    function ClickerMainComponent(clickerMainService, resourcesService, workersService, tooltipService, mapService, enemyService, adminService) {
+    function ClickerMainComponent(clickerMainService, resourcesService, workersService, tooltipService, mapService, enemyService, adminService, tickService) {
         this.clickerMainService = clickerMainService;
         this.resourcesService = resourcesService;
         this.workersService = workersService;
@@ -618,6 +617,7 @@ var ClickerMainComponent = /** @class */ (function () {
         this.mapService = mapService;
         this.enemyService = enemyService;
         this.adminService = adminService;
+        this.tickService = tickService;
         this.resourceTypes = _objects_resource__WEBPACK_IMPORTED_MODULE_3__["ResourceType"];
     }
     ClickerMainComponent.prototype.ngOnInit = function () {
@@ -635,14 +635,8 @@ var ClickerMainComponent = /** @class */ (function () {
     ClickerMainComponent.prototype.startHarvesting = function (id) {
         this.clickerMainService.startHarvesting(id);
     };
-    ClickerMainComponent.prototype.stopHarvesting = function (id) {
-        this.clickerMainService.stopHarvesting(id);
-    };
     ClickerMainComponent.prototype.resourceIsBeingStolen = function (id) {
         return this.enemyService.resourceIsBeingStolen(id);
-    };
-    ClickerMainComponent.prototype.shouldAnimateProgressBar = function (id) {
-        return this.clickerMainService.shouldAnimateProgressBar(id);
     };
     ClickerMainComponent.prototype.harvestResource = function (id) {
         this.clickerMainService.harvestResource(id);
@@ -662,7 +656,8 @@ var ClickerMainComponent = /** @class */ (function () {
             _services_tooltip_tooltip_service__WEBPACK_IMPORTED_MODULE_5__["TooltipService"],
             _services_map_map_service__WEBPACK_IMPORTED_MODULE_6__["MapService"],
             _services_enemy_enemy_service__WEBPACK_IMPORTED_MODULE_7__["EnemyService"],
-            _services_admin_admin_service__WEBPACK_IMPORTED_MODULE_8__["AdminService"]])
+            _services_admin_admin_service__WEBPACK_IMPORTED_MODULE_8__["AdminService"],
+            _services_tick_tick_service__WEBPACK_IMPORTED_MODULE_9__["TickService"]])
     ], ClickerMainComponent);
     return ClickerMainComponent;
 }());
@@ -841,7 +836,7 @@ var FighterDetailComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "/* FightersComponent's private CSS styles */\r\n.fighters {\r\n  position: absolute;\r\n  top: 72px;\r\n  left: 392px;\r\n  display: -ms-grid;\r\n  display: grid;\r\n\r\n  background: white;\r\n}\r\nbutton {\r\n  background-color: #eee;\r\n  border: none;\r\n  padding: 5px 10px;\r\n  border-radius: 4px;\r\n  cursor: pointer;\r\n  cursor: hand;\r\n  font-family: Arial;\r\n}\r\n.resource-list {\r\n  text-align: center;\r\n}\r\n.resource-list div {\r\n  display: inline-block;\r\n}\r\n.resource-list img {\r\n  width: 16px;\r\n  height: 16px;\r\n}\r\n"
+module.exports = "/* FightersComponent's private CSS styles */\r\n.fighters {\r\n  position: absolute;\r\n  top: 72px;\r\n  left: 392px;\r\n  width: 134px;\r\n  display: -ms-grid;\r\n  display: grid;\r\n\r\n  background: white;\r\n}\r\nbutton {\r\n  background-color: #eee;\r\n  border: none;\r\n  padding: 5px 10px;\r\n  border-radius: 4px;\r\n  cursor: pointer;\r\n  cursor: hand;\r\n  font-family: Arial;\r\n}\r\n.resource-list {\r\n  text-align: center;\r\n}\r\n.resource-list div {\r\n  display: inline-block;\r\n}\r\n.resource-list img {\r\n  width: 16px;\r\n  height: 16px;\r\n}\r\n"
 
 /***/ }),
 
@@ -966,7 +961,7 @@ module.exports = "/* MapComponent's private CSS styles */\r\nh1 {\r\n  font-size
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div id=\"canvas-container\" tabindex=\"1\">\r\n  <canvas class=\"noselect\" appNoScroll appMap width=\"{{canvasWidth}}\" height=\"{{canvasHeight}}\" oncontextmenu=\"return false\"></canvas>\r\n\r\n  <mat-button-toggle-group #group=\"matButtonToggleGroup\" [(ngModel)]=\"mapService.cursorTool\" class=\"cursor-tools\">\r\n    <mat-button-toggle value=\"PLACEBUILDINGS\" class=\"cursor-tool\" (click)=\"setPlacementGroupVisibility(!mapService.buildingListVisible, false)\">\r\n      <mat-icon color=\"primary\">add_photo_alternate</mat-icon>\r\n      <br />\r\n      Place Buildings\r\n    </mat-button-toggle>\r\n    <mat-button-toggle value=\"CLEARBUILDINGS\" class=\"cursor-tool\" (click)=\"setPlacementGroupVisibility(false, false)\">\r\n      <mat-icon color=\"primary\">delete</mat-icon>\r\n      <br />\r\n      Clear Buildings\r\n    </mat-button-toggle>\r\n    <mat-button-toggle value=\"TILEDETAIL\" class=\"cursor-tool\" (click)=\"setPlacementGroupVisibility(false, false)\">\r\n      <mat-icon color=\"primary\">mode_comment</mat-icon>\r\n      <br />\r\n      Tile Details\r\n    </mat-button-toggle>\r\n    <mat-button-toggle *ngIf=\"enemyService.enemiesActive\" value=\"PLACEFIGHTERS\" class=\"cursor-tool\" (click)=\"setPlacementGroupVisibility(false, !this.mapService.fighterListVisible)\">\r\n      <mat-icon color=\"primary\">directions_walk</mat-icon>\r\n      <br />\r\n      Place Fighters\r\n    </mat-button-toggle>\r\n    <mat-button-toggle *ngIf=\"enemyService.enemiesActive\" value=\"FIGHTERDETAIL\" class=\"cursor-tool\" (click)=\"setPlacementGroupVisibility(false, false)\">\r\n      <mat-icon color=\"primary\">directions_run</mat-icon>\r\n      <br />\r\n      Fighter Details\r\n    </mat-button-toggle>\r\n  </mat-button-toggle-group>\r\n\r\n  <app-buildings *ngIf=\"mapService.buildingListVisible\"></app-buildings>\r\n  <app-fighter *ngIf=\"mapService.fighterListVisible\"></app-fighter>\r\n</div>\r\n\r\n<app-tile-detail [ngClass]=\"{'hidden': !mapService.focusedBuildingTile && !mapService.focusedResourceTile}\"></app-tile-detail>\r\n<app-fighter-detail [ngClass]=\"{'hidden': !mapService.focusedFighter}\"></app-fighter-detail>\r\n"
+module.exports = "<div id=\"canvas-container\" tabindex=\"1\">\r\n  <canvas class=\"noselect\" appNoScroll appMap width=\"{{canvasWidth}}\" height=\"{{canvasHeight}}\" oncontextmenu=\"return false\"></canvas>\r\n\r\n  <mat-button-toggle-group #group=\"matButtonToggleGroup\" [(ngModel)]=\"mapService.cursorTool\" class=\"cursor-tools\" (valueChange)=\"clearFocus()\">\r\n    <mat-button-toggle value=\"PLACEBUILDINGS\" class=\"cursor-tool\" (click)=\"setPlacementGroupVisibility(!mapService.buildingListVisible, false)\">\r\n      <mat-icon color=\"primary\">add_photo_alternate</mat-icon>\r\n      <br />\r\n      Place Buildings\r\n    </mat-button-toggle>\r\n    <mat-button-toggle value=\"CLEARBUILDINGS\" class=\"cursor-tool\" (click)=\"setPlacementGroupVisibility(false, false)\">\r\n      <mat-icon color=\"primary\">delete</mat-icon>\r\n      <br />\r\n      Clear Buildings\r\n    </mat-button-toggle>\r\n    <mat-button-toggle value=\"TILEDETAIL\" class=\"cursor-tool\" (click)=\"setPlacementGroupVisibility(false, false)\">\r\n      <mat-icon color=\"primary\">mode_comment</mat-icon>\r\n      <br />\r\n      Tile Details\r\n    </mat-button-toggle>\r\n    <mat-button-toggle *ngIf=\"enemyService.enemiesActive\" value=\"PLACEFIGHTERS\" class=\"cursor-tool\" (click)=\"setPlacementGroupVisibility(false, !this.mapService.fighterListVisible)\">\r\n      <mat-icon color=\"primary\">directions_walk</mat-icon>\r\n      <br />\r\n      Place Fighters\r\n    </mat-button-toggle>\r\n    <mat-button-toggle *ngIf=\"enemyService.enemiesActive\" value=\"FIGHTERDETAIL\" class=\"cursor-tool\" (click)=\"setPlacementGroupVisibility(false, false)\">\r\n      <mat-icon color=\"primary\">directions_run</mat-icon>\r\n      <br />\r\n      Fighter Details\r\n    </mat-button-toggle>\r\n  </mat-button-toggle-group>\r\n\r\n  <app-buildings *ngIf=\"mapService.buildingListVisible\"></app-buildings>\r\n  <app-fighter *ngIf=\"mapService.fighterListVisible\"></app-fighter>\r\n</div>\r\n\r\n<app-tile-detail [ngClass]=\"{'hidden': !mapService.focusedBuildingTile && !mapService.focusedResourceTile}\"></app-tile-detail>\r\n<app-fighter-detail [ngClass]=\"{'hidden': !mapService.focusedFighter}\"></app-fighter-detail>\r\n"
 
 /***/ }),
 
@@ -1014,6 +1009,13 @@ var MapComponent = /** @class */ (function () {
         this.buildingTileTypes = _objects_tile__WEBPACK_IMPORTED_MODULE_1__["BuildingTileType"];
     }
     MapComponent.prototype.ngOnInit = function () {
+    };
+    MapComponent.prototype.clearFocus = function () {
+        this.mapService.focusedTile = undefined;
+        this.mapService.focusedBuildingTile = undefined;
+        this.mapService.focusedResourceTile = undefined;
+        this.mapService.focusedResources = undefined;
+        this.mapService.focusedFighter = undefined;
     };
     MapComponent.prototype.setPlacementGroupVisibility = function (buildingVisibility, fighterVisibility) {
         this.mapService.buildingListVisible = buildingVisibility;
@@ -1464,7 +1466,7 @@ module.exports = "mat-panel-title {\r\n  display: -ms-grid;\r\n  display: grid;\
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<h3>Version {{settingsService.gameVersion}}</h3>\n\n<mat-accordion multi=\"true\">\n  <mat-expansion-panel expanded=\"true\">\n    <mat-expansion-panel-header>\n      <mat-panel-title>\n        <mat-icon color=\"primary\">save</mat-icon>\n        Save/Load\n      </mat-panel-title>\n    </mat-expansion-panel-header>\n\n    <mat-form-field class=\"full-width\">\n      <mat-select placeholder=\"Autosave Interval (Minutes)\" [(value)]=\"autosaveInterval\" (valueChange)=\"setAutosave()\">\n        <mat-option [value]=\"-1\">Disable</mat-option>\n        <mat-option [value]=\"60000\">1</mat-option>\n        <mat-option [value]=\"900000\">15</mat-option>\n        <mat-option [value]=\"1800000\">30</mat-option>\n        <mat-option [value]=\"3600000\">60</mat-option>\n      </mat-select>\n    </mat-form-field>\n\n    <button mat-raised-button color=\"primary\" (click)=\"saveGame()\">Save</button>\n    <button mat-raised-button color=\"warn\" (click)=\"deleteGame()\">Delete Save</button>\n\n    <button mat-raised-button (click)=\"exportSave()\">Export Save</button>\n    <button mat-raised-button (click)=\"importSave()\">Import Save</button>\n  </mat-expansion-panel>\n\n  <mat-expansion-panel expanded=\"true\">\n      <mat-expansion-panel-header>\n        <mat-panel-title>\n          <mat-icon color=\"primary\">list</mat-icon>\n          Interface\n        </mat-panel-title>\n      </mat-expansion-panel-header>\n\n      <mat-checkbox [(ngModel)]=\"slimInterface\">Slim Mode</mat-checkbox>\n      <!-- <br />\n      <mat-checkbox [(ngModel)]=\"disableAnimations\">Disable Animations</mat-checkbox> -->\n    </mat-expansion-panel>\n\n  <mat-expansion-panel expanded=\"true\">\n    <mat-expansion-panel-header>\n      <mat-panel-title>\n        <mat-icon color=\"primary\">map</mat-icon>\n        Map\n      </mat-panel-title>\n    </mat-expansion-panel-header>\n\n    <mat-checkbox [(ngModel)]=\"mapLowFramerate\">Limit Framerate</mat-checkbox>\n    <br />\n\n    <mat-form-field class=\"full-width\">\n      <input class=\"color-input\" matInput placeholder=\"Player Harvest Color\" [(colorPicker)]=\"harvestDetailColor\" [style.background]=\"harvestDetailColor\" [value]=\"harvestDetailColor\"/>\n    </mat-form-field>\n\n    <mat-form-field class=\"full-width\">\n      <input class=\"color-input\" matInput placeholder=\"Worker Harvest Color\" [(colorPicker)]=\"workerDetailColor\" [style.background]=\"workerDetailColor\" [value]=\"workerDetailColor\"/>\n    </mat-form-field>\n  </mat-expansion-panel>\n\n  <mat-expansion-panel expanded=\"true\">\n    <mat-expansion-panel-header>\n      <mat-panel-title>\n        <mat-icon color=\"primary\">assessment</mat-icon>\n        Log\n      </mat-panel-title>\n    </mat-expansion-panel-header>\n\n    <button mat-raised-button (click)=\"messagesService.clear()\">Clear</button>\n\n    <br />\n\n    <mat-form-field class=\"full-width\">\n      <input matInput type=\"number\" placeholder=\"Log History\" min=\"0\" max=\"10000\" [(ngModel)]=\"messagesService.messageLimit\">\n    </mat-form-field>\n\n    <br />\n\n    <mat-form-field class=\"full-width\">\n      <mat-select placeholder=\"Visible Log Sources\" [(ngModel)]=\"messagesService.visibleSources\" (ngModelChange)=\"messagesService.getFilteredMessages()\" multiple>\n        <mat-option *ngFor=\"let messageSource of messageSources | enumToArray\" [(value)]=\"messageSources[messageSource]\">\n          {{messageSource | titlecase}}\n        </mat-option>\n      </mat-select>\n    </mat-form-field>\n  </mat-expansion-panel>\n\n  <mat-expansion-panel expanded=\"true\">\n    <mat-expansion-panel-header>\n      <mat-panel-title>\n        <mat-icon color=\"primary\">bug_report</mat-icon>\n        Debug\n      </mat-panel-title>\n    </mat-expansion-panel-header>\n\n    <mat-checkbox [(ngModel)]=\"debugMode\">Debug Mode</mat-checkbox>\n  </mat-expansion-panel>\n\n  <!-- <mat-expansion-panel expanded=\"true\">\n    <mat-expansion-panel-header>\n      <mat-panel-title>\n        <mat-icon color=\"primary\">attach_money</mat-icon>\n        Shameless Commercialism\n      </mat-panel-title>\n    </mat-expansion-panel-header>\n\n    <a href=\"https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=L6UNHAL6A8PDC\" target=\"_blank\">\n      <img src=\"https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif\" border=\"0\" alt=\"PayPal - The safer, easier way to pay online!\">\n    </a>\n\n  </mat-expansion-panel> -->\n</mat-accordion>\n"
+module.exports = "<h3>Version {{settingsService.gameVersion}}</h3>\n\n<mat-accordion multi=\"true\">\n  <mat-expansion-panel expanded=\"true\">\n    <mat-expansion-panel-header>\n      <mat-panel-title>\n        <mat-icon color=\"primary\">save</mat-icon>\n        Save/Load\n      </mat-panel-title>\n    </mat-expansion-panel-header>\n\n    <mat-form-field class=\"full-width\">\n      <mat-select placeholder=\"Autosave Interval (Minutes)\" [(ngModel)]=\"autosaveInterval\" (valueChange)=\"settingsService.setAutosave()\">\n        <mat-option [value]=\"-1\">Disable</mat-option>\n        <mat-option [value]=\"60000\">1</mat-option>\n        <mat-option [value]=\"900000\">15</mat-option>\n        <mat-option [value]=\"1800000\">30</mat-option>\n        <mat-option [value]=\"3600000\">60</mat-option>\n      </mat-select>\n    </mat-form-field>\n\n    <button mat-raised-button color=\"primary\" (click)=\"saveGame()\">Save</button>\n    <button mat-raised-button color=\"warn\" (click)=\"deleteGame()\">Delete Save</button>\n\n    <button mat-raised-button (click)=\"exportSave()\">Export Save</button>\n    <button mat-raised-button (click)=\"importSave()\">Import Save</button>\n  </mat-expansion-panel>\n\n  <mat-expansion-panel expanded=\"true\">\n      <mat-expansion-panel-header>\n        <mat-panel-title>\n          <mat-icon color=\"primary\">list</mat-icon>\n          Interface\n        </mat-panel-title>\n      </mat-expansion-panel-header>\n\n      <mat-checkbox [(ngModel)]=\"slimInterface\">Slim Mode</mat-checkbox>\n      <!-- <br />\n      <mat-checkbox [(ngModel)]=\"disableAnimations\">Disable Animations</mat-checkbox> -->\n    </mat-expansion-panel>\n\n  <mat-expansion-panel expanded=\"true\">\n    <mat-expansion-panel-header>\n      <mat-panel-title>\n        <mat-icon color=\"primary\">map</mat-icon>\n        Map\n      </mat-panel-title>\n    </mat-expansion-panel-header>\n\n    <mat-checkbox [(ngModel)]=\"mapLowFramerate\">Limit Framerate</mat-checkbox>\n    <br />\n\n    <mat-form-field class=\"full-width\">\n      <input class=\"color-input\" matInput placeholder=\"Player Harvest Color\" [(colorPicker)]=\"harvestDetailColor\" [style.background]=\"harvestDetailColor\" [value]=\"harvestDetailColor\"/>\n    </mat-form-field>\n\n    <mat-form-field class=\"full-width\">\n      <input class=\"color-input\" matInput placeholder=\"Worker Harvest Color\" [(colorPicker)]=\"workerDetailColor\" [style.background]=\"workerDetailColor\" [value]=\"workerDetailColor\"/>\n    </mat-form-field>\n  </mat-expansion-panel>\n\n  <mat-expansion-panel expanded=\"true\">\n    <mat-expansion-panel-header>\n      <mat-panel-title>\n        <mat-icon color=\"primary\">assessment</mat-icon>\n        Log\n      </mat-panel-title>\n    </mat-expansion-panel-header>\n\n    <button mat-raised-button (click)=\"messagesService.clear()\">Clear</button>\n\n    <br />\n\n    <mat-form-field class=\"full-width\">\n      <input matInput type=\"number\" placeholder=\"Log History\" min=\"0\" max=\"10000\" [(ngModel)]=\"messagesService.messageLimit\">\n    </mat-form-field>\n\n    <br />\n\n    <mat-form-field class=\"full-width\">\n      <mat-select placeholder=\"Visible Log Sources\" [(ngModel)]=\"messagesService.visibleSources\" (ngModelChange)=\"messagesService.getFilteredMessages()\" multiple>\n        <mat-option *ngFor=\"let messageSource of messageSources | enumToArray\" [(value)]=\"messageSources[messageSource]\">\n          {{messageSource | titlecase}}\n        </mat-option>\n      </mat-select>\n    </mat-form-field>\n  </mat-expansion-panel>\n\n  <mat-expansion-panel expanded=\"true\">\n    <mat-expansion-panel-header>\n      <mat-panel-title>\n        <mat-icon color=\"primary\">bug_report</mat-icon>\n        Debug\n      </mat-panel-title>\n    </mat-expansion-panel-header>\n\n    <mat-checkbox [(ngModel)]=\"debugMode\">Debug Mode</mat-checkbox>\n  </mat-expansion-panel>\n\n  <!-- <mat-expansion-panel expanded=\"true\">\n    <mat-expansion-panel-header>\n      <mat-panel-title>\n        <mat-icon color=\"primary\">attach_money</mat-icon>\n        Shameless Commercialism\n      </mat-panel-title>\n    </mat-expansion-panel-header>\n\n    <a href=\"https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=L6UNHAL6A8PDC\" target=\"_blank\">\n      <img src=\"https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif\" border=\"0\" alt=\"PayPal - The safer, easier way to pay online!\">\n    </a>\n\n  </mat-expansion-panel> -->\n</mat-accordion>\n"
 
 /***/ }),
 
@@ -1764,12 +1766,6 @@ var TileDetailComponent = /** @class */ (function () {
     };
     TileDetailComponent.prototype.getResource = function (resourceId) {
         return this.resourcesService.getResource(resourceId);
-    };
-    TileDetailComponent.prototype.clearFocus = function () {
-        this.focusedTile = undefined;
-        this.focusedBuildingTile = undefined;
-        this.focusedResourceTile = undefined;
-        this.focusedResources = undefined;
     };
     TileDetailComponent.prototype.canAffordUpgrade = function (upgradeBuilding) {
         for (var _i = 0, _a = upgradeBuilding.resourceCosts; _i < _a.length; _i++) {
@@ -2423,10 +2419,6 @@ var MapDirective = /** @class */ (function () {
         this.imageElements = {};
         this.transform = d3.zoomIdentity;
         this.lowFramerateActive = false;
-        this.images = [
-            { name: 'map', x: 0, y: 0, width: this.mapService.gridWidth * this.mapService.tilePixelSize,
-                height: this.mapService.gridHeight * this.mapService.tilePixelSize }
-        ];
     }
     MapDirective.prototype.ngAfterViewInit = function () {
         this.canvas = d3.select('canvas');
@@ -2449,7 +2441,9 @@ var MapDirective = /** @class */ (function () {
                 this.mapService.gridHeight * this.mapService.tilePixelSize]])
             .on('zoom', this.zoomed(this)));
         this.canvas.on('mousedown mousemove mouseup', this.clickTile(this));
-        this.refreshTimer = d3.interval(this.updateEntities(this), 25);
+        this.refreshTimer = d3.interval(this.refreshCanvas(this), 25);
+    };
+    MapDirective.prototype.tick = function (elapsed) {
     };
     MapDirective.prototype.scrollFilter = function (self) {
         return function (elapsed) {
@@ -2459,7 +2453,6 @@ var MapDirective = /** @class */ (function () {
     MapDirective.prototype.zoomed = function (self) {
         return function (elapsed) {
             self.transform = d3.event.transform;
-            self.refreshCanvas();
         };
     };
     MapDirective.prototype.clickTile = function (self) {
@@ -2501,9 +2494,7 @@ var MapDirective = /** @class */ (function () {
                         case 1:
                             _a.sent();
                             _a.label = 2;
-                        case 2:
-                            self.refreshCanvas();
-                            return [2 /*return*/];
+                        case 2: return [2 /*return*/];
                     }
                 });
             });
@@ -2538,96 +2529,27 @@ var MapDirective = /** @class */ (function () {
             this.mapService.focusedFighter = undefined;
         }
     };
-    MapDirective.prototype.updateEntities = function (self) {
-        return function (elapsed) {
-            if (self.lowFramerateActive !== self.settingsService.mapLowFramerate) {
-                self.lowFramerateActive = self.settingsService.mapLowFramerate;
-                self.refreshTimer.stop();
-                self.refreshTimer = d3.interval(self.updateEntities(self), self.lowFramerateActive ? self.mapService.lowFramerate : self.mapService.highFramerate);
-            }
-            for (var _i = 0, _a = self.enemyService.enemies; _i < _a.length; _i++) {
-                var enemy = _a[_i];
-                if (enemy.health <= 0) {
-                    self.enemyService.killEnemy(enemy);
-                }
-            }
-            self.fighterService.fighters = self.fighterService.fighters.filter(function (fighter) { return fighter.health > 0; });
-            var deltaTime = elapsed - self.mapService.lastAnimationTime;
-            if (deltaTime < 0) {
-                deltaTime = 0;
-            }
-            for (var _b = 0, _c = self.mapService.resourceAnimations; _b < _c.length; _b++) {
-                var resourceAnimation = _c[_b];
-                self.updateEntityPathPosition(resourceAnimation, self.mapService.tileAnimationSpeed, deltaTime);
-                if (resourceAnimation.pathingDone) {
-                    self.resourcesService.finishResourceAnimation(resourceAnimation.resourceId, resourceAnimation.multiplier, resourceAnimation.spawnedByPlayer);
-                }
-            }
-            self.mapService.resourceAnimations = self.mapService.resourceAnimations.filter(function (animation) { return !animation.pathingDone; });
-            for (var _d = 0, _e = self.enemyService.enemies; _d < _e.length; _d++) {
-                var enemy = _e[_d];
-                self.updateEntityPathPosition(enemy, self.mapService.enemyAnimationSpeed, deltaTime);
-            }
-            var _loop_1 = function (projectile) {
-                var distance = projectile.target.position.subtract(projectile.position);
-                var totalDistance = projectile.target.position.subtract(projectile.spawnPosition);
-                if (distance.magnitude < self.mapService.tilePixelSize) {
-                    projectile.target.health -= projectile.owner.attack;
-                    self.mapService.projectiles = self.mapService.projectiles.filter(function (_projectile) { return _projectile !== projectile; });
-                }
-                var gradientY = projectile.target.y - projectile.y;
-                var gradientX = projectile.target.x - projectile.x;
-                var angle = Math.atan2(gradientY, gradientX) + (Math.PI / 2);
-                totalDistance.x *= self.mapService.projectileAnimationSpeed * deltaTime;
-                totalDistance.y *= self.mapService.projectileAnimationSpeed * deltaTime;
-                projectile.position = projectile.position.add(totalDistance);
-                projectile.rotation = angle;
-            };
-            for (var _f = 0, _g = self.mapService.projectiles; _f < _g.length; _f++) {
-                var projectile = _g[_f];
-                _loop_1(projectile);
-            }
-            self.mapService.lastAnimationTime = elapsed;
-            self.refreshCanvas();
-        };
-    };
-    MapDirective.prototype.updateEntityPathPosition = function (entity, animationSpeed, deltaTime) {
-        if (entity.tilePath === undefined || entity.pathStep >= entity.tilePath.length - 1) {
-            return;
-        }
-        var totalDistance = animationSpeed * deltaTime;
-        while (totalDistance > 0) {
-            var stepDistance = Math.min(1, totalDistance);
-            totalDistance -= 1;
-            var currentTile = entity.tilePath[entity.pathStep];
-            var destinationTile = entity.tilePath[entity.pathStep + 1];
-            entity.x += (destinationTile.x - currentTile.x) * stepDistance;
-            entity.y += (destinationTile.y - currentTile.y) * stepDistance;
-            var offset = entity.position.subtract(new _objects_vector__WEBPACK_IMPORTED_MODULE_1__["Vector"](currentTile.x, currentTile.y));
-            if (Math.abs(offset.x) >= this.mapService.tilePixelSize || Math.abs(offset.y) >= this.mapService.tilePixelSize) {
-                entity.pathStep++;
-                entity.currentTile = destinationTile;
-                if (entity.pathStep === entity.tilePath.length - 1) {
-                    entity.pathingDone = true;
-                    break;
-                }
-            }
-        }
-    };
     MapDirective.prototype.resizeCanvas = function () {
         this.element.nativeElement.width = this.canvasContainer.clientWidth;
         this.element.nativeElement.height = window.innerHeight - this.headerPixels;
         this.mapService.canvasPixelWidth = this.canvasContainer.clientWidth;
         this.mapService.canvasPixelHeight = window.innerHeight - this.headerPixels;
     };
-    MapDirective.prototype.refreshCanvas = function () {
-        this.resizeCanvas();
-        this.context.save();
-        this.context.clearRect(0, 0, this.mapService.canvasPixelWidth, this.mapService.canvasPixelHeight);
-        this.context.translate(this.transform.x, this.transform.y);
-        this.context.scale(this.transform.k, this.transform.k);
-        this.drawCanvas();
-        this.context.restore();
+    MapDirective.prototype.refreshCanvas = function (self) {
+        return function (elapsed) {
+            if (self.lowFramerateActive !== self.settingsService.mapLowFramerate) {
+                self.lowFramerateActive = self.settingsService.mapLowFramerate;
+                self.refreshTimer.stop();
+                self.refreshTimer = d3.interval(self.refreshCanvas(self), self.lowFramerateActive ? self.mapService.lowFramerate : self.mapService.highFramerate);
+            }
+            self.resizeCanvas();
+            self.context.save();
+            self.context.clearRect(0, 0, self.mapService.canvasPixelWidth, self.mapService.canvasPixelHeight);
+            self.context.translate(self.transform.x, self.transform.y);
+            self.context.scale(self.transform.k, self.transform.k);
+            self.drawCanvas();
+            self.context.restore();
+        };
     };
     MapDirective.prototype.drawCanvas = function () {
         var upperLeftPixel = [(-this.transform.x - this.mapService.tilePixelSize * 5) / this.transform.k,
@@ -2653,6 +2575,11 @@ var MapDirective = /** @class */ (function () {
             if (tile.health === 0) {
                 this.context.globalAlpha = 0.5;
                 this.drawTile(tile.position, this.imageElements['disabled']);
+                this.context.globalAlpha = 1;
+            }
+            else if (tile.buildingTileType && !tile.buildingRemovable && this.mapService.cursorTool === _services_map_map_service__WEBPACK_IMPORTED_MODULE_7__["CursorTool"].ClearBuildings) {
+                this.context.globalAlpha = 0.5;
+                this.drawTile(tile.position, this.imageElements['locked']);
                 this.context.globalAlpha = 1;
             }
         }
@@ -2688,9 +2615,9 @@ var MapDirective = /** @class */ (function () {
             this.context.translate(-projectile.x, -projectile.y);
         }
         if (this.mapService.focusedTile) {
-            this.tileTooltip.style.setProperty('--detail-tooltip-top', this.mapService.focusedTile.y * this.transform.k + this.transform.y - this.tileTooltip.clientHeight + 'px');
-            this.tileTooltip.style.setProperty('--detail-tooltip-left', (this.mapService.focusedTile.x + this.mapService.tilePixelSize) * this.transform.k + this.transform.x +
-                this.element.nativeElement.getBoundingClientRect().left + 'px');
+            var tooltipPosition = this.getTooltipPosition(this.mapService.focusedTile.position);
+            this.tileTooltip.style.setProperty('--detail-tooltip-top', tooltipPosition.x + 'px');
+            this.tileTooltip.style.setProperty('--detail-tooltip-left', tooltipPosition.y + 'px');
             this.context.globalAlpha = 0.5;
             this.context.fillStyle = 'cyan';
             for (var _k = 0, _l = this.mapService.focusedTile.buildingPath; _k < _l.length; _k++) {
@@ -2701,10 +2628,22 @@ var MapDirective = /** @class */ (function () {
             this.context.globalAlpha = 1;
         }
         if (this.mapService.focusedFighter) {
-            this.fighterTooltip.style.setProperty('--detail-tooltip-top', this.mapService.focusedFighter.y * this.transform.k + this.transform.y - this.tileTooltip.clientHeight + 'px');
-            this.fighterTooltip.style.setProperty('--detail-tooltip-left', (this.mapService.focusedFighter.x + this.mapService.tilePixelSize) * this.transform.k + this.transform.x +
-                this.element.nativeElement.getBoundingClientRect().left + 'px');
+            var fighter = this.mapService.focusedFighter;
+            var tooltipPosition = this.getTooltipPosition(fighter.position);
+            this.fighterTooltip.style.setProperty('--detail-tooltip-top', tooltipPosition.x + 'px');
+            this.fighterTooltip.style.setProperty('--detail-tooltip-left', tooltipPosition.y + 'px');
+            this.context.globalAlpha = 0.5;
+            this.context.fillStyle = 'cyan';
+            this.context.beginPath();
+            this.context.arc(fighter.x + this.mapService.tilePixelSize / 2, fighter.y + this.mapService.tilePixelSize / 2, fighter.attackRange * this.mapService.tilePixelSize, 0, 2 * Math.PI);
+            this.context.stroke();
+            this.context.fillStyle = 'black';
+            this.context.globalAlpha = 1;
         }
+    };
+    MapDirective.prototype.getTooltipPosition = function (targetPosition) {
+        var mapBounds = this.element.nativeElement.getBoundingClientRect();
+        return new _objects_vector__WEBPACK_IMPORTED_MODULE_1__["Vector"](targetPosition.y * this.transform.k + this.transform.y - this.tileTooltip.clientHeight, (targetPosition.x + this.mapService.tilePixelSize) * this.transform.k + this.transform.x + mapBounds.left);
     };
     MapDirective.prototype.drawTile = function (position, image, scale, healthRatio) {
         if (scale === void 0) { scale = 1; }
@@ -2780,59 +2719,25 @@ var NoScrollDirective = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "./src/app/directives/touch/touch.directive.ts":
-/*!*****************************************************!*\
-  !*** ./src/app/directives/touch/touch.directive.ts ***!
-  \*****************************************************/
-/*! exports provided: TouchDirective */
+/***/ "./src/app/globals.ts":
+/*!****************************!*\
+  !*** ./src/app/globals.ts ***!
+  \****************************/
+/*! exports provided: canvasWidth, canvasHeight, tilePixelSize, gridWidth, gridHeight */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TouchDirective", function() { return TouchDirective; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var hammerjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! hammerjs */ "./node_modules/hammerjs/hammer.js");
-/* harmony import */ var hammerjs__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(hammerjs__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _services_clicker_main_clicker_main_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./../../services/clicker-main/clicker-main.service */ "./src/app/services/clicker-main/clicker-main.service.ts");
-var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (undefined && undefined.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-var TouchDirective = /** @class */ (function () {
-    function TouchDirective(element, renderer, clickerMainService) {
-        this.element = element;
-        this.renderer = renderer;
-        this.clickerMainService = clickerMainService;
-        var hammerControl = hammerjs__WEBPACK_IMPORTED_MODULE_1__(element.nativeElement);
-        hammerControl.get('press').set({ time: 0 });
-        hammerControl.on('press', function (event) {
-            var id = +element.nativeElement.attributes['id'].value;
-            clickerMainService.startHarvesting(id);
-        });
-        hammerControl.on('pressup', function (event) {
-            var id = +element.nativeElement.attributes['id'].value;
-            clickerMainService.stopHarvesting(id);
-        });
-    }
-    TouchDirective = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Directive"])({
-            selector: '[appTouch]'
-        }),
-        __metadata("design:paramtypes", [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ElementRef"],
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["Renderer2"],
-            _services_clicker_main_clicker_main_service__WEBPACK_IMPORTED_MODULE_2__["ClickerMainService"]])
-    ], TouchDirective);
-    return TouchDirective;
-}());
-
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "canvasWidth", function() { return canvasWidth; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "canvasHeight", function() { return canvasHeight; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "tilePixelSize", function() { return tilePixelSize; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "gridWidth", function() { return gridWidth; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "gridHeight", function() { return gridHeight; });
+var canvasWidth = 750;
+var canvasHeight = 750;
+var tilePixelSize = 16;
+var gridWidth = 150;
+var gridHeight = 150;
 
 
 /***/ }),
@@ -2957,6 +2862,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Projectile", function() { return Projectile; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ResourceAnimation", function() { return ResourceAnimation; });
 /* harmony import */ var _vector__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./vector */ "./src/app/objects/vector.ts");
+/* harmony import */ var _globals__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../globals */ "./src/app/globals.ts");
 var __extends = (undefined && undefined.__extends) || (function () {
     var extendStatics = Object.setPrototypeOf ||
         ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
@@ -2968,8 +2874,10 @@ var __extends = (undefined && undefined.__extends) || (function () {
     };
 })();
 
+
 var Entity = /** @class */ (function () {
-    function Entity(name, position, currentTile, health, tilePath) {
+    function Entity(name, position, currentTile, health, animationSpeed, tilePath) {
+        if (animationSpeed === void 0) { animationSpeed = 0.003; }
         if (tilePath === void 0) { tilePath = []; }
         this.pathingDone = false;
         this.name = name;
@@ -2981,7 +2889,10 @@ var Entity = /** @class */ (function () {
         this.pathingDone = false;
         this.health = health;
         this.maxHealth = health;
+        this.animationSpeed = animationSpeed;
     }
+    Entity.prototype.tick = function (elapsed, deltaTime) {
+    };
     Object.defineProperty(Entity.prototype, "x", {
         get: function () {
             return this.position.x;
@@ -3002,13 +2913,37 @@ var Entity = /** @class */ (function () {
         enumerable: true,
         configurable: true
     });
+    Entity.prototype.updatePathPosition = function (deltaTime) {
+        if (this.tilePath === undefined || this.pathStep >= this.tilePath.length - 1) {
+            return;
+        }
+        var totalDistance = this.animationSpeed * deltaTime;
+        while (totalDistance > 0) {
+            var stepDistance = Math.min(1, totalDistance);
+            totalDistance -= 1;
+            var currentTile = this.tilePath[this.pathStep];
+            var destinationTile = this.tilePath[this.pathStep + 1];
+            this.x += (destinationTile.x - currentTile.x) * stepDistance;
+            this.y += (destinationTile.y - currentTile.y) * stepDistance;
+            var offset = this.position.subtract(new _vector__WEBPACK_IMPORTED_MODULE_0__["Vector"](currentTile.x, currentTile.y));
+            if (Math.abs(offset.x) >= _globals__WEBPACK_IMPORTED_MODULE_1__["tilePixelSize"] || Math.abs(offset.y) >= _globals__WEBPACK_IMPORTED_MODULE_1__["tilePixelSize"]) {
+                this.pathStep++;
+                this.currentTile = destinationTile;
+                if (this.pathStep === this.tilePath.length - 1) {
+                    this.pathingDone = true;
+                    break;
+                }
+            }
+        }
+    };
     return Entity;
 }());
 
 var Actor = /** @class */ (function (_super) {
     __extends(Actor, _super);
-    function Actor(name, position, currentTile, health, attack, defense, attackRange) {
-        var _this = _super.call(this, name, position, currentTile, health) || this;
+    function Actor(name, position, currentTile, health, animationSpeed, attack, defense, attackRange) {
+        if (animationSpeed === void 0) { animationSpeed = 0.003; }
+        var _this = _super.call(this, name, position, currentTile, health, animationSpeed) || this;
         _this.attack = attack;
         _this.defense = defense;
         _this.attackRange = attackRange;
@@ -3019,8 +2954,9 @@ var Actor = /** @class */ (function (_super) {
 
 var Enemy = /** @class */ (function (_super) {
     __extends(Enemy, _super);
-    function Enemy(name, position, currentTile, health, attack, defense, attackRange, targetableBuildingTypes, resourcesToSteal, stealMax, resourceCapacity) {
-        var _this = _super.call(this, name, position, currentTile, health, attack, defense, attackRange) || this;
+    function Enemy(name, position, currentTile, health, animationSpeed, attack, defense, attackRange, targetableBuildingTypes, resourcesToSteal, stealMax, resourceCapacity) {
+        if (animationSpeed === void 0) { animationSpeed = 0.003; }
+        var _this = _super.call(this, name, position, currentTile, health, animationSpeed, attack, defense, attackRange) || this;
         _this.targetableBuildingTypes = targetableBuildingTypes;
         _this.targets = [];
         _this.targetIndex = 0;
@@ -3037,8 +2973,9 @@ var Enemy = /** @class */ (function (_super) {
 
 var Fighter = /** @class */ (function (_super) {
     __extends(Fighter, _super);
-    function Fighter(name, position, currentTile, health, attack, defense, attackRange, description, cost, moveable) {
-        var _this = _super.call(this, name, position, currentTile, health, attack, defense, attackRange) || this;
+    function Fighter(name, position, currentTile, health, animationSpeed, attack, defense, attackRange, description, cost, moveable) {
+        if (animationSpeed === void 0) { animationSpeed = 0.003; }
+        var _this = _super.call(this, name, position, currentTile, health, animationSpeed, attack, defense, attackRange) || this;
         _this.cost = cost;
         _this.moveable = moveable;
         return _this;
@@ -3048,24 +2985,45 @@ var Fighter = /** @class */ (function (_super) {
 
 var Projectile = /** @class */ (function (_super) {
     __extends(Projectile, _super);
-    function Projectile(name, position, currentTile, owner, target) {
-        var _this = _super.call(this, name, position, currentTile, 1) || this;
+    function Projectile(name, position, currentTile, animationSpeed, owner, target) {
+        if (animationSpeed === void 0) { animationSpeed = 0.003; }
+        var _this = _super.call(this, name, position, currentTile, 1, animationSpeed) || this;
+        _this.hitTarget = false;
         _this.owner = owner;
         _this.target = target;
         return _this;
     }
+    Projectile.prototype.tick = function (elapsed, deltaTime) {
+        var distance = this.target.position.subtract(this.position);
+        var totalDistance = this.target.position.subtract(this.spawnPosition);
+        if (distance.magnitude < _globals__WEBPACK_IMPORTED_MODULE_1__["tilePixelSize"]) {
+            this.target.health -= this.owner.attack;
+            this.hitTarget = true;
+        }
+        var gradientY = this.target.y - this.y;
+        var gradientX = this.target.x - this.x;
+        var angle = Math.atan2(gradientY, gradientX) + (Math.PI / 2);
+        totalDistance.x *= this.animationSpeed * deltaTime;
+        totalDistance.y *= this.animationSpeed * deltaTime;
+        this.position = this.position.add(totalDistance);
+        this.rotation = angle;
+    };
     return Projectile;
 }(Entity));
 
 var ResourceAnimation = /** @class */ (function (_super) {
     __extends(ResourceAnimation, _super);
-    function ResourceAnimation(position, currentTile, resourceId, multiplier, spawnedByPlayer, tilePath) {
-        var _this = _super.call(this, '', position, currentTile, -1, tilePath) || this;
+    function ResourceAnimation(position, currentTile, animationSpeed, resourceId, multiplier, spawnedByPlayer, tilePath) {
+        if (animationSpeed === void 0) { animationSpeed = 0.003; }
+        var _this = _super.call(this, '', position, currentTile, -1, animationSpeed, tilePath) || this;
         _this.resourceId = resourceId;
         _this.multiplier = multiplier;
         _this.spawnedByPlayer = spawnedByPlayer;
         return _this;
     }
+    ResourceAnimation.prototype.tick = function (elapsed, deltaTime) {
+        this.updatePathPosition(deltaTime);
+    };
     return ResourceAnimation;
 }(Entity));
 
@@ -3620,20 +3578,22 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 var ClickerMainService = /** @class */ (function () {
     function ClickerMainService(resourcesService, workersService, mapService, enemyService, messagesService, adminService) {
-        var _this = this;
         this.resourcesService = resourcesService;
         this.workersService = workersService;
         this.mapService = mapService;
         this.enemyService = enemyService;
         this.messagesService = messagesService;
         this.adminService = adminService;
-        this.progressBarMode = 'determinate';
-        this.millisecondsTotal = 1000;
-        this.progressBarUpdateDelay = 125;
         this.resourceTypes = _objects_resource__WEBPACK_IMPORTED_MODULE_8__["ResourceType"];
-        var progressBarTimer = Object(rxjs__WEBPACK_IMPORTED_MODULE_1__["timer"])(0, this.progressBarUpdateDelay);
-        progressBarTimer.subscribe(function (iteration) { return _this.updateProgressBars(iteration); });
     }
+    ClickerMainService.prototype.tick = function (elapsed, deltaTime) {
+        this.timeElapsed = elapsed;
+        for (var _i = 0, _a = this.resourcesService.resources.filter(function (_resource) { return _resource.harvesting; }); _i < _a.length; _i++) {
+            var resource = _a[_i];
+            var millisecondsElapsed = elapsed - resource.harvestStartDate;
+            resource.progressBarValue = Math.floor(millisecondsElapsed / resource.harvestMilliseconds * 100);
+        }
+    };
     ClickerMainService.prototype.startHarvesting = function (id) {
         var _this = this;
         var resource = this.resourcesService.getResource(id);
@@ -3645,35 +3605,16 @@ var ClickerMainService = /** @class */ (function () {
         var harvestTimer = Object(rxjs__WEBPACK_IMPORTED_MODULE_1__["timer"])(resource.harvestMilliseconds);
         harvestTimer.subscribe(function (_) { return _this.harvestResource(id); });
     };
-    ClickerMainService.prototype.stopHarvesting = function (id) {
-        var resource = this.resourcesService.getResource(id);
-        resource.progressBarValue = 0;
-        resource.harvesting = false;
-    };
-    ClickerMainService.prototype.updateProgressBars = function (iteration) {
-        for (var _i = 0, _a = this.resourcesService.resources.filter(function (_resource) { return _resource.harvesting; }); _i < _a.length; _i++) {
-            var resource = _a[_i];
-            var millisecondsElapsed = (iteration - resource.harvestStartDate - 1) * this.progressBarUpdateDelay;
-            resource.progressBarValue = Math.floor(millisecondsElapsed / resource.harvestMilliseconds * 100);
-        }
-        this.timeElapsed = iteration;
-    };
-    ClickerMainService.prototype.shouldAnimateProgressBar = function (id) {
-        return this.resourcesService.getResource(id).harvestMilliseconds > this.progressBarUpdateDelay;
-    };
     ClickerMainService.prototype.harvestResource = function (id) {
-        this.harvestStartDate = Date.now();
         var resource = this.resourcesService.getResource(id);
         resource.amountTravelling++;
-        if (this.shouldAnimateProgressBar(id)) {
-            resource.progressBarValue = 0;
-        }
         this.mapService.spawnResourceAnimation(id, resource.harvestYield, true);
         if (resource.resourceTier > 3 && !this.enemyService.enemiesActive) {
             this.enemyService.enemiesActive = true;
             this.log('Your base has begun attracting unwanted attention...');
         }
-        this.stopHarvesting(id);
+        resource.progressBarValue = 0;
+        resource.harvesting = false;
     };
     ClickerMainService.prototype.log = function (message) {
         this.messagesService.add(_objects_message__WEBPACK_IMPORTED_MODULE_9__["MessageSource"].Main, message);
@@ -3707,15 +3648,14 @@ var ClickerMainService = /** @class */ (function () {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "EnemyService", function() { return EnemyService; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm5/index.js");
-/* harmony import */ var _objects_entity__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./../../objects/entity */ "./src/app/objects/entity.ts");
-/* harmony import */ var _objects_vector__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../objects/vector */ "./src/app/objects/vector.ts");
-/* harmony import */ var _map_map_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../map/map.service */ "./src/app/services/map/map.service.ts");
-/* harmony import */ var _objects_tile__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../objects/tile */ "./src/app/objects/tile.ts");
-/* harmony import */ var _objects_message__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../objects/message */ "./src/app/objects/message.ts");
-/* harmony import */ var _buildings_buildings_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../buildings/buildings.service */ "./src/app/services/buildings/buildings.service.ts");
-/* harmony import */ var _resources_resources_service__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../resources/resources.service */ "./src/app/services/resources/resources.service.ts");
-/* harmony import */ var _messages_messages_service__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../messages/messages.service */ "./src/app/services/messages/messages.service.ts");
+/* harmony import */ var _objects_entity__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./../../objects/entity */ "./src/app/objects/entity.ts");
+/* harmony import */ var _objects_vector__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../objects/vector */ "./src/app/objects/vector.ts");
+/* harmony import */ var _map_map_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../map/map.service */ "./src/app/services/map/map.service.ts");
+/* harmony import */ var _objects_tile__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../objects/tile */ "./src/app/objects/tile.ts");
+/* harmony import */ var _objects_message__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../objects/message */ "./src/app/objects/message.ts");
+/* harmony import */ var _buildings_buildings_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../buildings/buildings.service */ "./src/app/services/buildings/buildings.service.ts");
+/* harmony import */ var _resources_resources_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../resources/resources.service */ "./src/app/services/resources/resources.service.ts");
+/* harmony import */ var _messages_messages_service__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../messages/messages.service */ "./src/app/services/messages/messages.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -3769,26 +3709,41 @@ var __generator = (undefined && undefined.__generator) || function (thisArg, bod
 
 
 
-
 var baseEnemyTypes = __webpack_require__(/*! ../../../assets/json/enemies.json */ "./src/assets/json/enemies.json");
 var EnemyService = /** @class */ (function () {
     function EnemyService(resourcesService, buildingsService, mapService, messagesService) {
-        var _this = this;
         this.resourcesService = resourcesService;
         this.buildingsService = buildingsService;
         this.mapService = mapService;
         this.messagesService = messagesService;
         this.enemyTypes = baseEnemyTypes;
         this.enemies = [];
+        this.spawnInterval = 45000;
+        this.lastSpawnTime = 0;
+        this.processInterval = 1000;
+        this.lastProcessTime = 0;
         this.minimumResourceAmount = 500;
         this.maxPathRetryCount = 25;
         this.maxEnemyCount = 25;
         this.openPortal(this.mapService.enemySpawnTiles[0]);
-        var spawnSource = Object(rxjs__WEBPACK_IMPORTED_MODULE_1__["timer"])(45000, 45000);
-        var spawnSubscribe = spawnSource.subscribe(function (_) { return _this.spawnEnemy(); });
-        var processSource = Object(rxjs__WEBPACK_IMPORTED_MODULE_1__["timer"])(1000, 1000);
-        var processSubscribe = processSource.subscribe(function (_) { return _this.processEnemies(); });
     }
+    EnemyService.prototype.tick = function (elapsed, deltaTime) {
+        if (elapsed - this.lastSpawnTime >= this.spawnInterval) {
+            this.spawnEnemy();
+            this.lastSpawnTime = elapsed;
+        }
+        if (elapsed - this.lastProcessTime >= this.processInterval) {
+            this.processEnemies();
+            this.lastProcessTime = elapsed;
+        }
+        for (var _i = 0, _a = this.enemies; _i < _a.length; _i++) {
+            var enemy = _a[_i];
+            enemy.updatePathPosition(deltaTime);
+            if (enemy.health <= 0) {
+                this.killEnemy(enemy);
+            }
+        }
+    };
     EnemyService.prototype.pickTarget = function (enemy) {
         var _this = this;
         var sortedTargets = enemy.targets.filter(function (target) { return target.accessible; }).sort(function (a, b) {
@@ -3804,7 +3759,7 @@ var EnemyService = /** @class */ (function () {
         enemy.currentTile = this.getTilePosition(enemy);
         if (enemy.targetIndex < 0) {
             enemy.targets = enemy.targets.filter(function (target) { return !target.wanderTarget; });
-            enemy.targets.push({ tile: this.mapService.getRandomTile([_objects_tile__WEBPACK_IMPORTED_MODULE_5__["MapTileType"].Grass]), accessible: true, wanderTarget: true });
+            enemy.targets.push({ tile: this.mapService.getRandomTile([_objects_tile__WEBPACK_IMPORTED_MODULE_4__["MapTileType"].Grass]), accessible: true, wanderTarget: true });
             enemy.targetIndex = enemy.targets.length - 1;
         }
         this.mapService.findPath(enemy.currentTile, enemy.targets[enemy.targetIndex].tile, false, true, 250).subscribe(function (tilePath) {
@@ -3823,7 +3778,7 @@ var EnemyService = /** @class */ (function () {
         if (this.activePortalTile) {
             this.activePortalTile.buildingTileType = undefined;
         }
-        tile.buildingTileType = _objects_tile__WEBPACK_IMPORTED_MODULE_5__["BuildingTileType"].EnemyPortal;
+        tile.buildingTileType = _objects_tile__WEBPACK_IMPORTED_MODULE_4__["BuildingTileType"].EnemyPortal;
         this.activePortalTile = tile;
     };
     EnemyService.prototype.getTilePosition = function (enemy) {
@@ -3842,7 +3797,7 @@ var EnemyService = /** @class */ (function () {
         var enemyIndex = Math.floor(Math.random() * this.enemyTypes.length);
         var spawnPoint = this.activePortalTile;
         var enemyType = this.enemyTypes[enemyIndex];
-        var enemy = new _objects_entity__WEBPACK_IMPORTED_MODULE_2__["Enemy"](enemyType.name, new _objects_vector__WEBPACK_IMPORTED_MODULE_3__["Vector"](spawnPoint.x, spawnPoint.y), spawnPoint, enemyType.health, enemyType.attack, enemyType.defense, enemyType.attackRange, enemyType.targetableBuildingTypes, enemyType.resourcesToSteal, enemyType.stealMax, enemyType.resourceCapacity);
+        var enemy = new _objects_entity__WEBPACK_IMPORTED_MODULE_1__["Enemy"](enemyType.name, new _objects_vector__WEBPACK_IMPORTED_MODULE_2__["Vector"](spawnPoint.x, spawnPoint.y), spawnPoint, enemyType.health, 0.003, enemyType.attack, enemyType.defense, enemyType.attackRange, enemyType.targetableBuildingTypes, enemyType.resourcesToSteal, enemyType.stealMax, enemyType.resourceCapacity);
         this.findTargets(enemy);
         this.pickTarget(enemy);
         this.log('An enemy has appeared!');
@@ -3895,7 +3850,7 @@ var EnemyService = /** @class */ (function () {
                 continue;
             }
             if (enemy.pathingDone) {
-                if (target.tile.buildingTileType === _objects_tile__WEBPACK_IMPORTED_MODULE_5__["BuildingTileType"].Home) {
+                if (target.tile.buildingTileType === _objects_tile__WEBPACK_IMPORTED_MODULE_4__["BuildingTileType"].Home) {
                     for (var _b = 0, _c = enemy.resourcesToSteal; _b < _c.length; _b++) {
                         var id = _c[_b];
                         this.resourcesService.getResource(id).resourceBeingStolen = true;
@@ -3960,20 +3915,20 @@ var EnemyService = /** @class */ (function () {
     };
     EnemyService.prototype.resourceIsBeingStolen = function (id) {
         var activeEnemies = this.enemies.filter(function (enemy) { return enemy.pathingDone && enemy.targets.length &&
-            enemy.targets[enemy.targetIndex].tile.buildingTileType === _objects_tile__WEBPACK_IMPORTED_MODULE_5__["BuildingTileType"].Home; });
+            enemy.targets[enemy.targetIndex].tile.buildingTileType === _objects_tile__WEBPACK_IMPORTED_MODULE_4__["BuildingTileType"].Home; });
         return activeEnemies.some(function (enemy) { return enemy.resourcesToSteal.includes(id); });
     };
     EnemyService.prototype.log = function (message) {
-        this.messagesService.add(_objects_message__WEBPACK_IMPORTED_MODULE_6__["MessageSource"].Enemy, message);
+        this.messagesService.add(_objects_message__WEBPACK_IMPORTED_MODULE_5__["MessageSource"].Enemy, message);
     };
     EnemyService = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
             providedIn: 'root'
         }),
-        __metadata("design:paramtypes", [_resources_resources_service__WEBPACK_IMPORTED_MODULE_8__["ResourcesService"],
-            _buildings_buildings_service__WEBPACK_IMPORTED_MODULE_7__["BuildingsService"],
-            _map_map_service__WEBPACK_IMPORTED_MODULE_4__["MapService"],
-            _messages_messages_service__WEBPACK_IMPORTED_MODULE_9__["MessagesService"]])
+        __metadata("design:paramtypes", [_resources_resources_service__WEBPACK_IMPORTED_MODULE_7__["ResourcesService"],
+            _buildings_buildings_service__WEBPACK_IMPORTED_MODULE_6__["BuildingsService"],
+            _map_map_service__WEBPACK_IMPORTED_MODULE_3__["MapService"],
+            _messages_messages_service__WEBPACK_IMPORTED_MODULE_8__["MessagesService"]])
     ], EnemyService);
     return EnemyService;
 }());
@@ -4027,6 +3982,9 @@ var FighterService = /** @class */ (function () {
         var processSource = Object(rxjs__WEBPACK_IMPORTED_MODULE_1__["timer"])(1000, 1000);
         var processSubscribe = processSource.subscribe(function (_) { return _this.processFighters(); });
     }
+    FighterService.prototype.tick = function (elapsed, deltaTime) {
+        this.fighters = this.fighters.filter(function (fighter) { return fighter.health > 0; });
+    };
     FighterService.prototype.processFighters = function () {
         var enemies = this.enemyService.enemies;
         var enemyMagnitudes = enemies.map(function (enemy) { return Math.sqrt(Math.pow(enemy.x, 2) + Math.pow(enemy.y, 2)); });
@@ -4049,7 +4007,7 @@ var FighterService = /** @class */ (function () {
             return;
         }
         this.resourcesService.addResourceAmount(0, -fighterType.cost);
-        var fighter = new _objects_entity__WEBPACK_IMPORTED_MODULE_2__["Fighter"](fighterType.name, new _objects_vector__WEBPACK_IMPORTED_MODULE_3__["Vector"](tile.x, tile.y), tile, fighterType.health, fighterType.attack, fighterType.defense, fighterType.attackRange, fighterType.description, fighterType.cost, fighterType.moveable);
+        var fighter = new _objects_entity__WEBPACK_IMPORTED_MODULE_2__["Fighter"](fighterType.name, new _objects_vector__WEBPACK_IMPORTED_MODULE_3__["Vector"](tile.x, tile.y), tile, fighterType.health, 0.003, fighterType.attack, fighterType.defense, fighterType.attackRange, fighterType.description, fighterType.cost, fighterType.moveable);
         this.fighters.push(fighter);
     };
     FighterService = __decorate([
@@ -4126,7 +4084,6 @@ var MapService = /** @class */ (function () {
         this.resourceAnimations = [];
         this.projectiles = [];
         this.deleteMode = false;
-        this.lastAnimationTime = 0;
         this.tileAnimationSpeed = 0.003;
         this.enemyAnimationSpeed = 0.003;
         this.projectileAnimationSpeed = 0.003;
@@ -4211,6 +4168,21 @@ var MapService = /** @class */ (function () {
         this.mapHeight = _mapHeight;
         this.calculateResourceConnections();
     }
+    MapService.prototype.tick = function (elapsed, deltaTime) {
+        for (var _i = 0, _a = this.resourceAnimations; _i < _a.length; _i++) {
+            var resourceAnimation = _a[_i];
+            resourceAnimation.tick(elapsed, deltaTime);
+            if (resourceAnimation.pathingDone) {
+                this.resourcesService.finishResourceAnimation(resourceAnimation.resourceId, resourceAnimation.multiplier, resourceAnimation.spawnedByPlayer);
+            }
+        }
+        this.resourceAnimations = this.resourceAnimations.filter(function (animation) { return !animation.pathingDone; });
+        for (var _b = 0, _c = this.projectiles; _b < _c.length; _b++) {
+            var projectile = _c[_b];
+            projectile.tick(elapsed, deltaTime);
+        }
+        this.projectiles = this.projectiles.filter(function (projectile) { return !projectile.hitTarget; });
+    };
     MapService.prototype.calculateResourceConnections = function () {
         var _this = this;
         var resourceTiles = this.getResourceTiles();
@@ -4304,11 +4276,11 @@ var MapService = /** @class */ (function () {
             return;
         }
         var tilePathCopy = tile.buildingPath.map(function (_tile) { return _tile; });
-        var resourceAnimation = new _objects_entity__WEBPACK_IMPORTED_MODULE_4__["ResourceAnimation"](new _objects_vector__WEBPACK_IMPORTED_MODULE_5__["Vector"](tile.x, tile.y), tile, resourceId, multiplier, spawnedByPlayer, tilePathCopy);
+        var resourceAnimation = new _objects_entity__WEBPACK_IMPORTED_MODULE_4__["ResourceAnimation"](new _objects_vector__WEBPACK_IMPORTED_MODULE_5__["Vector"](tile.x, tile.y), tile, 0.003, resourceId, multiplier, spawnedByPlayer, tilePathCopy);
         this.resourceAnimations.push(resourceAnimation);
     };
     MapService.prototype.spawnProjectile = function (owner, target) {
-        var projectile = new _objects_entity__WEBPACK_IMPORTED_MODULE_4__["Projectile"]('Arrow', new _objects_vector__WEBPACK_IMPORTED_MODULE_5__["Vector"](owner.x, owner.y), owner.currentTile, owner, target);
+        var projectile = new _objects_entity__WEBPACK_IMPORTED_MODULE_4__["Projectile"]('Arrow', new _objects_vector__WEBPACK_IMPORTED_MODULE_5__["Vector"](owner.x, owner.y), owner.currentTile, 0.006, owner, target);
         this.projectiles.push(projectile);
     };
     MapService.prototype.getNeighborTiles = function (tile) {
@@ -4346,7 +4318,7 @@ var MapService = /** @class */ (function () {
         return this.tiledMap[x + y * this.mapWidth];
     };
     MapService.prototype.clampTileCoordinates = function (x, y) {
-        return [Math.floor(x / 16) * 16, Math.floor(y / 16) * 16];
+        return [Math.floor(x / this.tilePixelSize), Math.floor(y / this.tilePixelSize)];
     };
     MapService.prototype.getResourceTiles = function (resourceId) {
         var tiles = this.tiledMap.filter(function (tile) { return tile.resourceTileType !== undefined; });
@@ -4591,19 +4563,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SettingsService", function() { return SettingsService; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm5/index.js");
-/* harmony import */ var _resources_resources_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./../resources/resources.service */ "./src/app/services/resources/resources.service.ts");
-/* harmony import */ var _upgrades_upgrades_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./../upgrades/upgrades.service */ "./src/app/services/upgrades/upgrades.service.ts");
-/* harmony import */ var _workers_workers_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./../workers/workers.service */ "./src/app/services/workers/workers.service.ts");
-/* harmony import */ var _messages_messages_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../messages/messages.service */ "./src/app/services/messages/messages.service.ts");
-/* harmony import */ var _map_map_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./../map/map.service */ "./src/app/services/map/map.service.ts");
-/* harmony import */ var _enemy_enemy_service__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./../enemy/enemy.service */ "./src/app/services/enemy/enemy.service.ts");
-/* harmony import */ var _fighter_fighter_service__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./../fighter/fighter.service */ "./src/app/services/fighter/fighter.service.ts");
-/* harmony import */ var _components_save_dialog_save_dialog_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../components/save-dialog/save-dialog.component */ "./src/app/components/save-dialog/save-dialog.component.ts");
-/* harmony import */ var _objects_tile__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../../objects/tile */ "./src/app/objects/tile.ts");
-/* harmony import */ var _objects_entity__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../../objects/entity */ "./src/app/objects/entity.ts");
-/* harmony import */ var _objects_message__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./../../objects/message */ "./src/app/objects/message.ts");
-/* harmony import */ var _objects_vector__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../../objects/vector */ "./src/app/objects/vector.ts");
+/* harmony import */ var _resources_resources_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./../resources/resources.service */ "./src/app/services/resources/resources.service.ts");
+/* harmony import */ var _upgrades_upgrades_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./../upgrades/upgrades.service */ "./src/app/services/upgrades/upgrades.service.ts");
+/* harmony import */ var _workers_workers_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./../workers/workers.service */ "./src/app/services/workers/workers.service.ts");
+/* harmony import */ var _messages_messages_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../messages/messages.service */ "./src/app/services/messages/messages.service.ts");
+/* harmony import */ var _map_map_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./../map/map.service */ "./src/app/services/map/map.service.ts");
+/* harmony import */ var _enemy_enemy_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./../enemy/enemy.service */ "./src/app/services/enemy/enemy.service.ts");
+/* harmony import */ var _fighter_fighter_service__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./../fighter/fighter.service */ "./src/app/services/fighter/fighter.service.ts");
+/* harmony import */ var _components_save_dialog_save_dialog_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../components/save-dialog/save-dialog.component */ "./src/app/components/save-dialog/save-dialog.component.ts");
+/* harmony import */ var _objects_tile__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../objects/tile */ "./src/app/objects/tile.ts");
+/* harmony import */ var _objects_entity__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../../objects/entity */ "./src/app/objects/entity.ts");
+/* harmony import */ var _objects_message__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./../../objects/message */ "./src/app/objects/message.ts");
+/* harmony import */ var _objects_vector__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../../objects/vector */ "./src/app/objects/vector.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -4613,7 +4584,6 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 var __metadata = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-
 
 
 
@@ -4641,6 +4611,7 @@ var SettingsService = /** @class */ (function () {
         this.dialog = dialog;
         this.gameVersion = '1.2';
         this.autosaveInterval = 900000;
+        this.lastAutosave = this.autosaveInterval;
         this.debugMode = false;
         this.disableAnimations = false;
         this.slimInterface = false;
@@ -4652,9 +4623,16 @@ var SettingsService = /** @class */ (function () {
         this.loadGame();
         this.setAutosave();
     }
+    SettingsService.prototype.tick = function (elapsed, deltaTime) {
+        if (elapsed - this.lastAutosave < this.autosaveInterval || this.autosaveInterval < 0) {
+            return;
+        }
+        this.lastAutosave = elapsed;
+        this.saveGame();
+    };
     SettingsService.prototype.openSaveDialog = function (saveData) {
         var _this = this;
-        var dialogRef = this.dialog.open(_components_save_dialog_save_dialog_component__WEBPACK_IMPORTED_MODULE_10__["SaveDialogComponent"], {
+        var dialogRef = this.dialog.open(_components_save_dialog_save_dialog_component__WEBPACK_IMPORTED_MODULE_9__["SaveDialogComponent"], {
             width: '750px',
             height: '150px',
             data: saveData === undefined ? {} : { saveData: saveData }
@@ -4669,15 +4647,7 @@ var SettingsService = /** @class */ (function () {
         });
     };
     SettingsService.prototype.setAutosave = function () {
-        var _this = this;
-        if (this.autosaveSubscribe !== undefined) {
-            this.autosaveSubscribe.unsubscribe();
-        }
-        if (this.autosaveInterval <= 0) {
-            return;
-        }
-        this.autosaveSource = Object(rxjs__WEBPACK_IMPORTED_MODULE_2__["timer"])(this.autosaveInterval, this.autosaveInterval);
-        this.autosaveSubscribe = this.autosaveSource.subscribe(function (_) { return _this.saveGame(); });
+        this.lastAutosave = this.autosaveInterval;
     };
     SettingsService.prototype.saveGame = function () {
         var saveData = this.exportSave();
@@ -4760,7 +4730,7 @@ var SettingsService = /** @class */ (function () {
         }
         for (var _h = 0, _j = this.mapService.tiledMap; _h < _j.length; _h++) {
             var tile = _j[_h];
-            if (tile.buildingTileType === undefined && tile.buildingTileType !== _objects_tile__WEBPACK_IMPORTED_MODULE_11__["BuildingTileType"].EnemyPortal) {
+            if (tile.buildingTileType === undefined && tile.buildingTileType !== _objects_tile__WEBPACK_IMPORTED_MODULE_10__["BuildingTileType"].EnemyPortal) {
                 continue;
             }
             var tileData = {
@@ -4786,6 +4756,7 @@ var SettingsService = /** @class */ (function () {
                 spawnPosition: enemy.spawnPosition,
                 health: enemy.health,
                 maxHealth: enemy.maxHealth,
+                animationSpeed: enemy.animationSpeed,
                 attack: enemy.attack,
                 defense: enemy.defense,
                 attackRange: enemy.attackRange,
@@ -4805,6 +4776,7 @@ var SettingsService = /** @class */ (function () {
                 spawnPosition: fighter.spawnPosition,
                 health: fighter.health,
                 maxHealth: fighter.maxHealth,
+                animationSpeed: fighter.animationSpeed,
                 attack: fighter.attack,
                 defense: fighter.defense,
                 attackRange: fighter.attackRange,
@@ -4891,8 +4863,8 @@ var SettingsService = /** @class */ (function () {
                     var enemyData = _l[_k];
                     var tilePosition = this.mapService.clampTileCoordinates(enemyData.position.x, enemyData.position.y);
                     var tile = this.mapService.getTile(tilePosition[0], tilePosition[1]);
-                    var enemy = new _objects_entity__WEBPACK_IMPORTED_MODULE_12__["Enemy"](enemyData.name, new _objects_vector__WEBPACK_IMPORTED_MODULE_14__["Vector"](enemyData.position.x, enemyData.position.y), tile, enemyData.health, enemyData.attack, enemyData.defense, enemyData.attackRange, enemyData.targetableBuildingTypes, enemyData.resourcesToSteal, enemyData.stealMax, enemyData.resourceCapacity);
-                    enemy.spawnPosition = new _objects_vector__WEBPACK_IMPORTED_MODULE_14__["Vector"](enemyData.spawnPosition.x, enemyData.spawnPosition.y);
+                    var enemy = new _objects_entity__WEBPACK_IMPORTED_MODULE_11__["Enemy"](enemyData.name, new _objects_vector__WEBPACK_IMPORTED_MODULE_13__["Vector"](enemyData.position.x, enemyData.position.y), tile, enemyData.health, enemyData.animationSpeed, enemyData.attack, enemyData.defense, enemyData.attackRange, enemyData.targetableBuildingTypes, enemyData.resourcesToSteal, enemyData.stealMax, enemyData.resourceCapacity);
+                    enemy.spawnPosition = new _objects_vector__WEBPACK_IMPORTED_MODULE_13__["Vector"](enemyData.spawnPosition.x, enemyData.spawnPosition.y);
                     this.enemyService.findTargets(enemy);
                     this.enemyService.pickTarget(enemy);
                     this.enemyService.enemies.push(enemy);
@@ -4903,7 +4875,7 @@ var SettingsService = /** @class */ (function () {
                     var fighterData = _o[_m];
                     var tilePosition = this.mapService.clampTileCoordinates(fighterData.position.x, fighterData.position.y);
                     var tile = this.mapService.getTile(tilePosition[0], tilePosition[1]);
-                    var fighter = new _objects_entity__WEBPACK_IMPORTED_MODULE_12__["Fighter"](fighterData.name, new _objects_vector__WEBPACK_IMPORTED_MODULE_14__["Vector"](fighterData.position.x, fighterData.position.y), tile, fighterData.health, fighterData.attack, fighterData.defense, fighterData.attackRange, fighterData.description, 0, fighterData.moveable);
+                    var fighter = new _objects_entity__WEBPACK_IMPORTED_MODULE_11__["Fighter"](fighterData.name, new _objects_vector__WEBPACK_IMPORTED_MODULE_13__["Vector"](fighterData.position.x, fighterData.position.y), tile, fighterData.health, fighterData.animationSpeed, fighterData.attack, fighterData.defense, fighterData.attackRange, fighterData.description, 0, fighterData.moveable);
                     this.fighterService.fighters.push(fighter);
                 }
             }
@@ -4928,19 +4900,19 @@ var SettingsService = /** @class */ (function () {
         }
     };
     SettingsService.prototype.log = function (message) {
-        this.messagesService.add(_objects_message__WEBPACK_IMPORTED_MODULE_13__["MessageSource"].Settings, message);
+        this.messagesService.add(_objects_message__WEBPACK_IMPORTED_MODULE_12__["MessageSource"].Settings, message);
     };
     SettingsService = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
             providedIn: 'root'
         }),
-        __metadata("design:paramtypes", [_resources_resources_service__WEBPACK_IMPORTED_MODULE_3__["ResourcesService"],
-            _upgrades_upgrades_service__WEBPACK_IMPORTED_MODULE_4__["UpgradesService"],
-            _workers_workers_service__WEBPACK_IMPORTED_MODULE_5__["WorkersService"],
-            _map_map_service__WEBPACK_IMPORTED_MODULE_7__["MapService"],
-            _enemy_enemy_service__WEBPACK_IMPORTED_MODULE_8__["EnemyService"],
-            _fighter_fighter_service__WEBPACK_IMPORTED_MODULE_9__["FighterService"],
-            _messages_messages_service__WEBPACK_IMPORTED_MODULE_6__["MessagesService"],
+        __metadata("design:paramtypes", [_resources_resources_service__WEBPACK_IMPORTED_MODULE_2__["ResourcesService"],
+            _upgrades_upgrades_service__WEBPACK_IMPORTED_MODULE_3__["UpgradesService"],
+            _workers_workers_service__WEBPACK_IMPORTED_MODULE_4__["WorkersService"],
+            _map_map_service__WEBPACK_IMPORTED_MODULE_6__["MapService"],
+            _enemy_enemy_service__WEBPACK_IMPORTED_MODULE_7__["EnemyService"],
+            _fighter_fighter_service__WEBPACK_IMPORTED_MODULE_8__["FighterService"],
+            _messages_messages_service__WEBPACK_IMPORTED_MODULE_5__["MessagesService"],
             _angular_material__WEBPACK_IMPORTED_MODULE_1__["MatSnackBar"],
             _angular_material__WEBPACK_IMPORTED_MODULE_1__["MatDialog"]])
     ], SettingsService);
@@ -5022,6 +4994,78 @@ var StoreService = /** @class */ (function () {
             _messages_messages_service__WEBPACK_IMPORTED_MODULE_3__["MessagesService"]])
     ], StoreService);
     return StoreService;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/services/tick/tick.service.ts":
+/*!***********************************************!*\
+  !*** ./src/app/services/tick/tick.service.ts ***!
+  \***********************************************/
+/*! exports provided: TickService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TickService", function() { return TickService; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _clicker_main_clicker_main_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./../clicker-main/clicker-main.service */ "./src/app/services/clicker-main/clicker-main.service.ts");
+/* harmony import */ var _workers_workers_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./../workers/workers.service */ "./src/app/services/workers/workers.service.ts");
+/* harmony import */ var _enemy_enemy_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./../enemy/enemy.service */ "./src/app/services/enemy/enemy.service.ts");
+/* harmony import */ var _fighter_fighter_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./../fighter/fighter.service */ "./src/app/services/fighter/fighter.service.ts");
+/* harmony import */ var _settings_settings_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./../settings/settings.service */ "./src/app/services/settings/settings.service.ts");
+/* harmony import */ var _map_map_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./../map/map.service */ "./src/app/services/map/map.service.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+
+var TickService = /** @class */ (function () {
+    function TickService(clickerMainService, workersService, enemyService, fighterService, settingsService, mapService) {
+        this.clickerMainService = clickerMainService;
+        this.workersService = workersService;
+        this.enemyService = enemyService;
+        this.fighterService = fighterService;
+        this.settingsService = settingsService;
+        this.mapService = mapService;
+        this.tickObjects = [this.clickerMainService, this.workersService, this.enemyService,
+            this.fighterService, this.settingsService, this.mapService];
+        d3.interval(this.tick(this), 25);
+    }
+    TickService.prototype.tick = function (self) {
+        return function (elapsed) {
+            for (var _i = 0, _a = self.tickObjects; _i < _a.length; _i++) {
+                var tickObject = _a[_i];
+                tickObject.tick(elapsed, elapsed - self.timeElapsed);
+            }
+            self.timeElapsed = elapsed;
+        };
+    };
+    TickService = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
+            providedIn: 'root'
+        }),
+        __metadata("design:paramtypes", [_clicker_main_clicker_main_service__WEBPACK_IMPORTED_MODULE_1__["ClickerMainService"],
+            _workers_workers_service__WEBPACK_IMPORTED_MODULE_2__["WorkersService"],
+            _enemy_enemy_service__WEBPACK_IMPORTED_MODULE_3__["EnemyService"],
+            _fighter_fighter_service__WEBPACK_IMPORTED_MODULE_4__["FighterService"],
+            _settings_settings_service__WEBPACK_IMPORTED_MODULE_5__["SettingsService"],
+            _map_map_service__WEBPACK_IMPORTED_MODULE_6__["MapService"]])
+    ], TickService);
+    return TickService;
 }());
 
 
@@ -5394,11 +5438,10 @@ var UpgradesService = /** @class */ (function () {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "WorkersService", function() { return WorkersService; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm5/index.js");
-/* harmony import */ var _objects_message__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../objects/message */ "./src/app/objects/message.ts");
-/* harmony import */ var _resources_resources_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../resources/resources.service */ "./src/app/services/resources/resources.service.ts");
-/* harmony import */ var _map_map_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./../map/map.service */ "./src/app/services/map/map.service.ts");
-/* harmony import */ var _messages_messages_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../messages/messages.service */ "./src/app/services/messages/messages.service.ts");
+/* harmony import */ var _objects_message__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../objects/message */ "./src/app/objects/message.ts");
+/* harmony import */ var _resources_resources_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../resources/resources.service */ "./src/app/services/resources/resources.service.ts");
+/* harmony import */ var _map_map_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./../map/map.service */ "./src/app/services/map/map.service.ts");
+/* harmony import */ var _messages_messages_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../messages/messages.service */ "./src/app/services/messages/messages.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -5413,18 +5456,35 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
-
 var baseWorkers = __webpack_require__(/*! ../../../assets/json/workers.json */ "./src/assets/json/workers.json");
 var WorkersService = /** @class */ (function () {
     function WorkersService(resourcesService, mapService, messagesService) {
-        var _this = this;
         this.resourcesService = resourcesService;
         this.mapService = mapService;
         this.messagesService = messagesService;
         this.workers = baseWorkers;
-        var processSource = Object(rxjs__WEBPACK_IMPORTED_MODULE_1__["timer"])(1000, 1000);
-        var processSubscribe = processSource.subscribe(function (_) { return _this.processWorkers(); });
+        this.workerDelay = 1000;
     }
+    WorkersService.prototype.tick = function (elapsed, deltaTime) {
+        if (elapsed - this.lastWorkerTime < this.workerDelay) {
+            return;
+        }
+        this.lastWorkerTime = elapsed;
+        for (var _i = 0, _a = this.workers; _i < _a.length; _i++) {
+            var worker = _a[_i];
+            for (var _b = 0, _c = worker.workersByResource; _b < _c.length; _b++) {
+                var resourceWorker = _c[_b];
+                if (resourceWorker.workerCount === 0 || !this.canAffordToHarvest(resourceWorker.resourceId)) {
+                    continue;
+                }
+                this.resourcesService.addResourceAmount(0, -resourceWorker.recurringCost * resourceWorker.workerCount);
+                if (!this.canAffordToHarvest(resourceWorker.resourceId)) {
+                    this.log("No more money available for " + this.resourcesService.getResource(resourceWorker.resourceId).name + ".");
+                }
+                this.mapService.spawnResourceAnimation(resourceWorker.resourceId, resourceWorker.workerYield * resourceWorker.workerCount, false);
+            }
+        }
+    };
     WorkersService.prototype.getWorkers = function (filterByAccessible, filterByWorkable, filterByHarvestable) {
         var _this = this;
         var workers = this.workers;
@@ -5460,22 +5520,6 @@ var WorkersService = /** @class */ (function () {
         var resourceWorker = this.getResourceWorker(resourceId);
         return this.resourcesService.getResource(0).amount >= resourceWorker.recurringCost;
     };
-    WorkersService.prototype.processWorkers = function () {
-        for (var _i = 0, _a = this.workers; _i < _a.length; _i++) {
-            var worker = _a[_i];
-            for (var _b = 0, _c = worker.workersByResource; _b < _c.length; _b++) {
-                var resourceWorker = _c[_b];
-                if (resourceWorker.workerCount === 0 || !this.canAffordToHarvest(resourceWorker.resourceId)) {
-                    continue;
-                }
-                this.resourcesService.addResourceAmount(0, -resourceWorker.recurringCost * resourceWorker.workerCount);
-                if (!this.canAffordToHarvest(resourceWorker.resourceId)) {
-                    this.log("No more money available for " + this.resourcesService.getResource(resourceWorker.resourceId).name + ".");
-                }
-                this.mapService.spawnResourceAnimation(resourceWorker.resourceId, resourceWorker.workerYield * resourceWorker.workerCount, false);
-            }
-        }
-    };
     WorkersService.prototype.updateResourceWorker = function (id, newResourceWorkerCount) {
         var resource = this.resourcesService.getResource(id);
         var worker = this.getWorker(resource.resourceType);
@@ -5499,15 +5543,15 @@ var WorkersService = /** @class */ (function () {
         worker.freeWorkers++;
     };
     WorkersService.prototype.log = function (message) {
-        this.messagesService.add(_objects_message__WEBPACK_IMPORTED_MODULE_2__["MessageSource"].Workers, message);
+        this.messagesService.add(_objects_message__WEBPACK_IMPORTED_MODULE_1__["MessageSource"].Workers, message);
     };
     WorkersService = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
             providedIn: 'root'
         }),
-        __metadata("design:paramtypes", [_resources_resources_service__WEBPACK_IMPORTED_MODULE_3__["ResourcesService"],
-            _map_map_service__WEBPACK_IMPORTED_MODULE_4__["MapService"],
-            _messages_messages_service__WEBPACK_IMPORTED_MODULE_5__["MessagesService"]])
+        __metadata("design:paramtypes", [_resources_resources_service__WEBPACK_IMPORTED_MODULE_2__["ResourcesService"],
+            _map_map_service__WEBPACK_IMPORTED_MODULE_3__["MapService"],
+            _messages_messages_service__WEBPACK_IMPORTED_MODULE_4__["MessagesService"]])
     ], WorkersService);
     return WorkersService;
 }());
