@@ -554,7 +554,7 @@ var BuildingsComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "/* ClickerMainComponent's private CSS styles */\r\n.resources {\r\n  margin: 0 0 2em 0;\r\n  list-style-type: none;\r\n  padding: 0;\r\n  width: 25em;\r\n}\r\n.resources mat-expansion-panel {\r\n  margin: 0;\r\n}\r\n.resources mat-expansion-panel-header {\r\n  height: 30px !important;\r\n}\r\n.resources mat-card-subtitle {\r\n  position: absolute;\r\n  top: 10px;\r\n  right: 10px;\r\n  font-weight: bold;\r\n}\r\n.resources .resource-button {\r\n  position: relative;\r\n  cursor: pointer;\r\n  margin: .5em;\r\n  padding: .4em 0;\r\n  height: 3.6em;\r\n  width: 100%;\r\n  border-radius: 4px;\r\n}\r\n.resources .resource-button.warn {\r\n  background-color: darkred;\r\n}\r\n.resources .resource-button:hover {\r\n  left: .1em;\r\n}\r\n.resources .resource-button.mat-disabled {\r\n  cursor: default;\r\n}\r\n.resources .badge {\r\n  display: inline-block;\r\n  font-size: small;\r\n  color: white;\r\n  padding: 0.8em 0.7em 0 0.7em;\r\n  background-color: #607D8B;\r\n  line-height: 1em;\r\n  position: absolute;\r\n  right: -9px;\r\n  top: 1px;\r\n  height: 1.8em;\r\n  min-width: 16px;\r\n  text-align: center;\r\n  margin-right: .8em;\r\n  border-radius: 0 4px 4px 0;\r\n}\r\n.button-container {\r\n  position: relative;\r\n}\r\n.travelling-count {\r\n  position: absolute;\r\n  top: 22px;\r\n  right: 3px;\r\n}\r\n.resource-button {\r\n  background-color: #eee;\r\n  border: none;\r\n  padding: 5px 10px;\r\n  border-radius: 4px;\r\n  cursor: pointer;\r\n  cursor: hand;\r\n  font-family: Arial;\r\n}\r\n.harvest-progress {\r\n  display: flex;\r\n  align-content: center;\r\n  align-items: center;\r\n\r\n  height: 100%;\r\n  top: 0px;\r\n\r\n  position: absolute;\r\n  opacity: 0.5;\r\n}\r\n.resource-img {\r\n  position: absolute;\r\n\r\n  top: 0;\r\n  left: 0;\r\n}\r\n"
+module.exports = "/* ClickerMainComponent's private CSS styles */\r\n.resources {\r\n  margin: 0 0 2em 0;\r\n  list-style-type: none;\r\n  padding: 0;\r\n  width: 25em;\r\n}\r\n.resources mat-expansion-panel {\r\n  margin: 0;\r\n}\r\n.resources mat-expansion-panel-header {\r\n  height: 30px !important;\r\n}\r\n.resources mat-card-subtitle {\r\n  position: absolute;\r\n  top: 10px;\r\n  right: 10px;\r\n  font-weight: bold;\r\n}\r\n.resources .resource-button {\r\n  position: relative;\r\n  cursor: pointer;\r\n  margin: .5em;\r\n  padding: .4em 0;\r\n  height: 3.6em;\r\n  width: 100%;\r\n  border-radius: 4px;\r\n}\r\n.resources .resource-button.warn {\r\n  background-color: darkred;\r\n}\r\n.resources .resource-button:hover {\r\n  left: .1em;\r\n}\r\n.resources .resource-button.mat-disabled {\r\n  cursor: default;\r\n}\r\n.resources .badge {\r\n  display: inline-block;\r\n  font-size: small;\r\n  color: white;\r\n  padding: 0.8em 0.7em 0 0.7em;\r\n  background-color: #607D8B;\r\n  line-height: 1em;\r\n  position: absolute;\r\n  right: -9px;\r\n  top: 1px;\r\n  height: 1.8em;\r\n  min-width: 16px;\r\n  text-align: center;\r\n  margin-right: .8em;\r\n  border-radius: 0 4px 4px 0;\r\n}\r\n.button-container {\r\n  position: relative;\r\n}\r\n.travelling-count {\r\n  position: absolute;\r\n  top: 22px;\r\n  right: 3px;\r\n}\r\n.resource-button {\r\n  background-color: #eee;\r\n  border: none;\r\n  padding: 5px 10px;\r\n  border-radius: 4px;\r\n  cursor: pointer;\r\n  cursor: hand;\r\n  font-family: Arial;\r\n}\r\n.harvest-progress {\r\n  display: flex;\r\n  align-content: center;\r\n  align-items: center;\r\n\r\n  height: 100%;\r\n  top: 0px;\r\n\r\n  position: absolute;\r\n  opacity: 0.5;\r\n}\r\n.resource-img {\r\n  position: absolute;\r\n\r\n  top: 0;\r\n  left: 0;\r\n}\r\n.key-container {\r\n  position: absolute;\r\n  left: 50px;\r\n}\r\n.key-container img {\r\n  width: 24px;\r\n  height: 24px;\r\n}\r\n.key-container p {\r\n  z-index: 1;\r\n  position: absolute;\r\n\r\n  top: 9px;\r\n  right: 5px;\r\n\r\n  margin: 0;\r\n  line-height: 0;\r\n}\r\n"
 
 /***/ }),
 
@@ -565,7 +565,7 @@ module.exports = "/* ClickerMainComponent's private CSS styles */\r\n.resources 
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ul class=\"resources noselect\">\n  <mat-accordion multi=\"true\">\n    <mat-expansion-panel expanded=\"true\" *ngFor=\"let resourceType of resourceTypes | enumToArray\">\n      <mat-expansion-panel-header>\n        <mat-panel-title>\n          {{resourceType}}\n        </mat-panel-title>\n        <mat-panel-description>\n        </mat-panel-description>\n      </mat-expansion-panel-header>\n\n      <div class='button-container' *ngFor=\"let resource of resourcesOfType(resourceType, adminService.filterAccessible)\"\n          matTooltip=\"{{getTooltipMessage(resource.id)}}\" matTooltipPosition=\"right\">\n        <button mat-raised-button class=\"resource-button\" [ngClass]=\"{'warn': resourceIsBeingStolen(resource.id)}\"\n            [disabled]=\"!canHarvest(resource.id, resource.harvestYield)\" [id]=\"resource.id\" (click)='startHarvesting(resource.id)'>\n\n          <mat-card-title>{{resource.name | titlecase }}</mat-card-title>\n          <mat-card-subtitle>{{resource.amount | number:'1.0-0'}}</mat-card-subtitle>\n          <mat-progress-bar [class.hidden]=\"!resource.harvesting\" class=\"harvest-progress\" [mode]=\"progressBarMode\" [value]=\"resource.progressBarValue\"></mat-progress-bar>\n\n          <img class=\"resource-img\" src=\"{{resource.iconPath}}\" alt=\"{{resource.name}}\" *ngIf=\"resource.iconPath !== ''\">\n          <div class='travelling-count' *ngIf=\"resource.amountTravelling > 0\">{{resource.amountTravelling}} Travelling</div>\n        </button>\n\n        <div *ngIf=\"adminService.editMode\">\n          <br />\n          <button (click)=\"editResource(resource.id)\">Edit {{resource.name | titlecase}}</button>\n        </div>\n      </div>\n    </mat-expansion-panel>\n  </mat-accordion>\n</ul>\n"
+module.exports = "<ul class=\"resources noselect\">\n  <mat-accordion multi=\"true\">\n    <mat-expansion-panel expanded=\"true\" *ngFor=\"let resourceType of resourceTypes | enumToArray\">\n      <mat-expansion-panel-header>\n        <mat-panel-title>\n          {{resourceType}}\n        </mat-panel-title>\n        <mat-panel-description>\n        </mat-panel-description>\n      </mat-expansion-panel-header>\n\n      <div class='button-container' *ngFor=\"let resource of resourcesOfType(resourceType, adminService.filterAccessible)\"\n        matTooltip=\"{{getTooltipMessage(resource.id)}}\" matTooltipPosition=\"right\">\n        <button mat-raised-button class=\"resource-button\" [ngClass]=\"{'warn': resourceIsBeingStolen(resource.id)}\"\n          [disabled]=\"!canHarvest(resource.id, resource.harvestYield)\" [id]=\"resource.id\" (click)='startHarvesting(resource.id)'>\n          <div class=\"key-container\" *ngIf=\"resource.bindIndex >= 0\">\n            <img src=\"../../../assets/sprites/key.png\">\n            <p>{{resource.bindIndex}}</p>\n          </div>\n\n          <mat-card-title>{{resource.name | titlecase }}</mat-card-title>\n          <mat-card-subtitle>{{resource.amount | number:'1.0-0'}}</mat-card-subtitle>\n          <mat-progress-bar [class.hidden]=\"!resource.harvesting\" class=\"harvest-progress\" [mode]=\"progressBarMode\"\n            [value]=\"resource.progressBarValue\"></mat-progress-bar>\n\n          <img class=\"resource-img\" src=\"{{resource.iconPath}}\" alt=\"{{resource.name}}\" *ngIf=\"resource.iconPath !== ''\">\n          <div class='travelling-count' *ngIf=\"resource.amountTravelling > 0\">{{resource.amountTravelling}} Travelling</div>\n        </button>\n\n        <div *ngIf=\"adminService.editMode\">\n          <br />\n          <button (click)=\"editResource(resource.id)\">Edit {{resource.name | titlecase}}</button>\n        </div>\n      </div>\n    </mat-expansion-panel>\n  </mat-accordion>\n</ul>\n"
 
 /***/ }),
 
@@ -739,7 +739,7 @@ var EnemyComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "#fighter-tooltip {\r\n  top: var(--detail-tooltip-top);\r\n  left: var(--detail-tooltip-left);\r\n\r\n  position: absolute;\r\n}\r\n\r\nmat-card {\r\n  text-align: center;\r\n  max-width: 300px;\r\n}\r\n\r\n.resource-list div {\r\n  display: inline-block;\r\n}\r\n\r\n.resource-list img {\r\n  width: 16px;\r\n  height: 16px;\r\n}\r\n\r\n.repair-container {\r\n  display: inline-flex;\r\n  white-space: pre-wrap;\r\n}\r\n\r\n.repair-container button {\r\n  position: relative;\r\n  top: -25%;\r\n}\r\n"
+module.exports = "#fighter-tooltip {\r\n  top: var(--detail-tooltip-top);\r\n  left: var(--detail-tooltip-left);\r\n\r\n  position: absolute;\r\n}\r\n\r\nmat-card {\r\n  text-align: center;\r\n  max-width: 400px;\r\n}\r\n\r\n.resource-list div {\r\n  display: inline-block;\r\n}\r\n\r\n.resource-list img {\r\n  width: 16px;\r\n  height: 16px;\r\n}\r\n\r\n.repair-container {\r\n  display: inline-flex;\r\n  white-space: pre-wrap;\r\n}\r\n\r\n.repair-container button {\r\n  position: relative;\r\n  top: -25%;\r\n}\r\n\r\n.stats-container {\r\n  display: table;\r\n  width: 100%;\r\n}\r\n\r\n.stat-row {\r\n  display: table-row;\r\n}\r\n\r\np, em, .upgrade-button {\r\n  display: table-cell;\r\n}\r\n\r\n.upgrade-button {\r\n  width: -webkit-fit-content;\r\n  width: -moz-fit-content;\r\n  width: fit-content;\r\n}\r\n\r\n.upgrade-button mat-icon {\r\n  position: relative;\r\n  top: 5px;\r\n}\r\n"
 
 /***/ }),
 
@@ -750,7 +750,7 @@ module.exports = "#fighter-tooltip {\r\n  top: var(--detail-tooltip-top);\r\n  l
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<mat-card id=\"fighter-tooltip\">\n  <div *ngIf=\"focusedFighter\">\n    <mat-card-title>{{focusedFighter.name}}</mat-card-title>\n    <mat-card-subtitle>{{focusedFighter.description}}</mat-card-subtitle>\n    <div class=\"repair-container\">\n      {{focusedFighter.health}}/{{focusedFighter.maxHealth}} Health\n      <div *ngIf=\"focusedFighter.health < focusedFighter.maxHealth\">\n        <!-- <button mat-raised-button (click)=\"repairBuilding(focusedTile)\" color=\"accent\" [disabled]=\"!canRepairBuilding(focusedTile)\">\n          Heal\n          <div class=\"resource-list\">\n            <div matTooltip=\"{{focusedBuildingTile.repairCostPerPoint * (focusedTile.maxHealth - focusedTile.health)}} {{getResource(focusedBuildingTile.repairResource).name | titlecase}}\"\n              matTooltipPosition=\"below\">\n              <img src=\"{{getResource(focusedBuildingTile.repairResource).iconPath}}\" alt=\"{{getResource(focusedBuildingTile.repairResource).name}}\">\n              {{focusedBuildingTile.repairCostPerPoint * (focusedTile.maxHealth - focusedTile.health)}}\n            </div>\n          </div>\n        </button> -->\n      </div>\n    </div>\n\n    <mat-card-content>\n      <!-- <br />\n    Upgrade:\n    <br />\n    <button mat-raised-button (click)=\"upgradeBuilding(focusedTile)\" color=\"accent\" [disabled]=\"!canAffordUpgrade(this.mapService.buildingTiles[focusedBuildingTile.upgradeBuilding])\">\n      <div class=\"title\" matTooltip=\"{{this.mapService.buildingTiles[focusedBuildingTile.upgradeBuilding].description}}\"\n        matTooltipPosition=\"above\">\n        {{this.mapService.buildingTiles[focusedBuildingTile.upgradeBuilding].name}}\n      </div>\n      <div class=\"resource-list\">\n        <div *ngFor=\"let resourceCost of mapService.buildingTiles[focusedBuildingTile.upgradeBuilding].resourceCosts\"\n          matTooltip=\"{{resourceCost.resourceCost}} {{getResource(resourceCost.resourceId).name | titlecase}}\"\n          matTooltipPosition=\"below\">\n          <img src=\"{{getResource(resourceCost.resourceId).iconPath}}\" alt=\"{{getResource(resourceCost.resourceId).name}}\">\n          {{resourceCost.resourceCost}}\n        </div>\n      </div>\n    </button> -->\n    </mat-card-content>\n  </div>\n</mat-card>\n"
+module.exports = "<mat-card id=\"fighter-tooltip\">\n  <div *ngIf=\"focusedFighter\">\n    <mat-card-title>{{focusedFighter.name}}</mat-card-title>\n    <mat-card-subtitle>{{focusedFighter.description}}</mat-card-subtitle>\n\n    <div class=\"repair-container\">\n      {{focusedFighter.health}}/{{focusedFighter.maxHealth}} Health\n      <div *ngIf=\"focusedFighter.health < focusedFighter.maxHealth\">\n        <button mat-raised-button (click)=\"focusedFighter.heal()\" color=\"accent\" [disabled]=\"!focusedFighter.canHeal()\">\n          Heal\n          <div class=\"resource-list\">\n            <div matTooltip=\"{{focusedFighter.healCost | number:'1.0-2'}} {{getResource(0).name | titlecase}}\"\n              matTooltipPosition=\"below\">\n              <img src=\"{{getResource(0).iconPath}}\" alt=\"{{getResource(0).name}}\">\n              {{focusedFighter.healCost | number:'1.0-2'}}\n            </div>\n          </div>\n        </button>\n      </div>\n    </div>\n\n    <mat-card-content>\n\n      <button mat-raised-button color=\"warn\" (click)=\"removeFighter()\">Remove Fighter</button>\n\n      <h3>Stats</h3>\n      <div class=\"stats-container\">\n        <div class=\"stat-row\">\n          <p>\n            Max Health: {{focusedFighter.maxHealth | number:'1.0-2'}}\n          </p>\n          <em>\n            Level {{focusedFighter.statLevels['MAXHEALTH']}}\n          </em>\n          <button class=\"upgrade-button\" color=\"accent\" mat-raised-button (click)=\"focusedFighter.upgradeStat('MAXHEALTH')\"\n            [disabled]=\"!focusedFighter.canUpgradeStat('MAXHEALTH')\" matTooltip=\"Level {{focusedFighter.statLevels['MAXHEALTH'] + 1}}: {{focusedFighter.getUpgradedStat('ATTACK') | number:'1.0-2'}} Max Health\"\n            matTooltipPosition=\"below\">\n            <mat-icon color=\"primary\">arrow_upward</mat-icon>\n            <div class=\"resource-list\">\n              <div>\n                <img src=\"{{getResource(0).iconPath}}\" alt=\"{{getResource(0).name}}\">\n                {{focusedFighter.statCosts['MAXHEALTH'] | number:'1.0-0'}}\n              </div>\n            </div>\n          </button>\n        </div>\n\n        <div class=\"stat-row\">\n          <p>\n            Attack: {{focusedFighter.attack | number:'1.0-2'}}\n          </p>\n          <em>\n            Level {{focusedFighter.statLevels['ATTACK']}}\n          </em>\n          <button class=\"upgrade-button\" color=\"accent\" mat-raised-button (click)=\"focusedFighter.upgradeStat('ATTACK')\"\n            [disabled]=\"!focusedFighter.canUpgradeStat('ATTACK')\" matTooltip=\"Level {{focusedFighter.statLevels['ATTACK'] + 1}}: {{focusedFighter.getUpgradedStat('ATTACK') | number:'1.0-2'}} Attack\"\n            matTooltipPosition=\"below\">\n            <mat-icon color=\"primary\">arrow_upward</mat-icon>\n            <div class=\"resource-list\">\n              <div>\n                <img src=\"{{getResource(0).iconPath}}\" alt=\"{{getResource(0).name}}\">\n                {{focusedFighter.statCosts['ATTACK'] | number:'1.0-0'}}\n              </div>\n            </div>\n          </button>\n        </div>\n\n        <div class=\"stat-row\">\n          <p>\n            Defense: {{focusedFighter.defense | number:'1.0-2'}}\n          </p>\n          <em>\n            Level {{focusedFighter.statLevels['DEFENSE']}}\n          </em>\n          <button class=\"upgrade-button\" color=\"accent\" mat-raised-button (click)=\"focusedFighter.upgradeStat('DEFENSE')\"\n            [disabled]=\"!focusedFighter.canUpgradeStat('DEFENSE')\" matTooltip=\"Level {{focusedFighter.statLevels['DEFENSE'] + 1}}: {{focusedFighter.getUpgradedStat('DEFENSE') | number:'1.0-2'}} Defense\"\n            matTooltipPosition=\"below\">\n            <mat-icon color=\"primary\">arrow_upward</mat-icon>\n            <div class=\"resource-list\">\n              <div>\n                <img src=\"{{getResource(0).iconPath}}\" alt=\"{{getResource(0).name}}\">\n                {{focusedFighter.statCosts['DEFENSE'] | number:'1.0-0'}}\n              </div>\n            </div>\n          </button>\n        </div>\n\n        <div class=\"stat-row\">\n          <p>\n            Attack Range: {{focusedFighter.attackRange | number:'1.0-2'}}\n            Tile{{focusedFighter.attackRange === 1 ? '' : 's'}}\n          </p>\n          <em>\n            Level {{focusedFighter.statLevels['RANGE']}}\n          </em>\n          <button class=\"upgrade-button\" color=\"accent\" mat-raised-button (click)=\"focusedFighter.upgradeStat('RANGE')\"\n            [disabled]=\"!focusedFighter.canUpgradeStat('RANGE')\" matTooltip=\"Level {{focusedFighter.statLevels['RANGE'] + 1}}: {{focusedFighter.getUpgradedStat('RANGE') | number:'1.0-2'}} Attack Range\"\n            matTooltipPosition=\"below\">\n            <mat-icon color=\"primary\">arrow_upward</mat-icon>\n            <div class=\"resource-list\">\n              <div>\n                <img src=\"{{getResource(0).iconPath}}\" alt=\"{{getResource(0).name}}\">\n                {{focusedFighter.statCosts['RANGE'] | number:'1.0-0'}}\n              </div>\n            </div>\n          </button>\n        </div>\n\n        <div class=\"stat-row\" *ngIf=\"focusedFighter.moveable\">\n          <p>\n            Movement Speed: {{focusedFighter.animationSpeed * 100 | number:'1.0-2'}}\n            Tile{{focusedFighter.animationSpeed === 1 ? '' : 's'}}/second\n          </p>\n          <em>\n            Level {{focusedFighter.statLevels['MOVEMENTSPEED']}}\n          </em>\n          <button class=\"upgrade-button\" color=\"accent\" mat-raised-button (click)=\"focusedFighter.upgradeStat('MOVEMENTSPEED')\"\n            [disabled]=\"!focusedFighter.canUpgradeStat('MOVEMENTSPEED')\" matTooltip=\"Level {{focusedFighter.statLevels['MOVEMENTSPEED'] + 1}}: {{focusedFighter.getUpgradedStat('MOVEMENTSPEED') * 100 | number:'1.0-2'}} Tiles/Second\"\n            matTooltipPosition=\"below\">\n            <mat-icon color=\"primary\">arrow_upward</mat-icon>\n            <div class=\"resource-list\">\n              <div>\n                <img src=\"{{getResource(0).iconPath}}\" alt=\"{{getResource(0).name}}\">\n                {{focusedFighter.statCosts['MOVEMENTSPEED'] | number:'1.0-0'}}\n              </div>\n            </div>\n          </button>\n        </div>\n\n        <div class=\"stat-row\">\n          <p>\n            Fire Rate: {{focusedFighter.fireMilliseconds | number:'1.0-2'}}/Second\n          </p>\n          <em>\n            Level {{focusedFighter.statLevels['FIRERATE']}}\n          </em>\n          <button class=\"upgrade-button\" color=\"accent\" mat-raised-button (click)=\"focusedFighter.upgradeStat('FIRERATE')\"\n            [disabled]=\"!focusedFighter.canUpgradeStat('FIRERATE')\" matTooltip=\"Level {{focusedFighter.statLevels['FIRERATE'] + 1}}: {{focusedFighter.getUpgradedStat('FIRERATE') | number:'1.0-2'}}/Second\"\n            matTooltipPosition=\"below\">\n            <mat-icon color=\"primary\">arrow_upward</mat-icon>\n            <div class=\"resource-list\">\n              <div>\n                <img src=\"{{getResource(0).iconPath}}\" alt=\"{{getResource(0).name}}\">\n                {{focusedFighter.statCosts['FIRERATE'] | number:'1.0-0'}}\n              </div>\n            </div>\n          </button>\n        </div>\n      </div>\n    </mat-card-content>\n  </div>\n</mat-card>\n"
 
 /***/ }),
 
@@ -788,6 +788,14 @@ var FighterDetailComponent = /** @class */ (function () {
         this.resourcesService = resourcesService;
     }
     FighterDetailComponent.prototype.ngOnInit = function () {
+    };
+    FighterDetailComponent.prototype.removeFighter = function () {
+        if (!this.focusedFighter) {
+            return;
+        }
+        this.focusedFighter.health = 0;
+        this.focusedTile = undefined;
+        this.focusedFighter = undefined;
     };
     FighterDetailComponent.prototype.getResource = function (resourceId) {
         return this.resourcesService.getResource(resourceId);
@@ -950,7 +958,7 @@ var FighterComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "/* MapComponent's private CSS styles */\r\nh1 {\r\n  font-size: 1.2em;\r\n  color: #999;\r\n  margin-bottom: 0;\r\n  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;\r\n}\r\nh2 {\r\n  font-size: 2em;\r\n  margin-top: 0;\r\n  padding-top: 0;\r\n}\r\nh3 {\r\n  font-family: Arial, Helvetica, sans-serif;\r\n}\r\nnav a {\r\n  padding: 5px 10px;\r\n  text-decoration: none;\r\n  margin-top: 10px;\r\n  display: inline-block;\r\n  background-color: #eee;\r\n  border-radius: 4px;\r\n}\r\nnav a:visited, a:link {\r\n  color: #607d8b;\r\n}\r\nnav a:hover {\r\n  color: #039be5;\r\n  background-color: #cfd8dc;\r\n}\r\nnav a.active {\r\n  color: #039be5;\r\n}\r\n#canvas-container {\r\n  display: flex;\r\n  height: 100%;\r\n}\r\n.cursor-tools {\r\n  position: absolute;\r\n  top: 0;\r\n\r\n  background: white;\r\n}\r\n"
+module.exports = "/* MapComponent's private CSS styles */\r\nh1 {\r\n  font-size: 1.2em;\r\n  color: #999;\r\n  margin-bottom: 0;\r\n  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;\r\n}\r\nh2 {\r\n  font-size: 2em;\r\n  margin-top: 0;\r\n  padding-top: 0;\r\n}\r\nh3 {\r\n  font-family: Arial, Helvetica, sans-serif;\r\n}\r\nnav a {\r\n  padding: 5px 10px;\r\n  text-decoration: none;\r\n  margin-top: 10px;\r\n  display: inline-block;\r\n  background-color: #eee;\r\n  border-radius: 4px;\r\n}\r\nnav a:visited, a:link {\r\n  color: #607d8b;\r\n}\r\nnav a:hover {\r\n  color: #039be5;\r\n  background-color: #cfd8dc;\r\n}\r\nnav a.active {\r\n  color: #039be5;\r\n}\r\n#canvas-container {\r\n  display: flex;\r\n  height: 100%;\r\n}\r\n.cursor-tools {\r\n  position: absolute;\r\n  top: 0;\r\n\r\n  background: white;\r\n}\r\n.key-container {\r\n  position: absolute;\r\n}\r\n.key-container img {\r\n  width: 24px;\r\n  height: 24px;\r\n}\r\n.key-container p {\r\n  z-index: 1;\r\n  position: absolute;\r\n\r\n  top: 10px;\r\n  right: 3px;\r\n\r\n  margin: 0;\r\n  line-height: 0;\r\n}\r\n"
 
 /***/ }),
 
@@ -961,7 +969,7 @@ module.exports = "/* MapComponent's private CSS styles */\r\nh1 {\r\n  font-size
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div id=\"canvas-container\" tabindex=\"1\">\r\n  <canvas class=\"noselect\" appNoScroll appMap width=\"{{canvasWidth}}\" height=\"{{canvasHeight}}\" oncontextmenu=\"return false\"></canvas>\r\n\r\n  <mat-button-toggle-group #group=\"matButtonToggleGroup\" [(ngModel)]=\"mapService.cursorTool\" class=\"cursor-tools\" (valueChange)=\"clearFocus()\">\r\n    <mat-button-toggle value=\"PLACEBUILDINGS\" class=\"cursor-tool\" (click)=\"setPlacementGroupVisibility(!mapService.buildingListVisible, false)\">\r\n      <mat-icon color=\"primary\">add_photo_alternate</mat-icon>\r\n      <br />\r\n      Place Buildings\r\n    </mat-button-toggle>\r\n    <mat-button-toggle value=\"CLEARBUILDINGS\" class=\"cursor-tool\" (click)=\"setPlacementGroupVisibility(false, false)\">\r\n      <mat-icon color=\"primary\">delete</mat-icon>\r\n      <br />\r\n      Clear Buildings\r\n    </mat-button-toggle>\r\n    <mat-button-toggle value=\"TILEDETAIL\" class=\"cursor-tool\" (click)=\"setPlacementGroupVisibility(false, false)\">\r\n      <mat-icon color=\"primary\">mode_comment</mat-icon>\r\n      <br />\r\n      Tile Details\r\n    </mat-button-toggle>\r\n    <mat-button-toggle *ngIf=\"enemyService.enemiesActive\" value=\"PLACEFIGHTERS\" class=\"cursor-tool\" (click)=\"setPlacementGroupVisibility(false, !this.mapService.fighterListVisible)\">\r\n      <mat-icon color=\"primary\">directions_walk</mat-icon>\r\n      <br />\r\n      Place Fighters\r\n    </mat-button-toggle>\r\n    <mat-button-toggle *ngIf=\"enemyService.enemiesActive\" value=\"FIGHTERDETAIL\" class=\"cursor-tool\" (click)=\"setPlacementGroupVisibility(false, false)\">\r\n      <mat-icon color=\"primary\">directions_run</mat-icon>\r\n      <br />\r\n      Fighter Details\r\n    </mat-button-toggle>\r\n  </mat-button-toggle-group>\r\n\r\n  <app-buildings *ngIf=\"mapService.buildingListVisible\"></app-buildings>\r\n  <app-fighter *ngIf=\"mapService.fighterListVisible\"></app-fighter>\r\n</div>\r\n\r\n<app-tile-detail [ngClass]=\"{'hidden': !mapService.focusedBuildingTile && !mapService.focusedResourceTile}\"></app-tile-detail>\r\n<app-fighter-detail [ngClass]=\"{'hidden': !mapService.focusedFighter}\"></app-fighter-detail>\r\n"
+module.exports = "<div id=\"canvas-container\" tabindex=\"1\">\r\n  <canvas class=\"noselect\" appNoScroll appMap width=\"{{canvasWidth}}\" height=\"{{canvasHeight}}\" oncontextmenu=\"return false\"></canvas>\r\n\r\n  <mat-button-toggle-group #group=\"matButtonToggleGroup\" [(ngModel)]=\"mapService.cursorTool\" class=\"cursor-tools\"\r\n    (valueChange)=\"clearFocus()\">\r\n    <mat-button-toggle value=\"PLACEBUILDINGS\" class=\"cursor-tool\" (click)=\"setPlacementGroupVisibility(!mapService.buildingListVisible, false)\">\r\n      <div class=\"key-container\">\r\n        <img src=\"../../../assets/sprites/key.png\">\r\n        <p>Q</p>\r\n      </div>\r\n      <mat-icon color=\"primary\">add_photo_alternate</mat-icon>\r\n      <br />\r\n      Place Buildings\r\n    </mat-button-toggle>\r\n    <mat-button-toggle value=\"CLEARBUILDINGS\" class=\"cursor-tool\" (click)=\"setPlacementGroupVisibility(false, false)\">\r\n      <div class=\"key-container\">\r\n        <img src=\"../../../assets/sprites/key.png\">\r\n        <p>W</p>\r\n      </div>\r\n      <mat-icon color=\"primary\">delete</mat-icon>\r\n      <br />\r\n      Clear Buildings\r\n    </mat-button-toggle>\r\n    <mat-button-toggle value=\"TILEDETAIL\" class=\"cursor-tool\" (click)=\"setPlacementGroupVisibility(false, false)\">\r\n      <div class=\"key-container\">\r\n        <img src=\"../../../assets/sprites/key.png\">\r\n        <p>E</p>\r\n      </div>\r\n      <mat-icon color=\"primary\">mode_comment</mat-icon>\r\n      <br />\r\n      Tile Details\r\n    </mat-button-toggle>\r\n    <mat-button-toggle *ngIf=\"enemyService.enemiesActive\" value=\"PLACEFIGHTERS\" class=\"cursor-tool\" (click)=\"setPlacementGroupVisibility(false, !this.mapService.fighterListVisible)\">\r\n      <div class=\"key-container\">\r\n        <img src=\"../../../assets/sprites/key.png\">\r\n        <p>R</p>\r\n      </div>\r\n      <mat-icon color=\"primary\">directions_walk</mat-icon>\r\n      <br />\r\n      Place Fighters\r\n    </mat-button-toggle>\r\n    <mat-button-toggle *ngIf=\"enemyService.enemiesActive\" value=\"FIGHTERDETAIL\" class=\"cursor-tool\" (click)=\"setPlacementGroupVisibility(false, false)\">\r\n      <div class=\"key-container\">\r\n        <img src=\"../../../assets/sprites/key.png\">\r\n        <p>T</p>\r\n      </div>\r\n      <mat-icon color=\"primary\">directions_run</mat-icon>\r\n      <br />\r\n      Fighter Details\r\n    </mat-button-toggle>\r\n  </mat-button-toggle-group>\r\n\r\n  <app-buildings *ngIf=\"mapService.buildingListVisible\"></app-buildings>\r\n  <app-fighter *ngIf=\"mapService.fighterListVisible\"></app-fighter>\r\n</div>\r\n\r\n<app-tile-detail [ngClass]=\"{'hidden': !mapService.focusedBuildingTile && !mapService.focusedResourceTile}\"></app-tile-detail>\r\n<app-fighter-detail [ngClass]=\"{'hidden': !mapService.focusedFighter}\"></app-fighter-detail>\r\n"
 
 /***/ }),
 
@@ -1253,7 +1261,8 @@ var ResourceDialogComponent = /** @class */ (function () {
             resourceTier: 0,
             previousTier: 0,
             worker: { workable: true, workerCount: 0, cost: 50 },
-            resourceBeingStolen: false
+            resourceBeingStolen: false,
+            bindIndex: -1
         };
         this.resourceWorker = this.workersService.getResourceWorker(0);
         this.editMode = false;
@@ -1466,7 +1475,7 @@ module.exports = "mat-panel-title {\r\n  display: -ms-grid;\r\n  display: grid;\
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<h3>Version {{settingsService.gameVersion}}</h3>\n\n<mat-accordion multi=\"true\">\n  <mat-expansion-panel expanded=\"true\">\n    <mat-expansion-panel-header>\n      <mat-panel-title>\n        <mat-icon color=\"primary\">save</mat-icon>\n        Save/Load\n      </mat-panel-title>\n    </mat-expansion-panel-header>\n\n    <mat-form-field class=\"full-width\">\n      <mat-select placeholder=\"Autosave Interval (Minutes)\" [(ngModel)]=\"autosaveInterval\" (valueChange)=\"settingsService.setAutosave()\">\n        <mat-option [value]=\"-1\">Disable</mat-option>\n        <mat-option [value]=\"60000\">1</mat-option>\n        <mat-option [value]=\"900000\">15</mat-option>\n        <mat-option [value]=\"1800000\">30</mat-option>\n        <mat-option [value]=\"3600000\">60</mat-option>\n      </mat-select>\n    </mat-form-field>\n\n    <button mat-raised-button color=\"primary\" (click)=\"saveGame()\">Save</button>\n    <button mat-raised-button color=\"warn\" (click)=\"deleteGame()\">Delete Save</button>\n\n    <button mat-raised-button (click)=\"exportSave()\">Export Save</button>\n    <button mat-raised-button (click)=\"importSave()\">Import Save</button>\n  </mat-expansion-panel>\n\n  <mat-expansion-panel expanded=\"true\">\n      <mat-expansion-panel-header>\n        <mat-panel-title>\n          <mat-icon color=\"primary\">list</mat-icon>\n          Interface\n        </mat-panel-title>\n      </mat-expansion-panel-header>\n\n      <mat-checkbox [(ngModel)]=\"slimInterface\">Slim Mode</mat-checkbox>\n      <!-- <br />\n      <mat-checkbox [(ngModel)]=\"disableAnimations\">Disable Animations</mat-checkbox> -->\n    </mat-expansion-panel>\n\n  <mat-expansion-panel expanded=\"true\">\n    <mat-expansion-panel-header>\n      <mat-panel-title>\n        <mat-icon color=\"primary\">map</mat-icon>\n        Map\n      </mat-panel-title>\n    </mat-expansion-panel-header>\n\n    <mat-checkbox [(ngModel)]=\"mapLowFramerate\">Limit Framerate</mat-checkbox>\n    <br />\n\n    <mat-form-field class=\"full-width\">\n      <input class=\"color-input\" matInput placeholder=\"Player Harvest Color\" [(colorPicker)]=\"harvestDetailColor\" [style.background]=\"harvestDetailColor\" [value]=\"harvestDetailColor\"/>\n    </mat-form-field>\n\n    <mat-form-field class=\"full-width\">\n      <input class=\"color-input\" matInput placeholder=\"Worker Harvest Color\" [(colorPicker)]=\"workerDetailColor\" [style.background]=\"workerDetailColor\" [value]=\"workerDetailColor\"/>\n    </mat-form-field>\n  </mat-expansion-panel>\n\n  <mat-expansion-panel expanded=\"true\">\n    <mat-expansion-panel-header>\n      <mat-panel-title>\n        <mat-icon color=\"primary\">assessment</mat-icon>\n        Log\n      </mat-panel-title>\n    </mat-expansion-panel-header>\n\n    <button mat-raised-button (click)=\"messagesService.clear()\">Clear</button>\n\n    <br />\n\n    <mat-form-field class=\"full-width\">\n      <input matInput type=\"number\" placeholder=\"Log History\" min=\"0\" max=\"10000\" [(ngModel)]=\"messagesService.messageLimit\">\n    </mat-form-field>\n\n    <br />\n\n    <mat-form-field class=\"full-width\">\n      <mat-select placeholder=\"Visible Log Sources\" [(ngModel)]=\"messagesService.visibleSources\" (ngModelChange)=\"messagesService.getFilteredMessages()\" multiple>\n        <mat-option *ngFor=\"let messageSource of messageSources | enumToArray\" [(value)]=\"messageSources[messageSource]\">\n          {{messageSource | titlecase}}\n        </mat-option>\n      </mat-select>\n    </mat-form-field>\n  </mat-expansion-panel>\n\n  <mat-expansion-panel expanded=\"true\">\n    <mat-expansion-panel-header>\n      <mat-panel-title>\n        <mat-icon color=\"primary\">bug_report</mat-icon>\n        Debug\n      </mat-panel-title>\n    </mat-expansion-panel-header>\n\n    <mat-checkbox [(ngModel)]=\"debugMode\">Debug Mode</mat-checkbox>\n  </mat-expansion-panel>\n\n  <!-- <mat-expansion-panel expanded=\"true\">\n    <mat-expansion-panel-header>\n      <mat-panel-title>\n        <mat-icon color=\"primary\">attach_money</mat-icon>\n        Shameless Commercialism\n      </mat-panel-title>\n    </mat-expansion-panel-header>\n\n    <a href=\"https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=L6UNHAL6A8PDC\" target=\"_blank\">\n      <img src=\"https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif\" border=\"0\" alt=\"PayPal - The safer, easier way to pay online!\">\n    </a>\n\n  </mat-expansion-panel> -->\n</mat-accordion>\n"
+module.exports = "<h3>Version {{settingsService.gameVersion}}</h3>\n\n<mat-accordion multi=\"true\">\n  <mat-expansion-panel expanded=\"true\">\n    <mat-expansion-panel-header>\n      <mat-panel-title>\n        <mat-icon color=\"primary\">save</mat-icon>\n        Save/Load\n      </mat-panel-title>\n    </mat-expansion-panel-header>\n\n    <mat-form-field class=\"full-width\">\n      <mat-select placeholder=\"Autosave Interval (Minutes)\" [(ngModel)]=\"autosaveInterval\" (valueChange)=\"settingsService.setAutosave()\">\n        <mat-option [value]=\"-1\">Disable</mat-option>\n        <mat-option [value]=\"60000\">1</mat-option>\n        <mat-option [value]=\"900000\">15</mat-option>\n        <mat-option [value]=\"1800000\">30</mat-option>\n        <mat-option [value]=\"3600000\">60</mat-option>\n      </mat-select>\n    </mat-form-field>\n\n    <button mat-raised-button color=\"primary\" (click)=\"saveGame()\">Save</button>\n    <button mat-raised-button color=\"warn\" (click)=\"deleteGame()\">Delete Save</button>\n\n    <button mat-raised-button (click)=\"exportSave()\">Export Save</button>\n    <button mat-raised-button (click)=\"importSave()\">Import Save</button>\n  </mat-expansion-panel>\n\n  <mat-expansion-panel expanded=\"true\">\n    <mat-expansion-panel-header>\n      <mat-panel-title>\n        <mat-icon color=\"primary\">list</mat-icon>\n        Interface\n      </mat-panel-title>\n    </mat-expansion-panel-header>\n\n    <mat-checkbox [(ngModel)]=\"slimInterface\">Slim Mode</mat-checkbox>\n    <!-- <br />\n      <mat-checkbox [(ngModel)]=\"disableAnimations\">Disable Animations</mat-checkbox> -->\n\n    <mat-form-field class=\"full-width\">\n      <mat-select placeholder=\"Resource Shortcuts\" [formControl]=\"bindSelected\" multiple (selectionChange)=\"resourceBindChange($event)\">\n        <mat-option *ngFor=\"let resource of resourcesService.harvestableResources()\" [(value)]=\"resource.id\">\n          {{resource.name | titlecase}}\n        </mat-option>\n      </mat-select>\n      <mat-error *ngIf=\"bindSelected.hasError('length')\">\n        No more than 10 resource shortcuts allowed.\n      </mat-error>\n    </mat-form-field>\n\n  </mat-expansion-panel>\n\n  <mat-expansion-panel expanded=\"true\">\n    <mat-expansion-panel-header>\n      <mat-panel-title>\n        <mat-icon color=\"primary\">map</mat-icon>\n        Map\n      </mat-panel-title>\n    </mat-expansion-panel-header>\n\n    <mat-checkbox [(ngModel)]=\"mapLowFramerate\">Limit Framerate</mat-checkbox>\n    <br />\n\n    <mat-form-field class=\"full-width\">\n      <input class=\"color-input\" matInput placeholder=\"Player Harvest Color\" [(colorPicker)]=\"harvestDetailColor\"\n        [style.background]=\"harvestDetailColor\" [value]=\"harvestDetailColor\" />\n    </mat-form-field>\n\n    <mat-form-field class=\"full-width\">\n      <input class=\"color-input\" matInput placeholder=\"Worker Harvest Color\" [(colorPicker)]=\"workerDetailColor\"\n        [style.background]=\"workerDetailColor\" [value]=\"workerDetailColor\" />\n    </mat-form-field>\n  </mat-expansion-panel>\n\n  <mat-expansion-panel expanded=\"true\">\n    <mat-expansion-panel-header>\n      <mat-panel-title>\n        <mat-icon color=\"primary\">assessment</mat-icon>\n        Log\n      </mat-panel-title>\n    </mat-expansion-panel-header>\n\n    <button mat-raised-button (click)=\"messagesService.clear()\">Clear</button>\n\n    <br />\n\n    <mat-form-field class=\"full-width\">\n      <input matInput type=\"number\" placeholder=\"Log History\" min=\"0\" max=\"10000\" [(ngModel)]=\"messagesService.messageLimit\">\n    </mat-form-field>\n\n    <br />\n\n    <mat-form-field class=\"full-width\">\n      <mat-select placeholder=\"Visible Log Sources\" [(ngModel)]=\"messagesService.visibleSources\" (ngModelChange)=\"messagesService.getFilteredMessages()\"\n        multiple>\n        <mat-option *ngFor=\"let messageSource of messageSources | enumToArray\" [(value)]=\"messageSources[messageSource]\">\n          {{messageSource | titlecase}}\n        </mat-option>\n      </mat-select>\n    </mat-form-field>\n  </mat-expansion-panel>\n\n  <mat-expansion-panel expanded=\"true\">\n    <mat-expansion-panel-header>\n      <mat-panel-title>\n        <mat-icon color=\"primary\">bug_report</mat-icon>\n        Debug\n      </mat-panel-title>\n    </mat-expansion-panel-header>\n\n    <mat-checkbox [(ngModel)]=\"debugMode\">Debug Mode</mat-checkbox>\n  </mat-expansion-panel>\n\n  <!-- <mat-expansion-panel expanded=\"true\">\n    <mat-expansion-panel-header>\n      <mat-panel-title>\n        <mat-icon color=\"primary\">attach_money</mat-icon>\n        Shameless Commercialism\n      </mat-panel-title>\n    </mat-expansion-panel-header>\n\n    <a href=\"https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=L6UNHAL6A8PDC\" target=\"_blank\">\n      <img src=\"https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif\" border=\"0\" alt=\"PayPal - The safer, easier way to pay online!\">\n    </a>\n\n  </mat-expansion-panel> -->\n</mat-accordion>\n"
 
 /***/ }),
 
@@ -1483,8 +1492,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
 /* harmony import */ var _services_settings_settings_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../services/settings/settings.service */ "./src/app/services/settings/settings.service.ts");
-/* harmony import */ var _services_messages_messages_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./../../services/messages/messages.service */ "./src/app/services/messages/messages.service.ts");
-/* harmony import */ var _objects_message__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./../../objects/message */ "./src/app/objects/message.ts");
+/* harmony import */ var _services_resources_resources_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./../../services/resources/resources.service */ "./src/app/services/resources/resources.service.ts");
+/* harmony import */ var _services_messages_messages_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./../../services/messages/messages.service */ "./src/app/services/messages/messages.service.ts");
+/* harmony import */ var _objects_message__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./../../objects/message */ "./src/app/objects/message.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1499,12 +1509,17 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
 var SettingsComponent = /** @class */ (function () {
-    function SettingsComponent(settingsService, messagesService) {
+    function SettingsComponent(settingsService, resourcesService, messagesService) {
         this.settingsService = settingsService;
+        this.resourcesService = resourcesService;
         this.messagesService = messagesService;
-        this.sources = new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"]();
-        this.messageSources = _objects_message__WEBPACK_IMPORTED_MODULE_4__["MessageSource"];
+        this.bindSelected = new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"]();
+        this.messageSources = _objects_message__WEBPACK_IMPORTED_MODULE_5__["MessageSource"];
+        this.resourceBindErrorState = false;
+        this.bindSelected.setValue(this.resourceBinds);
+        this.resourceBindChange({ 'source': null, 'value': this.resourceBinds });
     }
     SettingsComponent.prototype.ngOnInit = function () {
     };
@@ -1522,12 +1537,27 @@ var SettingsComponent = /** @class */ (function () {
             this.settingsService.deleteSave();
         }
     };
+    SettingsComponent.prototype.resourceBindChange = function (event) {
+        var limitExceeded = event.value.length > 10;
+        this.bindSelected.setErrors({ 'length': limitExceeded });
+        if (!limitExceeded) {
+            this.resourceBinds = event.value;
+            for (var _i = 0, _a = this.resourcesService.resources; _i < _a.length; _i++) {
+                var resource = _a[_i];
+                resource.bindIndex = -1;
+            }
+            for (var _b = 0, _c = this.resourceBinds; _b < _c.length; _b++) {
+                var resourceBind = _c[_b];
+                var resource = this.resourcesService.getResource(resourceBind);
+                resource.bindIndex = this.resourceBinds.indexOf(resourceBind);
+            }
+        }
+    };
     SettingsComponent.prototype.exportSave = function () {
         this.settingsService.openSaveDialog(this.settingsService.exportSave());
     };
     SettingsComponent.prototype.importSave = function () {
         this.settingsService.openSaveDialog();
-        // this.settingsService.importSave(prompt('Paste Save Data'));
     };
     Object.defineProperty(SettingsComponent.prototype, "autosaveInterval", {
         get: function () {
@@ -1599,6 +1629,16 @@ var SettingsComponent = /** @class */ (function () {
         enumerable: true,
         configurable: true
     });
+    Object.defineProperty(SettingsComponent.prototype, "resourceBinds", {
+        get: function () {
+            return this.settingsService.resourceBinds;
+        },
+        set: function (value) {
+            this.settingsService.resourceBinds = value;
+        },
+        enumerable: true,
+        configurable: true
+    });
     SettingsComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-settings',
@@ -1606,7 +1646,8 @@ var SettingsComponent = /** @class */ (function () {
             styles: [__webpack_require__(/*! ./settings.component.css */ "./src/app/components/settings/settings.component.css")]
         }),
         __metadata("design:paramtypes", [_services_settings_settings_service__WEBPACK_IMPORTED_MODULE_2__["SettingsService"],
-            _services_messages_messages_service__WEBPACK_IMPORTED_MODULE_3__["MessagesService"]])
+            _services_resources_resources_service__WEBPACK_IMPORTED_MODULE_3__["ResourcesService"],
+            _services_messages_messages_service__WEBPACK_IMPORTED_MODULE_4__["MessagesService"]])
     ], SettingsComponent);
     return SettingsComponent;
 }());
@@ -2850,11 +2891,12 @@ var MaterialImportModule = /** @class */ (function () {
 /*!***********************************!*\
   !*** ./src/app/objects/entity.ts ***!
   \***********************************/
-/*! exports provided: Entity, Actor, Enemy, Fighter, Projectile, ResourceAnimation */
+/*! exports provided: FighterStats, Entity, Actor, Enemy, Fighter, Projectile, ResourceAnimation */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FighterStats", function() { return FighterStats; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Entity", function() { return Entity; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Actor", function() { return Actor; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Enemy", function() { return Enemy; });
@@ -2875,6 +2917,15 @@ var __extends = (undefined && undefined.__extends) || (function () {
 })();
 
 
+var FighterStats;
+(function (FighterStats) {
+    FighterStats["Attack"] = "ATTACK";
+    FighterStats["Defense"] = "DEFENSE";
+    FighterStats["Range"] = "RANGE";
+    FighterStats["MovementSpeed"] = "MOVEMENTSPEED";
+    FighterStats["FireRate"] = "FIRERATE";
+    FighterStats["MaxHealth"] = "MAXHEALTH";
+})(FighterStats || (FighterStats = {}));
 var Entity = /** @class */ (function () {
     function Entity(name, position, currentTile, health, animationSpeed, tilePath) {
         if (animationSpeed === void 0) { animationSpeed = 0.003; }
@@ -2973,13 +3024,120 @@ var Enemy = /** @class */ (function (_super) {
 
 var Fighter = /** @class */ (function (_super) {
     __extends(Fighter, _super);
-    function Fighter(name, position, currentTile, health, animationSpeed, attack, defense, attackRange, description, cost, moveable) {
-        if (animationSpeed === void 0) { animationSpeed = 0.003; }
+    function Fighter(name, position, currentTile, health, animationSpeed, attack, defense, attackRange, description, cost, moveable, fireMilliseconds, resourcesService, enemyService, mapService) {
         var _this = _super.call(this, name, position, currentTile, health, animationSpeed, attack, defense, attackRange) || this;
+        _this.lastFire = 0;
+        _this.statLevels = {};
+        _this.statCosts = {};
+        _this.description = description;
         _this.cost = cost;
         _this.moveable = moveable;
+        _this.fireMilliseconds = fireMilliseconds;
+        _this.statLevels[FighterStats.Attack] = 1;
+        _this.statLevels[FighterStats.Defense] = 1;
+        _this.statLevels[FighterStats.FireRate] = 1;
+        _this.statLevels[FighterStats.MovementSpeed] = 1;
+        _this.statLevels[FighterStats.Range] = 1;
+        _this.statLevels[FighterStats.MaxHealth] = 1;
+        _this.statCosts[FighterStats.Attack] = 1500;
+        _this.statCosts[FighterStats.Defense] = 1500;
+        _this.statCosts[FighterStats.FireRate] = 1500;
+        _this.statCosts[FighterStats.MovementSpeed] = 1500;
+        _this.statCosts[FighterStats.Range] = 1500;
+        _this.statCosts[FighterStats.MaxHealth] = 1500;
+        _this.resourcesService = resourcesService;
+        _this.enemyService = enemyService;
+        _this.mapService = mapService;
         return _this;
     }
+    Fighter.prototype.tick = function (elapsed, deltaTime) {
+        var _this = this;
+        if (elapsed - this.lastFire > this.fireMilliseconds) {
+            var enemiesInRange = this.enemyService.enemies.filter(function (enemy) { return Math.abs(Math.sqrt(Math.pow((_this.x - enemy.x), 2) + Math.pow((_this.y - enemy.y), 2))) / 16 <= _this.attackRange; });
+            var targetedEnemy = enemiesInRange[Math.floor(Math.random() * enemiesInRange.length)];
+            if (targetedEnemy) {
+                this.mapService.spawnProjectile(this, targetedEnemy);
+            }
+            this.lastFire = elapsed;
+        }
+    };
+    Fighter.prototype.canUpgradeStat = function (stat) {
+        return this.resourcesService.getResource(0).amount >= this.statCosts[stat];
+    };
+    Fighter.prototype.getUpgradedStat = function (stat) {
+        switch (stat) {
+            case FighterStats.Attack: {
+                return this.attack * 1.2;
+            }
+            case FighterStats.Defense: {
+                return this.defense * 1.2;
+            }
+            case FighterStats.FireRate: {
+                return this.fireMilliseconds / 1.1;
+            }
+            case FighterStats.MovementSpeed: {
+                return this.animationSpeed * 1.2;
+            }
+            case FighterStats.Range: {
+                return this.attackRange + 1;
+            }
+            case FighterStats.MaxHealth: {
+                return Math.floor(this.maxHealth * 1.2);
+            }
+        }
+    };
+    Fighter.prototype.upgradeStat = function (stat) {
+        if (!this.canUpgradeStat(stat)) {
+            return;
+        }
+        this.resourcesService.addResourceAmount(0, -this.statCosts[stat]);
+        var upgradedStat = this.getUpgradedStat(stat);
+        switch (stat) {
+            case FighterStats.Attack: {
+                this.attack = upgradedStat;
+                break;
+            }
+            case FighterStats.Defense: {
+                this.defense = upgradedStat;
+                break;
+            }
+            case FighterStats.FireRate: {
+                this.fireMilliseconds = upgradedStat;
+                break;
+            }
+            case FighterStats.MovementSpeed: {
+                this.animationSpeed = upgradedStat;
+                break;
+            }
+            case FighterStats.Range: {
+                this.attackRange = upgradedStat;
+                break;
+            }
+            case FighterStats.MaxHealth: {
+                this.maxHealth = upgradedStat;
+                this.health = this.maxHealth;
+            }
+        }
+        this.statLevels[stat]++;
+        this.statCosts[stat] *= 1.5;
+    };
+    Fighter.prototype.canHeal = function () {
+        return this.resourcesService.getResource(0).amount >= this.healCost;
+    };
+    Fighter.prototype.heal = function () {
+        if (!this.canHeal()) {
+            return;
+        }
+        this.resourcesService.addResourceAmount(0, -this.healCost);
+        this.health = this.maxHealth;
+    };
+    Object.defineProperty(Fighter.prototype, "healCost", {
+        get: function () {
+            return (this.cost / this.maxHealth) * 0.65 * (this.maxHealth - this.health);
+        },
+        enumerable: true,
+        configurable: true
+    });
     return Fighter;
 }(Actor));
 
@@ -3554,9 +3712,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _map_map_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../map/map.service */ "./src/app/services/map/map.service.ts");
 /* harmony import */ var _enemy_enemy_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./../enemy/enemy.service */ "./src/app/services/enemy/enemy.service.ts");
 /* harmony import */ var _messages_messages_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../messages/messages.service */ "./src/app/services/messages/messages.service.ts");
-/* harmony import */ var _admin_admin_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../admin/admin.service */ "./src/app/services/admin/admin.service.ts");
-/* harmony import */ var _objects_resource__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../objects/resource */ "./src/app/objects/resource.ts");
-/* harmony import */ var _objects_message__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../objects/message */ "./src/app/objects/message.ts");
+/* harmony import */ var _settings_settings_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../settings/settings.service */ "./src/app/services/settings/settings.service.ts");
+/* harmony import */ var _admin_admin_service__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../admin/admin.service */ "./src/app/services/admin/admin.service.ts");
+/* harmony import */ var _objects_resource__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../objects/resource */ "./src/app/objects/resource.ts");
+/* harmony import */ var _objects_message__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../objects/message */ "./src/app/objects/message.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -3576,15 +3735,19 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
 var ClickerMainService = /** @class */ (function () {
-    function ClickerMainService(resourcesService, workersService, mapService, enemyService, messagesService, adminService) {
+    function ClickerMainService(resourcesService, workersService, mapService, enemyService, messagesService, settingsService, adminService) {
+        var _this = this;
         this.resourcesService = resourcesService;
         this.workersService = workersService;
         this.mapService = mapService;
         this.enemyService = enemyService;
         this.messagesService = messagesService;
+        this.settingsService = settingsService;
         this.adminService = adminService;
-        this.resourceTypes = _objects_resource__WEBPACK_IMPORTED_MODULE_8__["ResourceType"];
+        this.resourceTypes = _objects_resource__WEBPACK_IMPORTED_MODULE_9__["ResourceType"];
+        document.addEventListener('keydown', function (event) { return _this.processInput(event); });
     }
     ClickerMainService.prototype.tick = function (elapsed, deltaTime) {
         this.timeElapsed = elapsed;
@@ -3592,6 +3755,57 @@ var ClickerMainService = /** @class */ (function () {
             var resource = _a[_i];
             var millisecondsElapsed = elapsed - resource.harvestStartDate;
             resource.progressBarValue = Math.floor(millisecondsElapsed / resource.harvestMilliseconds * 100);
+        }
+    };
+    ClickerMainService.prototype.processInput = function (event) {
+        if (event.repeat) {
+            return;
+        }
+        switch (event.code) {
+            case 'KeyQ': {
+                this.mapService.cursorTool = _map_map_service__WEBPACK_IMPORTED_MODULE_4__["CursorTool"].PlaceBuildings;
+                this.mapService.buildingListVisible = true;
+                this.mapService.fighterListVisible = false;
+                break;
+            }
+            case 'KeyW': {
+                this.mapService.cursorTool = _map_map_service__WEBPACK_IMPORTED_MODULE_4__["CursorTool"].ClearBuildings;
+                this.mapService.buildingListVisible = false;
+                this.mapService.fighterListVisible = false;
+                break;
+            }
+            case 'KeyE': {
+                this.mapService.cursorTool = _map_map_service__WEBPACK_IMPORTED_MODULE_4__["CursorTool"].TileDetail;
+                this.mapService.buildingListVisible = false;
+                this.mapService.fighterListVisible = false;
+                break;
+            }
+            case 'KeyR': {
+                if (!this.enemyService.enemiesActive) {
+                    break;
+                }
+                this.mapService.cursorTool = _map_map_service__WEBPACK_IMPORTED_MODULE_4__["CursorTool"].PlaceFighters;
+                this.mapService.buildingListVisible = false;
+                this.mapService.fighterListVisible = true;
+                break;
+            }
+            case 'KeyT': {
+                if (!this.enemyService.enemiesActive) {
+                    break;
+                }
+                this.mapService.cursorTool = _map_map_service__WEBPACK_IMPORTED_MODULE_4__["CursorTool"].FighterDetail;
+                this.mapService.buildingListVisible = false;
+                this.mapService.fighterListVisible = false;
+                break;
+            }
+        }
+        var keyDigit = +event.code.replace('Digit', '').replace('Numpad', '');
+        if (!isNaN(keyDigit)) {
+            var resourceId = this.settingsService.resourceBinds[keyDigit];
+            var resource = this.resourcesService.getResource(resourceId);
+            if (resource && !resource.harvesting) {
+                this.startHarvesting(resourceId);
+            }
         }
     };
     ClickerMainService.prototype.startHarvesting = function (id) {
@@ -3617,7 +3831,7 @@ var ClickerMainService = /** @class */ (function () {
         resource.harvesting = false;
     };
     ClickerMainService.prototype.log = function (message) {
-        this.messagesService.add(_objects_message__WEBPACK_IMPORTED_MODULE_9__["MessageSource"].Main, message);
+        this.messagesService.add(_objects_message__WEBPACK_IMPORTED_MODULE_10__["MessageSource"].Main, message);
     };
     ClickerMainService = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
@@ -3628,7 +3842,8 @@ var ClickerMainService = /** @class */ (function () {
             _map_map_service__WEBPACK_IMPORTED_MODULE_4__["MapService"],
             _enemy_enemy_service__WEBPACK_IMPORTED_MODULE_5__["EnemyService"],
             _messages_messages_service__WEBPACK_IMPORTED_MODULE_6__["MessagesService"],
-            _admin_admin_service__WEBPACK_IMPORTED_MODULE_7__["AdminService"]])
+            _settings_settings_service__WEBPACK_IMPORTED_MODULE_7__["SettingsService"],
+            _admin_admin_service__WEBPACK_IMPORTED_MODULE_8__["AdminService"]])
     ], ClickerMainService);
     return ClickerMainService;
 }());
@@ -3751,9 +3966,7 @@ var EnemyService = /** @class */ (function () {
             var bDist = Math.abs(b.tile.x - enemy.x) + Math.abs(b.tile.y - enemy.y);
             return aDist - bDist;
         });
-        var accessibleTargets = enemy.targets.filter(function (target) { return target.accessible; });
-        var selectedTarget = accessibleTargets[Math.floor(Math.random() * accessibleTargets.length)];
-        enemy.targetIndex = enemy.targets.indexOf(selectedTarget);
+        enemy.targetIndex = enemy.targets.indexOf(sortedTargets[0]);
         enemy.pathStep = 0;
         enemy.pathingDone = false;
         enemy.currentTile = this.getTilePosition(enemy);
@@ -3768,15 +3981,16 @@ var EnemyService = /** @class */ (function () {
                 enemy.pathAttempt++;
                 enemy.targets[enemy.targetIndex].accessible = false;
                 if (enemy.pathAttempt >= _this.maxPathRetryCount) {
-                    _this.killEnemy(enemy);
+                    _this.killEnemy(enemy, true);
                 }
                 _this.finishTask(enemy);
             }
         });
     };
     EnemyService.prototype.openPortal = function (tile) {
-        if (this.activePortalTile) {
-            this.activePortalTile.buildingTileType = undefined;
+        for (var _i = 0, _a = this.mapService.tiledMap.filter(function (_tile) { return _tile.buildingTileType === _objects_tile__WEBPACK_IMPORTED_MODULE_4__["BuildingTileType"].EnemyPortal; }); _i < _a.length; _i++) {
+            var existingTile = _a[_i];
+            existingTile.buildingTileType = undefined;
         }
         tile.buildingTileType = _objects_tile__WEBPACK_IMPORTED_MODULE_4__["BuildingTileType"].EnemyPortal;
         this.activePortalTile = tile;
@@ -3797,7 +4011,9 @@ var EnemyService = /** @class */ (function () {
         var enemyIndex = Math.floor(Math.random() * this.enemyTypes.length);
         var spawnPoint = this.activePortalTile;
         var enemyType = this.enemyTypes[enemyIndex];
-        var enemy = new _objects_entity__WEBPACK_IMPORTED_MODULE_1__["Enemy"](enemyType.name, new _objects_vector__WEBPACK_IMPORTED_MODULE_2__["Vector"](spawnPoint.x, spawnPoint.y), spawnPoint, enemyType.health, 0.003, enemyType.attack, enemyType.defense, enemyType.attackRange, enemyType.targetableBuildingTypes, enemyType.resourcesToSteal, enemyType.stealMax, enemyType.resourceCapacity);
+        var difficultyModifier = Math.max(1, Math.random() * this.resourcesService.getPlayerScore() / 50000);
+        var animationSpeed = Math.min(0.008, 0.003 + difficultyModifier / 10000);
+        var enemy = new _objects_entity__WEBPACK_IMPORTED_MODULE_1__["Enemy"](enemyType.name, new _objects_vector__WEBPACK_IMPORTED_MODULE_2__["Vector"](spawnPoint.x, spawnPoint.y), spawnPoint, enemyType.health * difficultyModifier, animationSpeed, enemyType.attack * difficultyModifier, enemyType.defense * difficultyModifier, enemyType.attackRange, enemyType.targetableBuildingTypes, enemyType.resourcesToSteal, enemyType.stealMax * difficultyModifier, enemyType.resourceCapacity * difficultyModifier);
         this.findTargets(enemy);
         this.pickTarget(enemy);
         this.log('An enemy has appeared!');
@@ -3895,7 +4111,8 @@ var EnemyService = /** @class */ (function () {
             }
         }
     };
-    EnemyService.prototype.killEnemy = function (enemy) {
+    EnemyService.prototype.killEnemy = function (enemy, killSilently) {
+        if (killSilently === void 0) { killSilently = false; }
         var enemyDefeatedMessage = 'An enemy has been defeated!';
         if (enemy.totalHeld > 0) {
             enemyDefeatedMessage += ' Resources recovered:';
@@ -3910,7 +4127,9 @@ var EnemyService = /** @class */ (function () {
             }
             enemyDefeatedMessage = enemyDefeatedMessage.slice(0, enemyDefeatedMessage.length - 1) + '.';
         }
-        this.log(enemyDefeatedMessage);
+        if (!killSilently) {
+            this.log(enemyDefeatedMessage);
+        }
         this.enemies = this.enemies.filter(function (_enemy) { return _enemy !== enemy; });
     };
     EnemyService.prototype.resourceIsBeingStolen = function (id) {
@@ -3948,12 +4167,11 @@ var EnemyService = /** @class */ (function () {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FighterService", function() { return FighterService; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm5/index.js");
-/* harmony import */ var _objects_entity__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../objects/entity */ "./src/app/objects/entity.ts");
-/* harmony import */ var _objects_vector__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../objects/vector */ "./src/app/objects/vector.ts");
-/* harmony import */ var _resources_resources_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../resources/resources.service */ "./src/app/services/resources/resources.service.ts");
-/* harmony import */ var _enemy_enemy_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./../enemy/enemy.service */ "./src/app/services/enemy/enemy.service.ts");
-/* harmony import */ var _map_map_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../map/map.service */ "./src/app/services/map/map.service.ts");
+/* harmony import */ var _objects_entity__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../objects/entity */ "./src/app/objects/entity.ts");
+/* harmony import */ var _objects_vector__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../objects/vector */ "./src/app/objects/vector.ts");
+/* harmony import */ var _resources_resources_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../resources/resources.service */ "./src/app/services/resources/resources.service.ts");
+/* harmony import */ var _enemy_enemy_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./../enemy/enemy.service */ "./src/app/services/enemy/enemy.service.ts");
+/* harmony import */ var _map_map_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../map/map.service */ "./src/app/services/map/map.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -3969,20 +4187,17 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
-
 var baseFighterTypes = __webpack_require__(/*! ../../../assets/json/fighters.json */ "./src/assets/json/fighters.json");
 var FighterService = /** @class */ (function () {
     function FighterService(resourcesService, enemyService, mapService) {
-        var _this = this;
         this.resourcesService = resourcesService;
         this.enemyService = enemyService;
         this.mapService = mapService;
         this.fighterTypes = baseFighterTypes;
         this.fighters = [];
-        var processSource = Object(rxjs__WEBPACK_IMPORTED_MODULE_1__["timer"])(1000, 1000);
-        var processSubscribe = processSource.subscribe(function (_) { return _this.processFighters(); });
     }
     FighterService.prototype.tick = function (elapsed, deltaTime) {
+        this.fighters.map(function (fighter) { return fighter.tick(elapsed, deltaTime); });
         this.fighters = this.fighters.filter(function (fighter) { return fighter.health > 0; });
     };
     FighterService.prototype.processFighters = function () {
@@ -4007,16 +4222,16 @@ var FighterService = /** @class */ (function () {
             return;
         }
         this.resourcesService.addResourceAmount(0, -fighterType.cost);
-        var fighter = new _objects_entity__WEBPACK_IMPORTED_MODULE_2__["Fighter"](fighterType.name, new _objects_vector__WEBPACK_IMPORTED_MODULE_3__["Vector"](tile.x, tile.y), tile, fighterType.health, 0.003, fighterType.attack, fighterType.defense, fighterType.attackRange, fighterType.description, fighterType.cost, fighterType.moveable);
+        var fighter = new _objects_entity__WEBPACK_IMPORTED_MODULE_1__["Fighter"](fighterType.name, new _objects_vector__WEBPACK_IMPORTED_MODULE_2__["Vector"](tile.x, tile.y), tile, fighterType.health, 0.003, fighterType.attack, fighterType.defense, fighterType.attackRange, fighterType.description, fighterType.cost, fighterType.moveable, 1000, this.resourcesService, this.enemyService, this.mapService);
         this.fighters.push(fighter);
     };
     FighterService = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
             providedIn: 'root'
         }),
-        __metadata("design:paramtypes", [_resources_resources_service__WEBPACK_IMPORTED_MODULE_4__["ResourcesService"],
-            _enemy_enemy_service__WEBPACK_IMPORTED_MODULE_5__["EnemyService"],
-            _map_map_service__WEBPACK_IMPORTED_MODULE_6__["MapService"]])
+        __metadata("design:paramtypes", [_resources_resources_service__WEBPACK_IMPORTED_MODULE_3__["ResourcesService"],
+            _enemy_enemy_service__WEBPACK_IMPORTED_MODULE_4__["EnemyService"],
+            _map_map_service__WEBPACK_IMPORTED_MODULE_5__["MapService"]])
     ], FighterService);
     return FighterService;
 }());
@@ -4509,8 +4724,11 @@ var ResourcesService = /** @class */ (function () {
         }
         return resources;
     };
+    ResourcesService.prototype.getPlayerScore = function () {
+        return this.resources.map(function (resource) { return resource.amount * resource.resourceTier; }).reduce(function (total, amount) { return total += amount; });
+    };
     ResourcesService.prototype.harvestableResources = function () {
-        return this.resources.filter(function (resource) { return resource.harvestable; });
+        return this.resources.filter(function (resource) { return resource.harvestable && resource.pathAvailable; });
     };
     ResourcesService.prototype.sellableResources = function () {
         return this.resources.filter(function (resource) { return resource.sellable; });
@@ -4613,6 +4831,7 @@ var SettingsService = /** @class */ (function () {
         this.autosaveInterval = 900000;
         this.lastAutosave = this.autosaveInterval;
         this.debugMode = false;
+        this.resourceBinds = [1, 7, 8, 13, 26, 27, 2, 3, 4, 5];
         this.disableAnimations = false;
         this.slimInterface = false;
         this.mapDetailMode = true;
@@ -4780,7 +4999,9 @@ var SettingsService = /** @class */ (function () {
                 attack: fighter.attack,
                 defense: fighter.defense,
                 attackRange: fighter.attackRange,
-                moveable: fighter.moveable
+                moveable: fighter.moveable,
+                fireMilliseconds: fighter.fireMilliseconds,
+                cost: fighter.cost
             });
         }
         return btoa(JSON.stringify(saveData));
@@ -4875,7 +5096,8 @@ var SettingsService = /** @class */ (function () {
                     var fighterData = _o[_m];
                     var tilePosition = this.mapService.clampTileCoordinates(fighterData.position.x, fighterData.position.y);
                     var tile = this.mapService.getTile(tilePosition[0], tilePosition[1]);
-                    var fighter = new _objects_entity__WEBPACK_IMPORTED_MODULE_11__["Fighter"](fighterData.name, new _objects_vector__WEBPACK_IMPORTED_MODULE_13__["Vector"](fighterData.position.x, fighterData.position.y), tile, fighterData.health, fighterData.animationSpeed, fighterData.attack, fighterData.defense, fighterData.attackRange, fighterData.description, 0, fighterData.moveable);
+                    var fighter = new _objects_entity__WEBPACK_IMPORTED_MODULE_11__["Fighter"](fighterData.name, new _objects_vector__WEBPACK_IMPORTED_MODULE_13__["Vector"](fighterData.position.x, fighterData.position.y), tile, fighterData.health, fighterData.animationSpeed, fighterData.attack, fighterData.defense, fighterData.attackRange, fighterData.description, fighterData.cost ? fighterData.cost : 50, fighterData.moveable, fighterData.fireMilliseconds ? fighterData.fireMilliseconds : 1000, this.resourcesService, this.enemyService, this.mapService);
+                    fighter.maxHealth = fighterData.maxHealth;
                     this.fighterService.fighters.push(fighter);
                 }
             }
@@ -5578,7 +5800,7 @@ module.exports = [{"name":"Base Enemy","health":15,"maxHealth":15,"targetableBui
 /*! exports provided: 0, default */
 /***/ (function(module) {
 
-module.exports = [{"name":"Sentry","description":"A stationary archer, capable of shooting at one target per second.","health":15,"maxHealth":15,"cost":50,"attack":5,"defense":5,"movable":false,"attackRange":3}];
+module.exports = [{"name":"Sentry","description":"A stationary archer, capable of shooting at one target per second.","health":15,"maxHealth":15,"cost":500,"attack":5,"defense":5,"movable":false,"attackRange":3}];
 
 /***/ }),
 
