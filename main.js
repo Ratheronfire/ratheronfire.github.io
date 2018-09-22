@@ -430,7 +430,7 @@ var AdminDebugComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "/* BuildingsComponent's private CSS styles */\r\n.buildings {\r\n  position: absolute;\r\n  top: 72px;\r\n  width: 140px;\r\n  display: -ms-grid;\r\n  display: grid;\r\n\r\n  background: white;\r\n}\r\nbutton {\r\n  background-color: #eee;\r\n  border: none;\r\n  padding: 5px 10px;\r\n  border-radius: 4px;\r\n  cursor: pointer;\r\n  cursor: hand;\r\n  font-family: Arial;\r\n}\r\n.resource-list {\r\n  text-align: center;\r\n}\r\n.resource-list div {\r\n  display: inline-block;\r\n}\r\n.resource-list img {\r\n  width: 16px;\r\n  height: 16px;\r\n}\r\n"
+module.exports = "/* BuildingsComponent's private CSS styles */\r\n.buildings {\r\n  position: absolute;\r\n  top: 72px;\r\n  width: 140px;\r\n  display: -ms-grid;\r\n  display: grid;\r\n\r\n  background: white;\r\n\r\n  flex-direction: column;\r\n}\r\nbutton {\r\n  background-color: #eee;\r\n  border: none;\r\n  padding: 5px 10px;\r\n  border-radius: 4px;\r\n  cursor: pointer;\r\n  cursor: hand;\r\n  font-family: Arial;\r\n}\r\n.resource-list {\r\n  text-align: center;\r\n}\r\n.resource-list div {\r\n  display: inline-block;\r\n}\r\n.resource-list img {\r\n  width: 16px;\r\n  height: 16px;\r\n}\r\n"
 
 /***/ }),
 
@@ -742,7 +742,7 @@ var EnemyComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "#fighter-tooltip {\r\n  top: var(--detail-tooltip-top);\r\n  left: var(--detail-tooltip-left);\r\n\r\n  position: absolute;\r\n}\r\n\r\nmat-card {\r\n  text-align: center;\r\n  width: 400px;\r\n}\r\n\r\n.resource-list div {\r\n  display: inline-block;\r\n}\r\n\r\n.resource-list img {\r\n  width: 16px;\r\n  height: 16px;\r\n}\r\n\r\n.repair-container {\r\n  display: inline-flex;\r\n  white-space: pre-wrap;\r\n}\r\n\r\n.repair-container button {\r\n  position: relative;\r\n  top: -25%;\r\n}\r\n\r\n.stats-container {\r\n  width: 100%;\r\n}\r\n\r\n.upgrade-button {\r\n  width: -webkit-fit-content;\r\n  width: -moz-fit-content;\r\n  width: fit-content;\r\n}\r\n\r\n.upgrade-button mat-icon {\r\n  position: relative;\r\n  top: 5px;\r\n}\r\n\r\n.anchor-container {\r\n  position: absolute;\r\n  top: 0;\r\n  left: 0;\r\n\r\n  width: 55px;\r\n  height: 55px;\r\n}\r\n\r\n.anchor-container #center {\r\n  position: absolute;\r\n\r\n  left: 15px;\r\n  top: 15px;\r\n}\r\n\r\n.anchor-container .corner {\r\n  display: none;\r\n}\r\n\r\n.anchor-container:hover .corner {\r\n  display: inherit;\r\n}\r\n\r\n.anchor-container a {\r\n  cursor: pointer;\r\n  color: gray;\r\n}\r\n\r\n.anchor-container a:hover {\r\n  color: black;\r\n}\r\n\r\n.anchor-container #arrow-upper-left {\r\n  -webkit-transform: rotate(225deg);\r\n  transform: rotate(225deg);\r\n\r\n  position: absolute;\r\n  top: 0;\r\n  left: 0;\r\n}\r\n\r\n.anchor-container #arrow-upper-right {\r\n  -webkit-transform: rotate(315deg);\r\n  transform: rotate(315deg);\r\n\r\n  position: absolute;\r\n  top: 0;\r\n  right: 0;\r\n}\r\n\r\n.anchor-container #arrow-lower-left {\r\n  -webkit-transform: rotate(135deg);\r\n  transform: rotate(135deg);\r\n\r\n  position: absolute;\r\n  bottom: 0;\r\n  left: 0;\r\n}\r\n\r\n.anchor-container #arrow-lower-right {\r\n  -webkit-transform: rotate(45deg);\r\n  transform: rotate(45deg);\r\n\r\n  position: absolute;\r\n  bottom: 0;\r\n  right: 0;\r\n}\r\n"
+module.exports = "#fighter-tooltip {\r\n  top: var(--detail-tooltip-top);\r\n  left: var(--detail-tooltip-left);\r\n\r\n  position: absolute;\r\n}\r\n\r\nmat-card {\r\n  text-align: center;\r\n  min-width: 300px;\r\n  max-width: 400px;\r\n}\r\n\r\n.resource-list div {\r\n  display: inline-block;\r\n}\r\n\r\n.resource-list img {\r\n  width: 16px;\r\n  height: 16px;\r\n}\r\n\r\n.repair-container {\r\n  display: inline-flex;\r\n  white-space: pre-wrap;\r\n}\r\n\r\n.repair-container button {\r\n  position: relative;\r\n  top: -25%;\r\n}\r\n\r\n.stats-container {\r\n  width: 100%;\r\n}\r\n\r\n.upgrade-button {\r\n  width: -webkit-fit-content;\r\n  width: -moz-fit-content;\r\n  width: fit-content;\r\n}\r\n\r\n.upgrade-button mat-icon {\r\n  position: relative;\r\n  top: 5px;\r\n}\r\n\r\n.anchor-container {\r\n  position: absolute;\r\n  top: 0;\r\n  left: 0;\r\n\r\n  width: 55px;\r\n  height: 55px;\r\n}\r\n\r\n.anchor-container #center {\r\n  position: absolute;\r\n\r\n  left: 15px;\r\n  top: 15px;\r\n}\r\n\r\n.anchor-container .corner {\r\n  display: none;\r\n}\r\n\r\n.anchor-container:hover .corner {\r\n  display: inherit;\r\n}\r\n\r\n.anchor-container a {\r\n  cursor: pointer;\r\n  color: gray;\r\n}\r\n\r\n.anchor-container a:hover {\r\n  color: black;\r\n}\r\n\r\n.anchor-container #arrow-upper-left {\r\n  -webkit-transform: rotate(225deg);\r\n  transform: rotate(225deg);\r\n\r\n  position: absolute;\r\n  top: 0;\r\n  left: 0;\r\n}\r\n\r\n.anchor-container #arrow-upper-right {\r\n  -webkit-transform: rotate(315deg);\r\n  transform: rotate(315deg);\r\n\r\n  position: absolute;\r\n  top: 0;\r\n  right: 0;\r\n}\r\n\r\n.anchor-container #arrow-lower-left {\r\n  -webkit-transform: rotate(135deg);\r\n  transform: rotate(135deg);\r\n\r\n  position: absolute;\r\n  bottom: 0;\r\n  left: 0;\r\n}\r\n\r\n.anchor-container #arrow-lower-right {\r\n  -webkit-transform: rotate(45deg);\r\n  transform: rotate(45deg);\r\n\r\n  position: absolute;\r\n  bottom: 0;\r\n  right: 0;\r\n}\r\n"
 
 /***/ }),
 
@@ -753,7 +753,7 @@ module.exports = "#fighter-tooltip {\r\n  top: var(--detail-tooltip-top);\r\n  l
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<mat-card appSnap [snapSetting]=\"snapSetting\" id=\"fighter-tooltip\">\n  <div class=\"anchor-container\">\n    <a>\n      <mat-icon class=\"corner\" id=\"arrow-upper-left\" (click)=\"snapSetting = 'upperLeft'\">arrow_forward</mat-icon>\n    </a>\n    <a>\n      <mat-icon class=\"corner\" id=\"arrow-upper-right\" (click)=\"snapSetting = 'upperRight'\">arrow_forward</mat-icon>\n    </a>\n    <a>\n      <mat-icon id=\"center\" (click)=\"snapSetting = 'free'\">all_out</mat-icon>\n    </a>\n    <a>\n      <mat-icon class=\"corner\" id=\"arrow-lower-left\" (click)=\"snapSetting = 'lowerLeft'\">arrow_forward</mat-icon>\n    </a>\n    <a>\n      <mat-icon class=\"corner\" id=\"arrow-lower-right\" (click)=\"snapSetting = 'lowerRight'\">arrow_forward</mat-icon>\n    </a>\n  </div>\n  <div *ngIf=\"focusedFighter\">\n    <mat-card-title>{{focusedFighter.name}}</mat-card-title>\n    <mat-card-subtitle>{{focusedFighter.description}}</mat-card-subtitle>\n\n    <div class=\"repair-container\">\n      {{focusedFighter.health}}/{{focusedFighter.maxHealth}} Health\n      <div *ngIf=\"focusedFighter.health < focusedFighter.maxHealth\">\n        <button mat-raised-button (click)=\"focusedFighter.heal()\" color=\"accent\" [disabled]=\"!focusedFighter.canHeal()\">\n          Heal\n          <div class=\"resource-list\">\n            <div matTooltip=\"{{focusedFighter.healCost | number:'1.0-2'}} {{getResource(0).name | titlecase}}\"\n              matTooltipPosition=\"below\">\n              <img src=\"{{getResource(0).iconPath}}\" alt=\"{{getResource(0).name}}\">\n              {{focusedFighter.healCost | number:'1.0-2'}}\n            </div>\n          </div>\n        </button>\n      </div>\n    </div>\n\n    <mat-card-content>\n      <button mat-raised-button color=\"warn\" (click)=\"removeFighter()\">Remove Fighter</button>\n\n      <h3>Stats</h3>\n      <table class=\"stats-container\">\n        <tbody>\n          <tr class=\"stat-row\">\n            <td>\n              <p>\n                Max Health: {{focusedFighter.maxHealth | number:'1.0-2'}}\n              </p>\n            </td>\n            <td>\n              <b>\n                Level {{focusedFighter.statLevels['MAXHEALTH']}}\n              </b>\n            </td>\n            <td>\n              <button class=\"upgrade-button\" color=\"accent\" mat-raised-button (click)=\"focusedFighter.upgradeStat('MAXHEALTH')\"\n                [disabled]=\"!focusedFighter.canUpgradeStat('MAXHEALTH')\" matTooltip=\"Level {{focusedFighter.statLevels['MAXHEALTH'] + 1}}: {{focusedFighter.getUpgradedStat('ATTACK') | number:'1.0-2'}} Max Health\"\n                matTooltipPosition=\"below\">\n                <mat-icon color=\"primary\">arrow_upward</mat-icon>\n                <div class=\"resource-list\">\n                  <div>\n                    <img src=\"{{getResource(0).iconPath}}\" alt=\"{{getResource(0).name}}\">\n                    {{focusedFighter.statCosts['MAXHEALTH'] | number:'1.0-0'}}\n                  </div>\n                </div>\n              </button>\n            </td>\n          </tr>\n\n          <tr class=\"stat-row\">\n            <td>\n              <p>\n                Attack: {{focusedFighter.attack | number:'1.0-2'}}\n              </p>\n            </td>\n            <td>\n              <b>\n                Level {{focusedFighter.statLevels['ATTACK']}}\n              </b>\n            </td>\n            <td>\n              <button class=\"upgrade-button\" color=\"accent\" mat-raised-button (click)=\"focusedFighter.upgradeStat('ATTACK')\"\n                [disabled]=\"!focusedFighter.canUpgradeStat('ATTACK')\" matTooltip=\"Level {{focusedFighter.statLevels['ATTACK'] + 1}}: {{focusedFighter.getUpgradedStat('ATTACK') | number:'1.0-2'}} Attack\"\n                matTooltipPosition=\"below\">\n                <mat-icon color=\"primary\">arrow_upward</mat-icon>\n                <div class=\"resource-list\">\n                  <div>\n                    <img src=\"{{getResource(0).iconPath}}\" alt=\"{{getResource(0).name}}\">\n                    {{focusedFighter.statCosts['ATTACK'] | number:'1.0-0'}}\n                  </div>\n                </div>\n              </button>\n            </td>\n          </tr>\n\n          <tr class=\"stat-row\">\n            <td>\n              <p>\n                Defense: {{focusedFighter.defense | number:'1.0-2'}}\n              </p>\n            </td>\n            <td>\n              <b>\n                Level {{focusedFighter.statLevels['DEFENSE']}}\n              </b>\n            </td>\n            <td>\n              <button class=\"upgrade-button\" color=\"accent\" mat-raised-button (click)=\"focusedFighter.upgradeStat('DEFENSE')\"\n                [disabled]=\"!focusedFighter.canUpgradeStat('DEFENSE')\" matTooltip=\"Level {{focusedFighter.statLevels['DEFENSE'] + 1}}: {{focusedFighter.getUpgradedStat('DEFENSE') | number:'1.0-2'}} Defense\"\n                matTooltipPosition=\"below\">\n                <mat-icon color=\"primary\">arrow_upward</mat-icon>\n                <div class=\"resource-list\">\n                  <div>\n                    <img src=\"{{getResource(0).iconPath}}\" alt=\"{{getResource(0).name}}\">\n                    {{focusedFighter.statCosts['DEFENSE'] | number:'1.0-0'}}\n                  </div>\n                </div>\n              </button>\n            </td>\n          </tr>\n\n          <tr class=\"stat-row\">\n            <td>\n              <p>\n                Attack Range: {{focusedFighter.attackRange | number:'1.0-2'}}\n                Tile{{focusedFighter.attackRange === 1 ? '' : 's'}}\n              </p>\n            </td>\n            <td>\n              <b>\n                Level {{focusedFighter.statLevels['RANGE']}}\n              </b>\n            </td>\n            <td>\n              <button class=\"upgrade-button\" color=\"accent\" mat-raised-button (click)=\"focusedFighter.upgradeStat('RANGE')\"\n                [disabled]=\"!focusedFighter.canUpgradeStat('RANGE')\" matTooltip=\"Level {{focusedFighter.statLevels['RANGE'] + 1}}: {{focusedFighter.getUpgradedStat('RANGE') | number:'1.0-2'}} Attack Range\"\n                matTooltipPosition=\"below\">\n                <mat-icon color=\"primary\">arrow_upward</mat-icon>\n                <div class=\"resource-list\">\n                  <div>\n                    <img src=\"{{getResource(0).iconPath}}\" alt=\"{{getResource(0).name}}\">\n                    {{focusedFighter.statCosts['RANGE'] | number:'1.0-0'}}\n                  </div>\n                </div>\n              </button>\n            </td>\n          </tr>\n\n          <tr class=\"stat-row\" *ngIf=\"focusedFighter.moveable\">\n            <td>\n              <p>\n                Movement Speed: {{focusedFighter.animationSpeed * 100 | number:'1.0-2'}}\n                Tile{{focusedFighter.animationSpeed === 1 ? '' : 's'}}/second\n              </p>\n            </td>\n            <td>\n              <b>\n                Level {{focusedFighter.statLevels['MOVEMENTSPEED']}}\n              </b>\n            </td>\n            <td>\n              <button class=\"upgrade-button\" color=\"accent\" mat-raised-button (click)=\"focusedFighter.upgradeStat('MOVEMENTSPEED')\"\n                [disabled]=\"!focusedFighter.canUpgradeStat('MOVEMENTSPEED')\" matTooltip=\"Level {{focusedFighter.statLevels['MOVEMENTSPEED'] + 1}}: {{focusedFighter.getUpgradedStat('MOVEMENTSPEED') * 100 | number:'1.0-2'}} Tiles/Second\"\n                matTooltipPosition=\"below\">\n                <mat-icon color=\"primary\">arrow_upward</mat-icon>\n                <div class=\"resource-list\">\n                  <div>\n                    <img src=\"{{getResource(0).iconPath}}\" alt=\"{{getResource(0).name}}\">\n                    {{focusedFighter.statCosts['MOVEMENTSPEED'] | number:'1.0-0'}}\n                  </div>\n                </div>\n              </button>\n            </td>\n          </tr>\n\n          <tr class=\"stat-row\">\n            <td>\n              <p>\n                Fire Rate: {{1000 / focusedFighter.fireMilliseconds | number:'1.0-2'}}/Second\n              </p>\n            </td>\n            <td>\n              <b>\n                Level {{focusedFighter.statLevels['FIRERATE']}}\n              </b>\n            </td>\n            <td>\n              <button class=\"upgrade-button\" color=\"accent\" mat-raised-button (click)=\"focusedFighter.upgradeStat('FIRERATE')\"\n                [disabled]=\"!focusedFighter.canUpgradeStat('FIRERATE')\" matTooltip=\"Level {{focusedFighter.statLevels['FIRERATE'] + 1}}: {{1000 / focusedFighter.getUpgradedStat('FIRERATE') | number:'1.0-2'}}/Second\"\n                matTooltipPosition=\"below\">\n                <mat-icon color=\"primary\">arrow_upward</mat-icon>\n                <div class=\"resource-list\">\n                  <div>\n                    <img src=\"{{getResource(0).iconPath}}\" alt=\"{{getResource(0).name}}\">\n                    {{focusedFighter.statCosts['FIRERATE'] | number:'1.0-0'}}\n                  </div>\n                </div>\n              </button>\n            </td>\n          </tr>\n        </tbody>\n      </table>\n    </mat-card-content>\n  </div>\n</mat-card>\n"
+module.exports = "<mat-card appSnap [snapSetting]=\"snapSetting\" id=\"fighter-tooltip\">\n  <div class=\"anchor-container\">\n    <a>\n      <mat-icon class=\"corner\" id=\"arrow-upper-left\" (click)=\"snapSetting = 'upperLeft'\">arrow_forward</mat-icon>\n    </a>\n    <a>\n      <mat-icon class=\"corner\" id=\"arrow-upper-right\" (click)=\"snapSetting = 'upperRight'\">arrow_forward</mat-icon>\n    </a>\n    <a>\n      <mat-icon id=\"center\" (click)=\"snapSetting = 'free'\">all_out</mat-icon>\n    </a>\n    <a>\n      <mat-icon class=\"corner\" id=\"arrow-lower-left\" (click)=\"snapSetting = 'lowerLeft'\">arrow_forward</mat-icon>\n    </a>\n    <a>\n      <mat-icon class=\"corner\" id=\"arrow-lower-right\" (click)=\"snapSetting = 'lowerRight'\">arrow_forward</mat-icon>\n    </a>\n  </div>\n  <div *ngIf=\"focusedFighter\">\n    <mat-card-title>{{focusedFighter.name}}</mat-card-title>\n    <mat-card-subtitle>{{focusedFighter.description}}</mat-card-subtitle>\n\n    <div class=\"repair-container\">\n      {{focusedFighter.health}}/{{focusedFighter.maxHealth}} Health\n      <div *ngIf=\"focusedFighter.health < focusedFighter.maxHealth\">\n        <button mat-raised-button (click)=\"focusedFighter.heal()\" color=\"accent\" [disabled]=\"!focusedFighter.canHeal()\">\n          Heal\n          <div class=\"resource-list\">\n            <div matTooltip=\"{{focusedFighter.healCost | number:'1.0-2'}} {{getResource(0).name | titlecase}}\"\n              matTooltipPosition=\"below\">\n              <img src=\"{{getResource(0).iconPath}}\" alt=\"{{getResource(0).name}}\">\n              {{focusedFighter.healCost | number:'1.0-2'}}\n            </div>\n          </div>\n        </button>\n      </div>\n    </div>\n\n    <mat-card-content>\n      <button mat-raised-button color=\"warn\" (click)=\"removeFighter()\">Remove Fighter</button>\n\n      <h3>Stats</h3>\n      <table class=\"stats-container\">\n        <tbody>\n          <tr class=\"stat-row\">\n            <td>\n              <p>\n                Max Health: {{focusedFighter.maxHealth | number:'1.0-2'}}\n              </p>\n            </td>\n            <td>\n              <b>\n                Level {{focusedFighter.statLevels['MAXHEALTH']}}\n              </b>\n            </td>\n            <td>\n              <button class=\"upgrade-button\" color=\"accent\" mat-raised-button (click)=\"focusedFighter.upgradeStat('MAXHEALTH')\"\n                [disabled]=\"!focusedFighter.canUpgradeStat('MAXHEALTH')\" matTooltip=\"Level {{focusedFighter.statLevels['MAXHEALTH'] + 1}}: {{focusedFighter.getUpgradedStat('MAXHEALTH') | number:'1.0-2'}} Max Health\"\n                matTooltipPosition=\"below\">\n                <mat-icon color=\"primary\">arrow_upward</mat-icon>\n                <div class=\"resource-list\">\n                  <div>\n                    <img src=\"{{getResource(0).iconPath}}\" alt=\"{{getResource(0).name}}\">\n                    {{focusedFighter.statCosts['MAXHEALTH'] | number:'1.0-0'}}\n                  </div>\n                </div>\n              </button>\n            </td>\n          </tr>\n\n          <tr class=\"stat-row\">\n            <td>\n              <p>\n                Attack: {{focusedFighter.attack | number:'1.0-2'}}\n              </p>\n            </td>\n            <td>\n              <b>\n                Level {{focusedFighter.statLevels['ATTACK']}}\n              </b>\n            </td>\n            <td>\n              <button class=\"upgrade-button\" color=\"accent\" mat-raised-button (click)=\"focusedFighter.upgradeStat('ATTACK')\"\n                [disabled]=\"!focusedFighter.canUpgradeStat('ATTACK')\" matTooltip=\"Level {{focusedFighter.statLevels['ATTACK'] + 1}}: {{focusedFighter.getUpgradedStat('ATTACK') | number:'1.0-2'}} Attack\"\n                matTooltipPosition=\"below\">\n                <mat-icon color=\"primary\">arrow_upward</mat-icon>\n                <div class=\"resource-list\">\n                  <div>\n                    <img src=\"{{getResource(0).iconPath}}\" alt=\"{{getResource(0).name}}\">\n                    {{focusedFighter.statCosts['ATTACK'] | number:'1.0-0'}}\n                  </div>\n                </div>\n              </button>\n            </td>\n          </tr>\n\n          <tr class=\"stat-row\">\n            <td>\n              <p>\n                Defense: {{focusedFighter.defense | number:'1.0-2'}}\n              </p>\n            </td>\n            <td>\n              <b>\n                Level {{focusedFighter.statLevels['DEFENSE']}}\n              </b>\n            </td>\n            <td>\n              <button class=\"upgrade-button\" color=\"accent\" mat-raised-button (click)=\"focusedFighter.upgradeStat('DEFENSE')\"\n                [disabled]=\"!focusedFighter.canUpgradeStat('DEFENSE')\" matTooltip=\"Level {{focusedFighter.statLevels['DEFENSE'] + 1}}: {{focusedFighter.getUpgradedStat('DEFENSE') | number:'1.0-2'}} Defense\"\n                matTooltipPosition=\"below\">\n                <mat-icon color=\"primary\">arrow_upward</mat-icon>\n                <div class=\"resource-list\">\n                  <div>\n                    <img src=\"{{getResource(0).iconPath}}\" alt=\"{{getResource(0).name}}\">\n                    {{focusedFighter.statCosts['DEFENSE'] | number:'1.0-0'}}\n                  </div>\n                </div>\n              </button>\n            </td>\n          </tr>\n\n          <tr class=\"stat-row\">\n            <td>\n              <p>\n                Attack Range: {{focusedFighter.attackRange | number:'1.0-2'}}\n                Tile{{focusedFighter.attackRange === 1 ? '' : 's'}}\n              </p>\n            </td>\n            <td>\n              <b>\n                Level {{focusedFighter.statLevels['RANGE']}}\n              </b>\n            </td>\n            <td>\n              <button class=\"upgrade-button\" color=\"accent\" mat-raised-button (click)=\"focusedFighter.upgradeStat('RANGE')\"\n                [disabled]=\"!focusedFighter.canUpgradeStat('RANGE')\" matTooltip=\"Level {{focusedFighter.statLevels['RANGE'] + 1}}: {{focusedFighter.getUpgradedStat('RANGE') | number:'1.0-2'}} Attack Range\"\n                matTooltipPosition=\"below\">\n                <mat-icon color=\"primary\">arrow_upward</mat-icon>\n                <div class=\"resource-list\">\n                  <div>\n                    <img src=\"{{getResource(0).iconPath}}\" alt=\"{{getResource(0).name}}\">\n                    {{focusedFighter.statCosts['RANGE'] | number:'1.0-0'}}\n                  </div>\n                </div>\n              </button>\n            </td>\n          </tr>\n\n          <tr class=\"stat-row\" *ngIf=\"focusedFighter.moveable\">\n            <td>\n              <p>\n                Movement Speed: {{focusedFighter.animationSpeed * 100 | number:'1.0-2'}}\n                Tile{{focusedFighter.animationSpeed === 1 ? '' : 's'}}/second\n              </p>\n            </td>\n            <td>\n              <b>\n                Level {{focusedFighter.statLevels['MOVEMENTSPEED']}}\n              </b>\n            </td>\n            <td>\n              <button class=\"upgrade-button\" color=\"accent\" mat-raised-button (click)=\"focusedFighter.upgradeStat('MOVEMENTSPEED')\"\n                [disabled]=\"!focusedFighter.canUpgradeStat('MOVEMENTSPEED')\" matTooltip=\"Level {{focusedFighter.statLevels['MOVEMENTSPEED'] + 1}}: {{focusedFighter.getUpgradedStat('MOVEMENTSPEED') * 100 | number:'1.0-2'}} Tiles/Second\"\n                matTooltipPosition=\"below\">\n                <mat-icon color=\"primary\">arrow_upward</mat-icon>\n                <div class=\"resource-list\">\n                  <div>\n                    <img src=\"{{getResource(0).iconPath}}\" alt=\"{{getResource(0).name}}\">\n                    {{focusedFighter.statCosts['MOVEMENTSPEED'] | number:'1.0-0'}}\n                  </div>\n                </div>\n              </button>\n            </td>\n          </tr>\n\n          <tr class=\"stat-row\">\n            <td>\n              <p>\n                Fire Rate: {{1000 / focusedFighter.fireMilliseconds | number:'1.0-2'}}/Second\n              </p>\n            </td>\n            <td>\n              <b>\n                Level {{focusedFighter.statLevels['FIRERATE']}}\n              </b>\n            </td>\n            <td>\n              <button class=\"upgrade-button\" color=\"accent\" mat-raised-button (click)=\"focusedFighter.upgradeStat('FIRERATE')\"\n                [disabled]=\"!focusedFighter.canUpgradeStat('FIRERATE')\" matTooltip=\"Level {{focusedFighter.statLevels['FIRERATE'] + 1}}: {{1000 / focusedFighter.getUpgradedStat('FIRERATE') | number:'1.0-2'}}/Second\"\n                matTooltipPosition=\"below\">\n                <mat-icon color=\"primary\">arrow_upward</mat-icon>\n                <div class=\"resource-list\">\n                  <div>\n                    <img src=\"{{getResource(0).iconPath}}\" alt=\"{{getResource(0).name}}\">\n                    {{focusedFighter.statCosts['FIRERATE'] | number:'1.0-0'}}\n                  </div>\n                </div>\n              </button>\n            </td>\n          </tr>\n        </tbody>\n      </table>\n    </mat-card-content>\n  </div>\n</mat-card>\n"
 
 /***/ }),
 
@@ -848,7 +848,7 @@ var FighterDetailComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "/* FightersComponent's private CSS styles */\r\n.fighters {\r\n  position: absolute;\r\n  top: 72px;\r\n  left: 392px;\r\n  width: 134px;\r\n  display: -ms-grid;\r\n  display: grid;\r\n\r\n  background: white;\r\n}\r\nbutton {\r\n  background-color: #eee;\r\n  border: none;\r\n  padding: 5px 10px;\r\n  border-radius: 4px;\r\n  cursor: pointer;\r\n  cursor: hand;\r\n  font-family: Arial;\r\n}\r\n.resource-list {\r\n  text-align: center;\r\n}\r\n.resource-list div {\r\n  display: inline-block;\r\n}\r\n.resource-list img {\r\n  width: 16px;\r\n  height: 16px;\r\n}\r\n"
+module.exports = "/* FightersComponent's private CSS styles */\r\n.fighters {\r\n  position: absolute;\r\n  top: 72px;\r\n  left: 392px;\r\n  width: 134px;\r\n  display: -ms-grid;\r\n  display: grid;\r\n\r\n  background: white;\r\n\r\n  flex-direction: column;\r\n}\r\nbutton {\r\n  background-color: #eee;\r\n  border: none;\r\n  padding: 5px 10px;\r\n  border-radius: 4px;\r\n  cursor: pointer;\r\n  cursor: hand;\r\n  font-family: Arial;\r\n}\r\n.resource-list {\r\n  text-align: center;\r\n}\r\n.resource-list div {\r\n  display: inline-block;\r\n}\r\n.resource-list img {\r\n  width: 16px;\r\n  height: 16px;\r\n}\r\n"
 
 /***/ }),
 
@@ -962,7 +962,7 @@ var FighterComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "/* MapComponent's private CSS styles */\r\nh1 {\r\n  font-size: 1.2em;\r\n  color: #999;\r\n  margin-bottom: 0;\r\n  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;\r\n}\r\nh2 {\r\n  font-size: 2em;\r\n  margin-top: 0;\r\n  padding-top: 0;\r\n}\r\nh3 {\r\n  font-family: Arial, Helvetica, sans-serif;\r\n}\r\nnav a {\r\n  padding: 5px 10px;\r\n  text-decoration: none;\r\n  margin-top: 10px;\r\n  display: inline-block;\r\n  background-color: #eee;\r\n  border-radius: 4px;\r\n}\r\nnav a:visited, a:link {\r\n  color: #607d8b;\r\n}\r\nnav a:hover {\r\n  color: #039be5;\r\n  background-color: #cfd8dc;\r\n}\r\nnav a.active {\r\n  color: #039be5;\r\n}\r\n#canvas-container {\r\n  display: flex;\r\n  height: 100%;\r\n  position: relative;\r\n}\r\n.cursor-tools {\r\n  position: absolute;\r\n  top: 0;\r\n\r\n  overflow-x: auto;\r\n  max-width: 100%;\r\n\r\n  background: white;\r\n}\r\n.key-container {\r\n  position: absolute;\r\n}\r\n.key-container img {\r\n  width: 24px;\r\n  height: 24px;\r\n}\r\n.key-container p {\r\n  z-index: 1;\r\n  position: absolute;\r\n\r\n  top: 10px;\r\n  right: 3px;\r\n\r\n  margin: 0;\r\n  line-height: 0;\r\n}\r\n"
+module.exports = "/* MapComponent's private CSS styles */\r\nh1 {\r\n  font-size: 1.2em;\r\n  color: #999;\r\n  margin-bottom: 0;\r\n  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;\r\n}\r\nh2 {\r\n  font-size: 2em;\r\n  margin-top: 0;\r\n  padding-top: 0;\r\n}\r\nh3 {\r\n  font-family: Arial, Helvetica, sans-serif;\r\n}\r\nnav a {\r\n  padding: 5px 10px;\r\n  text-decoration: none;\r\n  margin-top: 10px;\r\n  display: inline-block;\r\n  background-color: #eee;\r\n  border-radius: 4px;\r\n}\r\nnav a:visited, a:link {\r\n  color: #607d8b;\r\n}\r\nnav a:hover {\r\n  color: #039be5;\r\n  background-color: #cfd8dc;\r\n}\r\nnav a.active {\r\n  color: #039be5;\r\n}\r\n#canvas-container {\r\n  display: flex;\r\n  height: 100%;\r\n  position: relative;\r\n  overflow: hidden;\r\n}\r\n.cursor-tools {\r\n  position: absolute;\r\n  top: 0;\r\n\r\n  overflow-x: auto;\r\n  max-width: 100%;\r\n\r\n  background: white;\r\n}\r\n.key-container {\r\n  position: absolute;\r\n}\r\n.key-container img {\r\n  width: 24px;\r\n  height: 24px;\r\n}\r\n.key-container p {\r\n  z-index: 1;\r\n  position: absolute;\r\n\r\n  top: 10px;\r\n  right: 3px;\r\n\r\n  margin: 0;\r\n  line-height: 0;\r\n}\r\n"
 
 /***/ }),
 
@@ -1258,6 +1258,7 @@ var ResourceDialogComponent = /** @class */ (function () {
             workerYield: 1,
             sellable: true,
             sellsFor: 5,
+            autoSellCutoff: 50,
             resourceDescription: '',
             workerVerb: '',
             workerNoun: '',
@@ -1479,7 +1480,7 @@ module.exports = "mat-panel-title {\r\n  display: -ms-grid;\r\n  display: grid;\
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<h3>Version {{settingsService.gameVersion}}</h3>\n\n<mat-accordion multi=\"true\">\n  <mat-expansion-panel expanded=\"true\">\n    <mat-expansion-panel-header>\n      <mat-panel-title>\n        <mat-icon color=\"primary\">save</mat-icon>\n        Save/Load\n      </mat-panel-title>\n    </mat-expansion-panel-header>\n\n    <mat-form-field class=\"full-width\">\n      <mat-select placeholder=\"Autosave Interval (Minutes)\" [(ngModel)]=\"autosaveInterval\" (valueChange)=\"settingsService.setAutosave()\">\n        <mat-option [value]=\"-1\">Disable</mat-option>\n        <mat-option [value]=\"60000\">1</mat-option>\n        <mat-option [value]=\"900000\">15</mat-option>\n        <mat-option [value]=\"1800000\">30</mat-option>\n        <mat-option [value]=\"3600000\">60</mat-option>\n      </mat-select>\n    </mat-form-field>\n\n    <button mat-raised-button color=\"primary\" (click)=\"saveGame()\">Save</button>\n    <button mat-raised-button color=\"warn\" (click)=\"deleteGame()\">Delete Save</button>\n\n    <button mat-raised-button (click)=\"exportSave()\">Export Save</button>\n    <button mat-raised-button (click)=\"importSave()\">Import Save</button>\n  </mat-expansion-panel>\n\n  <mat-expansion-panel expanded=\"true\">\n    <mat-expansion-panel-header>\n      <mat-panel-title>\n        <mat-icon color=\"primary\">list</mat-icon>\n        Interface\n      </mat-panel-title>\n    </mat-expansion-panel-header>\n\n    <mat-checkbox [(ngModel)]=\"slimInterface\">Slim Mode</mat-checkbox>\n    <!-- <br />\n      <mat-checkbox [(ngModel)]=\"disableAnimations\">Disable Animations</mat-checkbox> -->\n\n    <mat-form-field class=\"full-width\">\n      <mat-select placeholder=\"Resource Shortcuts\" [formControl]=\"bindSelected\" multiple (selectionChange)=\"resourceBindChange($event)\">\n        <mat-option *ngFor=\"let resource of resourcesService.harvestableResources()\" [(value)]=\"resource.id\">\n          {{resource.name | titlecase}}\n        </mat-option>\n      </mat-select>\n      <mat-error *ngIf=\"bindSelected.hasError('length')\">\n        No more than 10 resource shortcuts allowed.\n      </mat-error>\n    </mat-form-field>\n\n  </mat-expansion-panel>\n\n  <mat-expansion-panel expanded=\"true\">\n    <mat-expansion-panel-header>\n      <mat-panel-title>\n        <mat-icon color=\"primary\">map</mat-icon>\n        Map\n      </mat-panel-title>\n    </mat-expansion-panel-header>\n\n    <mat-checkbox [(ngModel)]=\"mapLowFramerate\">Limit Framerate</mat-checkbox>\n    <br />\n\n    <mat-form-field class=\"full-width\">\n      <input class=\"color-input\" matInput placeholder=\"Player Harvest Color\" [(colorPicker)]=\"harvestDetailColor\"\n        [style.background]=\"harvestDetailColor\" [value]=\"harvestDetailColor\" />\n    </mat-form-field>\n\n    <mat-form-field class=\"full-width\">\n      <input class=\"color-input\" matInput placeholder=\"Worker Harvest Color\" [(colorPicker)]=\"workerDetailColor\"\n        [style.background]=\"workerDetailColor\" [value]=\"workerDetailColor\" />\n    </mat-form-field>\n  </mat-expansion-panel>\n\n  <mat-expansion-panel expanded=\"true\">\n    <mat-expansion-panel-header>\n      <mat-panel-title>\n        <mat-icon color=\"primary\">assessment</mat-icon>\n        Log\n      </mat-panel-title>\n    </mat-expansion-panel-header>\n\n    <button mat-raised-button (click)=\"messagesService.clear()\">Clear</button>\n\n    <br />\n\n    <mat-form-field class=\"full-width\">\n      <input matInput type=\"number\" placeholder=\"Log History\" min=\"0\" max=\"10000\" [(ngModel)]=\"messagesService.messageLimit\">\n    </mat-form-field>\n\n    <br />\n\n    <mat-form-field class=\"full-width\">\n      <mat-select placeholder=\"Visible Log Sources\" [(ngModel)]=\"messagesService.visibleSources\" (ngModelChange)=\"messagesService.getFilteredMessages()\"\n        multiple>\n        <mat-option *ngFor=\"let messageSource of messageSources | enumToArray\" [(value)]=\"messageSources[messageSource]\">\n          {{messageSource | titlecase}}\n        </mat-option>\n      </mat-select>\n    </mat-form-field>\n  </mat-expansion-panel>\n\n  <mat-expansion-panel expanded=\"true\">\n    <mat-expansion-panel-header>\n      <mat-panel-title>\n        <mat-icon color=\"primary\">bug_report</mat-icon>\n        Debug\n      </mat-panel-title>\n    </mat-expansion-panel-header>\n\n    <mat-checkbox [(ngModel)]=\"debugMode\">Debug Mode</mat-checkbox>\n  </mat-expansion-panel>\n\n  <!-- <mat-expansion-panel expanded=\"true\">\n    <mat-expansion-panel-header>\n      <mat-panel-title>\n        <mat-icon color=\"primary\">attach_money</mat-icon>\n        Shameless Commercialism\n      </mat-panel-title>\n    </mat-expansion-panel-header>\n\n    <a href=\"https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=L6UNHAL6A8PDC\" target=\"_blank\">\n      <img src=\"https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif\" border=\"0\" alt=\"PayPal - The safer, easier way to pay online!\">\n    </a>\n\n  </mat-expansion-panel> -->\n</mat-accordion>\n"
+module.exports = "<h3>Version {{settingsService.gameVersion}}</h3>\n\n<mat-accordion multi=\"true\">\n  <mat-expansion-panel expanded=\"true\">\n    <mat-expansion-panel-header>\n      <mat-panel-title>\n        <mat-icon color=\"primary\">save</mat-icon>\n        Save/Load\n      </mat-panel-title>\n    </mat-expansion-panel-header>\n\n    <mat-form-field class=\"full-width\">\n      <mat-select placeholder=\"Autosave Interval (Minutes)\" [(ngModel)]=\"autosaveInterval\" (valueChange)=\"settingsService.setAutosave()\">\n        <mat-option [value]=\"-1\">Disable</mat-option>\n        <mat-option [value]=\"60000\">1</mat-option>\n        <mat-option [value]=\"900000\">15</mat-option>\n        <mat-option [value]=\"1800000\">30</mat-option>\n        <mat-option [value]=\"3600000\">60</mat-option>\n      </mat-select>\n    </mat-form-field>\n\n    <button mat-raised-button color=\"primary\" (click)=\"saveGame()\">Save</button>\n    <button mat-raised-button color=\"warn\" (click)=\"deleteGame()\">Delete Save</button>\n\n    <button mat-raised-button (click)=\"exportSave()\">Export Save</button>\n    <button mat-raised-button (click)=\"importSave()\">Import Save</button>\n  </mat-expansion-panel>\n\n  <mat-expansion-panel expanded=\"true\">\n    <mat-expansion-panel-header>\n      <mat-panel-title>\n        <mat-icon color=\"primary\">list</mat-icon>\n        Interface\n      </mat-panel-title>\n    </mat-expansion-panel-header>\n\n    <mat-checkbox [(ngModel)]=\"slimInterface\">Slim Mode</mat-checkbox>\n    <!-- <br />\n      <mat-checkbox [(ngModel)]=\"disableAnimations\">Disable Animations</mat-checkbox> -->\n\n    <mat-form-field class=\"full-width\">\n      <mat-select placeholder=\"Resource Shortcuts\" [formControl]=\"bindSelected\" multiple (selectionChange)=\"resourceBindChange($event)\">\n        <mat-option *ngFor=\"let resource of resourcesService.harvestableResources()\" [(value)]=\"resource.id\">\n          {{resource.name | titlecase}}\n        </mat-option>\n      </mat-select>\n      <mat-error *ngIf=\"bindSelected.hasError('length')\">\n        No more than 10 resource shortcuts allowed.\n      </mat-error>\n    </mat-form-field>\n\n  </mat-expansion-panel>\n\n  <mat-expansion-panel expanded=\"true\">\n    <mat-expansion-panel-header>\n      <mat-panel-title>\n        <mat-icon color=\"primary\">map</mat-icon>\n        Map\n      </mat-panel-title>\n    </mat-expansion-panel-header>\n\n    <mat-checkbox [(ngModel)]=\"mapLowFramerate\">Limit Framerate</mat-checkbox>\n    <br />\n\n    <mat-form-field class=\"full-width\">\n      <input class=\"color-input\" matInput placeholder=\"Player Harvest Color\" [(colorPicker)]=\"resourceAnimationColors['PLAYERSPAWNED']\"\n        [style.background]=\"resourceAnimationColors['PLAYERSPAWNED']\" [value]=\"resourceAnimationColors['PLAYERSPAWNED']\" />\n    </mat-form-field>\n\n    <mat-form-field class=\"full-width\">\n      <input class=\"color-input\" matInput placeholder=\"Worker Harvest Color\" [(colorPicker)]=\"resourceAnimationColors['WORKERSPAWNED']\"\n        [style.background]=\"resourceAnimationColors['WORKERSPAWNED']\" [value]=\"resourceAnimationColors['WORKERSPAWNED']\" />\n    </mat-form-field>\n\n    <mat-form-field class=\"full-width\">\n      <input class=\"color-input\" matInput placeholder=\"Sold Resource Color\" [(colorPicker)]=\"resourceAnimationColors['SOLD']\"\n        [style.background]=\"resourceAnimationColors['SOLD']\" [value]=\"resourceAnimationColors['SOLD']\" />\n    </mat-form-field>\n  </mat-expansion-panel>\n\n  <mat-expansion-panel expanded=\"true\">\n    <mat-expansion-panel-header>\n      <mat-panel-title>\n        <mat-icon color=\"primary\">assessment</mat-icon>\n        Log\n      </mat-panel-title>\n    </mat-expansion-panel-header>\n\n    <button mat-raised-button (click)=\"messagesService.clear()\">Clear</button>\n\n    <br />\n\n    <mat-form-field class=\"full-width\">\n      <input matInput type=\"number\" placeholder=\"Log History\" min=\"0\" max=\"10000\" [(ngModel)]=\"messagesService.messageLimit\">\n    </mat-form-field>\n\n    <br />\n\n    <mat-form-field class=\"full-width\">\n      <mat-select placeholder=\"Visible Log Sources\" [(ngModel)]=\"messagesService.visibleSources\" (ngModelChange)=\"messagesService.getFilteredMessages()\"\n        multiple>\n        <mat-option *ngFor=\"let messageSource of messageSources | enumToArray\" [(value)]=\"messageSources[messageSource]\">\n          {{messageSource | titlecase}}\n        </mat-option>\n      </mat-select>\n    </mat-form-field>\n  </mat-expansion-panel>\n\n  <mat-expansion-panel expanded=\"true\">\n    <mat-expansion-panel-header>\n      <mat-panel-title>\n        <mat-icon color=\"primary\">bug_report</mat-icon>\n        Debug\n      </mat-panel-title>\n    </mat-expansion-panel-header>\n\n    <mat-checkbox [(ngModel)]=\"debugMode\">Debug Mode</mat-checkbox>\n  </mat-expansion-panel>\n\n  <!-- <mat-expansion-panel expanded=\"true\">\n    <mat-expansion-panel-header>\n      <mat-panel-title>\n        <mat-icon color=\"primary\">attach_money</mat-icon>\n        Shameless Commercialism\n      </mat-panel-title>\n    </mat-expansion-panel-header>\n\n    <a href=\"https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=L6UNHAL6A8PDC\" target=\"_blank\">\n      <img src=\"https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif\" border=\"0\" alt=\"PayPal - The safer, easier way to pay online!\">\n    </a>\n\n  </mat-expansion-panel> -->\n</mat-accordion>\n"
 
 /***/ }),
 
@@ -1593,22 +1594,12 @@ var SettingsComponent = /** @class */ (function () {
         enumerable: true,
         configurable: true
     });
-    Object.defineProperty(SettingsComponent.prototype, "harvestDetailColor", {
+    Object.defineProperty(SettingsComponent.prototype, "resourceAnimationColors", {
         get: function () {
-            return this.settingsService.harvestDetailColor;
+            return this.settingsService.resourceAnimationColors;
         },
         set: function (value) {
-            this.settingsService.harvestDetailColor = value;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(SettingsComponent.prototype, "workerDetailColor", {
-        get: function () {
-            return this.settingsService.workerDetailColor;
-        },
-        set: function (value) {
-            this.settingsService.workerDetailColor = value;
+            this.settingsService.resourceAnimationColors = value;
         },
         enumerable: true,
         configurable: true
@@ -1667,7 +1658,7 @@ var SettingsComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "/* StoreComponent's private CSS styles */\r\n.store {\r\n  margin: 0 0 2em 0;\r\n  list-style-type: none;\r\n  padding: 0;\r\n  width: 100%;\r\n}\r\n.store mat-expansion-panel {\r\n  margin: 0;\r\n}\r\n.store mat-expansion-panel-header {\r\n  height: 30px !important;\r\n}\r\n.store mat-card-subtitle {\r\n  position: absolute;\r\n  top: 10px;\r\n  right: 10px;\r\n}\r\n.store mat-card {\r\n  position: relative;\r\n  cursor: pointer;\r\n  background-color: #EEE;\r\n  margin: .5em;\r\n  padding: .4em 0;\r\n  height: 1.6em;\r\n  border-radius: 4px;\r\n}\r\n.store mat-card:hover {\r\n  color: #607D8B;\r\n  background-color: #DDD;\r\n  left: .1em;\r\n}\r\n.store a {\r\n  color: #888;\r\n  text-decoration: none;\r\n  position: relative;\r\n  display: block;\r\n  width: 250px;\r\n}\r\n.store a:hover {\r\n  color:#607D8B;\r\n}\r\n.store .harvestable {\r\n  background-color: antiquewhite;\r\n}\r\n.store .harvestable:hover {\r\n  background-color: blanchedalmond;\r\n}\r\n.store .badge {\r\n  display: inline-block;\r\n  font-size: small;\r\n  color: white;\r\n  padding: 0.8em 0.7em 0 0.7em;\r\n  background-color: #607D8B;\r\n  line-height: 1em;\r\n  position: absolute;\r\n  right: -9px;\r\n  top: 1px;\r\n  height: 1.8em;\r\n  min-width: 16px;\r\n  text-align: center;\r\n  margin-right: .8em;\r\n  border-radius: 0 4px 4px 0;\r\n}\r\n.right {\r\n  position: absolute;\r\n  right: 3px;\r\n  top: 3px;\r\n}\r\nbutton {\r\n  min-width: unset;\r\n  height: 27px;\r\n  line-height: unset;\r\n}\r\nbutton:hover {\r\n  background-color: #cfd8dc;\r\n}\r\nbutton.delete {\r\n  position: relative;\r\n  left: 194px;\r\n  top: -32px;\r\n  background-color: gray !important;\r\n  color: white;\r\n}\r\n.full-width {\r\n  width: 100%;\r\n}\r\n"
+module.exports = "/* StoreComponent's private CSS styles */\r\n.store {\r\n  margin: 0 0 2em 0;\r\n  list-style-type: none;\r\n  padding: 0;\r\n  width: 100%;\r\n}\r\n.store mat-expansion-panel {\r\n  margin: 0;\r\n}\r\n.store mat-expansion-panel-header {\r\n  height: 30px !important;\r\n}\r\n.store mat-card-subtitle {\r\n  position: absolute;\r\n  top: 10px;\r\n  right: 10px;\r\n}\r\n.store mat-card {\r\n  position: relative;\r\n  cursor: pointer;\r\n  background-color: #EEE;\r\n  margin: .5em;\r\n  padding: .4em 0;\r\n  height: 1.6em;\r\n  border-radius: 4px;\r\n}\r\n.store mat-card:hover {\r\n  color: #607D8B;\r\n  background-color: #DDD;\r\n  left: .1em;\r\n}\r\n.store a {\r\n  color: #888;\r\n  text-decoration: none;\r\n  position: relative;\r\n  display: block;\r\n  width: 250px;\r\n}\r\n.store a:hover {\r\n  color:#607D8B;\r\n}\r\n.store .harvestable {\r\n  background-color: antiquewhite;\r\n}\r\n.store .harvestable:hover {\r\n  background-color: blanchedalmond;\r\n}\r\n.store .badge {\r\n  display: inline-block;\r\n  font-size: small;\r\n  color: white;\r\n  padding: 0.8em 0.7em 0 0.7em;\r\n  background-color: #607D8B;\r\n  line-height: 1em;\r\n  position: absolute;\r\n  right: -9px;\r\n  top: 1px;\r\n  height: 1.8em;\r\n  min-width: 16px;\r\n  text-align: center;\r\n  margin-right: .8em;\r\n  border-radius: 0 4px 4px 0;\r\n}\r\n.right {\r\n  position: absolute;\r\n  right: 3px;\r\n  top: 3px;\r\n}\r\nbutton {\r\n  min-width: unset;\r\n  height: 27px;\r\n  line-height: unset;\r\n}\r\nbutton:hover {\r\n  background-color: #cfd8dc;\r\n}\r\nbutton.delete {\r\n  position: relative;\r\n  left: 194px;\r\n  top: -32px;\r\n  background-color: gray !important;\r\n  color: white;\r\n}\r\n.full-width {\r\n  width: 100%;\r\n}\r\n.sell-button {\r\n  width: 80%;\r\n}\r\n.cutoff-input {\r\n  width: 20%;\r\n}\r\n"
 
 /***/ }),
 
@@ -1678,7 +1669,7 @@ module.exports = "/* StoreComponent's private CSS styles */\r\n.store {\r\n  mar
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "Amount to sell:<mat-button-toggle-group #group=\"matButtonToggleGroup\" [(ngModel)]=\"sellAmount\">\n  <mat-button-toggle value=\"1\" checked=\"true\">\n    1x\n  </mat-button-toggle>\n  <mat-button-toggle value=\"10\">\n    10x\n  </mat-button-toggle>\n  <mat-button-toggle value=\"100\">\n    100x\n  </mat-button-toggle>\n  <mat-button-toggle value=\"1000\">\n    1000x\n  </mat-button-toggle>\n  <mat-button-toggle value=\"-1\">\n    All\n  </mat-button-toggle>\n</mat-button-toggle-group>\n\n<ul class=\"store\">\n  <mat-accordion multi=\"true\">\n    <mat-expansion-panel expanded=\"true\" *ngFor=\"let resourceType of sellableTypes\">\n      <mat-expansion-panel-header>\n        <mat-panel-title>\n          {{resourceType | titlecase}}\n        </mat-panel-title>\n        <mat-panel-description>\n        </mat-panel-description>\n      </mat-expansion-panel-header>\n\n      <button class=\"full-width\" color='accent' mat-flat-button *ngFor=\"let resource of resourcesOfType(resourceType, true, adminService.filterAccessible)\"\n        (click)=\"sellResource(resource.id)\" [disabled]=\"!canSellResource(resource.id)\">\n         {{(sellAmount == -1 ? resource.amount : sellAmount) | number:'0.0-0'}} {{resource.name | titlecase }} - {{resource.sellsFor * (+sellAmount === -1 ? resource.amount : sellAmount) | number:'0.0-2'}} Gold\n      </button>\n    </mat-expansion-panel>\n  </mat-accordion>\n</ul>\n"
+module.exports = "Amount to sell:<mat-button-toggle-group #group=\"matButtonToggleGroup\" [(ngModel)]=\"sellAmount\">\n  <mat-button-toggle value=\"1\" checked=\"true\">\n    1x\n  </mat-button-toggle>\n  <mat-button-toggle value=\"10\">\n    10x\n  </mat-button-toggle>\n  <mat-button-toggle value=\"100\">\n    100x\n  </mat-button-toggle>\n  <mat-button-toggle value=\"1000\">\n    1000x\n  </mat-button-toggle>\n  <mat-button-toggle value=\"-1\">\n    All\n  </mat-button-toggle>\n</mat-button-toggle-group>\n\n<ul class=\"store\">\n  <mat-accordion multi=\"true\">\n    <mat-expansion-panel expanded=\"true\" *ngFor=\"let resourceType of sellableTypes\">\n      <mat-expansion-panel-header>\n        <mat-panel-title>\n          {{resourceType | titlecase}}\n        </mat-panel-title>\n        <mat-panel-description>\n        </mat-panel-description>\n      </mat-expansion-panel-header>\n\n      <div *ngFor=\"let resource of resourcesOfType(resourceType, true, adminService.filterAccessible)\">\n        <button class=\"sell-button\" color=\"accent\" mat-flat-button\n          (click)=\"sellResource(resource.id)\" [disabled]=\"!canSellResource(resource.id)\">\n          {{(sellAmount == -1 ? resource.amount : sellAmount) | number:'0.0-0'}} {{resource.name | titlecase }} - {{resource.sellsFor * (+sellAmount === -1 ? resource.amount : sellAmount) | number:'0.0-2'}} Gold\n        </button>\n        <mat-form-field class=\"cutoff-input\">\n          <input matInput placeholder=\"Autosell Cutoff\" type=\"number\" min=\"0\" [(ngModel)]=\"resource.autoSellCutoff\"/>\n        </mat-form-field>\n      </div>\n    </mat-expansion-panel>\n  </mat-accordion>\n</ul>\n"
 
 /***/ }),
 
@@ -1756,7 +1747,7 @@ var StoreComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "#tile-tooltip {\r\n  top: var(--detail-tooltip-top);\r\n  left: var(--detail-tooltip-left);\r\n\r\n  position: absolute;\r\n}\r\n\r\nmat-card {\r\n  text-align: center;\r\n  width: 300px;\r\n}\r\n\r\n.resource-list div {\r\n  display: inline-block;\r\n}\r\n\r\n.resource-list img {\r\n  width: 16px;\r\n  height: 16px;\r\n}\r\n\r\n.repair-container {\r\n  display: inline-flex;\r\n  white-space: pre-wrap;\r\n}\r\n\r\n.repair-container button {\r\n  position: relative;\r\n  top: -25%;\r\n}\r\n\r\n.anchor-container {\r\n  position: absolute;\r\n  top: 0;\r\n  left: 0;\r\n\r\n  width: 55px;\r\n  height: 55px;\r\n}\r\n\r\n.anchor-container #center {\r\n  position: absolute;\r\n\r\n  left: 15px;\r\n  top: 15px;\r\n}\r\n\r\n.anchor-container .corner {\r\n  display: none;\r\n}\r\n\r\n.anchor-container:hover .corner {\r\n  display: inherit;\r\n}\r\n\r\n.anchor-container a {\r\n  cursor: pointer;\r\n  color: gray;\r\n}\r\n\r\n.anchor-container a:hover {\r\n  color: black;\r\n}\r\n\r\n.anchor-container #arrow-upper-left {\r\n  -webkit-transform: rotate(225deg);\r\n  transform: rotate(225deg);\r\n\r\n  position: absolute;\r\n  top: 0;\r\n  left: 0;\r\n}\r\n\r\n.anchor-container #arrow-upper-right {\r\n  -webkit-transform: rotate(315deg);\r\n  transform: rotate(315deg);\r\n\r\n  position: absolute;\r\n  top: 0;\r\n  right: 0;\r\n}\r\n\r\n.anchor-container #arrow-lower-left {\r\n  -webkit-transform: rotate(135deg);\r\n  transform: rotate(135deg);\r\n\r\n  position: absolute;\r\n  bottom: 0;\r\n  left: 0;\r\n}\r\n\r\n.anchor-container #arrow-lower-right {\r\n  -webkit-transform: rotate(45deg);\r\n  transform: rotate(45deg);\r\n\r\n  position: absolute;\r\n  bottom: 0;\r\n  right: 0;\r\n}\r\n"
+module.exports = "#tile-tooltip {\r\n  top: var(--detail-tooltip-top);\r\n  left: var(--detail-tooltip-left);\r\n\r\n  position: absolute;\r\n}\r\n\r\nmat-card {\r\n  text-align: center;\r\n  min-width: 300px;\r\n  max-width: 400px;\r\n}\r\n\r\n.resource-list div {\r\n  display: inline-block;\r\n}\r\n\r\n.resource-list img {\r\n  width: 16px;\r\n  height: 16px;\r\n}\r\n\r\n.repair-container {\r\n  display: inline-flex;\r\n  white-space: pre-wrap;\r\n}\r\n\r\n.repair-container button {\r\n  position: relative;\r\n  top: -25%;\r\n}\r\n\r\n.stats-container {\r\n  width: 100%;\r\n}\r\n\r\n.upgrade-button {\r\n  width: -webkit-fit-content;\r\n  width: -moz-fit-content;\r\n  width: fit-content;\r\n}\r\n\r\n.upgrade-button mat-icon {\r\n  position: relative;\r\n  top: 5px;\r\n}\r\n\r\n.anchor-container {\r\n  position: absolute;\r\n  top: 0;\r\n  left: 0;\r\n\r\n  width: 55px;\r\n  height: 55px;\r\n}\r\n\r\n.anchor-container #center {\r\n  position: absolute;\r\n\r\n  left: 15px;\r\n  top: 15px;\r\n}\r\n\r\n.anchor-container .corner {\r\n  display: none;\r\n}\r\n\r\n.anchor-container:hover .corner {\r\n  display: inherit;\r\n}\r\n\r\n.anchor-container a {\r\n  cursor: pointer;\r\n  color: gray;\r\n}\r\n\r\n.anchor-container a:hover {\r\n  color: black;\r\n}\r\n\r\n.anchor-container #arrow-upper-left {\r\n  -webkit-transform: rotate(225deg);\r\n  transform: rotate(225deg);\r\n\r\n  position: absolute;\r\n  top: 0;\r\n  left: 0;\r\n}\r\n\r\n.anchor-container #arrow-upper-right {\r\n  -webkit-transform: rotate(315deg);\r\n  transform: rotate(315deg);\r\n\r\n  position: absolute;\r\n  top: 0;\r\n  right: 0;\r\n}\r\n\r\n.anchor-container #arrow-lower-left {\r\n  -webkit-transform: rotate(135deg);\r\n  transform: rotate(135deg);\r\n\r\n  position: absolute;\r\n  bottom: 0;\r\n  left: 0;\r\n}\r\n\r\n.anchor-container #arrow-lower-right {\r\n  -webkit-transform: rotate(45deg);\r\n  transform: rotate(45deg);\r\n\r\n  position: absolute;\r\n  bottom: 0;\r\n  right: 0;\r\n}\r\n"
 
 /***/ }),
 
@@ -1767,7 +1758,7 @@ module.exports = "#tile-tooltip {\r\n  top: var(--detail-tooltip-top);\r\n  left
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<mat-card appSnap [snapSetting]=\"snapSetting\" id=\"tile-tooltip\">\n  <div class=\"anchor-container\">\n    <a>\n      <mat-icon class=\"corner\" id=\"arrow-upper-left\" (click)=\"snapSetting = 'upperLeft'\">arrow_forward</mat-icon>\n    </a>\n    <a>\n      <mat-icon class=\"corner\" id=\"arrow-upper-right\" (click)=\"snapSetting = 'upperRight'\">arrow_forward</mat-icon>\n    </a>\n    <a>\n      <mat-icon id=\"center\" (click)=\"snapSetting = 'free'\">all_out</mat-icon>\n    </a>\n    <a>\n      <mat-icon class=\"corner\" id=\"arrow-lower-left\" (click)=\"snapSetting = 'lowerLeft'\">arrow_forward</mat-icon>\n    </a>\n    <a>\n      <mat-icon class=\"corner\" id=\"arrow-lower-right\" (click)=\"snapSetting = 'lowerRight'\">arrow_forward</mat-icon>\n    </a>\n  </div>\n  <div *ngIf=\"focusedBuildingTile\">\n    <mat-card-title>{{focusedBuildingTile.name}}</mat-card-title>\n    <mat-card-subtitle>{{focusedBuildingTile.description}}</mat-card-subtitle>\n    <div class=\"repair-container\">\n      {{focusedTile.health}}/{{focusedTile.maxHealth}} Health\n      <div *ngIf=\"focusedTile.health < focusedTile.maxHealth\">\n        <button mat-raised-button (click)=\"repairBuilding(focusedTile)\" color=\"accent\" [disabled]=\"!canRepairBuilding(focusedTile)\">\n          Repair\n          <div class=\"resource-list\">\n            <div matTooltip=\"{{focusedBuildingTile.repairCostPerPoint * (focusedTile.maxHealth - focusedTile.health)}} {{getResource(focusedBuildingTile.repairResource).name | titlecase}}\"\n              matTooltipPosition=\"below\">\n              <img src=\"{{getResource(focusedBuildingTile.repairResource).iconPath}}\" alt=\"{{getResource(focusedBuildingTile.repairResource).name}}\">\n              {{focusedBuildingTile.repairCostPerPoint * (focusedTile.maxHealth - focusedTile.health)}}\n            </div>\n          </div>\n        </button>\n      </div>\n    </div>\n  </div>\n\n  <div *ngIf=\"!focusedBuildingTile && focusedResourceTile\">\n    <mat-card-title>{{focusedResourceTile.name}}</mat-card-title>\n  </div>\n\n  <mat-card-content>\n    <div *ngIf=\"focusedResourceTile\" class=\"resource-list\">\n      Travel Time: {{focusedTile.buildingPath.length / this.mapService.tileAnimationSpeed / 1000 | number:'0.0-2'}}\n      Seconds\n      <br />\n      Produces:\n      <div *ngFor=\"let resource of focusedResources\">\n        <img src=\"{{resource.iconPath}}\" alt=\"{{resource.name}}\"> {{resource.name | titlecase}}\n      </div>\n    </div>\n    <div *ngIf=\"focusedBuildingTile && focusedBuildingTile.upgradeBuilding\">\n      <br />\n      Upgrade:\n      <br />\n      <button mat-raised-button (click)=\"upgradeBuilding(focusedTile)\" color=\"accent\" [disabled]=\"!canAffordUpgrade(this.mapService.buildingTiles[focusedBuildingTile.upgradeBuilding])\">\n        <div class=\"title\" matTooltip=\"{{this.mapService.buildingTiles[focusedBuildingTile.upgradeBuilding].description}}\"\n          matTooltipPosition=\"above\">\n          {{this.mapService.buildingTiles[focusedBuildingTile.upgradeBuilding].name}}\n        </div>\n        <div class=\"resource-list\">\n          <div *ngFor=\"let resourceCost of mapService.buildingTiles[focusedBuildingTile.upgradeBuilding].resourceCosts\"\n            matTooltip=\"{{resourceCost.resourceCost}} {{getResource(resourceCost.resourceId).name | titlecase}}\"\n            matTooltipPosition=\"below\">\n            <img src=\"{{getResource(resourceCost.resourceId).iconPath}}\" alt=\"{{getResource(resourceCost.resourceId).name}}\">\n            {{resourceCost.resourceCost}}\n          </div>\n        </div>\n      </button>\n    </div>\n  </mat-card-content>\n</mat-card>\n"
+module.exports = "<mat-card appSnap [snapSetting]=\"snapSetting\" id=\"tile-tooltip\">\n  <div class=\"anchor-container\">\n    <a>\n      <mat-icon class=\"corner\" id=\"arrow-upper-left\" (click)=\"snapSetting = 'upperLeft'\">arrow_forward</mat-icon>\n    </a>\n    <a>\n      <mat-icon class=\"corner\" id=\"arrow-upper-right\" (click)=\"snapSetting = 'upperRight'\">arrow_forward</mat-icon>\n    </a>\n    <a>\n      <mat-icon id=\"center\" (click)=\"snapSetting = 'free'\">all_out</mat-icon>\n    </a>\n    <a>\n      <mat-icon class=\"corner\" id=\"arrow-lower-left\" (click)=\"snapSetting = 'lowerLeft'\">arrow_forward</mat-icon>\n    </a>\n    <a>\n      <mat-icon class=\"corner\" id=\"arrow-lower-right\" (click)=\"snapSetting = 'lowerRight'\">arrow_forward</mat-icon>\n    </a>\n  </div>\n  <div *ngIf=\"focusedBuildingTile\">\n    <mat-card-title>{{focusedBuildingTile.name}}</mat-card-title>\n    <mat-card-subtitle>{{focusedBuildingTile.description}}</mat-card-subtitle>\n    <div class=\"repair-container\">\n      {{focusedTile.health}}/{{focusedTile.maxHealth}} Health\n      <div *ngIf=\"focusedTile.health < focusedTile.maxHealth\">\n        <button mat-raised-button (click)=\"repairBuilding(focusedTile)\" color=\"accent\" [disabled]=\"!canRepairBuilding(focusedTile)\">\n          Repair\n          <div class=\"resource-list\">\n            <div matTooltip=\"{{focusedBuildingTile.repairCostPerPoint * (focusedTile.maxHealth - focusedTile.health)}} {{getResource(focusedBuildingTile.repairResource).name | titlecase}}\"\n              matTooltipPosition=\"below\">\n              <img src=\"{{getResource(focusedBuildingTile.repairResource).iconPath}}\" alt=\"{{getResource(focusedBuildingTile.repairResource).name}}\">\n              {{focusedBuildingTile.repairCostPerPoint * (focusedTile.maxHealth - focusedTile.health)}}\n            </div>\n          </div>\n        </button>\n      </div>\n    </div>\n  </div>\n\n  <div *ngIf=\"!focusedBuildingTile && focusedResourceTile\">\n    <mat-card-title>{{focusedResourceTile.name}}</mat-card-title>\n  </div>\n\n  <mat-card-content *ngIf=\"focusedTile\">\n    <div *ngIf=\"focusedResourceTile\" class=\"resource-list\">\n      Travel Time: {{focusedTile.buildingPath.length / this.mapService.tileAnimationSpeed / 1000 | number:'0.0-2'}}\n      Seconds\n      <br />\n      Produces:\n      <div *ngFor=\"let resource of focusedResources\">\n        <img src=\"{{resource.iconPath}}\" alt=\"{{resource.name}}\"> {{resource.name | titlecase}}\n      </div>\n    </div>\n    <div *ngIf=\"focusedBuildingTile && focusedBuildingTile.upgradeBuilding\">\n      <h3>Upgrade</h3>\n      <button mat-raised-button (click)=\"upgradeBuilding(focusedTile)\" color=\"accent\" [disabled]=\"!canAffordUpgrade(this.mapService.buildingTiles[focusedBuildingTile.upgradeBuilding])\">\n        <div class=\"title\" matTooltip=\"{{this.mapService.buildingTiles[focusedBuildingTile.upgradeBuilding].description}}\"\n          matTooltipPosition=\"above\">\n          {{this.mapService.buildingTiles[focusedBuildingTile.upgradeBuilding].name}}\n        </div>\n        <div class=\"resource-list\">\n          <div *ngFor=\"let resourceCost of mapService.buildingTiles[focusedBuildingTile.upgradeBuilding].resourceCosts\"\n            matTooltip=\"{{resourceCost.resourceCost}} {{getResource(resourceCost.resourceId).name | titlecase}}\"\n            matTooltipPosition=\"below\">\n            <img src=\"{{getResource(resourceCost.resourceId).iconPath}}\" alt=\"{{getResource(resourceCost.resourceId).name}}\">\n            {{resourceCost.resourceCost}}\n          </div>\n        </div>\n      </button>\n    </div>\n\n    <div *ngIf=\"focusedTile.market\">\n      Profit (Average of recent sales): {{focusedTile.market.averageRecentProfit | number:'0.0-2'}} {{this.resourcesService.getResource(0).name | titlecase}}/Second\n    </div>\n\n    <h3>Stats</h3>\n      <table class=\"stats-container\">\n        <tbody>\n          <tr class=\"stat-row\">\n            <td>\n              <p>\n                Max Health: {{focusedTile.maxHealth | number:'1.0-2'}}\n              </p>\n            </td>\n            <td>\n              <b>\n                Level {{focusedTile.statLevels['MAXHEALTH']}}\n              </b>\n            </td>\n            <td>\n              <button class=\"upgrade-button\" color=\"accent\" mat-raised-button (click)=\"focusedTile.upgradeStat('MAXHEALTH')\"\n                [disabled]=\"!focusedTile.canUpgradeStat('MAXHEALTH')\" matTooltip=\"Level {{focusedTile.statLevels['MAXHEALTH'] + 1}}: {{focusedTile.getUpgradedStat('MAXHEALTH') | number:'1.0-2'}} Max Health\"\n                matTooltipPosition=\"below\">\n                <mat-icon color=\"primary\">arrow_upward</mat-icon>\n                <div class=\"resource-list\">\n                  <div>\n                    <img src=\"{{getResource(0).iconPath}}\" alt=\"{{getResource(0).name}}\">\n                    {{focusedTile.statCosts['MAXHEALTH'] | number:'1.0-0'}}\n                  </div>\n                </div>\n              </button>\n            </td>\n          </tr>\n\n          <tr class=\"stat-row\" *ngIf=\"focusedTile.market\">\n            <td>\n              <p>\n                Sell Rate: {{1000 / focusedTile.market.sellInterval | number:'1.0-2'}} Sale{{focusedTile.market.sellInterval === 1000 ? '' : 's'}}/Second\n              </p>\n            </td>\n            <td>\n              <b>\n                Level {{focusedTile.statLevels['SELLRATE']}}\n              </b>\n            </td>\n            <td>\n              <button class=\"upgrade-button\" color=\"accent\" mat-raised-button (click)=\"focusedTile.upgradeStat('SELLRATE')\"\n                [disabled]=\"!focusedTile.canUpgradeStat('SELLRATE')\" matTooltip=\"Level {{focusedTile.statLevels['SELLRATE'] + 1}}: {{1000 / focusedTile.getUpgradedStat('SELLRATE') | number:'1.0-2'}} Sales/Second\"\n                matTooltipPosition=\"below\">\n                <mat-icon color=\"primary\">arrow_upward</mat-icon>\n                <div class=\"resource-list\">\n                  <div>\n                    <img src=\"{{getResource(0).iconPath}}\" alt=\"{{getResource(0).name}}\">\n                    {{focusedTile.statCosts['SELLRATE'] | number:'1.0-0'}}\n                  </div>\n                </div>\n              </button>\n            </td>\n          </tr>\n\n          <tr class=\"stat-row\" *ngIf=\"focusedTile.market\">\n            <td>\n              <p>\n                Sell Amount: {{focusedTile.market.sellQuantity | number:'1.0-2'}} Items/Sale\n              </p>\n            </td>\n            <td>\n              <b>\n                Level {{focusedTile.statLevels['SELLAMOUNT']}}\n              </b>\n            </td>\n            <td>\n              <button class=\"upgrade-button\" color=\"accent\" mat-raised-button (click)=\"focusedTile.upgradeStat('SELLAMOUNT')\"\n                [disabled]=\"!focusedTile.canUpgradeStat('SELLAMOUNT')\" matTooltip=\"Level {{focusedTile.statLevels['SELLAMOUNT'] + 1}}: {{focusedTile.getUpgradedStat('SELLAMOUNT') | number:'1.0-2'}} Items/Sale\"\n                matTooltipPosition=\"below\">\n                <mat-icon color=\"primary\">arrow_upward</mat-icon>\n                <div class=\"resource-list\">\n                  <div>\n                    <img src=\"{{getResource(0).iconPath}}\" alt=\"{{getResource(0).name}}\">\n                    {{focusedTile.statCosts['SELLAMOUNT'] | number:'1.0-0'}}\n                  </div>\n                </div>\n              </button>\n            </td>\n          </tr>\n        </tbody>\n      </table>\n  </mat-card-content>\n</mat-card>\n"
 
 /***/ }),
 
@@ -2110,7 +2101,7 @@ module.exports = "/* UpgradesComponent's private CSS styles */\r\n.upgrades {\r\
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<mat-checkbox class=\"hidePurchased\" checked=\"true\" [(ngModel)]=\"hidePurchased\">Hide Purchased Upgrades</mat-checkbox>\n<br />\n<br />\n\n<div class=\"upgrades\" [ngClass]=\"{'slim-interface': settingsService.slimInterface}\">\n  <div *ngIf=\"!settingsService.slimInterface\">\n    <mat-card class=\"upgrade\" *ngFor=\"let upgrade of getUpgrades(false, hidePurchased, adminService.filterAccessible)\">\n      <button mat-raised-button color=\"accent\" [disabled]='upgrade.purchased || !canAffordUpgrade(upgrade.id)' (click)='purchaseUpgrade(upgrade.id)'>\n        <mat-card-title>\n          <b>\n            <mat-icon *ngIf=\"upgrade.purchased\" color=\"primary\">check</mat-icon>\n          </b>\n          {{upgrade.name}}\n        </mat-card-title>\n      </button>\n      <mat-card-subtitle>{{upgradesService.getUpgradeTypeString(upgrade.id)}}</mat-card-subtitle>\n      <mat-card-content>\n        {{upgrade.description}}\n        <div class=\"resource-list\">\n          <div *ngFor=\"let resourceCost of upgrade.resourceCosts\" matTooltip=\"{{resourceCost.resourceCost}} {{getResource(resourceCost.resourceId).name | titlecase}}\"\n            matTooltipPosition=\"below\">\n            <img src=\"{{getResource(resourceCost.resourceId).iconPath}}\" alt=\"{{getResource(resourceCost.resourceId).name}}\"> {{resourceCost.resourceCost}}\n          </div>\n        </div>\n      </mat-card-content>\n      <div *ngIf=\"adminService.editMode\">\n        <button (click)=\"editUpgrade(upgrade.id)\">Edit {{upgrade.name | titlecase}}</button>\n      </div>\n    </mat-card>\n  </div>\n  <div *ngIf=\"settingsService.slimInterface\">\n    <button mat-raised-button *ngFor=\"let upgrade of getUpgrades(false, hidePurchased, adminService.filterAccessible)\" color=\"accent\"\n      [disabled]='upgrade.purchased || !canAffordUpgrade(upgrade.id)' (click)='purchaseUpgrade(upgrade.id)'>\n    <div class=\"title\" matTooltip=\"{{upgrade.description}}\" matTooltipPosition=\"above\">\n      <b>\n        <mat-icon *ngIf=\"upgrade.purchased\" color=\"primary\">check</mat-icon>\n      </b>\n      {{upgrade.name}}\n    </div>\n    <div class=\"resource-list\">\n      <div *ngFor=\"let resourceCost of upgrade.resourceCosts\" matTooltip=\"{{resourceCost.resourceCost}} {{getResource(resourceCost.resourceId).name | titlecase}}\"\n        matTooltipPosition=\"below\">\n        <img src=\"{{getResource(resourceCost.resourceId).iconPath}}\" alt=\"{{getResource(resourceCost.resourceId).name}}\">\n        {{resourceCost.resourceCost}}\n      </div>\n    </div>\n  </button>\n  </div>\n</div>\n"
+module.exports = "<mat-checkbox class=\"hidePurchased\" checked=\"true\" [(ngModel)]=\"hidePurchasedUpgrades\">Hide Purchased Upgrades</mat-checkbox>\n<br />\n<br />\n\n<div class=\"upgrades\" [ngClass]=\"{'slim-interface': settingsService.slimInterface}\">\n  <div *ngIf=\"!settingsService.slimInterface\">\n    <mat-card class=\"upgrade\" *ngFor=\"let upgrade of getUpgrades(false, hidePurchased, adminService.filterAccessible)\">\n      <button mat-raised-button color=\"accent\" [disabled]='upgrade.purchased || !canAffordUpgrade(upgrade.id)' (click)='purchaseUpgrade(upgrade.id)'>\n        <mat-card-title>\n          <b>\n            <mat-icon *ngIf=\"upgrade.purchased\" color=\"primary\">check</mat-icon>\n          </b>\n          {{upgrade.name}}\n        </mat-card-title>\n      </button>\n      <mat-card-subtitle>{{upgradesService.getUpgradeTypeString(upgrade.id)}}</mat-card-subtitle>\n      <mat-card-content>\n        {{upgrade.description}}\n        <div class=\"resource-list\">\n          <div *ngFor=\"let resourceCost of upgrade.resourceCosts\" matTooltip=\"{{resourceCost.resourceCost}} {{getResource(resourceCost.resourceId).name | titlecase}}\"\n            matTooltipPosition=\"below\">\n            <img src=\"{{getResource(resourceCost.resourceId).iconPath}}\" alt=\"{{getResource(resourceCost.resourceId).name}}\"> {{resourceCost.resourceCost}}\n          </div>\n        </div>\n      </mat-card-content>\n      <div *ngIf=\"adminService.editMode\">\n        <button (click)=\"editUpgrade(upgrade.id)\">Edit {{upgrade.name | titlecase}}</button>\n      </div>\n    </mat-card>\n  </div>\n  <div *ngIf=\"settingsService.slimInterface\">\n    <button mat-raised-button *ngFor=\"let upgrade of getUpgrades(false, hidePurchased, adminService.filterAccessible)\" color=\"accent\"\n      [disabled]='upgrade.purchased || !canAffordUpgrade(upgrade.id)' (click)='purchaseUpgrade(upgrade.id)'>\n    <div class=\"title\" matTooltip=\"{{upgrade.description}}\" matTooltipPosition=\"above\">\n      <b>\n        <mat-icon *ngIf=\"upgrade.purchased\" color=\"primary\">check</mat-icon>\n      </b>\n      {{upgrade.name}}\n    </div>\n    <div class=\"resource-list\">\n      <div *ngFor=\"let resourceCost of upgrade.resourceCosts\" matTooltip=\"{{resourceCost.resourceCost}} {{getResource(resourceCost.resourceId).name | titlecase}}\"\n        matTooltipPosition=\"below\">\n        <img src=\"{{getResource(resourceCost.resourceId).iconPath}}\" alt=\"{{getResource(resourceCost.resourceId).name}}\">\n        {{resourceCost.resourceCost}}\n      </div>\n    </div>\n  </button>\n  </div>\n</div>\n"
 
 /***/ }),
 
@@ -2152,7 +2143,6 @@ var UpgradesComponent = /** @class */ (function () {
         this.settingsService = settingsService;
         this.adminService = adminService;
         this.upgradeTypes = _objects_upgrade__WEBPACK_IMPORTED_MODULE_2__["UpgradeType"];
-        this.hidePurchased = true;
     }
     UpgradesComponent.prototype.ngOnInit = function () {
     };
@@ -2184,6 +2174,16 @@ var UpgradesComponent = /** @class */ (function () {
     UpgradesComponent.prototype.getResource = function (resourceId) {
         return this.resourcesService.getResource(resourceId);
     };
+    Object.defineProperty(UpgradesComponent.prototype, "hidePurchasedUpgrades", {
+        get: function () {
+            return this.upgradesService.hidePurchasedUpgrades;
+        },
+        set: function (value) {
+            this.upgradesService.hidePurchasedUpgrades = value;
+        },
+        enumerable: true,
+        configurable: true
+    });
     UpgradesComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-upgrades',
@@ -2209,7 +2209,7 @@ var UpgradesComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "/* WorkersComponent's private CSS styles */\r\n.workers {\r\n  margin: 0 0 2em 0;\r\n  list-style-type: none;\r\n  padding: 0;\r\n  width: 100%;\r\n}\r\n.workers mat-expansion-panel {\r\n  margin: 0;\r\n}\r\n.workers mat-expansion-panel-header {\r\n  height: 30px !important;\r\n}\r\n.workers mat-card-title {\r\n  text-align: left;\r\n}\r\n.workers mat-card-subtitle {\r\n  position: absolute;\r\n  top: 10px;\r\n  right: 10px;\r\n}\r\n.workers mat-slider {\r\n  width: 100%;\r\n  top: -22px;\r\n}\r\n.workers mat-card {\r\n  position: relative;\r\n  cursor: pointer;\r\n  margin: .5em;\r\n  padding: .4em 0;\r\n  height: 3.6em;\r\n  width: 100%;\r\n  border-radius: 4px;\r\n  background: antiquewhite;\r\n}\r\n.workers button {\r\n  position: relative;\r\n  cursor: pointer;\r\n  margin: .5em;\r\n  padding: .4em 0;\r\n  height: 3.6em;\r\n  width: 100%;\r\n  border-radius: 4px;\r\n}\r\n.workers button:hover {\r\n  color: #607D8B;\r\n  background-color: #DDD;\r\n  left: .1em;\r\n}\r\n.workers a {\r\n  color: #888;\r\n  text-decoration: none;\r\n  position: relative;\r\n  display: block;\r\n  width: 250px;\r\n}\r\n.workers a:hover {\r\n  color:#607D8B;\r\n}\r\n.workers .harvestable {\r\n  background-color: antiquewhite;\r\n}\r\n.workers .harvestable:hover {\r\n  background-color: blanchedalmond;\r\n}\r\nmat-card.mat-card.resource-disabled {\r\n  background: indianred;\r\n}\r\n.worker-input {\r\n  width: 50px;\r\n  border: none;\r\n}\r\n.mat-card-subtitle {\r\n  z-index: 1;\r\n}\r\n.workers .badge {\r\n  display: inline-block;\r\n  font-size: small;\r\n  color: white;\r\n  padding: 0.8em 0.7em 0 0.7em;\r\n  background-color: #607D8B;\r\n  line-height: 1em;\r\n  position: absolute;\r\n  right: -9px;\r\n  top: 1px;\r\n  height: 1.8em;\r\n  min-width: 16px;\r\n  text-align: center;\r\n  margin-right: .8em;\r\n  border-radius: 0 4px 4px 0;\r\n}\r\n.path-broken-warn {\r\n  position: absolute;\r\n  top: 5px;\r\n  right: 125px;\r\n}\r\nbutton {\r\n  background-color: #eee;\r\n  border: none;\r\n  padding: 5px 10px;\r\n  border-radius: 4px;\r\n  cursor: pointer;\r\n  cursor: hand;\r\n  font-family: Arial;\r\n}\r\nbutton:hover {\r\n  background-color: #cfd8dc;\r\n}\r\nbutton.delete {\r\n  position: relative;\r\n  left: 194px;\r\n  top: -32px;\r\n  background-color: gray !important;\r\n  color: white;\r\n}\r\n"
+module.exports = "/* WorkersComponent's private CSS styles */\r\n.workers {\r\n  margin: 0 0 2em 0;\r\n  list-style-type: none;\r\n  padding: 0;\r\n  width: 100%;\r\n}\r\n.workers mat-expansion-panel {\r\n  margin: 0;\r\n}\r\n.workers mat-expansion-panel-header {\r\n  height: 30px !important;\r\n}\r\n.workers mat-card-title {\r\n  text-align: left;\r\n}\r\n.workers mat-card-subtitle {\r\n  position: absolute;\r\n  top: 10px;\r\n  right: 10px;\r\n}\r\n.workers mat-slider {\r\n  width: 100%;\r\n  top: -22px;\r\n}\r\n.workers mat-card {\r\n  position: relative;\r\n  cursor: pointer;\r\n  margin: .5em;\r\n  padding: .4em 0;\r\n  height: 3.6em;\r\n  width: 100%;\r\n  border-radius: 4px;\r\n  background: antiquewhite;\r\n}\r\n.workers button {\r\n  position: relative;\r\n  cursor: pointer;\r\n  margin: .5em;\r\n  padding: .4em 0;\r\n  height: 3.6em;\r\n  width: 100%;\r\n  border-radius: 4px;\r\n}\r\n.workers button:hover {\r\n  color: #607D8B;\r\n  background-color: #DDD;\r\n  left: .1em;\r\n}\r\n.workers a {\r\n  color: #888;\r\n  text-decoration: none;\r\n  position: relative;\r\n  display: block;\r\n  width: 250px;\r\n}\r\n.workers a:hover {\r\n  color:#607D8B;\r\n}\r\n.workers .harvestable {\r\n  background-color: antiquewhite;\r\n}\r\n.worker-input {\r\n  width: 50px;\r\n  border: none;\r\n}\r\n.mat-card-subtitle {\r\n  z-index: 1;\r\n}\r\n.workers .badge {\r\n  display: inline-block;\r\n  font-size: small;\r\n  color: white;\r\n  padding: 0.8em 0.7em 0 0.7em;\r\n  background-color: #607D8B;\r\n  line-height: 1em;\r\n  position: absolute;\r\n  right: -9px;\r\n  top: 1px;\r\n  height: 1.8em;\r\n  min-width: 16px;\r\n  text-align: center;\r\n  margin-right: .8em;\r\n  border-radius: 0 4px 4px 0;\r\n}\r\n.path-broken-warn {\r\n  position: absolute;\r\n  top: 5px;\r\n  right: 125px;\r\n}\r\nbutton {\r\n  background-color: #eee;\r\n  border: none;\r\n  padding: 5px 10px;\r\n  border-radius: 4px;\r\n  cursor: pointer;\r\n  cursor: hand;\r\n  font-family: Arial;\r\n}\r\nbutton:hover {\r\n  background-color: #cfd8dc;\r\n}\r\nbutton.delete {\r\n  position: relative;\r\n  left: 194px;\r\n  top: -32px;\r\n  background-color: gray !important;\r\n  color: white;\r\n}\r\n"
 
 /***/ }),
 
@@ -2220,7 +2220,7 @@ module.exports = "/* WorkersComponent's private CSS styles */\r\n.workers {\r\n 
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ul class=\"workers\">\n  <mat-accordion multi=\"true\">\n    <mat-expansion-panel expanded=\"true\" *ngFor=\"let worker of getWorkers(true, true, true)\">\n      <mat-expansion-panel-header>\n        <mat-panel-title>\n          {{worker.resourceType | titlecase}}\n        </mat-panel-title>\n        <mat-panel-description>\n        </mat-panel-description>\n      </mat-expansion-panel-header>\n\n      <button mat-raised-button [color]=\"canAfford(worker.id) ? 'accent' : 'disabled'\" (click)=\"hireWorker(worker.id)\">\n        <mat-card-title>{{worker.workerCount}} Workers ({{worker.freeWorkers}} Idle)</mat-card-title>\n        <mat-card-subtitle>{{worker.cost | number}} Gold</mat-card-subtitle>\n      </button>\n\n      <div *ngFor=\"let resourceWorker of getAccessibleResourceWorkers(worker)\">\n        <mat-card [ngClass]=\"{'resource-disabled': !canHarvest(resourceWorker.resourceId)}\"\n        *ngIf=\"shouldShowResource(resourceWorker.resourceId)\" matTooltip=\"{{getTooltipMessage(resourceWorker.resourceId)}}\" matTooltipPosition=\"right\">\n          <mat-card-title>{{getResource(resourceWorker.resourceId).name | titlecase}}</mat-card-title>\n          <div class=\"path-broken-warn\" *ngIf=\"!pathAvailable(resourceWorker.resourceId)\">(Path Broken)</div>\n          <mat-card-subtitle>\n            Workers: <input class=\"worker-input\" type=\"number\" min=\"0\" [max]=\"worker.workerCount\"\n              [(ngModel)]=\"resourceWorker.sliderSetting\" (input)=\"checkSliderValue(resourceWorker.resourceId)\" (change)=\"updateResourceWorker(resourceWorker.resourceId, resourceWorker.sliderSetting)\"/>\n          </mat-card-subtitle>\n          <mat-slider [color]=\"resourceWorker.sliderSettingValid ? 'accent' : 'warn'\" [id]=\"resourceWorker.resourceId\" [max]=\"worker.workerCount\"\n              [disabled]=\"!pathAvailable(resourceWorker.resourceId)\" [tickInterval]=\"1\" [(ngModel)]=\"resourceWorker.sliderSetting\"\n              (input)=\"checkSliderValue($event)\" (change)=\"updateResourceWorker($event)\">\n          </mat-slider>\n        </mat-card>\n      </div>\n    </mat-expansion-panel>\n  </mat-accordion>\n</ul>\n"
+module.exports = "<ul class=\"workers\">\n  <mat-checkbox [(ngModel)]=\"workersPaused\" color=\"accent\">Pause Workers</mat-checkbox>\n  <mat-accordion multi=\"true\">\n    <mat-expansion-panel expanded=\"true\" *ngFor=\"let worker of getWorkers(true, true, true)\">\n      <mat-expansion-panel-header>\n        <mat-panel-title>\n          {{worker.resourceType | titlecase}}\n        </mat-panel-title>\n        <mat-panel-description>\n        </mat-panel-description>\n      </mat-expansion-panel-header>\n\n      <button mat-raised-button [color]=\"canAfford(worker.id) ? 'accent' : 'disabled'\" (click)=\"hireWorker(worker.id)\">\n        <mat-card-title>{{worker.workerCount}} Workers ({{worker.freeWorkers}} Idle)</mat-card-title>\n        <mat-card-subtitle>{{worker.cost | number}} Gold</mat-card-subtitle>\n      </button>\n\n      <div *ngFor=\"let resourceWorker of getAccessibleResourceWorkers(worker)\">\n        <mat-card [ngClass]=\"{'resource-disabled': !canHarvest(resourceWorker.resourceId)}\"\n        *ngIf=\"shouldShowResource(resourceWorker.resourceId)\" matTooltip=\"{{getTooltipMessage(resourceWorker.resourceId)}}\" matTooltipPosition=\"right\">\n          <mat-card-title [style.color]=\"canHarvest(resourceWorker.resourceId) ? 'black' : 'red'\">\n            {{getResource(resourceWorker.resourceId).name | titlecase}}\n          </mat-card-title>\n          <div class=\"path-broken-warn\" *ngIf=\"!pathAvailable(resourceWorker.resourceId)\">(Path Broken)</div>\n          <mat-card-subtitle>\n            Workers: <input class=\"worker-input\" type=\"number\" min=\"0\" [max]=\"worker.workerCount\"\n              [(ngModel)]=\"resourceWorker.sliderSetting\" (input)=\"checkSliderValue(resourceWorker.resourceId)\" (change)=\"updateResourceWorker(resourceWorker.resourceId, resourceWorker.sliderSetting)\"/>\n          </mat-card-subtitle>\n          <mat-slider [color]=\"resourceWorker.sliderSettingValid ? 'accent' : 'warn'\" [id]=\"resourceWorker.resourceId\" [max]=\"worker.workerCount\"\n              [disabled]=\"!pathAvailable(resourceWorker.resourceId)\" [tickInterval]=\"1\" [(ngModel)]=\"resourceWorker.sliderSetting\"\n              (input)=\"checkSliderValue($event)\" (change)=\"updateResourceWorker($event)\">\n          </mat-slider>\n        </mat-card>\n      </div>\n    </mat-expansion-panel>\n  </mat-accordion>\n</ul>\n"
 
 /***/ }),
 
@@ -2314,6 +2314,16 @@ var WorkersComponent = /** @class */ (function () {
     WorkersComponent.prototype.getResource = function (id) {
         return this.resourcesService.getResource(id);
     };
+    Object.defineProperty(WorkersComponent.prototype, "workersPaused", {
+        get: function () {
+            return this.workersService.workersPaused;
+        },
+        set: function (value) {
+            this.workersService.workersPaused = value;
+        },
+        enumerable: true,
+        configurable: true
+    });
     WorkersComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-workers',
@@ -2634,8 +2644,7 @@ var MapDirective = /** @class */ (function () {
             var resourceTileImage = this.imageElements[this.resourcesService.getResource(resourceAnimation.resourceId).name.toLowerCase().replace(' ', '-')];
             this.context.drawImage(resourceTileImage, resourceAnimation.x, resourceAnimation.y, this.mapService.tilePixelSize / 2, this.mapService.tilePixelSize / 2);
             this.drawTile(resourceAnimation.position, resourceTileImage, 0.5);
-            this.context.fillStyle = resourceAnimation.spawnedByPlayer ?
-                this.settingsService.harvestDetailColor : this.settingsService.workerDetailColor;
+            this.context.fillStyle = this.settingsService.resourceAnimationColors[resourceAnimation.animationType];
             this.context.fillText(Math.floor(resourceAnimation.multiplier).toString(), resourceAnimation.x + this.mapService.tilePixelSize / 2, resourceAnimation.y + this.mapService.tilePixelSize / 2);
         }
         for (var _d = 0, _e = this.enemyService.enemies; _d < _e.length; _d++) {
@@ -2982,12 +2991,13 @@ var MaterialImportModule = /** @class */ (function () {
 /*!***********************************!*\
   !*** ./src/app/objects/entity.ts ***!
   \***********************************/
-/*! exports provided: FighterStats, Entity, Actor, Enemy, Fighter, Projectile, ResourceAnimation */
+/*! exports provided: FighterStat, ResourceAnimationType, Entity, Actor, Enemy, Fighter, Projectile, ResourceAnimation */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FighterStats", function() { return FighterStats; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FighterStat", function() { return FighterStat; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ResourceAnimationType", function() { return ResourceAnimationType; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Entity", function() { return Entity; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Actor", function() { return Actor; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Enemy", function() { return Enemy; });
@@ -3008,15 +3018,21 @@ var __extends = (undefined && undefined.__extends) || (function () {
 })();
 
 
-var FighterStats;
-(function (FighterStats) {
-    FighterStats["Attack"] = "ATTACK";
-    FighterStats["Defense"] = "DEFENSE";
-    FighterStats["Range"] = "RANGE";
-    FighterStats["MovementSpeed"] = "MOVEMENTSPEED";
-    FighterStats["FireRate"] = "FIRERATE";
-    FighterStats["MaxHealth"] = "MAXHEALTH";
-})(FighterStats || (FighterStats = {}));
+var FighterStat;
+(function (FighterStat) {
+    FighterStat["Attack"] = "ATTACK";
+    FighterStat["Defense"] = "DEFENSE";
+    FighterStat["Range"] = "RANGE";
+    FighterStat["MovementSpeed"] = "MOVEMENTSPEED";
+    FighterStat["FireRate"] = "FIRERATE";
+    FighterStat["MaxHealth"] = "MAXHEALTH";
+})(FighterStat || (FighterStat = {}));
+var ResourceAnimationType;
+(function (ResourceAnimationType) {
+    ResourceAnimationType["PlayerSpawned"] = "PLAYERSPAWNED";
+    ResourceAnimationType["WorkerSpawned"] = "WORKERSPAWNED";
+    ResourceAnimationType["Sold"] = "SOLD";
+})(ResourceAnimationType || (ResourceAnimationType = {}));
 var Entity = /** @class */ (function () {
     function Entity(name, position, currentTile, health, animationSpeed, tilePath) {
         if (animationSpeed === void 0) { animationSpeed = 0.003; }
@@ -3124,18 +3140,18 @@ var Fighter = /** @class */ (function (_super) {
         _this.cost = cost;
         _this.moveable = moveable;
         _this.fireMilliseconds = fireMilliseconds;
-        _this.statLevels[FighterStats.Attack] = 1;
-        _this.statLevels[FighterStats.Defense] = 1;
-        _this.statLevels[FighterStats.FireRate] = 1;
-        _this.statLevels[FighterStats.MovementSpeed] = 1;
-        _this.statLevels[FighterStats.Range] = 1;
-        _this.statLevels[FighterStats.MaxHealth] = 1;
-        _this.statCosts[FighterStats.Attack] = 1500;
-        _this.statCosts[FighterStats.Defense] = 1500;
-        _this.statCosts[FighterStats.FireRate] = 1500;
-        _this.statCosts[FighterStats.MovementSpeed] = 1500;
-        _this.statCosts[FighterStats.Range] = 1500;
-        _this.statCosts[FighterStats.MaxHealth] = 1500;
+        _this.statLevels[FighterStat.Attack] = 1;
+        _this.statLevels[FighterStat.Defense] = 1;
+        _this.statLevels[FighterStat.FireRate] = 1;
+        _this.statLevels[FighterStat.MovementSpeed] = 1;
+        _this.statLevels[FighterStat.Range] = 1;
+        _this.statLevels[FighterStat.MaxHealth] = 1;
+        _this.statCosts[FighterStat.Attack] = 1500;
+        _this.statCosts[FighterStat.Defense] = 1500;
+        _this.statCosts[FighterStat.FireRate] = 1500;
+        _this.statCosts[FighterStat.MovementSpeed] = 1500;
+        _this.statCosts[FighterStat.Range] = 1500;
+        _this.statCosts[FighterStat.MaxHealth] = 1500;
         _this.resourcesService = resourcesService;
         _this.enemyService = enemyService;
         _this.mapService = mapService;
@@ -3157,22 +3173,22 @@ var Fighter = /** @class */ (function (_super) {
     };
     Fighter.prototype.getUpgradedStat = function (stat) {
         switch (stat) {
-            case FighterStats.Attack: {
+            case FighterStat.Attack: {
                 return this.attack * 1.2;
             }
-            case FighterStats.Defense: {
+            case FighterStat.Defense: {
                 return this.defense * 1.2;
             }
-            case FighterStats.FireRate: {
+            case FighterStat.FireRate: {
                 return this.fireMilliseconds / 1.1;
             }
-            case FighterStats.MovementSpeed: {
+            case FighterStat.MovementSpeed: {
                 return this.animationSpeed * 1.2;
             }
-            case FighterStats.Range: {
+            case FighterStat.Range: {
                 return this.attackRange + 1;
             }
-            case FighterStats.MaxHealth: {
+            case FighterStat.MaxHealth: {
                 return Math.floor(this.maxHealth * 1.2);
             }
         }
@@ -3184,27 +3200,27 @@ var Fighter = /** @class */ (function (_super) {
         this.resourcesService.addResourceAmount(0, -this.statCosts[stat]);
         var upgradedStat = this.getUpgradedStat(stat);
         switch (stat) {
-            case FighterStats.Attack: {
+            case FighterStat.Attack: {
                 this.attack = upgradedStat;
                 break;
             }
-            case FighterStats.Defense: {
+            case FighterStat.Defense: {
                 this.defense = upgradedStat;
                 break;
             }
-            case FighterStats.FireRate: {
+            case FighterStat.FireRate: {
                 this.fireMilliseconds = upgradedStat;
                 break;
             }
-            case FighterStats.MovementSpeed: {
+            case FighterStat.MovementSpeed: {
                 this.animationSpeed = upgradedStat;
                 break;
             }
-            case FighterStats.Range: {
+            case FighterStat.Range: {
                 this.attackRange = upgradedStat;
                 break;
             }
-            case FighterStats.MaxHealth: {
+            case FighterStat.MaxHealth: {
                 this.maxHealth = upgradedStat;
                 this.health = this.maxHealth;
             }
@@ -3262,16 +3278,27 @@ var Projectile = /** @class */ (function (_super) {
 
 var ResourceAnimation = /** @class */ (function (_super) {
     __extends(ResourceAnimation, _super);
-    function ResourceAnimation(position, currentTile, animationSpeed, resourceId, multiplier, spawnedByPlayer, tilePath) {
+    function ResourceAnimation(position, currentTile, animationSpeed, tilePath, animationType, resourceId, multiplier, spawnedByPlayer, resourcesService, storeService) {
         if (animationSpeed === void 0) { animationSpeed = 0.003; }
         var _this = _super.call(this, '', position, currentTile, -1, animationSpeed, tilePath) || this;
+        _this.animationType = animationType;
         _this.resourceId = resourceId;
         _this.multiplier = multiplier;
         _this.spawnedByPlayer = spawnedByPlayer;
+        _this.resourcesService = resourcesService;
+        _this.storeService = storeService;
         return _this;
     }
     ResourceAnimation.prototype.tick = function (elapsed, deltaTime) {
         this.updatePathPosition(deltaTime);
+    };
+    ResourceAnimation.prototype.finishAnimation = function () {
+        if (this.animationType === ResourceAnimationType.PlayerSpawned || this.animationType === ResourceAnimationType.WorkerSpawned) {
+            this.resourcesService.finishResourceAnimation(this.resourceId, this.multiplier, this.spawnedByPlayer);
+        }
+        else if (this.animationType === ResourceAnimationType.Sold) {
+            this.storeService.finishResourceAnimation(this.resourceId, this.multiplier);
+        }
     };
     return ResourceAnimation;
 }(Entity));
@@ -3342,6 +3369,7 @@ var Resource = /** @class */ (function () {
         this.harvestStartDate = Date.now();
         this.harvesting = false;
         this.progressBarValue = 0;
+        this.autoSellCutoff = 50;
     }
     return Resource;
 }());
@@ -3354,7 +3382,7 @@ var Resource = /** @class */ (function () {
 /*!*********************************!*\
   !*** ./src/app/objects/tile.ts ***!
   \*********************************/
-/*! exports provided: MapTileType, ResourceTileType, BuildingTileType, Tile */
+/*! exports provided: MapTileType, ResourceTileType, BuildingTileType, BuildingSubType, TileStat, Tile, Market */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3362,7 +3390,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MapTileType", function() { return MapTileType; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ResourceTileType", function() { return ResourceTileType; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BuildingTileType", function() { return BuildingTileType; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BuildingSubType", function() { return BuildingSubType; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TileStat", function() { return TileStat; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Tile", function() { return Tile; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Market", function() { return Market; });
 var MapTileType;
 (function (MapTileType) {
     MapTileType["Grass"] = "GRASS";
@@ -3413,21 +3444,81 @@ var BuildingTileType;
     BuildingTileType["LatinumForge"] = "LATINUMFORGE";
     BuildingTileType["TemprousDistillery"] = "TEMPROUSDISTILLERY";
     BuildingTileType["EnemyPortal"] = "ENEMYPORTAL";
+    BuildingTileType["WoodMarket"] = "WOODMARKET";
+    BuildingTileType["MineralMarket"] = "MINERALMARKET";
+    BuildingTileType["MetalMarket"] = "METALMARKET";
 })(BuildingTileType || (BuildingTileType = {}));
+var BuildingSubType;
+(function (BuildingSubType) {
+    BuildingSubType["Resource"] = "RESOURCE";
+    BuildingSubType["Market"] = "MARKET";
+    BuildingSubType["Misc"] = "MISC";
+})(BuildingSubType || (BuildingSubType = {}));
+var TileStat;
+(function (TileStat) {
+    TileStat["SellRate"] = "SELLRATE";
+    TileStat["SellAmount"] = "SELLAMOUNT";
+    TileStat["MaxHealth"] = "MAXHEALTH";
+})(TileStat || (TileStat = {}));
 var Tile = /** @class */ (function () {
-    function Tile(id, mapTileType, resourceTileType, buildingTileType, buildingRemovable, position, tileCropDetail, health) {
+    function Tile(id, mapTileType, resourceTileType, buildingTileType, buildingRemovable, position, tileCropDetail, health, resourcesService) {
         if (health === void 0) { health = -1; }
+        this.statLevels = {};
+        this.statCosts = {};
         this.id = id;
         this.mapTileType = mapTileType;
         this.resourceTileType = resourceTileType;
         this.buildingTileType = buildingTileType;
         this.buildingPath = [];
         this.buildingRemovable = buildingRemovable;
+        this.statLevels[TileStat.MaxHealth] = 1;
+        this.statCosts[TileStat.MaxHealth] = 1500;
         this.health = health;
         this.maxHealth = health;
         this.position = position;
         this.tileCropDetail = tileCropDetail;
+        this.resourcesService = resourcesService;
     }
+    Tile.prototype.canUpgradeStat = function (stat) {
+        return this.resourcesService.getResource(0).amount >= this.statCosts[stat];
+    };
+    Tile.prototype.getUpgradedStat = function (stat) {
+        switch (stat) {
+            case TileStat.SellAmount: {
+                return this.market.sellQuantity * 1.2;
+            }
+            case TileStat.SellRate: {
+                return this.market.sellInterval / 1.1;
+            }
+            case TileStat.MaxHealth: {
+                return Math.floor(this.maxHealth * 1.2);
+            }
+        }
+    };
+    Tile.prototype.upgradeStat = function (stat) {
+        if (!this.canUpgradeStat(stat)) {
+            return;
+        }
+        this.resourcesService.addResourceAmount(0, -this.statCosts[stat]);
+        var upgradedStat = this.getUpgradedStat(stat);
+        switch (stat) {
+            case TileStat.SellAmount: {
+                this.market.sellQuantity = upgradedStat;
+                break;
+            }
+            case TileStat.SellRate: {
+                this.market.sellInterval = upgradedStat;
+                break;
+            }
+            case TileStat.MaxHealth: {
+                this.maxHealth = upgradedStat;
+                this.health = this.maxHealth;
+                break;
+            }
+        }
+        this.statLevels[stat]++;
+        this.statCosts[stat] *= 1.5;
+    };
     Object.defineProperty(Tile.prototype, "x", {
         get: function () {
             return this.position.x;
@@ -3449,6 +3540,72 @@ var Tile = /** @class */ (function () {
         configurable: true
     });
     return Tile;
+}());
+
+var Market = /** @class */ (function () {
+    function Market(mapService, resourcesService, resourceType, owningTile, shouldInitStats) {
+        this.currentResource = 0;
+        this.recentSales = [];
+        this.recentWindowSize = 20;
+        this.timeSinceLastSale = 0;
+        this.lastSellTime = 0;
+        this.sellInterval = 1000;
+        this.sellQuantity = 50;
+        if (shouldInitStats) {
+            owningTile.statLevels[TileStat.SellAmount] = 1;
+            owningTile.statLevels[TileStat.SellRate] = 1;
+            owningTile.statCosts[TileStat.SellAmount] = 1500;
+            owningTile.statCosts[TileStat.SellRate] = 1500;
+        }
+        this.mapService = mapService;
+        this.resourcesService = resourcesService;
+        this.soldResources = resourcesService.resourcesOfType(resourceType, false, false, false);
+        this.homeTile = mapService.tiledMap.filter(function (tile) { return tile.buildingTileType === BuildingTileType.Home; })[0];
+        this.owningTile = owningTile;
+        this.calculateConnection();
+    }
+    Market.prototype.tick = function (elapsed, deltaTime) {
+        if (this.tilePath.length && elapsed - this.lastSellTime > this.sellInterval) {
+            this.timeSinceLastSale += deltaTime;
+            var resource = this.soldResources[this.currentResource];
+            var sellAmount = Math.min(this.sellQuantity, resource.amount - resource.autoSellCutoff);
+            if (sellAmount > 0) {
+                this.mapService.spawnSoldResourceAnimation(resource.id, sellAmount, this);
+                this.lastSellTime = elapsed;
+                this.resourcesService.addResourceAmount(resource.id, -sellAmount);
+                this.logSale(sellAmount * resource.sellsFor);
+                this.timeSinceLastSale = 0;
+            }
+            if (this.timeSinceLastSale >= 1000) {
+                this.logSale(0);
+                this.timeSinceLastSale = 0;
+            }
+            this.currentResource = (this.currentResource + 1) % this.soldResources.length;
+        }
+    };
+    Market.prototype.logSale = function (profit) {
+        this.recentSales.push(profit);
+        if (this.recentSales.length >= this.recentWindowSize) {
+            this.recentSales = this.recentSales.slice(1, this.recentWindowSize);
+        }
+    };
+    Market.prototype.calculateConnection = function () {
+        var _this = this;
+        this.mapService.findPath(this.homeTile, this.owningTile, true, true).subscribe(function (path) {
+            _this.tilePath = path;
+        });
+    };
+    Object.defineProperty(Market.prototype, "averageRecentProfit", {
+        get: function () {
+            if (!this.recentSales.length) {
+                return 0;
+            }
+            return this.recentSales.reduce(function (total, sale) { return total += sale; }) / this.recentSales.length;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    return Market;
 }());
 
 
@@ -3690,8 +3847,10 @@ var AdminService = /** @class */ (function () {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BuildingsService", function() { return BuildingsService; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _resources_resources_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./../resources/resources.service */ "./src/app/services/resources/resources.service.ts");
-/* harmony import */ var _map_map_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../map/map.service */ "./src/app/services/map/map.service.ts");
+/* harmony import */ var _objects_resource__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../objects/resource */ "./src/app/objects/resource.ts");
+/* harmony import */ var _objects_tile__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../objects/tile */ "./src/app/objects/tile.ts");
+/* harmony import */ var _resources_resources_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./../resources/resources.service */ "./src/app/services/resources/resources.service.ts");
+/* harmony import */ var _map_map_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../map/map.service */ "./src/app/services/map/map.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -3701,6 +3860,8 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 var __metadata = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+
+
 
 
 
@@ -3729,9 +3890,31 @@ var BuildingsService = /** @class */ (function () {
         tile.buildingRemovable = true;
         tile.buildingTileType = buildingType;
         this.mapService.calculateResourceConnections();
+        if (buildingTile.subType === _objects_tile__WEBPACK_IMPORTED_MODULE_2__["BuildingSubType"].Market) {
+            var resourceType = void 0;
+            switch (buildingTile.tileType) {
+                case _objects_tile__WEBPACK_IMPORTED_MODULE_2__["BuildingTileType"].WoodMarket: {
+                    resourceType = _objects_resource__WEBPACK_IMPORTED_MODULE_1__["ResourceType"].Wood;
+                    break;
+                }
+                case _objects_tile__WEBPACK_IMPORTED_MODULE_2__["BuildingTileType"].MineralMarket: {
+                    resourceType = _objects_resource__WEBPACK_IMPORTED_MODULE_1__["ResourceType"].Mineral;
+                    break;
+                }
+                case _objects_tile__WEBPACK_IMPORTED_MODULE_2__["BuildingTileType"].MetalMarket: {
+                    resourceType = _objects_resource__WEBPACK_IMPORTED_MODULE_1__["ResourceType"].Metal;
+                    break;
+                }
+            }
+            tile.market = new _objects_tile__WEBPACK_IMPORTED_MODULE_2__["Market"](this.mapService, this.resourcesService, resourceType, tile, true);
+        }
         return true;
     };
     BuildingsService.prototype.canAffordBuilding = function (buildingTile) {
+        if (buildingTile.maxPlaceable > 0 &&
+            this.mapService.tiledMap.filter(function (tile) { return tile.buildingTileType === buildingTile.tileType; }).length >= buildingTile.maxPlaceable) {
+            return false;
+        }
         for (var _i = 0, _a = buildingTile.resourceCosts; _i < _a.length; _i++) {
             var resourceCost = _a[_i];
             if (this.resourcesService.getResource(resourceCost.resourceId).amount < resourceCost.resourceCost) {
@@ -3750,6 +3933,7 @@ var BuildingsService = /** @class */ (function () {
         }
         tile.buildingTileType = undefined;
         tile.health = tile.maxHealth;
+        tile.market = undefined;
         for (var _i = 0, _a = buildingTile.resourceCosts; _i < _a.length; _i++) {
             var resourceCost = _a[_i];
             this.resourcesService.addResourceAmount(resourceCost.resourceId, resourceCost.resourceCost * 0.85);
@@ -3776,8 +3960,8 @@ var BuildingsService = /** @class */ (function () {
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
             providedIn: 'root'
         }),
-        __metadata("design:paramtypes", [_resources_resources_service__WEBPACK_IMPORTED_MODULE_1__["ResourcesService"],
-            _map_map_service__WEBPACK_IMPORTED_MODULE_2__["MapService"]])
+        __metadata("design:paramtypes", [_resources_resources_service__WEBPACK_IMPORTED_MODULE_3__["ResourcesService"],
+            _map_map_service__WEBPACK_IMPORTED_MODULE_4__["MapService"]])
     ], BuildingsService);
     return BuildingsService;
 }());
@@ -3913,7 +4097,7 @@ var ClickerMainService = /** @class */ (function () {
     ClickerMainService.prototype.harvestResource = function (id) {
         var resource = this.resourcesService.getResource(id);
         resource.amountTravelling++;
-        this.mapService.spawnResourceAnimation(id, resource.harvestYield, true);
+        this.mapService.spawnHarvestedResourceAnimation(id, resource.harvestYield, true);
         if (resource.resourceTier > 3 && !this.enemyService.enemiesActive) {
             this.enemyService.enemiesActive = true;
             this.log('Your base has begun attracting unwanted attention...');
@@ -4345,9 +4529,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm5/index.js");
 /* harmony import */ var _resources_resources_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../resources/resources.service */ "./src/app/services/resources/resources.service.ts");
-/* harmony import */ var _objects_tile__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../objects/tile */ "./src/app/objects/tile.ts");
-/* harmony import */ var _objects_entity__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../objects/entity */ "./src/app/objects/entity.ts");
-/* harmony import */ var _objects_vector__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../objects/vector */ "./src/app/objects/vector.ts");
+/* harmony import */ var _store_store_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./../store/store.service */ "./src/app/services/store/store.service.ts");
+/* harmony import */ var _objects_tile__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../objects/tile */ "./src/app/objects/tile.ts");
+/* harmony import */ var _objects_entity__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../objects/entity */ "./src/app/objects/entity.ts");
+/* harmony import */ var _objects_vector__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../objects/vector */ "./src/app/objects/vector.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -4357,6 +4542,7 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 var __metadata = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+
 
 
 
@@ -4374,8 +4560,9 @@ var CursorTool;
     CursorTool["FighterDetail"] = "FIGHTERDETAIL";
 })(CursorTool || (CursorTool = {}));
 var MapService = /** @class */ (function () {
-    function MapService(resourcesService) {
+    function MapService(resourcesService, storeService) {
         this.resourcesService = resourcesService;
+        this.storeService = storeService;
         this.tileTypes = baseTiles.tileTypes;
         this.mapTiles = baseTiles.mapTiles;
         this.buildingTiles = baseTiles.buildingTiles;
@@ -4453,7 +4640,7 @@ var MapService = /** @class */ (function () {
             var resourceTileId = resourceTileIds[i];
             var buildingTileId = buildingTileIds[i];
             var flagTileId = flagTileIds[i];
-            var position = new _objects_vector__WEBPACK_IMPORTED_MODULE_5__["Vector"](16 * (_tiledMap.length % _mapWidth), 16 * Math.floor(_tiledMap.length / _mapWidth));
+            var position = new _objects_vector__WEBPACK_IMPORTED_MODULE_6__["Vector"](16 * (_tiledMap.length % _mapWidth), 16 * Math.floor(_tiledMap.length / _mapWidth));
             var tileCropDetail = { x: 0, y: 0, width: 16, height: 16 };
             var resourceTileType = void 0, buildingTileType = void 0;
             if (resourceTileId > 0) {
@@ -4462,9 +4649,9 @@ var MapService = /** @class */ (function () {
             if (buildingTileId > 0) {
                 buildingTileType = this.tileTypes[buildingTileId];
             }
-            var tile = new _objects_tile__WEBPACK_IMPORTED_MODULE_3__["Tile"](_tiledMap.length, this.tileTypes[mapTileId], resourceTileType, buildingTileType, false, position, tileCropDetail, 50);
+            var tile = new _objects_tile__WEBPACK_IMPORTED_MODULE_4__["Tile"](_tiledMap.length, this.tileTypes[mapTileId], resourceTileType, buildingTileType, false, position, tileCropDetail, 50, this.resourcesService);
             var flagTileType = this.tileTypes[flagTileId];
-            if (flagTileType === _objects_tile__WEBPACK_IMPORTED_MODULE_3__["BuildingTileType"].EnemyPortal) {
+            if (flagTileType === _objects_tile__WEBPACK_IMPORTED_MODULE_4__["BuildingTileType"].EnemyPortal) {
                 this.enemySpawnTiles.push(tile);
             }
             _tiledMap.push(tile);
@@ -4479,12 +4666,16 @@ var MapService = /** @class */ (function () {
             var resourceAnimation = _a[_i];
             resourceAnimation.tick(elapsed, deltaTime);
             if (resourceAnimation.pathingDone) {
-                this.resourcesService.finishResourceAnimation(resourceAnimation.resourceId, resourceAnimation.multiplier, resourceAnimation.spawnedByPlayer);
+                resourceAnimation.finishAnimation();
             }
         }
+        for (var _b = 0, _c = this.tiledMap.filter(function (_tile) { return _tile.market; }); _b < _c.length; _b++) {
+            var tile = _c[_b];
+            tile.market.tick(elapsed, deltaTime);
+        }
         this.resourceAnimations = this.resourceAnimations.filter(function (animation) { return !animation.pathingDone; });
-        for (var _b = 0, _c = this.projectiles; _b < _c.length; _b++) {
-            var projectile = _c[_b];
+        for (var _d = 0, _e = this.projectiles; _d < _e.length; _d++) {
+            var projectile = _e[_d];
             projectile.tick(elapsed, deltaTime);
         }
         this.projectiles = this.projectiles.filter(function (projectile) { return !projectile.hitTarget; });
@@ -4496,7 +4687,7 @@ var MapService = /** @class */ (function () {
             var resource = _a[_i];
             resource.pathAvailable = false;
         }
-        var homeTile = this.tiledMap.filter(function (tile) { return tile.buildingTileType === _objects_tile__WEBPACK_IMPORTED_MODULE_3__["BuildingTileType"].Home; })[0];
+        var homeTile = this.tiledMap.filter(function (tile) { return tile.buildingTileType === _objects_tile__WEBPACK_IMPORTED_MODULE_4__["BuildingTileType"].Home; })[0];
         var _loop_1 = function (resourceTile) {
             if (resourceTile.health <= 0) {
                 return "continue";
@@ -4516,6 +4707,10 @@ var MapService = /** @class */ (function () {
         for (var _b = 0, resourceTiles_1 = resourceTiles; _b < resourceTiles_1.length; _b++) {
             var resourceTile = resourceTiles_1[_b];
             _loop_1(resourceTile);
+        }
+        for (var _c = 0, _d = this.tiledMap.filter(function (tile) { return tile.market; }); _c < _d.length; _c++) {
+            var marketTile = _d[_c];
+            marketTile.market.calculateConnection();
         }
     };
     MapService.prototype.findPath = function (startTile, targetTile, onlyPathable, onlyWalkable, maxAttempts) {
@@ -4570,7 +4765,7 @@ var MapService = /** @class */ (function () {
         }
         return tiles[Math.floor(Math.random() * tiles.length)];
     };
-    MapService.prototype.spawnResourceAnimation = function (resourceId, multiplier, spawnedByPlayer) {
+    MapService.prototype.spawnHarvestedResourceAnimation = function (resourceId, multiplier, spawnedByPlayer) {
         if (multiplier === void 0) { multiplier = 1; }
         var matchingTiles = this.getTilesForResource(resourceId).filter(function (_tile) { return _tile.buildingPath.length > 0; });
         if (!this.resourcesService.canAffordResource(resourceId, multiplier)) {
@@ -4582,11 +4777,16 @@ var MapService = /** @class */ (function () {
             return;
         }
         var tilePathCopy = tile.buildingPath.map(function (_tile) { return _tile; });
-        var resourceAnimation = new _objects_entity__WEBPACK_IMPORTED_MODULE_4__["ResourceAnimation"](new _objects_vector__WEBPACK_IMPORTED_MODULE_5__["Vector"](tile.x, tile.y), tile, 0.003, resourceId, multiplier, spawnedByPlayer, tilePathCopy);
+        var animationType = spawnedByPlayer ? _objects_entity__WEBPACK_IMPORTED_MODULE_5__["ResourceAnimationType"].PlayerSpawned : _objects_entity__WEBPACK_IMPORTED_MODULE_5__["ResourceAnimationType"].WorkerSpawned;
+        var resourceAnimation = new _objects_entity__WEBPACK_IMPORTED_MODULE_5__["ResourceAnimation"](new _objects_vector__WEBPACK_IMPORTED_MODULE_6__["Vector"](tile.x, tile.y), tile, 0.003, tilePathCopy, animationType, resourceId, multiplier, spawnedByPlayer, this.resourcesService, this.storeService);
+        this.resourceAnimations.push(resourceAnimation);
+    };
+    MapService.prototype.spawnSoldResourceAnimation = function (resourceId, multiplier, market) {
+        var resourceAnimation = new _objects_entity__WEBPACK_IMPORTED_MODULE_5__["ResourceAnimation"](new _objects_vector__WEBPACK_IMPORTED_MODULE_6__["Vector"](market.homeTile.x, market.homeTile.y), market.homeTile, 0.003, market.tilePath, _objects_entity__WEBPACK_IMPORTED_MODULE_5__["ResourceAnimationType"].Sold, resourceId, multiplier, false, this.resourcesService, this.storeService);
         this.resourceAnimations.push(resourceAnimation);
     };
     MapService.prototype.spawnProjectile = function (owner, target) {
-        var projectile = new _objects_entity__WEBPACK_IMPORTED_MODULE_4__["Projectile"]('Arrow', new _objects_vector__WEBPACK_IMPORTED_MODULE_5__["Vector"](owner.x, owner.y), owner.currentTile, 0.006, owner, target);
+        var projectile = new _objects_entity__WEBPACK_IMPORTED_MODULE_5__["Projectile"]('Arrow', new _objects_vector__WEBPACK_IMPORTED_MODULE_6__["Vector"](owner.x, owner.y), owner.currentTile, 0.006, owner, target);
         this.projectiles.push(projectile);
     };
     MapService.prototype.getNeighborTiles = function (tile) {
@@ -4637,12 +4837,12 @@ var MapService = /** @class */ (function () {
     MapService.prototype.getTileType = function (tileId) {
         if (tileId in [37, 38, 39, 40, 41, 42, 43, 44, 54, 55, 56, 57, 58, 59, 60, 61, 71, 72, 73, 74, 75, 76, 77, 78, 88,
             89, 90, 91, 92, 93, 94, 95, 105, 106, 107, 108, 109, 110, 111, 112, 123, 124, 125, 126, 127, 128, 129, 130]) {
-            return _objects_tile__WEBPACK_IMPORTED_MODULE_3__["MapTileType"].Grass;
+            return _objects_tile__WEBPACK_IMPORTED_MODULE_4__["MapTileType"].Grass;
         }
         else if (tileId in [53, 122]) {
-            return _objects_tile__WEBPACK_IMPORTED_MODULE_3__["MapTileType"].Water;
+            return _objects_tile__WEBPACK_IMPORTED_MODULE_4__["MapTileType"].Water;
         }
-        return _objects_tile__WEBPACK_IMPORTED_MODULE_3__["MapTileType"].Mountain;
+        return _objects_tile__WEBPACK_IMPORTED_MODULE_4__["MapTileType"].Mountain;
     };
     MapService.prototype.getTileCropDetail = function (tileId) {
         return { x: 0, y: 0, width: 16, height: 16 };
@@ -4655,7 +4855,8 @@ var MapService = /** @class */ (function () {
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
             providedIn: 'root'
         }),
-        __metadata("design:paramtypes", [_resources_resources_service__WEBPACK_IMPORTED_MODULE_2__["ResourcesService"]])
+        __metadata("design:paramtypes", [_resources_resources_service__WEBPACK_IMPORTED_MODULE_2__["ResourcesService"],
+            _store_store_service__WEBPACK_IMPORTED_MODULE_3__["StoreService"]])
     ], MapService);
     return MapService;
 }());
@@ -4884,6 +5085,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _objects_entity__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../../objects/entity */ "./src/app/objects/entity.ts");
 /* harmony import */ var _objects_message__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./../../objects/message */ "./src/app/objects/message.ts");
 /* harmony import */ var _objects_vector__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../../objects/vector */ "./src/app/objects/vector.ts");
+/* harmony import */ var _objects_resource__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../../objects/resource */ "./src/app/objects/resource.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -4893,6 +5095,7 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 var __metadata = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+
 
 
 
@@ -4918,8 +5121,8 @@ var SettingsService = /** @class */ (function () {
         this.messagesService = messagesService;
         this.snackbar = snackbar;
         this.dialog = dialog;
-        this.versionHistory = ['1.2', 'Alpha 3'];
-        this.gameVersion = 'Alpha 3';
+        this.versionHistory = ['1.2', 'Alpha 3', 'Alpha 3.1'];
+        this.gameVersion = 'Alpha 3.1';
         this.autosaveInterval = 60000;
         this.lastAutosave = this.autosaveInterval;
         this.debugMode = false;
@@ -4930,6 +5133,10 @@ var SettingsService = /** @class */ (function () {
         this.mapLowFramerate = false;
         this.harvestDetailColor = '#a4ff89';
         this.workerDetailColor = '#ae89ff';
+        this.resourceAnimationColors = {};
+        this.resourceAnimationColors[_objects_entity__WEBPACK_IMPORTED_MODULE_11__["ResourceAnimationType"].PlayerSpawned] = '#a4ff89';
+        this.resourceAnimationColors[_objects_entity__WEBPACK_IMPORTED_MODULE_11__["ResourceAnimationType"].WorkerSpawned] = '#ae89ff';
+        this.resourceAnimationColors[_objects_entity__WEBPACK_IMPORTED_MODULE_11__["ResourceAnimationType"].Sold] = '#ffc089';
         this.loadGame();
         this.setAutosave();
     }
@@ -4991,13 +5198,14 @@ var SettingsService = /** @class */ (function () {
             settings: {
                 autosaveInterval: this.autosaveInterval,
                 debugMode: this.debugMode,
+                workersPaused: this.workersService.workersPaused,
+                hidePurchasedUpgrades: this.upgradesService.hidePurchasedUpgrades,
                 resourceBinds: this.resourceBinds,
                 visibleSources: this.messagesService.visibleSources,
                 enemiesActive: this.enemyService.enemiesActive,
                 slimInterface: this.slimInterface,
                 mapLowFramerate: this.mapLowFramerate,
-                harvestDetailColor: this.harvestDetailColor,
-                workerDetailColor: this.workerDetailColor
+                resourceAnimationColors: this.resourceAnimationColors
             },
             gameVersion: this.gameVersion
         };
@@ -5011,6 +5219,7 @@ var SettingsService = /** @class */ (function () {
                 harvestMilliseconds: resource.harvestMilliseconds,
                 sellable: resource.sellable,
                 sellsFor: resource.sellsFor,
+                autoSellCutoff: resource.autoSellCutoff,
                 resourceAccessible: resource.resourceAccessible
             });
         }
@@ -5050,13 +5259,19 @@ var SettingsService = /** @class */ (function () {
                 health: tile.health,
                 maxHealth: tile.maxHealth,
                 buildingRemovable: tile.buildingRemovable,
-                tileCropDetail: tile.tileCropDetail
+                tileCropDetail: tile.tileCropDetail,
+                statLevels: tile.statLevels,
+                statCosts: tile.statCosts
             };
             if (tile.resourceTileType !== undefined) {
                 tileData.resourceTileType = tile.resourceTileType;
             }
             if (tile.buildingTileType !== undefined) {
                 tileData.buildingTileType = tile.buildingTileType;
+            }
+            if (tile.market) {
+                tileData.sellInterval = tile.market.sellInterval;
+                tileData.sellQuantity = tile.market.sellQuantity;
             }
             saveData.tiles.push(tileData);
         }
@@ -5102,6 +5317,7 @@ var SettingsService = /** @class */ (function () {
         return btoa(JSON.stringify(saveData));
     };
     SettingsService.prototype.importSave = function (saveDataString) {
+        var _this = this;
         var backupSave = this.exportSave();
         try {
             var saveData = JSON.parse(atob(saveDataString));
@@ -5122,6 +5338,7 @@ var SettingsService = /** @class */ (function () {
                     resource.harvestMilliseconds = resourceData.harvestMilliseconds;
                     resource.sellable = resourceData.sellable;
                     resource.sellsFor = resourceData.sellsFor;
+                    resource.autoSellCutoff = resourceData.autoSellCutoff ? resourceData.autoSellCutoff : 0;
                     resource.resourceAccessible = resourceData.resourceAccessible;
                 }
             }
@@ -5168,16 +5385,41 @@ var SettingsService = /** @class */ (function () {
                     tile.buildingTileType = tileData.buildingTileType;
                     tile.buildingRemovable = tileData.buildingRemovable;
                     tile.tileCropDetail = tileData.tileCropDetail;
+                    tile.statLevels = tileData.statLevels;
+                    tile.statCosts = tileData.statCosts;
                 };
                 var this_1 = this;
                 for (var _h = 0, _j = saveData.tiles; _h < _j.length; _h++) {
                     var tileData = _j[_h];
                     _loop_1(tileData);
                 }
+                var marketTiles = saveData.tiles.filter(function (tile) { return tile.buildingTileType && _this.mapService.buildingTiles[tile.buildingTileType].subType === _objects_tile__WEBPACK_IMPORTED_MODULE_10__["BuildingSubType"].Market; });
+                for (var _k = 0, marketTiles_1 = marketTiles; _k < marketTiles_1.length; _k++) {
+                    var tileData = marketTiles_1[_k];
+                    var tile = this.mapService.tiledMap[tileData.id];
+                    var resourceType = void 0;
+                    switch (tileData.buildingTileType) {
+                        case _objects_tile__WEBPACK_IMPORTED_MODULE_10__["BuildingTileType"].WoodMarket: {
+                            resourceType = _objects_resource__WEBPACK_IMPORTED_MODULE_14__["ResourceType"].Wood;
+                            break;
+                        }
+                        case _objects_tile__WEBPACK_IMPORTED_MODULE_10__["BuildingTileType"].MineralMarket: {
+                            resourceType = _objects_resource__WEBPACK_IMPORTED_MODULE_14__["ResourceType"].Mineral;
+                            break;
+                        }
+                        case _objects_tile__WEBPACK_IMPORTED_MODULE_10__["BuildingTileType"].MetalMarket: {
+                            resourceType = _objects_resource__WEBPACK_IMPORTED_MODULE_14__["ResourceType"].Metal;
+                            break;
+                        }
+                    }
+                    tile.market = new _objects_tile__WEBPACK_IMPORTED_MODULE_10__["Market"](this.mapService, this.resourcesService, resourceType, tile, false);
+                    tile.market.sellInterval = tileData.sellInterval ? tileData.sellInterval : 1000;
+                    tile.market.sellQuantity = tileData.sellQuantity ? tileData.sellQuantity : 50;
+                }
             }
             if (saveData.enemies !== undefined) {
-                for (var _k = 0, _l = saveData.enemies; _k < _l.length; _k++) {
-                    var enemyData = _l[_k];
+                for (var _l = 0, _m = saveData.enemies; _l < _m.length; _l++) {
+                    var enemyData = _m[_l];
                     var tilePosition = this.mapService.clampTileCoordinates(enemyData.position.x, enemyData.position.y);
                     var tile = this.mapService.getTile(tilePosition[0], tilePosition[1]);
                     var enemy = new _objects_entity__WEBPACK_IMPORTED_MODULE_11__["Enemy"](enemyData.name, new _objects_vector__WEBPACK_IMPORTED_MODULE_13__["Vector"](enemyData.position.x, enemyData.position.y), tile, enemyData.health, enemyData.animationSpeed, enemyData.attack, enemyData.defense, enemyData.attackRange, enemyData.targetableBuildingTypes, enemyData.resourcesToSteal, enemyData.stealMax, enemyData.resourceCapacity);
@@ -5188,8 +5430,8 @@ var SettingsService = /** @class */ (function () {
                 }
             }
             if (saveData.fighters !== undefined) {
-                for (var _m = 0, _o = saveData.fighters; _m < _o.length; _m++) {
-                    var fighterData = _o[_m];
+                for (var _o = 0, _p = saveData.fighters; _o < _p.length; _o++) {
+                    var fighterData = _p[_o];
                     var tilePosition = this.mapService.clampTileCoordinates(fighterData.position.x, fighterData.position.y);
                     var tile = this.mapService.getTile(tilePosition[0], tilePosition[1]);
                     var fighter = new _objects_entity__WEBPACK_IMPORTED_MODULE_11__["Fighter"](fighterData.name, new _objects_vector__WEBPACK_IMPORTED_MODULE_13__["Vector"](fighterData.position.x, fighterData.position.y), tile, fighterData.health, fighterData.animationSpeed, fighterData.attack, fighterData.defense, fighterData.attackRange, fighterData.description, fighterData.cost ? fighterData.cost : 50, fighterData.moveable, fighterData.fireMilliseconds ? fighterData.fireMilliseconds : 1000, this.resourcesService, this.enemyService, this.mapService);
@@ -5206,6 +5448,9 @@ var SettingsService = /** @class */ (function () {
             if (saveData.settings !== undefined) {
                 this.autosaveInterval = saveData.settings.autosaveInterval ? saveData.settings.autosaveInterval : 900000;
                 this.debugMode = saveData.settings.debugMode ? saveData.settings.debugMode : false;
+                this.workersService.workersPaused = saveData.settings.workersPaused ? saveData.settings.workersPaused : false;
+                this.upgradesService.hidePurchasedUpgrades =
+                    saveData.settings.hidePurchasedUpgrades ? saveData.settings.hidePurchasedUpgrades : false;
                 this.resourceBinds = saveData.settings.resourceBinds ? saveData.settings.resourceBinds : [1, 7, 8, 13, 26, 27, 2, 3, 4, 5];
                 this.messagesService.visibleSources = saveData.settings.visibleSources ? saveData.settings.visibleSources :
                     [_objects_message__WEBPACK_IMPORTED_MODULE_12__["MessageSource"].Admin, _objects_message__WEBPACK_IMPORTED_MODULE_12__["MessageSource"].Buildings, _objects_message__WEBPACK_IMPORTED_MODULE_12__["MessageSource"].Main, _objects_message__WEBPACK_IMPORTED_MODULE_12__["MessageSource"].Enemy,
@@ -5216,6 +5461,9 @@ var SettingsService = /** @class */ (function () {
                 this.mapLowFramerate = saveData.settings.mapLowFramerate ? saveData.settings.mapLowFramerate : false;
                 this.harvestDetailColor = saveData.settings.harvestDetailColor ? saveData.settings.harvestDetailColor : '#a4ff89';
                 this.workerDetailColor = saveData.settings.workerDetailColor ? saveData.settings.workerDetailColor : '#ae89ff';
+                if (saveData.settings.resourceAnimationColors) {
+                    this.resourceAnimationColors = saveData.settings.resourceAnimationColors;
+                }
             }
             this.mapService.calculateResourceConnections();
             return true;
@@ -5229,14 +5477,25 @@ var SettingsService = /** @class */ (function () {
         }
     };
     SettingsService.prototype.processVersionDifferences = function (saveData) {
-        switch (saveData.gameVersion) {
-            case '1.2': {
-                for (var _i = 0, _a = saveData.resources; _i < _a.length; _i++) {
-                    var resourceData = _a[_i];
-                    var resource = this.resourcesService.getResource(resourceData.id);
-                    resourceData.sellsFor = resource.sellsFor;
-                }
+        var _this = this;
+        var oldVersionIndex = this.versionHistory.indexOf(saveData.gameVersion);
+        if (oldVersionIndex <= this.versionHistory.indexOf('1.2')) {
+            for (var _i = 0, _a = saveData.resources; _i < _a.length; _i++) {
+                var resourceData = _a[_i];
+                var resource = this.resourcesService.getResource(resourceData.id);
+                resourceData.sellsFor = resource.sellsFor;
             }
+        }
+        if (oldVersionIndex <= this.versionHistory.indexOf('Alpha 3')) {
+            saveData.settings.resourceAnimationColors = {};
+            saveData.settings.resourceAnimationColors[_objects_entity__WEBPACK_IMPORTED_MODULE_11__["ResourceAnimationType"].PlayerSpawned] = saveData.settings.harvestDetailColor;
+            saveData.settings.resourceAnimationColors[_objects_entity__WEBPACK_IMPORTED_MODULE_11__["ResourceAnimationType"].WorkerSpawned] = saveData.settings.workerDetailColor;
+            saveData.settings.resourceAnimationColors[_objects_entity__WEBPACK_IMPORTED_MODULE_11__["ResourceAnimationType"].Sold] = '#ffc089';
+            saveData.tiles.map(function (tileData) {
+                var isMarket = _this.mapService.buildingTiles[tileData.buildingTileType].subType === _objects_tile__WEBPACK_IMPORTED_MODULE_10__["BuildingSubType"].Market;
+                tileData.statLevels = isMarket ? { 'MAXHEALTH': 1, 'SELLAMOUNT': 1, 'SELLRATE': 1 } : { 'MAXHEALTH': 1 };
+                tileData.statCosts = isMarket ? { 'MAXHEALTH': 1500, 'SELLAMOUNT': 1500, 'SELLRATE': 1500 } : { 'MAXHEALTH': 1500 };
+            });
         }
         return saveData;
     };
@@ -5305,6 +5564,10 @@ var StoreService = /** @class */ (function () {
             amount = resource.amount;
         }
         this.resourcesService.addResourceAmount(resource.id, -amount);
+        this.resourcesService.addResourceAmount(0, amount * resource.sellsFor);
+    };
+    StoreService.prototype.finishResourceAnimation = function (id, amount) {
+        var resource = this.resourcesService.getResource(id);
         this.resourcesService.addResourceAmount(0, amount * resource.sellsFor);
     };
     StoreService.prototype.canSellResource = function (id, amount) {
@@ -5558,7 +5821,7 @@ var TooltipService = /** @class */ (function () {
         var resourceWorker = this.workersService.getResourceWorker(resourceId);
         return resource.workerVerb + " " + Math.floor(resourceWorker.workerYield * 100) / 100 + " " +
             ("" + resource.workerNoun + (resourceWorker.workerYield === 1 ? '' : 's') + " per second.\n") +
-            ("Total cost: " + resourceWorker.recurringCost * resourceWorker.workerCount + " gold per second.");
+            ("Cost: " + resourceWorker.recurringCost + " per worker per second (" + resourceWorker.recurringCost * resourceWorker.workerCount + " total).");
     };
     TooltipService = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
@@ -5614,6 +5877,7 @@ var UpgradesService = /** @class */ (function () {
         this.workersService = workersService;
         this.messagesService = messagesService;
         this.upgrades = baseUpgrades;
+        this.hidePurchasedUpgrades = true;
     }
     UpgradesService.prototype.getUpgrade = function (id) {
         return this.upgrades.find(function (upgrade) { return upgrade.id === id; });
@@ -5804,10 +6068,11 @@ var WorkersService = /** @class */ (function () {
         this.mapService = mapService;
         this.messagesService = messagesService;
         this.workers = baseWorkers;
+        this.workersPaused = false;
         this.workerDelay = 1000;
     }
     WorkersService.prototype.tick = function (elapsed, deltaTime) {
-        if (elapsed - this.lastWorkerTime < this.workerDelay) {
+        if (this.workersPaused || elapsed - this.lastWorkerTime < this.workerDelay) {
             return;
         }
         this.lastWorkerTime = elapsed;
@@ -5822,7 +6087,7 @@ var WorkersService = /** @class */ (function () {
                 if (!this.canAffordToHarvest(resourceWorker.resourceId)) {
                     this.log("No more money available for " + this.resourcesService.getResource(resourceWorker.resourceId).name + ".");
                 }
-                this.mapService.spawnResourceAnimation(resourceWorker.resourceId, resourceWorker.workerYield * resourceWorker.workerCount, false);
+                this.mapService.spawnHarvestedResourceAnimation(resourceWorker.resourceId, resourceWorker.workerYield * resourceWorker.workerCount, false);
             }
         }
     };
@@ -5930,7 +6195,7 @@ module.exports = [{"name":"Sentry","description":"A stationary archer, capable o
 /*! exports provided: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, default */
 /***/ (function(module) {
 
-module.exports = [{"id":0,"name":"gold","resourceType":"CURRENCY","iconPath":"./assets/sprites/coin.png","amount":0,"amountTravelling":0,"resourceConsumes":[],"harvestable":false,"pathAvailable":false,"sellable":false,"resourceDescription":"Shiny and valuable.","workerVerb":"","workerNoun":"gold ore","resourceAccessible":true,"resourceTier":0,"previousTier":0,"harvestYield":0,"harvestMilliseconds":0,"workerYield":0,"resourceBeingStolen":false,"sellsFor":0},{"id":1,"name":"oak","resourceType":"WOOD","iconPath":"./assets/sprites/oak.png","amount":0,"amountTravelling":0,"resourceConsumes":[],"harvestable":true,"harvestYield":1,"harvestMilliseconds":1000,"workerYield":1,"sellable":true,"resourceBeingStolen":false,"sellsFor":10,"resourceDescription":"Sturdy oak logs.","workerVerb":"Fells","workerNoun":"oak tree","resourceAccessible":true,"resourceTier":0,"previousTier":0},{"id":7,"name":"pine","resourceType":"WOOD","iconPath":"./assets/sprites/pine.png","amount":0,"amountTravelling":0,"resourceConsumes":[],"harvestable":false,"pathAvailable":false,"harvestYield":1,"harvestMilliseconds":1250,"workerYield":1,"sellable":true,"resourceBeingStolen":false,"sellsFor":12,"resourceDescription":"Strong pine logs.","workerVerb":"Fells","workerNoun":"pine tree","resourceAccessible":false,"resourceTier":1,"previousTier":0},{"id":8,"name":"birch","resourceType":"WOOD","iconPath":"./assets/sprites/birch.png","amount":0,"amountTravelling":0,"resourceConsumes":[],"harvestable":false,"pathAvailable":false,"harvestYield":1,"harvestMilliseconds":1500,"workerYield":1,"sellable":true,"resourceBeingStolen":false,"sellsFor":15,"resourceDescription":"Sometimes it feels like it's watching you...","workerVerb":"Fells","workerNoun":"birch tree","resourceAccessible":false,"resourceTier":2,"previousTier":1},{"id":9,"name":"eucalyptus","resourceType":"WOOD","iconPath":"./assets/sprites/eucalyptus.png","amount":0,"amountTravelling":0,"resourceConsumes":[],"harvestable":false,"pathAvailable":false,"harvestYield":1,"harvestMilliseconds":2000,"workerYield":1,"sellable":true,"resourceBeingStolen":false,"sellsFor":20,"resourceDescription":"Logs as strong as their name is long.","workerVerb":"Fells","workerNoun":"eucalyptus tree","resourceAccessible":false,"resourceTier":3,"previousTier":2},{"id":15,"name":"willow","resourceType":"WOOD","iconPath":"./assets/sprites/willow.png","amount":0,"amountTravelling":0,"resourceConsumes":[],"harvestable":false,"pathAvailable":false,"harvestYield":1,"harvestMilliseconds":2500,"workerYield":1,"sellable":true,"resourceBeingStolen":false,"sellsFor":35,"resourceDescription":"The saddest tree in the forest (because you chopped down its parents).","workerVerb":"Fells","workerNoun":"willow tree","resourceAccessible":false,"resourceTier":4,"previousTier":3},{"id":25,"name":"teak","resourceType":"WOOD","iconPath":"./assets/sprites/teak.png","amount":0,"amountTravelling":0,"resourceConsumes":[],"harvestable":false,"pathAvailable":false,"harvestYield":1,"harvestMilliseconds":3000,"workerYield":1,"sellable":true,"resourceBeingStolen":false,"sellsFor":40,"resourceDescription":"Bright, thin logs; surprisingly resillient considering their appearance.","workerVerb":"Fells","workerNoun":"teak tree","resourceAccessible":false,"resourceTier":5,"previousTier":4},{"id":16,"name":"ent soul","resourceType":"WOOD","iconPath":"./assets/sprites/ent_soul.png","amount":0,"amountTravelling":0,"resourceConsumes":[{"resourceId":1,"cost":10},{"resourceId":7,"cost":10},{"resourceId":8,"cost":10},{"resourceId":9,"cost":10},{"resourceId":15,"cost":10},{"resourceId":25,"cost":10}],"harvestable":false,"pathAvailable":false,"harvestYield":1,"harvestMilliseconds":8000,"workerYield":1,"sellable":false,"resourceBeingStolen":false,"sellsFor":50,"resourceDescription":"The spirit of a long-dead ent, still contained where it last took root.","workerVerb":"Releases","workerNoun":"ent spirit","resourceAccessible":false,"resourceTier":6,"previousTier":5},{"id":17,"name":"reanimated ent","resourceType":"WOOD","iconPath":"./assets/sprites/reanimated_ent.png","amount":0,"amountTravelling":0,"resourceConsumes":[{"resourceId":16,"cost":1}],"harvestable":false,"pathAvailable":false,"harvestYield":1,"harvestMilliseconds":20000,"workerYield":1,"sellable":false,"resourceBeingStolen":false,"sellsFor":100,"resourceDescription":"An ancient ent warrior, given life once more to fight for you.","workerVerb":"Reanimates","workerNoun":"ent","resourceAccessible":false,"resourceTier":7,"previousTier":6},{"id":13,"name":"Stone","resourceType":"MINERAL","iconPath":"./assets/sprites/stone.png","amount":0,"amountTravelling":0,"resourceConsumes":[],"harvestable":false,"pathAvailable":false,"harvestYield":1,"harvestMilliseconds":1000,"workerYield":1,"sellable":true,"resourceBeingStolen":false,"sellsFor":10,"resourceDescription":"Hard and sturdy, well suitied to basic construction projects.","workerVerb":"Mines","workerNoun":"stone","resourceAccessible":true,"resourceTier":0,"previousTier":0},{"id":26,"name":"Graphite","resourceType":"MINERAL","amount":0,"amountTravelling":0,"iconPath":"./assets/sprites/graphite.png","resourceConsumes":[],"harvestable":false,"pathAvailable":false,"harvestYield":1,"harvestMilliseconds":2500,"workerYield":1,"sellable":true,"resourceBeingStolen":false,"sellsFor":25,"resourceDescription":"A rough mineral with many uses.","workerVerb":"Mines","workerNoun":"graphite","resourceAccessible":false,"resourceTier":1,"previousTier":0},{"id":27,"name":"Limestone","resourceType":"MINERAL","amount":0,"amountTravelling":0,"iconPath":"./assets/sprites/limestone.png","resourceConsumes":[],"harvestable":false,"pathAvailable":false,"harvestYield":1,"harvestMilliseconds":3000,"workerYield":1,"sellable":true,"resourceBeingStolen":false,"sellsFor":35,"resourceDescription":"Hardened stone with a hint of lime.","workerVerb":"Mines","workerNoun":"limestone","resourceAccessible":false,"resourceTier":2,"previousTier":1},{"id":28,"name":"Marble","resourceType":"MINERAL","amount":0,"amountTravelling":0,"iconPath":"./assets/sprites/marble.png","resourceConsumes":[],"harvestable":false,"pathAvailable":false,"harvestYield":1,"harvestMilliseconds":4000,"workerYield":1,"sellable":true,"resourceBeingStolen":false,"sellsFor":50,"resourceDescription":"Beautiful, crystalline rock. Highly valued for construction projects.","workerVerb":"Mines","workerNoun":"marble","resourceAccessible":false,"resourceTier":3,"previousTier":2},{"id":29,"name":"Quartz","resourceType":"MINERAL","amount":0,"amountTravelling":0,"iconPath":"./assets/sprites/quartz.png","resourceConsumes":[],"harvestable":false,"pathAvailable":false,"harvestYield":1,"harvestMilliseconds":5000,"workerYield":1,"sellable":true,"resourceBeingStolen":false,"sellsFor":75,"resourceDescription":"A bright, shiny structure hides under the rock's rough surface.","workerVerb":"Mines","workerNoun":"qaurtz","resourceAccessible":false,"resourceTier":4,"previousTier":3},{"id":30,"name":"Obsidian","resourceType":"MINERAL","amount":0,"amountTravelling":0,"iconPath":"./assets/sprites/obsidian.png","resourceConsumes":[],"harvestable":false,"pathAvailable":false,"harvestYield":1,"harvestMilliseconds":6500,"workerYield":1,"sellable":true,"resourceBeingStolen":false,"sellsFor":125,"resourceDescription":"Hardened rock formed in the heart of a volcano.","workerVerb":"Mines","workerNoun":"obsidian","resourceAccessible":false,"resourceTier":5,"previousTier":4},{"id":31,"name":"Diamond","resourceType":"MINERAL","amount":0,"amountTravelling":0,"iconPath":"./assets/sprites/diamond.png","resourceConsumes":[],"harvestable":false,"pathAvailable":false,"harvestYield":1,"harvestMilliseconds":7500,"workerYield":1,"sellable":true,"resourceBeingStolen":false,"sellsFor":175,"resourceDescription":"An incredibly beautiful and tough resource.","workerVerb":"Mines","workerNoun":"diamond","resourceAccessible":false,"resourceTier":6,"previousTier":5},{"id":2,"name":"copper ore","resourceType":"METAL","iconPath":"./assets/sprites/copper_ore.png","amount":0,"amountTravelling":0,"resourceConsumes":[],"harvestable":false,"pathAvailable":false,"harvestYield":1,"harvestMilliseconds":1250,"workerYield":1,"sellable":true,"resourceBeingStolen":false,"sellsFor":10,"resourceDescription":"Can be forged into bronze along with tin.","workerVerb":"Mines","workerNoun":"copper ore","resourceAccessible":true,"resourceTier":0,"previousTier":0},{"id":3,"name":"tin ore","resourceType":"METAL","iconPath":"./assets/sprites/tin_ore.png","amount":0,"amountTravelling":0,"resourceConsumes":[],"harvestable":false,"pathAvailable":false,"harvestYield":1,"harvestMilliseconds":1250,"workerYield":1,"sellable":true,"resourceBeingStolen":false,"sellsFor":10,"resourceDescription":"Can be forged into bronze along with copper.","workerVerb":"Mines","workerNoun":"tin ore","resourceAccessible":true,"resourceTier":0,"previousTier":0},{"id":4,"name":"bronze ingot","resourceType":"METAL","iconPath":"./assets/sprites/bronze_ingot.png","amount":0,"amountTravelling":0,"resourceConsumes":[{"resourceId":2,"cost":1},{"resourceId":3,"cost":1}],"harvestable":true,"harvestYield":1,"harvestMilliseconds":2000,"workerYield":1,"sellable":true,"resourceBeingStolen":false,"sellsFor":15,"resourceDescription":"Somewhat brittle ingots.","workerVerb":"Forges","workerNoun":"bronze ingot","resourceAccessible":false,"resourceTier":1,"previousTier":0},{"id":5,"name":"iron ore","resourceType":"METAL","iconPath":"./assets/sprites/iron_ore.png","amount":0,"amountTravelling":0,"resourceConsumes":[],"harvestable":false,"pathAvailable":false,"harvestYield":1,"harvestMilliseconds":2000,"workerYield":1,"sellable":true,"resourceBeingStolen":false,"sellsFor":20,"resourceDescription":"Unrefined extracts of iron.","workerVerb":"Mines","workerNoun":"iron ore","resourceAccessible":false,"resourceTier":2,"previousTier":1},{"id":6,"name":"iron ingot","resourceType":"METAL","iconPath":"./assets/sprites/iron_ingot.png","amount":0,"amountTravelling":0,"resourceConsumes":[{"resourceId":5,"cost":1}],"harvestable":true,"harvestYield":1,"harvestMilliseconds":3000,"workerYield":1,"sellable":true,"resourceBeingStolen":false,"sellsFor":25,"resourceDescription":"Dim but sturdy ingots.","workerVerb":"Forges","workerNoun":"iron ingot","resourceAccessible":false,"resourceTier":3,"previousTier":2},{"id":10,"name":"steel ingot","resourceType":"METAL","iconPath":"./assets/sprites/steel_ingot.png","amount":0,"amountTravelling":0,"resourceConsumes":[{"resourceId":6,"cost":2}],"harvestable":true,"harvestYield":1,"harvestMilliseconds":4000,"workerYield":1,"sellable":true,"resourceBeingStolen":false,"sellsFor":40,"resourceDescription":"Refined and purified iron.","workerVerb":"Forges","workerNoun":"steel ingot","resourceAccessible":false,"resourceTier":4,"previousTier":3},{"id":11,"name":"gold ore","resourceType":"METAL","iconPath":"./assets/sprites/gold_ore.png","amount":0,"amountTravelling":0,"resourceConsumes":[],"harvestable":false,"pathAvailable":false,"harvestYield":1,"harvestMilliseconds":2500,"workerYield":1,"sellable":true,"resourceBeingStolen":false,"sellsFor":35,"resourceDescription":"Unrefined extracts of gold.","workerVerb":"Mines","workerNoun":"gold","resourceAccessible":false,"resourceTier":3,"previousTier":2},{"id":12,"name":"gold ingot","resourceType":"METAL","iconPath":"./assets/sprites/gold_ingot.png","amount":0,"amountTravelling":0,"resourceConsumes":[{"resourceId":11,"cost":1}],"harvestable":true,"harvestYield":1,"harvestMilliseconds":4000,"workerYield":1,"sellable":true,"resourceBeingStolen":false,"sellsFor":55,"resourceDescription":"Highly valuable and malleable.","workerVerb":"Forges","workerNoun":"gold ingot","resourceAccessible":false,"resourceTier":4,"previousTier":3},{"id":18,"name":"latinum ore","resourceType":"METAL","iconPath":"./assets/sprites/latinum_ore.png","amount":0,"amountTravelling":0,"resourceConsumes":[],"harvestable":false,"pathAvailable":false,"harvestYield":1,"harvestMilliseconds":4500,"workerYield":1,"sellable":true,"resourceBeingStolen":false,"sellsFor":65,"resourceDescription":"Said to be highly valued by indivudals with large ears.","workerVerb":"Mines","workerNoun":"latinum ore","resourceAccessible":false,"resourceTier":4,"previousTier":3},{"id":19,"name":"latinum ingot","resourceType":"METAL","iconPath":"./assets/sprites/latinum_ingot.png","amount":0,"amountTravelling":0,"resourceConsumes":[{"resourceId":10,"cost":1},{"resourceId":12,"cost":1},{"resourceId":18,"cost":1}],"harvestable":true,"harvestYield":1,"harvestMilliseconds":5000,"workerYield":1,"sellable":true,"resourceBeingStolen":false,"sellsFor":85,"resourceDescription":"QUARK!!!","workerVerb":"Forges","workerNoun":"latinum ingot","resourceAccessible":false,"resourceTier":5,"previousTier":4},{"id":20,"name":"unbelievium ore","resourceType":"METAL","iconPath":"./assets/sprites/unbelievium_ore.png","amount":0,"amountTravelling":0,"resourceConsumes":[],"harvestable":false,"pathAvailable":false,"harvestYield":1,"harvestMilliseconds":5500,"workerYield":1,"sellable":true,"resourceBeingStolen":false,"sellsFor":100,"resourceDescription":"I can't believe it's not unobtainium!","workerVerb":"Mines","workerNoun":"unbelievium ore","resourceAccessible":false,"resourceTier":5,"previousTier":4},{"id":21,"name":"lustrial ore","resourceType":"METAL","iconPath":"./assets/sprites/lustrial_ore.png","amount":0,"amountTravelling":0,"resourceConsumes":[],"harvestable":false,"pathAvailable":false,"harvestYield":1,"harvestMilliseconds":5500,"workerYield":1,"sellable":true,"resourceBeingStolen":false,"sellsFor":100,"resourceDescription":"Even in its unrefined form, it shines as bright as the sun.","workerVerb":"Mines","workerNoun":"lustrial ore","resourceAccessible":false,"resourceTier":5,"previousTier":4},{"id":22,"name":"spectrus ore","resourceType":"METAL","iconPath":"./assets/sprites/spectrus_ore.png","amount":0,"amountTravelling":0,"resourceConsumes":[],"harvestable":false,"pathAvailable":false,"harvestYield":1,"harvestMilliseconds":5500,"workerYield":1,"sellable":true,"resourceBeingStolen":false,"sellsFor":100,"resourceDescription":"A peculiar energy eminates from the rock...","workerVerb":"Mines","workerNoun":"spectrus ore","resourceAccessible":false,"resourceTier":5,"previousTier":4},{"id":23,"name":"temprous ingot","resourceType":"METAL","iconPath":"./assets/sprites/temprous_ingot.png","amount":0,"amountTravelling":0,"resourceConsumes":[{"resourceId":19,"cost":2},{"resourceId":20,"cost":2},{"resourceId":21,"cost":2},{"resourceId":22,"cost":2}],"harvestable":true,"harvestYield":1,"harvestMilliseconds":8000,"workerYield":1,"sellable":true,"resourceBeingStolen":false,"sellsFor":175,"resourceDescription":"Could this metal hold the secret of time itself?","workerVerb":"Forges","workerNoun":"temprous ingot","resourceAccessible":false,"resourceTier":6,"previousTier":5},{"id":24,"name":"refined temprous","resourceType":"METAL","iconPath":"./assets/sprites/refined_temprous.png","amount":0,"amountTravelling":0,"resourceConsumes":[{"resourceId":23,"cost":15},{"resourceId":31,"cost":30}],"harvestable":true,"harvestYield":1,"harvestMilliseconds":15000,"workerYield":1,"sellable":true,"resourceBeingStolen":false,"sellsFor":350,"resourceDescription":"Memories of ages past imbue the metal with seemingly endless power.","workerVerb":"Refines","workerNoun":"temprous ingot","resourceAccessible":false,"resourceTier":7,"previousTier":6}];
+module.exports = [{"id":0,"name":"gold","resourceType":"CURRENCY","iconPath":"./assets/sprites/coin.png","amount":0,"amountTravelling":0,"resourceConsumes":[],"harvestable":false,"pathAvailable":false,"sellable":false,"autoSellCutoff":0,"resourceDescription":"Shiny and valuable.","workerVerb":"","workerNoun":"gold ore","resourceAccessible":true,"resourceTier":0,"previousTier":0,"harvestYield":0,"harvestMilliseconds":0,"workerYield":0,"resourceBeingStolen":false,"sellsFor":0},{"id":1,"name":"oak","resourceType":"WOOD","iconPath":"./assets/sprites/oak.png","amount":0,"amountTravelling":0,"resourceConsumes":[],"harvestable":true,"harvestYield":1,"harvestMilliseconds":1000,"workerYield":1,"sellable":true,"resourceBeingStolen":false,"sellsFor":10,"autoSellCutoff":0,"resourceDescription":"Sturdy oak logs.","workerVerb":"Fells","workerNoun":"oak tree","resourceAccessible":true,"resourceTier":0,"previousTier":0},{"id":7,"name":"pine","resourceType":"WOOD","iconPath":"./assets/sprites/pine.png","amount":0,"amountTravelling":0,"resourceConsumes":[],"harvestable":false,"pathAvailable":false,"harvestYield":1,"harvestMilliseconds":1250,"workerYield":1,"sellable":true,"resourceBeingStolen":false,"sellsFor":12,"autoSellCutoff":0,"resourceDescription":"Strong pine logs.","workerVerb":"Fells","workerNoun":"pine tree","resourceAccessible":false,"resourceTier":1,"previousTier":0},{"id":8,"name":"birch","resourceType":"WOOD","iconPath":"./assets/sprites/birch.png","amount":0,"amountTravelling":0,"resourceConsumes":[],"harvestable":false,"pathAvailable":false,"harvestYield":1,"harvestMilliseconds":1500,"workerYield":1,"sellable":true,"resourceBeingStolen":false,"sellsFor":15,"autoSellCutoff":0,"resourceDescription":"Sometimes it feels like it's watching you...","workerVerb":"Fells","workerNoun":"birch tree","resourceAccessible":false,"resourceTier":2,"previousTier":1},{"id":9,"name":"eucalyptus","resourceType":"WOOD","iconPath":"./assets/sprites/eucalyptus.png","amount":0,"amountTravelling":0,"resourceConsumes":[],"harvestable":false,"pathAvailable":false,"harvestYield":1,"harvestMilliseconds":2000,"workerYield":1,"sellable":true,"resourceBeingStolen":false,"sellsFor":20,"autoSellCutoff":0,"resourceDescription":"Logs as strong as their name is long.","workerVerb":"Fells","workerNoun":"eucalyptus tree","resourceAccessible":false,"resourceTier":3,"previousTier":2},{"id":15,"name":"willow","resourceType":"WOOD","iconPath":"./assets/sprites/willow.png","amount":0,"amountTravelling":0,"resourceConsumes":[],"harvestable":false,"pathAvailable":false,"harvestYield":1,"harvestMilliseconds":2500,"workerYield":1,"sellable":true,"resourceBeingStolen":false,"sellsFor":35,"autoSellCutoff":0,"resourceDescription":"The saddest tree in the forest (because you chopped down its parents).","workerVerb":"Fells","workerNoun":"willow tree","resourceAccessible":false,"resourceTier":4,"previousTier":3},{"id":25,"name":"teak","resourceType":"WOOD","iconPath":"./assets/sprites/teak.png","amount":0,"amountTravelling":0,"resourceConsumes":[],"harvestable":false,"pathAvailable":false,"harvestYield":1,"harvestMilliseconds":3000,"workerYield":1,"sellable":true,"resourceBeingStolen":false,"sellsFor":40,"autoSellCutoff":0,"resourceDescription":"Bright, thin logs; surprisingly resillient considering their appearance.","workerVerb":"Fells","workerNoun":"teak tree","resourceAccessible":false,"resourceTier":5,"previousTier":4},{"id":16,"name":"ent soul","resourceType":"WOOD","iconPath":"./assets/sprites/ent_soul.png","amount":0,"amountTravelling":0,"resourceConsumes":[{"resourceId":1,"cost":10},{"resourceId":7,"cost":10},{"resourceId":8,"cost":10},{"resourceId":9,"cost":10},{"resourceId":15,"cost":10},{"resourceId":25,"cost":10}],"harvestable":false,"pathAvailable":false,"harvestYield":1,"harvestMilliseconds":8000,"workerYield":1,"sellable":false,"resourceBeingStolen":false,"sellsFor":50,"autoSellCutoff":0,"resourceDescription":"The spirit of a long-dead ent, still contained where it last took root.","workerVerb":"Releases","workerNoun":"ent spirit","resourceAccessible":false,"resourceTier":6,"previousTier":5},{"id":17,"name":"reanimated ent","resourceType":"WOOD","iconPath":"./assets/sprites/reanimated_ent.png","amount":0,"amountTravelling":0,"resourceConsumes":[{"resourceId":16,"cost":1}],"harvestable":false,"pathAvailable":false,"harvestYield":1,"harvestMilliseconds":20000,"workerYield":1,"sellable":false,"resourceBeingStolen":false,"sellsFor":100,"autoSellCutoff":0,"resourceDescription":"An ancient ent warrior, given life once more to fight for you.","workerVerb":"Reanimates","workerNoun":"ent","resourceAccessible":false,"resourceTier":7,"previousTier":6},{"id":13,"name":"Stone","resourceType":"MINERAL","iconPath":"./assets/sprites/stone.png","amount":0,"amountTravelling":0,"resourceConsumes":[],"harvestable":false,"pathAvailable":false,"harvestYield":1,"harvestMilliseconds":1000,"workerYield":1,"sellable":true,"resourceBeingStolen":false,"sellsFor":10,"autoSellCutoff":0,"resourceDescription":"Hard and sturdy, well suitied to basic construction projects.","workerVerb":"Mines","workerNoun":"stone","resourceAccessible":true,"resourceTier":0,"previousTier":0},{"id":26,"name":"Graphite","resourceType":"MINERAL","amount":0,"amountTravelling":0,"iconPath":"./assets/sprites/graphite.png","resourceConsumes":[],"harvestable":false,"pathAvailable":false,"harvestYield":1,"harvestMilliseconds":2500,"workerYield":1,"sellable":true,"resourceBeingStolen":false,"sellsFor":25,"autoSellCutoff":0,"resourceDescription":"A rough mineral with many uses.","workerVerb":"Mines","workerNoun":"graphite","resourceAccessible":false,"resourceTier":1,"previousTier":0},{"id":27,"name":"Limestone","resourceType":"MINERAL","amount":0,"amountTravelling":0,"iconPath":"./assets/sprites/limestone.png","resourceConsumes":[],"harvestable":false,"pathAvailable":false,"harvestYield":1,"harvestMilliseconds":3000,"workerYield":1,"sellable":true,"resourceBeingStolen":false,"sellsFor":35,"autoSellCutoff":0,"resourceDescription":"Hardened stone with a hint of lime.","workerVerb":"Mines","workerNoun":"limestone","resourceAccessible":false,"resourceTier":2,"previousTier":1},{"id":28,"name":"Marble","resourceType":"MINERAL","amount":0,"amountTravelling":0,"iconPath":"./assets/sprites/marble.png","resourceConsumes":[],"harvestable":false,"pathAvailable":false,"harvestYield":1,"harvestMilliseconds":4000,"workerYield":1,"sellable":true,"resourceBeingStolen":false,"sellsFor":50,"autoSellCutoff":0,"resourceDescription":"Beautiful, crystalline rock. Highly valued for construction projects.","workerVerb":"Mines","workerNoun":"marble","resourceAccessible":false,"resourceTier":3,"previousTier":2},{"id":29,"name":"Quartz","resourceType":"MINERAL","amount":0,"amountTravelling":0,"iconPath":"./assets/sprites/quartz.png","resourceConsumes":[],"harvestable":false,"pathAvailable":false,"harvestYield":1,"harvestMilliseconds":5000,"workerYield":1,"sellable":true,"resourceBeingStolen":false,"sellsFor":75,"autoSellCutoff":0,"resourceDescription":"A bright, shiny structure hides under the rock's rough surface.","workerVerb":"Mines","workerNoun":"qaurtz","resourceAccessible":false,"resourceTier":4,"previousTier":3},{"id":30,"name":"Obsidian","resourceType":"MINERAL","amount":0,"amountTravelling":0,"iconPath":"./assets/sprites/obsidian.png","resourceConsumes":[],"harvestable":false,"pathAvailable":false,"harvestYield":1,"harvestMilliseconds":6500,"workerYield":1,"sellable":true,"resourceBeingStolen":false,"sellsFor":125,"autoSellCutoff":0,"resourceDescription":"Hardened rock formed in the heart of a volcano.","workerVerb":"Mines","workerNoun":"obsidian","resourceAccessible":false,"resourceTier":5,"previousTier":4},{"id":31,"name":"Diamond","resourceType":"MINERAL","amount":0,"amountTravelling":0,"iconPath":"./assets/sprites/diamond.png","resourceConsumes":[],"harvestable":false,"pathAvailable":false,"harvestYield":1,"harvestMilliseconds":7500,"workerYield":1,"sellable":true,"resourceBeingStolen":false,"sellsFor":175,"autoSellCutoff":0,"resourceDescription":"An incredibly beautiful and tough resource.","workerVerb":"Mines","workerNoun":"diamond","resourceAccessible":false,"resourceTier":6,"previousTier":5},{"id":2,"name":"copper ore","resourceType":"METAL","iconPath":"./assets/sprites/copper_ore.png","amount":0,"amountTravelling":0,"resourceConsumes":[],"harvestable":false,"pathAvailable":false,"harvestYield":1,"harvestMilliseconds":1250,"workerYield":1,"sellable":true,"resourceBeingStolen":false,"sellsFor":10,"autoSellCutoff":0,"resourceDescription":"Can be forged into bronze along with tin.","workerVerb":"Mines","workerNoun":"copper ore","resourceAccessible":true,"resourceTier":0,"previousTier":0},{"id":3,"name":"tin ore","resourceType":"METAL","iconPath":"./assets/sprites/tin_ore.png","amount":0,"amountTravelling":0,"resourceConsumes":[],"harvestable":false,"pathAvailable":false,"harvestYield":1,"harvestMilliseconds":1250,"workerYield":1,"sellable":true,"resourceBeingStolen":false,"sellsFor":10,"autoSellCutoff":0,"resourceDescription":"Can be forged into bronze along with copper.","workerVerb":"Mines","workerNoun":"tin ore","resourceAccessible":true,"resourceTier":0,"previousTier":0},{"id":4,"name":"bronze ingot","resourceType":"METAL","iconPath":"./assets/sprites/bronze_ingot.png","amount":0,"amountTravelling":0,"resourceConsumes":[{"resourceId":2,"cost":1},{"resourceId":3,"cost":1}],"harvestable":true,"harvestYield":1,"harvestMilliseconds":2000,"workerYield":1,"sellable":true,"resourceBeingStolen":false,"sellsFor":15,"autoSellCutoff":0,"resourceDescription":"Somewhat brittle ingots.","workerVerb":"Forges","workerNoun":"bronze ingot","resourceAccessible":false,"resourceTier":1,"previousTier":0},{"id":5,"name":"iron ore","resourceType":"METAL","iconPath":"./assets/sprites/iron_ore.png","amount":0,"amountTravelling":0,"resourceConsumes":[],"harvestable":false,"pathAvailable":false,"harvestYield":1,"harvestMilliseconds":2000,"workerYield":1,"sellable":true,"resourceBeingStolen":false,"sellsFor":20,"autoSellCutoff":0,"resourceDescription":"Unrefined extracts of iron.","workerVerb":"Mines","workerNoun":"iron ore","resourceAccessible":false,"resourceTier":2,"previousTier":1},{"id":6,"name":"iron ingot","resourceType":"METAL","iconPath":"./assets/sprites/iron_ingot.png","amount":0,"amountTravelling":0,"resourceConsumes":[{"resourceId":5,"cost":1}],"harvestable":true,"harvestYield":1,"harvestMilliseconds":3000,"workerYield":1,"sellable":true,"resourceBeingStolen":false,"sellsFor":25,"autoSellCutoff":0,"resourceDescription":"Dim but sturdy ingots.","workerVerb":"Forges","workerNoun":"iron ingot","resourceAccessible":false,"resourceTier":3,"previousTier":2},{"id":10,"name":"steel ingot","resourceType":"METAL","iconPath":"./assets/sprites/steel_ingot.png","amount":0,"amountTravelling":0,"resourceConsumes":[{"resourceId":6,"cost":2}],"harvestable":true,"harvestYield":1,"harvestMilliseconds":4000,"workerYield":1,"sellable":true,"resourceBeingStolen":false,"sellsFor":40,"autoSellCutoff":0,"resourceDescription":"Refined and purified iron.","workerVerb":"Forges","workerNoun":"steel ingot","resourceAccessible":false,"resourceTier":4,"previousTier":3},{"id":11,"name":"gold ore","resourceType":"METAL","iconPath":"./assets/sprites/gold_ore.png","amount":0,"amountTravelling":0,"resourceConsumes":[],"harvestable":false,"pathAvailable":false,"harvestYield":1,"harvestMilliseconds":2500,"workerYield":1,"sellable":true,"resourceBeingStolen":false,"sellsFor":35,"autoSellCutoff":0,"resourceDescription":"Unrefined extracts of gold.","workerVerb":"Mines","workerNoun":"gold","resourceAccessible":false,"resourceTier":3,"previousTier":2},{"id":12,"name":"gold ingot","resourceType":"METAL","iconPath":"./assets/sprites/gold_ingot.png","amount":0,"amountTravelling":0,"resourceConsumes":[{"resourceId":11,"cost":1}],"harvestable":true,"harvestYield":1,"harvestMilliseconds":4000,"workerYield":1,"sellable":true,"resourceBeingStolen":false,"sellsFor":55,"autoSellCutoff":0,"resourceDescription":"Highly valuable and malleable.","workerVerb":"Forges","workerNoun":"gold ingot","resourceAccessible":false,"resourceTier":4,"previousTier":3},{"id":18,"name":"latinum ore","resourceType":"METAL","iconPath":"./assets/sprites/latinum_ore.png","amount":0,"amountTravelling":0,"resourceConsumes":[],"harvestable":false,"pathAvailable":false,"harvestYield":1,"harvestMilliseconds":4500,"workerYield":1,"sellable":true,"resourceBeingStolen":false,"sellsFor":65,"autoSellCutoff":0,"resourceDescription":"Said to be highly valued by indivudals with large ears.","workerVerb":"Mines","workerNoun":"latinum ore","resourceAccessible":false,"resourceTier":4,"previousTier":3},{"id":19,"name":"latinum ingot","resourceType":"METAL","iconPath":"./assets/sprites/latinum_ingot.png","amount":0,"amountTravelling":0,"resourceConsumes":[{"resourceId":10,"cost":1},{"resourceId":12,"cost":1},{"resourceId":18,"cost":1}],"harvestable":true,"harvestYield":1,"harvestMilliseconds":5000,"workerYield":1,"sellable":true,"resourceBeingStolen":false,"sellsFor":85,"autoSellCutoff":0,"resourceDescription":"QUARK!!!","workerVerb":"Forges","workerNoun":"latinum ingot","resourceAccessible":false,"resourceTier":5,"previousTier":4},{"id":20,"name":"unbelievium ore","resourceType":"METAL","iconPath":"./assets/sprites/unbelievium_ore.png","amount":0,"amountTravelling":0,"resourceConsumes":[],"harvestable":false,"pathAvailable":false,"harvestYield":1,"harvestMilliseconds":5500,"workerYield":1,"sellable":true,"resourceBeingStolen":false,"sellsFor":100,"autoSellCutoff":0,"resourceDescription":"I can't believe it's not unobtainium!","workerVerb":"Mines","workerNoun":"unbelievium ore","resourceAccessible":false,"resourceTier":5,"previousTier":4},{"id":21,"name":"lustrial ore","resourceType":"METAL","iconPath":"./assets/sprites/lustrial_ore.png","amount":0,"amountTravelling":0,"resourceConsumes":[],"harvestable":false,"pathAvailable":false,"harvestYield":1,"harvestMilliseconds":5500,"workerYield":1,"sellable":true,"resourceBeingStolen":false,"sellsFor":100,"autoSellCutoff":0,"resourceDescription":"Even in its unrefined form, it shines as bright as the sun.","workerVerb":"Mines","workerNoun":"lustrial ore","resourceAccessible":false,"resourceTier":5,"previousTier":4},{"id":22,"name":"spectrus ore","resourceType":"METAL","iconPath":"./assets/sprites/spectrus_ore.png","amount":0,"amountTravelling":0,"resourceConsumes":[],"harvestable":false,"pathAvailable":false,"harvestYield":1,"harvestMilliseconds":5500,"workerYield":1,"sellable":true,"resourceBeingStolen":false,"sellsFor":100,"autoSellCutoff":0,"resourceDescription":"A peculiar energy eminates from the rock...","workerVerb":"Mines","workerNoun":"spectrus ore","resourceAccessible":false,"resourceTier":5,"previousTier":4},{"id":23,"name":"temprous ingot","resourceType":"METAL","iconPath":"./assets/sprites/temprous_ingot.png","amount":0,"amountTravelling":0,"resourceConsumes":[{"resourceId":19,"cost":2},{"resourceId":20,"cost":2},{"resourceId":21,"cost":2},{"resourceId":22,"cost":2}],"harvestable":true,"harvestYield":1,"harvestMilliseconds":8000,"workerYield":1,"sellable":true,"resourceBeingStolen":false,"sellsFor":175,"autoSellCutoff":0,"resourceDescription":"Could this metal hold the secret of time itself?","workerVerb":"Forges","workerNoun":"temprous ingot","resourceAccessible":false,"resourceTier":6,"previousTier":5},{"id":24,"name":"refined temprous","resourceType":"METAL","iconPath":"./assets/sprites/refined_temprous.png","amount":0,"amountTravelling":0,"resourceConsumes":[{"resourceId":23,"cost":15},{"resourceId":31,"cost":30}],"harvestable":true,"harvestYield":1,"harvestMilliseconds":15000,"workerYield":1,"sellable":true,"resourceBeingStolen":false,"sellsFor":350,"autoSellCutoff":0,"resourceDescription":"Memories of ages past imbue the metal with seemingly endless power.","workerVerb":"Refines","workerNoun":"temprous ingot","resourceAccessible":false,"resourceTier":7,"previousTier":6}];
 
 /***/ }),
 
@@ -5941,7 +6206,7 @@ module.exports = [{"id":0,"name":"gold","resourceType":"CURRENCY","iconPath":"./
 /*! exports provided: tileTypes, mapTiles, buildingTiles, resourceTiles, default */
 /***/ (function(module) {
 
-module.exports = {"tileTypes":{"1":"GRASS","2":"WATER","3":"MOUNTAIN","5":"OAKTREE","6":"PINETREE","7":"BIRCHTREE","8":"EUCALYPTUSTREE","9":"WILLOWTREE","10":"TEAKTREE","11":"DEADENT","12":"STONEMINE","13":"GRAPHITEMINE","14":"LIMESTONEMINE","15":"MARBLEMINE","16":"QUARTZMINE","17":"OBSIDIANMINE","18":"DIAMONDMINE","19":"COPPERMINE","20":"TINMINE","21":"IRONMINE","22":"GOLDMINE","23":"LATINUMMINE","24":"UNBELIEVIUMMINE","25":"LUSTRIALMINE","26":"SPECTRUSMINE","27":"CRACKEDFORGE","28":"STONEFORGE","29":"IRONFORGE","30":"GOLDFORGE","31":"LATINUMFORGE","32":"TEMPROUSDISTILLERY","69":"HOME","70":"WALL","71":"ROAD","72":"BRIDGE","73":"ENEMYPORTAL"},"mapTiles":{"GRASS":{"tileType":"GRASS","name":"Grass","walkable":true},"WATER":{"tileType":"WATER","name":"Water","walkable":false},"MOUNTAIN":{"tileType":"MOUNTAIN","name":"Mountain","walkable":false}},"buildingTiles":{"HOME":{"tileType":"HOME","name":"Home","description":"","placeable":false,"baseHealth":50,"resourceCosts":[],"buildableSurfaces":[],"resourcePathable":true},"WALL":{"tileType":"WALL","name":"Wall","description":"Keeps invaders out.","placeable":true,"baseHealth":50,"repairResource":1,"repairCostPerPoint":0.2,"resourceCosts":[{"resourceId":1,"resourceCost":20}],"buildableSurfaces":["GRASS"],"resourcePathable":false},"ROAD":{"tileType":"ROAD","name":"Road","description":"Allows access between buildings.","placeable":true,"baseHealth":50,"repairResource":13,"repairCostPerPoint":0.2,"resourceCosts":[{"resourceId":13,"resourceCost":20}],"buildableSurfaces":["GRASS"],"resourcePathable":true},"BRIDGE":{"tileType":"BRIDGE","name":"Bridge","description":"Allows access between islands.","placeable":true,"baseHealth":50,"repairResource":7,"repairCostPerPoint":0.25,"resourceCosts":[{"resourceId":7,"resourceCost":40}],"buildableSurfaces":["WATER"],"resourcePathable":true},"CRACKEDFORGE":{"tileType":"CRACKEDFORGE","name":"Cracked Forge","description":"An old, weary forge. Bronze ingots are probably all this thing is capable of producing.","placeable":true,"baseHealth":50,"repairResource":0,"repairCostPerPoint":1,"upgradeBuilding":"STONEFORGE","resourceCosts":[{"resourceId":0,"resourceCost":150}],"buildableSurfaces":["GRASS"],"placesResourceTile":true,"resourceTileType":"CRACKEDFORGE","resourcePathable":true},"STONEFORGE":{"tileType":"STONEFORGE","name":"Stone Forge","description":"This forge burns hotter, allowing you to create more precious ingots.","placeable":false,"baseHealth":75,"repairResource":13,"repairCostPerPoint":0.3,"upgradeBuilding":"IRONFORGE","resourceCosts":[{"resourceId":0,"resourceCost":150},{"resourceId":13,"resourceCost":50},{"resourceId":7,"resourceCost":75},{"resourceId":4,"resourceCost":20}],"buildableSurfaces":["GRASS"],"placesResourceTile":true,"resourceTileType":"STONEFORGE","resourcePathable":true},"IRONFORGE":{"tileType":"IRONFORGE","name":"Iron Forge","description":"This forge burns hotter, allowing you to create more precious ingots.","placeable":false,"baseHealth":125,"repairResource":6,"repairCostPerPoint":0.3,"upgradeBuilding":"GOLDFORGE","resourceCosts":[{"resourceId":6,"resourceCost":500},{"resourceId":9,"resourceCost":700},{"resourceId":28,"resourceCost":250}],"buildableSurfaces":["GRASS"],"placesResourceTile":true,"resourceTileType":"IRONFORGE","resourcePathable":true},"GOLDFORGE":{"tileType":"GOLDFORGE","name":"Gold Forge","description":"For reasons unknown to science, gold forges are particularly effective in forging latinum.","placeable":false,"baseHealth":150,"repairResource":11,"repairCostPerPoint":0.35,"upgradeBuilding":"LATINUMFORGE","resourceCosts":[{"resourceId":12,"resourceCost":1200},{"resourceId":15,"resourceCost":1500},{"resourceId":29,"resourceCost":250}],"buildableSurfaces":["GRASS"],"placesResourceTile":true,"resourceTileType":"GOLDFORGE","resourcePathable":true},"LATINUMFORGE":{"tileType":"LATINUMFORGE","name":"Latinum Forge","description":"A forge that burns hot enough to fuse together the world's most precious and rare metals.","placeable":false,"baseHealth":200,"repairResource":19,"repairCostPerPoint":0.5,"upgradeBuilding":"TEMPROUSDISTILLERY","resourceCosts":[{"resourceId":19,"resourceCost":2500},{"resourceId":25,"resourceCost":1500},{"resourceId":30,"resourceCost":700}],"buildableSurfaces":["GRASS"],"placesResourceTile":true,"resourceTileType":"LATINUMFORGE","resourcePathable":true},"TEMPROUSDISTILLERY":{"tileType":"TEMPROUSDISTILLERY","name":"Temprous Distillery","description":"With this device, all impurities can be removed from temprous ingots, unlocking their limitless potential.","placeable":false,"baseHealth":350,"repairResource":23,"repairCostPerPoint":0.65,"resourceCosts":[{"resourceId":23,"resourceCost":5000},{"resourceId":16,"resourceCost":500},{"resourceId":31,"resourceCost":1200}],"buildableSurfaces":["GRASS"],"placesResourceTile":true,"resourceTileType":"TEMPROUSDISTILLERY","resourcePathable":true},"ENEMYPORTAL":{"tileType":"ENEMYPORTAL","name":"Enemy Portal","baseHealth":50,"description":"","placeable":false,"resourceCosts":[],"buildableSurfaces":[],"resourcePathable":true}},"resourceTiles":{"OAKTREE":{"tileType":"OAKTREE","name":"Oak Tree","placeable":false,"resourceIds":[1]},"PINETREE":{"tileType":"PINETREE","name":"Pine Tree","placeable":false,"resourceIds":[7]},"BIRCHTREE":{"tileType":"BIRCHTREE","name":"Birch Tree","placeable":false,"resourceIds":[8]},"EUCALYPTUSTREE":{"tileType":"EUCALYPTUSTREE","name":"Eucalptus Tree","placeable":false,"resourceIds":[9]},"WILLOWTREE":{"tileType":"WILLOWTREE","name":"Willow Tree","placeable":false,"resourceIds":[15]},"TEAKTREE":{"tileType":"TEAKTREE","name":"Teak Tree","placeable":false,"resourceIds":[25]},"DEADENT":{"tileType":"DEADENT","name":"Dead Ent","placeable":false,"resourceIds":[16,17]},"STONEMINE":{"tileType":"STONEMINE","name":"Stone Mine","placeable":false,"resourceIds":[13]},"GRAPHITEMINE":{"tileType":"GRAPHITEMINE","name":"Graphite Mine","placeable":false,"resourceIds":[26]},"LIMESTONEMINE":{"tileType":"LIMESTONEMINE","name":"Limestone Mine","placeable":false,"resourceIds":[27]},"MARBLEMINE":{"tileType":"MARBLEMINE","name":"Marble Mine","placeable":false,"resourceIds":[28]},"QUARTZMINE":{"tileType":"QUARTZMINE","name":"Quartz Mine","placeable":false,"resourceIds":[29]},"OBSIDIANMINE":{"tileType":"OBSIDIANMINE","name":"Obsidian Mine","placeable":false,"resourceIds":[30]},"DIAMONDMINE":{"tileType":"DIAMONDMINE","name":"Diamond Mine","placeable":false,"resourceIds":[31]},"COPPERMINE":{"tileType":"COPPERMINE","name":"Copper Mine","placeable":false,"resourceIds":[2]},"TINMINE":{"tileType":"TINMINE","name":"Tin Mine","placeable":false,"resourceIds":[3]},"IRONMINE":{"tileType":"IRONMINE","name":"Iron Mine","placeable":false,"resourceIds":[5]},"GOLDMINE":{"tileType":"GOLDMINE","name":"Gold Mine","placeable":false,"resourceIds":[11]},"LATINUMMINE":{"tileType":"LATINUMMINE","name":"Latinum Mine","placeable":false,"resourceIds":[18]},"UNBELIEVIUMMINE":{"tileType":"UNBELIEVIUMMINE","name":"Unbelievium Mine","placeable":false,"resourceIds":[20]},"LUSTRIALMINE":{"tileType":"LUSTRIALMINE","name":"Lustrial Mine","placeable":false,"resourceIds":[21]},"SPECTRUSMINE":{"tileType":"SPECTRUSMINE","name":"Spectrus Mine","placeable":false,"resourceIds":[22]},"CRACKEDFORGE":{"tileType":"CRACKEDFORGE","name":"Cracked Forge","placeable":true,"resourceIds":[4]},"STONEFORGE":{"tileType":"STONEFORGE","name":"Stone Forge","placeable":true,"resourceIds":[4,6]},"IRONFORGE":{"tileType":"IRONFORGE","name":"Iron Forge","placeable":true,"resourceIds":[4,6,10,12]},"GOLDFORGE":{"tileType":"GOLDFORGE","name":"Gold Forge","placeable":true,"resourceIds":[4,6,10,12,19]},"LATINUMFORGE":{"tileType":"LATINUMFORGE","name":"Latinum Forge","placeable":true,"resourceIds":[4,6,10,12,19,23]},"TEMPROUSDISTILLERY":{"tileType":"TEMPROUSDISTILLERY","name":"Temprous Distillery","placeable":true,"resourceIds":[4,6,10,12,19,23,24]}}};
+module.exports = {"tileTypes":{"1":"GRASS","2":"WATER","3":"MOUNTAIN","5":"OAKTREE","6":"PINETREE","7":"BIRCHTREE","8":"EUCALYPTUSTREE","9":"WILLOWTREE","10":"TEAKTREE","11":"DEADENT","12":"STONEMINE","13":"GRAPHITEMINE","14":"LIMESTONEMINE","15":"MARBLEMINE","16":"QUARTZMINE","17":"OBSIDIANMINE","18":"DIAMONDMINE","19":"COPPERMINE","20":"TINMINE","21":"IRONMINE","22":"GOLDMINE","23":"LATINUMMINE","24":"UNBELIEVIUMMINE","25":"LUSTRIALMINE","26":"SPECTRUSMINE","27":"CRACKEDFORGE","28":"STONEFORGE","29":"IRONFORGE","30":"GOLDFORGE","31":"LATINUMFORGE","32":"TEMPROUSDISTILLERY","69":"HOME","70":"WALL","71":"ROAD","72":"BRIDGE","73":"ENEMYPORTAL","74":"WOODMARKET","75":"MINERALMARKET","76":"METALMARKET"},"mapTiles":{"GRASS":{"tileType":"GRASS","name":"Grass","walkable":true},"WATER":{"tileType":"WATER","name":"Water","walkable":false},"MOUNTAIN":{"tileType":"MOUNTAIN","name":"Mountain","walkable":false}},"buildingTiles":{"HOME":{"tileType":"HOME","subType":"MISC","name":"Home","description":"","placeable":false,"maxPlaceable":1,"baseHealth":50,"resourceCosts":[],"buildableSurfaces":[],"resourcePathable":true},"WALL":{"tileType":"WALL","subType":"MISC","name":"Wall","description":"Keeps invaders out.","placeable":true,"maxPlaceable":-1,"baseHealth":50,"repairResource":1,"repairCostPerPoint":0.2,"resourceCosts":[{"resourceId":1,"resourceCost":20}],"buildableSurfaces":["GRASS"],"resourcePathable":false},"ROAD":{"tileType":"ROAD","subType":"MISC","name":"Road","description":"Allows access between buildings.","placeable":true,"maxPlaceable":-1,"baseHealth":50,"repairResource":13,"repairCostPerPoint":0.2,"resourceCosts":[{"resourceId":13,"resourceCost":20}],"buildableSurfaces":["GRASS"],"resourcePathable":true},"BRIDGE":{"tileType":"BRIDGE","subType":"MISC","name":"Bridge","description":"Allows access between islands.","placeable":true,"maxPlaceable":-1,"baseHealth":50,"repairResource":7,"repairCostPerPoint":0.25,"resourceCosts":[{"resourceId":7,"resourceCost":40}],"buildableSurfaces":["WATER"],"resourcePathable":true},"CRACKEDFORGE":{"tileType":"CRACKEDFORGE","subType":"RESOURCE","name":"Cracked Forge","description":"An old, weary forge. Bronze ingots are probably all this thing is capable of producing.","placeable":true,"maxPlaceable":-1,"baseHealth":50,"repairResource":0,"repairCostPerPoint":1,"upgradeBuilding":"STONEFORGE","resourceCosts":[{"resourceId":0,"resourceCost":150}],"buildableSurfaces":["GRASS"],"placesResourceTile":true,"resourceTileType":"CRACKEDFORGE","resourcePathable":true},"STONEFORGE":{"tileType":"STONEFORGE","subType":"RESOURCE","name":"Stone Forge","description":"This forge burns hotter, allowing you to create more precious ingots.","placeable":false,"maxPlaceable":-1,"baseHealth":75,"repairResource":13,"repairCostPerPoint":0.3,"upgradeBuilding":"IRONFORGE","resourceCosts":[{"resourceId":0,"resourceCost":150},{"resourceId":13,"resourceCost":50},{"resourceId":7,"resourceCost":75},{"resourceId":4,"resourceCost":20}],"buildableSurfaces":["GRASS"],"placesResourceTile":true,"resourceTileType":"STONEFORGE","resourcePathable":true},"IRONFORGE":{"tileType":"IRONFORGE","subType":"RESOURCE","name":"Iron Forge","description":"This forge burns hotter, allowing you to create more precious ingots.","placeable":false,"maxPlaceable":-1,"baseHealth":125,"repairResource":6,"repairCostPerPoint":0.3,"upgradeBuilding":"GOLDFORGE","resourceCosts":[{"resourceId":6,"resourceCost":500},{"resourceId":9,"resourceCost":700},{"resourceId":28,"resourceCost":250}],"buildableSurfaces":["GRASS"],"placesResourceTile":true,"resourceTileType":"IRONFORGE","resourcePathable":true},"GOLDFORGE":{"tileType":"GOLDFORGE","subType":"RESOURCE","name":"Gold Forge","description":"For reasons unknown to science, gold forges are particularly effective in forging latinum.","placeable":false,"maxPlaceable":-1,"baseHealth":150,"repairResource":11,"repairCostPerPoint":0.35,"upgradeBuilding":"LATINUMFORGE","resourceCosts":[{"resourceId":12,"resourceCost":1200},{"resourceId":15,"resourceCost":1500},{"resourceId":29,"resourceCost":250}],"buildableSurfaces":["GRASS"],"placesResourceTile":true,"resourceTileType":"GOLDFORGE","resourcePathable":true},"LATINUMFORGE":{"tileType":"LATINUMFORGE","subType":"RESOURCE","name":"Latinum Forge","description":"A forge that burns hot enough to fuse together the world's most precious and rare metals.","placeable":false,"maxPlaceable":-1,"baseHealth":200,"repairResource":19,"repairCostPerPoint":0.5,"upgradeBuilding":"TEMPROUSDISTILLERY","resourceCosts":[{"resourceId":19,"resourceCost":2500},{"resourceId":25,"resourceCost":1500},{"resourceId":30,"resourceCost":700}],"buildableSurfaces":["GRASS"],"placesResourceTile":true,"resourceTileType":"LATINUMFORGE","resourcePathable":true},"TEMPROUSDISTILLERY":{"tileType":"TEMPROUSDISTILLERY","subType":"RESOURCE","name":"Temprous Distillery","description":"With this device, all impurities can be removed from temprous ingots, unlocking their limitless potential.","placeable":false,"maxPlaceable":-1,"baseHealth":350,"repairResource":23,"repairCostPerPoint":0.65,"resourceCosts":[{"resourceId":23,"resourceCost":5000},{"resourceId":16,"resourceCost":500},{"resourceId":31,"resourceCost":1200}],"buildableSurfaces":["GRASS"],"placesResourceTile":true,"resourceTileType":"TEMPROUSDISTILLERY","resourcePathable":true},"WOODMARKET":{"tileType":"WOODMARKET","subType":"MARKET","name":"Wood Market","description":"A marketstand that automatically collects and sells wood resources. (Only one may be placed at a time.)","placeable":true,"maxPlaceable":1,"baseHealth":50,"repairResource":0,"repairCostPerPoint":1,"resourceCosts":[{"resourceId":0,"resourceCost":150}],"buildableSurfaces":["GRASS"],"placesResourceTile":false,"resourcePathable":true},"MINERALMARKET":{"tileType":"MINERALMARKET","subType":"MARKET","name":"Mineral Market","description":"A marketstand that automatically collects and sells mineral resources. (Only one may be placed at a time.)","placeable":true,"maxPlaceable":1,"baseHealth":50,"repairResource":0,"repairCostPerPoint":1,"resourceCosts":[{"resourceId":0,"resourceCost":150}],"buildableSurfaces":["GRASS"],"placesResourceTile":false,"resourcePathable":true},"METALMARKET":{"tileType":"METALMARKET","subType":"MARKET","name":"Metal Market","description":"A marketstand that automatically collects and sells metal resources. (Only one may be placed at a time.)","placeable":true,"maxPlaceable":1,"baseHealth":50,"repairResource":0,"repairCostPerPoint":1,"resourceCosts":[{"resourceId":0,"resourceCost":150}],"buildableSurfaces":["GRASS"],"placesResourceTile":false,"resourcePathable":true},"ENEMYPORTAL":{"tileType":"ENEMYPORTAL","subType":"MISC","name":"Enemy Portal","baseHealth":50,"description":"","placeable":false,"maxPlaceable":-1,"resourceCosts":[],"buildableSurfaces":[],"resourcePathable":true}},"resourceTiles":{"OAKTREE":{"tileType":"OAKTREE","name":"Oak Tree","placeable":false,"resourceIds":[1]},"PINETREE":{"tileType":"PINETREE","name":"Pine Tree","placeable":false,"resourceIds":[7]},"BIRCHTREE":{"tileType":"BIRCHTREE","name":"Birch Tree","placeable":false,"resourceIds":[8]},"EUCALYPTUSTREE":{"tileType":"EUCALYPTUSTREE","name":"Eucalptus Tree","placeable":false,"resourceIds":[9]},"WILLOWTREE":{"tileType":"WILLOWTREE","name":"Willow Tree","placeable":false,"resourceIds":[15]},"TEAKTREE":{"tileType":"TEAKTREE","name":"Teak Tree","placeable":false,"resourceIds":[25]},"DEADENT":{"tileType":"DEADENT","name":"Dead Ent","placeable":false,"resourceIds":[16,17]},"STONEMINE":{"tileType":"STONEMINE","name":"Stone Mine","placeable":false,"resourceIds":[13]},"GRAPHITEMINE":{"tileType":"GRAPHITEMINE","name":"Graphite Mine","placeable":false,"resourceIds":[26]},"LIMESTONEMINE":{"tileType":"LIMESTONEMINE","name":"Limestone Mine","placeable":false,"resourceIds":[27]},"MARBLEMINE":{"tileType":"MARBLEMINE","name":"Marble Mine","placeable":false,"resourceIds":[28]},"QUARTZMINE":{"tileType":"QUARTZMINE","name":"Quartz Mine","placeable":false,"resourceIds":[29]},"OBSIDIANMINE":{"tileType":"OBSIDIANMINE","name":"Obsidian Mine","placeable":false,"resourceIds":[30]},"DIAMONDMINE":{"tileType":"DIAMONDMINE","name":"Diamond Mine","placeable":false,"resourceIds":[31]},"COPPERMINE":{"tileType":"COPPERMINE","name":"Copper Mine","placeable":false,"resourceIds":[2]},"TINMINE":{"tileType":"TINMINE","name":"Tin Mine","placeable":false,"resourceIds":[3]},"IRONMINE":{"tileType":"IRONMINE","name":"Iron Mine","placeable":false,"resourceIds":[5]},"GOLDMINE":{"tileType":"GOLDMINE","name":"Gold Mine","placeable":false,"resourceIds":[11]},"LATINUMMINE":{"tileType":"LATINUMMINE","name":"Latinum Mine","placeable":false,"resourceIds":[18]},"UNBELIEVIUMMINE":{"tileType":"UNBELIEVIUMMINE","name":"Unbelievium Mine","placeable":false,"resourceIds":[20]},"LUSTRIALMINE":{"tileType":"LUSTRIALMINE","name":"Lustrial Mine","placeable":false,"resourceIds":[21]},"SPECTRUSMINE":{"tileType":"SPECTRUSMINE","name":"Spectrus Mine","placeable":false,"resourceIds":[22]},"CRACKEDFORGE":{"tileType":"CRACKEDFORGE","name":"Cracked Forge","placeable":true,"resourceIds":[4]},"STONEFORGE":{"tileType":"STONEFORGE","name":"Stone Forge","placeable":true,"resourceIds":[4,6]},"IRONFORGE":{"tileType":"IRONFORGE","name":"Iron Forge","placeable":true,"resourceIds":[4,6,10,12]},"GOLDFORGE":{"tileType":"GOLDFORGE","name":"Gold Forge","placeable":true,"resourceIds":[4,6,10,12,19]},"LATINUMFORGE":{"tileType":"LATINUMFORGE","name":"Latinum Forge","placeable":true,"resourceIds":[4,6,10,12,19,23]},"TEMPROUSDISTILLERY":{"tileType":"TEMPROUSDISTILLERY","name":"Temprous Distillery","placeable":true,"resourceIds":[4,6,10,12,19,23,24]}}};
 
 /***/ }),
 
@@ -5963,7 +6228,7 @@ module.exports = [{"id":0,"upgradeType":"RESOURCE","name":"Refined Iron Axe","de
 /*! exports provided: 0, 1, 2, default */
 /***/ (function(module) {
 
-module.exports = [{"id":0,"cost":500,"resourceType":"WOOD","workerCount":0,"freeWorkers":0,"workersByResource":[{"resourceId":1,"workable":true,"recurringCost":5,"workerCount":0,"workerYield":1,"sliderSettingValid":true},{"resourceId":7,"workable":false,"recurringCost":10,"workerCount":0,"workerYield":1,"sliderSettingValid":true},{"resourceId":8,"workable":false,"recurringCost":20,"workerCount":0,"workerYield":1,"sliderSettingValid":true},{"resourceId":9,"workable":false,"recurringCost":25,"workerCount":0,"workerYield":1,"sliderSettingValid":true},{"resourceId":15,"workable":false,"recurringCost":40,"workerCount":0,"workerYield":1,"sliderSettingValid":true},{"resourceId":25,"workable":false,"recurringCost":50,"workerCount":0,"workerYield":1,"sliderSettingValid":true},{"resourceId":16,"workable":false,"recurringCost":60,"workerCount":0,"workerYield":1,"sliderSettingValid":true},{"resourceId":17,"workable":false,"recurringCost":150,"workerCount":0,"workerYield":1,"sliderSettingValid":true}]},{"id":2,"cost":1350,"resourceType":"MINERAL","workerCount":0,"freeWorkers":0,"workersByResource":[{"resourceId":13,"workable":true,"recurringCost":10,"workerCount":0,"workerYield":1,"sliderSettingValid":true},{"resourceId":26,"workable":false,"recurringCost":15,"workerCount":0,"workerYield":1,"sliderSettingValid":true},{"resourceId":27,"workable":false,"recurringCost":20,"workerCount":0,"workerYield":1,"sliderSettingValid":true},{"resourceId":28,"workable":false,"recurringCost":30,"workerCount":0,"workerYield":1,"sliderSettingValid":true},{"resourceId":29,"workable":false,"recurringCost":45,"workerCount":0,"workerYield":1,"sliderSettingValid":true},{"resourceId":30,"workable":false,"recurringCost":55,"workerCount":0,"workerYield":1,"sliderSettingValid":true},{"resourceId":31,"workable":false,"recurringCost":70,"workerCount":0,"workerYield":1,"sliderSettingValid":true}]},{"id":1,"cost":2000,"resourceType":"METAL","workerCount":0,"freeWorkers":0,"workersByResource":[{"resourceId":2,"workable":false,"recurringCost":5,"workerCount":0,"workerYield":1,"sliderSettingValid":true},{"resourceId":3,"workable":false,"recurringCost":5,"workerCount":0,"workerYield":1,"sliderSettingValid":true},{"resourceId":4,"workable":false,"recurringCost":10,"workerCount":0,"workerYield":1,"sliderSettingValid":true},{"resourceId":5,"workable":false,"recurringCost":15,"workerCount":0,"workerYield":1,"sliderSettingValid":true},{"resourceId":6,"workable":false,"recurringCost":25,"workerCount":0,"workerYield":1,"sliderSettingValid":true},{"resourceId":10,"workable":false,"recurringCost":40,"workerCount":0,"workerYield":1,"sliderSettingValid":true},{"resourceId":11,"workable":false,"recurringCost":35,"workerCount":0,"workerYield":1,"sliderSettingValid":true},{"resourceId":12,"workable":false,"recurringCost":60,"workerCount":0,"workerYield":1,"sliderSettingValid":true},{"resourceId":18,"workable":false,"recurringCost":75,"workerCount":0,"workerYield":1,"sliderSettingValid":true},{"resourceId":19,"workable":false,"recurringCost":95,"workerCount":0,"workerYield":1,"sliderSettingValid":true},{"resourceId":20,"workable":false,"recurringCost":120,"workerCount":0,"workerYield":1,"sliderSettingValid":true},{"resourceId":21,"workable":false,"recurringCost":120,"workerCount":0,"workerYield":1,"sliderSettingValid":true},{"resourceId":22,"workable":false,"recurringCost":120,"workerCount":0,"workerYield":1,"sliderSettingValid":true},{"resourceId":23,"workable":false,"recurringCost":200,"workerCount":0,"workerYield":1,"sliderSettingValid":true},{"resourceId":24,"workable":false,"recurringCost":500,"workerCount":0,"workerYield":1,"sliderSettingValid":true}]}];
+module.exports = [{"id":0,"cost":250,"resourceType":"WOOD","workerCount":0,"freeWorkers":0,"workersByResource":[{"resourceId":1,"workable":true,"recurringCost":5,"workerCount":0,"workerYield":1,"sliderSettingValid":true},{"resourceId":7,"workable":false,"recurringCost":10,"workerCount":0,"workerYield":1,"sliderSettingValid":true},{"resourceId":8,"workable":false,"recurringCost":20,"workerCount":0,"workerYield":1,"sliderSettingValid":true},{"resourceId":9,"workable":false,"recurringCost":25,"workerCount":0,"workerYield":1,"sliderSettingValid":true},{"resourceId":15,"workable":false,"recurringCost":40,"workerCount":0,"workerYield":1,"sliderSettingValid":true},{"resourceId":25,"workable":false,"recurringCost":50,"workerCount":0,"workerYield":1,"sliderSettingValid":true},{"resourceId":16,"workable":false,"recurringCost":60,"workerCount":0,"workerYield":1,"sliderSettingValid":true},{"resourceId":17,"workable":false,"recurringCost":150,"workerCount":0,"workerYield":1,"sliderSettingValid":true}]},{"id":2,"cost":650,"resourceType":"MINERAL","workerCount":0,"freeWorkers":0,"workersByResource":[{"resourceId":13,"workable":true,"recurringCost":10,"workerCount":0,"workerYield":1,"sliderSettingValid":true},{"resourceId":26,"workable":false,"recurringCost":15,"workerCount":0,"workerYield":1,"sliderSettingValid":true},{"resourceId":27,"workable":false,"recurringCost":20,"workerCount":0,"workerYield":1,"sliderSettingValid":true},{"resourceId":28,"workable":false,"recurringCost":30,"workerCount":0,"workerYield":1,"sliderSettingValid":true},{"resourceId":29,"workable":false,"recurringCost":45,"workerCount":0,"workerYield":1,"sliderSettingValid":true},{"resourceId":30,"workable":false,"recurringCost":55,"workerCount":0,"workerYield":1,"sliderSettingValid":true},{"resourceId":31,"workable":false,"recurringCost":70,"workerCount":0,"workerYield":1,"sliderSettingValid":true}]},{"id":1,"cost":1000,"resourceType":"METAL","workerCount":0,"freeWorkers":0,"workersByResource":[{"resourceId":2,"workable":false,"recurringCost":5,"workerCount":0,"workerYield":1,"sliderSettingValid":true},{"resourceId":3,"workable":false,"recurringCost":5,"workerCount":0,"workerYield":1,"sliderSettingValid":true},{"resourceId":4,"workable":false,"recurringCost":10,"workerCount":0,"workerYield":1,"sliderSettingValid":true},{"resourceId":5,"workable":false,"recurringCost":15,"workerCount":0,"workerYield":1,"sliderSettingValid":true},{"resourceId":6,"workable":false,"recurringCost":25,"workerCount":0,"workerYield":1,"sliderSettingValid":true},{"resourceId":10,"workable":false,"recurringCost":40,"workerCount":0,"workerYield":1,"sliderSettingValid":true},{"resourceId":11,"workable":false,"recurringCost":35,"workerCount":0,"workerYield":1,"sliderSettingValid":true},{"resourceId":12,"workable":false,"recurringCost":60,"workerCount":0,"workerYield":1,"sliderSettingValid":true},{"resourceId":18,"workable":false,"recurringCost":75,"workerCount":0,"workerYield":1,"sliderSettingValid":true},{"resourceId":19,"workable":false,"recurringCost":95,"workerCount":0,"workerYield":1,"sliderSettingValid":true},{"resourceId":20,"workable":false,"recurringCost":120,"workerCount":0,"workerYield":1,"sliderSettingValid":true},{"resourceId":21,"workable":false,"recurringCost":120,"workerCount":0,"workerYield":1,"sliderSettingValid":true},{"resourceId":22,"workable":false,"recurringCost":120,"workerCount":0,"workerYield":1,"sliderSettingValid":true},{"resourceId":23,"workable":false,"recurringCost":200,"workerCount":0,"workerYield":1,"sliderSettingValid":true},{"resourceId":24,"workable":false,"recurringCost":500,"workerCount":0,"workerYield":1,"sliderSettingValid":true}]}];
 
 /***/ }),
 
