@@ -1827,7 +1827,7 @@ var WorkersComponent = /** @class */ (function () {
         var resource = this.resourcesService.resources.get(resourceEnum);
         var worker = this.getWorker(resource.resourceType);
         var resourceWorker = this.workersService.getResourceWorker(resourceEnum);
-        var newValue = typeof (eventOrEnum) === 'number' ? resourceWorker.sliderSetting : +eventOrEnum.value;
+        var newValue = typeof (eventOrEnum) === 'string' ? resourceWorker.sliderSetting : +eventOrEnum.value;
         resourceWorker.sliderSettingValid = worker.freeWorkers + resourceWorker.workerCount - newValue >= 0;
     };
     WorkersComponent.prototype.updateResourceWorker = function (eventOrEnum, value) {
