@@ -525,13 +525,13 @@
       "tileType": "LATINUMFORGE",
       "name": "Latinum Forge",
       "placeable": true,
-      "resourceEnums": ["BRONZEINGOT", "IRONINGOT", "STEELINGOT", "GOLDINGOT", "TEMPROUSINGOT"]
+      "resourceEnums": ["BRONZEINGOT", "IRONINGOT", "STEELINGOT", "GOLDINGOT", "LATINUMINGOT", "TEMPROUSINGOT"]
     },
     "TEMPROUSDISTILLERY": {
       "tileType": "TEMPROUSDISTILLERY",
       "name": "Temprous Distillery",
       "placeable": true,
-      "resourceEnums": ["BRONZEINGOT", "IRONINGOT", "STEELINGOT", "GOLDINGOT", "REFINEDTEMPROUS"]
+      "resourceEnums": ["BRONZEINGOT", "IRONINGOT", "STEELINGOT", "GOLDINGOT", "LATINUMINGOT", "TEMPROUSINGOT", "REFINEDTEMPROUS"]
     }
   }
 }
