@@ -5254,19 +5254,58 @@ var SettingsService = /** @class */ (function () {
         }
         catch (error) {
             this.snackbar.open("Error loading save data: " + error, '', { duration: 5000 });
-            this.log('Error loading save data.');
+            this.log('Error loading save data. Printing data to console for debugging.');
             this.importSave(backupSave);
+            console.log(saveDataString);
             console.error(error);
             return false;
         }
     };
     SettingsService.prototype.processVersionDifferences = function (saveData) {
         var _this = this;
+        var legacyResourceIds = {
+            0: 'GOLD',
+            1: 'OAK',
+            2: 'COPPERORE',
+            3: 'TINORE',
+            4: 'BRONZEINGOT',
+            5: 'IRONORE',
+            6: 'IRONINGOT',
+            7: 'PINE',
+            8: 'BIRCH',
+            9: 'EUCALYPTUS',
+            10: 'STEELINGOT',
+            11: 'GOLDORE',
+            12: 'GOLDINGOT',
+            13: 'STONE',
+            15: 'WILLOW',
+            16: 'ENTSOUL',
+            17: 'REANIMATEDENT',
+            18: 'LATINUMORE',
+            19: 'LATINUMINGOT',
+            20: 'UNBELIEVIUMORE',
+            21: 'LUSTRIALORE',
+            22: 'SPECTRUSORE',
+            23: 'TEMPROUSINGOT',
+            24: 'REFINEDTEMPROUS',
+            25: 'TEAK',
+            26: 'GRAPHITE',
+            27: 'LIMESTONE',
+            28: 'MARBLE',
+            29: 'QUARTZ',
+            30: 'OBSIDIAN',
+            31: 'DIAMOND'
+        };
+        var legacyWorkerIds = {
+            0: 'WOOD',
+            1: 'METAL',
+            2: 'MINERAL'
+        };
         var oldVersionIndex = this.versionHistory.indexOf(saveData.gameVersion);
         if (oldVersionIndex <= this.versionHistory.indexOf('1.2')) {
             for (var _i = 0, _a = saveData.resources; _i < _a.length; _i++) {
                 var resourceData = _a[_i];
-                var resource = this.resourcesService.resources.get(resourceData.resourceEnum);
+                var resource = this.resourcesService.resources.get(legacyResourceIds[resourceData.resourceId]);
                 resourceData.sellsFor = resource.sellsFor;
             }
         }
@@ -5282,59 +5321,21 @@ var SettingsService = /** @class */ (function () {
             });
         }
         if (oldVersionIndex <= this.versionHistory.indexOf('Alpha 3.1')) {
-            var legacyResourceIds_1 = {
-                0: 'GOLD',
-                1: 'OAK',
-                2: 'COPPERORE',
-                3: 'TINORE',
-                4: 'BRONZEINGOT',
-                5: 'IRONORE',
-                6: 'IRONINGOT',
-                7: 'PINE',
-                8: 'BIRCH',
-                9: 'EUCALYPTUS',
-                10: 'STEELINGOT',
-                11: 'GOLDORE',
-                12: 'GOLDINGOT',
-                13: 'STONE',
-                15: 'WILLOW',
-                16: 'ENTSOUL',
-                17: 'REANIMATEDENT',
-                18: 'LATINUMORE',
-                19: 'LATINUMINGOT',
-                20: 'UNBELIEVIUMORE',
-                21: 'LUSTRIALORE',
-                22: 'SPECTRUSORE',
-                23: 'TEMPROUSINGOT',
-                24: 'REFINEDTEMPROUS',
-                25: 'TEAK',
-                26: 'GRAPHITE',
-                27: 'LIMESTONE',
-                28: 'MARBLE',
-                29: 'QUARTZ',
-                30: 'OBSIDIAN',
-                31: 'DIAMOND'
-            };
-            var legacyWorkerIds = {
-                0: 'WOOD',
-                1: 'METAL',
-                2: 'MINERAL'
-            };
             for (var _b = 0, _c = saveData.resources; _b < _c.length; _b++) {
                 var resourceData = _c[_b];
-                resourceData.resourceEnum = legacyResourceIds_1[resourceData.id];
+                resourceData.resourceEnum = legacyResourceIds[resourceData.id];
             }
             for (var _d = 0, _e = saveData.workers; _d < _e.length; _d++) {
                 var workerData = _e[_d];
                 workerData.resourceType = legacyWorkerIds[workerData.id];
                 for (var _f = 0, _g = workerData.workersByResource; _f < _g.length; _f++) {
                     var resourceWorkerData = _g[_f];
-                    resourceWorkerData.resourceEnum = legacyResourceIds_1[resourceWorkerData.resourceId];
+                    resourceWorkerData.resourceEnum = legacyResourceIds[resourceWorkerData.resourceId];
                 }
             }
             for (var _h = 0, _j = saveData.enemies; _h < _j.length; _h++) {
                 var enemyData = _j[_h];
-                var newResourcesToSteal = enemyData.resourcesToSteal.map(function (resourceId) { return legacyResourceIds_1[resourceId]; });
+                var newResourcesToSteal = enemyData.resourcesToSteal.map(function (resourceId) { return legacyResourceIds[resourceId]; });
                 var newResourcesHeld = new Map();
                 if (!enemyData.resourcesHeld || !enemyData.resourcesHeld.length) {
                     continue;
@@ -5342,12 +5343,12 @@ var SettingsService = /** @class */ (function () {
                 for (var _k = 0, _l = enemyData.resourcesToSteal; _k < _l.length; _k++) {
                     var resourceId = _l[_k];
                     var amountHeld = enemyData.resourcesHeld[resourceId];
-                    newResourcesHeld.set(legacyResourceIds_1[resourceId], amountHeld === undefined ? 0 : amountHeld);
+                    newResourcesHeld.set(legacyResourceIds[resourceId], amountHeld === undefined ? 0 : amountHeld);
                 }
                 enemyData.resourcesToSteal = newResourcesToSteal;
                 enemyData.resourcesHeld = newResourcesHeld;
             }
-            saveData.settings.resourceBinds = saveData.settings.resourceBinds.map(function (resourceId) { return legacyResourceIds_1[resourceId]; });
+            saveData.settings.resourceBinds = saveData.settings.resourceBinds.map(function (resourceId) { return legacyResourceIds[resourceId]; });
             var accessedTiers = saveData.resources.filter(function (resource) { return resource.amount; }).map(function (resource) {
                 return _this.resourcesService.resources.get(resource.resourceEnum).resourceTier;
             });
