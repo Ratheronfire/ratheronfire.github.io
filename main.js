@@ -97,9 +97,8 @@ var AppComponent = /** @class */ (function () {
     }
     Object.defineProperty(AppComponent.prototype, "affordableUpgradeCount", {
         get: function () {
-            var _this = this;
             var upgrades = this.upgradesService.getUpgrades(false, true, true);
-            var affordableUpgrades = upgrades.filter(function (upgrade) { return _this.upgradesService.canAffordUpgrade(upgrade.id); });
+            var affordableUpgrades = upgrades.filter(function (upgrade) { return upgrade.canAfford(); });
             return affordableUpgrades.length;
         },
         enumerable: true,
@@ -166,26 +165,22 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_map_map_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./components/map/map.component */ "./src/app/components/map/map.component.ts");
 /* harmony import */ var _components_settings_settings_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./components/settings/settings.component */ "./src/app/components/settings/settings.component.ts");
 /* harmony import */ var _components_admin_debug_admin_debug_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./components/admin-debug/admin-debug.component */ "./src/app/components/admin-debug/admin-debug.component.ts");
-/* harmony import */ var _components_resource_dialog_resource_dialog_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./components/resource-dialog/resource-dialog.component */ "./src/app/components/resource-dialog/resource-dialog.component.ts");
-/* harmony import */ var _components_upgrade_dialog_upgrade_dialog_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./components/upgrade-dialog/upgrade-dialog.component */ "./src/app/components/upgrade-dialog/upgrade-dialog.component.ts");
-/* harmony import */ var _components_save_dialog_save_dialog_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./components/save-dialog/save-dialog.component */ "./src/app/components/save-dialog/save-dialog.component.ts");
-/* harmony import */ var _directives_crop_crop_directive__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./directives/crop/crop.directive */ "./src/app/directives/crop/crop.directive.ts");
-/* harmony import */ var _directives_map_map_directive__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./directives/map/map.directive */ "./src/app/directives/map/map.directive.ts");
-/* harmony import */ var _directives_no_scroll_no_scroll_directive__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./directives/no-scroll/no-scroll.directive */ "./src/app/directives/no-scroll/no-scroll.directive.ts");
-/* harmony import */ var _components_enemy_enemy_component__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./components/enemy/enemy.component */ "./src/app/components/enemy/enemy.component.ts");
-/* harmony import */ var _components_fighter_fighter_component__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./components/fighter/fighter.component */ "./src/app/components/fighter/fighter.component.ts");
-/* harmony import */ var _components_buildings_buildings_buildings_component__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./components/buildings/buildings/buildings.component */ "./src/app/components/buildings/buildings/buildings.component.ts");
-/* harmony import */ var _components_tile_detail_tile_detail_component__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./components/tile-detail/tile-detail.component */ "./src/app/components/tile-detail/tile-detail.component.ts");
-/* harmony import */ var _components_fighter_detail_fighter_detail_component__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./components/fighter-detail/fighter-detail.component */ "./src/app/components/fighter-detail/fighter-detail.component.ts");
-/* harmony import */ var _directives_snap_snap_directive__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./directives/snap/snap.directive */ "./src/app/directives/snap/snap.directive.ts");
+/* harmony import */ var _components_save_dialog_save_dialog_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./components/save-dialog/save-dialog.component */ "./src/app/components/save-dialog/save-dialog.component.ts");
+/* harmony import */ var _directives_crop_crop_directive__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./directives/crop/crop.directive */ "./src/app/directives/crop/crop.directive.ts");
+/* harmony import */ var _directives_map_map_directive__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./directives/map/map.directive */ "./src/app/directives/map/map.directive.ts");
+/* harmony import */ var _directives_no_scroll_no_scroll_directive__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./directives/no-scroll/no-scroll.directive */ "./src/app/directives/no-scroll/no-scroll.directive.ts");
+/* harmony import */ var _components_enemy_enemy_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./components/enemy/enemy.component */ "./src/app/components/enemy/enemy.component.ts");
+/* harmony import */ var _components_fighter_fighter_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./components/fighter/fighter.component */ "./src/app/components/fighter/fighter.component.ts");
+/* harmony import */ var _components_buildings_buildings_buildings_component__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./components/buildings/buildings/buildings.component */ "./src/app/components/buildings/buildings/buildings.component.ts");
+/* harmony import */ var _components_tile_detail_tile_detail_component__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./components/tile-detail/tile-detail.component */ "./src/app/components/tile-detail/tile-detail.component.ts");
+/* harmony import */ var _components_fighter_detail_fighter_detail_component__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./components/fighter-detail/fighter-detail.component */ "./src/app/components/fighter-detail/fighter-detail.component.ts");
+/* harmony import */ var _directives_snap_snap_directive__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./directives/snap/snap.directive */ "./src/app/directives/snap/snap.directive.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-
-
 
 
 
@@ -229,18 +224,16 @@ var AppModule = /** @class */ (function () {
                 _components_settings_settings_component__WEBPACK_IMPORTED_MODULE_15__["SettingsComponent"],
                 _components_admin_debug_admin_debug_component__WEBPACK_IMPORTED_MODULE_16__["AdminDebugComponent"],
                 _components_map_map_component__WEBPACK_IMPORTED_MODULE_14__["MapComponent"],
-                _components_resource_dialog_resource_dialog_component__WEBPACK_IMPORTED_MODULE_17__["ResourceDialogComponent"],
-                _components_upgrade_dialog_upgrade_dialog_component__WEBPACK_IMPORTED_MODULE_18__["UpgradeDialogComponent"],
-                _directives_crop_crop_directive__WEBPACK_IMPORTED_MODULE_20__["CropDirective"],
-                _components_save_dialog_save_dialog_component__WEBPACK_IMPORTED_MODULE_19__["SaveDialogComponent"],
-                _directives_map_map_directive__WEBPACK_IMPORTED_MODULE_21__["MapDirective"],
-                _directives_no_scroll_no_scroll_directive__WEBPACK_IMPORTED_MODULE_22__["NoScrollDirective"],
-                _components_enemy_enemy_component__WEBPACK_IMPORTED_MODULE_23__["EnemyComponent"],
-                _components_fighter_fighter_component__WEBPACK_IMPORTED_MODULE_24__["FighterComponent"],
-                _components_buildings_buildings_buildings_component__WEBPACK_IMPORTED_MODULE_25__["BuildingsComponent"],
-                _components_tile_detail_tile_detail_component__WEBPACK_IMPORTED_MODULE_26__["TileDetailComponent"],
-                _components_fighter_detail_fighter_detail_component__WEBPACK_IMPORTED_MODULE_27__["FighterDetailComponent"],
-                _directives_snap_snap_directive__WEBPACK_IMPORTED_MODULE_28__["SnapDirective"]
+                _directives_crop_crop_directive__WEBPACK_IMPORTED_MODULE_18__["CropDirective"],
+                _components_save_dialog_save_dialog_component__WEBPACK_IMPORTED_MODULE_17__["SaveDialogComponent"],
+                _directives_map_map_directive__WEBPACK_IMPORTED_MODULE_19__["MapDirective"],
+                _directives_no_scroll_no_scroll_directive__WEBPACK_IMPORTED_MODULE_20__["NoScrollDirective"],
+                _components_enemy_enemy_component__WEBPACK_IMPORTED_MODULE_21__["EnemyComponent"],
+                _components_fighter_fighter_component__WEBPACK_IMPORTED_MODULE_22__["FighterComponent"],
+                _components_buildings_buildings_buildings_component__WEBPACK_IMPORTED_MODULE_23__["BuildingsComponent"],
+                _components_tile_detail_tile_detail_component__WEBPACK_IMPORTED_MODULE_24__["TileDetailComponent"],
+                _components_fighter_detail_fighter_detail_component__WEBPACK_IMPORTED_MODULE_25__["FighterDetailComponent"],
+                _directives_snap_snap_directive__WEBPACK_IMPORTED_MODULE_26__["SnapDirective"]
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
@@ -252,9 +245,7 @@ var AppModule = /** @class */ (function () {
                 ngx_color_picker__WEBPACK_IMPORTED_MODULE_7__["ColorPickerModule"]
             ],
             entryComponents: [
-                _components_resource_dialog_resource_dialog_component__WEBPACK_IMPORTED_MODULE_17__["ResourceDialogComponent"],
-                _components_upgrade_dialog_upgrade_dialog_component__WEBPACK_IMPORTED_MODULE_18__["UpgradeDialogComponent"],
-                _components_save_dialog_save_dialog_component__WEBPACK_IMPORTED_MODULE_19__["SaveDialogComponent"]
+                _components_save_dialog_save_dialog_component__WEBPACK_IMPORTED_MODULE_17__["SaveDialogComponent"]
             ],
             providers: [],
             bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_8__["AppComponent"]]
@@ -285,7 +276,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<h2>Debug</h2>\n\n<mat-checkbox class=\"filterAccessible\" checked=\"true\" [(ngModel)]=\"adminService.filterAccessible\">Hide Inaccessible\n  Upgrades</mat-checkbox>\n<br />\n<mat-checkbox class=\"filterAccessible\" checked=\"false\" [(ngModel)]=\"adminService.editMode\">Edit Mode</mat-checkbox>\n<br />\n\n<mat-divider></mat-divider>\n<br />\n\n<div>\n  Resource:<mat-select style=\"width: 200px\" [(ngModel)]=\"selectedResource\">\n    <mat-option *ngFor=\"let resource of resourcesService.resources\" [value]=\"resource\">\n      {{resource.name | titlecase}}\n    </mat-option>\n  </mat-select>\n\n  <mat-form-field class=\"example-full-width\">\n    <input matInput [(ngModel)]=\"amount\">\n  </mat-form-field>\n  <button mat-raised-button (click)=\"addResourceAmount()\">Add to all resources</button>\n  <div *ngIf=\"selectedResource !== undefined\">\n    <button mat-raised-button (click)=\"addResourceAmount(selectedResource)\">Add to {{selectedResource.name |\n      titlecase}}</button>\n    <button mat-raised-button color=\"accent\" (click)=\"stringifyResource(selectedResource)\">Export\n      {{selectedResource.name | titlecase}} To JSON</button>\n  </div>\n</div>\n\n<mat-divider></mat-divider>\n<br />\n\n<button mat-raised-button color=\"primary\" (click)=\"openResourceDialog()\">New Resource</button>\n<button mat-raised-button color=\"primary\" (click)=\"openUpgradeDialog()\">New Upgrade</button>\n\n<mat-divider></mat-divider>\n<br />\n\n<button mat-raised-button color=\"accent\" (click)=\"stringifyResources()\">Export Resources To JSON</button>\n<button mat-raised-button color=\"accent\" (click)=\"stringifyWorkers()\">Export Workers To JSON</button>\n<button mat-raised-button color=\"accent\" (click)=\"stringifyUpgrades()\">Export Upgrades To JSON</button>\n"
+module.exports = "<h2>Debug</h2>\n\n<mat-checkbox class=\"filterAccessible\" checked=\"true\" [(ngModel)]=\"adminService.filterAccessible\">Hide Inaccessible\n  Upgrades</mat-checkbox>\n<br />\n\n<mat-divider></mat-divider>\n<br />\n\n<div>\n  <mat-select placeholder=\"Resource\" style=\"width: 200px\" [(ngModel)]=\"selectedResource\">\n    <mat-option *ngFor=\"let resource of resourcesService.getResources()\" [value]=\"resource\">\n      {{resource.name | titlecase}}\n    </mat-option>\n  </mat-select>\n\n  <mat-form-field>\n    <input matInput [(ngModel)]=\"amount\">\n  </mat-form-field>\n  <button mat-raised-button (click)=\"addResourceAmount()\">Add to all resources</button>\n  <div *ngIf=\"selectedResource !== undefined\">\n    <button mat-raised-button (click)=\"addResourceAmount(selectedResource)\">Add to {{selectedResource.name |\n      titlecase}}</button>\n  </div>\n</div>\n"
 
 /***/ }),
 
@@ -302,8 +293,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _services_admin_admin_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../services/admin/admin.service */ "./src/app/services/admin/admin.service.ts");
 /* harmony import */ var _services_resources_resources_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../services/resources/resources.service */ "./src/app/services/resources/resources.service.ts");
-/* harmony import */ var _services_workers_workers_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../services/workers/workers.service */ "./src/app/services/workers/workers.service.ts");
-/* harmony import */ var _services_upgrades_upgrades_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../services/upgrades/upgrades.service */ "./src/app/services/upgrades/upgrades.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -316,94 +305,23 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
-
-
 var AdminDebugComponent = /** @class */ (function () {
-    function AdminDebugComponent(resourcesService, workersService, upgradesService, adminService) {
+    function AdminDebugComponent(resourcesService, adminService) {
         this.resourcesService = resourcesService;
-        this.workersService = workersService;
-        this.upgradesService = upgradesService;
         this.adminService = adminService;
         this.filterAccessible = true;
         this.amount = 0;
     }
     AdminDebugComponent.prototype.ngOnInit = function () { };
-    AdminDebugComponent.prototype.openResourceDialog = function () {
-        this.adminService.openResourceDialog();
-    };
-    AdminDebugComponent.prototype.openUpgradeDialog = function () {
-        this.adminService.openUpgradeDialog();
-    };
     AdminDebugComponent.prototype.addResourceAmount = function (selectedResource) {
-        if (selectedResource === undefined) {
-            for (var _i = 0, _a = this.resourcesService.resources; _i < _a.length; _i++) {
+        if (!selectedResource) {
+            for (var _i = 0, _a = this.resourcesService.getResources(); _i < _a.length; _i++) {
                 var resource = _a[_i];
-                this.resourcesService.addResourceAmount(resource.id, +this.amount);
+                resource.addAmount(+this.amount);
             }
             return;
         }
-        this.resourcesService.addResourceAmount(+selectedResource.id, +this.amount);
-    };
-    AdminDebugComponent.prototype.prepareResourceForJson = function (resource) {
-        resource.id = +resource.id;
-        resource.amount = +resource.amount;
-        for (var _i = 0, _a = resource.resourceConsumes; _i < _a.length; _i++) {
-            var resourceConsume = _a[_i];
-            resourceConsume.resourceId = +resourceConsume.resourceId;
-            resourceConsume.cost = +resourceConsume.cost;
-        }
-        resource.harvestYield = +resource.harvestYield;
-        resource.harvestMilliseconds = +resource.harvestMilliseconds;
-        resource.workerYield = +resource.workerYield;
-        resource.sellsFor = +resource.sellsFor;
-        resource.resourceTier = +resource.resourceTier;
-        resource.previousTier = resource.resourceTier === 0 ? 0 : resource.resourceTier - 1;
-        resource.resourceAccessible = resource.resourceTier === 0;
-        resource.worker.workerCount = +resource.worker.workerCount;
-        resource.worker.cost = +resource.worker.cost;
-        resource.amount = 0;
-        resource.resourceAccessible = resource.resourceTier === 0;
-    };
-    AdminDebugComponent.prototype.prepareWorkerForJson = function (worker) {
-        worker.id = +worker.id;
-        worker.cost = +worker.cost;
-        for (var _i = 0, _a = worker.workersByResource; _i < _a.length; _i++) {
-            var resourceWorker = _a[_i];
-            resourceWorker.resourceId = +resourceWorker.resourceId;
-            resourceWorker.workerCount = +resourceWorker.workerCount;
-            resourceWorker.workerYield = +resourceWorker.workerYield;
-        }
-        worker.workerCount = 0;
-        worker.freeWorkers = 0;
-    };
-    AdminDebugComponent.prototype.stringifyResource = function (resource) {
-        this.prepareResourceForJson(resource);
-        var resourceJson = JSON.stringify(resource);
-        alert(resourceJson);
-        console.log(resourceJson);
-    };
-    AdminDebugComponent.prototype.stringifyResources = function () {
-        for (var _i = 0, _a = this.resourcesService.resources; _i < _a.length; _i++) {
-            var resource = _a[_i];
-            this.prepareResourceForJson(resource);
-        }
-        var resourcesJson = JSON.stringify(this.resourcesService.resources);
-        alert(resourcesJson);
-        console.log(resourcesJson);
-    };
-    AdminDebugComponent.prototype.stringifyWorkers = function () {
-        for (var _i = 0, _a = this.workersService.workers; _i < _a.length; _i++) {
-            var worker = _a[_i];
-            this.prepareWorkerForJson(worker);
-        }
-        var workersJson = JSON.stringify(this.workersService.workers);
-        alert(workersJson);
-        console.log(workersJson);
-    };
-    AdminDebugComponent.prototype.stringifyUpgrades = function () {
-        var upgradesJson = JSON.stringify(this.upgradesService.upgrades);
-        alert(upgradesJson);
-        console.log(upgradesJson);
+        selectedResource.addAmount(+this.amount);
     };
     AdminDebugComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -412,8 +330,6 @@ var AdminDebugComponent = /** @class */ (function () {
             styles: [__webpack_require__(/*! ./admin-debug.component.css */ "./src/app/components/admin-debug/admin-debug.component.css")]
         }),
         __metadata("design:paramtypes", [_services_resources_resources_service__WEBPACK_IMPORTED_MODULE_2__["ResourcesService"],
-            _services_workers_workers_service__WEBPACK_IMPORTED_MODULE_3__["WorkersService"],
-            _services_upgrades_upgrades_service__WEBPACK_IMPORTED_MODULE_4__["UpgradesService"],
             _services_admin_admin_service__WEBPACK_IMPORTED_MODULE_1__["AdminService"]])
     ], AdminDebugComponent);
     return AdminDebugComponent;
@@ -441,7 +357,7 @@ module.exports = "/* BuildingsComponent's private CSS styles */\r\n.buildings {\
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<mat-button-toggle-group #group=\"matButtonToggleGroup\" [(ngModel)]=\"selectedBuilding\"\nclass=\"buildings\">\n<mat-button-toggle *ngFor=\"let buildingTile of getBuildingTileArray(true)\" [value]=\"buildingTile\" class=\"building\"\n  [disabled]=\"!canAffordBuilding(buildingTile.tileType)\" (click)=\"mapService.buildingListVisible = false\">\n  <div class=\"title\" matTooltip=\"{{buildingTile.description}}\" matTooltipPosition=\"above\">\n    {{buildingTile.name}}\n  </div>\n  <div class=\"resource-list\">\n    <div *ngFor=\"let resourceCost of buildingTile.resourceCosts\" matTooltip=\"{{resourceCost.resourceCost}} {{getResource(resourceCost.resourceId).name | titlecase}}\"\n      matTooltipPosition=\"below\">\n      <img src=\"{{getResource(resourceCost.resourceId).iconPath}}\" alt=\"{{getResource(resourceCost.resourceId).name}}\">\n      {{resourceCost.resourceCost}}\n    </div>\n  </div>\n</mat-button-toggle>\n</mat-button-toggle-group>\n"
+module.exports = "<mat-button-toggle-group #group=\"matButtonToggleGroup\" [(ngModel)]=\"selectedBuilding\"\nclass=\"buildings\">\n<mat-button-toggle *ngFor=\"let buildingTile of getBuildingTileArray(true)\" [value]=\"buildingTile\" class=\"building\"\n  [disabled]=\"!canAffordBuilding(buildingTile.tileType)\" (click)=\"mapService.buildingListVisible = false\">\n  <div class=\"title\" matTooltip=\"{{buildingTile.description}}\" matTooltipPosition=\"above\">\n    {{buildingTile.name}}\n  </div>\n  <div class=\"resource-list\">\n    <div *ngFor=\"let resourceCost of buildingTile.resourceCosts\" matTooltip=\"{{resourceCost.resourceCost}} {{getResource(resourceCost.resourceEnum).name | titlecase}}\"\n      matTooltipPosition=\"below\">\n      <img src=\"{{getResource(resourceCost.resourceEnum).iconPath}}\" alt=\"{{getResource(resourceCost.resourceEnum).name}}\">\n      {{resourceCost.resourceCost}}\n    </div>\n  </div>\n</mat-button-toggle>\n</mat-button-toggle-group>\n"
 
 /***/ }),
 
@@ -518,8 +434,8 @@ var BuildingsComponent = /** @class */ (function () {
         }
         return tiles;
     };
-    BuildingsComponent.prototype.getResource = function (resourceId) {
-        return this.resourcesService.getResource(resourceId);
+    BuildingsComponent.prototype.getResource = function (resourceEnum) {
+        return this.resourcesService.resources.get(resourceEnum);
     };
     Object.defineProperty(BuildingsComponent.prototype, "selectedBuilding", {
         get: function () {
@@ -568,7 +484,7 @@ module.exports = "/* ClickerMainComponent's private CSS styles */\r\n.resources 
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ul class=\"resources noselect\">\n  <mat-accordion multi=\"true\">\n    <mat-expansion-panel expanded=\"true\" *ngFor=\"let resourceType of resourceTypes | enumToArray\">\n      <mat-expansion-panel-header>\n        <mat-panel-title>\n          {{resourceType}}\n        </mat-panel-title>\n        <mat-panel-description>\n        </mat-panel-description>\n      </mat-expansion-panel-header>\n\n      <div class='button-container' *ngFor=\"let resource of resourcesOfType(resourceType, adminService.filterAccessible)\"\n        matTooltip=\"{{getTooltipMessage(resource.id)}}\" matTooltipPosition=\"right\">\n        <button mat-raised-button class=\"resource-button\" [ngClass]=\"{'warn': resourceIsBeingStolen(resource.id)}\"\n          [disabled]=\"!canHarvest(resource.id, resource.harvestYield)\" [id]=\"resource.id\" (click)='startHarvesting(resource.id)'>\n          <div class=\"key-container\" *ngIf=\"resource.bindIndex >= 0\">\n            <img src=\"./assets/sprites/key.png\">\n            <p>{{resource.bindIndex}}</p>\n          </div>\n\n          <mat-card-title>{{resource.name | titlecase }}</mat-card-title>\n          <mat-card-subtitle>{{resource.amount | number:'1.0-0'}}</mat-card-subtitle>\n          <mat-progress-bar [class.hidden]=\"!resource.harvesting\" class=\"harvest-progress\" [mode]=\"progressBarMode\"\n            [value]=\"resource.progressBarValue\"></mat-progress-bar>\n\n          <img class=\"resource-img\" src=\"{{resource.iconPath}}\" alt=\"{{resource.name}}\" *ngIf=\"resource.iconPath !== ''\">\n          <div class='travelling-count' *ngIf=\"resource.amountTravelling > 0\">{{resource.amountTravelling}} Travelling</div>\n        </button>\n\n        <div *ngIf=\"adminService.editMode\">\n          <br />\n          <button (click)=\"editResource(resource.id)\">Edit {{resource.name | titlecase}}</button>\n        </div>\n      </div>\n    </mat-expansion-panel>\n  </mat-accordion>\n</ul>\n"
+module.exports = "<ul class=\"resources noselect\">\n  <mat-accordion multi=\"true\">\n    <mat-expansion-panel expanded=\"true\" *ngFor=\"let resourceType of resourceTypes | enumToArray\">\n      <mat-expansion-panel-header>\n        <mat-panel-title>\n          {{resourceType}}\n        </mat-panel-title>\n        <mat-panel-description>\n        </mat-panel-description>\n      </mat-expansion-panel-header>\n\n      <div class='button-container' *ngFor=\"let resource of getResources(resourceType, adminService.filterAccessible)\"\n        matTooltip=\"{{getTooltipMessage(resource)}}\" matTooltipPosition=\"right\">\n        <button mat-raised-button class=\"resource-button\" [ngClass]=\"{'warn': resourceIsBeingStolen(resource)}\"\n          [disabled]=\"!canHarvest(resource, resource.harvestYield)\" (click)='startHarvesting(resource)'>\n          <div class=\"key-container\" *ngIf=\"resource.bindIndex >= 0\">\n            <img src=\"./assets/sprites/key.png\">\n            <p>{{resource.bindIndex}}</p>\n          </div>\n\n          <mat-card-title>{{resource.name | titlecase }}</mat-card-title>\n          <mat-card-subtitle>{{resource.amount | number:'1.0-0'}}</mat-card-subtitle>\n          <mat-progress-bar [class.hidden]=\"!resource.harvesting\" class=\"harvest-progress\" [value]=\"resource.progressBarValue\"></mat-progress-bar>\n\n          <img class=\"resource-img\" src=\"{{resource.iconPath}}\" alt=\"{{resource.name}}\" *ngIf=\"resource.iconPath !== ''\">\n          <div class='travelling-count' *ngIf=\"resource.amountTravelling > 0\">{{resource.amountTravelling}} Travelling</div>\n        </button>\n      </div>\n    </mat-expansion-panel>\n  </mat-accordion>\n</ul>\n"
 
 /***/ }),
 
@@ -585,7 +501,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _services_clicker_main_clicker_main_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./../../services/clicker-main/clicker-main.service */ "./src/app/services/clicker-main/clicker-main.service.ts");
 /* harmony import */ var _services_resources_resources_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../services/resources/resources.service */ "./src/app/services/resources/resources.service.ts");
-/* harmony import */ var _objects_resource__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../objects/resource */ "./src/app/objects/resource.ts");
+/* harmony import */ var _objects_resourceData__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../objects/resourceData */ "./src/app/objects/resourceData.ts");
 /* harmony import */ var _services_workers_workers_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../services/workers/workers.service */ "./src/app/services/workers/workers.service.ts");
 /* harmony import */ var _services_tooltip_tooltip_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./../../services/tooltip/tooltip.service */ "./src/app/services/tooltip/tooltip.service.ts");
 /* harmony import */ var _services_map_map_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./../../services/map/map.service */ "./src/app/services/map/map.service.ts");
@@ -621,31 +537,27 @@ var ClickerMainComponent = /** @class */ (function () {
         this.enemyService = enemyService;
         this.adminService = adminService;
         this.tickService = tickService;
-        this.resourceTypes = _objects_resource__WEBPACK_IMPORTED_MODULE_3__["ResourceType"];
+        this.resourceTypes = _objects_resourceData__WEBPACK_IMPORTED_MODULE_3__["ResourceType"];
     }
     ClickerMainComponent.prototype.ngOnInit = function () {
     };
-    ClickerMainComponent.prototype.resourcesOfType = function (resourceType, filterByAccessible) {
-        return this.resourcesService.resourcesOfType(this.resourceTypes[resourceType], false, false, filterByAccessible);
+    ClickerMainComponent.prototype.getResources = function (resourceType, filterByAccessible) {
+        return this.resourcesService.getResources(this.resourceTypes[resourceType], false, filterByAccessible);
     };
-    ClickerMainComponent.prototype.getTooltipMessage = function (id) {
-        return this.tooltipService.getResourceTooltip(id);
+    ClickerMainComponent.prototype.getTooltipMessage = function (resource) {
+        return this.tooltipService.getResourceTooltip(resource);
     };
-    ClickerMainComponent.prototype.canHarvest = function (id, multiplier) {
-        var resource = this.resourcesService.getResource(id);
-        return !resource.harvesting && this.resourcesService.canHarvest(id, multiplier);
+    ClickerMainComponent.prototype.canHarvest = function (resource, multiplier) {
+        return !resource.harvesting && resource.canHarvest(multiplier);
     };
-    ClickerMainComponent.prototype.startHarvesting = function (id) {
-        this.clickerMainService.startHarvesting(id);
+    ClickerMainComponent.prototype.startHarvesting = function (resource) {
+        this.clickerMainService.startHarvesting(resource);
     };
-    ClickerMainComponent.prototype.resourceIsBeingStolen = function (id) {
-        return this.enemyService.resourceIsBeingStolen(id);
+    ClickerMainComponent.prototype.resourceIsBeingStolen = function (resource) {
+        return this.enemyService.resourceIsBeingStolen(resource);
     };
-    ClickerMainComponent.prototype.harvestResource = function (id) {
-        this.clickerMainService.harvestResource(id);
-    };
-    ClickerMainComponent.prototype.editResource = function (id) {
-        this.adminService.openResourceDialog(id);
+    ClickerMainComponent.prototype.harvestResource = function (resource) {
+        this.clickerMainService.harvestResource(resource);
     };
     ClickerMainComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -753,7 +665,7 @@ module.exports = "#fighter-tooltip {\r\n  top: var(--detail-tooltip-top);\r\n  l
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<mat-card appSnap [snapSetting]=\"snapSetting\" id=\"fighter-tooltip\">\n  <div class=\"anchor-container\">\n    <a>\n      <mat-icon class=\"corner\" id=\"arrow-upper-left\" (click)=\"snapSetting = 'upperLeft'\">arrow_forward</mat-icon>\n    </a>\n    <a>\n      <mat-icon class=\"corner\" id=\"arrow-upper-right\" (click)=\"snapSetting = 'upperRight'\">arrow_forward</mat-icon>\n    </a>\n    <a>\n      <mat-icon id=\"center\" (click)=\"snapSetting = 'free'\">all_out</mat-icon>\n    </a>\n    <a>\n      <mat-icon class=\"corner\" id=\"arrow-lower-left\" (click)=\"snapSetting = 'lowerLeft'\">arrow_forward</mat-icon>\n    </a>\n    <a>\n      <mat-icon class=\"corner\" id=\"arrow-lower-right\" (click)=\"snapSetting = 'lowerRight'\">arrow_forward</mat-icon>\n    </a>\n  </div>\n  <div *ngIf=\"focusedFighter\">\n    <mat-card-title>{{focusedFighter.name}}</mat-card-title>\n    <mat-card-subtitle>{{focusedFighter.description}}</mat-card-subtitle>\n\n    <div class=\"repair-container\">\n      {{focusedFighter.health}}/{{focusedFighter.maxHealth}} Health\n      <div *ngIf=\"focusedFighter.health < focusedFighter.maxHealth\">\n        <button mat-raised-button (click)=\"focusedFighter.heal()\" color=\"accent\" [disabled]=\"!focusedFighter.canHeal()\">\n          Heal\n          <div class=\"resource-list\">\n            <div matTooltip=\"{{focusedFighter.healCost | number:'1.0-2'}} {{getResource(0).name | titlecase}}\"\n              matTooltipPosition=\"below\">\n              <img src=\"{{getResource(0).iconPath}}\" alt=\"{{getResource(0).name}}\">\n              {{focusedFighter.healCost | number:'1.0-2'}}\n            </div>\n          </div>\n        </button>\n      </div>\n    </div>\n\n    <mat-card-content>\n      <button mat-raised-button color=\"warn\" (click)=\"removeFighter()\">Remove Fighter</button>\n\n      <h3>Stats</h3>\n      <table class=\"stats-container\">\n        <tbody>\n          <tr class=\"stat-row\">\n            <td>\n              <p>\n                Max Health: {{focusedFighter.maxHealth | number:'1.0-2'}}\n              </p>\n            </td>\n            <td>\n              <b>\n                Level {{focusedFighter.statLevels['MAXHEALTH']}}\n              </b>\n            </td>\n            <td>\n              <button class=\"upgrade-button\" color=\"accent\" mat-raised-button (click)=\"focusedFighter.upgradeStat('MAXHEALTH')\"\n                [disabled]=\"!focusedFighter.canUpgradeStat('MAXHEALTH')\" matTooltip=\"Level {{focusedFighter.statLevels['MAXHEALTH'] + 1}}: {{focusedFighter.getUpgradedStat('MAXHEALTH') | number:'1.0-2'}} Max Health\"\n                matTooltipPosition=\"below\">\n                <mat-icon color=\"primary\">arrow_upward</mat-icon>\n                <div class=\"resource-list\">\n                  <div>\n                    <img src=\"{{getResource(0).iconPath}}\" alt=\"{{getResource(0).name}}\">\n                    {{focusedFighter.statCosts['MAXHEALTH'] | number:'1.0-0'}}\n                  </div>\n                </div>\n              </button>\n            </td>\n          </tr>\n\n          <tr class=\"stat-row\">\n            <td>\n              <p>\n                Attack: {{focusedFighter.attack | number:'1.0-2'}}\n              </p>\n            </td>\n            <td>\n              <b>\n                Level {{focusedFighter.statLevels['ATTACK']}}\n              </b>\n            </td>\n            <td>\n              <button class=\"upgrade-button\" color=\"accent\" mat-raised-button (click)=\"focusedFighter.upgradeStat('ATTACK')\"\n                [disabled]=\"!focusedFighter.canUpgradeStat('ATTACK')\" matTooltip=\"Level {{focusedFighter.statLevels['ATTACK'] + 1}}: {{focusedFighter.getUpgradedStat('ATTACK') | number:'1.0-2'}} Attack\"\n                matTooltipPosition=\"below\">\n                <mat-icon color=\"primary\">arrow_upward</mat-icon>\n                <div class=\"resource-list\">\n                  <div>\n                    <img src=\"{{getResource(0).iconPath}}\" alt=\"{{getResource(0).name}}\">\n                    {{focusedFighter.statCosts['ATTACK'] | number:'1.0-0'}}\n                  </div>\n                </div>\n              </button>\n            </td>\n          </tr>\n\n          <tr class=\"stat-row\">\n            <td>\n              <p>\n                Defense: {{focusedFighter.defense | number:'1.0-2'}}\n              </p>\n            </td>\n            <td>\n              <b>\n                Level {{focusedFighter.statLevels['DEFENSE']}}\n              </b>\n            </td>\n            <td>\n              <button class=\"upgrade-button\" color=\"accent\" mat-raised-button (click)=\"focusedFighter.upgradeStat('DEFENSE')\"\n                [disabled]=\"!focusedFighter.canUpgradeStat('DEFENSE')\" matTooltip=\"Level {{focusedFighter.statLevels['DEFENSE'] + 1}}: {{focusedFighter.getUpgradedStat('DEFENSE') | number:'1.0-2'}} Defense\"\n                matTooltipPosition=\"below\">\n                <mat-icon color=\"primary\">arrow_upward</mat-icon>\n                <div class=\"resource-list\">\n                  <div>\n                    <img src=\"{{getResource(0).iconPath}}\" alt=\"{{getResource(0).name}}\">\n                    {{focusedFighter.statCosts['DEFENSE'] | number:'1.0-0'}}\n                  </div>\n                </div>\n              </button>\n            </td>\n          </tr>\n\n          <tr class=\"stat-row\">\n            <td>\n              <p>\n                Attack Range: {{focusedFighter.attackRange | number:'1.0-2'}}\n                Tile{{focusedFighter.attackRange === 1 ? '' : 's'}}\n              </p>\n            </td>\n            <td>\n              <b>\n                Level {{focusedFighter.statLevels['RANGE']}}\n              </b>\n            </td>\n            <td>\n              <button class=\"upgrade-button\" color=\"accent\" mat-raised-button (click)=\"focusedFighter.upgradeStat('RANGE')\"\n                [disabled]=\"!focusedFighter.canUpgradeStat('RANGE')\" matTooltip=\"Level {{focusedFighter.statLevels['RANGE'] + 1}}: {{focusedFighter.getUpgradedStat('RANGE') | number:'1.0-2'}} Attack Range\"\n                matTooltipPosition=\"below\">\n                <mat-icon color=\"primary\">arrow_upward</mat-icon>\n                <div class=\"resource-list\">\n                  <div>\n                    <img src=\"{{getResource(0).iconPath}}\" alt=\"{{getResource(0).name}}\">\n                    {{focusedFighter.statCosts['RANGE'] | number:'1.0-0'}}\n                  </div>\n                </div>\n              </button>\n            </td>\n          </tr>\n\n          <tr class=\"stat-row\" *ngIf=\"focusedFighter.moveable\">\n            <td>\n              <p>\n                Movement Speed: {{focusedFighter.animationSpeed * 100 | number:'1.0-2'}}\n                Tile{{focusedFighter.animationSpeed === 1 ? '' : 's'}}/second\n              </p>\n            </td>\n            <td>\n              <b>\n                Level {{focusedFighter.statLevels['MOVEMENTSPEED']}}\n              </b>\n            </td>\n            <td>\n              <button class=\"upgrade-button\" color=\"accent\" mat-raised-button (click)=\"focusedFighter.upgradeStat('MOVEMENTSPEED')\"\n                [disabled]=\"!focusedFighter.canUpgradeStat('MOVEMENTSPEED')\" matTooltip=\"Level {{focusedFighter.statLevels['MOVEMENTSPEED'] + 1}}: {{focusedFighter.getUpgradedStat('MOVEMENTSPEED') * 100 | number:'1.0-2'}} Tiles/Second\"\n                matTooltipPosition=\"below\">\n                <mat-icon color=\"primary\">arrow_upward</mat-icon>\n                <div class=\"resource-list\">\n                  <div>\n                    <img src=\"{{getResource(0).iconPath}}\" alt=\"{{getResource(0).name}}\">\n                    {{focusedFighter.statCosts['MOVEMENTSPEED'] | number:'1.0-0'}}\n                  </div>\n                </div>\n              </button>\n            </td>\n          </tr>\n\n          <tr class=\"stat-row\">\n            <td>\n              <p>\n                Fire Rate: {{1000 / focusedFighter.fireMilliseconds | number:'1.0-2'}}/Second\n              </p>\n            </td>\n            <td>\n              <b>\n                Level {{focusedFighter.statLevels['FIRERATE']}}\n              </b>\n            </td>\n            <td>\n              <button class=\"upgrade-button\" color=\"accent\" mat-raised-button (click)=\"focusedFighter.upgradeStat('FIRERATE')\"\n                [disabled]=\"!focusedFighter.canUpgradeStat('FIRERATE')\" matTooltip=\"Level {{focusedFighter.statLevels['FIRERATE'] + 1}}: {{1000 / focusedFighter.getUpgradedStat('FIRERATE') | number:'1.0-2'}}/Second\"\n                matTooltipPosition=\"below\">\n                <mat-icon color=\"primary\">arrow_upward</mat-icon>\n                <div class=\"resource-list\">\n                  <div>\n                    <img src=\"{{getResource(0).iconPath}}\" alt=\"{{getResource(0).name}}\">\n                    {{focusedFighter.statCosts['FIRERATE'] | number:'1.0-0'}}\n                  </div>\n                </div>\n              </button>\n            </td>\n          </tr>\n        </tbody>\n      </table>\n    </mat-card-content>\n  </div>\n</mat-card>\n"
+module.exports = "<mat-card appSnap [snapSetting]=\"snapSetting\" id=\"fighter-tooltip\">\n  <div class=\"anchor-container\">\n    <a>\n      <mat-icon class=\"corner\" id=\"arrow-upper-left\" (click)=\"snapSetting = 'upperLeft'\">arrow_forward</mat-icon>\n    </a>\n    <a>\n      <mat-icon class=\"corner\" id=\"arrow-upper-right\" (click)=\"snapSetting = 'upperRight'\">arrow_forward</mat-icon>\n    </a>\n    <a>\n      <mat-icon id=\"center\" (click)=\"snapSetting = 'free'\">all_out</mat-icon>\n    </a>\n    <a>\n      <mat-icon class=\"corner\" id=\"arrow-lower-left\" (click)=\"snapSetting = 'lowerLeft'\">arrow_forward</mat-icon>\n    </a>\n    <a>\n      <mat-icon class=\"corner\" id=\"arrow-lower-right\" (click)=\"snapSetting = 'lowerRight'\">arrow_forward</mat-icon>\n    </a>\n  </div>\n  <div *ngIf=\"focusedFighter\">\n    <mat-card-title>{{focusedFighter.name}}</mat-card-title>\n    <mat-card-subtitle>{{focusedFighter.description}}</mat-card-subtitle>\n\n    <div class=\"repair-container\">\n      {{focusedFighter.health}}/{{focusedFighter.maxHealth}} Health\n      <div *ngIf=\"focusedFighter.health < focusedFighter.maxHealth\">\n        <button mat-raised-button (click)=\"focusedFighter.heal()\" color=\"accent\" [disabled]=\"!focusedFighter.canHeal()\">\n          Heal\n          <div class=\"resource-list\">\n            <div matTooltip=\"{{focusedFighter.healCost | number:'1.0-2'}} {{getResource('GOLD').name | titlecase}}\"\n              matTooltipPosition=\"below\">\n              <img src=\"{{getResource('GOLD').iconPath}}\" alt=\"{{getResource('GOLD').name}}\">\n              {{focusedFighter.healCost | number:'1.0-2'}}\n            </div>\n          </div>\n        </button>\n      </div>\n    </div>\n\n    <mat-card-content>\n      <button mat-raised-button color=\"warn\" (click)=\"removeFighter()\">Remove Fighter</button>\n\n      <h3>Stats</h3>\n      <table class=\"stats-container\">\n        <tbody>\n          <tr class=\"stat-row\">\n            <td>\n              <p>\n                Max Health: {{focusedFighter.maxHealth | number:'1.0-2'}}\n              </p>\n            </td>\n            <td>\n              <b>\n                Level {{focusedFighter.statLevels['MAXHEALTH']}}\n              </b>\n            </td>\n            <td>\n              <button class=\"upgrade-button\" color=\"accent\" mat-raised-button (click)=\"focusedFighter.upgradeStat('MAXHEALTH')\"\n                [disabled]=\"!focusedFighter.canUpgradeStat('MAXHEALTH')\" matTooltip=\"Level {{focusedFighter.statLevels['MAXHEALTH'] + 1}}: {{focusedFighter.getUpgradedStat('MAXHEALTH') | number:'1.0-2'}} Max Health\"\n                matTooltipPosition=\"below\">\n                <mat-icon color=\"primary\">arrow_upward</mat-icon>\n                <div class=\"resource-list\">\n                  <div>\n                    <img src=\"{{getResource('GOLD').iconPath}}\" alt=\"{{getResource('GOLD').name}}\">\n                    {{focusedFighter.statCosts['MAXHEALTH'] | number:'1.0-0'}}\n                  </div>\n                </div>\n              </button>\n            </td>\n          </tr>\n\n          <tr class=\"stat-row\">\n            <td>\n              <p>\n                Attack: {{focusedFighter.attack | number:'1.0-2'}}\n              </p>\n            </td>\n            <td>\n              <b>\n                Level {{focusedFighter.statLevels['ATTACK']}}\n              </b>\n            </td>\n            <td>\n              <button class=\"upgrade-button\" color=\"accent\" mat-raised-button (click)=\"focusedFighter.upgradeStat('ATTACK')\"\n                [disabled]=\"!focusedFighter.canUpgradeStat('ATTACK')\" matTooltip=\"Level {{focusedFighter.statLevels['ATTACK'] + 1}}: {{focusedFighter.getUpgradedStat('ATTACK') | number:'1.0-2'}} Attack\"\n                matTooltipPosition=\"below\">\n                <mat-icon color=\"primary\">arrow_upward</mat-icon>\n                <div class=\"resource-list\">\n                  <div>\n                    <img src=\"{{getResource('GOLD').iconPath}}\" alt=\"{{getResource('GOLD').name}}\">\n                    {{focusedFighter.statCosts['ATTACK'] | number:'1.0-0'}}\n                  </div>\n                </div>\n              </button>\n            </td>\n          </tr>\n\n          <tr class=\"stat-row\">\n            <td>\n              <p>\n                Defense: {{focusedFighter.defense | number:'1.0-2'}}\n              </p>\n            </td>\n            <td>\n              <b>\n                Level {{focusedFighter.statLevels['DEFENSE']}}\n              </b>\n            </td>\n            <td>\n              <button class=\"upgrade-button\" color=\"accent\" mat-raised-button (click)=\"focusedFighter.upgradeStat('DEFENSE')\"\n                [disabled]=\"!focusedFighter.canUpgradeStat('DEFENSE')\" matTooltip=\"Level {{focusedFighter.statLevels['DEFENSE'] + 1}}: {{focusedFighter.getUpgradedStat('DEFENSE') | number:'1.0-2'}} Defense\"\n                matTooltipPosition=\"below\">\n                <mat-icon color=\"primary\">arrow_upward</mat-icon>\n                <div class=\"resource-list\">\n                  <div>\n                    <img src=\"{{getResource('GOLD').iconPath}}\" alt=\"{{getResource('GOLD').name}}\">\n                    {{focusedFighter.statCosts['DEFENSE'] | number:'1.0-0'}}\n                  </div>\n                </div>\n              </button>\n            </td>\n          </tr>\n\n          <tr class=\"stat-row\">\n            <td>\n              <p>\n                Attack Range: {{focusedFighter.attackRange | number:'1.0-2'}}\n                Tile{{focusedFighter.attackRange === 1 ? '' : 's'}}\n              </p>\n            </td>\n            <td>\n              <b>\n                Level {{focusedFighter.statLevels['RANGE']}}\n              </b>\n            </td>\n            <td>\n              <button class=\"upgrade-button\" color=\"accent\" mat-raised-button (click)=\"focusedFighter.upgradeStat('RANGE')\"\n                [disabled]=\"!focusedFighter.canUpgradeStat('RANGE')\" matTooltip=\"Level {{focusedFighter.statLevels['RANGE'] + 1}}: {{focusedFighter.getUpgradedStat('RANGE') | number:'1.0-2'}} Attack Range\"\n                matTooltipPosition=\"below\">\n                <mat-icon color=\"primary\">arrow_upward</mat-icon>\n                <div class=\"resource-list\">\n                  <div>\n                    <img src=\"{{getResource('GOLD').iconPath}}\" alt=\"{{getResource('GOLD').name}}\">\n                    {{focusedFighter.statCosts['RANGE'] | number:'1.0-0'}}\n                  </div>\n                </div>\n              </button>\n            </td>\n          </tr>\n\n          <tr class=\"stat-row\" *ngIf=\"focusedFighter.moveable\">\n            <td>\n              <p>\n                Movement Speed: {{focusedFighter.animationSpeed * 100 | number:'1.0-2'}}\n                Tile{{focusedFighter.animationSpeed === 1 ? '' : 's'}}/second\n              </p>\n            </td>\n            <td>\n              <b>\n                Level {{focusedFighter.statLevels['MOVEMENTSPEED']}}\n              </b>\n            </td>\n            <td>\n              <button class=\"upgrade-button\" color=\"accent\" mat-raised-button (click)=\"focusedFighter.upgradeStat('MOVEMENTSPEED')\"\n                [disabled]=\"!focusedFighter.canUpgradeStat('MOVEMENTSPEED')\" matTooltip=\"Level {{focusedFighter.statLevels['MOVEMENTSPEED'] + 1}}: {{focusedFighter.getUpgradedStat('MOVEMENTSPEED') * 100 | number:'1.0-2'}} Tiles/Second\"\n                matTooltipPosition=\"below\">\n                <mat-icon color=\"primary\">arrow_upward</mat-icon>\n                <div class=\"resource-list\">\n                  <div>\n                    <img src=\"{{getResource('GOLD').iconPath}}\" alt=\"{{getResource('GOLD').name}}\">\n                    {{focusedFighter.statCosts['MOVEMENTSPEED'] | number:'1.0-0'}}\n                  </div>\n                </div>\n              </button>\n            </td>\n          </tr>\n\n          <tr class=\"stat-row\">\n            <td>\n              <p>\n                Fire Rate: {{1000 / focusedFighter.fireMilliseconds | number:'1.0-2'}}/Second\n              </p>\n            </td>\n            <td>\n              <b>\n                Level {{focusedFighter.statLevels['FIRERATE']}}\n              </b>\n            </td>\n            <td>\n              <button class=\"upgrade-button\" color=\"accent\" mat-raised-button (click)=\"focusedFighter.upgradeStat('FIRERATE')\"\n                [disabled]=\"!focusedFighter.canUpgradeStat('FIRERATE')\" matTooltip=\"Level {{focusedFighter.statLevels['FIRERATE'] + 1}}: {{1000 / focusedFighter.getUpgradedStat('FIRERATE') | number:'1.0-2'}}/Second\"\n                matTooltipPosition=\"below\">\n                <mat-icon color=\"primary\">arrow_upward</mat-icon>\n                <div class=\"resource-list\">\n                  <div>\n                    <img src=\"{{getResource('GOLD').iconPath}}\" alt=\"{{getResource('GOLD').name}}\">\n                    {{focusedFighter.statCosts['FIRERATE'] | number:'1.0-0'}}\n                  </div>\n                </div>\n              </button>\n            </td>\n          </tr>\n        </tbody>\n      </table>\n    </mat-card-content>\n  </div>\n</mat-card>\n"
 
 /***/ }),
 
@@ -793,6 +705,9 @@ var FighterDetailComponent = /** @class */ (function () {
     }
     FighterDetailComponent.prototype.ngOnInit = function () {
     };
+    FighterDetailComponent.prototype.getResource = function (resourceEnum) {
+        return this.resourcesService.resources.get(resourceEnum);
+    };
     FighterDetailComponent.prototype.removeFighter = function () {
         if (!this.focusedFighter) {
             return;
@@ -800,9 +715,6 @@ var FighterDetailComponent = /** @class */ (function () {
         this.focusedFighter.health = 0;
         this.focusedTile = undefined;
         this.focusedFighter = undefined;
-    };
-    FighterDetailComponent.prototype.getResource = function (resourceId) {
-        return this.resourcesService.getResource(resourceId);
     };
     Object.defineProperty(FighterDetailComponent.prototype, "focusedTile", {
         get: function () {
@@ -859,7 +771,7 @@ module.exports = "/* FightersComponent's private CSS styles */\r\n.fighters {\r\
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<mat-button-toggle-group #group=\"matButtonToggleGroup\" [(ngModel)]=\"selectedFighterType\" class=\"fighters\">\r\n  <mat-button-toggle *ngFor=\"let fighterType of fighterService.fighterTypes\" [value]=\"fighterType\" class=\"fighter\"\r\n    [disabled]=\"!canAffordFighter(fighterType)\" (click)=\"mapService.fighterListVisible = false\">\r\n    <div class=\"title\" matTooltip=\"{{fighterType.description}}\" matTooltipPosition=\"above\">\r\n      {{fighterType.name}}\r\n    </div>\r\n    <div class=\"resource-list\">\r\n      <div matTooltip=\"{{fighterType.cost}} {{getResource(0).name | titlecase}}\"\r\n        matTooltipPosition=\"below\">\r\n        <img src=\"{{getResource(0).iconPath}}\" alt=\"{{getResource(0).name}}\">\r\n        {{fighterType.cost}}\r\n      </div>\r\n    </div>\r\n  </mat-button-toggle>\r\n</mat-button-toggle-group>\r\n"
+module.exports = "<mat-button-toggle-group #group=\"matButtonToggleGroup\" [(ngModel)]=\"selectedFighterType\" class=\"fighters\">\r\n  <mat-button-toggle *ngFor=\"let fighterType of fighterService.fighterTypes\" [value]=\"fighterType\" class=\"fighter\"\r\n    [disabled]=\"!canAffordFighter(fighterType)\" (click)=\"mapService.fighterListVisible = false\">\r\n    <div class=\"title\" matTooltip=\"{{fighterType.description}}\" matTooltipPosition=\"above\">\r\n      {{fighterType.name}}\r\n    </div>\r\n    <div class=\"resource-list\">\r\n      <div matTooltip=\"{{fighterType.cost}} {{getResource('GOLD').name | titlecase}}\"\r\n        matTooltipPosition=\"below\">\r\n        <img src=\"{{getResource('GOLD').iconPath}}\" alt=\"{{getResource('GOLD').name}}\">\r\n        {{fighterType.cost}}\r\n      </div>\r\n    </div>\r\n  </mat-button-toggle>\r\n</mat-button-toggle-group>\r\n"
 
 /***/ }),
 
@@ -874,11 +786,12 @@ module.exports = "<mat-button-toggle-group #group=\"matButtonToggleGroup\" [(ngM
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FighterComponent", function() { return FighterComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _services_buildings_buildings_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./../../services/buildings/buildings.service */ "./src/app/services/buildings/buildings.service.ts");
-/* harmony import */ var _services_fighter_fighter_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../services/fighter/fighter.service */ "./src/app/services/fighter/fighter.service.ts");
-/* harmony import */ var _services_settings_settings_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../services/settings/settings.service */ "./src/app/services/settings/settings.service.ts");
-/* harmony import */ var _services_resources_resources_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../services/resources/resources.service */ "./src/app/services/resources/resources.service.ts");
-/* harmony import */ var _services_map_map_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../services/map/map.service */ "./src/app/services/map/map.service.ts");
+/* harmony import */ var _objects_resourceData__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../objects/resourceData */ "./src/app/objects/resourceData.ts");
+/* harmony import */ var _services_buildings_buildings_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./../../services/buildings/buildings.service */ "./src/app/services/buildings/buildings.service.ts");
+/* harmony import */ var _services_fighter_fighter_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../services/fighter/fighter.service */ "./src/app/services/fighter/fighter.service.ts");
+/* harmony import */ var _services_settings_settings_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../services/settings/settings.service */ "./src/app/services/settings/settings.service.ts");
+/* harmony import */ var _services_resources_resources_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../services/resources/resources.service */ "./src/app/services/resources/resources.service.ts");
+/* harmony import */ var _services_map_map_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../services/map/map.service */ "./src/app/services/map/map.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -888,6 +801,7 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 var __metadata = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+
 
 
 
@@ -904,8 +818,11 @@ var FighterComponent = /** @class */ (function () {
     }
     FighterComponent.prototype.ngOnInit = function () {
     };
+    FighterComponent.prototype.getResource = function (resourceEnum) {
+        return this.resourcesService.resources.get(resourceEnum);
+    };
     FighterComponent.prototype.canAffordFighter = function (fighterType) {
-        return this.resourcesService.getResource(0).amount >= fighterType.cost;
+        return this.resourcesService.resources.get(_objects_resourceData__WEBPACK_IMPORTED_MODULE_1__["ResourceEnum"].Gold).amount >= fighterType.cost;
     };
     FighterComponent.prototype.selectFigherType = function (fighterType) {
         if (this.selectedFighterType === fighterType) {
@@ -915,9 +832,6 @@ var FighterComponent = /** @class */ (function () {
             this.buildingsService.selectedBuilding = undefined;
             this.selectedFighterType = fighterType;
         }
-    };
-    FighterComponent.prototype.getResource = function (id) {
-        return this.resourcesService.getResource(id);
     };
     Object.defineProperty(FighterComponent.prototype, "fighterTypes", {
         get: function () {
@@ -942,11 +856,11 @@ var FighterComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./fighter.component.html */ "./src/app/components/fighter/fighter.component.html"),
             styles: [__webpack_require__(/*! ./fighter.component.css */ "./src/app/components/fighter/fighter.component.css")]
         }),
-        __metadata("design:paramtypes", [_services_resources_resources_service__WEBPACK_IMPORTED_MODULE_4__["ResourcesService"],
-            _services_settings_settings_service__WEBPACK_IMPORTED_MODULE_3__["SettingsService"],
-            _services_buildings_buildings_service__WEBPACK_IMPORTED_MODULE_1__["BuildingsService"],
-            _services_fighter_fighter_service__WEBPACK_IMPORTED_MODULE_2__["FighterService"],
-            _services_map_map_service__WEBPACK_IMPORTED_MODULE_5__["MapService"]])
+        __metadata("design:paramtypes", [_services_resources_resources_service__WEBPACK_IMPORTED_MODULE_5__["ResourcesService"],
+            _services_settings_settings_service__WEBPACK_IMPORTED_MODULE_4__["SettingsService"],
+            _services_buildings_buildings_service__WEBPACK_IMPORTED_MODULE_2__["BuildingsService"],
+            _services_fighter_fighter_service__WEBPACK_IMPORTED_MODULE_3__["FighterService"],
+            _services_map_map_service__WEBPACK_IMPORTED_MODULE_6__["MapService"]])
     ], FighterComponent);
     return FighterComponent;
 }());
@@ -1021,6 +935,7 @@ var MapComponent = /** @class */ (function () {
         this.buildingTileTypes = _objects_tile__WEBPACK_IMPORTED_MODULE_1__["BuildingTileType"];
     }
     MapComponent.prototype.ngOnInit = function () {
+        this.mapService.initializeMap();
     };
     MapComponent.prototype.clearFocus = function () {
         this.mapService.focusedTile = undefined;
@@ -1177,205 +1092,6 @@ var MessagesComponent = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "./src/app/components/resource-dialog/resource-dialog.component.css":
-/*!**************************************************************************!*\
-  !*** ./src/app/components/resource-dialog/resource-dialog.component.css ***!
-  \**************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = ".full-width {\r\n  width: 100%;\r\n}\r\n\r\n.inner-delete {\r\n  position: absolute;\r\n  top: 5px;\r\n  right: 5px;\r\n}\r\n"
-
-/***/ }),
-
-/***/ "./src/app/components/resource-dialog/resource-dialog.component.html":
-/*!***************************************************************************!*\
-  !*** ./src/app/components/resource-dialog/resource-dialog.component.html ***!
-  \***************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<mat-vertical-stepper>\n  <mat-step *ngIf=\"!editMode\">\n    <ng-template matStepLabel>Select Resource Template</ng-template>\n    <mat-form-field class=\"full-width\">\n      <mat-select [(ngModel)]=\"oldResourceId\" [compareWith]=\"compareFn\" (selectionChange)=\"populateResource()\">\n        <mat-option placeholder=\"Resource Type\" *ngFor=\"let resource of resourcesService.resources\" value=\"{{resource.id}}\">\n          {{resource.name | titlecase}}\n        </mat-option>\n      </mat-select>\n    </mat-form-field>\n\n    <div>\n      <button mat-button matStepperNext>Next</button>\n    </div>\n  </mat-step>\n\n  <mat-step>\n    <ng-template matStepLabel>Set Resource Details</ng-template>\n    <mat-form-field class=\"full-width\">\n      <input matInput placeholder=\"Name\" [(ngModel)]=\"resource.name\">\n    </mat-form-field>\n\n    <mat-form-field class=\"full-width\">\n      <mat-select [(ngModel)]=\"resource.resourceType\">\n        <mat-option placeholder=\"Resource Type\" *ngFor=\"let resourceType of resourceTypes | enumToArray\" value=\"{{resourceTypes[resourceType]}}\">\n          {{resourceType}}\n        </mat-option>\n      </mat-select>\n    </mat-form-field>\n\n    <mat-form-field class=\"full-width\">\n      <input matInput placeholder=\"Icon Path\" [(ngModel)]=\"resource.iconPath\">\n    </mat-form-field>\n\n    <div>\n      <button mat-button matStepperPrevious>Back</button>\n      <button mat-button matStepperNext>Next</button>\n    </div>\n  </mat-step>\n\n  <mat-step>\n    <ng-template matStepLabel>Set Resource Consumes</ng-template>\n\n    <button mat-raised-button color=\"accent\" (click)=\"newResourceConsume()\">Add New Consumed Resource</button>\n    <div *ngFor=\"let resourceConsume of resource.resourceConsumes\">\n      <mat-card>\n        <button class=\"inner-delete\" mat-raised-button color=\"warn\" (click)=\"removeResourceConsume(resourceConsume)\">Remove Consumed Resource</button>\n        <mat-form-field class=\"full-width\">\n          <mat-select [(ngModel)]=\"resourceConsume.resourceId\" [compareWith]=\"compareFn\">\n            <mat-option placeholder=\"Resource\" *ngFor=\"let _resource of resourcesService.resources\" value=\"{{_resource.id}}\">\n              {{_resource.name | titlecase }}\n            </mat-option>\n          </mat-select>\n        </mat-form-field>\n\n        <mat-form-field class=\"full-width\">\n          <input matInput placeholder=\"Cost\" [(ngModel)]=\"resourceConsume.cost\">\n        </mat-form-field>\n      </mat-card>\n    </div>\n\n    <div>\n      <button mat-button matStepperPrevious>Back</button>\n      <button mat-button matStepperNext>Next</button>\n    </div>\n  </mat-step>\n\n  <mat-step>\n    <ng-template matStepLabel>Set Resource Values</ng-template>\n\n    <mat-checkbox [(ngModel)]=\"resource.harvestable\">Harvestable</mat-checkbox>\n\n    <mat-form-field class=\"full-width\">\n      <input matInput placeholder=\"Harvest Yield\" [(ngModel)]=\"resource.harvestYield\">\n    </mat-form-field>\n\n    <mat-form-field class=\"full-width\">\n      <input matInput placeholder=\"Harvest Time (Milliseconds)\" [(ngModel)]=\"resource.harvestMilliseconds\">\n    </mat-form-field>\n\n    <mat-divider></mat-divider>\n    <br />\n\n    <mat-form-field class=\"full-width\">\n      <input matInput placeholder=\"Worker Yield\" [(ngModel)]=\"resource.workerYield\">\n    </mat-form-field>\n\n    <mat-divider></mat-divider>\n    <br />\n\n    <mat-checkbox [(ngModel)]=\"resource.sellable\">Sellable</mat-checkbox>\n\n    <mat-form-field class=\"full-width\">\n      <input matInput placeholder=\"Sells For\" [(ngModel)]=\"resource.sellsFor\">\n    </mat-form-field>\n\n    <mat-divider></mat-divider>\n    <br />\n\n    <mat-form-field class=\"full-width\">\n      <input matInput placeholder=\"Resource Tier\" [(ngModel)]=\"resource.resourceTier\">\n    </mat-form-field>\n\n    <div *ngIf=\"resourceWorker !== null\">\n      <mat-divider></mat-divider>\n      <br />\n\n      <mat-form-field class=\"full-width\">\n        <input matInput placeholder=\"Worker Yield\" [(ngModel)]=\"resourceWorker.workerYield\">\n      </mat-form-field>\n    </div>\n\n    <div>\n      <button mat-button matStepperPrevious>Back</button>\n      <button mat-button matStepperNext>Next</button>\n    </div>\n  </mat-step>\n\n  <mat-step>\n    <ng-template matStepLabel>Set Description</ng-template>\n\n    <mat-form-field class=\"full-width\">\n      <input matInput placeholder=\"Resource Description\" [(ngModel)]=\"resource.resourceDescription\">\n    </mat-form-field>\n\n    <mat-form-field class=\"full-width\">\n      <input matInput placeholder=\"Worker Verb\" [(ngModel)]=\"resource.workerVerb\">\n    </mat-form-field>\n\n    <mat-form-field class=\"full-width\">\n      <input matInput placeholder=\"Worker Noun\" [(ngModel)]=\"resource.workerNoun\">\n    </mat-form-field>\n\n    <div>\n      <button mat-button matStepperPrevious>Back</button>\n      <button mat-button matStepperNext>Next</button>\n    </div>\n  </mat-step>\n\n  <mat-step>\n    <ng-template matStepLabel>Done</ng-template>\n    {{resource.name}} configured.\n    <div>\n      <button mat-button matStepperPrevious>Back</button>\n      <button mat-raised-button (click)=\"saveResource()\">Save Resource</button>\n    </div>\n  </mat-step>\n</mat-vertical-stepper>\n"
-
-/***/ }),
-
-/***/ "./src/app/components/resource-dialog/resource-dialog.component.ts":
-/*!*************************************************************************!*\
-  !*** ./src/app/components/resource-dialog/resource-dialog.component.ts ***!
-  \*************************************************************************/
-/*! exports provided: ResourceDialogComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ResourceDialogComponent", function() { return ResourceDialogComponent; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
-/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
-/* harmony import */ var _objects_resource__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../objects/resource */ "./src/app/objects/resource.ts");
-/* harmony import */ var _services_resources_resources_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../services/resources/resources.service */ "./src/app/services/resources/resources.service.ts");
-/* harmony import */ var _services_workers_workers_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../services/workers/workers.service */ "./src/app/services/workers/workers.service.ts");
-var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (undefined && undefined.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-var __param = (undefined && undefined.__param) || function (paramIndex, decorator) {
-    return function (target, key) { decorator(target, key, paramIndex); }
-};
-
-
-
-
-
-
-var ResourceDialogComponent = /** @class */ (function () {
-    function ResourceDialogComponent(resourcesService, workersService, _formBuilder, dialogRef, data) {
-        this.resourcesService = resourcesService;
-        this.workersService = workersService;
-        this._formBuilder = _formBuilder;
-        this.dialogRef = dialogRef;
-        this.data = data;
-        this.resource = {
-            id: this.resourcesService.resources.length,
-            name: '',
-            resourceType: _objects_resource__WEBPACK_IMPORTED_MODULE_3__["ResourceType"].Currency,
-            amount: 0,
-            amountTravelling: 0,
-            iconPath: '',
-            resourceConsumes: [],
-            progressBarValue: 0,
-            pathAvailable: false,
-            harvestable: true,
-            harvesting: false,
-            harvestStartDate: Date.now(),
-            harvestYield: 1,
-            harvestMilliseconds: 1000,
-            workerYield: 1,
-            sellable: true,
-            sellsFor: 5,
-            autoSellCutoff: 50,
-            resourceDescription: '',
-            workerVerb: '',
-            workerNoun: '',
-            resourceAccessible: true,
-            resourceTier: 0,
-            previousTier: 0,
-            worker: { workable: true, workerCount: 0, cost: 50 },
-            resourceBeingStolen: false,
-            bindIndex: -1
-        };
-        this.resourceWorker = this.workersService.getResourceWorker(0);
-        this.editMode = false;
-        this.oldResourceId = 0;
-        this.resourceTypes = _objects_resource__WEBPACK_IMPORTED_MODULE_3__["ResourceType"];
-    }
-    ResourceDialogComponent.prototype.ngOnInit = function () {
-        if (this.data.resourceId !== undefined) {
-            this.resource = this.resourcesService.getResource(this.data.resourceId);
-            this.resourceWorker = this.workersService.getResourceWorker(this.resource.id);
-            this.editMode = true;
-        }
-    };
-    ResourceDialogComponent.prototype.populateResource = function () {
-        var resourceId = +this.oldResourceId;
-        var oldResource = this.resourcesService.getResource(resourceId);
-        this.resource.name = oldResource.name;
-        this.resource.resourceType = oldResource.resourceType;
-        this.resource.iconPath = oldResource.iconPath;
-        this.resource.amount = oldResource.amount;
-        this.resource.harvestable = oldResource.harvestable;
-        this.resource.harvestYield = oldResource.harvestYield;
-        this.resource.harvestMilliseconds = oldResource.harvestMilliseconds;
-        this.resource.workerYield = oldResource.workerYield;
-        this.resource.sellable = oldResource.sellable;
-        this.resource.sellsFor = oldResource.sellsFor;
-        this.resource.resourceDescription = oldResource.resourceDescription;
-        this.resource.workerVerb = oldResource.workerVerb;
-        this.resource.workerNoun = oldResource.workerNoun;
-        this.resource.resourceAccessible = oldResource.resourceAccessible;
-        this.resource.resourceTier = oldResource.resourceTier;
-        this.resource.previousTier = oldResource.previousTier;
-        for (var _i = 0, _a = oldResource.resourceConsumes; _i < _a.length; _i++) {
-            var resourceConsume = _a[_i];
-            this.resource.resourceConsumes.push({
-                resourceId: resourceConsume.resourceId,
-                cost: resourceConsume.cost
-            });
-        }
-        this.resource.worker = {
-            workable: oldResource.worker.workable,
-            workerCount: oldResource.worker.workerCount,
-            cost: oldResource.worker.cost
-        };
-        this.resourceWorker = {
-            resourceId: resourceId,
-            workable: true,
-            recurringCost: 0,
-            workerCount: 0,
-            workerYield: 1,
-            sliderSetting: 0,
-            sliderSettingValid: true
-        };
-    };
-    ResourceDialogComponent.prototype.onNoClick = function () {
-        this.dialogRef.close();
-    };
-    ResourceDialogComponent.prototype.newResourceConsume = function () {
-        this.resource.resourceConsumes[this.resource.resourceConsumes.length] = { resourceId: 0, cost: 1 };
-    };
-    ResourceDialogComponent.prototype.removeResourceConsume = function (resourceConsume) {
-        this.resource.resourceConsumes = this.resource.resourceConsumes.filter(function (rc) { return rc !== resourceConsume; });
-    };
-    ResourceDialogComponent.prototype.updateResourceWorker = function () {
-        var _this = this;
-        var worker = this.workersService.getWorker(this.resource.resourceType);
-        if (worker === undefined) {
-            console.log("No worker found for " + this.resource.resourceType);
-            return;
-        }
-        this.resourceWorker.resourceId = this.resource.id;
-        var resourceWorkers = worker.workersByResource;
-        if (!resourceWorkers.find(function (rw) { return rw === _this.resourceWorker; })) {
-            resourceWorkers.push(this.resourceWorker);
-        }
-    };
-    ResourceDialogComponent.prototype.saveResource = function () {
-        this.updateResourceWorker();
-        var existingResource = this.resourcesService.getResource(this.resource.id);
-        if (existingResource === undefined) {
-            this.resourcesService.resources.push(this.resource);
-        }
-        else {
-            existingResource = this.resource;
-        }
-    };
-    ResourceDialogComponent.prototype.compareFn = function (item1, item2) {
-        return +item1 === +item2;
-    };
-    ResourceDialogComponent = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
-            selector: 'app-resource-dialog',
-            template: __webpack_require__(/*! ./resource-dialog.component.html */ "./src/app/components/resource-dialog/resource-dialog.component.html"),
-            styles: [__webpack_require__(/*! ./resource-dialog.component.css */ "./src/app/components/resource-dialog/resource-dialog.component.css")]
-        }),
-        __param(4, Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"])(_angular_material__WEBPACK_IMPORTED_MODULE_2__["MAT_DIALOG_DATA"])),
-        __metadata("design:paramtypes", [_services_resources_resources_service__WEBPACK_IMPORTED_MODULE_4__["ResourcesService"],
-            _services_workers_workers_service__WEBPACK_IMPORTED_MODULE_5__["WorkersService"],
-            _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormBuilder"],
-            _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatDialogRef"], Object])
-    ], ResourceDialogComponent);
-    return ResourceDialogComponent;
-}());
-
-
-
-/***/ }),
-
 /***/ "./src/app/components/save-dialog/save-dialog.component.css":
 /*!******************************************************************!*\
   !*** ./src/app/components/save-dialog/save-dialog.component.css ***!
@@ -1480,7 +1196,7 @@ module.exports = "mat-panel-title {\r\n  display: -ms-grid;\r\n  display: grid;\
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<h3>Version {{settingsService.gameVersion}}</h3>\n\n<mat-accordion multi=\"true\">\n  <mat-expansion-panel expanded=\"true\">\n    <mat-expansion-panel-header>\n      <mat-panel-title>\n        <mat-icon color=\"primary\">save</mat-icon>\n        Save/Load\n      </mat-panel-title>\n    </mat-expansion-panel-header>\n\n    <mat-form-field class=\"full-width\">\n      <mat-select placeholder=\"Autosave Interval (Minutes)\" [(ngModel)]=\"autosaveInterval\" (valueChange)=\"settingsService.setAutosave()\">\n        <mat-option [value]=\"-1\">Disable</mat-option>\n        <mat-option [value]=\"60000\">1</mat-option>\n        <mat-option [value]=\"900000\">15</mat-option>\n        <mat-option [value]=\"1800000\">30</mat-option>\n        <mat-option [value]=\"3600000\">60</mat-option>\n      </mat-select>\n    </mat-form-field>\n\n    <button mat-raised-button color=\"primary\" (click)=\"saveGame()\">Save</button>\n    <button mat-raised-button color=\"warn\" (click)=\"deleteGame()\">Delete Save</button>\n\n    <button mat-raised-button (click)=\"exportSave()\">Export Save</button>\n    <button mat-raised-button (click)=\"importSave()\">Import Save</button>\n  </mat-expansion-panel>\n\n  <mat-expansion-panel expanded=\"true\">\n    <mat-expansion-panel-header>\n      <mat-panel-title>\n        <mat-icon color=\"primary\">list</mat-icon>\n        Interface\n      </mat-panel-title>\n    </mat-expansion-panel-header>\n\n    <mat-checkbox [(ngModel)]=\"slimInterface\">Slim Mode</mat-checkbox>\n    <!-- <br />\n      <mat-checkbox [(ngModel)]=\"disableAnimations\">Disable Animations</mat-checkbox> -->\n\n    <mat-form-field class=\"full-width\">\n      <mat-select placeholder=\"Resource Shortcuts\" [formControl]=\"bindSelected\" multiple (selectionChange)=\"resourceBindChange($event)\">\n        <mat-option *ngFor=\"let resource of resourcesService.harvestableResources()\" [(value)]=\"resource.id\">\n          {{resource.name | titlecase}}\n        </mat-option>\n      </mat-select>\n      <mat-error *ngIf=\"bindSelected.hasError('length')\">\n        No more than 10 resource shortcuts allowed.\n      </mat-error>\n    </mat-form-field>\n\n  </mat-expansion-panel>\n\n  <mat-expansion-panel expanded=\"true\">\n    <mat-expansion-panel-header>\n      <mat-panel-title>\n        <mat-icon color=\"primary\">map</mat-icon>\n        Map\n      </mat-panel-title>\n    </mat-expansion-panel-header>\n\n    <mat-checkbox [(ngModel)]=\"mapLowFramerate\">Limit Framerate</mat-checkbox>\n    <br />\n\n    <mat-form-field class=\"full-width\">\n      <input class=\"color-input\" matInput placeholder=\"Player Harvest Color\" [(colorPicker)]=\"resourceAnimationColors['PLAYERSPAWNED']\"\n        [style.background]=\"resourceAnimationColors['PLAYERSPAWNED']\" [value]=\"resourceAnimationColors['PLAYERSPAWNED']\" />\n    </mat-form-field>\n\n    <mat-form-field class=\"full-width\">\n      <input class=\"color-input\" matInput placeholder=\"Worker Harvest Color\" [(colorPicker)]=\"resourceAnimationColors['WORKERSPAWNED']\"\n        [style.background]=\"resourceAnimationColors['WORKERSPAWNED']\" [value]=\"resourceAnimationColors['WORKERSPAWNED']\" />\n    </mat-form-field>\n\n    <mat-form-field class=\"full-width\">\n      <input class=\"color-input\" matInput placeholder=\"Sold Resource Color\" [(colorPicker)]=\"resourceAnimationColors['SOLD']\"\n        [style.background]=\"resourceAnimationColors['SOLD']\" [value]=\"resourceAnimationColors['SOLD']\" />\n    </mat-form-field>\n  </mat-expansion-panel>\n\n  <mat-expansion-panel expanded=\"true\">\n    <mat-expansion-panel-header>\n      <mat-panel-title>\n        <mat-icon color=\"primary\">assessment</mat-icon>\n        Log\n      </mat-panel-title>\n    </mat-expansion-panel-header>\n\n    <button mat-raised-button (click)=\"messagesService.clear()\">Clear</button>\n\n    <br />\n\n    <mat-form-field class=\"full-width\">\n      <input matInput type=\"number\" placeholder=\"Log History\" min=\"0\" max=\"10000\" [(ngModel)]=\"messagesService.messageLimit\">\n    </mat-form-field>\n\n    <br />\n\n    <mat-form-field class=\"full-width\">\n      <mat-select placeholder=\"Visible Log Sources\" [(ngModel)]=\"messagesService.visibleSources\" (ngModelChange)=\"messagesService.getFilteredMessages()\"\n        multiple>\n        <mat-option *ngFor=\"let messageSource of messageSources | enumToArray\" [(value)]=\"messageSources[messageSource]\">\n          {{messageSource | titlecase}}\n        </mat-option>\n      </mat-select>\n    </mat-form-field>\n  </mat-expansion-panel>\n\n  <mat-expansion-panel expanded=\"true\">\n    <mat-expansion-panel-header>\n      <mat-panel-title>\n        <mat-icon color=\"primary\">bug_report</mat-icon>\n        Debug\n      </mat-panel-title>\n    </mat-expansion-panel-header>\n\n    <mat-checkbox [(ngModel)]=\"debugMode\">Debug Mode</mat-checkbox>\n  </mat-expansion-panel>\n\n  <!-- <mat-expansion-panel expanded=\"true\">\n    <mat-expansion-panel-header>\n      <mat-panel-title>\n        <mat-icon color=\"primary\">attach_money</mat-icon>\n        Shameless Commercialism\n      </mat-panel-title>\n    </mat-expansion-panel-header>\n\n    <a href=\"https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=L6UNHAL6A8PDC\" target=\"_blank\">\n      <img src=\"https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif\" border=\"0\" alt=\"PayPal - The safer, easier way to pay online!\">\n    </a>\n\n  </mat-expansion-panel> -->\n</mat-accordion>\n"
+module.exports = "<h3>Version {{settingsService.gameVersion}}</h3>\n\n<mat-accordion multi=\"true\">\n  <mat-expansion-panel expanded=\"true\">\n    <mat-expansion-panel-header>\n      <mat-panel-title>\n        <mat-icon color=\"primary\">save</mat-icon>\n        Save/Load\n      </mat-panel-title>\n    </mat-expansion-panel-header>\n\n    <mat-form-field class=\"full-width\">\n      <mat-select placeholder=\"Autosave Interval (Minutes)\" [(ngModel)]=\"autosaveInterval\" (valueChange)=\"settingsService.setAutosave()\">\n        <mat-option [value]=\"-1\">Disable</mat-option>\n        <mat-option [value]=\"60000\">1</mat-option>\n        <mat-option [value]=\"900000\">15</mat-option>\n        <mat-option [value]=\"1800000\">30</mat-option>\n        <mat-option [value]=\"3600000\">60</mat-option>\n      </mat-select>\n    </mat-form-field>\n\n    <button mat-raised-button color=\"primary\" (click)=\"saveGame()\">Save</button>\n    <button mat-raised-button color=\"warn\" (click)=\"deleteGame()\">Delete Save</button>\n\n    <button mat-raised-button (click)=\"exportSave()\">Export Save</button>\n    <button mat-raised-button (click)=\"importSave()\">Import Save</button>\n  </mat-expansion-panel>\n\n  <mat-expansion-panel expanded=\"true\">\n    <mat-expansion-panel-header>\n      <mat-panel-title>\n        <mat-icon color=\"primary\">list</mat-icon>\n        Interface\n      </mat-panel-title>\n    </mat-expansion-panel-header>\n\n    <mat-checkbox [(ngModel)]=\"slimInterface\">Slim Mode</mat-checkbox>\n    <!-- <br />\n      <mat-checkbox [(ngModel)]=\"disableAnimations\">Disable Animations</mat-checkbox> -->\n\n    <mat-form-field class=\"full-width\">\n      <mat-select placeholder=\"Resource Shortcuts\" [formControl]=\"bindSelected\" multiple (selectionChange)=\"resourceBindChange($event)\">\n        <mat-option *ngFor=\"let resource of resourcesService.getResources(false, false, true)\" [(value)]=\"resource.resourceEnum\">\n          {{resource.name | titlecase}}\n        </mat-option>\n      </mat-select>\n      <mat-error *ngIf=\"bindSelected.hasError('length')\">\n        No more than 10 resource shortcuts allowed.\n      </mat-error>\n    </mat-form-field>\n\n  </mat-expansion-panel>\n\n  <mat-expansion-panel expanded=\"true\">\n    <mat-expansion-panel-header>\n      <mat-panel-title>\n        <mat-icon color=\"primary\">map</mat-icon>\n        Map\n      </mat-panel-title>\n    </mat-expansion-panel-header>\n\n    <mat-checkbox [(ngModel)]=\"mapLowFramerate\">Limit Framerate</mat-checkbox>\n    <br />\n\n    <mat-form-field class=\"full-width\">\n      <input class=\"color-input\" matInput placeholder=\"Player Harvest Color\" [(colorPicker)]=\"resourceAnimationColors['PLAYERSPAWNED']\"\n        [style.background]=\"resourceAnimationColors['PLAYERSPAWNED']\" [value]=\"resourceAnimationColors['PLAYERSPAWNED']\" />\n    </mat-form-field>\n\n    <mat-form-field class=\"full-width\">\n      <input class=\"color-input\" matInput placeholder=\"Worker Harvest Color\" [(colorPicker)]=\"resourceAnimationColors['WORKERSPAWNED']\"\n        [style.background]=\"resourceAnimationColors['WORKERSPAWNED']\" [value]=\"resourceAnimationColors['WORKERSPAWNED']\" />\n    </mat-form-field>\n\n    <mat-form-field class=\"full-width\">\n      <input class=\"color-input\" matInput placeholder=\"Sold Resource Color\" [(colorPicker)]=\"resourceAnimationColors['SOLD']\"\n        [style.background]=\"resourceAnimationColors['SOLD']\" [value]=\"resourceAnimationColors['SOLD']\" />\n    </mat-form-field>\n  </mat-expansion-panel>\n\n  <mat-expansion-panel expanded=\"true\">\n    <mat-expansion-panel-header>\n      <mat-panel-title>\n        <mat-icon color=\"primary\">assessment</mat-icon>\n        Log\n      </mat-panel-title>\n    </mat-expansion-panel-header>\n\n    <button mat-raised-button (click)=\"messagesService.clear()\">Clear</button>\n\n    <br />\n\n    <mat-form-field class=\"full-width\">\n      <input matInput type=\"number\" placeholder=\"Log History\" min=\"0\" max=\"10000\" [(ngModel)]=\"messagesService.messageLimit\">\n    </mat-form-field>\n\n    <br />\n\n    <mat-form-field class=\"full-width\">\n      <mat-select placeholder=\"Visible Log Sources\" [(ngModel)]=\"messagesService.visibleSources\" (ngModelChange)=\"messagesService.getFilteredMessages()\"\n        multiple>\n        <mat-option *ngFor=\"let messageSource of messageSources | enumToArray\" [(value)]=\"messageSources[messageSource]\">\n          {{messageSource | titlecase}}\n        </mat-option>\n      </mat-select>\n    </mat-form-field>\n  </mat-expansion-panel>\n\n  <mat-expansion-panel expanded=\"true\">\n    <mat-expansion-panel-header>\n      <mat-panel-title>\n        <mat-icon color=\"primary\">bug_report</mat-icon>\n        Debug\n      </mat-panel-title>\n    </mat-expansion-panel-header>\n\n    <mat-checkbox [(ngModel)]=\"debugMode\">Debug Mode</mat-checkbox>\n  </mat-expansion-panel>\n\n  <!-- <mat-expansion-panel expanded=\"true\">\n    <mat-expansion-panel-header>\n      <mat-panel-title>\n        <mat-icon color=\"primary\">attach_money</mat-icon>\n        Shameless Commercialism\n      </mat-panel-title>\n    </mat-expansion-panel-header>\n\n    <a href=\"https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=L6UNHAL6A8PDC\" target=\"_blank\">\n      <img src=\"https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif\" border=\"0\" alt=\"PayPal - The safer, easier way to pay online!\">\n    </a>\n\n  </mat-expansion-panel> -->\n</mat-accordion>\n"
 
 /***/ }),
 
@@ -1523,10 +1239,10 @@ var SettingsComponent = /** @class */ (function () {
         this.bindSelected = new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"]();
         this.messageSources = _objects_message__WEBPACK_IMPORTED_MODULE_5__["MessageSource"];
         this.resourceBindErrorState = false;
-        this.bindSelected.setValue(this.resourceBinds);
-        this.resourceBindChange({ 'source': null, 'value': this.resourceBinds });
     }
-    SettingsComponent.prototype.ngOnInit = function () {
+    SettingsComponent.prototype.ngAfterViewInit = function () {
+        this.loadGame();
+        this.setAutosave();
     };
     SettingsComponent.prototype.setAutosave = function () {
         this.settingsService.setAutosave();
@@ -1536,6 +1252,8 @@ var SettingsComponent = /** @class */ (function () {
     };
     SettingsComponent.prototype.loadGame = function () {
         this.settingsService.loadGame();
+        this.bindSelected.setValue(this.resourceBinds);
+        this.resourceBindChange({ 'source': null, 'value': this.resourceBinds });
     };
     SettingsComponent.prototype.deleteGame = function () {
         if (confirm('Are you sure you want to delete your save?')) {
@@ -1547,13 +1265,13 @@ var SettingsComponent = /** @class */ (function () {
         this.bindSelected.setErrors({ 'length': limitExceeded });
         if (!limitExceeded) {
             this.resourceBinds = event.value;
-            for (var _i = 0, _a = this.resourcesService.resources; _i < _a.length; _i++) {
+            for (var _i = 0, _a = this.resourcesService.getResources(); _i < _a.length; _i++) {
                 var resource = _a[_i];
                 resource.bindIndex = -1;
             }
             for (var _b = 0, _c = this.resourceBinds; _b < _c.length; _b++) {
                 var resourceBind = _c[_b];
-                var resource = this.resourcesService.getResource(resourceBind);
+                var resource = this.resourcesService.resources.get(resourceBind);
                 resource.bindIndex = this.resourceBinds.indexOf(resourceBind);
             }
         }
@@ -1669,7 +1387,7 @@ module.exports = "/* StoreComponent's private CSS styles */\r\n.store {\r\n  mar
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "Amount to sell:<mat-button-toggle-group #group=\"matButtonToggleGroup\" [(ngModel)]=\"sellAmount\">\n  <mat-button-toggle value=\"1\" checked=\"true\">\n    1x\n  </mat-button-toggle>\n  <mat-button-toggle value=\"10\">\n    10x\n  </mat-button-toggle>\n  <mat-button-toggle value=\"100\">\n    100x\n  </mat-button-toggle>\n  <mat-button-toggle value=\"1000\">\n    1000x\n  </mat-button-toggle>\n  <mat-button-toggle value=\"-1\">\n    All\n  </mat-button-toggle>\n</mat-button-toggle-group>\n\n<ul class=\"store\">\n  <mat-accordion multi=\"true\">\n    <mat-expansion-panel expanded=\"true\" *ngFor=\"let resourceType of sellableTypes\">\n      <mat-expansion-panel-header>\n        <mat-panel-title>\n          {{resourceType | titlecase}}\n        </mat-panel-title>\n        <mat-panel-description>\n        </mat-panel-description>\n      </mat-expansion-panel-header>\n\n      <div *ngFor=\"let resource of resourcesOfType(resourceType, true, adminService.filterAccessible)\">\n        <button class=\"sell-button\" color=\"accent\" mat-flat-button\n          (click)=\"sellResource(resource.id)\" [disabled]=\"!canSellResource(resource.id)\">\n          {{(sellAmount == -1 ? resource.amount : sellAmount) | number:'0.0-0'}} {{resource.name | titlecase }} - {{resource.sellsFor * (+sellAmount === -1 ? resource.amount : sellAmount) | number:'0.0-2'}} Gold\n        </button>\n        <mat-form-field class=\"cutoff-input\">\n          <input matInput placeholder=\"Autosell Cutoff\" type=\"number\" min=\"0\" [(ngModel)]=\"resource.autoSellCutoff\"/>\n        </mat-form-field>\n      </div>\n    </mat-expansion-panel>\n  </mat-accordion>\n</ul>\n"
+module.exports = "Amount to sell:<mat-button-toggle-group #group=\"matButtonToggleGroup\" [(ngModel)]=\"sellAmount\">\n  <mat-button-toggle value=\"1\" checked=\"true\">\n    1x\n  </mat-button-toggle>\n  <mat-button-toggle value=\"10\">\n    10x\n  </mat-button-toggle>\n  <mat-button-toggle value=\"100\">\n    100x\n  </mat-button-toggle>\n  <mat-button-toggle value=\"1000\">\n    1000x\n  </mat-button-toggle>\n  <mat-button-toggle value=\"-1\">\n    All\n  </mat-button-toggle>\n</mat-button-toggle-group>\n\n<ul class=\"store\">\n  <mat-accordion multi=\"true\">\n    <mat-expansion-panel expanded=\"true\" *ngFor=\"let resourceType of sellableTypes\">\n      <mat-expansion-panel-header>\n        <mat-panel-title>\n          {{resourceType | titlecase}}\n        </mat-panel-title>\n        <mat-panel-description>\n        </mat-panel-description>\n      </mat-expansion-panel-header>\n\n      <div *ngFor=\"let resource of resourcesOfType(resourceType, false, adminService.filterAccessible)\">\n        <button class=\"sell-button\" color=\"accent\" mat-flat-button *ngIf=\"resource.sellable\" (click)=\"sellResource(resource)\"\n          [disabled]=\"!canSellResource(resource)\">\n          {{(sellAmount == -1 ? resource.amount : sellAmount) | number:'0.0-0'}} {{resource.name | titlecase }} -\n          {{resource.sellsFor * (+sellAmount === -1 ? resource.amount : sellAmount) | number:'0.0-2'}} Gold\n        </button>\n        <button disabled class=\"sell-button\" color=\"warn\" mat-flat-button *ngIf=\"!resource.sellable\">\n          {{(sellAmount == -1 ? resource.amount : sellAmount) | number:'0.0-0'}} {{resource.name | titlecase }} -\n          Unsellable\n        </button>\n        <mat-form-field class=\"cutoff-input\">\n          <input matInput placeholder=\"Autosell Cutoff\" type=\"number\" min=\"0\" [disabled]=\"!resource.sellable\" [(ngModel)]=\"resource.autoSellCutoff\" />\n        </mat-form-field>\n      </div>\n    </mat-expansion-panel>\n  </mat-accordion>\n</ul>\n"
 
 /***/ }),
 
@@ -1684,7 +1402,7 @@ module.exports = "Amount to sell:<mat-button-toggle-group #group=\"matButtonTogg
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "StoreComponent", function() { return StoreComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _objects_resource__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../objects/resource */ "./src/app/objects/resource.ts");
+/* harmony import */ var _objects_resourceData__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../objects/resourceData */ "./src/app/objects/resourceData.ts");
 /* harmony import */ var _services_resources_resources_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../services/resources/resources.service */ "./src/app/services/resources/resources.service.ts");
 /* harmony import */ var _services_store_store_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../services/store/store.service */ "./src/app/services/store/store.service.ts");
 /* harmony import */ var _services_admin_admin_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../services/admin/admin.service */ "./src/app/services/admin/admin.service.ts");
@@ -1707,21 +1425,20 @@ var StoreComponent = /** @class */ (function () {
         this.resourcesService = resourcesService;
         this.storeService = storeService;
         this.adminService = adminService;
-        this.resourceTypes = _objects_resource__WEBPACK_IMPORTED_MODULE_1__["ResourceType"];
-        this.sellableTypes = [_objects_resource__WEBPACK_IMPORTED_MODULE_1__["ResourceType"].Wood, _objects_resource__WEBPACK_IMPORTED_MODULE_1__["ResourceType"].Mineral, _objects_resource__WEBPACK_IMPORTED_MODULE_1__["ResourceType"].Metal];
+        this.resourceTypes = _objects_resourceData__WEBPACK_IMPORTED_MODULE_1__["ResourceType"];
+        this.sellableTypes = [_objects_resourceData__WEBPACK_IMPORTED_MODULE_1__["ResourceType"].Wood, _objects_resourceData__WEBPACK_IMPORTED_MODULE_1__["ResourceType"].Mineral, _objects_resourceData__WEBPACK_IMPORTED_MODULE_1__["ResourceType"].Metal];
         this.sellAmount = 1;
     }
     StoreComponent.prototype.ngOnInit = function () {
     };
-    StoreComponent.prototype.canSellResource = function (id) {
-        return this.storeService.canSellResource(id, +this.sellAmount);
+    StoreComponent.prototype.canSellResource = function (resource) {
+        return this.storeService.canSellResource(resource, +this.sellAmount);
     };
     StoreComponent.prototype.resourcesOfType = function (resourceType, filterBySellable, filterByAccessible) {
-        return this.storeService.resourcesOfType(resourceType, filterBySellable, filterByAccessible);
+        return this.resourcesService.getResources(resourceType, filterBySellable, filterByAccessible);
     };
-    StoreComponent.prototype.sellResource = function (id) {
-        var resource = this.resourcesService.getResource(id);
-        this.storeService.sellResource(id, +this.sellAmount);
+    StoreComponent.prototype.sellResource = function (resource) {
+        this.storeService.sellResource(resource, +this.sellAmount);
     };
     StoreComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -1758,7 +1475,7 @@ module.exports = "#tile-tooltip {\r\n  top: var(--detail-tooltip-top);\r\n  left
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<mat-card appSnap [snapSetting]=\"snapSetting\" id=\"tile-tooltip\">\n  <div class=\"anchor-container\">\n    <a>\n      <mat-icon class=\"corner\" id=\"arrow-upper-left\" (click)=\"snapSetting = 'upperLeft'\">arrow_forward</mat-icon>\n    </a>\n    <a>\n      <mat-icon class=\"corner\" id=\"arrow-upper-right\" (click)=\"snapSetting = 'upperRight'\">arrow_forward</mat-icon>\n    </a>\n    <a>\n      <mat-icon id=\"center\" (click)=\"snapSetting = 'free'\">all_out</mat-icon>\n    </a>\n    <a>\n      <mat-icon class=\"corner\" id=\"arrow-lower-left\" (click)=\"snapSetting = 'lowerLeft'\">arrow_forward</mat-icon>\n    </a>\n    <a>\n      <mat-icon class=\"corner\" id=\"arrow-lower-right\" (click)=\"snapSetting = 'lowerRight'\">arrow_forward</mat-icon>\n    </a>\n  </div>\n  <div *ngIf=\"focusedBuildingTile\">\n    <mat-card-title>{{focusedBuildingTile.name}}</mat-card-title>\n    <mat-card-subtitle>{{focusedBuildingTile.description}}</mat-card-subtitle>\n    <div class=\"repair-container\">\n      {{focusedTile.health}}/{{focusedTile.maxHealth}} Health\n      <div *ngIf=\"focusedTile.health < focusedTile.maxHealth\">\n        <button mat-raised-button (click)=\"repairBuilding(focusedTile)\" color=\"accent\" [disabled]=\"!canRepairBuilding(focusedTile)\">\n          Repair\n          <div class=\"resource-list\">\n            <div matTooltip=\"{{focusedBuildingTile.repairCostPerPoint * (focusedTile.maxHealth - focusedTile.health)}} {{getResource(focusedBuildingTile.repairResource).name | titlecase}}\"\n              matTooltipPosition=\"below\">\n              <img src=\"{{getResource(focusedBuildingTile.repairResource).iconPath}}\" alt=\"{{getResource(focusedBuildingTile.repairResource).name}}\">\n              {{focusedBuildingTile.repairCostPerPoint * (focusedTile.maxHealth - focusedTile.health)}}\n            </div>\n          </div>\n        </button>\n      </div>\n    </div>\n  </div>\n\n  <div *ngIf=\"!focusedBuildingTile && focusedResourceTile\">\n    <mat-card-title>{{focusedResourceTile.name}}</mat-card-title>\n  </div>\n\n  <mat-card-content *ngIf=\"focusedTile\">\n    <div *ngIf=\"focusedResourceTile\" class=\"resource-list\">\n      Travel Time: {{focusedTile.buildingPath.length / this.mapService.tileAnimationSpeed / 1000 | number:'0.0-2'}}\n      Seconds\n      <br />\n      Produces:\n      <div *ngFor=\"let resource of focusedResources\">\n        <img src=\"{{resource.iconPath}}\" alt=\"{{resource.name}}\"> {{resource.name | titlecase}}\n      </div>\n    </div>\n    <div *ngIf=\"focusedBuildingTile && focusedBuildingTile.upgradeBuilding\">\n      <h3>Upgrade</h3>\n      <button mat-raised-button (click)=\"upgradeBuilding(focusedTile)\" color=\"accent\" [disabled]=\"!canAffordUpgrade(this.mapService.buildingTiles[focusedBuildingTile.upgradeBuilding])\">\n        <div class=\"title\" matTooltip=\"{{this.mapService.buildingTiles[focusedBuildingTile.upgradeBuilding].description}}\"\n          matTooltipPosition=\"above\">\n          {{this.mapService.buildingTiles[focusedBuildingTile.upgradeBuilding].name}}\n        </div>\n        <div class=\"resource-list\">\n          <div *ngFor=\"let resourceCost of mapService.buildingTiles[focusedBuildingTile.upgradeBuilding].resourceCosts\"\n            matTooltip=\"{{resourceCost.resourceCost}} {{getResource(resourceCost.resourceId).name | titlecase}}\"\n            matTooltipPosition=\"below\">\n            <img src=\"{{getResource(resourceCost.resourceId).iconPath}}\" alt=\"{{getResource(resourceCost.resourceId).name}}\">\n            {{resourceCost.resourceCost}}\n          </div>\n        </div>\n      </button>\n    </div>\n\n    <div *ngIf=\"focusedTile.market\">\n      Profit (Average of recent sales): {{focusedTile.market.averageRecentProfit | number:'0.0-2'}} {{this.resourcesService.getResource(0).name | titlecase}}/Second\n    </div>\n\n    <h3>Stats</h3>\n      <table class=\"stats-container\">\n        <tbody>\n          <tr class=\"stat-row\">\n            <td>\n              <p>\n                Max Health: {{focusedTile.maxHealth | number:'1.0-2'}}\n              </p>\n            </td>\n            <td>\n              <b>\n                Level {{focusedTile.statLevels['MAXHEALTH']}}\n              </b>\n            </td>\n            <td>\n              <button class=\"upgrade-button\" color=\"accent\" mat-raised-button (click)=\"focusedTile.upgradeStat('MAXHEALTH')\"\n                [disabled]=\"!focusedTile.canUpgradeStat('MAXHEALTH')\" matTooltip=\"Level {{focusedTile.statLevels['MAXHEALTH'] + 1}}: {{focusedTile.getUpgradedStat('MAXHEALTH') | number:'1.0-2'}} Max Health\"\n                matTooltipPosition=\"below\">\n                <mat-icon color=\"primary\">arrow_upward</mat-icon>\n                <div class=\"resource-list\">\n                  <div>\n                    <img src=\"{{getResource(0).iconPath}}\" alt=\"{{getResource(0).name}}\">\n                    {{focusedTile.statCosts['MAXHEALTH'] | number:'1.0-0'}}\n                  </div>\n                </div>\n              </button>\n            </td>\n          </tr>\n\n          <tr class=\"stat-row\" *ngIf=\"focusedTile.market\">\n            <td>\n              <p>\n                Sell Rate: {{1000 / focusedTile.market.sellInterval | number:'1.0-2'}} Sale{{focusedTile.market.sellInterval === 1000 ? '' : 's'}}/Second\n              </p>\n            </td>\n            <td>\n              <b>\n                Level {{focusedTile.statLevels['SELLRATE']}}\n              </b>\n            </td>\n            <td>\n              <button class=\"upgrade-button\" color=\"accent\" mat-raised-button (click)=\"focusedTile.upgradeStat('SELLRATE')\"\n                [disabled]=\"!focusedTile.canUpgradeStat('SELLRATE')\" matTooltip=\"Level {{focusedTile.statLevels['SELLRATE'] + 1}}: {{1000 / focusedTile.getUpgradedStat('SELLRATE') | number:'1.0-2'}} Sales/Second\"\n                matTooltipPosition=\"below\">\n                <mat-icon color=\"primary\">arrow_upward</mat-icon>\n                <div class=\"resource-list\">\n                  <div>\n                    <img src=\"{{getResource(0).iconPath}}\" alt=\"{{getResource(0).name}}\">\n                    {{focusedTile.statCosts['SELLRATE'] | number:'1.0-0'}}\n                  </div>\n                </div>\n              </button>\n            </td>\n          </tr>\n\n          <tr class=\"stat-row\" *ngIf=\"focusedTile.market\">\n            <td>\n              <p>\n                Sell Amount: {{focusedTile.market.sellQuantity | number:'1.0-2'}} Items/Sale\n              </p>\n            </td>\n            <td>\n              <b>\n                Level {{focusedTile.statLevels['SELLAMOUNT']}}\n              </b>\n            </td>\n            <td>\n              <button class=\"upgrade-button\" color=\"accent\" mat-raised-button (click)=\"focusedTile.upgradeStat('SELLAMOUNT')\"\n                [disabled]=\"!focusedTile.canUpgradeStat('SELLAMOUNT')\" matTooltip=\"Level {{focusedTile.statLevels['SELLAMOUNT'] + 1}}: {{focusedTile.getUpgradedStat('SELLAMOUNT') | number:'1.0-2'}} Items/Sale\"\n                matTooltipPosition=\"below\">\n                <mat-icon color=\"primary\">arrow_upward</mat-icon>\n                <div class=\"resource-list\">\n                  <div>\n                    <img src=\"{{getResource(0).iconPath}}\" alt=\"{{getResource(0).name}}\">\n                    {{focusedTile.statCosts['SELLAMOUNT'] | number:'1.0-0'}}\n                  </div>\n                </div>\n              </button>\n            </td>\n          </tr>\n        </tbody>\n      </table>\n  </mat-card-content>\n</mat-card>\n"
+module.exports = "<mat-card appSnap [snapSetting]=\"snapSetting\" id=\"tile-tooltip\">\n  <div class=\"anchor-container\">\n    <a>\n      <mat-icon class=\"corner\" id=\"arrow-upper-left\" (click)=\"snapSetting = 'upperLeft'\">arrow_forward</mat-icon>\n    </a>\n    <a>\n      <mat-icon class=\"corner\" id=\"arrow-upper-right\" (click)=\"snapSetting = 'upperRight'\">arrow_forward</mat-icon>\n    </a>\n    <a>\n      <mat-icon id=\"center\" (click)=\"snapSetting = 'free'\">all_out</mat-icon>\n    </a>\n    <a>\n      <mat-icon class=\"corner\" id=\"arrow-lower-left\" (click)=\"snapSetting = 'lowerLeft'\">arrow_forward</mat-icon>\n    </a>\n    <a>\n      <mat-icon class=\"corner\" id=\"arrow-lower-right\" (click)=\"snapSetting = 'lowerRight'\">arrow_forward</mat-icon>\n    </a>\n  </div>\n  <div *ngIf=\"focusedBuildingTile\">\n    <mat-card-title>{{focusedBuildingTile.name}}</mat-card-title>\n    <mat-card-subtitle>{{focusedBuildingTile.description}}</mat-card-subtitle>\n    <div class=\"repair-container\">\n      {{focusedTile.health}}/{{focusedTile.maxHealth}} Health\n      <div *ngIf=\"focusedTile.health < focusedTile.maxHealth\">\n        <button mat-raised-button (click)=\"repairBuilding(focusedTile)\" color=\"accent\" [disabled]=\"!canRepairBuilding(focusedTile)\">\n          Repair\n          <div class=\"resource-list\">\n            <div matTooltip=\"{{focusedBuildingTile.repairCostPerPoint * (focusedTile.maxHealth - focusedTile.health)}} {{getResource(focusedBuildingTile.repairResource).name | titlecase}}\"\n              matTooltipPosition=\"below\">\n              <img src=\"{{getResource(focusedBuildingTile.repairResource).iconPath}}\" alt=\"{{getResource(focusedBuildingTile.repairResource).name}}\">\n              {{focusedBuildingTile.repairCostPerPoint * (focusedTile.maxHealth - focusedTile.health)}}\n            </div>\n          </div>\n        </button>\n      </div>\n    </div>\n  </div>\n\n  <div *ngIf=\"!focusedBuildingTile && focusedResourceTile\">\n    <mat-card-title>{{focusedResourceTile.name}}</mat-card-title>\n  </div>\n\n  <mat-card-content *ngIf=\"focusedTile\">\n    <div *ngIf=\"focusedResourceTile\" class=\"resource-list\">\n      Travel Time: {{focusedTile.buildingPath.length / this.mapService.tileAnimationSpeed / 1000 | number:'0.0-2'}}\n      Seconds\n      <br />\n      Produces:\n      <div *ngFor=\"let resource of focusedResources\">\n        <img src=\"{{resource.iconPath}}\" alt=\"{{resource.name}}\"> {{resource.name | titlecase}}\n      </div>\n    </div>\n    <div *ngIf=\"focusedBuildingTile && focusedBuildingTile.upgradeBuilding\">\n      <h3>Upgrade</h3>\n      <button mat-raised-button (click)=\"upgradeBuilding(focusedTile)\" color=\"accent\" [disabled]=\"!canAffordUpgrade(this.mapService.buildingTiles[focusedBuildingTile.upgradeBuilding])\">\n        <div class=\"title\" matTooltip=\"{{this.mapService.buildingTiles[focusedBuildingTile.upgradeBuilding].description}}\"\n          matTooltipPosition=\"above\">\n          {{this.mapService.buildingTiles[focusedBuildingTile.upgradeBuilding].name}}\n        </div>\n        <div class=\"resource-list\">\n          <div *ngFor=\"let resourceCost of mapService.buildingTiles[focusedBuildingTile.upgradeBuilding].resourceCosts\"\n            matTooltip=\"{{resourceCost.resourceCost}} {{getResource(resourceCost.resourceEnum).name | titlecase}}\"\n            matTooltipPosition=\"below\">\n            <img src=\"{{getResource(resourceCost.resourceEnum).iconPath}}\" alt=\"{{getResource(resourceCost.resourceEnum).name}}\">\n            {{resourceCost.resourceCost}}\n          </div>\n        </div>\n      </button>\n    </div>\n\n    <div *ngIf=\"focusedTile.market\">\n      Profit (Average of recent sales): {{focusedTile.market.averageRecentProfit | number:'0.0-2'}} {{getResource('GOLD').name | titlecase}}/Second\n    </div>\n\n    <h3>Stats</h3>\n      <table class=\"stats-container\">\n        <tbody>\n          <tr class=\"stat-row\">\n            <td>\n              <p>\n                Max Health: {{focusedTile.maxHealth | number:'1.0-2'}}\n              </p>\n            </td>\n            <td>\n              <b>\n                Level {{focusedTile.statLevels['MAXHEALTH']}}\n              </b>\n            </td>\n            <td>\n              <button class=\"upgrade-button\" color=\"accent\" mat-raised-button (click)=\"focusedTile.upgradeStat('MAXHEALTH')\"\n                [disabled]=\"!focusedTile.canUpgradeStat('MAXHEALTH')\" matTooltip=\"Level {{focusedTile.statLevels['MAXHEALTH'] + 1}}: {{focusedTile.getUpgradedStat('MAXHEALTH') | number:'1.0-2'}} Max Health\"\n                matTooltipPosition=\"below\">\n                <mat-icon color=\"primary\">arrow_upward</mat-icon>\n                <div class=\"resource-list\">\n                  <div>\n                    <img src=\"{{getResource('GOLD').iconPath}}\" alt=\"{{getResource('GOLD').name}}\">\n                    {{focusedTile.statCosts['MAXHEALTH'] | number:'1.0-0'}}\n                  </div>\n                </div>\n              </button>\n            </td>\n          </tr>\n\n          <tr class=\"stat-row\" *ngIf=\"focusedTile.market\">\n            <td>\n              <p>\n                Sell Rate: {{1000 / focusedTile.market.sellInterval | number:'1.0-2'}} Sale{{focusedTile.market.sellInterval === 1000 ? '' : 's'}}/Second\n              </p>\n            </td>\n            <td>\n              <b>\n                Level {{focusedTile.statLevels['SELLRATE']}}\n              </b>\n            </td>\n            <td>\n              <button class=\"upgrade-button\" color=\"accent\" mat-raised-button (click)=\"focusedTile.upgradeStat('SELLRATE')\"\n                [disabled]=\"!focusedTile.canUpgradeStat('SELLRATE')\" matTooltip=\"Level {{focusedTile.statLevels['SELLRATE'] + 1}}: {{1000 / focusedTile.getUpgradedStat('SELLRATE') | number:'1.0-2'}} Sales/Second\"\n                matTooltipPosition=\"below\">\n                <mat-icon color=\"primary\">arrow_upward</mat-icon>\n                <div class=\"resource-list\">\n                  <div>\n                    <img src=\"{{getResource('GOLD').iconPath}}\" alt=\"{{getResource('GOLD').name}}\">\n                    {{focusedTile.statCosts['SELLRATE'] | number:'1.0-0'}}\n                  </div>\n                </div>\n              </button>\n            </td>\n          </tr>\n\n          <tr class=\"stat-row\" *ngIf=\"focusedTile.market\">\n            <td>\n              <p>\n                Sell Amount: {{focusedTile.market.sellQuantity | number:'1.0-2'}} Items/Sale\n              </p>\n            </td>\n            <td>\n              <b>\n                Level {{focusedTile.statLevels['SELLAMOUNT']}}\n              </b>\n            </td>\n            <td>\n              <button class=\"upgrade-button\" color=\"accent\" mat-raised-button (click)=\"focusedTile.upgradeStat('SELLAMOUNT')\"\n                [disabled]=\"!focusedTile.canUpgradeStat('SELLAMOUNT')\" matTooltip=\"Level {{focusedTile.statLevels['SELLAMOUNT'] + 1}}: {{focusedTile.getUpgradedStat('SELLAMOUNT') | number:'1.0-2'}} Items/Sale\"\n                matTooltipPosition=\"below\">\n                <mat-icon color=\"primary\">arrow_upward</mat-icon>\n                <div class=\"resource-list\">\n                  <div>\n                    <img src=\"{{getResource('GOLD').iconPath}}\" alt=\"{{getResource('GOLD').name}}\">\n                    {{focusedTile.statCosts['SELLAMOUNT'] | number:'1.0-0'}}\n                  </div>\n                </div>\n              </button>\n            </td>\n          </tr>\n        </tbody>\n      </table>\n  </mat-card-content>\n</mat-card>\n"
 
 /***/ }),
 
@@ -1801,13 +1518,13 @@ var TileDetailComponent = /** @class */ (function () {
     }
     TileDetailComponent.prototype.ngOnInit = function () {
     };
-    TileDetailComponent.prototype.getResource = function (resourceId) {
-        return this.resourcesService.getResource(resourceId);
+    TileDetailComponent.prototype.getResource = function (resourceEnum) {
+        return this.resourcesService.resources.get(resourceEnum);
     };
     TileDetailComponent.prototype.canAffordUpgrade = function (upgradeBuilding) {
         for (var _i = 0, _a = upgradeBuilding.resourceCosts; _i < _a.length; _i++) {
             var resourceCost = _a[_i];
-            if (this.resourcesService.getResource(resourceCost.resourceId).amount < resourceCost.resourceCost) {
+            if (this.getResource(resourceCost.resourceEnum).amount < resourceCost.resourceCost) {
                 return false;
             }
         }
@@ -1900,189 +1617,6 @@ var TileDetailComponent = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "./src/app/components/upgrade-dialog/upgrade-dialog.component.css":
-/*!************************************************************************!*\
-  !*** ./src/app/components/upgrade-dialog/upgrade-dialog.component.css ***!
-  \************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = ".full-width {\r\n  width: 100%;\r\n}\r\n\r\n.inner-delete {\r\n  position: absolute;\r\n  top: 5px;\r\n  right: 5px;\r\n}\r\n"
-
-/***/ }),
-
-/***/ "./src/app/components/upgrade-dialog/upgrade-dialog.component.html":
-/*!*************************************************************************!*\
-  !*** ./src/app/components/upgrade-dialog/upgrade-dialog.component.html ***!
-  \*************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<mat-vertical-stepper>\n  <mat-step *ngIf=\"!editMode\">\n    <ng-template matStepLabel>Select Upgrade Template</ng-template>\n    <mat-form-field class=\"full-width\">\n      <mat-select [(ngModel)]=\"oldUpgradeId\" [compareWith]=\"compareFn\" (selectionChange)=\"populateUpgrade()\">\n        <mat-option placeholder=\"Upgrade Type\" *ngFor=\"let upgrade of upgradesService.upgrades\" value=\"{{upgrade.id}}\">\n          {{upgrade.name | titlecase}}\n        </mat-option>\n      </mat-select>\n    </mat-form-field>\n\n    <div>\n      <button mat-button matStepperNext>Next</button>\n    </div>\n  </mat-step>\n\n  <mat-step>\n    <ng-template matStepLabel>Set Upgrade Details</ng-template>\n    <mat-form-field class=\"full-width\">\n      <mat-select [(ngModel)]=\"upgrade.upgradeType\">\n        <mat-option placeholder=\"Upgrade Type\" *ngFor=\"let upgradeType of upgradeTypes | enumToArray\" value=\"{{upgradeTypes[upgradeType]}}\">\n          {{upgradeType}}\n        </mat-option>\n      </mat-select>\n    </mat-form-field>\n\n    <mat-form-field class=\"full-width\">\n      <input matInput placeholder=\"Name\" [(ngModel)]=\"upgrade.name\">\n    </mat-form-field>\n\n    <mat-form-field class=\"full-width\">\n      <input matInput placeholder=\"Description\" [(ngModel)]=\"upgrade.description\">\n    </mat-form-field>\n\n    <div>\n      <button mat-button matStepperPrevious>Back</button>\n      <button mat-button matStepperNext>Next</button>\n    </div>\n  </mat-step>\n\n  <mat-step>\n    <ng-template matStepLabel>Set Upgrade Effects</ng-template>\n\n    <button mat-raised-button color=\"accent\" (click)=\"newUpgradeEffect()\">Add New Upgrade Effect</button>\n    <div *ngFor=\"let upgradeEffect of upgrade.upgradeEffects\">\n      <mat-card>\n        <button class=\"inner-delete\" mat-raised-button color=\"warn\" (click)=\"removeUpgradeEffect(upgradeEffect)\">Remove Upgrade Effect</button>\n        <mat-checkbox [(ngModel)]=\"upgradeEffect.upgradeIsForWholeType\">Upgrade Is For Whole Type</mat-checkbox>\n\n        <div *ngIf=\"upgradeEffect.upgradeIsForWholeType\">\n          <mat-form-field class=\"full-width\">\n            <mat-select [(ngModel)]=\"upgradeEffect.resourceType\">\n              <mat-option placeholder=\"Resource Type\" *ngFor=\"let resourceType of resourceTypes | enumToArray\" value=\"{{resourceTypes[resourceType]}}\">\n                {{resourceType}}\n              </mat-option>\n            </mat-select>\n          </mat-form-field>\n\n          <mat-form-field class=\"full-width\">\n            <input matInput placeholder=\"Max Tier\" [(ngModel)]=\"upgradeEffect.maxTier\">\n          </mat-form-field>\n        </div>\n        <div *ngIf=\"!upgradeEffect.upgradeIsForWholeType\">\n          <mat-form-field class=\"full-width\">\n            <mat-select [(ngModel)]=\"upgradeEffect.resourceId\" [compareWith]=\"compareFn\">\n              <mat-option placeholder=\"Resource Type\" *ngFor=\"let resource of resourcesService.resources\" value=\"{{resource.id}}\">\n                {{resource.name | titlecase}}\n              </mat-option>\n            </mat-select>\n          </mat-form-field>\n        </div>\n\n        <mat-form-field class=\"full-width\">\n          <mat-select [(ngModel)]=\"upgradeEffect.upgradeVariable\">\n            <mat-option placeholder=\"Upgrade Variable\" *ngFor=\"let upgradeVariable of upgradeVariables | enumToArray\" value=\"{{upgradeVariables[upgradeVariable]}}\">\n              {{upgradeVariable}}\n            </mat-option>\n          </mat-select>\n        </mat-form-field>\n\n        <div *ngIf=\"upgradeEffect.upgradeVariable === upgradeVariables.Harvestability || upgradeEffect.upgradeVariable === upgradeVariables.Workable\">\n          <mat-checkbox [(ngModel)]=\"upgradeEffect.upgradeFactor\">{{upgradeEffect.upgradeVariable | titlecase}}</mat-checkbox>\n        </div>\n        <div *ngIf=\"upgradeEffect.upgradeVariable !== upgradeVariables.Harvestability && upgradeEffect.upgradeVariable !== upgradeVariables.Workable\">\n          <mat-form-field class=\"full-width\">\n            <input matInput placeholder=\"Upgrade Factor\" [(ngModel)]=\"upgradeEffect.upgradeFactor\">\n          </mat-form-field>\n        </div>\n      </mat-card>\n    </div>\n\n    <div>\n      <button mat-button matStepperPrevious>Back</button>\n      <button mat-button matStepperNext>Next</button>\n    </div>\n  </mat-step>\n\n  <mat-step>\n    <ng-template matStepLabel>Set Resource Costs</ng-template>\n    <button mat-raised-button color=\"accent\" (click)=\"newResourceCost()\">Add New Resouce Cost</button>\n    <div *ngFor=\"let resourceCost of upgrade.resourceCosts\">\n      <mat-card>\n        <button class=\"inner-delete\" mat-raised-button color=\"warn\" (click)=\"removeResourceCost(resourceCost)\">Remove Resource Cost</button>\n        <mat-form-field class=\"full-width\">\n          <mat-select [(ngModel)]=\"resourceCost.resourceId\" [compareWith]=\"compareFn\">\n            <mat-option placeholder=\"Resource Type\" *ngFor=\"let resource of resourcesService.resources\" value=\"{{resource.id}}\">\n              {{resource.name | titlecase}}\n            </mat-option>\n          </mat-select>\n        </mat-form-field>\n        <mat-form-field class=\"full-width\">\n          <input matInput placeholder=\"Resource Cost\" [(ngModel)]=\"resourceCost.resourceCost\">\n        </mat-form-field>\n      </mat-card>\n    </div>\n\n    <div>\n      <button mat-button matStepperPrevious>Back</button>\n      <button mat-button matStepperNext>Next</button>\n    </div>\n  </mat-step>\n\n  <mat-step>\n    <ng-template matStepLabel>Done</ng-template>\n    {{upgrade.name}} configured.\n    <div>\n      <button mat-button matStepperPrevious>Back</button>\n      <button mat-raised-button (click)=\"saveUpgrade()\">Save Upgrade</button>\n    </div>\n  </mat-step>\n</mat-vertical-stepper>\n"
-
-/***/ }),
-
-/***/ "./src/app/components/upgrade-dialog/upgrade-dialog.component.ts":
-/*!***********************************************************************!*\
-  !*** ./src/app/components/upgrade-dialog/upgrade-dialog.component.ts ***!
-  \***********************************************************************/
-/*! exports provided: UpgradeDialogComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UpgradeDialogComponent", function() { return UpgradeDialogComponent; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
-/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
-/* harmony import */ var _objects_resource__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../objects/resource */ "./src/app/objects/resource.ts");
-/* harmony import */ var _services_resources_resources_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../services/resources/resources.service */ "./src/app/services/resources/resources.service.ts");
-/* harmony import */ var _objects_upgrade__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../objects/upgrade */ "./src/app/objects/upgrade.ts");
-/* harmony import */ var _services_upgrades_upgrades_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../services/upgrades/upgrades.service */ "./src/app/services/upgrades/upgrades.service.ts");
-var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (undefined && undefined.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-var __param = (undefined && undefined.__param) || function (paramIndex, decorator) {
-    return function (target, key) { decorator(target, key, paramIndex); }
-};
-
-
-
-
-
-
-
-var UpgradeDialogComponent = /** @class */ (function () {
-    function UpgradeDialogComponent(resourcesService, upgradesService, _formBuilder, dialogRef, data) {
-        this.resourcesService = resourcesService;
-        this.upgradesService = upgradesService;
-        this._formBuilder = _formBuilder;
-        this.dialogRef = dialogRef;
-        this.data = data;
-        this.upgrade = {
-            id: this.upgradesService.upgrades.length,
-            upgradeType: _objects_upgrade__WEBPACK_IMPORTED_MODULE_5__["UpgradeType"].Resource,
-            name: '',
-            description: '',
-            upgradeEffects: [],
-            resourceCosts: [],
-            purchased: false
-        };
-        this.editMode = false;
-        this.resourceTypes = _objects_resource__WEBPACK_IMPORTED_MODULE_3__["ResourceType"];
-        this.upgradeTypes = _objects_upgrade__WEBPACK_IMPORTED_MODULE_5__["UpgradeType"];
-        this.upgradeVariables = _objects_upgrade__WEBPACK_IMPORTED_MODULE_5__["UpgradeVariable"];
-    }
-    UpgradeDialogComponent.prototype.ngOnInit = function () {
-        if (this.data.upgradeId !== undefined) {
-            this.oldUpgradeId = this.data.upgradeId;
-            this.populateUpgrade();
-            this.upgrade.id = this.oldUpgradeId;
-            this.editMode = true;
-        }
-    };
-    UpgradeDialogComponent.prototype.populateUpgrade = function () {
-        var upgradeId = +this.oldUpgradeId;
-        var oldUpgrade = this.upgradesService.getUpgrade(upgradeId);
-        this.upgrade.name = oldUpgrade.name;
-        this.upgrade.upgradeType = oldUpgrade.upgradeType;
-        this.upgrade.description = oldUpgrade.description;
-        this.upgrade.purchased = false;
-        for (var _i = 0, _a = oldUpgrade.upgradeEffects; _i < _a.length; _i++) {
-            var upgradeEffect = _a[_i];
-            this.upgrade.upgradeEffects.push({
-                upgradeIsForWholeType: upgradeEffect.upgradeIsForWholeType,
-                resourceType: upgradeEffect.resourceType,
-                resourceId: upgradeEffect.resourceId,
-                upgradeVariable: upgradeEffect.upgradeVariable,
-                upgradeFactor: upgradeEffect.upgradeFactor,
-            });
-        }
-        for (var _b = 0, _c = oldUpgrade.resourceCosts; _b < _c.length; _b++) {
-            var resourceCost = _c[_b];
-            this.upgrade.resourceCosts.push({
-                resourceId: resourceCost.resourceId,
-                resourceCost: resourceCost.resourceCost
-            });
-        }
-    };
-    UpgradeDialogComponent.prototype.onNoClick = function () {
-        this.dialogRef.close();
-    };
-    UpgradeDialogComponent.prototype.newUpgradeEffect = function () {
-        this.upgrade.upgradeEffects[this.upgrade.upgradeEffects.length] = {
-            upgradeIsForWholeType: false,
-            resourceId: 0,
-            upgradeVariable: _objects_upgrade__WEBPACK_IMPORTED_MODULE_5__["UpgradeVariable"].Harvestability,
-            upgradeFactor: 1
-        };
-    };
-    UpgradeDialogComponent.prototype.removeUpgradeEffect = function (upgradeEffect) {
-        this.upgrade.upgradeEffects = this.upgrade.upgradeEffects.filter(function (ue) { return ue !== upgradeEffect; });
-    };
-    UpgradeDialogComponent.prototype.newResourceCost = function () {
-        this.upgrade.resourceCosts[this.upgrade.resourceCosts.length] = {
-            resourceId: 0,
-            resourceCost: 0
-        };
-    };
-    UpgradeDialogComponent.prototype.removeResourceCost = function (resourceCost) {
-        this.upgrade.resourceCosts = this.upgrade.resourceCosts.filter(function (rc) { return rc !== resourceCost; });
-    };
-    UpgradeDialogComponent.prototype.saveUpgrade = function () {
-        this.upgrade.id = +this.upgrade.id;
-        for (var _i = 0, _a = this.upgrade.upgradeEffects; _i < _a.length; _i++) {
-            var upgradeEffect = _a[_i];
-            if (upgradeEffect.resourceId) {
-                upgradeEffect.resourceId = +upgradeEffect.resourceId;
-            }
-            if (upgradeEffect.maxTier) {
-                upgradeEffect.maxTier = +upgradeEffect.maxTier;
-            }
-            upgradeEffect.upgradeFactor = +upgradeEffect.upgradeFactor;
-        }
-        for (var _b = 0, _c = this.upgrade.resourceCosts; _b < _c.length; _b++) {
-            var resourceCost = _c[_b];
-            resourceCost.resourceId = +resourceCost.resourceId;
-            resourceCost.resourceCost = +resourceCost.resourceCost;
-        }
-        var existingUpgrade = this.upgradesService.getUpgrade(this.upgrade.id);
-        if (existingUpgrade === undefined) {
-            this.upgradesService.upgrades.push(this.upgrade);
-        }
-        else {
-            var oldIndex = this.upgradesService.upgrades.indexOf(existingUpgrade);
-            this.upgradesService.upgrades[oldIndex] = this.upgrade;
-        }
-    };
-    UpgradeDialogComponent.prototype.compareFn = function (item1, item2) {
-        return +item1 === +item2;
-    };
-    UpgradeDialogComponent = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
-            selector: 'app-upgrade-dialog',
-            template: __webpack_require__(/*! ./upgrade-dialog.component.html */ "./src/app/components/upgrade-dialog/upgrade-dialog.component.html"),
-            styles: [__webpack_require__(/*! ./upgrade-dialog.component.css */ "./src/app/components/upgrade-dialog/upgrade-dialog.component.css")]
-        }),
-        __param(4, Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"])(_angular_material__WEBPACK_IMPORTED_MODULE_2__["MAT_DIALOG_DATA"])),
-        __metadata("design:paramtypes", [_services_resources_resources_service__WEBPACK_IMPORTED_MODULE_4__["ResourcesService"],
-            _services_upgrades_upgrades_service__WEBPACK_IMPORTED_MODULE_6__["UpgradesService"],
-            _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormBuilder"],
-            _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatDialogRef"], Object])
-    ], UpgradeDialogComponent);
-    return UpgradeDialogComponent;
-}());
-
-
-
-/***/ }),
-
 /***/ "./src/app/components/upgrades/upgrades.component.css":
 /*!************************************************************!*\
   !*** ./src/app/components/upgrades/upgrades.component.css ***!
@@ -2101,7 +1635,7 @@ module.exports = "/* UpgradesComponent's private CSS styles */\r\n.upgrades {\r\
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<mat-checkbox class=\"hidePurchased\" checked=\"true\" [(ngModel)]=\"hidePurchasedUpgrades\">Hide Purchased Upgrades</mat-checkbox>\n<br />\n<br />\n\n<div class=\"upgrades\" [ngClass]=\"{'slim-interface': settingsService.slimInterface}\">\n  <div *ngIf=\"!settingsService.slimInterface\">\n    <mat-card class=\"upgrade\" *ngFor=\"let upgrade of getUpgrades(false, hidePurchased, adminService.filterAccessible)\">\n      <button mat-raised-button color=\"accent\" [disabled]='upgrade.purchased || !canAffordUpgrade(upgrade.id)' (click)='purchaseUpgrade(upgrade.id)'>\n        <mat-card-title>\n          <b>\n            <mat-icon *ngIf=\"upgrade.purchased\" color=\"primary\">check</mat-icon>\n          </b>\n          {{upgrade.name}}\n        </mat-card-title>\n      </button>\n      <mat-card-subtitle>{{upgradesService.getUpgradeTypeString(upgrade.id)}}</mat-card-subtitle>\n      <mat-card-content>\n        {{upgrade.description}}\n        <div class=\"resource-list\">\n          <div *ngFor=\"let resourceCost of upgrade.resourceCosts\" matTooltip=\"{{resourceCost.resourceCost}} {{getResource(resourceCost.resourceId).name | titlecase}}\"\n            matTooltipPosition=\"below\">\n            <img src=\"{{getResource(resourceCost.resourceId).iconPath}}\" alt=\"{{getResource(resourceCost.resourceId).name}}\"> {{resourceCost.resourceCost}}\n          </div>\n        </div>\n      </mat-card-content>\n      <div *ngIf=\"adminService.editMode\">\n        <button (click)=\"editUpgrade(upgrade.id)\">Edit {{upgrade.name | titlecase}}</button>\n      </div>\n    </mat-card>\n  </div>\n  <div *ngIf=\"settingsService.slimInterface\">\n    <button mat-raised-button *ngFor=\"let upgrade of getUpgrades(false, hidePurchased, adminService.filterAccessible)\" color=\"accent\"\n      [disabled]='upgrade.purchased || !canAffordUpgrade(upgrade.id)' (click)='purchaseUpgrade(upgrade.id)'>\n    <div class=\"title\" matTooltip=\"{{upgrade.description}}\" matTooltipPosition=\"above\">\n      <b>\n        <mat-icon *ngIf=\"upgrade.purchased\" color=\"primary\">check</mat-icon>\n      </b>\n      {{upgrade.name}}\n    </div>\n    <div class=\"resource-list\">\n      <div *ngFor=\"let resourceCost of upgrade.resourceCosts\" matTooltip=\"{{resourceCost.resourceCost}} {{getResource(resourceCost.resourceId).name | titlecase}}\"\n        matTooltipPosition=\"below\">\n        <img src=\"{{getResource(resourceCost.resourceId).iconPath}}\" alt=\"{{getResource(resourceCost.resourceId).name}}\">\n        {{resourceCost.resourceCost}}\n      </div>\n    </div>\n  </button>\n  </div>\n</div>\n"
+module.exports = "<mat-checkbox class=\"hidePurchased\" checked=\"true\" [(ngModel)]=\"hidePurchasedUpgrades\">Hide Purchased Upgrades</mat-checkbox>\n<br />\n<br />\n\n<div class=\"upgrades\" [ngClass]=\"{'slim-interface': settingsService.slimInterface}\">\n  <div *ngIf=\"!settingsService.slimInterface\">\n    <mat-card class=\"upgrade\" *ngFor=\"let upgrade of getUpgrades(false, hidePurchasedUpgrades, adminService.filterAccessible)\">\n      <button mat-raised-button color=\"accent\" [disabled]='upgrade.purchased || !canAffordUpgrade(upgrade.id)' (click)='purchaseUpgrade(upgrade.id)'>\n        <mat-card-title>\n          <b>\n            <mat-icon *ngIf=\"upgrade.purchased\" color=\"primary\">check</mat-icon>\n          </b>\n          {{upgrade.name}}\n        </mat-card-title>\n      </button>\n      <mat-card-subtitle>{{upgradesService.getUpgradeTypeString(upgrade.id)}}</mat-card-subtitle>\n      <mat-card-content>\n        {{upgrade.description}}\n        <div class=\"resource-list\">\n          <div *ngFor=\"let resourceCost of upgrade.resourceCosts\" matTooltip=\"{{resourceCost.resourceCost}} {{getResource(resourceCost.resourceEnum).name | titlecase}}\"\n            matTooltipPosition=\"below\">\n            <img src=\"{{getResource(resourceCost.resourceEnum).iconPath}}\" alt=\"{{getResource(resourceCost.resourceEnum).name}}\"> {{resourceCost.resourceCost}}\n          </div>\n        </div>\n      </mat-card-content>\n    </mat-card>\n  </div>\n  <div *ngIf=\"settingsService.slimInterface\">\n    <button mat-raised-button *ngFor=\"let upgrade of getUpgrades(false, hidePurchasedUpgrades, adminService.filterAccessible)\" color=\"accent\"\n      [disabled]='upgrade.purchased || !canAffordUpgrade(upgrade.id)' (click)='purchaseUpgrade(upgrade.id)'>\n    <div class=\"title\" matTooltip=\"{{upgrade.description}}\" matTooltipPosition=\"above\">\n      <b>\n        <mat-icon *ngIf=\"upgrade.purchased\" color=\"primary\">check</mat-icon>\n      </b>\n      {{upgrade.name}}\n    </div>\n    <div class=\"resource-list\">\n      <div *ngFor=\"let resourceCost of upgrade.resourceCosts\" matTooltip=\"{{resourceCost.resourceCost}} {{getResource(resourceCost.resourceEnum).name | titlecase}}\"\n        matTooltipPosition=\"below\">\n        <img src=\"{{getResource(resourceCost.resourceEnum).iconPath}}\" alt=\"{{getResource(resourceCost.resourceEnum).name}}\">\n        {{resourceCost.resourceCost}}\n      </div>\n    </div>\n  </button>\n  </div>\n</div>\n"
 
 /***/ }),
 
@@ -2147,32 +1681,29 @@ var UpgradesComponent = /** @class */ (function () {
     UpgradesComponent.prototype.ngOnInit = function () {
     };
     UpgradesComponent.prototype.canAffordUpgrade = function (id) {
-        return this.upgradesService.canAffordUpgrade(id);
+        return this.upgradesService.getUpgrade(id).canAfford();
     };
     UpgradesComponent.prototype.getUpgrades = function (filterByPurchased, filterByUnpurchased, filterByAccessible) {
         return this.upgradesService.getUpgrades(filterByPurchased, filterByUnpurchased, filterByAccessible);
     };
     UpgradesComponent.prototype.upgradesOfType = function (upgradeType, filterByPurchased, filterByUnpurchased, filterByAccessible) {
-        return this.upgradesService.upgradesOfType(this.upgradeTypes[upgradeType], filterByPurchased, filterByUnpurchased, filterByAccessible);
+        return this.upgradesService.getUpgrades(filterByPurchased, filterByUnpurchased, filterByAccessible, this.upgradeTypes[upgradeType]);
     };
     UpgradesComponent.prototype.purchaseUpgrade = function (id) {
-        this.upgradesService.purchaseUpgrade(id);
+        this.upgradesService.getUpgrade(id).purchaseUpgrade();
     };
     UpgradesComponent.prototype.getBackgroundColor = function (id) {
         var upgrade = this.upgradesService.getUpgrade(id);
         if (upgrade.purchased) {
             return 'lightgreen';
         }
-        else if (!this.upgradesService.canAffordUpgrade(id)) {
+        else if (!upgrade.canAfford()) {
             return 'gray';
         }
         return 'lightblue';
     };
-    UpgradesComponent.prototype.editUpgrade = function (id) {
-        this.adminService.openUpgradeDialog(id);
-    };
-    UpgradesComponent.prototype.getResource = function (resourceId) {
-        return this.resourcesService.getResource(resourceId);
+    UpgradesComponent.prototype.getResource = function (resourceEnum) {
+        return this.resourcesService.resources.get(resourceEnum);
     };
     Object.defineProperty(UpgradesComponent.prototype, "hidePurchasedUpgrades", {
         get: function () {
@@ -2220,7 +1751,7 @@ module.exports = "/* WorkersComponent's private CSS styles */\r\n.workers {\r\n 
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ul class=\"workers\">\n  <mat-checkbox [(ngModel)]=\"workersPaused\" color=\"accent\">Pause Workers</mat-checkbox>\n  <mat-accordion multi=\"true\">\n    <mat-expansion-panel expanded=\"true\" *ngFor=\"let worker of getWorkers(true, true, true)\">\n      <mat-expansion-panel-header>\n        <mat-panel-title>\n          {{worker.resourceType | titlecase}}\n        </mat-panel-title>\n        <mat-panel-description>\n        </mat-panel-description>\n      </mat-expansion-panel-header>\n\n      <button mat-raised-button [color]=\"canAfford(worker.id) ? 'accent' : 'disabled'\" (click)=\"hireWorker(worker.id)\">\n        <mat-card-title>{{worker.workerCount}} Workers ({{worker.freeWorkers}} Idle)</mat-card-title>\n        <mat-card-subtitle>{{worker.cost | number}} Gold</mat-card-subtitle>\n      </button>\n\n      <div *ngFor=\"let resourceWorker of getAccessibleResourceWorkers(worker)\">\n        <mat-card [ngClass]=\"{'resource-disabled': !canHarvest(resourceWorker.resourceId)}\"\n        *ngIf=\"shouldShowResource(resourceWorker.resourceId)\" matTooltip=\"{{getTooltipMessage(resourceWorker.resourceId)}}\" matTooltipPosition=\"right\">\n          <mat-card-title [style.color]=\"canHarvest(resourceWorker.resourceId) ? 'black' : 'red'\">\n            {{getResource(resourceWorker.resourceId).name | titlecase}}\n          </mat-card-title>\n          <div class=\"path-broken-warn\" *ngIf=\"!pathAvailable(resourceWorker.resourceId)\">(Path Broken)</div>\n          <mat-card-subtitle>\n            Workers: <input class=\"worker-input\" type=\"number\" min=\"0\" [max]=\"worker.workerCount\"\n              [(ngModel)]=\"resourceWorker.sliderSetting\" (input)=\"checkSliderValue(resourceWorker.resourceId)\" (change)=\"updateResourceWorker(resourceWorker.resourceId, resourceWorker.sliderSetting)\"/>\n          </mat-card-subtitle>\n          <mat-slider [color]=\"resourceWorker.sliderSettingValid ? 'accent' : 'warn'\" [id]=\"resourceWorker.resourceId\" [max]=\"worker.workerCount\"\n              [disabled]=\"!pathAvailable(resourceWorker.resourceId)\" [tickInterval]=\"1\" [(ngModel)]=\"resourceWorker.sliderSetting\"\n              (input)=\"checkSliderValue($event)\" (change)=\"updateResourceWorker($event)\">\n          </mat-slider>\n        </mat-card>\n      </div>\n    </mat-expansion-panel>\n  </mat-accordion>\n</ul>\n"
+module.exports = "<ul class=\"workers\">\n  <mat-checkbox [(ngModel)]=\"workersPaused\" color=\"accent\">Pause Workers</mat-checkbox>\n  <mat-accordion multi=\"true\">\n    <mat-expansion-panel expanded=\"true\" *ngFor=\"let worker of getWorkers(true, true, true)\">\n      <mat-expansion-panel-header>\n        <mat-panel-title>\n          {{worker.resourceType | titlecase}}\n        </mat-panel-title>\n        <mat-panel-description>\n        </mat-panel-description>\n      </mat-expansion-panel-header>\n\n      <button mat-raised-button [color]=\"worker.canAffordToHire() ? 'accent' : 'disabled'\" (click)=\"worker.hireWorker()\">\n        <mat-card-title>{{worker.workerCount}} Workers ({{worker.freeWorkers}} Idle)</mat-card-title>\n        <mat-card-subtitle>{{worker.cost | number}} Gold</mat-card-subtitle>\n      </button>\n\n      <div *ngFor=\"let resourceWorker of getAccessibleResourceWorkers(worker)\">\n        <mat-card [ngClass]=\"{'resource-disabled': !canHarvest(resourceWorker.resourceEnum)}\"\n        *ngIf=\"shouldShowResource(resourceWorker.resourceEnum)\" matTooltip=\"{{getTooltipMessage(resourceWorker.resourceEnum)}}\" matTooltipPosition=\"right\">\n          <mat-card-title [style.color]=\"canHarvest(resourceWorker.resourceEnum) ? 'black' : 'red'\">\n            {{getResource(resourceWorker.resourceEnum).name | titlecase}}\n          </mat-card-title>\n          <div class=\"path-broken-warn\" *ngIf=\"!pathAvailable(resourceWorker.resourceEnum)\">(Path Broken)</div>\n          <mat-card-subtitle>\n            Workers: <input class=\"worker-input\" type=\"number\" min=\"0\" [max]=\"worker.workerCount\"\n              [(ngModel)]=\"resourceWorker.sliderSetting\" (input)=\"checkSliderValue(resourceWorker.resourceEnum)\" (change)=\"updateResourceWorker(resourceWorker.resourceEnum, resourceWorker.sliderSetting)\"/>\n          </mat-card-subtitle>\n          <mat-slider [color]=\"resourceWorker.sliderSettingValid ? 'accent' : 'warn'\" [id]=\"resourceWorker.resourceEnum\" [max]=\"worker.workerCount\"\n              [disabled]=\"!pathAvailable(resourceWorker.resourceEnum)\" [tickInterval]=\"1\" [(ngModel)]=\"resourceWorker.sliderSetting\"\n              (input)=\"checkSliderValue($event)\" (change)=\"updateResourceWorker($event)\">\n          </mat-slider>\n        </mat-card>\n      </div>\n    </mat-expansion-panel>\n  </mat-accordion>\n</ul>\n"
 
 /***/ }),
 
@@ -2235,7 +1766,7 @@ module.exports = "<ul class=\"workers\">\n  <mat-checkbox [(ngModel)]=\"workersP
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "WorkersComponent", function() { return WorkersComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _objects_resource__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../objects/resource */ "./src/app/objects/resource.ts");
+/* harmony import */ var _objects_resourceData__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../objects/resourceData */ "./src/app/objects/resourceData.ts");
 /* harmony import */ var _services_resources_resources_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../services/resources/resources.service */ "./src/app/services/resources/resources.service.ts");
 /* harmony import */ var _services_workers_workers_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../services/workers/workers.service */ "./src/app/services/workers/workers.service.ts");
 /* harmony import */ var _services_tooltip_tooltip_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./../../services/tooltip/tooltip.service */ "./src/app/services/tooltip/tooltip.service.ts");
@@ -2261,58 +1792,54 @@ var WorkersComponent = /** @class */ (function () {
         this.workersService = workersService;
         this.tooltipService = tooltipService;
         this.adminService = adminService;
-        this.resourceTypes = _objects_resource__WEBPACK_IMPORTED_MODULE_1__["ResourceType"];
+        this.resourceTypes = _objects_resourceData__WEBPACK_IMPORTED_MODULE_1__["ResourceType"];
     }
     WorkersComponent.prototype.ngOnInit = function () {
     };
     WorkersComponent.prototype.getWorkers = function (filterByAccessible, filterByWorkable, filterByHarvestable) {
         return this.workersService.getWorkers(filterByAccessible, filterByWorkable, filterByHarvestable);
     };
-    WorkersComponent.prototype.getWorker = function (idOrResourceType) {
-        return this.workersService.getWorker(idOrResourceType);
+    WorkersComponent.prototype.getWorker = function (resourceType) {
+        return this.workersService.workers.get(resourceType);
+    };
+    WorkersComponent.prototype.getResource = function (resourceEnum) {
+        return this.resourcesService.resources.get(resourceEnum);
     };
     WorkersComponent.prototype.getAccessibleResourceWorkers = function (worker) {
-        var _this = this;
-        return worker.workersByResource.filter(function (rw) { return _this.resourcesService.getResource(rw.resourceId).resourceAccessible; });
+        return worker.getResourceWorkers(true);
     };
-    WorkersComponent.prototype.canAfford = function (id) {
-        return this.workersService.canAffordWorker(id);
+    WorkersComponent.prototype.canAffordToHarvest = function (resourceEnum) {
+        return this.workersService.getWorker(resourceEnum).canAffordToHarvest(resourceEnum);
     };
-    WorkersComponent.prototype.canHarvest = function (resourceId) {
-        return this.resourcesService.canHarvest(resourceId) && this.workersService.canAffordToHarvest(resourceId);
+    WorkersComponent.prototype.canHarvest = function (resourceEnum) {
+        return this.resourcesService.resources.get(resourceEnum).canHarvest() && this.canAffordToHarvest(resourceEnum);
     };
-    WorkersComponent.prototype.shouldShowResource = function (id) {
-        var resource = this.resourcesService.getResource(id);
-        var resourceWorker = this.workersService.getResourceWorker(id);
+    WorkersComponent.prototype.shouldShowResource = function (resourceEnum) {
+        var resource = this.resourcesService.resources.get(resourceEnum);
+        var resourceWorker = this.workersService.getResourceWorker(resourceEnum);
         return (resourceWorker.workable && resource.harvestable) || !this.adminService.filterAccessible;
     };
-    WorkersComponent.prototype.getTooltipMessage = function (id) {
-        return this.tooltipService.getWorkerTooltip(id);
+    WorkersComponent.prototype.getTooltipMessage = function (resourceEnum) {
+        return this.tooltipService.getWorkerTooltip(resourceEnum);
     };
-    WorkersComponent.prototype.hireWorker = function (id) {
-        this.workersService.hireWorker(id);
-    };
-    WorkersComponent.prototype.checkSliderValue = function (eventOrId) {
-        var id = typeof (eventOrId) === 'number' ? eventOrId : +eventOrId.source._elementRef.nativeElement.id;
-        var resource = this.resourcesService.getResource(id);
+    WorkersComponent.prototype.checkSliderValue = function (eventOrEnum) {
+        var resourceEnum = typeof (eventOrEnum) === 'string' ? eventOrEnum : eventOrEnum.source._elementRef.nativeElement.id;
+        var resource = this.resourcesService.resources.get(resourceEnum);
         var worker = this.getWorker(resource.resourceType);
-        var resourceWorker = worker.workersByResource.find(function (ws) { return ws.resourceId === resource.id; });
-        var newValue = typeof (eventOrId) === 'number' ? resourceWorker.sliderSetting : +eventOrId.value;
+        var resourceWorker = this.workersService.getResourceWorker(resourceEnum);
+        var newValue = typeof (eventOrEnum) === 'number' ? resourceWorker.sliderSetting : +eventOrEnum.value;
         resourceWorker.sliderSettingValid = worker.freeWorkers + resourceWorker.workerCount - newValue >= 0;
     };
-    WorkersComponent.prototype.updateResourceWorker = function (eventOrId, value) {
+    WorkersComponent.prototype.updateResourceWorker = function (eventOrEnum, value) {
         if (value === void 0) { value = -1; }
-        var id = typeof (eventOrId) === 'number' ? eventOrId : +eventOrId.source._elementRef.nativeElement.id;
+        var resourceEnum = typeof (eventOrEnum) === 'string' ? eventOrEnum : eventOrEnum.source._elementRef.nativeElement.id;
         if (value === -1) {
-            value = +eventOrId.value;
+            value = +eventOrEnum.value;
         }
-        this.workersService.updateResourceWorker(id, value);
+        this.workersService.getWorker(resourceEnum).updateResourceWorker(resourceEnum, value);
     };
-    WorkersComponent.prototype.pathAvailable = function (id) {
-        return this.getResource(id).pathAvailable;
-    };
-    WorkersComponent.prototype.getResource = function (id) {
-        return this.resourcesService.getResource(id);
+    WorkersComponent.prototype.pathAvailable = function (resourceEnum) {
+        return this.resourcesService.resources.get(resourceEnum).pathAvailable;
     };
     Object.defineProperty(WorkersComponent.prototype, "workersPaused", {
         get: function () {
@@ -2564,7 +2091,7 @@ var MapDirective = /** @class */ (function () {
             this.mapService.focusedBuildingTile = this.mapService.buildingTiles[focusedTile.buildingTileType];
             this.mapService.focusedResourceTile = this.mapService.resourceTiles[focusedTile.resourceTileType];
             this.mapService.focusedResources = this.mapService.focusedResourceTile ?
-                this.mapService.focusedResourceTile.resourceIds.map(function (id) { return _this.resourcesService.getResource(id); }) : undefined;
+                this.mapService.focusedResourceTile.resourceEnums.map(function (rEnum) { return _this.resourcesService.resources.get(rEnum); }) : undefined;
         }
         else {
             this.mapService.focusedTile = undefined;
@@ -2641,7 +2168,7 @@ var MapDirective = /** @class */ (function () {
         }
         for (var _b = 0, _c = this.mapService.resourceAnimations; _b < _c.length; _b++) {
             var resourceAnimation = _c[_b];
-            var resourceTileImage = this.imageElements[this.resourcesService.getResource(resourceAnimation.resourceId).name.toLowerCase().replace(' ', '-')];
+            var resourceTileImage = this.imageElements[this.resourcesService.resources.get(resourceAnimation.resourceEnum).name.toLowerCase().replace(' ', '-')];
             this.context.drawImage(resourceTileImage, resourceAnimation.x, resourceAnimation.y, this.mapService.tilePixelSize / 2, this.mapService.tilePixelSize / 2);
             this.drawTile(resourceAnimation.position, resourceTileImage, 0.5);
             this.context.fillStyle = this.settingsService.resourceAnimationColors[resourceAnimation.animationType];
@@ -3004,8 +2531,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Fighter", function() { return Fighter; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Projectile", function() { return Projectile; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ResourceAnimation", function() { return ResourceAnimation; });
-/* harmony import */ var _vector__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./vector */ "./src/app/objects/vector.ts");
-/* harmony import */ var _globals__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../globals */ "./src/app/globals.ts");
+/* harmony import */ var _resourceData__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./resourceData */ "./src/app/objects/resourceData.ts");
+/* harmony import */ var _vector__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./vector */ "./src/app/objects/vector.ts");
+/* harmony import */ var _globals__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../globals */ "./src/app/globals.ts");
 var __extends = (undefined && undefined.__extends) || (function () {
     var extendStatics = Object.setPrototypeOf ||
         ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
@@ -3016,6 +2544,7 @@ var __extends = (undefined && undefined.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
+
 
 
 var FighterStat;
@@ -3040,7 +2569,7 @@ var Entity = /** @class */ (function () {
         this.pathingDone = false;
         this.name = name;
         this.position = position;
-        this.spawnPosition = new _vector__WEBPACK_IMPORTED_MODULE_0__["Vector"](position.x, position.y);
+        this.spawnPosition = new _vector__WEBPACK_IMPORTED_MODULE_1__["Vector"](position.x, position.y);
         this.currentTile = currentTile;
         this.tilePath = tilePath;
         this.pathStep = 0;
@@ -3049,8 +2578,7 @@ var Entity = /** @class */ (function () {
         this.maxHealth = health;
         this.animationSpeed = animationSpeed;
     }
-    Entity.prototype.tick = function (elapsed, deltaTime) {
-    };
+    Entity.prototype.tick = function (elapsed, deltaTime) { };
     Object.defineProperty(Entity.prototype, "x", {
         get: function () {
             return this.position.x;
@@ -3083,8 +2611,8 @@ var Entity = /** @class */ (function () {
             var destinationTile = this.tilePath[this.pathStep + 1];
             this.x += (destinationTile.x - currentTile.x) * stepDistance;
             this.y += (destinationTile.y - currentTile.y) * stepDistance;
-            var offset = this.position.subtract(new _vector__WEBPACK_IMPORTED_MODULE_0__["Vector"](currentTile.x, currentTile.y));
-            if (Math.abs(offset.x) >= _globals__WEBPACK_IMPORTED_MODULE_1__["tilePixelSize"] || Math.abs(offset.y) >= _globals__WEBPACK_IMPORTED_MODULE_1__["tilePixelSize"]) {
+            var offset = this.position.subtract(new _vector__WEBPACK_IMPORTED_MODULE_1__["Vector"](currentTile.x, currentTile.y));
+            if (Math.abs(offset.x) >= _globals__WEBPACK_IMPORTED_MODULE_2__["tilePixelSize"] || Math.abs(offset.y) >= _globals__WEBPACK_IMPORTED_MODULE_2__["tilePixelSize"]) {
                 this.pathStep++;
                 this.currentTile = destinationTile;
                 if (this.pathStep === this.tilePath.length - 1) {
@@ -3120,7 +2648,7 @@ var Enemy = /** @class */ (function (_super) {
         _this.targetIndex = 0;
         _this.pathAttempt = 0;
         _this.resourcesToSteal = resourcesToSteal;
-        _this.resourcesHeld = [];
+        _this.resourcesHeld = new Map();
         _this.totalHeld = 0;
         _this.stealMax = stealMax;
         _this.resourceCapacity = resourceCapacity;
@@ -3169,7 +2697,7 @@ var Fighter = /** @class */ (function (_super) {
         }
     };
     Fighter.prototype.canUpgradeStat = function (stat) {
-        return this.resourcesService.getResource(0).amount >= this.statCosts[stat];
+        return this.resourcesService.resources.get(_resourceData__WEBPACK_IMPORTED_MODULE_0__["ResourceEnum"].Gold).amount >= this.statCosts[stat];
     };
     Fighter.prototype.getUpgradedStat = function (stat) {
         switch (stat) {
@@ -3197,7 +2725,7 @@ var Fighter = /** @class */ (function (_super) {
         if (!this.canUpgradeStat(stat)) {
             return;
         }
-        this.resourcesService.addResourceAmount(0, -this.statCosts[stat]);
+        this.resourcesService.resources.get(_resourceData__WEBPACK_IMPORTED_MODULE_0__["ResourceEnum"].Gold).addAmount(-this.statCosts[stat]);
         var upgradedStat = this.getUpgradedStat(stat);
         switch (stat) {
             case FighterStat.Attack: {
@@ -3229,13 +2757,13 @@ var Fighter = /** @class */ (function (_super) {
         this.statCosts[stat] *= 1.5;
     };
     Fighter.prototype.canHeal = function () {
-        return this.resourcesService.getResource(0).amount >= this.healCost;
+        return this.resourcesService.resources.get(_resourceData__WEBPACK_IMPORTED_MODULE_0__["ResourceEnum"].Gold).amount >= this.healCost;
     };
     Fighter.prototype.heal = function () {
         if (!this.canHeal()) {
             return;
         }
-        this.resourcesService.addResourceAmount(0, -this.healCost);
+        this.resourcesService.resources.get(_resourceData__WEBPACK_IMPORTED_MODULE_0__["ResourceEnum"].Gold).addAmount(-this.healCost);
         this.health = this.maxHealth;
     };
     Object.defineProperty(Fighter.prototype, "healCost", {
@@ -3261,7 +2789,7 @@ var Projectile = /** @class */ (function (_super) {
     Projectile.prototype.tick = function (elapsed, deltaTime) {
         var distance = this.target.position.subtract(this.position);
         var totalDistance = this.target.position.subtract(this.spawnPosition);
-        if (distance.magnitude < _globals__WEBPACK_IMPORTED_MODULE_1__["tilePixelSize"]) {
+        if (distance.magnitude < _globals__WEBPACK_IMPORTED_MODULE_2__["tilePixelSize"]) {
             this.target.health -= this.owner.attack;
             this.hitTarget = true;
         }
@@ -3278,11 +2806,11 @@ var Projectile = /** @class */ (function (_super) {
 
 var ResourceAnimation = /** @class */ (function (_super) {
     __extends(ResourceAnimation, _super);
-    function ResourceAnimation(position, currentTile, animationSpeed, tilePath, animationType, resourceId, multiplier, spawnedByPlayer, resourcesService, storeService) {
+    function ResourceAnimation(position, currentTile, animationSpeed, tilePath, animationType, resourceEnum, multiplier, spawnedByPlayer, resourcesService, storeService) {
         if (animationSpeed === void 0) { animationSpeed = 0.003; }
         var _this = _super.call(this, '', position, currentTile, -1, animationSpeed, tilePath) || this;
         _this.animationType = animationType;
-        _this.resourceId = resourceId;
+        _this.resourceEnum = resourceEnum;
         _this.multiplier = multiplier;
         _this.spawnedByPlayer = spawnedByPlayer;
         _this.resourcesService = resourcesService;
@@ -3293,12 +2821,7 @@ var ResourceAnimation = /** @class */ (function (_super) {
         this.updatePathPosition(deltaTime);
     };
     ResourceAnimation.prototype.finishAnimation = function () {
-        if (this.animationType === ResourceAnimationType.PlayerSpawned || this.animationType === ResourceAnimationType.WorkerSpawned) {
-            this.resourcesService.finishResourceAnimation(this.resourceId, this.multiplier, this.spawnedByPlayer);
-        }
-        else if (this.animationType === ResourceAnimationType.Sold) {
-            this.storeService.finishResourceAnimation(this.resourceId, this.multiplier);
-        }
+        this.resourcesService.resources.get(this.resourceEnum).finishResourceAnimation(this.multiplier, this.animationType);
     };
     return ResourceAnimation;
 }(Entity));
@@ -3349,13 +2872,126 @@ var Message = /** @class */ (function () {
 /*!*************************************!*\
   !*** ./src/app/objects/resource.ts ***!
   \*************************************/
-/*! exports provided: ResourceType, Resource */
+/*! exports provided: Resource */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Resource", function() { return Resource; });
+/* harmony import */ var _resourceData__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./resourceData */ "./src/app/objects/resourceData.ts");
+/* harmony import */ var _entity__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./entity */ "./src/app/objects/entity.ts");
+
+
+var Resource = /** @class */ (function () {
+    function Resource(name, resourceType, resourceEnum, iconPath, resourceConsumes, harvestable, harvestMilliseconds, sellable, sellsFor, resourceDescription, workerVerb, workerNoun, resourceTier, resourcesService) {
+        this.amount = 0;
+        this.amountTravelling = 0;
+        this.harvestable = true;
+        this.harvestYield = 1;
+        this.harvestMilliseconds = 1000;
+        this.harvestStartDate = Date.now();
+        this.harvesting = false;
+        this.progressBarValue = 0;
+        this.sellable = true;
+        this.sellsFor = 0;
+        this.autoSellCutoff = 0;
+        this.resourceBeingStolen = false;
+        this.name = name;
+        this.resourceType = resourceType;
+        this.resourceEnum = resourceEnum;
+        this.iconPath = iconPath;
+        this.resourceConsumes = resourceConsumes;
+        this.harvestable = harvestable;
+        this.harvestMilliseconds = harvestMilliseconds;
+        this.pathAvailable = false;
+        this.sellable = sellable;
+        this.sellsFor = sellsFor;
+        this.resourceDescription = resourceDescription;
+        this.workerVerb = workerVerb;
+        this.workerNoun = workerNoun;
+        this.resourceTier = resourceTier;
+        this.resourcesService = resourcesService;
+    }
+    Resource.prototype.addAmount = function (amount) {
+        this.amount += amount;
+        if (this.amount <= 0) {
+            this.amount = 0;
+        }
+    };
+    Resource.prototype.harvestResource = function (multiplier) {
+        if (multiplier === void 0) { multiplier = 1; }
+        if (this.resourceTier > this.resourcesService.highestTierReached) {
+            this.resourcesService.highestTierReached = this.resourceTier;
+        }
+        this.addAmount(multiplier);
+    };
+    Resource.prototype.deductResourceConsumes = function (multiplier) {
+        if (multiplier === void 0) { multiplier = 1; }
+        for (var _i = 0, _a = this.resourceConsumes; _i < _a.length; _i++) {
+            var resourceConsume = _a[_i];
+            this.resourcesService.resources.get(resourceConsume.resourceEnum).addAmount(-resourceConsume.cost * multiplier);
+        }
+    };
+    Resource.prototype.finishResourceAnimation = function (multiplier, animationType) {
+        if (multiplier === void 0) { multiplier = 1; }
+        switch (animationType) {
+            case _entity__WEBPACK_IMPORTED_MODULE_1__["ResourceAnimationType"].PlayerSpawned: {
+                this.amountTravelling--;
+                this.harvestResource(multiplier);
+                break;
+            }
+            case _entity__WEBPACK_IMPORTED_MODULE_1__["ResourceAnimationType"].WorkerSpawned: {
+                this.harvestResource(multiplier);
+                break;
+            }
+            case _entity__WEBPACK_IMPORTED_MODULE_1__["ResourceAnimationType"].Sold: {
+                this.resourcesService.resources.get(_resourceData__WEBPACK_IMPORTED_MODULE_0__["ResourceEnum"].Gold).addAmount(multiplier * this.sellsFor);
+                break;
+            }
+        }
+    };
+    Resource.prototype.canHarvest = function (multiplier) {
+        if (multiplier === void 0) { multiplier = 1; }
+        if (!this.harvestable || !this.pathAvailable) {
+            return false;
+        }
+        return this.canAfford(multiplier);
+    };
+    Resource.prototype.canAfford = function (multiplier) {
+        if (multiplier === void 0) { multiplier = 1; }
+        for (var _i = 0, _a = this.resourceConsumes; _i < _a.length; _i++) {
+            var resourceConsume = _a[_i];
+            if (this.resourcesService.resources.get(resourceConsume.resourceEnum).amount < resourceConsume.cost * multiplier) {
+                return false;
+            }
+        }
+        return true;
+    };
+    Object.defineProperty(Resource.prototype, "resourceAccessible", {
+        get: function () {
+            return this.resourceTier <= this.resourcesService.highestTierReached;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    return Resource;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/objects/resourceData.ts":
+/*!*****************************************!*\
+  !*** ./src/app/objects/resourceData.ts ***!
+  \*****************************************/
+/*! exports provided: ResourceType, ResourceEnum */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ResourceType", function() { return ResourceType; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Resource", function() { return Resource; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ResourceEnum", function() { return ResourceEnum; });
 var ResourceType;
 (function (ResourceType) {
     ResourceType["Currency"] = "CURRENCY";
@@ -3363,17 +2999,40 @@ var ResourceType;
     ResourceType["Mineral"] = "MINERAL";
     ResourceType["Metal"] = "METAL";
 })(ResourceType || (ResourceType = {}));
-var Resource = /** @class */ (function () {
-    function Resource() {
-        this.amountTravelling = 0;
-        this.harvestStartDate = Date.now();
-        this.harvesting = false;
-        this.progressBarValue = 0;
-        this.autoSellCutoff = 50;
-    }
-    return Resource;
-}());
-
+var ResourceEnum;
+(function (ResourceEnum) {
+    ResourceEnum["Gold"] = "GOLD";
+    ResourceEnum["Oak"] = "OAK";
+    ResourceEnum["Pine"] = "PINE";
+    ResourceEnum["Birch"] = "BIRCH";
+    ResourceEnum["Eucalyptus"] = "EUCALYPTUS";
+    ResourceEnum["Willow"] = "WILLOW";
+    ResourceEnum["Teak"] = "TEAK";
+    ResourceEnum["EntSoul"] = "ENTSOUL";
+    ResourceEnum["ReanimatedEnt"] = "REANIMATEDENT";
+    ResourceEnum["Stone"] = "STONE";
+    ResourceEnum["Graphite"] = "GRAPHITE";
+    ResourceEnum["Limestone"] = "LIMESTONE";
+    ResourceEnum["Marble"] = "MARBLE";
+    ResourceEnum["Quartz"] = "QUARTZ";
+    ResourceEnum["Obsidian"] = "OBSIDIAN";
+    ResourceEnum["Diamond"] = "DIAMOND";
+    ResourceEnum["CopperOre"] = "COPPERORE";
+    ResourceEnum["TinOre"] = "TINORE";
+    ResourceEnum["BronzeIngot"] = "BRONZEINGOT";
+    ResourceEnum["IronOre"] = "IRONORE";
+    ResourceEnum["IronIngot"] = "IRONINGOT";
+    ResourceEnum["SteelIngot"] = "STEELINGOT";
+    ResourceEnum["GoldOre"] = "GOLDORE";
+    ResourceEnum["GoldIngot"] = "GOLDINGOT";
+    ResourceEnum["LatinumOre"] = "LATINUMORE";
+    ResourceEnum["LatinumIngot"] = "LATINUMINGOT";
+    ResourceEnum["UnbelieviumOre"] = "UNBELIEVIUMORE";
+    ResourceEnum["LustrialOre"] = "LUSTRIALORE";
+    ResourceEnum["SpectrusOre"] = "SPECTRUSORE";
+    ResourceEnum["TemprousIngot"] = "TEMPROUSINGOT";
+    ResourceEnum["RefinedTemprous"] = "REFINEDTEMPROUS";
+})(ResourceEnum || (ResourceEnum = {}));
 
 
 /***/ }),
@@ -3394,6 +3053,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TileStat", function() { return TileStat; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Tile", function() { return Tile; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Market", function() { return Market; });
+/* harmony import */ var _resourceData__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./resourceData */ "./src/app/objects/resourceData.ts");
+
 var MapTileType;
 (function (MapTileType) {
     MapTileType["Grass"] = "GRASS";
@@ -3480,7 +3141,7 @@ var Tile = /** @class */ (function () {
         this.resourcesService = resourcesService;
     }
     Tile.prototype.canUpgradeStat = function (stat) {
-        return this.resourcesService.getResource(0).amount >= this.statCosts[stat];
+        return this.resourcesService.resources.get(_resourceData__WEBPACK_IMPORTED_MODULE_0__["ResourceEnum"].Gold).amount >= this.statCosts[stat];
     };
     Tile.prototype.getUpgradedStat = function (stat) {
         switch (stat) {
@@ -3499,7 +3160,7 @@ var Tile = /** @class */ (function () {
         if (!this.canUpgradeStat(stat)) {
             return;
         }
-        this.resourcesService.addResourceAmount(0, -this.statCosts[stat]);
+        this.resourcesService.resources.get(_resourceData__WEBPACK_IMPORTED_MODULE_0__["ResourceEnum"].Gold).addAmount(-this.statCosts[stat]);
         var upgradedStat = this.getUpgradedStat(stat);
         switch (stat) {
             case TileStat.SellAmount: {
@@ -3559,7 +3220,7 @@ var Market = /** @class */ (function () {
         }
         this.mapService = mapService;
         this.resourcesService = resourcesService;
-        this.soldResources = resourcesService.resourcesOfType(resourceType, false, false, false);
+        this.soldResources = resourcesService.getResources(resourceType);
         this.homeTile = mapService.tiledMap.filter(function (tile) { return tile.buildingTileType === BuildingTileType.Home; })[0];
         this.owningTile = owningTile;
         this.calculateConnection();
@@ -3570,9 +3231,9 @@ var Market = /** @class */ (function () {
             var resource = this.soldResources[this.currentResource];
             var sellAmount = Math.min(this.sellQuantity, resource.amount - resource.autoSellCutoff);
             if (sellAmount > 0) {
-                this.mapService.spawnSoldResourceAnimation(resource.id, sellAmount, this);
+                this.mapService.spawnSoldResourceAnimation(resource.resourceEnum, sellAmount, this);
                 this.lastSellTime = elapsed;
-                this.resourcesService.addResourceAmount(resource.id, -sellAmount);
+                resource.addAmount(-sellAmount);
                 this.logSale(sellAmount * resource.sellsFor);
                 this.timeSinceLastSale = 0;
             }
@@ -3580,7 +3241,9 @@ var Market = /** @class */ (function () {
                 this.logSale(0);
                 this.timeSinceLastSale = 0;
             }
-            this.currentResource = (this.currentResource + 1) % this.soldResources.length;
+            do {
+                this.currentResource = (this.currentResource + 1) % this.soldResources.length;
+            } while (!this.soldResources[this.currentResource].sellable);
         }
     };
     Market.prototype.logSale = function (profit) {
@@ -3624,6 +3287,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UpgradeType", function() { return UpgradeType; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UpgradeVariable", function() { return UpgradeVariable; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Upgrade", function() { return Upgrade; });
+/* harmony import */ var _message__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./message */ "./src/app/objects/message.ts");
+
 var UpgradeType;
 (function (UpgradeType) {
     UpgradeType["Resource"] = "RESOURCE";
@@ -3639,8 +3304,103 @@ var UpgradeVariable;
     UpgradeVariable["WorkerCost"] = "WORKER_COST";
 })(UpgradeVariable || (UpgradeVariable = {}));
 var Upgrade = /** @class */ (function () {
-    function Upgrade() {
+    function Upgrade(id, name, description, upgradeType, upgradeEffects, resourceCosts, purchased, resourcesService, workersService, messagesService) {
+        if (purchased === void 0) { purchased = false; }
+        this.purchased = false;
+        this.id = id;
+        this.name = name;
+        this.description = description;
+        this.upgradeType = upgradeType;
+        this.upgradeEffects = upgradeEffects;
+        this.resourceCosts = resourceCosts;
+        this.purchased = purchased;
+        this.resourcesService = resourcesService;
+        this.workersService = workersService;
+        this.messagesService = messagesService;
     }
+    Upgrade.prototype.purchaseUpgrade = function () {
+        if (this.purchased || !this.canAfford()) {
+            return;
+        }
+        for (var _i = 0, _a = this.resourceCosts; _i < _a.length; _i++) {
+            var resourceCost = _a[_i];
+            this.resourcesService.resources.get(resourceCost.resourceEnum).addAmount(-resourceCost.resourceCost);
+        }
+        this.applyUpgrade();
+        this.purchased = true;
+    };
+    Upgrade.prototype.applyUpgrade = function () {
+        var _this = this;
+        var _loop_1 = function (upgradeEffect) {
+            if (upgradeEffect.upgradeVariable === UpgradeVariable.WorkerCost) {
+                this_1.workersService.workers.get(upgradeEffect.resourceType).cost *= upgradeEffect.upgradeFactor;
+                return "continue";
+            }
+            var resourcesToUpgrade = [this_1.resourcesService.resources.get(upgradeEffect.resourceEnum)];
+            var workersToUpgrade = [this_1.workersService.getResourceWorker(upgradeEffect.resourceEnum)];
+            if (upgradeEffect.upgradeIsForWholeType) {
+                resourcesToUpgrade = this_1.resourcesService.getResources(upgradeEffect.resourceType);
+                workersToUpgrade = this_1.workersService.workers.get(upgradeEffect.resourceType).getResourceWorkers();
+                if (upgradeEffect.maxTier >= 0) {
+                    resourcesToUpgrade = resourcesToUpgrade.filter(function (resource) { return resource.resourceTier <= upgradeEffect.maxTier; });
+                    workersToUpgrade = workersToUpgrade.filter(function (worker) {
+                        return _this.resourcesService.resources.get(worker.resourceEnum).resourceTier <= upgradeEffect.maxTier;
+                    });
+                }
+            }
+            for (var _i = 0, resourcesToUpgrade_1 = resourcesToUpgrade; _i < resourcesToUpgrade_1.length; _i++) {
+                var resourceToUpgrade = resourcesToUpgrade_1[_i];
+                switch (upgradeEffect.upgradeVariable) {
+                    case UpgradeVariable.Harvestability: {
+                        resourceToUpgrade.harvestable = !!upgradeEffect.upgradeFactor;
+                        break;
+                    }
+                    case UpgradeVariable.HarvestYield: {
+                        resourceToUpgrade.harvestYield *= upgradeEffect.upgradeFactor;
+                        break;
+                    }
+                    case UpgradeVariable.HarvestMilliseconds: {
+                        resourceToUpgrade.harvestMilliseconds *= upgradeEffect.upgradeFactor;
+                        break;
+                    }
+                    default: {
+                        break;
+                    }
+                }
+            }
+            for (var _a = 0, workersToUpgrade_1 = workersToUpgrade; _a < workersToUpgrade_1.length; _a++) {
+                var workerToUpgrade = workersToUpgrade_1[_a];
+                switch (upgradeEffect.upgradeVariable) {
+                    case UpgradeVariable.Workable: {
+                        workerToUpgrade.workable = !!upgradeEffect.upgradeFactor;
+                        break;
+                    }
+                    case UpgradeVariable.WorkerYield: {
+                        workerToUpgrade.workerYield *= upgradeEffect.upgradeFactor;
+                        break;
+                    }
+                    default: {
+                        break;
+                    }
+                }
+            }
+        };
+        var this_1 = this;
+        for (var _i = 0, _a = this.upgradeEffects; _i < _a.length; _i++) {
+            var upgradeEffect = _a[_i];
+            _loop_1(upgradeEffect);
+        }
+        this.log('Purchased upgrade: ' + this.name);
+    };
+    Upgrade.prototype.canAfford = function () {
+        var _this = this;
+        return this.resourceCosts.every(function (resourceCost) {
+            return _this.resourcesService.resources.get(resourceCost.resourceEnum).amount >= resourceCost.resourceCost;
+        });
+    };
+    Upgrade.prototype.log = function (message) {
+        this.messagesService.add(_message__WEBPACK_IMPORTED_MODULE_0__["MessageSource"].Workers, message);
+    };
     return Upgrade;
 }());
 
@@ -3684,6 +3444,97 @@ var Vector = /** @class */ (function () {
         configurable: true
     });
     return Vector;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/objects/worker.ts":
+/*!***********************************!*\
+  !*** ./src/app/objects/worker.ts ***!
+  \***********************************/
+/*! exports provided: Worker */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Worker", function() { return Worker; });
+/* harmony import */ var _resourceData__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./resourceData */ "./src/app/objects/resourceData.ts");
+/* harmony import */ var _message__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./message */ "./src/app/objects/message.ts");
+
+
+var Worker = /** @class */ (function () {
+    function Worker(cost, resourceType, resourceWorkers, resourcesService, mapService, messagesService) {
+        this.workerCount = 0;
+        this.freeWorkers = 0;
+        this.cost = cost;
+        this.resourceType = resourceType;
+        this.resourceWorkers = resourceWorkers;
+        this.resourcesService = resourcesService;
+        this.mapService = mapService;
+        this.messagesService = messagesService;
+    }
+    Worker.prototype.tick = function (elapsed, deltaTime) {
+        for (var _i = 0, _a = this.getResourceWorkers(); _i < _a.length; _i++) {
+            var resourceWorker = _a[_i];
+            var resource = this.resourcesService.resources.get(resourceWorker.resourceEnum);
+            if (resourceWorker.workerCount === 0 || !this.canAffordToHarvest(resource.resourceEnum)) {
+                continue;
+            }
+            this.resourcesService.resources.get(_resourceData__WEBPACK_IMPORTED_MODULE_0__["ResourceEnum"].Gold).addAmount(-resourceWorker.recurringCost * resourceWorker.workerCount);
+            if (!this.canAffordToHarvest(resource.resourceEnum)) {
+                this.log("No more money available for " + resource.name + ".");
+            }
+            this.mapService.spawnHarvestedResourceAnimation(resource, resourceWorker.workerYield * resourceWorker.workerCount, false);
+        }
+    };
+    Worker.prototype.getResourceWorkers = function (filterByAccessible, filterByWorkable, filterByHarvestable) {
+        var _this = this;
+        if (filterByAccessible === void 0) { filterByAccessible = false; }
+        if (filterByWorkable === void 0) { filterByWorkable = false; }
+        if (filterByHarvestable === void 0) { filterByHarvestable = false; }
+        var resourceWorkers = Array.from(this.resourceWorkers.values());
+        if (filterByAccessible) {
+            resourceWorkers = resourceWorkers.filter(function (rw) { return _this.resourcesService.resources.get(rw.resourceEnum).resourceAccessible; });
+        }
+        if (filterByWorkable) {
+            resourceWorkers = resourceWorkers.filter(function (rw) { return rw.workable; });
+        }
+        if (filterByHarvestable) {
+            resourceWorkers = resourceWorkers.filter(function (rw) { return _this.resourcesService.resources.get(rw.resourceEnum).harvestable; });
+        }
+        return resourceWorkers;
+    };
+    Worker.prototype.hireWorker = function () {
+        if (!this.canAffordToHire()) {
+            return;
+        }
+        this.resourcesService.resources.get(_resourceData__WEBPACK_IMPORTED_MODULE_0__["ResourceEnum"].Gold).addAmount(-this.cost);
+        this.cost *= 1.01;
+        this.workerCount++;
+        this.freeWorkers++;
+    };
+    Worker.prototype.canAffordToHire = function () {
+        return this.cost <= this.resourcesService.resources.get(_resourceData__WEBPACK_IMPORTED_MODULE_0__["ResourceEnum"].Gold).amount;
+    };
+    Worker.prototype.canAffordToHarvest = function (resourceEnum) {
+        return this.resourceWorkers.get(resourceEnum).recurringCost <= this.resourcesService.resources.get(_resourceData__WEBPACK_IMPORTED_MODULE_0__["ResourceEnum"].Gold).amount;
+    };
+    Worker.prototype.updateResourceWorker = function (resourceEnum, newResourceWorkerCount) {
+        var resourceWorker = this.resourceWorkers.get(resourceEnum);
+        if (!resourceWorker.sliderSettingValid) {
+            newResourceWorkerCount = this.freeWorkers + resourceWorker.workerCount;
+            resourceWorker.sliderSetting = newResourceWorkerCount;
+        }
+        var newFreeWorkers = this.freeWorkers + resourceWorker.workerCount - newResourceWorkerCount;
+        this.freeWorkers = newFreeWorkers;
+        resourceWorker.workerCount = newResourceWorkerCount;
+    };
+    Worker.prototype.log = function (message) {
+        this.messagesService.add(_message__WEBPACK_IMPORTED_MODULE_1__["MessageSource"].Workers, message);
+    };
+    return Worker;
 }());
 
 
@@ -3782,9 +3633,6 @@ var PipeModule = /** @class */ (function () {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AdminService", function() { return AdminService; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
-/* harmony import */ var _components_resource_dialog_resource_dialog_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../components/resource-dialog/resource-dialog.component */ "./src/app/components/resource-dialog/resource-dialog.component.ts");
-/* harmony import */ var _components_upgrade_dialog_upgrade_dialog_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../components/upgrade-dialog/upgrade-dialog.component */ "./src/app/components/upgrade-dialog/upgrade-dialog.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -3795,39 +3643,16 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
-
-
-
 var AdminService = /** @class */ (function () {
-    function AdminService(dialog) {
-        this.dialog = dialog;
+    function AdminService() {
         this.filterAccessible = true;
-        this.clampMap = true;
         this.editMode = false;
     }
-    AdminService.prototype.openResourceDialog = function (resourceId) {
-        var dialogRef = this.dialog.open(_components_resource_dialog_resource_dialog_component__WEBPACK_IMPORTED_MODULE_2__["ResourceDialogComponent"], {
-            width: '750px',
-            height: '600px',
-            data: resourceId === undefined ? {} : { resourceId: resourceId }
-        });
-        dialogRef.afterClosed().subscribe(function (result) {
-        });
-    };
-    AdminService.prototype.openUpgradeDialog = function (upgradeId) {
-        var dialogRef = this.dialog.open(_components_upgrade_dialog_upgrade_dialog_component__WEBPACK_IMPORTED_MODULE_3__["UpgradeDialogComponent"], {
-            width: '750px',
-            height: '525px',
-            data: upgradeId === undefined ? {} : { upgradeId: upgradeId }
-        });
-        dialogRef.afterClosed().subscribe(function (result) {
-        });
-    };
     AdminService = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
             providedIn: 'root'
         }),
-        __metadata("design:paramtypes", [_angular_material__WEBPACK_IMPORTED_MODULE_1__["MatDialog"]])
+        __metadata("design:paramtypes", [])
     ], AdminService);
     return AdminService;
 }());
@@ -3847,7 +3672,7 @@ var AdminService = /** @class */ (function () {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BuildingsService", function() { return BuildingsService; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _objects_resource__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../objects/resource */ "./src/app/objects/resource.ts");
+/* harmony import */ var _objects_resourceData__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./../../objects/resourceData */ "./src/app/objects/resourceData.ts");
 /* harmony import */ var _objects_tile__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../objects/tile */ "./src/app/objects/tile.ts");
 /* harmony import */ var _resources_resources_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./../resources/resources.service */ "./src/app/services/resources/resources.service.ts");
 /* harmony import */ var _map_map_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../map/map.service */ "./src/app/services/map/map.service.ts");
@@ -3880,7 +3705,7 @@ var BuildingsService = /** @class */ (function () {
         }
         for (var _i = 0, _a = buildingTile.resourceCosts; _i < _a.length; _i++) {
             var resourceCost = _a[_i];
-            this.resourcesService.addResourceAmount(resourceCost.resourceId, -resourceCost.resourceCost);
+            this.resourcesService.resources.get(resourceCost.resourceEnum).addAmount(-resourceCost.resourceCost);
         }
         if (buildingTile.placesResourceTile) {
             tile.resourceTileType = buildingTile.resourceTileType;
@@ -3894,15 +3719,15 @@ var BuildingsService = /** @class */ (function () {
             var resourceType = void 0;
             switch (buildingTile.tileType) {
                 case _objects_tile__WEBPACK_IMPORTED_MODULE_2__["BuildingTileType"].WoodMarket: {
-                    resourceType = _objects_resource__WEBPACK_IMPORTED_MODULE_1__["ResourceType"].Wood;
+                    resourceType = _objects_resourceData__WEBPACK_IMPORTED_MODULE_1__["ResourceType"].Wood;
                     break;
                 }
                 case _objects_tile__WEBPACK_IMPORTED_MODULE_2__["BuildingTileType"].MineralMarket: {
-                    resourceType = _objects_resource__WEBPACK_IMPORTED_MODULE_1__["ResourceType"].Mineral;
+                    resourceType = _objects_resourceData__WEBPACK_IMPORTED_MODULE_1__["ResourceType"].Mineral;
                     break;
                 }
                 case _objects_tile__WEBPACK_IMPORTED_MODULE_2__["BuildingTileType"].MetalMarket: {
-                    resourceType = _objects_resource__WEBPACK_IMPORTED_MODULE_1__["ResourceType"].Metal;
+                    resourceType = _objects_resourceData__WEBPACK_IMPORTED_MODULE_1__["ResourceType"].Metal;
                     break;
                 }
             }
@@ -3917,7 +3742,7 @@ var BuildingsService = /** @class */ (function () {
         }
         for (var _i = 0, _a = buildingTile.resourceCosts; _i < _a.length; _i++) {
             var resourceCost = _a[_i];
-            if (this.resourcesService.getResource(resourceCost.resourceId).amount < resourceCost.resourceCost) {
+            if (this.resourcesService.resources.get(resourceCost.resourceEnum).amount < resourceCost.resourceCost) {
                 return false;
             }
         }
@@ -3936,15 +3761,15 @@ var BuildingsService = /** @class */ (function () {
         tile.market = undefined;
         for (var _i = 0, _a = buildingTile.resourceCosts; _i < _a.length; _i++) {
             var resourceCost = _a[_i];
-            this.resourcesService.addResourceAmount(resourceCost.resourceId, resourceCost.resourceCost * 0.85);
+            this.resourcesService.resources.get(resourceCost.resourceEnum).addAmount(resourceCost.resourceCost * 0.85);
         }
         this.mapService.calculateResourceConnections();
         return true;
     };
     BuildingsService.prototype.canRepairBuilding = function (tile) {
         var buildingTile = this.mapService.buildingTiles[tile.buildingTileType];
-        return this.resourcesService.getResource(buildingTile.repairResource).amount >=
-            buildingTile.repairCostPerPoint * (tile.maxHealth - tile.health);
+        var repairResource = this.resourcesService.resources.get(buildingTile.repairResourceEnum);
+        return repairResource.amount >= buildingTile.repairCostPerPoint * (tile.maxHealth - tile.health);
     };
     BuildingsService.prototype.repairBuilding = function (tile) {
         if (!this.canRepairBuilding(tile)) {
@@ -3952,7 +3777,8 @@ var BuildingsService = /** @class */ (function () {
         }
         var buildingTile = this.mapService.buildingTiles[tile.buildingTileType];
         var healAmount = tile.maxHealth - tile.health;
-        this.resourcesService.addResourceAmount(buildingTile.repairResource, -buildingTile.repairCostPerPoint * healAmount);
+        var repairResource = this.resourcesService.resources.get(buildingTile.repairResourceEnum);
+        repairResource.addAmount(-buildingTile.repairCostPerPoint * healAmount);
         tile.health = tile.maxHealth;
         this.mapService.calculateResourceConnections();
     };
@@ -3989,7 +3815,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _messages_messages_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../messages/messages.service */ "./src/app/services/messages/messages.service.ts");
 /* harmony import */ var _settings_settings_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../settings/settings.service */ "./src/app/services/settings/settings.service.ts");
 /* harmony import */ var _admin_admin_service__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../admin/admin.service */ "./src/app/services/admin/admin.service.ts");
-/* harmony import */ var _objects_resource__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../objects/resource */ "./src/app/objects/resource.ts");
+/* harmony import */ var _objects_resourceData__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./../../objects/resourceData */ "./src/app/objects/resourceData.ts");
 /* harmony import */ var _objects_message__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../objects/message */ "./src/app/objects/message.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -4021,12 +3847,12 @@ var ClickerMainService = /** @class */ (function () {
         this.messagesService = messagesService;
         this.settingsService = settingsService;
         this.adminService = adminService;
-        this.resourceTypes = _objects_resource__WEBPACK_IMPORTED_MODULE_9__["ResourceType"];
+        this.resourceTypes = _objects_resourceData__WEBPACK_IMPORTED_MODULE_9__["ResourceType"];
         document.addEventListener('keydown', function (event) { return _this.processInput(event); });
     }
     ClickerMainService.prototype.tick = function (elapsed, deltaTime) {
         this.timeElapsed = elapsed;
-        for (var _i = 0, _a = this.resourcesService.resources.filter(function (_resource) { return _resource.harvesting; }); _i < _a.length; _i++) {
+        for (var _i = 0, _a = this.resourcesService.getResources().filter(function (_resource) { return _resource.harvesting; }); _i < _a.length; _i++) {
             var resource = _a[_i];
             var millisecondsElapsed = elapsed - resource.harvestStartDate;
             resource.progressBarValue = Math.floor(millisecondsElapsed / resource.harvestMilliseconds * 100);
@@ -4076,28 +3902,26 @@ var ClickerMainService = /** @class */ (function () {
         }
         var keyDigit = +event.code.replace('Digit', '').replace('Numpad', '');
         if (!isNaN(keyDigit)) {
-            var resourceId = this.settingsService.resourceBinds[keyDigit];
-            var resource = this.resourcesService.getResource(resourceId);
+            var resourceEnum = this.settingsService.resourceBinds[keyDigit];
+            var resource = this.resourcesService.resources.get(resourceEnum);
             if (resource && resource.resourceAccessible && !resource.harvesting) {
-                this.startHarvesting(resourceId);
+                this.startHarvesting(resource);
             }
         }
     };
-    ClickerMainService.prototype.startHarvesting = function (id) {
+    ClickerMainService.prototype.startHarvesting = function (resource) {
         var _this = this;
-        var resource = this.resourcesService.getResource(id);
         resource.harvestStartDate = this.timeElapsed;
-        if (!this.resourcesService.canHarvest(id, resource.harvestYield)) {
+        if (!resource.canHarvest(resource.harvestYield)) {
             return;
         }
         resource.harvesting = true;
         var harvestTimer = Object(rxjs__WEBPACK_IMPORTED_MODULE_1__["timer"])(resource.harvestMilliseconds);
-        harvestTimer.subscribe(function (_) { return _this.harvestResource(id); });
+        harvestTimer.subscribe(function (_) { return _this.harvestResource(resource); });
     };
-    ClickerMainService.prototype.harvestResource = function (id) {
-        var resource = this.resourcesService.getResource(id);
+    ClickerMainService.prototype.harvestResource = function (resource) {
         resource.amountTravelling++;
-        this.mapService.spawnHarvestedResourceAnimation(id, resource.harvestYield, true);
+        this.mapService.spawnHarvestedResourceAnimation(resource, resource.harvestYield, true);
         if (resource.resourceTier > 3 && !this.enemyService.enemiesActive) {
             this.enemyService.enemiesActive = true;
             this.log('Your base has begun attracting unwanted attention...');
@@ -4215,8 +4039,10 @@ var EnemyService = /** @class */ (function () {
         this.minimumResourceAmount = 500;
         this.maxPathRetryCount = 25;
         this.maxEnemyCount = 25;
-        this.openPortal(this.mapService.enemySpawnTiles[0]);
     }
+    EnemyService.prototype.ngAfterViewInit = function () {
+        this.openPortal(this.mapService.enemySpawnTiles[0]);
+    };
     EnemyService.prototype.tick = function (elapsed, deltaTime) {
         if (elapsed - this.lastSpawnTime >= this.spawnInterval) {
             this.spawnEnemy();
@@ -4343,32 +4169,32 @@ var EnemyService = /** @class */ (function () {
             if (enemy.pathingDone) {
                 if (target.tile.buildingTileType === _objects_tile__WEBPACK_IMPORTED_MODULE_4__["BuildingTileType"].Home) {
                     for (var _b = 0, _c = enemy.resourcesToSteal; _b < _c.length; _b++) {
-                        var id = _c[_b];
-                        this.resourcesService.getResource(id).resourceBeingStolen = true;
+                        var resourceEnum = _c[_b];
+                        this.resourcesService.resources.get(resourceEnum).resourceBeingStolen = true;
                     }
                     if (enemy.totalHeld >= enemy.resourceCapacity) {
-                        for (var _d = 0, _e = this.resourcesService.resources; _d < _e.length; _d++) {
+                        for (var _d = 0, _e = this.resourcesService.getResources(); _d < _e.length; _d++) {
                             var resource = _e[_d];
                             resource.resourceBeingStolen = false;
                         }
                         this.finishTask(enemy);
                     }
                     var resourceIndex = Math.floor(Math.random() * enemy.resourcesToSteal.length);
-                    var resourceToSteal = this.resourcesService.getResource(enemy.resourcesToSteal[resourceIndex]);
+                    var resourceToSteal = this.resourcesService.resources.get(enemy.resourcesToSteal[resourceIndex]);
                     if (resourceToSteal.amount > this.minimumResourceAmount) {
                         var amountToSteal = Math.floor(Math.random() * enemy.stealMax);
                         if (resourceToSteal.amount - amountToSteal < this.minimumResourceAmount) {
                             amountToSteal = resourceToSteal.amount - this.minimumResourceAmount;
                         }
-                        if (enemy.resourcesHeld[resourceToSteal.id] === undefined) {
-                            enemy.resourcesHeld[resourceToSteal.id] = amountToSteal;
+                        if (!enemy.resourcesHeld.get(resourceToSteal.resourceEnum)) {
+                            enemy.resourcesHeld.set(resourceToSteal.resourceEnum, amountToSteal);
                         }
                         else {
-                            enemy.resourcesHeld[resourceToSteal.id] += amountToSteal;
+                            enemy.resourcesHeld.set(resourceToSteal.resourceEnum, enemy.resourcesHeld.get(resourceToSteal.resourceEnum) + amountToSteal);
                         }
                         if (amountToSteal > 0) {
                             enemy.totalHeld += amountToSteal;
-                            this.resourcesService.addResourceAmount(resourceToSteal.id, -amountToSteal);
+                            resourceToSteal.addAmount(-amountToSteal);
                             this.log("An enemy stole " + Math.floor(amountToSteal) + " " + resourceToSteal.name + "!");
                         }
                     }
@@ -4391,13 +4217,14 @@ var EnemyService = /** @class */ (function () {
         var enemyDefeatedMessage = 'An enemy has been defeated!';
         if (enemy.totalHeld > 0) {
             enemyDefeatedMessage += ' Resources recovered:';
-            for (var i = 0; i < enemy.resourcesHeld.length; i++) {
-                var stolenAmount = enemy.resourcesHeld[i];
+            for (var _i = 0, _a = enemy.resourcesToSteal; _i < _a.length; _i++) {
+                var resourceEnum = _a[_i];
+                var stolenAmount = enemy.resourcesHeld.get(resourceEnum);
                 if (isNaN(stolenAmount) || stolenAmount <= 0) {
                     continue;
                 }
-                var resource = this.resourcesService.getResource(i);
-                this.resourcesService.addResourceAmount(i, stolenAmount);
+                var resource = this.resourcesService.resources.get(resourceEnum);
+                resource.addAmount(stolenAmount);
                 enemyDefeatedMessage += " " + Math.floor(stolenAmount) + " " + resource.name + ",";
             }
             enemyDefeatedMessage = enemyDefeatedMessage.slice(0, enemyDefeatedMessage.length - 1) + '.';
@@ -4407,10 +4234,10 @@ var EnemyService = /** @class */ (function () {
         }
         this.enemies = this.enemies.filter(function (_enemy) { return _enemy !== enemy; });
     };
-    EnemyService.prototype.resourceIsBeingStolen = function (id) {
+    EnemyService.prototype.resourceIsBeingStolen = function (resource) {
         var activeEnemies = this.enemies.filter(function (enemy) { return enemy.pathingDone && enemy.targets.length &&
             enemy.targets[enemy.targetIndex].tile.buildingTileType === _objects_tile__WEBPACK_IMPORTED_MODULE_4__["BuildingTileType"].Home; });
-        return activeEnemies.some(function (enemy) { return enemy.resourcesToSteal.includes(id); });
+        return activeEnemies.some(function (enemy) { return enemy.resourcesToSteal.includes(resource.resourceEnum); });
     };
     EnemyService.prototype.log = function (message) {
         this.messagesService.add(_objects_message__WEBPACK_IMPORTED_MODULE_5__["MessageSource"].Enemy, message);
@@ -4443,10 +4270,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FighterService", function() { return FighterService; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _objects_entity__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../objects/entity */ "./src/app/objects/entity.ts");
-/* harmony import */ var _objects_vector__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../objects/vector */ "./src/app/objects/vector.ts");
-/* harmony import */ var _resources_resources_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../resources/resources.service */ "./src/app/services/resources/resources.service.ts");
-/* harmony import */ var _enemy_enemy_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./../enemy/enemy.service */ "./src/app/services/enemy/enemy.service.ts");
-/* harmony import */ var _map_map_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../map/map.service */ "./src/app/services/map/map.service.ts");
+/* harmony import */ var _objects_resourceData__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./../../objects/resourceData */ "./src/app/objects/resourceData.ts");
+/* harmony import */ var _objects_vector__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../objects/vector */ "./src/app/objects/vector.ts");
+/* harmony import */ var _resources_resources_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../resources/resources.service */ "./src/app/services/resources/resources.service.ts");
+/* harmony import */ var _enemy_enemy_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./../enemy/enemy.service */ "./src/app/services/enemy/enemy.service.ts");
+/* harmony import */ var _map_map_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../map/map.service */ "./src/app/services/map/map.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -4456,6 +4284,7 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 var __metadata = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+
 
 
 
@@ -4490,23 +4319,23 @@ var FighterService = /** @class */ (function () {
         }
     };
     FighterService.prototype.createFighter = function (tile, fighterType) {
-        var goldResource = this.resourcesService.getResource(0);
+        var goldResource = this.resourcesService.resources.get(_objects_resourceData__WEBPACK_IMPORTED_MODULE_2__["ResourceEnum"].Gold);
         var mapTile = this.mapService.mapTiles[tile.mapTileType];
         var overlaps = this.fighters.filter(function (_fighter) { return !_fighter.moveable && _fighter.currentTile === tile; });
         if (goldResource.amount < fighterType.cost || !mapTile.walkable || overlaps.length) {
             return;
         }
-        this.resourcesService.addResourceAmount(0, -fighterType.cost);
-        var fighter = new _objects_entity__WEBPACK_IMPORTED_MODULE_1__["Fighter"](fighterType.name, new _objects_vector__WEBPACK_IMPORTED_MODULE_2__["Vector"](tile.x, tile.y), tile, fighterType.health, 0.003, fighterType.attack, fighterType.defense, fighterType.attackRange, fighterType.description, fighterType.cost, fighterType.moveable, 1000, this.resourcesService, this.enemyService, this.mapService);
+        this.resourcesService.resources.get(_objects_resourceData__WEBPACK_IMPORTED_MODULE_2__["ResourceEnum"].Gold).addAmount(-fighterType.cost);
+        var fighter = new _objects_entity__WEBPACK_IMPORTED_MODULE_1__["Fighter"](fighterType.name, new _objects_vector__WEBPACK_IMPORTED_MODULE_3__["Vector"](tile.x, tile.y), tile, fighterType.health, 0.003, fighterType.attack, fighterType.defense, fighterType.attackRange, fighterType.description, fighterType.cost, fighterType.moveable, 1000, this.resourcesService, this.enemyService, this.mapService);
         this.fighters.push(fighter);
     };
     FighterService = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
             providedIn: 'root'
         }),
-        __metadata("design:paramtypes", [_resources_resources_service__WEBPACK_IMPORTED_MODULE_3__["ResourcesService"],
-            _enemy_enemy_service__WEBPACK_IMPORTED_MODULE_4__["EnemyService"],
-            _map_map_service__WEBPACK_IMPORTED_MODULE_5__["MapService"]])
+        __metadata("design:paramtypes", [_resources_resources_service__WEBPACK_IMPORTED_MODULE_4__["ResourcesService"],
+            _enemy_enemy_service__WEBPACK_IMPORTED_MODULE_5__["EnemyService"],
+            _map_map_service__WEBPACK_IMPORTED_MODULE_6__["MapService"]])
     ], FighterService);
     return FighterService;
 }());
@@ -4587,6 +4416,8 @@ var MapService = /** @class */ (function () {
         this.tilePixelSize = 16;
         this.gridWidth = 150;
         this.gridHeight = 150;
+    }
+    MapService.prototype.initializeMap = function () {
         var _tiledMap = [];
         var mapTileIds, resourceTileIds, buildingTileIds, flagTileIds;
         var _mapWidth, _mapHeight;
@@ -4660,7 +4491,7 @@ var MapService = /** @class */ (function () {
         this.mapWidth = _mapWidth;
         this.mapHeight = _mapHeight;
         this.calculateResourceConnections();
-    }
+    };
     MapService.prototype.tick = function (elapsed, deltaTime) {
         for (var _i = 0, _a = this.resourceAnimations; _i < _a.length; _i++) {
             var resourceAnimation = _a[_i];
@@ -4683,7 +4514,7 @@ var MapService = /** @class */ (function () {
     MapService.prototype.calculateResourceConnections = function () {
         var _this = this;
         var resourceTiles = this.getResourceTiles();
-        for (var _i = 0, _a = this.resourcesService.resources; _i < _a.length; _i++) {
+        for (var _i = 0, _a = this.resourcesService.getResources(); _i < _a.length; _i++) {
             var resource = _a[_i];
             resource.pathAvailable = false;
         }
@@ -4695,7 +4526,8 @@ var MapService = /** @class */ (function () {
             this_1.findPath(resourceTile, homeTile, true, true).subscribe(function (tilePath) {
                 resourceTile.buildingPath = tilePath;
                 if (resourceTile.buildingPath.length && !resourceTile.buildingPath.some(function (tile) { return tile.health <= 0; })) {
-                    var resources = _this.resourceTiles[resourceTile.resourceTileType].resourceIds.map(function (id) { return _this.resourcesService.getResource(id); });
+                    var resources = _this.resourceTiles[resourceTile.resourceTileType].resourceEnums
+                        .map(function (resourceEnum) { return _this.resourcesService.resources.get(resourceEnum); });
                     for (var _i = 0, resources_1 = resources; _i < resources_1.length; _i++) {
                         var resource = resources_1[_i];
                         resource.pathAvailable = true;
@@ -4765,24 +4597,24 @@ var MapService = /** @class */ (function () {
         }
         return tiles[Math.floor(Math.random() * tiles.length)];
     };
-    MapService.prototype.spawnHarvestedResourceAnimation = function (resourceId, multiplier, spawnedByPlayer) {
+    MapService.prototype.spawnHarvestedResourceAnimation = function (resource, multiplier, spawnedByPlayer) {
         if (multiplier === void 0) { multiplier = 1; }
-        var matchingTiles = this.getTilesForResource(resourceId).filter(function (_tile) { return _tile.buildingPath.length > 0; });
-        if (!this.resourcesService.canAffordResource(resourceId, multiplier)) {
+        var matchingTiles = this.getTilesForResource(resource).filter(function (_tile) { return _tile.buildingPath.length > 0; });
+        if (!resource.canAfford(multiplier)) {
             return;
         }
-        this.resourcesService.decuctResourceConsumes(resourceId, multiplier);
+        resource.deductResourceConsumes(multiplier);
         var tile = matchingTiles[Math.floor(Math.random() * matchingTiles.length)];
         if (tile === undefined) {
             return;
         }
         var tilePathCopy = tile.buildingPath.map(function (_tile) { return _tile; });
         var animationType = spawnedByPlayer ? _objects_entity__WEBPACK_IMPORTED_MODULE_5__["ResourceAnimationType"].PlayerSpawned : _objects_entity__WEBPACK_IMPORTED_MODULE_5__["ResourceAnimationType"].WorkerSpawned;
-        var resourceAnimation = new _objects_entity__WEBPACK_IMPORTED_MODULE_5__["ResourceAnimation"](new _objects_vector__WEBPACK_IMPORTED_MODULE_6__["Vector"](tile.x, tile.y), tile, 0.003, tilePathCopy, animationType, resourceId, multiplier, spawnedByPlayer, this.resourcesService, this.storeService);
+        var resourceAnimation = new _objects_entity__WEBPACK_IMPORTED_MODULE_5__["ResourceAnimation"](new _objects_vector__WEBPACK_IMPORTED_MODULE_6__["Vector"](tile.x, tile.y), tile, 0.003, tilePathCopy, animationType, resource.resourceEnum, multiplier, spawnedByPlayer, this.resourcesService, this.storeService);
         this.resourceAnimations.push(resourceAnimation);
     };
-    MapService.prototype.spawnSoldResourceAnimation = function (resourceId, multiplier, market) {
-        var resourceAnimation = new _objects_entity__WEBPACK_IMPORTED_MODULE_5__["ResourceAnimation"](new _objects_vector__WEBPACK_IMPORTED_MODULE_6__["Vector"](market.homeTile.x, market.homeTile.y), market.homeTile, 0.003, market.tilePath, _objects_entity__WEBPACK_IMPORTED_MODULE_5__["ResourceAnimationType"].Sold, resourceId, multiplier, false, this.resourcesService, this.storeService);
+    MapService.prototype.spawnSoldResourceAnimation = function (resourceEnum, multiplier, market) {
+        var resourceAnimation = new _objects_entity__WEBPACK_IMPORTED_MODULE_5__["ResourceAnimation"](new _objects_vector__WEBPACK_IMPORTED_MODULE_6__["Vector"](market.homeTile.x, market.homeTile.y), market.homeTile, 0.003, market.tilePath, _objects_entity__WEBPACK_IMPORTED_MODULE_5__["ResourceAnimationType"].Sold, resourceEnum, multiplier, false, this.resourcesService, this.storeService);
         this.resourceAnimations.push(resourceAnimation);
     };
     MapService.prototype.spawnProjectile = function (owner, target) {
@@ -4826,11 +4658,11 @@ var MapService = /** @class */ (function () {
     MapService.prototype.clampTileCoordinates = function (x, y) {
         return [Math.floor(x / this.tilePixelSize), Math.floor(y / this.tilePixelSize)];
     };
-    MapService.prototype.getResourceTiles = function (resourceId) {
+    MapService.prototype.getResourceTiles = function (resourceEnum) {
         var tiles = this.tiledMap.filter(function (tile) { return tile.resourceTileType !== undefined; });
-        var matchingTypes = this.resourceTileArray.filter(function (tile) { return tile.resourceIds.includes(resourceId); }).map(function (tile) { return tile.tileType; });
-        if (resourceId !== undefined) {
-            tiles = tiles.filter(function (tile) { return matchingTypes.includes(tile.resourceTileType); });
+        if (resourceEnum !== undefined) {
+            var matchingTypes_1 = this.resourceTileArray.filter(function (tile) { return tile.resourceEnums.includes(resourceEnum); }).map(function (tile) { return tile.tileType; });
+            tiles = tiles.filter(function (tile) { return matchingTypes_1.includes(tile.resourceTileType); });
         }
         return tiles;
     };
@@ -4847,8 +4679,9 @@ var MapService = /** @class */ (function () {
     MapService.prototype.getTileCropDetail = function (tileId) {
         return { x: 0, y: 0, width: 16, height: 16 };
     };
-    MapService.prototype.getTilesForResource = function (resourceId) {
-        var matchingTypes = this.resourceTileArray.filter(function (tile) { return tile.resourceIds.includes(resourceId); }).map(function (tile) { return tile.tileType; });
+    MapService.prototype.getTilesForResource = function (resource) {
+        var matchingTypes = this.resourceTileArray.filter(function (tile) { return tile.resourceEnums.includes(resource.resourceEnum); })
+            .map(function (tile) { return tile.tileType; });
         return this.tiledMap.filter(function (tile) { return matchingTypes.includes(tile.resourceTileType); });
     };
     MapService = __decorate([
@@ -4938,8 +4771,10 @@ var MessagesService = /** @class */ (function () {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ResourcesService", function() { return ResourcesService; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _objects_message__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../objects/message */ "./src/app/objects/message.ts");
-/* harmony import */ var _messages_messages_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../messages/messages.service */ "./src/app/services/messages/messages.service.ts");
+/* harmony import */ var _objects_resource__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../objects/resource */ "./src/app/objects/resource.ts");
+/* harmony import */ var _objects_resourceData__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./../../objects/resourceData */ "./src/app/objects/resourceData.ts");
+/* harmony import */ var _objects_message__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../objects/message */ "./src/app/objects/message.ts");
+/* harmony import */ var _messages_messages_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../messages/messages.service */ "./src/app/services/messages/messages.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -4952,61 +4787,31 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
+
 var baseResources = __webpack_require__(/*! ../../../assets/json/resources.json */ "./src/assets/json/resources.json");
 var ResourcesService = /** @class */ (function () {
     function ResourcesService(messagesService) {
         this.messagesService = messagesService;
-        this.resources = baseResources;
-    }
-    ResourcesService.prototype.getResource = function (id) {
-        return this.resources.find(function (resource) { return resource.id === id; });
-    };
-    ResourcesService.prototype.finishResourceAnimation = function (id, multiplier, spawnedByPlayer) {
-        if (multiplier === void 0) { multiplier = 1; }
-        var resource = this.getResource(id);
-        if (spawnedByPlayer) {
-            resource.amountTravelling--;
-        }
-        this.harvestResource(id, multiplier);
-    };
-    ResourcesService.prototype.decuctResourceConsumes = function (id, multiplier) {
-        if (multiplier === void 0) { multiplier = 1; }
-        var resource = this.getResource(id);
-        for (var _i = 0, _a = resource.resourceConsumes; _i < _a.length; _i++) {
-            var resourceConsume = _a[_i];
-            this.addResourceAmount(resourceConsume.resourceId, -resourceConsume.cost * multiplier);
-        }
-    };
-    ResourcesService.prototype.harvestResource = function (id, multiplier) {
-        if (multiplier === void 0) { multiplier = 1; }
-        var resource = this.getResource(id);
-        this.resources.filter(function (r) { return r.previousTier === resource.resourceTier && r.resourceType === resource.resourceType; })
-            .map(function (r) { return r.resourceAccessible = true; });
-        this.addResourceAmount(resource.id, multiplier);
-    };
-    ResourcesService.prototype.canHarvest = function (id, multiplier) {
-        if (multiplier === void 0) { multiplier = 1; }
-        var resource = this.getResource(id);
-        if (!resource.harvestable || !resource.pathAvailable) {
-            return false;
-        }
-        return this.canAffordResource(id, multiplier);
-    };
-    ResourcesService.prototype.canAffordResource = function (id, multiplier) {
-        if (multiplier === void 0) { multiplier = 1; }
-        var resource = this.getResource(id);
-        for (var _i = 0, _a = resource.resourceConsumes; _i < _a.length; _i++) {
-            var resourceConsume = _a[_i];
-            if (this.getResource(resourceConsume.resourceId).amount < resourceConsume.cost * multiplier) {
-                return false;
+        this.resources = new Map();
+        this.highestTierReached = 0;
+        for (var resourceName in _objects_resourceData__WEBPACK_IMPORTED_MODULE_2__["ResourceEnum"]) {
+            if (Number(resourceName)) {
+                continue;
             }
+            var resourceEnum = _objects_resourceData__WEBPACK_IMPORTED_MODULE_2__["ResourceEnum"][resourceName];
+            var baseResource = baseResources[resourceEnum];
+            var resource = new _objects_resource__WEBPACK_IMPORTED_MODULE_1__["Resource"](baseResource.name, baseResource.resourceType, baseResource.resourceEnum, baseResource.iconPath, baseResource.resourceConsumes, baseResource.harvestable, baseResource.harvestMilliseconds, baseResource.sellable, baseResource.sellsFor, baseResource.resourceDescription, baseResource.workerVerb, baseResource.workerNoun, baseResource.resourceTier, this);
+            this.resources.set(resourceEnum, resource);
         }
-        return true;
-    };
-    ResourcesService.prototype.resourcesOfType = function (resourceType, filterByWorkable, filterBySellable, filterByAccessible) {
-        var resources = this.resources.filter(function (resource) { return resource.resourceType === resourceType; });
-        if (filterByWorkable) {
-            resources = resources.filter(function (resource) { return resource.worker.workable; });
+    }
+    ResourcesService.prototype.getResources = function (resourceType, filterBySellable, filterByAccessible, filterByHarvestable) {
+        if (filterBySellable === void 0) { filterBySellable = false; }
+        if (filterByAccessible === void 0) { filterByAccessible = false; }
+        if (filterByHarvestable === void 0) { filterByHarvestable = false; }
+        var resources = Array.from(this.resources.values());
+        if (resourceType) {
+            resources = resources.filter(function (resource) { return resource.resourceType === resourceType; });
         }
         if (filterBySellable) {
             resources = resources.filter(function (resource) { return resource.sellable; });
@@ -5014,45 +4819,23 @@ var ResourcesService = /** @class */ (function () {
         if (filterByAccessible) {
             resources = resources.filter(function (resource) { return resource.resourceAccessible; });
         }
+        if (filterByHarvestable) {
+            resources = resources.filter(function (resource) { return resource.harvestable; });
+        }
         return resources;
     };
     ResourcesService.prototype.getPlayerScore = function () {
-        return this.resources.map(function (resource) { return resource.amount * resource.resourceTier; }).reduce(function (total, amount) { return total += amount; });
-    };
-    ResourcesService.prototype.harvestableResources = function () {
-        return this.resources.filter(function (resource) { return resource.harvestable && resource.pathAvailable; });
-    };
-    ResourcesService.prototype.sellableResources = function () {
-        return this.resources.filter(function (resource) { return resource.sellable; });
-    };
-    ResourcesService.prototype.resourceIds = function () {
-        return this.resources.map(function (resource) { return resource.id; });
-    };
-    ResourcesService.prototype.resourceTooltip = function (id, workerCount) {
-        var resource = this.getResource(id);
-        if (id === 0) {
-            return resource.resourceDescription + ".";
-        }
-        return resource.resourceDescription + ". " + resource.harvestYield / resource.harvestMilliseconds * 1000 + "\n     harvested per second; " + resource.workerYield * workerCount + " per second from workers.";
-    };
-    ResourcesService.prototype.addResourceAmount = function (id, amount) {
-        var resource = this.getResource(id);
-        resource.amount += amount;
-        if (resource.amount < 0) {
-            resource.amount = 0;
-        }
-    };
-    ResourcesService.prototype.canAfford = function (id) {
-        return (this.getResource(0).amount >= this.getResource(id).worker.cost);
+        var resources = Array.from(this.resources.values());
+        return resources.map(function (resource) { return resource.amount * resource.resourceTier; }).reduce(function (total, amount) { return total += amount; });
     };
     ResourcesService.prototype.log = function (message) {
-        this.messagesService.add(_objects_message__WEBPACK_IMPORTED_MODULE_1__["MessageSource"].Resources, message);
+        this.messagesService.add(_objects_message__WEBPACK_IMPORTED_MODULE_3__["MessageSource"].Resources, message);
     };
     ResourcesService = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
             providedIn: 'root'
         }),
-        __metadata("design:paramtypes", [_messages_messages_service__WEBPACK_IMPORTED_MODULE_2__["MessagesService"]])
+        __metadata("design:paramtypes", [_messages_messages_service__WEBPACK_IMPORTED_MODULE_4__["MessagesService"]])
     ], ResourcesService);
     return ResourcesService;
 }());
@@ -5080,12 +4863,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _map_map_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./../map/map.service */ "./src/app/services/map/map.service.ts");
 /* harmony import */ var _enemy_enemy_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./../enemy/enemy.service */ "./src/app/services/enemy/enemy.service.ts");
 /* harmony import */ var _fighter_fighter_service__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./../fighter/fighter.service */ "./src/app/services/fighter/fighter.service.ts");
-/* harmony import */ var _components_save_dialog_save_dialog_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../components/save-dialog/save-dialog.component */ "./src/app/components/save-dialog/save-dialog.component.ts");
+/* harmony import */ var _objects_resourceData__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./../../objects/resourceData */ "./src/app/objects/resourceData.ts");
 /* harmony import */ var _objects_tile__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../objects/tile */ "./src/app/objects/tile.ts");
 /* harmony import */ var _objects_entity__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../../objects/entity */ "./src/app/objects/entity.ts");
 /* harmony import */ var _objects_message__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./../../objects/message */ "./src/app/objects/message.ts");
 /* harmony import */ var _objects_vector__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../../objects/vector */ "./src/app/objects/vector.ts");
-/* harmony import */ var _objects_resource__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../../objects/resource */ "./src/app/objects/resource.ts");
+/* harmony import */ var _components_save_dialog_save_dialog_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../../components/save-dialog/save-dialog.component */ "./src/app/components/save-dialog/save-dialog.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -5110,6 +4893,8 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+var defaultResourceBinds = [_objects_resourceData__WEBPACK_IMPORTED_MODULE_9__["ResourceEnum"].Oak, _objects_resourceData__WEBPACK_IMPORTED_MODULE_9__["ResourceEnum"].Pine, _objects_resourceData__WEBPACK_IMPORTED_MODULE_9__["ResourceEnum"].Birch, _objects_resourceData__WEBPACK_IMPORTED_MODULE_9__["ResourceEnum"].Stone, _objects_resourceData__WEBPACK_IMPORTED_MODULE_9__["ResourceEnum"].Graphite,
+    _objects_resourceData__WEBPACK_IMPORTED_MODULE_9__["ResourceEnum"].Limestone, _objects_resourceData__WEBPACK_IMPORTED_MODULE_9__["ResourceEnum"].CopperOre, _objects_resourceData__WEBPACK_IMPORTED_MODULE_9__["ResourceEnum"].TinOre, _objects_resourceData__WEBPACK_IMPORTED_MODULE_9__["ResourceEnum"].BronzeIngot, _objects_resourceData__WEBPACK_IMPORTED_MODULE_9__["ResourceEnum"].IronOre];
 var SettingsService = /** @class */ (function () {
     function SettingsService(resourcesService, upgradesService, workersService, mapService, enemyService, fighterService, messagesService, snackbar, dialog) {
         this.resourcesService = resourcesService;
@@ -5121,12 +4906,12 @@ var SettingsService = /** @class */ (function () {
         this.messagesService = messagesService;
         this.snackbar = snackbar;
         this.dialog = dialog;
-        this.versionHistory = ['1.2', 'Alpha 3', 'Alpha 3.1'];
-        this.gameVersion = 'Alpha 3.1';
+        this.versionHistory = ['1.2', 'Alpha 3', 'Alpha 3.1', 'Alpha 3.2'];
+        this.gameVersion = 'Alpha 3.2';
         this.autosaveInterval = 60000;
         this.lastAutosave = this.autosaveInterval;
         this.debugMode = false;
-        this.resourceBinds = [1, 7, 8, 13, 26, 27, 2, 3, 4, 5];
+        this.resourceBinds = defaultResourceBinds;
         this.disableAnimations = false;
         this.slimInterface = false;
         this.mapDetailMode = true;
@@ -5137,8 +4922,6 @@ var SettingsService = /** @class */ (function () {
         this.resourceAnimationColors[_objects_entity__WEBPACK_IMPORTED_MODULE_11__["ResourceAnimationType"].PlayerSpawned] = '#a4ff89';
         this.resourceAnimationColors[_objects_entity__WEBPACK_IMPORTED_MODULE_11__["ResourceAnimationType"].WorkerSpawned] = '#ae89ff';
         this.resourceAnimationColors[_objects_entity__WEBPACK_IMPORTED_MODULE_11__["ResourceAnimationType"].Sold] = '#ffc089';
-        this.loadGame();
-        this.setAutosave();
     }
     SettingsService.prototype.tick = function (elapsed, deltaTime) {
         if (elapsed - this.lastAutosave < this.autosaveInterval || this.autosaveInterval < 0) {
@@ -5149,7 +4932,7 @@ var SettingsService = /** @class */ (function () {
     };
     SettingsService.prototype.openSaveDialog = function (saveData) {
         var _this = this;
-        var dialogRef = this.dialog.open(_components_save_dialog_save_dialog_component__WEBPACK_IMPORTED_MODULE_9__["SaveDialogComponent"], {
+        var dialogRef = this.dialog.open(_components_save_dialog_save_dialog_component__WEBPACK_IMPORTED_MODULE_14__["SaveDialogComponent"], {
             width: '750px',
             height: '150px',
             data: saveData === undefined ? {} : { saveData: saveData }
@@ -5198,6 +4981,7 @@ var SettingsService = /** @class */ (function () {
             settings: {
                 autosaveInterval: this.autosaveInterval,
                 debugMode: this.debugMode,
+                highestTierReached: this.resourcesService.highestTierReached,
                 workersPaused: this.workersService.workersPaused,
                 hidePurchasedUpgrades: this.upgradesService.hidePurchasedUpgrades,
                 resourceBinds: this.resourceBinds,
@@ -5209,10 +4993,10 @@ var SettingsService = /** @class */ (function () {
             },
             gameVersion: this.gameVersion
         };
-        for (var _i = 0, _a = this.resourcesService.resources; _i < _a.length; _i++) {
+        for (var _i = 0, _a = this.resourcesService.getResources(); _i < _a.length; _i++) {
             var resource = _a[_i];
             saveData.resources.push({
-                id: resource.id,
+                resourceEnum: resource.resourceEnum,
                 amount: resource.amount,
                 harvestable: resource.harvestable,
                 harvestYield: resource.harvestYield,
@@ -5230,18 +5014,18 @@ var SettingsService = /** @class */ (function () {
                 purchased: upgrade.purchased
             });
         }
-        for (var _d = 0, _e = this.workersService.workers; _d < _e.length; _d++) {
+        for (var _d = 0, _e = this.workersService.getWorkers(); _d < _e.length; _d++) {
             var worker = _e[_d];
             var workerData = {
-                id: worker.id,
+                resourceType: worker.resourceType,
                 cost: worker.cost,
                 workerCount: worker.workerCount,
                 workersByResource: []
             };
-            for (var _f = 0, _g = worker.workersByResource; _f < _g.length; _f++) {
+            for (var _f = 0, _g = worker.getResourceWorkers(); _f < _g.length; _f++) {
                 var resourceWorker = _g[_f];
                 workerData.workersByResource.push({
-                    resourceId: resourceWorker.resourceId,
+                    resourceEnum: resourceWorker.resourceEnum,
                     workable: resourceWorker.workable,
                     workerCount: resourceWorker.workerCount,
                     workerYield: resourceWorker.workerYield
@@ -5328,7 +5112,7 @@ var SettingsService = /** @class */ (function () {
             if (saveData.resources !== undefined) {
                 for (var _i = 0, _a = saveData.resources; _i < _a.length; _i++) {
                     var resourceData = _a[_i];
-                    var resource = this.resourcesService.getResource(resourceData.id);
+                    var resource = this.resourcesService.resources.get(resourceData.resourceEnum);
                     if (resource === undefined) {
                         continue;
                     }
@@ -5339,7 +5123,6 @@ var SettingsService = /** @class */ (function () {
                     resource.sellable = resourceData.sellable;
                     resource.sellsFor = resourceData.sellsFor;
                     resource.autoSellCutoff = resourceData.autoSellCutoff ? resourceData.autoSellCutoff : 0;
-                    resource.resourceAccessible = resourceData.resourceAccessible;
                 }
             }
             if (saveData.upgrades !== undefined) {
@@ -5355,18 +5138,18 @@ var SettingsService = /** @class */ (function () {
             if (saveData.workers !== undefined) {
                 for (var _d = 0, _e = saveData.workers; _d < _e.length; _d++) {
                     var workerData = _e[_d];
-                    var worker = this.workersService.getWorker(workerData.id);
+                    var worker = this.workersService.workers.get(workerData.resourceType);
                     worker.cost = workerData.cost;
                     worker.workerCount = workerData.workerCount;
                     worker.freeWorkers = workerData.workerCount;
                     for (var _f = 0, _g = workerData.workersByResource; _f < _g.length; _f++) {
                         var resourceWorkerData = _g[_f];
-                        var resourceWorker = this.workersService.getResourceWorker(resourceWorkerData.resourceId);
+                        var resourceWorker = worker.resourceWorkers.get(resourceWorkerData.resourceEnum);
                         resourceWorker.workable = resourceWorkerData.workable;
                         resourceWorker.workerYield = resourceWorkerData.workerYield;
                         resourceWorker.workerCount = 0;
                         resourceWorker.sliderSetting = resourceWorkerData.workerCount;
-                        this.workersService.updateResourceWorker(resourceWorkerData.resourceId, resourceWorkerData.workerCount);
+                        worker.updateResourceWorker(resourceWorkerData.resourceEnum, resourceWorkerData.workerCount);
                     }
                     if (worker.freeWorkers < 0) {
                         throw new Error('Invalid worker settings.');
@@ -5400,15 +5183,15 @@ var SettingsService = /** @class */ (function () {
                     var resourceType = void 0;
                     switch (tileData.buildingTileType) {
                         case _objects_tile__WEBPACK_IMPORTED_MODULE_10__["BuildingTileType"].WoodMarket: {
-                            resourceType = _objects_resource__WEBPACK_IMPORTED_MODULE_14__["ResourceType"].Wood;
+                            resourceType = _objects_resourceData__WEBPACK_IMPORTED_MODULE_9__["ResourceType"].Wood;
                             break;
                         }
                         case _objects_tile__WEBPACK_IMPORTED_MODULE_10__["BuildingTileType"].MineralMarket: {
-                            resourceType = _objects_resource__WEBPACK_IMPORTED_MODULE_14__["ResourceType"].Mineral;
+                            resourceType = _objects_resourceData__WEBPACK_IMPORTED_MODULE_9__["ResourceType"].Mineral;
                             break;
                         }
                         case _objects_tile__WEBPACK_IMPORTED_MODULE_10__["BuildingTileType"].MetalMarket: {
-                            resourceType = _objects_resource__WEBPACK_IMPORTED_MODULE_14__["ResourceType"].Metal;
+                            resourceType = _objects_resourceData__WEBPACK_IMPORTED_MODULE_9__["ResourceType"].Metal;
                             break;
                         }
                     }
@@ -5448,10 +5231,11 @@ var SettingsService = /** @class */ (function () {
             if (saveData.settings !== undefined) {
                 this.autosaveInterval = saveData.settings.autosaveInterval ? saveData.settings.autosaveInterval : 900000;
                 this.debugMode = saveData.settings.debugMode ? saveData.settings.debugMode : false;
+                this.resourcesService.highestTierReached = saveData.settings.highestTierReached ? saveData.settings.highestTierReached : 0;
                 this.workersService.workersPaused = saveData.settings.workersPaused ? saveData.settings.workersPaused : false;
                 this.upgradesService.hidePurchasedUpgrades =
                     saveData.settings.hidePurchasedUpgrades ? saveData.settings.hidePurchasedUpgrades : false;
-                this.resourceBinds = saveData.settings.resourceBinds ? saveData.settings.resourceBinds : [1, 7, 8, 13, 26, 27, 2, 3, 4, 5];
+                this.resourceBinds = saveData.settings.resourceBinds ? saveData.settings.resourceBinds : defaultResourceBinds;
                 this.messagesService.visibleSources = saveData.settings.visibleSources ? saveData.settings.visibleSources :
                     [_objects_message__WEBPACK_IMPORTED_MODULE_12__["MessageSource"].Admin, _objects_message__WEBPACK_IMPORTED_MODULE_12__["MessageSource"].Buildings, _objects_message__WEBPACK_IMPORTED_MODULE_12__["MessageSource"].Main, _objects_message__WEBPACK_IMPORTED_MODULE_12__["MessageSource"].Enemy,
                         _objects_message__WEBPACK_IMPORTED_MODULE_12__["MessageSource"].Fighter, _objects_message__WEBPACK_IMPORTED_MODULE_12__["MessageSource"].Map, _objects_message__WEBPACK_IMPORTED_MODULE_12__["MessageSource"].Resources, _objects_message__WEBPACK_IMPORTED_MODULE_12__["MessageSource"].Settings,
@@ -5482,7 +5266,7 @@ var SettingsService = /** @class */ (function () {
         if (oldVersionIndex <= this.versionHistory.indexOf('1.2')) {
             for (var _i = 0, _a = saveData.resources; _i < _a.length; _i++) {
                 var resourceData = _a[_i];
-                var resource = this.resourcesService.getResource(resourceData.id);
+                var resource = this.resourcesService.resources.get(resourceData.resourceEnum);
                 resourceData.sellsFor = resource.sellsFor;
             }
         }
@@ -5496,6 +5280,78 @@ var SettingsService = /** @class */ (function () {
                 tileData.statLevels = isMarket ? { 'MAXHEALTH': 1, 'SELLAMOUNT': 1, 'SELLRATE': 1 } : { 'MAXHEALTH': 1 };
                 tileData.statCosts = isMarket ? { 'MAXHEALTH': 1500, 'SELLAMOUNT': 1500, 'SELLRATE': 1500 } : { 'MAXHEALTH': 1500 };
             });
+        }
+        if (oldVersionIndex <= this.versionHistory.indexOf('Alpha 3.1')) {
+            var legacyResourceIds_1 = {
+                0: 'GOLD',
+                1: 'OAK',
+                2: 'COPPERORE',
+                3: 'TINORE',
+                4: 'BRONZEINGOT',
+                5: 'IRONORE',
+                6: 'IRONINGOT',
+                7: 'PINE',
+                8: 'BIRCH',
+                9: 'EUCALYPTUS',
+                10: 'STEELINGOT',
+                11: 'GOLDORE',
+                12: 'GOLDINGOT',
+                13: 'STONE',
+                15: 'WILLOW',
+                16: 'ENTSOUL',
+                17: 'REANIMATEDENT',
+                18: 'LATINUMORE',
+                19: 'LATINUMINGOT',
+                20: 'UNBELIEVIUMORE',
+                21: 'LUSTRIALORE',
+                22: 'SPECTRUSORE',
+                23: 'TEMPROUSINGOT',
+                24: 'REFINEDTEMPROUS',
+                25: 'TEAK',
+                26: 'GRAPHITE',
+                27: 'LIMESTONE',
+                28: 'MARBLE',
+                29: 'QUARTZ',
+                30: 'OBSIDIAN',
+                31: 'DIAMOND'
+            };
+            var legacyWorkerIds = {
+                0: 'WOOD',
+                1: 'METAL',
+                2: 'MINERAL'
+            };
+            for (var _b = 0, _c = saveData.resources; _b < _c.length; _b++) {
+                var resourceData = _c[_b];
+                resourceData.resourceEnum = legacyResourceIds_1[resourceData.id];
+            }
+            for (var _d = 0, _e = saveData.workers; _d < _e.length; _d++) {
+                var workerData = _e[_d];
+                workerData.resourceType = legacyWorkerIds[workerData.id];
+                for (var _f = 0, _g = workerData.workersByResource; _f < _g.length; _f++) {
+                    var resourceWorkerData = _g[_f];
+                    resourceWorkerData.resourceEnum = legacyResourceIds_1[resourceWorkerData.resourceId];
+                }
+            }
+            for (var _h = 0, _j = saveData.enemies; _h < _j.length; _h++) {
+                var enemyData = _j[_h];
+                var newResourcesToSteal = enemyData.resourcesToSteal.map(function (resourceId) { return legacyResourceIds_1[resourceId]; });
+                var newResourcesHeld = new Map();
+                if (!enemyData.resourcesHeld || !enemyData.resourcesHeld.length) {
+                    continue;
+                }
+                for (var _k = 0, _l = enemyData.resourcesToSteal; _k < _l.length; _k++) {
+                    var resourceId = _l[_k];
+                    var amountHeld = enemyData.resourcesHeld[resourceId];
+                    newResourcesHeld.set(legacyResourceIds_1[resourceId], amountHeld === undefined ? 0 : amountHeld);
+                }
+                enemyData.resourcesToSteal = newResourcesToSteal;
+                enemyData.resourcesHeld = newResourcesHeld;
+            }
+            saveData.settings.resourceBinds = saveData.settings.resourceBinds.map(function (resourceId) { return legacyResourceIds_1[resourceId]; });
+            var accessedTiers = saveData.resources.filter(function (resource) { return resource.amount; }).map(function (resource) {
+                return _this.resourcesService.resources.get(resource.resourceEnum).resourceTier;
+            });
+            saveData.settings.highestTierReached = accessedTiers.sort()[accessedTiers.length - 1];
         }
         return saveData;
     };
@@ -5534,9 +5390,10 @@ var SettingsService = /** @class */ (function () {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "StoreService", function() { return StoreService; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _objects_message__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../objects/message */ "./src/app/objects/message.ts");
-/* harmony import */ var _resources_resources_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../resources/resources.service */ "./src/app/services/resources/resources.service.ts");
-/* harmony import */ var _messages_messages_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../messages/messages.service */ "./src/app/services/messages/messages.service.ts");
+/* harmony import */ var _objects_resourceData__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./../../objects/resourceData */ "./src/app/objects/resourceData.ts");
+/* harmony import */ var _objects_message__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../objects/message */ "./src/app/objects/message.ts");
+/* harmony import */ var _resources_resources_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../resources/resources.service */ "./src/app/services/resources/resources.service.ts");
+/* harmony import */ var _messages_messages_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../messages/messages.service */ "./src/app/services/messages/messages.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -5550,52 +5407,37 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
 var StoreService = /** @class */ (function () {
     function StoreService(resourcesService, messagesService) {
         this.resourcesService = resourcesService;
         this.messagesService = messagesService;
     }
-    StoreService.prototype.sellResource = function (id, amount) {
-        if (!this.canSellResource(id, amount)) {
+    StoreService.prototype.sellResource = function (resource, amount) {
+        if (!this.canSellResource(resource, amount)) {
             return;
         }
-        var resource = this.resourcesService.getResource(id);
         if (amount === -1) {
             amount = resource.amount;
         }
-        this.resourcesService.addResourceAmount(resource.id, -amount);
-        this.resourcesService.addResourceAmount(0, amount * resource.sellsFor);
+        resource.addAmount(-amount);
+        this.resourcesService.resources.get(_objects_resourceData__WEBPACK_IMPORTED_MODULE_1__["ResourceEnum"].Gold).addAmount(amount * resource.sellsFor);
     };
-    StoreService.prototype.finishResourceAnimation = function (id, amount) {
-        var resource = this.resourcesService.getResource(id);
-        this.resourcesService.addResourceAmount(0, amount * resource.sellsFor);
-    };
-    StoreService.prototype.canSellResource = function (id, amount) {
-        var resource = this.resourcesService.getResource(id);
+    StoreService.prototype.canSellResource = function (resource, amount) {
         if (amount === -1) {
             return resource.sellable && resource.amount > 0;
         }
         return resource.sellable && resource.amount - amount >= 0;
     };
-    StoreService.prototype.resourcesOfType = function (resourceType, filterBySellable, filterByAccessible) {
-        var resources = this.resourcesService.resources.filter(function (resource) { return resource.resourceType === resourceType; });
-        if (filterBySellable) {
-            resources = resources.filter(function (resource) { return resource.sellable; });
-        }
-        if (filterByAccessible) {
-            resources = resources.filter(function (resource) { return resource.resourceAccessible; });
-        }
-        return resources;
-    };
     StoreService.prototype.log = function (message) {
-        this.messagesService.add(_objects_message__WEBPACK_IMPORTED_MODULE_1__["MessageSource"].Store, message);
+        this.messagesService.add(_objects_message__WEBPACK_IMPORTED_MODULE_2__["MessageSource"].Store, message);
     };
     StoreService = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
             providedIn: 'root'
         }),
-        __metadata("design:paramtypes", [_resources_resources_service__WEBPACK_IMPORTED_MODULE_2__["ResourcesService"],
-            _messages_messages_service__WEBPACK_IMPORTED_MODULE_3__["MessagesService"]])
+        __metadata("design:paramtypes", [_resources_resources_service__WEBPACK_IMPORTED_MODULE_3__["ResourcesService"],
+            _messages_messages_service__WEBPACK_IMPORTED_MODULE_4__["MessagesService"]])
     ], StoreService);
     return StoreService;
 }());
@@ -5691,6 +5533,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _upgrades_upgrades_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../upgrades/upgrades.service */ "./src/app/services/upgrades/upgrades.service.ts");
 /* harmony import */ var _workers_workers_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./../workers/workers.service */ "./src/app/services/workers/workers.service.ts");
 /* harmony import */ var _map_map_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./../map/map.service */ "./src/app/services/map/map.service.ts");
+/* harmony import */ var _objects_resourceData__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./../../objects/resourceData */ "./src/app/objects/resourceData.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -5700,6 +5543,7 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 var __metadata = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+
 
 
 
@@ -5768,17 +5612,16 @@ var TooltipService = /** @class */ (function () {
             31: 24
         };
     }
-    TooltipService.prototype.getResourceTooltip = function (resourceId) {
-        var resource = this.resourcesService.getResource(resourceId);
-        var worker = this.workersService.getResourceWorker(resourceId);
+    TooltipService.prototype.getResourceTooltip = function (resource) {
+        var worker = this.workersService.getResourceWorker(resource.resourceEnum);
         var tooltip = "" + resource.resourceDescription;
-        if (resourceId === 0) {
+        if (resource.resourceEnum === _objects_resourceData__WEBPACK_IMPORTED_MODULE_5__["ResourceEnum"].Gold) {
             var totalCost = 0;
-            for (var _i = 0, _a = this.workersService.workers; _i < _a.length; _i++) {
+            for (var _i = 0, _a = this.workersService.getWorkers(); _i < _a.length; _i++) {
                 var _worker = _a[_i];
-                for (var _b = 0, _c = _worker.workersByResource; _b < _c.length; _b++) {
+                for (var _b = 0, _c = _worker.getResourceWorkers(); _b < _c.length; _b++) {
                     var rw = _c[_b];
-                    if (this.resourcesService.canHarvest(rw.resourceId) && this.workersService.canAffordToHarvest(rw.resourceId)) {
+                    if (resource.canHarvest(rw.workerYield) && _worker.canAffordToHarvest(rw.resourceEnum)) {
                         totalCost += rw.recurringCost * rw.workerCount;
                     }
                 }
@@ -5786,12 +5629,12 @@ var TooltipService = /** @class */ (function () {
             tooltip += "\n" + totalCost + " spent on workers per second.";
             return tooltip;
         }
-        var requiredUpgrade = this.requiredUpgrades[resourceId];
+        var requiredUpgrade = this.requiredUpgrades[resource.resourceEnum];
         if (requiredUpgrade) {
             var upgrade = this.upgradesService.getUpgrade(requiredUpgrade);
             tooltip += "\nNeeded Upgrade: " + upgrade.name + ".";
         }
-        var requiredBuilding = this.requiredBuildings[resourceId];
+        var requiredBuilding = this.requiredBuildings[resource.resourceEnum];
         if (requiredBuilding) {
             var building = this.mapService.buildingTiles[requiredBuilding];
             tooltip += "\nNeeded Building: " + building.name + ".";
@@ -5800,25 +5643,26 @@ var TooltipService = /** @class */ (function () {
             tooltip += '\nResources required:';
             for (var _d = 0, _e = resource.resourceConsumes; _d < _e.length; _d++) {
                 var resourceConsume = _e[_d];
-                tooltip += " " + this.resourcesService.getResource(resourceConsume.resourceId).name + ": " + resourceConsume.cost + ",";
+                tooltip += " " + this.resourcesService.resources.get(resourceConsume.resourceEnum).name + ": " + resourceConsume.cost + ",";
             }
             tooltip = tooltip.substring(0, tooltip.length - 1);
             tooltip += '.';
         }
         var workerOutput = worker.workerYield * worker.workerCount;
-        if (resourceId in this.consumersByResource) {
-            var consumingResource = this.resourcesService.getResource(this.consumersByResource[resourceId]);
-            var consumingWorker = this.workersService.getResourceWorker(this.consumersByResource[resourceId]);
-            workerOutput -= consumingResource.resourceConsumes.find(function (rc) { return rc.resourceId === resourceId; }).cost * consumingWorker.workerCount;
+        if (resource.resourceEnum in this.consumersByResource) {
+            var consumingResource = this.resourcesService.resources[this.consumersByResource[resource.resourceEnum]];
+            var consumingWorker = this.workersService.getResourceWorker[this.consumersByResource[resource.resourceEnum]];
+            workerOutput -=
+                consumingResource.resourceConsumes.find(function (rc) { return rc.resourceEnum === resource.resourceEnum; }).cost * consumingWorker.workerCount;
         }
         tooltip += "\n" + Math.floor(resource.harvestYield * 1000) / 1000 + " harvested per click " +
             ("(" + Math.floor(resource.harvestMilliseconds) / 1000 + " seconds per harvest).") +
             ("\n" + Math.floor(1000 * workerOutput) / 1000 + " per second from workers.");
         return tooltip;
     };
-    TooltipService.prototype.getWorkerTooltip = function (resourceId) {
-        var resource = this.resourcesService.getResource(resourceId);
-        var resourceWorker = this.workersService.getResourceWorker(resourceId);
+    TooltipService.prototype.getWorkerTooltip = function (resourceEnum) {
+        var resource = this.resourcesService.resources.get(resourceEnum);
+        var resourceWorker = this.workersService.getResourceWorker(resourceEnum);
         return resource.workerVerb + " " + Math.floor(resourceWorker.workerYield * 100) / 100 + " " +
             ("" + resource.workerNoun + (resourceWorker.workerYield === 1 ? '' : 's') + " per second.\n") +
             ("Cost: " + resourceWorker.recurringCost + " per worker per second (" + resourceWorker.recurringCost * resourceWorker.workerCount + " total).");
@@ -5876,99 +5720,29 @@ var UpgradesService = /** @class */ (function () {
         this.resourcesService = resourcesService;
         this.workersService = workersService;
         this.messagesService = messagesService;
-        this.upgrades = baseUpgrades;
+        this.upgrades = [];
         this.hidePurchasedUpgrades = true;
+        for (var _i = 0, baseUpgrades_1 = baseUpgrades; _i < baseUpgrades_1.length; _i++) {
+            var baseUpgrade = baseUpgrades_1[_i];
+            var upgrade = new _objects_upgrade__WEBPACK_IMPORTED_MODULE_1__["Upgrade"](baseUpgrade.id, baseUpgrade.name, baseUpgrade.description, baseUpgrade.upgradeType, baseUpgrade.upgradeEffects, baseUpgrade.resourceCosts, false, this.resourcesService, this.workersService, this.messagesService);
+            this.upgrades.push(upgrade);
+        }
     }
     UpgradesService.prototype.getUpgrade = function (id) {
         return this.upgrades.find(function (upgrade) { return upgrade.id === id; });
     };
-    UpgradesService.prototype.purchaseUpgrade = function (id) {
-        var upgrade = this.getUpgrade(id);
-        if (upgrade.purchased || !this.canAffordUpgrade(id)) {
-            return;
-        }
-        for (var _i = 0, _a = upgrade.resourceCosts; _i < _a.length; _i++) {
-            var resourceCost = _a[_i];
-            this.resourcesService.addResourceAmount(resourceCost.resourceId, -resourceCost.resourceCost);
-        }
-        this.applyUpgrade(upgrade);
-        upgrade.purchased = true;
-    };
-    UpgradesService.prototype.applyUpgrade = function (upgrade) {
+    UpgradesService.prototype.getUpgrades = function (filterByPurchased, filterByUnpurchased, filterByAccessible, upgradeType, upgradeVariable) {
         var _this = this;
-        var _loop_1 = function (upgradeEffect) {
-            if (upgradeEffect.upgradeVariable === _objects_upgrade__WEBPACK_IMPORTED_MODULE_1__["UpgradeVariable"].WorkerCost) {
-                this_1.workersService.getWorker(upgradeEffect.resourceType).cost *= upgradeEffect.upgradeFactor;
-                return "continue";
-            }
-            var resourcesToUpgrade = [this_1.resourcesService.getResource(upgradeEffect.resourceId)];
-            var workersToUpgrade = [this_1.workersService.getResourceWorker(upgradeEffect.resourceId)];
-            if (upgradeEffect.upgradeIsForWholeType) {
-                resourcesToUpgrade = this_1.resourcesService.resourcesOfType(upgradeEffect.resourceType, false, false, false);
-                workersToUpgrade = this_1.workersService.getWorker(upgradeEffect.resourceType).workersByResource;
-                if (upgradeEffect.maxTier >= 0) {
-                    resourcesToUpgrade = resourcesToUpgrade.filter(function (resource) { return resource.resourceTier <= upgradeEffect.maxTier; });
-                    workersToUpgrade = workersToUpgrade.filter(function (worker) {
-                        return _this.resourcesService.getResource(worker.resourceId).resourceTier <= upgradeEffect.maxTier;
-                    });
-                }
-            }
-            for (var _i = 0, resourcesToUpgrade_1 = resourcesToUpgrade; _i < resourcesToUpgrade_1.length; _i++) {
-                var resourceToUpgrade = resourcesToUpgrade_1[_i];
-                switch (upgradeEffect.upgradeVariable) {
-                    case _objects_upgrade__WEBPACK_IMPORTED_MODULE_1__["UpgradeVariable"].Harvestability: {
-                        resourceToUpgrade.harvestable = !!upgradeEffect.upgradeFactor;
-                        break;
-                    }
-                    case _objects_upgrade__WEBPACK_IMPORTED_MODULE_1__["UpgradeVariable"].HarvestYield: {
-                        resourceToUpgrade.harvestYield *= upgradeEffect.upgradeFactor;
-                        break;
-                    }
-                    case _objects_upgrade__WEBPACK_IMPORTED_MODULE_1__["UpgradeVariable"].HarvestMilliseconds: {
-                        resourceToUpgrade.harvestMilliseconds *= upgradeEffect.upgradeFactor;
-                        break;
-                    }
-                    default: {
-                        break;
-                    }
-                }
-            }
-            for (var _a = 0, workersToUpgrade_1 = workersToUpgrade; _a < workersToUpgrade_1.length; _a++) {
-                var workerToUpgrade = workersToUpgrade_1[_a];
-                switch (upgradeEffect.upgradeVariable) {
-                    case _objects_upgrade__WEBPACK_IMPORTED_MODULE_1__["UpgradeVariable"].Workable: {
-                        workerToUpgrade.workable = !!upgradeEffect.upgradeFactor;
-                        break;
-                    }
-                    case _objects_upgrade__WEBPACK_IMPORTED_MODULE_1__["UpgradeVariable"].WorkerYield: {
-                        workerToUpgrade.workerYield *= upgradeEffect.upgradeFactor;
-                        break;
-                    }
-                    default: {
-                        break;
-                    }
-                }
-            }
-        };
-        var this_1 = this;
-        for (var _i = 0, _a = upgrade.upgradeEffects; _i < _a.length; _i++) {
-            var upgradeEffect = _a[_i];
-            _loop_1(upgradeEffect);
-        }
-        this.log('Purchased upgrade: ' + upgrade.name);
-    };
-    UpgradesService.prototype.canAffordUpgrade = function (id) {
-        for (var _i = 0, _a = this.getUpgrade(id).resourceCosts; _i < _a.length; _i++) {
-            var resourceCost = _a[_i];
-            if (this.resourcesService.getResource(resourceCost.resourceId).amount < resourceCost.resourceCost) {
-                return false;
-            }
-        }
-        return true;
-    };
-    UpgradesService.prototype.getUpgrades = function (filterByPurchased, filterByUnpurchased, filterByAccessible) {
-        var _this = this;
+        if (filterByPurchased === void 0) { filterByPurchased = false; }
+        if (filterByUnpurchased === void 0) { filterByUnpurchased = false; }
+        if (filterByAccessible === void 0) { filterByAccessible = false; }
         var upgrades = this.upgrades;
+        if (upgradeType) {
+            upgrades = upgrades.filter(function (upgrade) { return upgrade.upgradeType === upgradeType; });
+        }
+        if (upgradeVariable) {
+            upgrades = upgrades.filter(function (upgrade) { return upgrade.upgradeEffects.some(function (ue) { return ue.upgradeVariable === upgradeVariable; }); });
+        }
         if (filterByPurchased) {
             upgrades = upgrades.filter(function (upgrade) { return upgrade.purchased; });
         }
@@ -5976,35 +5750,7 @@ var UpgradesService = /** @class */ (function () {
             upgrades = upgrades.filter(function (upgrade) { return !upgrade.purchased; });
         }
         if (filterByAccessible) {
-            upgrades = upgrades.filter(function (upgrade) { return upgrade.resourceCosts.every(function (rc) { return _this.resourcesService.getResource(rc.resourceId).resourceAccessible; }); });
-        }
-        return upgrades;
-    };
-    UpgradesService.prototype.upgradesOfType = function (upgradeType, filterByPurchased, filterByUnpurchased, filterByAccessible) {
-        var _this = this;
-        var upgrades = this.upgrades.filter(function (upgrade) { return upgrade.upgradeType === upgradeType; });
-        if (filterByPurchased) {
-            upgrades = upgrades.filter(function (upgrade) { return upgrade.purchased; });
-        }
-        if (filterByUnpurchased) {
-            upgrades = upgrades.filter(function (upgrade) { return !upgrade.purchased; });
-        }
-        if (filterByAccessible) {
-            upgrades = upgrades.filter(function (upgrade) { return upgrade.resourceCosts.every(function (rc) { return _this.resourcesService.getResource(rc.resourceId).resourceAccessible; }); });
-        }
-        return upgrades;
-    };
-    UpgradesService.prototype.upgradesOfVariable = function (upgradeVariable, filterByPurchased, filterByUnpurchased, filterByAccessible) {
-        var _this = this;
-        var upgrades = this.upgrades.filter(function (upgrade) { return upgrade.upgradeEffects.some(function (ue) { return ue.upgradeVariable === upgradeVariable; }); });
-        if (filterByPurchased) {
-            upgrades = upgrades.filter(function (upgrade) { return upgrade.purchased; });
-        }
-        if (filterByUnpurchased) {
-            upgrades = upgrades.filter(function (upgrade) { return !upgrade.purchased; });
-        }
-        if (filterByAccessible) {
-            upgrades = upgrades.filter(function (upgrade) { return upgrade.resourceCosts.every(function (rc) { return _this.resourcesService.getResource(rc.resourceId).resourceAccessible; }); });
+            upgrades = upgrades.filter(function (upgrade) { return upgrade.resourceCosts.every(function (rc) { return _this.resourcesService.resources.get(rc.resourceEnum).resourceAccessible; }); });
         }
         return upgrades;
     };
@@ -6043,10 +5789,12 @@ var UpgradesService = /** @class */ (function () {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "WorkersService", function() { return WorkersService; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _objects_message__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../objects/message */ "./src/app/objects/message.ts");
-/* harmony import */ var _resources_resources_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../resources/resources.service */ "./src/app/services/resources/resources.service.ts");
-/* harmony import */ var _map_map_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./../map/map.service */ "./src/app/services/map/map.service.ts");
-/* harmony import */ var _messages_messages_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../messages/messages.service */ "./src/app/services/messages/messages.service.ts");
+/* harmony import */ var _objects_resourceData__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./../../objects/resourceData */ "./src/app/objects/resourceData.ts");
+/* harmony import */ var _objects_message__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../objects/message */ "./src/app/objects/message.ts");
+/* harmony import */ var _resources_resources_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../resources/resources.service */ "./src/app/services/resources/resources.service.ts");
+/* harmony import */ var _objects_worker__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../objects/worker */ "./src/app/objects/worker.ts");
+/* harmony import */ var _map_map_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./../map/map.service */ "./src/app/services/map/map.service.ts");
+/* harmony import */ var _messages_messages_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../messages/messages.service */ "./src/app/services/messages/messages.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -6061,103 +5809,76 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
+
 var baseWorkers = __webpack_require__(/*! ../../../assets/json/workers.json */ "./src/assets/json/workers.json");
 var WorkersService = /** @class */ (function () {
     function WorkersService(resourcesService, mapService, messagesService) {
         this.resourcesService = resourcesService;
         this.mapService = mapService;
         this.messagesService = messagesService;
-        this.workers = baseWorkers;
+        this.workers = new Map();
         this.workersPaused = false;
         this.workerDelay = 1000;
+        for (var resourceTypeString in _objects_resourceData__WEBPACK_IMPORTED_MODULE_1__["ResourceType"]) {
+            if (Number(resourceTypeString)) {
+                continue;
+            }
+            var resourceType = _objects_resourceData__WEBPACK_IMPORTED_MODULE_1__["ResourceType"][resourceTypeString];
+            var baseWorker = baseWorkers[resourceType];
+            if (!baseWorker) {
+                continue;
+            }
+            var resourceWorkers = new Map();
+            for (var resoruceEnum in baseWorker.resourceWorkers) {
+                if (Number(resoruceEnum)) {
+                    continue;
+                }
+                resourceWorkers.set(resoruceEnum, baseWorker.resourceWorkers[resoruceEnum]);
+            }
+            var worker = new _objects_worker__WEBPACK_IMPORTED_MODULE_4__["Worker"](baseWorker.cost, baseWorker.resourceType, resourceWorkers, this.resourcesService, this.mapService, this.messagesService);
+            this.workers.set(resourceType, worker);
+        }
     }
     WorkersService.prototype.tick = function (elapsed, deltaTime) {
         if (this.workersPaused || elapsed - this.lastWorkerTime < this.workerDelay) {
             return;
         }
         this.lastWorkerTime = elapsed;
-        for (var _i = 0, _a = this.workers; _i < _a.length; _i++) {
+        for (var _i = 0, _a = this.getWorkers(); _i < _a.length; _i++) {
             var worker = _a[_i];
-            for (var _b = 0, _c = worker.workersByResource; _b < _c.length; _b++) {
-                var resourceWorker = _c[_b];
-                if (resourceWorker.workerCount === 0 || !this.canAffordToHarvest(resourceWorker.resourceId)) {
-                    continue;
-                }
-                this.resourcesService.addResourceAmount(0, -resourceWorker.recurringCost * resourceWorker.workerCount);
-                if (!this.canAffordToHarvest(resourceWorker.resourceId)) {
-                    this.log("No more money available for " + this.resourcesService.getResource(resourceWorker.resourceId).name + ".");
-                }
-                this.mapService.spawnHarvestedResourceAnimation(resourceWorker.resourceId, resourceWorker.workerYield * resourceWorker.workerCount, false);
-            }
+            worker.tick(elapsed, deltaTime);
         }
     };
     WorkersService.prototype.getWorkers = function (filterByAccessible, filterByWorkable, filterByHarvestable) {
-        var _this = this;
-        var workers = this.workers;
-        if (filterByAccessible) {
-            workers = this.workers.filter(function (worker) { return worker.workersByResource.some(function (rw) { return _this.resourcesService.getResource(rw.resourceId).resourceAccessible; }); });
-        }
-        if (filterByWorkable) {
-            workers = this.workers.filter(function (worker) { return worker.workersByResource.some(function (rw) { return rw.workable; }); });
-        }
-        if (filterByHarvestable) {
-            workers = this.workers.filter(function (worker) { return worker.workersByResource.some(function (rw) { return _this.resourcesService.getResource(rw.resourceId).harvestable; }); });
-        }
-        return workers;
+        if (filterByAccessible === void 0) { filterByAccessible = false; }
+        if (filterByWorkable === void 0) { filterByWorkable = false; }
+        if (filterByHarvestable === void 0) { filterByHarvestable = false; }
+        var workers = Array.from(this.workers.values());
+        return workers.filter(function (worker) { return worker.getResourceWorkers(filterByAccessible, filterByWorkable, filterByHarvestable).length; });
     };
-    WorkersService.prototype.getWorker = function (idOrResourceType) {
-        return typeof idOrResourceType === 'number' ?
-            this.workers.find(function (worker) { return worker.id === idOrResourceType; }) :
-            this.workers.find(function (worker) { return worker.resourceType === idOrResourceType; });
+    WorkersService.prototype.getWorker = function (resourceEnum) {
+        var resoruce = this.resourcesService.resources.get(resourceEnum);
+        return this.workers.get(resoruce.resourceType);
     };
-    WorkersService.prototype.getResourceWorker = function (resourceId) {
-        var resourceType = this.resourcesService.getResource(resourceId).resourceType;
-        var worker = this.getWorker(resourceType);
-        if (worker === undefined) {
-            return null;
+    WorkersService.prototype.getResourceWorker = function (resourceEnum) {
+        var resource = this.resourcesService.resources.get(resourceEnum);
+        var worker = this.workers.get(resource.resourceType);
+        if (!resource || !worker) {
+            return undefined;
         }
-        return worker.workersByResource.find(function (rw) { return rw.resourceId === resourceId; });
-    };
-    WorkersService.prototype.canAffordWorker = function (id) {
-        var worker = this.getWorker(id);
-        return worker.cost <= this.resourcesService.getResource(0).amount;
-    };
-    WorkersService.prototype.canAffordToHarvest = function (resourceId) {
-        var resourceWorker = this.getResourceWorker(resourceId);
-        return this.resourcesService.getResource(0).amount >= resourceWorker.recurringCost;
-    };
-    WorkersService.prototype.updateResourceWorker = function (id, newResourceWorkerCount) {
-        var resource = this.resourcesService.getResource(id);
-        var worker = this.getWorker(resource.resourceType);
-        var resourceWorker = worker.workersByResource.find(function (ws) { return ws.resourceId === resource.id; });
-        if (!resourceWorker.sliderSettingValid) {
-            newResourceWorkerCount = worker.freeWorkers + resourceWorker.workerCount;
-            resourceWorker.sliderSetting = newResourceWorkerCount;
-        }
-        var newFreeWorkers = worker.freeWorkers + resourceWorker.workerCount - newResourceWorkerCount;
-        worker.freeWorkers = newFreeWorkers;
-        resourceWorker.workerCount = newResourceWorkerCount;
-    };
-    WorkersService.prototype.hireWorker = function (id) {
-        if (!this.canAffordWorker(id)) {
-            return;
-        }
-        var worker = this.getWorker(id);
-        this.resourcesService.addResourceAmount(0, -worker.cost);
-        worker.cost *= 1.01;
-        worker.workerCount++;
-        worker.freeWorkers++;
+        return worker.resourceWorkers.get(resourceEnum);
     };
     WorkersService.prototype.log = function (message) {
-        this.messagesService.add(_objects_message__WEBPACK_IMPORTED_MODULE_1__["MessageSource"].Workers, message);
+        this.messagesService.add(_objects_message__WEBPACK_IMPORTED_MODULE_2__["MessageSource"].Workers, message);
     };
     WorkersService = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
             providedIn: 'root'
         }),
-        __metadata("design:paramtypes", [_resources_resources_service__WEBPACK_IMPORTED_MODULE_2__["ResourcesService"],
-            _map_map_service__WEBPACK_IMPORTED_MODULE_3__["MapService"],
-            _messages_messages_service__WEBPACK_IMPORTED_MODULE_4__["MessagesService"]])
+        __metadata("design:paramtypes", [_resources_resources_service__WEBPACK_IMPORTED_MODULE_3__["ResourcesService"],
+            _map_map_service__WEBPACK_IMPORTED_MODULE_5__["MapService"],
+            _messages_messages_service__WEBPACK_IMPORTED_MODULE_6__["MessagesService"]])
     ], WorkersService);
     return WorkersService;
 }());
@@ -6173,7 +5894,7 @@ var WorkersService = /** @class */ (function () {
 /*! exports provided: 0, default */
 /***/ (function(module) {
 
-module.exports = [{"name":"Base Enemy","health":15,"maxHealth":15,"targetableBuildingTypes":["HOME","CRACKEDFORGE"],"attack":5,"defense":1,"attackRange":2,"resourcesToSteal":[1,2,3],"stealMax":25,"resourceCapacity":200}];
+module.exports = [{"name":"Base Enemy","health":15,"maxHealth":15,"targetableBuildingTypes":["HOME","CRACKEDFORGE"],"attack":5,"defense":1,"attackRange":2,"resourcesToSteal":["OAK","COPPERORE","TINORE"],"stealMax":25,"resourceCapacity":200}];
 
 /***/ }),
 
@@ -6192,10 +5913,10 @@ module.exports = [{"name":"Sentry","description":"A stationary archer, capable o
 /*!****************************************!*\
   !*** ./src/assets/json/resources.json ***!
   \****************************************/
-/*! exports provided: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, default */
+/*! exports provided: GOLD, OAK, PINE, BIRCH, EUCALYPTUS, WILLOW, TEAK, ENTSOUL, REANIMATEDENT, STONE, GRAPHITE, LIMESTONE, MARBLE, QUARTZ, OBSIDIAN, DIAMOND, COPPERORE, TINORE, BRONZEINGOT, IRONORE, IRONINGOT, STEELINGOT, GOLDORE, GOLDINGOT, LATINUMORE, LATINUMINGOT, UNBELIEVIUMORE, LUSTRIALORE, SPECTRUSORE, TEMPROUSINGOT, REFINEDTEMPROUS, default */
 /***/ (function(module) {
 
-module.exports = [{"id":0,"name":"gold","resourceType":"CURRENCY","iconPath":"./assets/sprites/coin.png","amount":0,"amountTravelling":0,"resourceConsumes":[],"harvestable":false,"pathAvailable":false,"sellable":false,"autoSellCutoff":0,"resourceDescription":"Shiny and valuable.","workerVerb":"","workerNoun":"gold ore","resourceAccessible":true,"resourceTier":0,"previousTier":0,"harvestYield":0,"harvestMilliseconds":0,"workerYield":0,"resourceBeingStolen":false,"sellsFor":0},{"id":1,"name":"oak","resourceType":"WOOD","iconPath":"./assets/sprites/oak.png","amount":0,"amountTravelling":0,"resourceConsumes":[],"harvestable":true,"harvestYield":1,"harvestMilliseconds":1000,"workerYield":1,"sellable":true,"resourceBeingStolen":false,"sellsFor":10,"autoSellCutoff":0,"resourceDescription":"Sturdy oak logs.","workerVerb":"Fells","workerNoun":"oak tree","resourceAccessible":true,"resourceTier":0,"previousTier":0},{"id":7,"name":"pine","resourceType":"WOOD","iconPath":"./assets/sprites/pine.png","amount":0,"amountTravelling":0,"resourceConsumes":[],"harvestable":false,"pathAvailable":false,"harvestYield":1,"harvestMilliseconds":1250,"workerYield":1,"sellable":true,"resourceBeingStolen":false,"sellsFor":12,"autoSellCutoff":0,"resourceDescription":"Strong pine logs.","workerVerb":"Fells","workerNoun":"pine tree","resourceAccessible":false,"resourceTier":1,"previousTier":0},{"id":8,"name":"birch","resourceType":"WOOD","iconPath":"./assets/sprites/birch.png","amount":0,"amountTravelling":0,"resourceConsumes":[],"harvestable":false,"pathAvailable":false,"harvestYield":1,"harvestMilliseconds":1500,"workerYield":1,"sellable":true,"resourceBeingStolen":false,"sellsFor":15,"autoSellCutoff":0,"resourceDescription":"Sometimes it feels like it's watching you...","workerVerb":"Fells","workerNoun":"birch tree","resourceAccessible":false,"resourceTier":2,"previousTier":1},{"id":9,"name":"eucalyptus","resourceType":"WOOD","iconPath":"./assets/sprites/eucalyptus.png","amount":0,"amountTravelling":0,"resourceConsumes":[],"harvestable":false,"pathAvailable":false,"harvestYield":1,"harvestMilliseconds":2000,"workerYield":1,"sellable":true,"resourceBeingStolen":false,"sellsFor":20,"autoSellCutoff":0,"resourceDescription":"Logs as strong as their name is long.","workerVerb":"Fells","workerNoun":"eucalyptus tree","resourceAccessible":false,"resourceTier":3,"previousTier":2},{"id":15,"name":"willow","resourceType":"WOOD","iconPath":"./assets/sprites/willow.png","amount":0,"amountTravelling":0,"resourceConsumes":[],"harvestable":false,"pathAvailable":false,"harvestYield":1,"harvestMilliseconds":2500,"workerYield":1,"sellable":true,"resourceBeingStolen":false,"sellsFor":35,"autoSellCutoff":0,"resourceDescription":"The saddest tree in the forest (because you chopped down its parents).","workerVerb":"Fells","workerNoun":"willow tree","resourceAccessible":false,"resourceTier":4,"previousTier":3},{"id":25,"name":"teak","resourceType":"WOOD","iconPath":"./assets/sprites/teak.png","amount":0,"amountTravelling":0,"resourceConsumes":[],"harvestable":false,"pathAvailable":false,"harvestYield":1,"harvestMilliseconds":3000,"workerYield":1,"sellable":true,"resourceBeingStolen":false,"sellsFor":40,"autoSellCutoff":0,"resourceDescription":"Bright, thin logs; surprisingly resillient considering their appearance.","workerVerb":"Fells","workerNoun":"teak tree","resourceAccessible":false,"resourceTier":5,"previousTier":4},{"id":16,"name":"ent soul","resourceType":"WOOD","iconPath":"./assets/sprites/ent_soul.png","amount":0,"amountTravelling":0,"resourceConsumes":[{"resourceId":1,"cost":10},{"resourceId":7,"cost":10},{"resourceId":8,"cost":10},{"resourceId":9,"cost":10},{"resourceId":15,"cost":10},{"resourceId":25,"cost":10}],"harvestable":false,"pathAvailable":false,"harvestYield":1,"harvestMilliseconds":8000,"workerYield":1,"sellable":false,"resourceBeingStolen":false,"sellsFor":50,"autoSellCutoff":0,"resourceDescription":"The spirit of a long-dead ent, still contained where it last took root.","workerVerb":"Releases","workerNoun":"ent spirit","resourceAccessible":false,"resourceTier":6,"previousTier":5},{"id":17,"name":"reanimated ent","resourceType":"WOOD","iconPath":"./assets/sprites/reanimated_ent.png","amount":0,"amountTravelling":0,"resourceConsumes":[{"resourceId":16,"cost":1}],"harvestable":false,"pathAvailable":false,"harvestYield":1,"harvestMilliseconds":20000,"workerYield":1,"sellable":false,"resourceBeingStolen":false,"sellsFor":100,"autoSellCutoff":0,"resourceDescription":"An ancient ent warrior, given life once more to fight for you.","workerVerb":"Reanimates","workerNoun":"ent","resourceAccessible":false,"resourceTier":7,"previousTier":6},{"id":13,"name":"Stone","resourceType":"MINERAL","iconPath":"./assets/sprites/stone.png","amount":0,"amountTravelling":0,"resourceConsumes":[],"harvestable":false,"pathAvailable":false,"harvestYield":1,"harvestMilliseconds":1000,"workerYield":1,"sellable":true,"resourceBeingStolen":false,"sellsFor":10,"autoSellCutoff":0,"resourceDescription":"Hard and sturdy, well suitied to basic construction projects.","workerVerb":"Mines","workerNoun":"stone","resourceAccessible":true,"resourceTier":0,"previousTier":0},{"id":26,"name":"Graphite","resourceType":"MINERAL","amount":0,"amountTravelling":0,"iconPath":"./assets/sprites/graphite.png","resourceConsumes":[],"harvestable":false,"pathAvailable":false,"harvestYield":1,"harvestMilliseconds":2500,"workerYield":1,"sellable":true,"resourceBeingStolen":false,"sellsFor":25,"autoSellCutoff":0,"resourceDescription":"A rough mineral with many uses.","workerVerb":"Mines","workerNoun":"graphite","resourceAccessible":false,"resourceTier":1,"previousTier":0},{"id":27,"name":"Limestone","resourceType":"MINERAL","amount":0,"amountTravelling":0,"iconPath":"./assets/sprites/limestone.png","resourceConsumes":[],"harvestable":false,"pathAvailable":false,"harvestYield":1,"harvestMilliseconds":3000,"workerYield":1,"sellable":true,"resourceBeingStolen":false,"sellsFor":35,"autoSellCutoff":0,"resourceDescription":"Hardened stone with a hint of lime.","workerVerb":"Mines","workerNoun":"limestone","resourceAccessible":false,"resourceTier":2,"previousTier":1},{"id":28,"name":"Marble","resourceType":"MINERAL","amount":0,"amountTravelling":0,"iconPath":"./assets/sprites/marble.png","resourceConsumes":[],"harvestable":false,"pathAvailable":false,"harvestYield":1,"harvestMilliseconds":4000,"workerYield":1,"sellable":true,"resourceBeingStolen":false,"sellsFor":50,"autoSellCutoff":0,"resourceDescription":"Beautiful, crystalline rock. Highly valued for construction projects.","workerVerb":"Mines","workerNoun":"marble","resourceAccessible":false,"resourceTier":3,"previousTier":2},{"id":29,"name":"Quartz","resourceType":"MINERAL","amount":0,"amountTravelling":0,"iconPath":"./assets/sprites/quartz.png","resourceConsumes":[],"harvestable":false,"pathAvailable":false,"harvestYield":1,"harvestMilliseconds":5000,"workerYield":1,"sellable":true,"resourceBeingStolen":false,"sellsFor":75,"autoSellCutoff":0,"resourceDescription":"A bright, shiny structure hides under the rock's rough surface.","workerVerb":"Mines","workerNoun":"qaurtz","resourceAccessible":false,"resourceTier":4,"previousTier":3},{"id":30,"name":"Obsidian","resourceType":"MINERAL","amount":0,"amountTravelling":0,"iconPath":"./assets/sprites/obsidian.png","resourceConsumes":[],"harvestable":false,"pathAvailable":false,"harvestYield":1,"harvestMilliseconds":6500,"workerYield":1,"sellable":true,"resourceBeingStolen":false,"sellsFor":125,"autoSellCutoff":0,"resourceDescription":"Hardened rock formed in the heart of a volcano.","workerVerb":"Mines","workerNoun":"obsidian","resourceAccessible":false,"resourceTier":5,"previousTier":4},{"id":31,"name":"Diamond","resourceType":"MINERAL","amount":0,"amountTravelling":0,"iconPath":"./assets/sprites/diamond.png","resourceConsumes":[],"harvestable":false,"pathAvailable":false,"harvestYield":1,"harvestMilliseconds":7500,"workerYield":1,"sellable":true,"resourceBeingStolen":false,"sellsFor":175,"autoSellCutoff":0,"resourceDescription":"An incredibly beautiful and tough resource.","workerVerb":"Mines","workerNoun":"diamond","resourceAccessible":false,"resourceTier":6,"previousTier":5},{"id":2,"name":"copper ore","resourceType":"METAL","iconPath":"./assets/sprites/copper_ore.png","amount":0,"amountTravelling":0,"resourceConsumes":[],"harvestable":false,"pathAvailable":false,"harvestYield":1,"harvestMilliseconds":1250,"workerYield":1,"sellable":true,"resourceBeingStolen":false,"sellsFor":10,"autoSellCutoff":0,"resourceDescription":"Can be forged into bronze along with tin.","workerVerb":"Mines","workerNoun":"copper ore","resourceAccessible":true,"resourceTier":0,"previousTier":0},{"id":3,"name":"tin ore","resourceType":"METAL","iconPath":"./assets/sprites/tin_ore.png","amount":0,"amountTravelling":0,"resourceConsumes":[],"harvestable":false,"pathAvailable":false,"harvestYield":1,"harvestMilliseconds":1250,"workerYield":1,"sellable":true,"resourceBeingStolen":false,"sellsFor":10,"autoSellCutoff":0,"resourceDescription":"Can be forged into bronze along with copper.","workerVerb":"Mines","workerNoun":"tin ore","resourceAccessible":true,"resourceTier":0,"previousTier":0},{"id":4,"name":"bronze ingot","resourceType":"METAL","iconPath":"./assets/sprites/bronze_ingot.png","amount":0,"amountTravelling":0,"resourceConsumes":[{"resourceId":2,"cost":1},{"resourceId":3,"cost":1}],"harvestable":true,"harvestYield":1,"harvestMilliseconds":2000,"workerYield":1,"sellable":true,"resourceBeingStolen":false,"sellsFor":15,"autoSellCutoff":0,"resourceDescription":"Somewhat brittle ingots.","workerVerb":"Forges","workerNoun":"bronze ingot","resourceAccessible":false,"resourceTier":1,"previousTier":0},{"id":5,"name":"iron ore","resourceType":"METAL","iconPath":"./assets/sprites/iron_ore.png","amount":0,"amountTravelling":0,"resourceConsumes":[],"harvestable":false,"pathAvailable":false,"harvestYield":1,"harvestMilliseconds":2000,"workerYield":1,"sellable":true,"resourceBeingStolen":false,"sellsFor":20,"autoSellCutoff":0,"resourceDescription":"Unrefined extracts of iron.","workerVerb":"Mines","workerNoun":"iron ore","resourceAccessible":false,"resourceTier":2,"previousTier":1},{"id":6,"name":"iron ingot","resourceType":"METAL","iconPath":"./assets/sprites/iron_ingot.png","amount":0,"amountTravelling":0,"resourceConsumes":[{"resourceId":5,"cost":1}],"harvestable":true,"harvestYield":1,"harvestMilliseconds":3000,"workerYield":1,"sellable":true,"resourceBeingStolen":false,"sellsFor":25,"autoSellCutoff":0,"resourceDescription":"Dim but sturdy ingots.","workerVerb":"Forges","workerNoun":"iron ingot","resourceAccessible":false,"resourceTier":3,"previousTier":2},{"id":10,"name":"steel ingot","resourceType":"METAL","iconPath":"./assets/sprites/steel_ingot.png","amount":0,"amountTravelling":0,"resourceConsumes":[{"resourceId":6,"cost":2}],"harvestable":true,"harvestYield":1,"harvestMilliseconds":4000,"workerYield":1,"sellable":true,"resourceBeingStolen":false,"sellsFor":40,"autoSellCutoff":0,"resourceDescription":"Refined and purified iron.","workerVerb":"Forges","workerNoun":"steel ingot","resourceAccessible":false,"resourceTier":4,"previousTier":3},{"id":11,"name":"gold ore","resourceType":"METAL","iconPath":"./assets/sprites/gold_ore.png","amount":0,"amountTravelling":0,"resourceConsumes":[],"harvestable":false,"pathAvailable":false,"harvestYield":1,"harvestMilliseconds":2500,"workerYield":1,"sellable":true,"resourceBeingStolen":false,"sellsFor":35,"autoSellCutoff":0,"resourceDescription":"Unrefined extracts of gold.","workerVerb":"Mines","workerNoun":"gold","resourceAccessible":false,"resourceTier":3,"previousTier":2},{"id":12,"name":"gold ingot","resourceType":"METAL","iconPath":"./assets/sprites/gold_ingot.png","amount":0,"amountTravelling":0,"resourceConsumes":[{"resourceId":11,"cost":1}],"harvestable":true,"harvestYield":1,"harvestMilliseconds":4000,"workerYield":1,"sellable":true,"resourceBeingStolen":false,"sellsFor":55,"autoSellCutoff":0,"resourceDescription":"Highly valuable and malleable.","workerVerb":"Forges","workerNoun":"gold ingot","resourceAccessible":false,"resourceTier":4,"previousTier":3},{"id":18,"name":"latinum ore","resourceType":"METAL","iconPath":"./assets/sprites/latinum_ore.png","amount":0,"amountTravelling":0,"resourceConsumes":[],"harvestable":false,"pathAvailable":false,"harvestYield":1,"harvestMilliseconds":4500,"workerYield":1,"sellable":true,"resourceBeingStolen":false,"sellsFor":65,"autoSellCutoff":0,"resourceDescription":"Said to be highly valued by indivudals with large ears.","workerVerb":"Mines","workerNoun":"latinum ore","resourceAccessible":false,"resourceTier":4,"previousTier":3},{"id":19,"name":"latinum ingot","resourceType":"METAL","iconPath":"./assets/sprites/latinum_ingot.png","amount":0,"amountTravelling":0,"resourceConsumes":[{"resourceId":10,"cost":1},{"resourceId":12,"cost":1},{"resourceId":18,"cost":1}],"harvestable":true,"harvestYield":1,"harvestMilliseconds":5000,"workerYield":1,"sellable":true,"resourceBeingStolen":false,"sellsFor":85,"autoSellCutoff":0,"resourceDescription":"QUARK!!!","workerVerb":"Forges","workerNoun":"latinum ingot","resourceAccessible":false,"resourceTier":5,"previousTier":4},{"id":20,"name":"unbelievium ore","resourceType":"METAL","iconPath":"./assets/sprites/unbelievium_ore.png","amount":0,"amountTravelling":0,"resourceConsumes":[],"harvestable":false,"pathAvailable":false,"harvestYield":1,"harvestMilliseconds":5500,"workerYield":1,"sellable":true,"resourceBeingStolen":false,"sellsFor":100,"autoSellCutoff":0,"resourceDescription":"I can't believe it's not unobtainium!","workerVerb":"Mines","workerNoun":"unbelievium ore","resourceAccessible":false,"resourceTier":5,"previousTier":4},{"id":21,"name":"lustrial ore","resourceType":"METAL","iconPath":"./assets/sprites/lustrial_ore.png","amount":0,"amountTravelling":0,"resourceConsumes":[],"harvestable":false,"pathAvailable":false,"harvestYield":1,"harvestMilliseconds":5500,"workerYield":1,"sellable":true,"resourceBeingStolen":false,"sellsFor":100,"autoSellCutoff":0,"resourceDescription":"Even in its unrefined form, it shines as bright as the sun.","workerVerb":"Mines","workerNoun":"lustrial ore","resourceAccessible":false,"resourceTier":5,"previousTier":4},{"id":22,"name":"spectrus ore","resourceType":"METAL","iconPath":"./assets/sprites/spectrus_ore.png","amount":0,"amountTravelling":0,"resourceConsumes":[],"harvestable":false,"pathAvailable":false,"harvestYield":1,"harvestMilliseconds":5500,"workerYield":1,"sellable":true,"resourceBeingStolen":false,"sellsFor":100,"autoSellCutoff":0,"resourceDescription":"A peculiar energy eminates from the rock...","workerVerb":"Mines","workerNoun":"spectrus ore","resourceAccessible":false,"resourceTier":5,"previousTier":4},{"id":23,"name":"temprous ingot","resourceType":"METAL","iconPath":"./assets/sprites/temprous_ingot.png","amount":0,"amountTravelling":0,"resourceConsumes":[{"resourceId":19,"cost":2},{"resourceId":20,"cost":2},{"resourceId":21,"cost":2},{"resourceId":22,"cost":2}],"harvestable":true,"harvestYield":1,"harvestMilliseconds":8000,"workerYield":1,"sellable":true,"resourceBeingStolen":false,"sellsFor":175,"autoSellCutoff":0,"resourceDescription":"Could this metal hold the secret of time itself?","workerVerb":"Forges","workerNoun":"temprous ingot","resourceAccessible":false,"resourceTier":6,"previousTier":5},{"id":24,"name":"refined temprous","resourceType":"METAL","iconPath":"./assets/sprites/refined_temprous.png","amount":0,"amountTravelling":0,"resourceConsumes":[{"resourceId":23,"cost":15},{"resourceId":31,"cost":30}],"harvestable":true,"harvestYield":1,"harvestMilliseconds":15000,"workerYield":1,"sellable":true,"resourceBeingStolen":false,"sellsFor":350,"autoSellCutoff":0,"resourceDescription":"Memories of ages past imbue the metal with seemingly endless power.","workerVerb":"Refines","workerNoun":"temprous ingot","resourceAccessible":false,"resourceTier":7,"previousTier":6}];
+module.exports = {"GOLD":{"name":"Gold","resourceType":"CURRENCY","resourceEnum":"GOLD","iconPath":"./assets/sprites/coin.png","amount":0,"amountTravelling":0,"resourceConsumes":[],"harvestable":false,"pathAvailable":false,"sellable":false,"autoSellCutoff":0,"resourceDescription":"Shiny and valuable.","workerVerb":"","workerNoun":"","resourceAccessible":true,"resourceTier":0,"harvestYield":0,"harvestMilliseconds":0,"workerYield":0,"resourceBeingStolen":false,"sellsFor":0},"OAK":{"name":"Oak","resourceType":"WOOD","resourceEnum":"OAK","iconPath":"./assets/sprites/oak.png","amount":0,"amountTravelling":0,"resourceConsumes":[],"harvestable":true,"harvestYield":1,"harvestMilliseconds":1000,"workerYield":1,"sellable":true,"resourceBeingStolen":false,"sellsFor":10,"autoSellCutoff":0,"resourceDescription":"Sturdy oak logs.","workerVerb":"Fells","workerNoun":"oak tree","resourceAccessible":true,"resourceTier":0},"PINE":{"name":"Pine","resourceType":"WOOD","resourceEnum":"PINE","iconPath":"./assets/sprites/pine.png","amount":0,"amountTravelling":0,"resourceConsumes":[],"harvestable":false,"pathAvailable":false,"harvestYield":1,"harvestMilliseconds":1250,"workerYield":1,"sellable":true,"resourceBeingStolen":false,"sellsFor":12,"autoSellCutoff":0,"resourceDescription":"Strong pine logs.","workerVerb":"Fells","workerNoun":"pine tree","resourceAccessible":false,"resourceTier":1},"BIRCH":{"name":"Birch","resourceType":"WOOD","resourceEnum":"BIRCH","iconPath":"./assets/sprites/birch.png","amount":0,"amountTravelling":0,"resourceConsumes":[],"harvestable":false,"pathAvailable":false,"harvestYield":1,"harvestMilliseconds":1500,"workerYield":1,"sellable":true,"resourceBeingStolen":false,"sellsFor":15,"autoSellCutoff":0,"resourceDescription":"Sometimes it feels like it's watching you...","workerVerb":"Fells","workerNoun":"birch tree","resourceAccessible":false,"resourceTier":2},"EUCALYPTUS":{"name":"Eucalyptus","resourceType":"WOOD","resourceEnum":"EUCALYPTUS","iconPath":"./assets/sprites/eucalyptus.png","amount":0,"amountTravelling":0,"resourceConsumes":[],"harvestable":false,"pathAvailable":false,"harvestYield":1,"harvestMilliseconds":2000,"workerYield":1,"sellable":true,"resourceBeingStolen":false,"sellsFor":20,"autoSellCutoff":0,"resourceDescription":"Logs as strong as their name is long.","workerVerb":"Fells","workerNoun":"eucalyptus tree","resourceAccessible":false,"resourceTier":3},"WILLOW":{"name":"Willow","resourceType":"WOOD","resourceEnum":"WILLOW","iconPath":"./assets/sprites/willow.png","amount":0,"amountTravelling":0,"resourceConsumes":[],"harvestable":false,"pathAvailable":false,"harvestYield":1,"harvestMilliseconds":2500,"workerYield":1,"sellable":true,"resourceBeingStolen":false,"sellsFor":35,"autoSellCutoff":0,"resourceDescription":"The saddest tree in the forest (because you chopped down its parents).","workerVerb":"Fells","workerNoun":"willow tree","resourceAccessible":false,"resourceTier":4},"TEAK":{"name":"Teak","resourceType":"WOOD","resourceEnum":"TEAK","iconPath":"./assets/sprites/teak.png","amount":0,"amountTravelling":0,"resourceConsumes":[],"harvestable":false,"pathAvailable":false,"harvestYield":1,"harvestMilliseconds":3000,"workerYield":1,"sellable":true,"resourceBeingStolen":false,"sellsFor":40,"autoSellCutoff":0,"resourceDescription":"Bright, thin logs; surprisingly resillient considering their appearance.","workerVerb":"Fells","workerNoun":"teak tree","resourceAccessible":false,"resourceTier":5},"ENTSOUL":{"name":"Ent Soul","resourceType":"WOOD","resourceEnum":"ENTSOUL","iconPath":"./assets/sprites/ent_soul.png","amount":0,"amountTravelling":0,"resourceConsumes":[{"resourceEnum":"OAK","cost":10},{"resourceEnum":"PINE","cost":10},{"resourceEnum":"BIRCH","cost":10},{"resourceEnum":"EUCALYPTUS","cost":10},{"resourceEnum":"WILLOW","cost":10},{"resourceEnum":"TEAK","cost":10}],"harvestable":false,"pathAvailable":false,"harvestYield":1,"harvestMilliseconds":8000,"workerYield":1,"sellable":false,"resourceBeingStolen":false,"sellsFor":50,"autoSellCutoff":0,"resourceDescription":"The spirit of a long-dead ent, still contained where it last took root.","workerVerb":"Releases","workerNoun":"ent spirit","resourceAccessible":false,"resourceTier":6},"REANIMATEDENT":{"id":17,"name":"reanimated ent","resourceType":"WOOD","resourceEnum":"REANIMATEDENT","iconPath":"./assets/sprites/reanimated_ent.png","amount":0,"amountTravelling":0,"resourceConsumes":[{"resourceEnum":"ENTSOUL","cost":1}],"harvestable":false,"pathAvailable":false,"harvestYield":1,"harvestMilliseconds":20000,"workerYield":1,"sellable":false,"resourceBeingStolen":false,"sellsFor":100,"autoSellCutoff":0,"resourceDescription":"An ancient ent warrior, given life once more to fight for you.","workerVerb":"Reanimates","workerNoun":"ent","resourceAccessible":false,"resourceTier":7},"STONE":{"name":"Stone","resourceType":"MINERAL","resourceEnum":"STONE","iconPath":"./assets/sprites/stone.png","amount":0,"amountTravelling":0,"resourceConsumes":[],"harvestable":false,"pathAvailable":false,"harvestYield":1,"harvestMilliseconds":1000,"workerYield":1,"sellable":true,"resourceBeingStolen":false,"sellsFor":10,"autoSellCutoff":0,"resourceDescription":"Hard and sturdy, well suitied to basic construction projects.","workerVerb":"Mines","workerNoun":"stone","resourceAccessible":true,"resourceTier":0},"GRAPHITE":{"name":"Graphite","resourceType":"MINERAL","amount":0,"amountTravelling":0,"resourceEnum":"GRAPHITE","iconPath":"./assets/sprites/graphite.png","resourceConsumes":[],"harvestable":false,"pathAvailable":false,"harvestYield":1,"harvestMilliseconds":2500,"workerYield":1,"sellable":true,"resourceBeingStolen":false,"sellsFor":25,"autoSellCutoff":0,"resourceDescription":"A rough mineral with many uses.","workerVerb":"Mines","workerNoun":"graphite","resourceAccessible":false,"resourceTier":1},"LIMESTONE":{"name":"Limestone","resourceType":"MINERAL","amount":0,"amountTravelling":0,"resourceEnum":"LIMESTONE","iconPath":"./assets/sprites/limestone.png","resourceConsumes":[],"harvestable":false,"pathAvailable":false,"harvestYield":1,"harvestMilliseconds":3000,"workerYield":1,"sellable":true,"resourceBeingStolen":false,"sellsFor":35,"autoSellCutoff":0,"resourceDescription":"Hardened stone with a hint of lime.","workerVerb":"Mines","workerNoun":"limestone","resourceAccessible":false,"resourceTier":2},"MARBLE":{"name":"Marble","resourceType":"MINERAL","amount":0,"amountTravelling":0,"resourceEnum":"MARBLE","iconPath":"./assets/sprites/marble.png","resourceConsumes":[],"harvestable":false,"pathAvailable":false,"harvestYield":1,"harvestMilliseconds":4000,"workerYield":1,"sellable":true,"resourceBeingStolen":false,"sellsFor":50,"autoSellCutoff":0,"resourceDescription":"Beautiful, crystalline rock. Highly valued for construction projects.","workerVerb":"Mines","workerNoun":"marble","resourceAccessible":false,"resourceTier":3},"QUARTZ":{"name":"Quartz","resourceType":"MINERAL","amount":0,"amountTravelling":0,"resourceEnum":"QUARTZ","iconPath":"./assets/sprites/quartz.png","resourceConsumes":[],"harvestable":false,"pathAvailable":false,"harvestYield":1,"harvestMilliseconds":5000,"workerYield":1,"sellable":true,"resourceBeingStolen":false,"sellsFor":75,"autoSellCutoff":0,"resourceDescription":"A bright, shiny structure hides under the rock's rough surface.","workerVerb":"Mines","workerNoun":"qaurtz","resourceAccessible":false,"resourceTier":4},"OBSIDIAN":{"name":"Obsidian","resourceType":"MINERAL","amount":0,"amountTravelling":0,"resourceEnum":"OBSIDIAN","iconPath":"./assets/sprites/obsidian.png","resourceConsumes":[],"harvestable":false,"pathAvailable":false,"harvestYield":1,"harvestMilliseconds":6500,"workerYield":1,"sellable":true,"resourceBeingStolen":false,"sellsFor":125,"autoSellCutoff":0,"resourceDescription":"Hardened rock formed in the heart of a volcano.","workerVerb":"Mines","workerNoun":"obsidian","resourceAccessible":false,"resourceTier":5},"DIAMOND":{"name":"Diamond","resourceType":"MINERAL","amount":0,"amountTravelling":0,"resourceEnum":"DIAMOND","iconPath":"./assets/sprites/diamond.png","resourceConsumes":[],"harvestable":false,"pathAvailable":false,"harvestYield":1,"harvestMilliseconds":7500,"workerYield":1,"sellable":true,"resourceBeingStolen":false,"sellsFor":175,"autoSellCutoff":0,"resourceDescription":"An incredibly beautiful and tough resource.","workerVerb":"Mines","workerNoun":"diamond","resourceAccessible":false,"resourceTier":6},"COPPERORE":{"name":"Copper Ore","resourceType":"METAL","resourceEnum":"COPPERORE","iconPath":"./assets/sprites/copper_ore.png","amount":0,"amountTravelling":0,"resourceConsumes":[],"harvestable":false,"pathAvailable":false,"harvestYield":1,"harvestMilliseconds":1250,"workerYield":1,"sellable":true,"resourceBeingStolen":false,"sellsFor":10,"autoSellCutoff":0,"resourceDescription":"Can be forged into bronze along with tin.","workerVerb":"Mines","workerNoun":"copper ore","resourceAccessible":true,"resourceTier":0},"TINORE":{"name":"Tin Ore","resourceType":"METAL","resourceEnum":"TINORE","iconPath":"./assets/sprites/tin_ore.png","amount":0,"amountTravelling":0,"resourceConsumes":[],"harvestable":false,"pathAvailable":false,"harvestYield":1,"harvestMilliseconds":1250,"workerYield":1,"sellable":true,"resourceBeingStolen":false,"sellsFor":10,"autoSellCutoff":0,"resourceDescription":"Can be forged into bronze along with copper.","workerVerb":"Mines","workerNoun":"tin ore","resourceAccessible":true,"resourceTier":0},"BRONZEINGOT":{"name":"Bronze Ingot","resourceType":"METAL","resourceEnum":"BRONZEINGOT","iconPath":"./assets/sprites/bronze_ingot.png","amount":0,"amountTravelling":0,"resourceConsumes":[{"resourceEnum":"COPPERORE","cost":1},{"resourceEnum":"TINORE","cost":1}],"harvestable":true,"harvestYield":1,"harvestMilliseconds":2000,"workerYield":1,"sellable":true,"resourceBeingStolen":false,"sellsFor":15,"autoSellCutoff":0,"resourceDescription":"Somewhat brittle ingots.","workerVerb":"Forges","workerNoun":"bronze ingot","resourceAccessible":false,"resourceTier":1},"IRONORE":{"name":"Iron Ore","resourceType":"METAL","resourceEnum":"IRONORE","iconPath":"./assets/sprites/iron_ore.png","amount":0,"amountTravelling":0,"resourceConsumes":[],"harvestable":false,"pathAvailable":false,"harvestYield":1,"harvestMilliseconds":2000,"workerYield":1,"sellable":true,"resourceBeingStolen":false,"sellsFor":20,"autoSellCutoff":0,"resourceDescription":"Unrefined extracts of iron.","workerVerb":"Mines","workerNoun":"iron ore","resourceAccessible":false,"resourceTier":2},"IRONINGOT":{"name":"Iron Ingot","resourceType":"METAL","resourceEnum":"IRONINGOT","iconPath":"./assets/sprites/iron_ingot.png","amount":0,"amountTravelling":0,"resourceConsumes":[{"resourceEnum":"IRONORE","cost":1}],"harvestable":true,"harvestYield":1,"harvestMilliseconds":3000,"workerYield":1,"sellable":true,"resourceBeingStolen":false,"sellsFor":25,"autoSellCutoff":0,"resourceDescription":"Dim but sturdy ingots.","workerVerb":"Forges","workerNoun":"iron ingot","resourceAccessible":false,"resourceTier":3},"STEELINGOT":{"name":"Steel Ingot","resourceType":"METAL","resourceEnum":"STEELINGOT","iconPath":"./assets/sprites/steel_ingot.png","amount":0,"amountTravelling":0,"resourceConsumes":[{"resourceEnum":"IRONINGOT","cost":2}],"harvestable":true,"harvestYield":1,"harvestMilliseconds":4000,"workerYield":1,"sellable":true,"resourceBeingStolen":false,"sellsFor":40,"autoSellCutoff":0,"resourceDescription":"Refined and purified iron.","workerVerb":"Forges","workerNoun":"steel ingot","resourceAccessible":false,"resourceTier":4},"GOLDORE":{"name":"Gold Ore","resourceType":"METAL","resourceEnum":"GOLDORE","iconPath":"./assets/sprites/gold_ore.png","amount":0,"amountTravelling":0,"resourceConsumes":[],"harvestable":false,"pathAvailable":false,"harvestYield":1,"harvestMilliseconds":2500,"workerYield":1,"sellable":true,"resourceBeingStolen":false,"sellsFor":35,"autoSellCutoff":0,"resourceDescription":"Unrefined extracts of gold.","workerVerb":"Mines","workerNoun":"gold","resourceAccessible":false,"resourceTier":3},"GOLDINGOT":{"id":12,"name":"gold ingot","resourceType":"METAL","resourceEnum":"GOLDINGOT","iconPath":"./assets/sprites/gold_ingot.png","amount":0,"amountTravelling":0,"resourceConsumes":[{"resourceEnum":"GOLDORE","cost":1}],"harvestable":true,"harvestYield":1,"harvestMilliseconds":4000,"workerYield":1,"sellable":true,"resourceBeingStolen":false,"sellsFor":55,"autoSellCutoff":0,"resourceDescription":"Highly valuable and malleable.","workerVerb":"Forges","workerNoun":"gold ingot","resourceAccessible":false,"resourceTier":4},"LATINUMORE":{"name":"Latinum Ore","resourceType":"METAL","resourceEnum":"LATINUMORE","iconPath":"./assets/sprites/latinum_ore.png","amount":0,"amountTravelling":0,"resourceConsumes":[],"harvestable":false,"pathAvailable":false,"harvestYield":1,"harvestMilliseconds":4500,"workerYield":1,"sellable":true,"resourceBeingStolen":false,"sellsFor":65,"autoSellCutoff":0,"resourceDescription":"Said to be highly valued by indivudals with large ears.","workerVerb":"Mines","workerNoun":"latinum ore","resourceAccessible":false,"resourceTier":4},"LATINUMINGOT":{"name":"Latinum Ingot","resourceType":"METAL","resourceEnum":"LATINUMINGOT","iconPath":"./assets/sprites/latinum_ingot.png","amount":0,"amountTravelling":0,"resourceConsumes":[{"resourceEnum":"STEELINGOT","cost":1},{"resourceEnum":"GOLDINGOT","cost":1},{"resourceEnum":"LATINUMORE","cost":1}],"harvestable":true,"harvestYield":1,"harvestMilliseconds":5000,"workerYield":1,"sellable":true,"resourceBeingStolen":false,"sellsFor":85,"autoSellCutoff":0,"resourceDescription":"QUARK!!!","workerVerb":"Forges","workerNoun":"latinum ingot","resourceAccessible":false,"resourceTier":5},"UNBELIEVIUMORE":{"name":"Unbelievium Ore","resourceType":"METAL","resourceEnum":"UNBELIEVIUMORE","iconPath":"./assets/sprites/unbelievium_ore.png","amount":0,"amountTravelling":0,"resourceConsumes":[],"harvestable":false,"pathAvailable":false,"harvestYield":1,"harvestMilliseconds":5500,"workerYield":1,"sellable":true,"resourceBeingStolen":false,"sellsFor":100,"autoSellCutoff":0,"resourceDescription":"I can't believe it's not unobtainium!","workerVerb":"Mines","workerNoun":"unbelievium ore","resourceAccessible":false,"resourceTier":5},"LUSTRIALORE":{"name":"Lustrial Ore","resourceType":"METAL","resourceEnum":"LUSTRIALORE","iconPath":"./assets/sprites/lustrial_ore.png","amount":0,"amountTravelling":0,"resourceConsumes":[],"harvestable":false,"pathAvailable":false,"harvestYield":1,"harvestMilliseconds":5500,"workerYield":1,"sellable":true,"resourceBeingStolen":false,"sellsFor":100,"autoSellCutoff":0,"resourceDescription":"Even in its unrefined form, it shines as bright as the sun.","workerVerb":"Mines","workerNoun":"lustrial ore","resourceAccessible":false,"resourceTier":5},"SPECTRUSORE":{"name":"Spectrus Ore","resourceType":"METAL","resourceEnum":"SPECTRUSORE","iconPath":"./assets/sprites/spectrus_ore.png","amount":0,"amountTravelling":0,"resourceConsumes":[],"harvestable":false,"pathAvailable":false,"harvestYield":1,"harvestMilliseconds":5500,"workerYield":1,"sellable":true,"resourceBeingStolen":false,"sellsFor":100,"autoSellCutoff":0,"resourceDescription":"A peculiar energy eminates from the rock...","workerVerb":"Mines","workerNoun":"spectrus ore","resourceAccessible":false,"resourceTier":5},"TEMPROUSINGOT":{"name":"Temprous Ingot","resourceType":"METAL","resourceEnum":"TEMPROUSINGOT","iconPath":"./assets/sprites/temprous_ingot.png","amount":0,"amountTravelling":0,"resourceConsumes":[{"resourceEnum":"LATINUMINGOT","cost":2},{"resourceEnum":"UNBELIEVIUMORE","cost":2},{"resourceEnum":"LUSTRIALORE","cost":2},{"resourceEnum":"SPECTRUSORE","cost":2}],"harvestable":true,"harvestYield":1,"harvestMilliseconds":8000,"workerYield":1,"sellable":true,"resourceBeingStolen":false,"sellsFor":175,"autoSellCutoff":0,"resourceDescription":"Could this metal hold the secret of time itself?","workerVerb":"Forges","workerNoun":"temprous ingot","resourceAccessible":false,"resourceTier":6},"REFINEDTEMPROUS":{"name":"Refined Temprous","resourceType":"METAL","resourceEnum":"REFINEDTEMPROUS","iconPath":"./assets/sprites/refined_temprous.png","amount":0,"amountTravelling":0,"resourceConsumes":[{"resourceEnum":"TEMPROUSINGOT","cost":15},{"resourceEnum":"DIAMOND","cost":30}],"harvestable":true,"harvestYield":1,"harvestMilliseconds":15000,"workerYield":1,"sellable":true,"resourceBeingStolen":false,"sellsFor":350,"autoSellCutoff":0,"resourceDescription":"Memories of ages past imbue the metal with seemingly endless power.","workerVerb":"Refines","workerNoun":"temprous ingot","resourceAccessible":false,"resourceTier":7}};
 
 /***/ }),
 
@@ -6206,7 +5927,7 @@ module.exports = [{"id":0,"name":"gold","resourceType":"CURRENCY","iconPath":"./
 /*! exports provided: tileTypes, mapTiles, buildingTiles, resourceTiles, default */
 /***/ (function(module) {
 
-module.exports = {"tileTypes":{"1":"GRASS","2":"WATER","3":"MOUNTAIN","5":"OAKTREE","6":"PINETREE","7":"BIRCHTREE","8":"EUCALYPTUSTREE","9":"WILLOWTREE","10":"TEAKTREE","11":"DEADENT","12":"STONEMINE","13":"GRAPHITEMINE","14":"LIMESTONEMINE","15":"MARBLEMINE","16":"QUARTZMINE","17":"OBSIDIANMINE","18":"DIAMONDMINE","19":"COPPERMINE","20":"TINMINE","21":"IRONMINE","22":"GOLDMINE","23":"LATINUMMINE","24":"UNBELIEVIUMMINE","25":"LUSTRIALMINE","26":"SPECTRUSMINE","27":"CRACKEDFORGE","28":"STONEFORGE","29":"IRONFORGE","30":"GOLDFORGE","31":"LATINUMFORGE","32":"TEMPROUSDISTILLERY","69":"HOME","70":"WALL","71":"ROAD","72":"BRIDGE","73":"ENEMYPORTAL","74":"WOODMARKET","75":"MINERALMARKET","76":"METALMARKET"},"mapTiles":{"GRASS":{"tileType":"GRASS","name":"Grass","walkable":true},"WATER":{"tileType":"WATER","name":"Water","walkable":false},"MOUNTAIN":{"tileType":"MOUNTAIN","name":"Mountain","walkable":false}},"buildingTiles":{"HOME":{"tileType":"HOME","subType":"MISC","name":"Home","description":"","placeable":false,"maxPlaceable":1,"baseHealth":50,"resourceCosts":[],"buildableSurfaces":[],"resourcePathable":true},"WALL":{"tileType":"WALL","subType":"MISC","name":"Wall","description":"Keeps invaders out.","placeable":true,"maxPlaceable":-1,"baseHealth":50,"repairResource":1,"repairCostPerPoint":0.2,"resourceCosts":[{"resourceId":1,"resourceCost":20}],"buildableSurfaces":["GRASS"],"resourcePathable":false},"ROAD":{"tileType":"ROAD","subType":"MISC","name":"Road","description":"Allows access between buildings.","placeable":true,"maxPlaceable":-1,"baseHealth":50,"repairResource":13,"repairCostPerPoint":0.2,"resourceCosts":[{"resourceId":13,"resourceCost":20}],"buildableSurfaces":["GRASS"],"resourcePathable":true},"BRIDGE":{"tileType":"BRIDGE","subType":"MISC","name":"Bridge","description":"Allows access between islands.","placeable":true,"maxPlaceable":-1,"baseHealth":50,"repairResource":7,"repairCostPerPoint":0.25,"resourceCosts":[{"resourceId":7,"resourceCost":40}],"buildableSurfaces":["WATER"],"resourcePathable":true},"CRACKEDFORGE":{"tileType":"CRACKEDFORGE","subType":"RESOURCE","name":"Cracked Forge","description":"An old, weary forge. Bronze ingots are probably all this thing is capable of producing.","placeable":true,"maxPlaceable":-1,"baseHealth":50,"repairResource":0,"repairCostPerPoint":1,"upgradeBuilding":"STONEFORGE","resourceCosts":[{"resourceId":0,"resourceCost":150}],"buildableSurfaces":["GRASS"],"placesResourceTile":true,"resourceTileType":"CRACKEDFORGE","resourcePathable":true},"STONEFORGE":{"tileType":"STONEFORGE","subType":"RESOURCE","name":"Stone Forge","description":"This forge burns hotter, allowing you to create more precious ingots.","placeable":false,"maxPlaceable":-1,"baseHealth":75,"repairResource":13,"repairCostPerPoint":0.3,"upgradeBuilding":"IRONFORGE","resourceCosts":[{"resourceId":0,"resourceCost":150},{"resourceId":13,"resourceCost":50},{"resourceId":7,"resourceCost":75},{"resourceId":4,"resourceCost":20}],"buildableSurfaces":["GRASS"],"placesResourceTile":true,"resourceTileType":"STONEFORGE","resourcePathable":true},"IRONFORGE":{"tileType":"IRONFORGE","subType":"RESOURCE","name":"Iron Forge","description":"This forge burns hotter, allowing you to create more precious ingots.","placeable":false,"maxPlaceable":-1,"baseHealth":125,"repairResource":6,"repairCostPerPoint":0.3,"upgradeBuilding":"GOLDFORGE","resourceCosts":[{"resourceId":6,"resourceCost":500},{"resourceId":9,"resourceCost":700},{"resourceId":28,"resourceCost":250}],"buildableSurfaces":["GRASS"],"placesResourceTile":true,"resourceTileType":"IRONFORGE","resourcePathable":true},"GOLDFORGE":{"tileType":"GOLDFORGE","subType":"RESOURCE","name":"Gold Forge","description":"For reasons unknown to science, gold forges are particularly effective in forging latinum.","placeable":false,"maxPlaceable":-1,"baseHealth":150,"repairResource":11,"repairCostPerPoint":0.35,"upgradeBuilding":"LATINUMFORGE","resourceCosts":[{"resourceId":12,"resourceCost":1200},{"resourceId":15,"resourceCost":1500},{"resourceId":29,"resourceCost":250}],"buildableSurfaces":["GRASS"],"placesResourceTile":true,"resourceTileType":"GOLDFORGE","resourcePathable":true},"LATINUMFORGE":{"tileType":"LATINUMFORGE","subType":"RESOURCE","name":"Latinum Forge","description":"A forge that burns hot enough to fuse together the world's most precious and rare metals.","placeable":false,"maxPlaceable":-1,"baseHealth":200,"repairResource":19,"repairCostPerPoint":0.5,"upgradeBuilding":"TEMPROUSDISTILLERY","resourceCosts":[{"resourceId":19,"resourceCost":2500},{"resourceId":25,"resourceCost":1500},{"resourceId":30,"resourceCost":700}],"buildableSurfaces":["GRASS"],"placesResourceTile":true,"resourceTileType":"LATINUMFORGE","resourcePathable":true},"TEMPROUSDISTILLERY":{"tileType":"TEMPROUSDISTILLERY","subType":"RESOURCE","name":"Temprous Distillery","description":"With this device, all impurities can be removed from temprous ingots, unlocking their limitless potential.","placeable":false,"maxPlaceable":-1,"baseHealth":350,"repairResource":23,"repairCostPerPoint":0.65,"resourceCosts":[{"resourceId":23,"resourceCost":5000},{"resourceId":16,"resourceCost":500},{"resourceId":31,"resourceCost":1200}],"buildableSurfaces":["GRASS"],"placesResourceTile":true,"resourceTileType":"TEMPROUSDISTILLERY","resourcePathable":true},"WOODMARKET":{"tileType":"WOODMARKET","subType":"MARKET","name":"Wood Market","description":"A marketstand that automatically collects and sells wood resources. (Only one may be placed at a time.)","placeable":true,"maxPlaceable":1,"baseHealth":50,"repairResource":0,"repairCostPerPoint":1,"resourceCosts":[{"resourceId":0,"resourceCost":150}],"buildableSurfaces":["GRASS"],"placesResourceTile":false,"resourcePathable":true},"MINERALMARKET":{"tileType":"MINERALMARKET","subType":"MARKET","name":"Mineral Market","description":"A marketstand that automatically collects and sells mineral resources. (Only one may be placed at a time.)","placeable":true,"maxPlaceable":1,"baseHealth":50,"repairResource":0,"repairCostPerPoint":1,"resourceCosts":[{"resourceId":0,"resourceCost":150}],"buildableSurfaces":["GRASS"],"placesResourceTile":false,"resourcePathable":true},"METALMARKET":{"tileType":"METALMARKET","subType":"MARKET","name":"Metal Market","description":"A marketstand that automatically collects and sells metal resources. (Only one may be placed at a time.)","placeable":true,"maxPlaceable":1,"baseHealth":50,"repairResource":0,"repairCostPerPoint":1,"resourceCosts":[{"resourceId":0,"resourceCost":150}],"buildableSurfaces":["GRASS"],"placesResourceTile":false,"resourcePathable":true},"ENEMYPORTAL":{"tileType":"ENEMYPORTAL","subType":"MISC","name":"Enemy Portal","baseHealth":50,"description":"","placeable":false,"maxPlaceable":-1,"resourceCosts":[],"buildableSurfaces":[],"resourcePathable":true}},"resourceTiles":{"OAKTREE":{"tileType":"OAKTREE","name":"Oak Tree","placeable":false,"resourceIds":[1]},"PINETREE":{"tileType":"PINETREE","name":"Pine Tree","placeable":false,"resourceIds":[7]},"BIRCHTREE":{"tileType":"BIRCHTREE","name":"Birch Tree","placeable":false,"resourceIds":[8]},"EUCALYPTUSTREE":{"tileType":"EUCALYPTUSTREE","name":"Eucalptus Tree","placeable":false,"resourceIds":[9]},"WILLOWTREE":{"tileType":"WILLOWTREE","name":"Willow Tree","placeable":false,"resourceIds":[15]},"TEAKTREE":{"tileType":"TEAKTREE","name":"Teak Tree","placeable":false,"resourceIds":[25]},"DEADENT":{"tileType":"DEADENT","name":"Dead Ent","placeable":false,"resourceIds":[16,17]},"STONEMINE":{"tileType":"STONEMINE","name":"Stone Mine","placeable":false,"resourceIds":[13]},"GRAPHITEMINE":{"tileType":"GRAPHITEMINE","name":"Graphite Mine","placeable":false,"resourceIds":[26]},"LIMESTONEMINE":{"tileType":"LIMESTONEMINE","name":"Limestone Mine","placeable":false,"resourceIds":[27]},"MARBLEMINE":{"tileType":"MARBLEMINE","name":"Marble Mine","placeable":false,"resourceIds":[28]},"QUARTZMINE":{"tileType":"QUARTZMINE","name":"Quartz Mine","placeable":false,"resourceIds":[29]},"OBSIDIANMINE":{"tileType":"OBSIDIANMINE","name":"Obsidian Mine","placeable":false,"resourceIds":[30]},"DIAMONDMINE":{"tileType":"DIAMONDMINE","name":"Diamond Mine","placeable":false,"resourceIds":[31]},"COPPERMINE":{"tileType":"COPPERMINE","name":"Copper Mine","placeable":false,"resourceIds":[2]},"TINMINE":{"tileType":"TINMINE","name":"Tin Mine","placeable":false,"resourceIds":[3]},"IRONMINE":{"tileType":"IRONMINE","name":"Iron Mine","placeable":false,"resourceIds":[5]},"GOLDMINE":{"tileType":"GOLDMINE","name":"Gold Mine","placeable":false,"resourceIds":[11]},"LATINUMMINE":{"tileType":"LATINUMMINE","name":"Latinum Mine","placeable":false,"resourceIds":[18]},"UNBELIEVIUMMINE":{"tileType":"UNBELIEVIUMMINE","name":"Unbelievium Mine","placeable":false,"resourceIds":[20]},"LUSTRIALMINE":{"tileType":"LUSTRIALMINE","name":"Lustrial Mine","placeable":false,"resourceIds":[21]},"SPECTRUSMINE":{"tileType":"SPECTRUSMINE","name":"Spectrus Mine","placeable":false,"resourceIds":[22]},"CRACKEDFORGE":{"tileType":"CRACKEDFORGE","name":"Cracked Forge","placeable":true,"resourceIds":[4]},"STONEFORGE":{"tileType":"STONEFORGE","name":"Stone Forge","placeable":true,"resourceIds":[4,6]},"IRONFORGE":{"tileType":"IRONFORGE","name":"Iron Forge","placeable":true,"resourceIds":[4,6,10,12]},"GOLDFORGE":{"tileType":"GOLDFORGE","name":"Gold Forge","placeable":true,"resourceIds":[4,6,10,12,19]},"LATINUMFORGE":{"tileType":"LATINUMFORGE","name":"Latinum Forge","placeable":true,"resourceIds":[4,6,10,12,19,23]},"TEMPROUSDISTILLERY":{"tileType":"TEMPROUSDISTILLERY","name":"Temprous Distillery","placeable":true,"resourceIds":[4,6,10,12,19,23,24]}}};
+module.exports = {"tileTypes":{"1":"GRASS","2":"WATER","3":"MOUNTAIN","5":"OAKTREE","6":"PINETREE","7":"BIRCHTREE","8":"EUCALYPTUSTREE","9":"WILLOWTREE","10":"TEAKTREE","11":"DEADENT","12":"STONEMINE","13":"GRAPHITEMINE","14":"LIMESTONEMINE","15":"MARBLEMINE","16":"QUARTZMINE","17":"OBSIDIANMINE","18":"DIAMONDMINE","19":"COPPERMINE","20":"TINMINE","21":"IRONMINE","22":"GOLDMINE","23":"LATINUMMINE","24":"UNBELIEVIUMMINE","25":"LUSTRIALMINE","26":"SPECTRUSMINE","27":"CRACKEDFORGE","28":"STONEFORGE","29":"IRONFORGE","30":"GOLDFORGE","31":"LATINUMFORGE","32":"TEMPROUSDISTILLERY","69":"HOME","70":"WALL","71":"ROAD","72":"BRIDGE","73":"ENEMYPORTAL","74":"WOODMARKET","75":"MINERALMARKET","76":"METALMARKET"},"mapTiles":{"GRASS":{"tileType":"GRASS","name":"Grass","walkable":true},"WATER":{"tileType":"WATER","name":"Water","walkable":false},"MOUNTAIN":{"tileType":"MOUNTAIN","name":"Mountain","walkable":false}},"buildingTiles":{"HOME":{"tileType":"HOME","subType":"MISC","name":"Home","description":"","placeable":false,"maxPlaceable":1,"baseHealth":50,"resourceCosts":[],"buildableSurfaces":[],"resourcePathable":true},"WALL":{"tileType":"WALL","subType":"MISC","name":"Wall","description":"Keeps invaders out.","placeable":true,"maxPlaceable":-1,"baseHealth":50,"repairResource":"OAK","repairCostPerPoint":0.2,"resourceCosts":[{"resourceEnum":"OAK","resourceCost":20}],"buildableSurfaces":["GRASS"],"resourcePathable":false},"ROAD":{"tileType":"ROAD","subType":"MISC","name":"Road","description":"Allows access between buildings.","placeable":true,"maxPlaceable":-1,"baseHealth":50,"repairResource":"STONE","repairCostPerPoint":0.2,"resourceCosts":[{"resourceEnum":"STONE","resourceCost":20}],"buildableSurfaces":["GRASS"],"resourcePathable":true},"BRIDGE":{"tileType":"BRIDGE","subType":"MISC","name":"Bridge","description":"Allows access between islands.","placeable":true,"maxPlaceable":-1,"baseHealth":50,"repairResource":"PINE","repairCostPerPoint":0.25,"resourceCosts":[{"resourceEnum":"PINE","resourceCost":40}],"buildableSurfaces":["WATER"],"resourcePathable":true},"CRACKEDFORGE":{"tileType":"CRACKEDFORGE","subType":"RESOURCE","name":"Cracked Forge","description":"An old, weary forge. Bronze ingots are probably all this thing is capable of producing.","placeable":true,"maxPlaceable":-1,"baseHealth":50,"repairResource":"GOLD","repairCostPerPoint":1,"upgradeBuilding":"STONEFORGE","resourceCosts":[{"resourceEnum":"GOLD","resourceCost":150}],"buildableSurfaces":["GRASS"],"placesResourceTile":true,"resourceTileType":"CRACKEDFORGE","resourcePathable":true},"STONEFORGE":{"tileType":"STONEFORGE","subType":"RESOURCE","name":"Stone Forge","description":"This forge burns hotter, allowing you to create more precious ingots.","placeable":false,"maxPlaceable":-1,"baseHealth":75,"repairResource":"GOLD","repairCostPerPoint":0.3,"upgradeBuilding":"IRONFORGE","resourceCosts":[{"resourceEnum":"GOLD","resourceCost":150},{"resourceEnum":"STONE","resourceCost":50},{"resourceEnum":"PINE","resourceCost":75},{"resourceEnum":"BRONZEINGOT","resourceCost":20}],"buildableSurfaces":["GRASS"],"placesResourceTile":true,"resourceTileType":"STONEFORGE","resourcePathable":true},"IRONFORGE":{"tileType":"IRONFORGE","subType":"RESOURCE","name":"Iron Forge","description":"This forge burns hotter, allowing you to create more precious ingots.","placeable":false,"maxPlaceable":-1,"baseHealth":125,"repairResource":"IRONINGOT","repairCostPerPoint":0.3,"upgradeBuilding":"GOLDFORGE","resourceCosts":[{"resourceEnum":"IRONINGOT","resourceCost":500},{"resourceEnum":"EUCALYPTUS","resourceCost":700},{"resourceEnum":"MARBLE","resourceCost":250}],"buildableSurfaces":["GRASS"],"placesResourceTile":true,"resourceTileType":"IRONFORGE","resourcePathable":true},"GOLDFORGE":{"tileType":"GOLDFORGE","subType":"RESOURCE","name":"Gold Forge","description":"For reasons unknown to science, gold forges are particularly effective in forging latinum.","placeable":false,"maxPlaceable":-1,"baseHealth":150,"repairResource":"GOLDINGOT","repairCostPerPoint":0.35,"upgradeBuilding":"LATINUMFORGE","resourceCosts":[{"resourceEnum":"GOLDINGOT","resourceCost":1200},{"resourceEnum":"WILLOW","resourceCost":1500},{"resourceEnum":"QUARTZ","resourceCost":250}],"buildableSurfaces":["GRASS"],"placesResourceTile":true,"resourceTileType":"GOLDFORGE","resourcePathable":true},"LATINUMFORGE":{"tileType":"LATINUMFORGE","subType":"RESOURCE","name":"Latinum Forge","description":"A forge that burns hot enough to fuse together the world's most precious and rare metals.","placeable":false,"maxPlaceable":-1,"baseHealth":200,"repairResource":"LATINUMINGOT","repairCostPerPoint":0.5,"upgradeBuilding":"TEMPROUSDISTILLERY","resourceCosts":[{"resourceEnum":"LATINUMINGOT","resourceCost":2500},{"resourceEnum":"TEAK","resourceCost":1500},{"resourceEnum":"OBSIDIAN","resourceCost":700}],"buildableSurfaces":["GRASS"],"placesResourceTile":true,"resourceTileType":"LATINUMFORGE","resourcePathable":true},"TEMPROUSDISTILLERY":{"tileType":"TEMPROUSDISTILLERY","subType":"RESOURCE","name":"Temprous Distillery","description":"With this device, all impurities can be removed from temprous ingots, unlocking their limitless potential.","placeable":false,"maxPlaceable":-1,"baseHealth":350,"repairResource":"TEMPROUSINGOT","repairCostPerPoint":0.65,"resourceCosts":[{"resourceEnum":"TEMPROUSINGOT","resourceCost":5000},{"resourceEnum":"ENTSOUL","resourceCost":500},{"resourceEnum":"DIAMOND","resourceCost":1200}],"buildableSurfaces":["GRASS"],"placesResourceTile":true,"resourceTileType":"TEMPROUSDISTILLERY","resourcePathable":true},"WOODMARKET":{"tileType":"WOODMARKET","subType":"MARKET","name":"Wood Market","description":"A marketstand that automatically collects and sells wood resources. (Only one may be placed at a time.)","placeable":true,"maxPlaceable":1,"baseHealth":50,"repairResource":"GOLD","repairCostPerPoint":1,"resourceCosts":[{"resourceEnum":"GOLD","resourceCost":150}],"buildableSurfaces":["GRASS"],"placesResourceTile":false,"resourcePathable":true},"MINERALMARKET":{"tileType":"MINERALMARKET","subType":"MARKET","name":"Mineral Market","description":"A marketstand that automatically collects and sells mineral resources. (Only one may be placed at a time.)","placeable":true,"maxPlaceable":1,"baseHealth":50,"repairResource":"GOLD","repairCostPerPoint":1,"resourceCosts":[{"resourceEnum":"GOLD","resourceCost":150}],"buildableSurfaces":["GRASS"],"placesResourceTile":false,"resourcePathable":true},"METALMARKET":{"tileType":"METALMARKET","subType":"MARKET","name":"Metal Market","description":"A marketstand that automatically collects and sells metal resources. (Only one may be placed at a time.)","placeable":true,"maxPlaceable":1,"baseHealth":50,"repairResource":"GOLD","repairCostPerPoint":1,"resourceCosts":[{"resourceEnum":"GOLD","resourceCost":150}],"buildableSurfaces":["GRASS"],"placesResourceTile":false,"resourcePathable":true},"ENEMYPORTAL":{"tileType":"ENEMYPORTAL","subType":"MISC","name":"Enemy Portal","baseHealth":50,"description":"","placeable":false,"maxPlaceable":-1,"resourceCosts":[],"buildableSurfaces":[],"resourcePathable":true}},"resourceTiles":{"OAKTREE":{"tileType":"OAKTREE","name":"Oak Tree","placeable":false,"resourceEnums":["OAK"]},"PINETREE":{"tileType":"PINETREE","name":"Pine Tree","placeable":false,"resourceEnums":["PINE"]},"BIRCHTREE":{"tileType":"BIRCHTREE","name":"Birch Tree","placeable":false,"resourceEnums":["BIRCH"]},"EUCALYPTUSTREE":{"tileType":"EUCALYPTUSTREE","name":"Eucalptus Tree","placeable":false,"resourceEnums":["EUCALYPTUS"]},"WILLOWTREE":{"tileType":"WILLOWTREE","name":"Willow Tree","placeable":false,"resourceEnums":["WILLOW"]},"TEAKTREE":{"tileType":"TEAKTREE","name":"Teak Tree","placeable":false,"resourceEnums":["TEAK"]},"DEADENT":{"tileType":"DEADENT","name":"Dead Ent","placeable":false,"resourceEnums":["ENTSOUL","REANIMATEDENT"]},"STONEMINE":{"tileType":"STONEMINE","name":"Stone Mine","placeable":false,"resourceEnums":["STONE"]},"GRAPHITEMINE":{"tileType":"GRAPHITEMINE","name":"Graphite Mine","placeable":false,"resourceEnums":["GRAPHITE"]},"LIMESTONEMINE":{"tileType":"LIMESTONEMINE","name":"Limestone Mine","placeable":false,"resourceEnums":["LIMESTONE"]},"MARBLEMINE":{"tileType":"MARBLEMINE","name":"Marble Mine","placeable":false,"resourceEnums":["MARBLE"]},"QUARTZMINE":{"tileType":"QUARTZMINE","name":"Quartz Mine","placeable":false,"resourceEnums":["QUARTZ"]},"OBSIDIANMINE":{"tileType":"OBSIDIANMINE","name":"Obsidian Mine","placeable":false,"resourceEnums":["OBSIDIAN"]},"DIAMONDMINE":{"tileType":"DIAMONDMINE","name":"Diamond Mine","placeable":false,"resourceEnums":["DIAMOND"]},"COPPERMINE":{"tileType":"COPPERMINE","name":"Copper Mine","placeable":false,"resourceEnums":["COPPERORE"]},"TINMINE":{"tileType":"TINMINE","name":"Tin Mine","placeable":false,"resourceEnums":["TINORE"]},"IRONMINE":{"tileType":"IRONMINE","name":"Iron Mine","placeable":false,"resourceEnums":["IRONORE"]},"GOLDMINE":{"tileType":"GOLDMINE","name":"Gold Mine","placeable":false,"resourceEnums":["GOLDORE"]},"LATINUMMINE":{"tileType":"LATINUMMINE","name":"Latinum Mine","placeable":false,"resourceEnums":["LATINUMORE"]},"UNBELIEVIUMMINE":{"tileType":"UNBELIEVIUMMINE","name":"Unbelievium Mine","placeable":false,"resourceEnums":["UNBELIEVIUMORE"]},"LUSTRIALMINE":{"tileType":"LUSTRIALMINE","name":"Lustrial Mine","placeable":false,"resourceEnums":["LUSTRIALORE"]},"SPECTRUSMINE":{"tileType":"SPECTRUSMINE","name":"Spectrus Mine","placeable":false,"resourceEnums":["SPECTRUSORE"]},"CRACKEDFORGE":{"tileType":"CRACKEDFORGE","name":"Cracked Forge","placeable":true,"resourceEnums":["BRONZEINGOT"]},"STONEFORGE":{"tileType":"STONEFORGE","name":"Stone Forge","placeable":true,"resourceEnums":["BRONZEINGOT","IRONINGOT"]},"IRONFORGE":{"tileType":"IRONFORGE","name":"Iron Forge","placeable":true,"resourceEnums":["BRONZEINGOT","IRONINGOT","STEELINGOT","GOLDINGOT"]},"GOLDFORGE":{"tileType":"GOLDFORGE","name":"Gold Forge","placeable":true,"resourceEnums":["BRONZEINGOT","IRONINGOT","STEELINGOT","GOLDINGOT","LATINUMINGOT"]},"LATINUMFORGE":{"tileType":"LATINUMFORGE","name":"Latinum Forge","placeable":true,"resourceEnums":["BRONZEINGOT","IRONINGOT","STEELINGOT","GOLDINGOT","TEMPROUSINGOT"]},"TEMPROUSDISTILLERY":{"tileType":"TEMPROUSDISTILLERY","name":"Temprous Distillery","placeable":true,"resourceEnums":["BRONZEINGOT","IRONINGOT","STEELINGOT","GOLDINGOT","REFINEDTEMPROUS"]}}};
 
 /***/ }),
 
@@ -6217,7 +5938,7 @@ module.exports = {"tileTypes":{"1":"GRASS","2":"WATER","3":"MOUNTAIN","5":"OAKTR
 /*! exports provided: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, default */
 /***/ (function(module) {
 
-module.exports = [{"id":0,"upgradeType":"RESOURCE","name":"Refined Iron Axe","description":"A stronger, more durable axe. Harvests 20% more wood per task.","upgradeEffects":[{"upgradeIsForWholeType":true,"resourceType":"WOOD","resourceId":1,"upgradeVariable":"HARVEST_YIELD","upgradeFactor":1.2,"maxTier":"1"}],"resourceCosts":[{"resourceId":1,"resourceCost":10},{"resourceId":6,"resourceCost":25}],"purchased":false},{"id":1,"upgradeType":"RESOURCE","name":"Twin Axes","description":"One axe in each hand means double productivity. It makes sense. Reduces wood harvesting time by 50%.","upgradeEffects":[{"upgradeIsForWholeType":true,"resourceType":"WOOD","resourceId":1,"upgradeVariable":"HARVEST_MILLISECONDS","upgradeFactor":0.5,"maxTier":"1"}],"resourceCosts":[{"resourceId":1,"resourceCost":15},{"resourceId":6,"resourceCost":35}],"purchased":false},{"id":2,"upgradeType":"RESOURCE","name":"Worn Pickaxe","description":"A basic pickaxe. Not much, but it gets the job done. Allows harvesting of basic metals and minerals.","upgradeEffects":[{"upgradeIsForWholeType":false,"resourceType":"CURRENCY","resourceId":2,"upgradeVariable":"HARVESTABILITY","upgradeFactor":1},{"upgradeIsForWholeType":false,"resourceType":"CURRENCY","resourceId":3,"upgradeVariable":"HARVESTABILITY","upgradeFactor":1},{"upgradeIsForWholeType":false,"resourceType":"CURRENCY","resourceId":13,"upgradeVariable":"HARVESTABILITY","upgradeFactor":1}],"resourceCosts":[{"resourceId":0,"resourceCost":50}],"purchased":false},{"id":3,"upgradeType":"WORKER","name":"Lumberjack's Guild","description":"Form a guild to help your workers hone their skills. Workers harvest 15% more wood.","upgradeEffects":[{"upgradeIsForWholeType":true,"resourceType":"WOOD","resourceId":1,"upgradeVariable":"WORKER_YIELD","upgradeFactor":1.15,"maxTier":2}],"resourceCosts":[{"resourceId":1,"resourceCost":20}],"purchased":false},{"id":5,"upgradeType":"RESOURCE","name":"Bronze Pickaxe","description":"A stronger and more durable pickaxe, capable of mining more valuable metals.","upgradeEffects":[{"upgradeIsForWholeType":false,"resourceType":"CURRENCY","resourceId":26,"upgradeVariable":"HARVESTABILITY","upgradeFactor":1},{"upgradeIsForWholeType":false,"resourceType":"CURRENCY","resourceId":5,"upgradeVariable":"HARVESTABILITY","upgradeFactor":1}],"resourceCosts":[{"resourceId":4,"resourceCost":5},{"resourceId":7,"resourceCost":15}],"purchased":false},{"id":6,"upgradeType":"RESOURCE","name":"Sharpened Pickaxe","description":"A highly sharpened pickaxe. Mines at a much higher rate.","upgradeEffects":[{"upgradeIsForWholeType":false,"resourceType":"CURRENCY","resourceId":2,"upgradeVariable":"HARVEST_MILLISECONDS","upgradeFactor":0.5},{"upgradeIsForWholeType":false,"resourceType":"CURRENCY","resourceId":3,"upgradeVariable":"HARVEST_MILLISECONDS","upgradeFactor":0.5},{"upgradeIsForWholeType":false,"resourceType":"CURRENCY","resourceId":5,"upgradeVariable":"HARVEST_MILLISECONDS","upgradeFactor":0.75},{"upgradeIsForWholeType":false,"resourceType":"CURRENCY","resourceId":13,"upgradeVariable":"HARVEST_MILLISECONDS","upgradeFactor":0.5},{"upgradeIsForWholeType":false,"resourceId":26,"upgradeVariable":"HARVEST_MILLISECONDS","upgradeFactor":0.75}],"resourceCosts":[{"resourceId":6,"resourceCost":20},{"resourceId":8,"resourceCost":30}],"purchased":false},{"id":8,"upgradeType":"RESOURCE","name":"Bronze Axe","description":"With this, you can bring down stronger and taller trees.","upgradeEffects":[{"upgradeIsForWholeType":true,"resourceType":"WOOD","resourceId":26,"upgradeVariable":"HARVESTABILITY","upgradeFactor":1,"maxTier":2}],"resourceCosts":[{"resourceId":4,"resourceCost":10},{"resourceId":1,"resourceCost":30}],"purchased":false},{"id":9,"upgradeType":"RESOURCE","name":"Iron Axe","description":"With this, you can bring down stronger and taller trees.","upgradeEffects":[{"upgradeIsForWholeType":true,"resourceType":"WOOD","resourceId":26,"upgradeVariable":"HARVESTABILITY","upgradeFactor":1,"maxTier":4}],"resourceCosts":[{"resourceId":6,"resourceCost":30},{"resourceId":8,"resourceCost":60}],"purchased":false},{"id":10,"upgradeType":"RESOURCE","name":"Steel Axe","description":"With this, you can bring down stronger and taller trees.","upgradeEffects":[{"upgradeIsForWholeType":true,"resourceType":"WOOD","resourceId":26,"upgradeVariable":"HARVESTABILITY","upgradeFactor":1,"maxTier":5}],"resourceCosts":[{"resourceId":10,"resourceCost":100},{"resourceId":15,"resourceCost":200}],"purchased":false},{"id":11,"upgradeType":"RESOURCE","name":"Latinum Axe","description":"An axe strong enough to free the spirits of ents from the bodies that entomb them.","upgradeEffects":[{"upgradeIsForWholeType":true,"resourceType":"WOOD","resourceId":26,"upgradeVariable":"HARVESTABILITY","upgradeFactor":1,"maxTier":6}],"resourceCosts":[{"resourceId":19,"resourceCost":500},{"resourceId":25,"resourceCost":1000},{"resourceId":29,"resourceCost":250}],"purchased":false},{"id":12,"upgradeType":"RESOURCE","name":"Temprous Staff","description":"Imbued with the power of ages past, this staff can reunite ent spirits with their former bodies, granting them new life.","upgradeEffects":[{"upgradeIsForWholeType":true,"resourceType":"WOOD","resourceId":26,"upgradeVariable":"HARVESTABILITY","upgradeFactor":1}],"resourceCosts":[{"resourceId":23,"resourceCost":1500},{"resourceId":16,"resourceCost":10},{"resourceId":31,"resourceCost":750}],"purchased":false},{"id":13,"upgradeType":"RESOURCE","name":"Iron Pickaxe","description":"A stronger and more durable pickaxe, capable of mining more valuable metals.","upgradeEffects":[{"upgradeIsForWholeType":false,"resourceType":"CURRENCY","resourceId":27,"upgradeVariable":"HARVESTABILITY","upgradeFactor":1},{"upgradeIsForWholeType":false,"resourceType":"CURRENCY","resourceId":28,"upgradeVariable":"HARVESTABILITY","upgradeFactor":1},{"upgradeIsForWholeType":false,"resourceId":11,"upgradeVariable":"HARVESTABILITY","upgradeFactor":1}],"resourceCosts":[{"resourceId":6,"resourceCost":30},{"resourceId":9,"resourceCost":45}],"purchased":false},{"id":14,"upgradeType":"RESOURCE","name":"Steel Pickaxe","description":"A stronger and more durable pickaxe, capable of mining more valuable metals.","upgradeEffects":[{"upgradeIsForWholeType":false,"resourceType":"CURRENCY","resourceId":29,"upgradeVariable":"HARVESTABILITY","upgradeFactor":1},{"upgradeIsForWholeType":false,"resourceType":"CURRENCY","resourceId":18,"upgradeVariable":"HARVESTABILITY","upgradeFactor":1},{"upgradeIsForWholeType":false,"resourceId":30,"upgradeVariable":"HARVESTABILITY","upgradeFactor":1}],"resourceCosts":[{"resourceId":10,"resourceCost":100},{"resourceId":9,"resourceCost":200}],"purchased":false},{"id":15,"upgradeType":"RESOURCE","name":"Latinum Pickaxe","description":"A stronger and more durable pickaxe, capable of mining more valuable metals.","upgradeEffects":[{"upgradeIsForWholeType":false,"resourceType":"CURRENCY","resourceId":31,"upgradeVariable":"HARVESTABILITY","upgradeFactor":1},{"upgradeIsForWholeType":false,"resourceId":20,"upgradeVariable":"HARVESTABILITY","upgradeFactor":1},{"upgradeIsForWholeType":false,"resourceId":21,"upgradeVariable":"HARVESTABILITY","upgradeFactor":1},{"upgradeIsForWholeType":false,"resourceId":22,"upgradeVariable":"HARVESTABILITY","upgradeFactor":1}],"resourceCosts":[{"resourceId":19,"resourceCost":500},{"resourceId":25,"resourceCost":800},{"resourceId":29,"resourceCost":250}],"purchased":false},{"id":20,"upgradeType":"RESOURCE","name":"Refined Steel Axe","description":"A stronger, more durable axe. Harvests 45% more wood per task.","upgradeEffects":[{"upgradeIsForWholeType":true,"resourceType":"WOOD","resourceId":1,"upgradeVariable":"HARVEST_YIELD","upgradeFactor":1.45}],"resourceCosts":[{"resourceId":15,"resourceCost":100},{"resourceId":10,"resourceCost":80}],"purchased":false},{"id":21,"upgradeType":"RESOURCE","name":"Refined Latinum Axe","description":"A stronger, more durable axe. Harvests 150% more wood per task.","upgradeEffects":[{"upgradeIsForWholeType":true,"resourceType":"WOOD","resourceId":1,"upgradeVariable":"HARVEST_YIELD","upgradeFactor":2.5}],"resourceCosts":[{"resourceId":25,"resourceCost":500},{"resourceId":19,"resourceCost":375},{"resourceId":29,"resourceCost":200}],"purchased":false},{"id":22,"upgradeType":"RESOURCE","name":"Emblem of the Ents","description":"Imbues revived ents with far greater power. Grants an extra 75% per revived ent.","upgradeEffects":[{"upgradeIsForWholeType":false,"resourceType":"WOOD","resourceId":17,"upgradeVariable":"HARVEST_YIELD","upgradeFactor":1.75}],"resourceCosts":[{"resourceId":16,"resourceCost":1000},{"resourceId":23,"resourceCost":600},{"resourceId":31,"resourceCost":425}],"purchased":false},{"id":23,"upgradeType":"RESOURCE","name":"Refined Iron Pickaxe","description":"A stronger, more durable pickaxe. Harvests 20% more material per task.","upgradeEffects":[{"upgradeIsForWholeType":false,"resourceType":"WOOD","resourceId":13,"upgradeVariable":"HARVEST_YIELD","upgradeFactor":1.2},{"upgradeIsForWholeType":false,"resourceId":26,"upgradeVariable":"HARVEST_YIELD","upgradeFactor":1.2},{"upgradeIsForWholeType":false,"resourceId":2,"upgradeVariable":"HARVEST_YIELD","upgradeFactor":1.2},{"upgradeIsForWholeType":false,"resourceId":3,"upgradeVariable":"HARVEST_YIELD","upgradeFactor":1.2},{"upgradeIsForWholeType":false,"resourceId":5,"upgradeVariable":"HARVEST_YIELD","upgradeFactor":1.2}],"resourceCosts":[{"resourceId":7,"resourceCost":25},{"resourceId":6,"resourceCost":25}],"purchased":false},{"id":24,"upgradeType":"RESOURCE","name":"Refined Steel Pickaxe","description":"A stronger, more durable pickaxe. Harvests 75% more material per task.","upgradeEffects":[{"upgradeIsForWholeType":false,"resourceType":"WOOD","resourceId":13,"upgradeVariable":"HARVEST_YIELD","upgradeFactor":1.75},{"upgradeIsForWholeType":false,"resourceId":26,"upgradeVariable":"HARVEST_YIELD","upgradeFactor":1.75},{"upgradeIsForWholeType":false,"resourceId":2,"upgradeVariable":"HARVEST_YIELD","upgradeFactor":1.75},{"upgradeIsForWholeType":false,"resourceId":3,"upgradeVariable":"HARVEST_YIELD","upgradeFactor":1.75},{"upgradeIsForWholeType":false,"resourceId":5,"upgradeVariable":"HARVEST_YIELD","upgradeFactor":1.75},{"upgradeIsForWholeType":false,"resourceType":"WOOD","resourceId":27,"upgradeVariable":"HARVEST_YIELD","upgradeFactor":1.75},{"upgradeIsForWholeType":false,"resourceId":28,"upgradeVariable":"HARVEST_YIELD","upgradeFactor":1.75},{"upgradeIsForWholeType":false,"resourceId":11,"upgradeVariable":"HARVEST_YIELD","upgradeFactor":1.75}],"resourceCosts":[{"resourceId":15,"resourceCost":150},{"resourceId":10,"resourceCost":85}],"purchased":false},{"id":25,"upgradeType":"RESOURCE","name":"Refined Latinum Pickaxe","description":"A stronger, more durable pickaxe. Harvests 200% more material per task.","upgradeEffects":[{"upgradeIsForWholeType":false,"resourceType":"WOOD","resourceId":13,"upgradeVariable":"HARVEST_YIELD","upgradeFactor":3},{"upgradeIsForWholeType":false,"resourceId":26,"upgradeVariable":"HARVEST_YIELD","upgradeFactor":3},{"upgradeIsForWholeType":false,"resourceId":2,"upgradeVariable":"HARVEST_YIELD","upgradeFactor":3},{"upgradeIsForWholeType":false,"resourceId":3,"upgradeVariable":"HARVEST_YIELD","upgradeFactor":3},{"upgradeIsForWholeType":false,"resourceId":5,"upgradeVariable":"HARVEST_YIELD","upgradeFactor":3},{"upgradeIsForWholeType":false,"resourceType":"WOOD","resourceId":27,"upgradeVariable":"HARVEST_YIELD","upgradeFactor":3},{"upgradeIsForWholeType":false,"resourceId":28,"upgradeVariable":"HARVEST_YIELD","upgradeFactor":3},{"upgradeIsForWholeType":false,"resourceId":11,"upgradeVariable":"HARVEST_YIELD","upgradeFactor":3},{"upgradeIsForWholeType":false,"resourceType":"WOOD","resourceId":29,"upgradeVariable":"HARVEST_YIELD","upgradeFactor":3},{"upgradeIsForWholeType":false,"resourceId":30,"upgradeVariable":"HARVEST_YIELD","upgradeFactor":3},{"upgradeIsForWholeType":false,"resourceId":31,"upgradeVariable":"HARVEST_YIELD","upgradeFactor":3},{"upgradeIsForWholeType":false,"resourceId":18,"upgradeVariable":"HARVEST_YIELD","upgradeFactor":3},{"upgradeIsForWholeType":false,"resourceId":20,"upgradeVariable":"HARVEST_YIELD","upgradeFactor":3},{"upgradeIsForWholeType":false,"resourceId":21,"upgradeVariable":"HARVEST_YIELD","upgradeFactor":3},{"upgradeIsForWholeType":false,"resourceId":23,"upgradeVariable":"HARVEST_YIELD","upgradeFactor":3}],"resourceCosts":[{"resourceId":25,"resourceCost":550},{"resourceId":19,"resourceCost":1000},{"resourceId":30,"resourceCost":750}],"purchased":false},{"id":26,"upgradeType":"RESOURCE","name":"Expanded Burner","description":"A larger burner for your forge, capable of smelting ores faster.","upgradeEffects":[{"upgradeIsForWholeType":false,"resourceType":"WOOD","resourceId":4,"upgradeVariable":"HARVEST_YIELD","upgradeFactor":1.2}],"resourceCosts":[{"resourceId":8,"resourceCost":25},{"resourceId":6,"resourceCost":25}],"purchased":false},{"id":27,"upgradeType":"RESOURCE","name":"Enhanced Burner","description":"A larger burner for your forge, capable of smelting ores faster.","upgradeEffects":[{"upgradeIsForWholeType":false,"resourceType":"WOOD","resourceId":4,"upgradeVariable":"HARVEST_YIELD","upgradeFactor":1.8},{"upgradeIsForWholeType":false,"resourceId":6,"upgradeVariable":"HARVEST_YIELD","upgradeFactor":1.8},{"upgradeIsForWholeType":false,"resourceId":10,"upgradeVariable":"HARVEST_YIELD","upgradeFactor":1.8}],"resourceCosts":[{"resourceId":9,"resourceCost":200},{"resourceId":6,"resourceCost":100}],"purchased":false},{"id":28,"upgradeType":"RESOURCE","name":"Refined Burner","description":"A larger burner for your forge, capable of smelting ores faster.","upgradeEffects":[{"upgradeIsForWholeType":false,"resourceType":"WOOD","resourceId":4,"upgradeVariable":"HARVEST_YIELD","upgradeFactor":2.5},{"upgradeIsForWholeType":false,"resourceId":6,"upgradeVariable":"HARVEST_YIELD","upgradeFactor":2.5},{"upgradeIsForWholeType":false,"resourceId":10,"upgradeVariable":"HARVEST_YIELD","upgradeFactor":2.5},{"upgradeIsForWholeType":false,"resourceId":12,"upgradeVariable":"HARVEST_YIELD","upgradeFactor":2.5}],"resourceCosts":[{"resourceId":15,"resourceCost":200},{"resourceId":10,"resourceCost":100}],"purchased":false},{"id":29,"upgradeType":"RESOURCE","name":"Lavish Burner","description":"A larger burner for your forge, capable of smelting ores faster.","upgradeEffects":[{"upgradeIsForWholeType":false,"resourceType":"WOOD","resourceId":4,"upgradeVariable":"HARVEST_YIELD","upgradeFactor":2.8},{"upgradeIsForWholeType":false,"resourceId":6,"upgradeVariable":"HARVEST_YIELD","upgradeFactor":2.8},{"upgradeIsForWholeType":false,"resourceId":10,"upgradeVariable":"HARVEST_YIELD","upgradeFactor":2.8},{"upgradeIsForWholeType":false,"resourceId":12,"upgradeVariable":"HARVEST_YIELD","upgradeFactor":2.8},{"upgradeIsForWholeType":false,"resourceId":19,"upgradeVariable":"HARVEST_YIELD","upgradeFactor":2.8}],"resourceCosts":[{"resourceId":25,"resourceCost":500},{"resourceId":19,"resourceCost":350}],"purchased":false},{"id":30,"upgradeType":"RESOURCE","name":"Excessive Burner","description":"Alright, you can't possibly need this much space.","upgradeEffects":[{"upgradeIsForWholeType":false,"resourceType":"WOOD","resourceId":4,"upgradeVariable":"HARVEST_YIELD","upgradeFactor":3.2},{"upgradeIsForWholeType":false,"resourceId":6,"upgradeVariable":"HARVEST_YIELD","upgradeFactor":3.2},{"upgradeIsForWholeType":false,"resourceId":10,"upgradeVariable":"HARVEST_YIELD","upgradeFactor":3.2},{"upgradeIsForWholeType":false,"resourceId":12,"upgradeVariable":"HARVEST_YIELD","upgradeFactor":3.2},{"upgradeIsForWholeType":false,"resourceId":19,"upgradeVariable":"HARVEST_YIELD","upgradeFactor":3.2},{"upgradeIsForWholeType":false,"resourceId":23,"upgradeVariable":"HARVEST_YIELD","upgradeFactor":3.2}],"resourceCosts":[{"resourceId":25,"resourceCost":1500},{"resourceId":23,"resourceCost":600}],"purchased":false},{"id":31,"upgradeType":"RESOURCE","name":"Temprous Purifier","description":"Increases the purity of temprous ingots processed by the temprous distillery.","upgradeEffects":[{"upgradeIsForWholeType":false,"resourceType":"WOOD","resourceId":24,"upgradeVariable":"HARVEST_YIELD","upgradeFactor":2}],"resourceCosts":[{"resourceId":16,"resourceCost":500},{"resourceId":23,"resourceCost":800}],"purchased":false},{"id":32,"upgradeType":"RESOURCE","name":"Triplet Axes","description":"I'm not even going try and figure out how this works, okay?","upgradeEffects":[{"upgradeIsForWholeType":true,"resourceType":"WOOD","resourceId":1,"upgradeVariable":"HARVEST_MILLISECONDS","upgradeFactor":0.35,"maxTier":3}],"resourceCosts":[{"resourceId":15,"resourceCost":55},{"resourceId":10,"resourceCost":85}],"purchased":false},{"id":33,"upgradeType":"RESOURCE","name":"Lumber Mill","description":"Processes logs at a rate far beyond what's possible manually.","upgradeEffects":[{"upgradeIsForWholeType":true,"resourceType":"WOOD","resourceId":1,"upgradeVariable":"HARVEST_MILLISECONDS","upgradeFactor":0.12,"maxTier":5}],"resourceCosts":[{"resourceId":25,"resourceCost":850},{"resourceId":19,"resourceCost":650},{"resourceId":30,"resourceCost":200}],"purchased":false},{"id":34,"upgradeType":"RESOURCE","name":"Enchanted Latinum Axe","description":"Enchanted by the spirits of fallen ents allows this axe's wielder to operate at an unnatural speed.","upgradeEffects":[{"upgradeIsForWholeType":true,"resourceType":"WOOD","resourceId":1,"upgradeVariable":"HARVEST_MILLISECONDS","upgradeFactor":0.04,"maxTier":6}],"resourceCosts":[{"resourceId":16,"resourceCost":500},{"resourceId":19,"resourceCost":1000},{"resourceId":31,"resourceCost":255}],"purchased":false},{"id":35,"upgradeType":"RESOURCE","name":"Temprous Siphon","description":"Using this siphon, ents can regain their full strength much more quickly.","upgradeEffects":[{"upgradeIsForWholeType":false,"resourceType":"WOOD","resourceId":17,"upgradeVariable":"HARVEST_MILLISECONDS","upgradeFactor":0.25}],"resourceCosts":[{"resourceId":16,"resourceCost":1500},{"resourceId":19,"resourceCost":1250},{"resourceId":31,"resourceCost":600}],"purchased":false},{"id":36,"upgradeType":"RESOURCE","name":"Decorated Pickaxe","description":"Technically these pickaxes aren't any better, but they look pretty. And that's pretty nice.","upgradeEffects":[{"upgradeIsForWholeType":false,"resourceType":"CURRENCY","resourceId":2,"upgradeVariable":"HARVEST_MILLISECONDS","upgradeFactor":0.3},{"upgradeIsForWholeType":false,"resourceType":"CURRENCY","resourceId":3,"upgradeVariable":"HARVEST_MILLISECONDS","upgradeFactor":0.3},{"upgradeIsForWholeType":false,"resourceType":"CURRENCY","resourceId":5,"upgradeVariable":"HARVEST_MILLISECONDS","upgradeFactor":0.5},{"upgradeIsForWholeType":false,"resourceType":"CURRENCY","resourceId":13,"upgradeVariable":"HARVEST_MILLISECONDS","upgradeFactor":0.3},{"upgradeIsForWholeType":false,"resourceId":26,"upgradeVariable":"HARVEST_MILLISECONDS","upgradeFactor":0.5},{"upgradeIsForWholeType":false,"resourceId":27,"upgradeVariable":"HARVEST_MILLISECONDS","upgradeFactor":0.5},{"upgradeIsForWholeType":false,"resourceId":28,"upgradeVariable":"HARVEST_MILLISECONDS","upgradeFactor":0.5},{"upgradeIsForWholeType":false,"resourceId":11,"upgradeVariable":"HARVEST_MILLISECONDS","upgradeFactor":0.5}],"resourceCosts":[{"resourceId":10,"resourceCost":120},{"resourceId":15,"resourceCost":60},{"resourceId":29,"resourceCost":110}],"purchased":false},{"id":37,"upgradeType":"RESOURCE","name":"Explosive Mining","description":"Pickaxes laced with a tiny, tiny amount of black powder. The science seems to add up.","upgradeEffects":[{"upgradeIsForWholeType":false,"resourceType":"CURRENCY","resourceId":2,"upgradeVariable":"HARVEST_MILLISECONDS","upgradeFactor":0.12},{"upgradeIsForWholeType":false,"resourceType":"CURRENCY","resourceId":3,"upgradeVariable":"HARVEST_MILLISECONDS","upgradeFactor":0.12},{"upgradeIsForWholeType":false,"resourceType":"CURRENCY","resourceId":5,"upgradeVariable":"HARVEST_MILLISECONDS","upgradeFactor":0.3},{"upgradeIsForWholeType":false,"resourceType":"CURRENCY","resourceId":13,"upgradeVariable":"HARVEST_MILLISECONDS","upgradeFactor":0.12},{"upgradeIsForWholeType":false,"resourceId":26,"upgradeVariable":"HARVEST_MILLISECONDS","upgradeFactor":0.3},{"upgradeIsForWholeType":false,"resourceId":27,"upgradeVariable":"HARVEST_MILLISECONDS","upgradeFactor":0.12},{"upgradeIsForWholeType":false,"resourceId":28,"upgradeVariable":"HARVEST_MILLISECONDS","upgradeFactor":0.3},{"upgradeIsForWholeType":false,"resourceId":11,"upgradeVariable":"HARVEST_MILLISECONDS","upgradeFactor":0.3},{"upgradeIsForWholeType":false,"resourceId":29,"upgradeVariable":"HARVEST_MILLISECONDS","upgradeFactor":0.3},{"upgradeIsForWholeType":false,"resourceId":30,"upgradeVariable":"HARVEST_MILLISECONDS","upgradeFactor":0.3},{"upgradeIsForWholeType":false,"resourceId":31,"upgradeVariable":"HARVEST_MILLISECONDS","upgradeFactor":0.3},{"upgradeIsForWholeType":false,"resourceId":18,"upgradeVariable":"HARVEST_MILLISECONDS","upgradeFactor":0.3},{"upgradeIsForWholeType":false,"resourceId":20,"upgradeVariable":"HARVEST_MILLISECONDS","upgradeFactor":0.5},{"upgradeIsForWholeType":false,"resourceId":21,"upgradeVariable":"HARVEST_MILLISECONDS","upgradeFactor":0.5},{"upgradeIsForWholeType":false,"resourceId":22,"upgradeVariable":"HARVEST_MILLISECONDS","upgradeFactor":0.5}],"resourceCosts":[{"resourceId":19,"resourceCost":500},{"resourceId":25,"resourceCost":250},{"resourceId":30,"resourceCost":110}],"purchased":false},{"id":38,"upgradeType":"RESOURCE","name":"Temprous Catalyst","description":"Speeds up the temprous purification process.","upgradeEffects":[{"upgradeIsForWholeType":false,"resourceType":"CURRENCY","resourceId":24,"upgradeVariable":"HARVEST_MILLISECONDS","upgradeFactor":0.3}],"resourceCosts":[{"resourceId":24,"resourceCost":750},{"resourceId":16,"resourceCost":350},{"resourceId":31,"resourceCost":160}],"purchased":false},{"id":39,"upgradeType":"RESOURCE","name":"Limestone Burner","description":"This reinforced burner can withstand much higher temperatures, allowing you to produce ingots much faster.","upgradeEffects":[{"upgradeIsForWholeType":false,"resourceType":"WOOD","resourceId":4,"upgradeVariable":"HARVEST_MILLISECONDS","upgradeFactor":0.6}],"resourceCosts":[{"resourceId":8,"resourceCost":50},{"resourceId":27,"resourceCost":80}],"purchased":false},{"id":40,"upgradeType":"RESOURCE","name":"Marble Burner","description":"This reinforced burner can withstand much higher temperatures, allowing you to produce ingots much faster.","upgradeEffects":[{"upgradeIsForWholeType":false,"resourceType":"WOOD","resourceId":4,"upgradeVariable":"HARVEST_MILLISECONDS","upgradeFactor":0.4},{"upgradeIsForWholeType":false,"resourceId":6,"upgradeVariable":"HARVEST_MILLISECONDS","upgradeFactor":0.4},{"upgradeIsForWholeType":false,"resourceId":10,"upgradeVariable":"HARVEST_MILLISECONDS","upgradeFactor":0.4}],"resourceCosts":[{"resourceId":9,"resourceCost":120},{"resourceId":28,"resourceCost":220}],"purchased":false},{"id":41,"upgradeType":"RESOURCE","name":"Obsidian Burner","description":"This reinforced burner can withstand much higher temperatures, allowing you to produce ingots much faster.","upgradeEffects":[{"upgradeIsForWholeType":false,"resourceType":"WOOD","resourceId":4,"upgradeVariable":"HARVEST_MILLISECONDS","upgradeFactor":0.25},{"upgradeIsForWholeType":false,"resourceId":6,"upgradeVariable":"HARVEST_MILLISECONDS","upgradeFactor":0.25},{"upgradeIsForWholeType":false,"resourceId":10,"upgradeVariable":"HARVEST_MILLISECONDS","upgradeFactor":0.25},{"upgradeIsForWholeType":false,"resourceId":12,"upgradeVariable":"HARVEST_MILLISECONDS","upgradeFactor":0.25}],"resourceCosts":[{"resourceId":25,"resourceCost":350},{"resourceId":30,"resourceCost":475}],"purchased":false},{"id":42,"upgradeType":"RESOURCE","name":"Diamond Burner","description":"This reinforced burner can withstand much higher temperatures, allowing you to produce ingots much faster.","upgradeEffects":[{"upgradeIsForWholeType":false,"resourceType":"WOOD","resourceId":4,"upgradeVariable":"HARVEST_MILLISECONDS","upgradeFactor":0.12},{"upgradeIsForWholeType":false,"resourceId":6,"upgradeVariable":"HARVEST_MILLISECONDS","upgradeFactor":0.12},{"upgradeIsForWholeType":false,"resourceId":10,"upgradeVariable":"HARVEST_MILLISECONDS","upgradeFactor":0.12},{"upgradeIsForWholeType":false,"resourceId":12,"upgradeVariable":"HARVEST_MILLISECONDS","upgradeFactor":0.12},{"upgradeIsForWholeType":false,"resourceId":19,"upgradeVariable":"HARVEST_MILLISECONDS","upgradeFactor":0.12}],"resourceCosts":[{"resourceId":25,"resourceCost":750},{"resourceId":30,"resourceCost":200},{"resourceId":31,"resourceCost":1000}],"purchased":false},{"id":43,"upgradeType":"RESOURCE","name":"Temprous Burner","description":"This reinforced burner can withstand much higher temperatures, allowing you to produce ingots much faster.","upgradeEffects":[{"upgradeIsForWholeType":false,"resourceType":"WOOD","resourceId":4,"upgradeVariable":"HARVEST_MILLISECONDS","upgradeFactor":0.06},{"upgradeIsForWholeType":false,"resourceId":6,"upgradeVariable":"HARVEST_MILLISECONDS","upgradeFactor":0.06},{"upgradeIsForWholeType":false,"resourceId":10,"upgradeVariable":"HARVEST_MILLISECONDS","upgradeFactor":0.06},{"upgradeIsForWholeType":false,"resourceId":12,"upgradeVariable":"HARVEST_MILLISECONDS","upgradeFactor":0.06},{"upgradeIsForWholeType":false,"resourceId":19,"upgradeVariable":"HARVEST_MILLISECONDS","upgradeFactor":0.06},{"upgradeIsForWholeType":false,"resourceId":23,"upgradeVariable":"HARVEST_MILLISECONDS","upgradeFactor":0.06}],"resourceCosts":[{"resourceId":16,"resourceCost":500},{"resourceId":31,"resourceCost":350},{"resourceId":23,"resourceCost":1350}],"purchased":false},{"id":44,"upgradeType":"WORKER","name":"Kelley the Deforester","description":"Dammit, Jim! I'm a lumberjack, not a doctor! (Allows you to assign workers for more tree varieties.)","upgradeEffects":[{"upgradeIsForWholeType":true,"resourceId":0,"upgradeVariable":"WORKABLE","upgradeFactor":1,"resourceType":"WOOD","maxTier":5}],"resourceCosts":[{"resourceId":0,"resourceCost":3000}],"purchased":false},{"id":45,"upgradeType":"WORKER","name":"Elder Ent","description":"This respected ent elder will offer his services to help guide more of his kin back into this world.","upgradeEffects":[{"upgradeIsForWholeType":false,"resourceType":"WOOD","resourceId":16,"upgradeVariable":"WORKABLE","upgradeFactor":1},{"upgradeIsForWholeType":false,"resourceId":17,"upgradeVariable":"WORKABLE","upgradeFactor":1}],"resourceCosts":[{"resourceId":0,"resourceCost":60000},{"resourceId":17,"resourceCost":1}],"purchased":false},{"id":46,"upgradeType":"WORKER","name":"Mineral Enthusiast","description":"Once an officer of the law, this man has put his career aside to pursue his true passion: mining minerals.","upgradeEffects":[{"upgradeIsForWholeType":false,"resourceType":"WOOD","resourceId":13,"upgradeVariable":"WORKABLE","upgradeFactor":1},{"upgradeIsForWholeType":false,"resourceId":26,"upgradeVariable":"WORKABLE","upgradeFactor":1},{"upgradeIsForWholeType":false,"resourceId":27,"upgradeVariable":"WORKABLE","upgradeFactor":1},{"upgradeIsForWholeType":false,"resourceId":28,"upgradeVariable":"WORKABLE","upgradeFactor":1},{"upgradeIsForWholeType":false,"resourceId":29,"upgradeVariable":"WORKABLE","upgradeFactor":1}],"resourceCosts":[{"resourceId":0,"resourceCost":4000}],"purchased":false},{"id":47,"upgradeType":"WORKER","name":"Mineral Obsessive","description":"This guy REALLY likes minerals!","upgradeEffects":[{"upgradeIsForWholeType":false,"resourceType":"WOOD","resourceId":30,"upgradeVariable":"WORKABLE","upgradeFactor":1},{"upgradeIsForWholeType":false,"resourceId":31,"upgradeVariable":"WORKABLE","upgradeFactor":1}],"resourceCosts":[{"resourceId":28,"resourceCost":375},{"resourceId":29,"resourceCost":300},{"resourceId":30,"resourceCost":30},{"resourceId":31,"resourceCost":20}],"purchased":false},{"id":48,"upgradeType":"WORKER","name":"Dwarven Miner","description":"Dwarves aren't actually very active miners. This guy just loves his job.","upgradeEffects":[{"upgradeIsForWholeType":true,"resourceType":"METAL","resourceId":30,"upgradeVariable":"WORKABLE","upgradeFactor":1,"maxTier":5}],"resourceCosts":[{"resourceId":0,"resourceCost":4500}],"purchased":false},{"id":49,"upgradeType":"WORKER","name":"Dwarven Champion","description":"Dwarves are naturally inclined to be the best at whatever they do, even things that are totally un-dwarfish like mining.","upgradeEffects":[{"upgradeIsForWholeType":true,"resourceType":"METAL","resourceId":30,"upgradeVariable":"WORKABLE","upgradeFactor":1,"maxTier":7}],"resourceCosts":[{"resourceId":0,"resourceCost":60000},{"resourceId":23,"resourceCost":10}],"purchased":false},{"id":50,"upgradeType":"WORKER","name":"Musical Lumberjacks","description":"This funny little tune helps the lumberjacks stay focused, but you'll NEVER get it out of your head. Increases worker yield by 60%.","upgradeEffects":[{"upgradeIsForWholeType":true,"resourceType":"WOOD","resourceId":1,"upgradeVariable":"WORKER_YIELD","upgradeFactor":1.6,"maxTier":5}],"resourceCosts":[{"resourceId":9,"resourceCost":300}],"purchased":false},{"id":51,"upgradeType":"WORKER","name":"Entking","description":"With their king at last restored to his former glory, the ents find themselves greatly invigorated.","upgradeEffects":[{"upgradeIsForWholeType":false,"resourceType":"WOOD","resourceId":16,"upgradeVariable":"WORKER_YIELD","upgradeFactor":3},{"upgradeIsForWholeType":false,"resourceId":17,"upgradeVariable":"WORKER_YIELD","upgradeFactor":3}],"resourceCosts":[{"resourceId":16,"resourceCost":500},{"resourceId":24,"resourceCost":150}],"purchased":false},{"id":52,"upgradeType":"WORKER","name":"Miner's Guild","description":"Form a guild to help your workers hone their skills. Miners harvest 15% more material.","upgradeEffects":[{"upgradeIsForWholeType":true,"resourceType":"MINERAL","resourceId":1,"upgradeVariable":"WORKER_YIELD","upgradeFactor":1.15},{"upgradeIsForWholeType":true,"resourceType":"METAL","resourceId":0,"upgradeVariable":"WORKER_YIELD","upgradeFactor":1.15}],"resourceCosts":[{"resourceId":12,"resourceCost":500}],"purchased":false},{"id":53,"upgradeType":"WORKER","name":"Miner Musical","description":"Those who underperform are \"encouraged\" to sing along.","upgradeEffects":[{"upgradeIsForWholeType":true,"resourceType":"MINERAL","resourceId":1,"upgradeVariable":"WORKER_YIELD","upgradeFactor":2,"maxTier":6},{"upgradeIsForWholeType":true,"resourceType":"METAL","resourceId":0,"upgradeVariable":"WORKER_YIELD","upgradeFactor":2,"maxTier":5}],"resourceCosts":[{"resourceId":19,"resourceCost":1500}],"purchased":false},{"id":54,"upgradeType":"WORKER","name":"Temprous Master","description":"There is no other with the prowess this master posesses in handling temprous metal. Workers generate 50% more temprous.","upgradeEffects":[{"upgradeIsForWholeType":false,"resourceType":"MINERAL","resourceId":23,"upgradeVariable":"WORKER_YIELD","upgradeFactor":1.5},{"upgradeIsForWholeType":false,"resourceId":24,"upgradeVariable":"WORKER_YIELD","upgradeFactor":1.5}],"resourceCosts":[{"resourceId":24,"resourceCost":250},{"resourceId":16,"resourceCost":50}],"purchased":false}];
+module.exports = [{"id":0,"upgradeType":"RESOURCE","name":"Refined Iron Axe","description":"A stronger, more durable axe. Harvests 20% more wood per task.","upgradeEffects":[{"upgradeIsForWholeType":true,"resourceType":"WOOD","resourceEnum":"OAK","upgradeVariable":"HARVEST_YIELD","upgradeFactor":1.2,"maxTier":"1"}],"resourceCosts":[{"resourceEnum":"OAK","resourceCost":10},{"resourceEnum":"IRONINGOT","resourceCost":25}],"purchased":false},{"id":1,"upgradeType":"RESOURCE","name":"Twin Axes","description":"One axe in each hand means double productivity. It makes sense. Reduces wood harvesting time by 50%.","upgradeEffects":[{"upgradeIsForWholeType":true,"resourceType":"WOOD","resourceEnum":"OAK","upgradeVariable":"HARVEST_MILLISECONDS","upgradeFactor":0.5,"maxTier":"1"}],"resourceCosts":[{"resourceEnum":"OAK","resourceCost":15},{"resourceEnum":"IRONINGOT","resourceCost":35}],"purchased":false},{"id":2,"upgradeType":"RESOURCE","name":"Worn Pickaxe","description":"A basic pickaxe. Not much, but it gets the job done. Allows harvesting of basic metals and minerals.","upgradeEffects":[{"upgradeIsForWholeType":false,"resourceType":"CURRENCY","resourceEnum":"COPPERORE","upgradeVariable":"HARVESTABILITY","upgradeFactor":1},{"upgradeIsForWholeType":false,"resourceType":"CURRENCY","resourceEnum":"TINORE","upgradeVariable":"HARVESTABILITY","upgradeFactor":1},{"upgradeIsForWholeType":false,"resourceType":"CURRENCY","resourceEnum":"STONE","upgradeVariable":"HARVESTABILITY","upgradeFactor":1}],"resourceCosts":[{"resourceEnum":"GOLD","resourceCost":50}],"purchased":false},{"id":3,"upgradeType":"WORKER","name":"Lumberjack's Guild","description":"Form a guild to help your workers hone their skills. Workers harvest 15% more wood.","upgradeEffects":[{"upgradeIsForWholeType":true,"resourceType":"WOOD","resourceEnum":"OAK","upgradeVariable":"WORKER_YIELD","upgradeFactor":1.15,"maxTier":2}],"resourceCosts":[{"resourceEnum":"OAK","resourceCost":20}],"purchased":false},{"id":5,"upgradeType":"RESOURCE","name":"Bronze Pickaxe","description":"A stronger and more durable pickaxe, capable of mining more valuable metals.","upgradeEffects":[{"upgradeIsForWholeType":false,"resourceType":"CURRENCY","resourceEnum":"GRAPHITE","upgradeVariable":"HARVESTABILITY","upgradeFactor":1},{"upgradeIsForWholeType":false,"resourceType":"CURRENCY","resourceEnum":"IRONORE","upgradeVariable":"HARVESTABILITY","upgradeFactor":1}],"resourceCosts":[{"resourceEnum":"BRONZEINGOT","resourceCost":5},{"resourceEnum":"PINE","resourceCost":15}],"purchased":false},{"id":6,"upgradeType":"RESOURCE","name":"Sharpened Pickaxe","description":"A highly sharpened pickaxe. Mines at a much higher rate.","upgradeEffects":[{"upgradeIsForWholeType":false,"resourceType":"CURRENCY","resourceEnum":"COPPERORE","upgradeVariable":"HARVEST_MILLISECONDS","upgradeFactor":0.5},{"upgradeIsForWholeType":false,"resourceType":"CURRENCY","resourceEnum":"TINORE","upgradeVariable":"HARVEST_MILLISECONDS","upgradeFactor":0.5},{"upgradeIsForWholeType":false,"resourceType":"CURRENCY","resourceEnum":"IRONORE","upgradeVariable":"HARVEST_MILLISECONDS","upgradeFactor":0.75},{"upgradeIsForWholeType":false,"resourceType":"CURRENCY","resourceEnum":"STONE","upgradeVariable":"HARVEST_MILLISECONDS","upgradeFactor":0.5},{"upgradeIsForWholeType":false,"resourceEnum":"GRAPHITE","upgradeVariable":"HARVEST_MILLISECONDS","upgradeFactor":0.75}],"resourceCosts":[{"resourceEnum":"IRONINGOT","resourceCost":20},{"resourceEnum":"BIRCH","resourceCost":30}],"purchased":false},{"id":8,"upgradeType":"RESOURCE","name":"Bronze Axe","description":"With this, you can bring down stronger and taller trees.","upgradeEffects":[{"upgradeIsForWholeType":true,"resourceType":"WOOD","resourceEnum":"GRAPHITE","upgradeVariable":"HARVESTABILITY","upgradeFactor":1,"maxTier":2}],"resourceCosts":[{"resourceEnum":"BRONZEINGOT","resourceCost":10},{"resourceEnum":"OAK","resourceCost":30}],"purchased":false},{"id":9,"upgradeType":"RESOURCE","name":"Iron Axe","description":"With this, you can bring down stronger and taller trees.","upgradeEffects":[{"upgradeIsForWholeType":true,"resourceType":"WOOD","resourceEnum":"GRAPHITE","upgradeVariable":"HARVESTABILITY","upgradeFactor":1,"maxTier":4}],"resourceCosts":[{"resourceEnum":"IRONINGOT","resourceCost":30},{"resourceEnum":"BIRCH","resourceCost":60}],"purchased":false},{"id":10,"upgradeType":"RESOURCE","name":"Steel Axe","description":"With this, you can bring down stronger and taller trees.","upgradeEffects":[{"upgradeIsForWholeType":true,"resourceType":"WOOD","resourceEnum":"GRAPHITE","upgradeVariable":"HARVESTABILITY","upgradeFactor":1,"maxTier":5}],"resourceCosts":[{"resourceEnum":"STEELINGOT","resourceCost":100},{"resourceEnum":"WILLOW","resourceCost":200}],"purchased":false},{"id":11,"upgradeType":"RESOURCE","name":"Latinum Axe","description":"An axe strong enough to free the spirits of ents from the bodies that entomb them.","upgradeEffects":[{"upgradeIsForWholeType":true,"resourceType":"WOOD","resourceEnum":"GRAPHITE","upgradeVariable":"HARVESTABILITY","upgradeFactor":1,"maxTier":6}],"resourceCosts":[{"resourceEnum":"LATINUMINGOT","resourceCost":500},{"resourceEnum":"TEAK","resourceCost":1000},{"resourceEnum":"QUARTZ","resourceCost":250}],"purchased":false},{"id":12,"upgradeType":"RESOURCE","name":"Temprous Staff","description":"Imbued with the power of ages past, this staff can reunite ent spirits with their former bodies, granting them new life.","upgradeEffects":[{"upgradeIsForWholeType":true,"resourceType":"WOOD","resourceEnum":"GRAPHITE","upgradeVariable":"HARVESTABILITY","upgradeFactor":1}],"resourceCosts":[{"resourceEnum":"TEMPROUSINGOT","resourceCost":1500},{"resourceEnum":"ENTSOUL","resourceCost":10},{"resourceEnum":"DIAMOND","resourceCost":750}],"purchased":false},{"id":13,"upgradeType":"RESOURCE","name":"Iron Pickaxe","description":"A stronger and more durable pickaxe, capable of mining more valuable metals.","upgradeEffects":[{"upgradeIsForWholeType":false,"resourceType":"CURRENCY","resourceEnum":"LIMESTONE","upgradeVariable":"HARVESTABILITY","upgradeFactor":1},{"upgradeIsForWholeType":false,"resourceType":"CURRENCY","resourceEnum":"MARBLE","upgradeVariable":"HARVESTABILITY","upgradeFactor":1},{"upgradeIsForWholeType":false,"resourceEnum":"GOLDORE","upgradeVariable":"HARVESTABILITY","upgradeFactor":1}],"resourceCosts":[{"resourceEnum":"IRONINGOT","resourceCost":30},{"resourceEnum":"EUCALYPTUS","resourceCost":45}],"purchased":false},{"id":14,"upgradeType":"RESOURCE","name":"Steel Pickaxe","description":"A stronger and more durable pickaxe, capable of mining more valuable metals.","upgradeEffects":[{"upgradeIsForWholeType":false,"resourceType":"CURRENCY","resourceEnum":"QUARTZ","upgradeVariable":"HARVESTABILITY","upgradeFactor":1},{"upgradeIsForWholeType":false,"resourceType":"CURRENCY","resourceEnum":"LATINUMORE","upgradeVariable":"HARVESTABILITY","upgradeFactor":1},{"upgradeIsForWholeType":false,"resourceEnum":"OBSIDIAN","upgradeVariable":"HARVESTABILITY","upgradeFactor":1}],"resourceCosts":[{"resourceEnum":"STEELINGOT","resourceCost":100},{"resourceEnum":"EUCALYPTUS","resourceCost":200}],"purchased":false},{"id":15,"upgradeType":"RESOURCE","name":"Latinum Pickaxe","description":"A stronger and more durable pickaxe, capable of mining more valuable metals.","upgradeEffects":[{"upgradeIsForWholeType":false,"resourceType":"CURRENCY","resourceEnum":"DIAMOND","upgradeVariable":"HARVESTABILITY","upgradeFactor":1},{"upgradeIsForWholeType":false,"resourceEnum":"UNBELIEVIUMORE","upgradeVariable":"HARVESTABILITY","upgradeFactor":1},{"upgradeIsForWholeType":false,"resourceEnum":"LUSTRIALORE","upgradeVariable":"HARVESTABILITY","upgradeFactor":1},{"upgradeIsForWholeType":false,"resourceEnum":"SPECTRUSORE","upgradeVariable":"HARVESTABILITY","upgradeFactor":1}],"resourceCosts":[{"resourceEnum":"LATINUMINGOT","resourceCost":500},{"resourceEnum":"TEAK","resourceCost":800},{"resourceEnum":"QUARTZ","resourceCost":250}],"purchased":false},{"id":20,"upgradeType":"RESOURCE","name":"Refined Steel Axe","description":"A stronger, more durable axe. Harvests 45% more wood per task.","upgradeEffects":[{"upgradeIsForWholeType":true,"resourceType":"WOOD","resourceEnum":"OAK","upgradeVariable":"HARVEST_YIELD","upgradeFactor":1.45}],"resourceCosts":[{"resourceEnum":"WILLOW","resourceCost":100},{"resourceEnum":"STEELINGOT","resourceCost":80}],"purchased":false},{"id":21,"upgradeType":"RESOURCE","name":"Refined Latinum Axe","description":"A stronger, more durable axe. Harvests 150% more wood per task.","upgradeEffects":[{"upgradeIsForWholeType":true,"resourceType":"WOOD","resourceEnum":"OAK","upgradeVariable":"HARVEST_YIELD","upgradeFactor":2.5}],"resourceCosts":[{"resourceEnum":"TEAK","resourceCost":500},{"resourceEnum":"LATINUMINGOT","resourceCost":375},{"resourceEnum":"QUARTZ","resourceCost":200}],"purchased":false},{"id":22,"upgradeType":"RESOURCE","name":"Emblem of the Ents","description":"Imbues revived ents with far greater power. Grants an extra 75% per revived ent.","upgradeEffects":[{"upgradeIsForWholeType":false,"resourceType":"WOOD","resourceEnum":"REANIMATEDENT","upgradeVariable":"HARVEST_YIELD","upgradeFactor":1.75}],"resourceCosts":[{"resourceEnum":"ENTSOUL","resourceCost":1000},{"resourceEnum":"TEMPROUSINGOT","resourceCost":600},{"resourceEnum":"DIAMOND","resourceCost":425}],"purchased":false},{"id":23,"upgradeType":"RESOURCE","name":"Refined Iron Pickaxe","description":"A stronger, more durable pickaxe. Harvests 20% more material per task.","upgradeEffects":[{"upgradeIsForWholeType":false,"resourceType":"WOOD","resourceEnum":"STONE","upgradeVariable":"HARVEST_YIELD","upgradeFactor":1.2},{"upgradeIsForWholeType":false,"resourceEnum":"GRAPHITE","upgradeVariable":"HARVEST_YIELD","upgradeFactor":1.2},{"upgradeIsForWholeType":false,"resourceEnum":"COPPERORE","upgradeVariable":"HARVEST_YIELD","upgradeFactor":1.2},{"upgradeIsForWholeType":false,"resourceEnum":"TINORE","upgradeVariable":"HARVEST_YIELD","upgradeFactor":1.2},{"upgradeIsForWholeType":false,"resourceEnum":"IRONORE","upgradeVariable":"HARVEST_YIELD","upgradeFactor":1.2}],"resourceCosts":[{"resourceEnum":"PINE","resourceCost":25},{"resourceEnum":"IRONINGOT","resourceCost":25}],"purchased":false},{"id":24,"upgradeType":"RESOURCE","name":"Refined Steel Pickaxe","description":"A stronger, more durable pickaxe. Harvests 75% more material per task.","upgradeEffects":[{"upgradeIsForWholeType":false,"resourceType":"WOOD","resourceEnum":"STONE","upgradeVariable":"HARVEST_YIELD","upgradeFactor":1.75},{"upgradeIsForWholeType":false,"resourceEnum":"GRAPHITE","upgradeVariable":"HARVEST_YIELD","upgradeFactor":1.75},{"upgradeIsForWholeType":false,"resourceEnum":"COPPERORE","upgradeVariable":"HARVEST_YIELD","upgradeFactor":1.75},{"upgradeIsForWholeType":false,"resourceEnum":"TINORE","upgradeVariable":"HARVEST_YIELD","upgradeFactor":1.75},{"upgradeIsForWholeType":false,"resourceEnum":"IRONORE","upgradeVariable":"HARVEST_YIELD","upgradeFactor":1.75},{"upgradeIsForWholeType":false,"resourceType":"WOOD","resourceEnum":"LIMESTONE","upgradeVariable":"HARVEST_YIELD","upgradeFactor":1.75},{"upgradeIsForWholeType":false,"resourceEnum":"MARBLE","upgradeVariable":"HARVEST_YIELD","upgradeFactor":1.75},{"upgradeIsForWholeType":false,"resourceEnum":"GOLDORE","upgradeVariable":"HARVEST_YIELD","upgradeFactor":1.75}],"resourceCosts":[{"resourceEnum":"WILLOW","resourceCost":150},{"resourceEnum":"STEELINGOT","resourceCost":85}],"purchased":false},{"id":25,"upgradeType":"RESOURCE","name":"Refined Latinum Pickaxe","description":"A stronger, more durable pickaxe. Harvests 200% more material per task.","upgradeEffects":[{"upgradeIsForWholeType":false,"resourceType":"WOOD","resourceEnum":"STONE","upgradeVariable":"HARVEST_YIELD","upgradeFactor":3},{"upgradeIsForWholeType":false,"resourceEnum":"GRAPHITE","upgradeVariable":"HARVEST_YIELD","upgradeFactor":3},{"upgradeIsForWholeType":false,"resourceEnum":"COPPERORE","upgradeVariable":"HARVEST_YIELD","upgradeFactor":3},{"upgradeIsForWholeType":false,"resourceEnum":"TINORE","upgradeVariable":"HARVEST_YIELD","upgradeFactor":3},{"upgradeIsForWholeType":false,"resourceEnum":"IRONORE","upgradeVariable":"HARVEST_YIELD","upgradeFactor":3},{"upgradeIsForWholeType":false,"resourceType":"WOOD","resourceEnum":"LIMESTONE","upgradeVariable":"HARVEST_YIELD","upgradeFactor":3},{"upgradeIsForWholeType":false,"resourceEnum":"MARBLE","upgradeVariable":"HARVEST_YIELD","upgradeFactor":3},{"upgradeIsForWholeType":false,"resourceEnum":"GOLDORE","upgradeVariable":"HARVEST_YIELD","upgradeFactor":3},{"upgradeIsForWholeType":false,"resourceType":"WOOD","resourceEnum":"QUARTZ","upgradeVariable":"HARVEST_YIELD","upgradeFactor":3},{"upgradeIsForWholeType":false,"resourceEnum":"OBSIDIAN","upgradeVariable":"HARVEST_YIELD","upgradeFactor":3},{"upgradeIsForWholeType":false,"resourceEnum":"DIAMOND","upgradeVariable":"HARVEST_YIELD","upgradeFactor":3},{"upgradeIsForWholeType":false,"resourceEnum":"LATINUMORE","upgradeVariable":"HARVEST_YIELD","upgradeFactor":3},{"upgradeIsForWholeType":false,"resourceEnum":"UNBELIEVIUMORE","upgradeVariable":"HARVEST_YIELD","upgradeFactor":3},{"upgradeIsForWholeType":false,"resourceEnum":"LUSTRIALORE","upgradeVariable":"HARVEST_YIELD","upgradeFactor":3},{"upgradeIsForWholeType":false,"resourceEnum":"TEMPROUSINGOT","upgradeVariable":"HARVEST_YIELD","upgradeFactor":3}],"resourceCosts":[{"resourceEnum":"TEAK","resourceCost":550},{"resourceEnum":"LATINUMINGOT","resourceCost":1000},{"resourceEnum":"OBSIDIAN","resourceCost":750}],"purchased":false},{"id":26,"upgradeType":"RESOURCE","name":"Expanded Burner","description":"A larger burner for your forge, capable of smelting ores faster.","upgradeEffects":[{"upgradeIsForWholeType":false,"resourceType":"WOOD","resourceEnum":"BRONZEINGOT","upgradeVariable":"HARVEST_YIELD","upgradeFactor":1.2}],"resourceCosts":[{"resourceEnum":"BIRCH","resourceCost":25},{"resourceEnum":"IRONINGOT","resourceCost":25}],"purchased":false},{"id":27,"upgradeType":"RESOURCE","name":"Enhanced Burner","description":"A larger burner for your forge, capable of smelting ores faster.","upgradeEffects":[{"upgradeIsForWholeType":false,"resourceType":"WOOD","resourceEnum":"BRONZEINGOT","upgradeVariable":"HARVEST_YIELD","upgradeFactor":1.8},{"upgradeIsForWholeType":false,"resourceEnum":"IRONINGOT","upgradeVariable":"HARVEST_YIELD","upgradeFactor":1.8},{"upgradeIsForWholeType":false,"resourceEnum":"STEELINGOT","upgradeVariable":"HARVEST_YIELD","upgradeFactor":1.8}],"resourceCosts":[{"resourceEnum":"EUCALYPTUS","resourceCost":200},{"resourceEnum":"IRONINGOT","resourceCost":100}],"purchased":false},{"id":28,"upgradeType":"RESOURCE","name":"Refined Burner","description":"A larger burner for your forge, capable of smelting ores faster.","upgradeEffects":[{"upgradeIsForWholeType":false,"resourceType":"WOOD","resourceEnum":"BRONZEINGOT","upgradeVariable":"HARVEST_YIELD","upgradeFactor":2.5},{"upgradeIsForWholeType":false,"resourceEnum":"IRONINGOT","upgradeVariable":"HARVEST_YIELD","upgradeFactor":2.5},{"upgradeIsForWholeType":false,"resourceEnum":"STEELINGOT","upgradeVariable":"HARVEST_YIELD","upgradeFactor":2.5},{"upgradeIsForWholeType":false,"resourceEnum":"GOLDINGOT","upgradeVariable":"HARVEST_YIELD","upgradeFactor":2.5}],"resourceCosts":[{"resourceEnum":"WILLOW","resourceCost":200},{"resourceEnum":"STEELINGOT","resourceCost":100}],"purchased":false},{"id":29,"upgradeType":"RESOURCE","name":"Lavish Burner","description":"A larger burner for your forge, capable of smelting ores faster.","upgradeEffects":[{"upgradeIsForWholeType":false,"resourceType":"WOOD","resourceEnum":"BRONZEINGOT","upgradeVariable":"HARVEST_YIELD","upgradeFactor":2.8},{"upgradeIsForWholeType":false,"resourceEnum":"IRONINGOT","upgradeVariable":"HARVEST_YIELD","upgradeFactor":2.8},{"upgradeIsForWholeType":false,"resourceEnum":"STEELINGOT","upgradeVariable":"HARVEST_YIELD","upgradeFactor":2.8},{"upgradeIsForWholeType":false,"resourceEnum":"GOLDINGOT","upgradeVariable":"HARVEST_YIELD","upgradeFactor":2.8},{"upgradeIsForWholeType":false,"resourceEnum":"LATINUMINGOT","upgradeVariable":"HARVEST_YIELD","upgradeFactor":2.8}],"resourceCosts":[{"resourceEnum":"TEAK","resourceCost":500},{"resourceEnum":"LATINUMINGOT","resourceCost":350}],"purchased":false},{"id":30,"upgradeType":"RESOURCE","name":"Excessive Burner","description":"Alright, you can't possibly need this much space.","upgradeEffects":[{"upgradeIsForWholeType":false,"resourceType":"WOOD","resourceEnum":"BRONZEINGOT","upgradeVariable":"HARVEST_YIELD","upgradeFactor":3.2},{"upgradeIsForWholeType":false,"resourceEnum":"IRONINGOT","upgradeVariable":"HARVEST_YIELD","upgradeFactor":3.2},{"upgradeIsForWholeType":false,"resourceEnum":"STEELINGOT","upgradeVariable":"HARVEST_YIELD","upgradeFactor":3.2},{"upgradeIsForWholeType":false,"resourceEnum":"GOLDINGOT","upgradeVariable":"HARVEST_YIELD","upgradeFactor":3.2},{"upgradeIsForWholeType":false,"resourceEnum":"LATINUMINGOT","upgradeVariable":"HARVEST_YIELD","upgradeFactor":3.2},{"upgradeIsForWholeType":false,"resourceEnum":"TEMPROUSINGOT","upgradeVariable":"HARVEST_YIELD","upgradeFactor":3.2}],"resourceCosts":[{"resourceEnum":"TEAK","resourceCost":1500},{"resourceEnum":"TEMPROUSINGOT","resourceCost":600}],"purchased":false},{"id":31,"upgradeType":"RESOURCE","name":"Temprous Purifier","description":"Increases the purity of temprous ingots processed by the temprous distillery.","upgradeEffects":[{"upgradeIsForWholeType":false,"resourceType":"WOOD","resourceEnum":"REFINEDTEMPROUS","upgradeVariable":"HARVEST_YIELD","upgradeFactor":2}],"resourceCosts":[{"resourceEnum":"ENTSOUL","resourceCost":500},{"resourceEnum":"TEMPROUSINGOT","resourceCost":800}],"purchased":false},{"id":32,"upgradeType":"RESOURCE","name":"Triplet Axes","description":"I'm not even going try and figure out how this works, okay?","upgradeEffects":[{"upgradeIsForWholeType":true,"resourceType":"WOOD","resourceEnum":"OAK","upgradeVariable":"HARVEST_MILLISECONDS","upgradeFactor":0.35,"maxTier":3}],"resourceCosts":[{"resourceEnum":"WILLOW","resourceCost":55},{"resourceEnum":"STEELINGOT","resourceCost":85}],"purchased":false},{"id":33,"upgradeType":"RESOURCE","name":"Lumber Mill","description":"Processes logs at a rate far beyond what's possible manually.","upgradeEffects":[{"upgradeIsForWholeType":true,"resourceType":"WOOD","resourceEnum":"OAK","upgradeVariable":"HARVEST_MILLISECONDS","upgradeFactor":0.12,"maxTier":5}],"resourceCosts":[{"resourceEnum":"TEAK","resourceCost":850},{"resourceEnum":"LATINUMINGOT","resourceCost":650},{"resourceEnum":"OBSIDIAN","resourceCost":200}],"purchased":false},{"id":34,"upgradeType":"RESOURCE","name":"Enchanted Latinum Axe","description":"Enchanted by the spirits of fallen ents allows this axe's wielder to operate at an unnatural speed.","upgradeEffects":[{"upgradeIsForWholeType":true,"resourceType":"WOOD","resourceEnum":"OAK","upgradeVariable":"HARVEST_MILLISECONDS","upgradeFactor":0.04,"maxTier":6}],"resourceCosts":[{"resourceEnum":"ENTSOUL","resourceCost":500},{"resourceEnum":"LATINUMINGOT","resourceCost":1000},{"resourceEnum":"DIAMOND","resourceCost":255}],"purchased":false},{"id":35,"upgradeType":"RESOURCE","name":"Temprous Siphon","description":"Using this siphon, ents can regain their full strength much more quickly.","upgradeEffects":[{"upgradeIsForWholeType":false,"resourceType":"WOOD","resourceEnum":"REANIMATEDENT","upgradeVariable":"HARVEST_MILLISECONDS","upgradeFactor":0.25}],"resourceCosts":[{"resourceEnum":"ENTSOUL","resourceCost":1500},{"resourceEnum":"LATINUMINGOT","resourceCost":1250},{"resourceEnum":"DIAMOND","resourceCost":600}],"purchased":false},{"id":36,"upgradeType":"RESOURCE","name":"Decorated Pickaxe","description":"Technically these pickaxes aren't any better, but they look pretty. And that's pretty nice.","upgradeEffects":[{"upgradeIsForWholeType":false,"resourceType":"CURRENCY","resourceEnum":"COPPERORE","upgradeVariable":"HARVEST_MILLISECONDS","upgradeFactor":0.3},{"upgradeIsForWholeType":false,"resourceType":"CURRENCY","resourceEnum":"TINORE","upgradeVariable":"HARVEST_MILLISECONDS","upgradeFactor":0.3},{"upgradeIsForWholeType":false,"resourceType":"CURRENCY","resourceEnum":"IRONORE","upgradeVariable":"HARVEST_MILLISECONDS","upgradeFactor":0.5},{"upgradeIsForWholeType":false,"resourceType":"CURRENCY","resourceEnum":"STONE","upgradeVariable":"HARVEST_MILLISECONDS","upgradeFactor":0.3},{"upgradeIsForWholeType":false,"resourceEnum":"GRAPHITE","upgradeVariable":"HARVEST_MILLISECONDS","upgradeFactor":0.5},{"upgradeIsForWholeType":false,"resourceEnum":"LIMESTONE","upgradeVariable":"HARVEST_MILLISECONDS","upgradeFactor":0.5},{"upgradeIsForWholeType":false,"resourceEnum":"MARBLE","upgradeVariable":"HARVEST_MILLISECONDS","upgradeFactor":0.5},{"upgradeIsForWholeType":false,"resourceEnum":"GOLDORE","upgradeVariable":"HARVEST_MILLISECONDS","upgradeFactor":0.5}],"resourceCosts":[{"resourceEnum":"STEELINGOT","resourceCost":120},{"resourceEnum":"WILLOW","resourceCost":60},{"resourceEnum":"QUARTZ","resourceCost":110}],"purchased":false},{"id":37,"upgradeType":"RESOURCE","name":"Explosive Mining","description":"Pickaxes laced with a tiny, tiny amount of black powder. The science seems to add up.","upgradeEffects":[{"upgradeIsForWholeType":false,"resourceType":"CURRENCY","resourceEnum":"COPPERORE","upgradeVariable":"HARVEST_MILLISECONDS","upgradeFactor":0.12},{"upgradeIsForWholeType":false,"resourceType":"CURRENCY","resourceEnum":"TINORE","upgradeVariable":"HARVEST_MILLISECONDS","upgradeFactor":0.12},{"upgradeIsForWholeType":false,"resourceType":"CURRENCY","resourceEnum":"IRONORE","upgradeVariable":"HARVEST_MILLISECONDS","upgradeFactor":0.3},{"upgradeIsForWholeType":false,"resourceType":"CURRENCY","resourceEnum":"STONE","upgradeVariable":"HARVEST_MILLISECONDS","upgradeFactor":0.12},{"upgradeIsForWholeType":false,"resourceEnum":"GRAPHITE","upgradeVariable":"HARVEST_MILLISECONDS","upgradeFactor":0.3},{"upgradeIsForWholeType":false,"resourceEnum":"LIMESTONE","upgradeVariable":"HARVEST_MILLISECONDS","upgradeFactor":0.12},{"upgradeIsForWholeType":false,"resourceEnum":"MARBLE","upgradeVariable":"HARVEST_MILLISECONDS","upgradeFactor":0.3},{"upgradeIsForWholeType":false,"resourceEnum":"GOLDORE","upgradeVariable":"HARVEST_MILLISECONDS","upgradeFactor":0.3},{"upgradeIsForWholeType":false,"resourceEnum":"QUARTZ","upgradeVariable":"HARVEST_MILLISECONDS","upgradeFactor":0.3},{"upgradeIsForWholeType":false,"resourceEnum":"OBSIDIAN","upgradeVariable":"HARVEST_MILLISECONDS","upgradeFactor":0.3},{"upgradeIsForWholeType":false,"resourceEnum":"DIAMOND","upgradeVariable":"HARVEST_MILLISECONDS","upgradeFactor":0.3},{"upgradeIsForWholeType":false,"resourceEnum":"LATINUMORE","upgradeVariable":"HARVEST_MILLISECONDS","upgradeFactor":0.3},{"upgradeIsForWholeType":false,"resourceEnum":"UNBELIEVIUMORE","upgradeVariable":"HARVEST_MILLISECONDS","upgradeFactor":0.5},{"upgradeIsForWholeType":false,"resourceEnum":"LUSTRIALORE","upgradeVariable":"HARVEST_MILLISECONDS","upgradeFactor":0.5},{"upgradeIsForWholeType":false,"resourceEnum":"SPECTRUSORE","upgradeVariable":"HARVEST_MILLISECONDS","upgradeFactor":0.5}],"resourceCosts":[{"resourceEnum":"LATINUMINGOT","resourceCost":500},{"resourceEnum":"TEAK","resourceCost":250},{"resourceEnum":"OBSIDIAN","resourceCost":110}],"purchased":false},{"id":38,"upgradeType":"RESOURCE","name":"Temprous Catalyst","description":"Speeds up the temprous purification process.","upgradeEffects":[{"upgradeIsForWholeType":false,"resourceType":"CURRENCY","resourceEnum":"REFINEDTEMPROUS","upgradeVariable":"HARVEST_MILLISECONDS","upgradeFactor":0.3}],"resourceCosts":[{"resourceEnum":"REFINEDTEMPROUS","resourceCost":750},{"resourceEnum":"ENTSOUL","resourceCost":350},{"resourceEnum":"DIAMOND","resourceCost":160}],"purchased":false},{"id":39,"upgradeType":"RESOURCE","name":"Limestone Burner","description":"This reinforced burner can withstand much higher temperatures, allowing you to produce ingots much faster.","upgradeEffects":[{"upgradeIsForWholeType":false,"resourceType":"WOOD","resourceEnum":"BRONZEINGOT","upgradeVariable":"HARVEST_MILLISECONDS","upgradeFactor":0.6}],"resourceCosts":[{"resourceEnum":"BIRCH","resourceCost":50},{"resourceEnum":"LIMESTONE","resourceCost":80}],"purchased":false},{"id":40,"upgradeType":"RESOURCE","name":"Marble Burner","description":"This reinforced burner can withstand much higher temperatures, allowing you to produce ingots much faster.","upgradeEffects":[{"upgradeIsForWholeType":false,"resourceType":"WOOD","resourceEnum":"BRONZEINGOT","upgradeVariable":"HARVEST_MILLISECONDS","upgradeFactor":0.4},{"upgradeIsForWholeType":false,"resourceEnum":"IRONINGOT","upgradeVariable":"HARVEST_MILLISECONDS","upgradeFactor":0.4},{"upgradeIsForWholeType":false,"resourceEnum":"STEELINGOT","upgradeVariable":"HARVEST_MILLISECONDS","upgradeFactor":0.4}],"resourceCosts":[{"resourceEnum":"EUCALYPTUS","resourceCost":120},{"resourceEnum":"MARBLE","resourceCost":220}],"purchased":false},{"id":41,"upgradeType":"RESOURCE","name":"Obsidian Burner","description":"This reinforced burner can withstand much higher temperatures, allowing you to produce ingots much faster.","upgradeEffects":[{"upgradeIsForWholeType":false,"resourceType":"WOOD","resourceEnum":"BRONZEINGOT","upgradeVariable":"HARVEST_MILLISECONDS","upgradeFactor":0.25},{"upgradeIsForWholeType":false,"resourceEnum":"IRONINGOT","upgradeVariable":"HARVEST_MILLISECONDS","upgradeFactor":0.25},{"upgradeIsForWholeType":false,"resourceEnum":"STEELINGOT","upgradeVariable":"HARVEST_MILLISECONDS","upgradeFactor":0.25},{"upgradeIsForWholeType":false,"resourceEnum":"GOLDINGOT","upgradeVariable":"HARVEST_MILLISECONDS","upgradeFactor":0.25}],"resourceCosts":[{"resourceEnum":"TEAK","resourceCost":350},{"resourceEnum":"OBSIDIAN","resourceCost":475}],"purchased":false},{"id":42,"upgradeType":"RESOURCE","name":"Diamond Burner","description":"This reinforced burner can withstand much higher temperatures, allowing you to produce ingots much faster.","upgradeEffects":[{"upgradeIsForWholeType":false,"resourceType":"WOOD","resourceEnum":"BRONZEINGOT","upgradeVariable":"HARVEST_MILLISECONDS","upgradeFactor":0.12},{"upgradeIsForWholeType":false,"resourceEnum":"IRONINGOT","upgradeVariable":"HARVEST_MILLISECONDS","upgradeFactor":0.12},{"upgradeIsForWholeType":false,"resourceEnum":"STEELINGOT","upgradeVariable":"HARVEST_MILLISECONDS","upgradeFactor":0.12},{"upgradeIsForWholeType":false,"resourceEnum":"GOLDINGOT","upgradeVariable":"HARVEST_MILLISECONDS","upgradeFactor":0.12},{"upgradeIsForWholeType":false,"resourceEnum":"LATINUMINGOT","upgradeVariable":"HARVEST_MILLISECONDS","upgradeFactor":0.12}],"resourceCosts":[{"resourceEnum":"TEAK","resourceCost":750},{"resourceEnum":"OBSIDIAN","resourceCost":200},{"resourceEnum":"DIAMOND","resourceCost":1000}],"purchased":false},{"id":43,"upgradeType":"RESOURCE","name":"Temprous Burner","description":"This reinforced burner can withstand much higher temperatures, allowing you to produce ingots much faster.","upgradeEffects":[{"upgradeIsForWholeType":false,"resourceType":"WOOD","resourceEnum":"BRONZEINGOT","upgradeVariable":"HARVEST_MILLISECONDS","upgradeFactor":0.06},{"upgradeIsForWholeType":false,"resourceEnum":"IRONINGOT","upgradeVariable":"HARVEST_MILLISECONDS","upgradeFactor":0.06},{"upgradeIsForWholeType":false,"resourceEnum":"STEELINGOT","upgradeVariable":"HARVEST_MILLISECONDS","upgradeFactor":0.06},{"upgradeIsForWholeType":false,"resourceEnum":"GOLDINGOT","upgradeVariable":"HARVEST_MILLISECONDS","upgradeFactor":0.06},{"upgradeIsForWholeType":false,"resourceEnum":"LATINUMINGOT","upgradeVariable":"HARVEST_MILLISECONDS","upgradeFactor":0.06},{"upgradeIsForWholeType":false,"resourceEnum":"TEMPROUSINGOT","upgradeVariable":"HARVEST_MILLISECONDS","upgradeFactor":0.06}],"resourceCosts":[{"resourceEnum":"ENTSOUL","resourceCost":500},{"resourceEnum":"DIAMOND","resourceCost":350},{"resourceEnum":"TEMPROUSINGOT","resourceCost":1350}],"purchased":false},{"id":44,"upgradeType":"WORKER","name":"Kelley the Deforester","description":"Dammit, Jim! I'm a lumberjack, not a doctor! (Allows you to assign workers for more tree varieties.)","upgradeEffects":[{"upgradeIsForWholeType":true,"resourceEnum":"GOLD","upgradeVariable":"WORKABLE","upgradeFactor":1,"resourceType":"WOOD","maxTier":5}],"resourceCosts":[{"resourceEnum":"GOLD","resourceCost":3000}],"purchased":false},{"id":45,"upgradeType":"WORKER","name":"Elder Ent","description":"This respected ent elder will offer his services to help guide more of his kin back into this world.","upgradeEffects":[{"upgradeIsForWholeType":false,"resourceType":"WOOD","resourceEnum":"ENTSOUL","upgradeVariable":"WORKABLE","upgradeFactor":1},{"upgradeIsForWholeType":false,"resourceEnum":"REANIMATEDENT","upgradeVariable":"WORKABLE","upgradeFactor":1}],"resourceCosts":[{"resourceEnum":"GOLD","resourceCost":60000},{"resourceEnum":"REANIMATEDENT","resourceCost":1}],"purchased":false},{"id":46,"upgradeType":"WORKER","name":"Mineral Enthusiast","description":"Once an officer of the law, this man has put his career aside to pursue his true passion: mining minerals.","upgradeEffects":[{"upgradeIsForWholeType":false,"resourceType":"WOOD","resourceEnum":"STONE","upgradeVariable":"WORKABLE","upgradeFactor":1},{"upgradeIsForWholeType":false,"resourceEnum":"GRAPHITE","upgradeVariable":"WORKABLE","upgradeFactor":1},{"upgradeIsForWholeType":false,"resourceEnum":"LIMESTONE","upgradeVariable":"WORKABLE","upgradeFactor":1},{"upgradeIsForWholeType":false,"resourceEnum":"MARBLE","upgradeVariable":"WORKABLE","upgradeFactor":1},{"upgradeIsForWholeType":false,"resourceEnum":"QUARTZ","upgradeVariable":"WORKABLE","upgradeFactor":1}],"resourceCosts":[{"resourceEnum":"GOLD","resourceCost":4000}],"purchased":false},{"id":47,"upgradeType":"WORKER","name":"Mineral Obsessive","description":"This guy REALLY likes minerals!","upgradeEffects":[{"upgradeIsForWholeType":false,"resourceType":"WOOD","resourceEnum":"OBSIDIAN","upgradeVariable":"WORKABLE","upgradeFactor":1},{"upgradeIsForWholeType":false,"resourceEnum":"DIAMOND","upgradeVariable":"WORKABLE","upgradeFactor":1}],"resourceCosts":[{"resourceEnum":"MARBLE","resourceCost":375},{"resourceEnum":"QUARTZ","resourceCost":300},{"resourceEnum":"OBSIDIAN","resourceCost":30},{"resourceEnum":"DIAMOND","resourceCost":20}],"purchased":false},{"id":48,"upgradeType":"WORKER","name":"Dwarven Miner","description":"Dwarves aren't actually very active miners. This guy just loves his job.","upgradeEffects":[{"upgradeIsForWholeType":true,"resourceType":"METAL","resourceEnum":"OBSIDIAN","upgradeVariable":"WORKABLE","upgradeFactor":1,"maxTier":5}],"resourceCosts":[{"resourceEnum":"GOLD","resourceCost":4500}],"purchased":false},{"id":49,"upgradeType":"WORKER","name":"Dwarven Champion","description":"Dwarves are naturally inclined to be the best at whatever they do, even things that are totally un-dwarfish like mining.","upgradeEffects":[{"upgradeIsForWholeType":true,"resourceType":"METAL","resourceEnum":"OBSIDIAN","upgradeVariable":"WORKABLE","upgradeFactor":1,"maxTier":7}],"resourceCosts":[{"resourceEnum":"GOLD","resourceCost":60000},{"resourceEnum":"TEMPROUSINGOT","resourceCost":10}],"purchased":false},{"id":50,"upgradeType":"WORKER","name":"Musical Lumberjacks","description":"This funny little tune helps the lumberjacks stay focused, but you'll NEVER get it out of your head. Increases worker yield by 60%.","upgradeEffects":[{"upgradeIsForWholeType":true,"resourceType":"WOOD","resourceEnum":"OAK","upgradeVariable":"WORKER_YIELD","upgradeFactor":1.6,"maxTier":5}],"resourceCosts":[{"resourceEnum":"EUCALYPTUS","resourceCost":300}],"purchased":false},{"id":51,"upgradeType":"WORKER","name":"Entking","description":"With their king at last restored to his former glory, the ents find themselves greatly invigorated.","upgradeEffects":[{"upgradeIsForWholeType":false,"resourceType":"WOOD","resourceEnum":"ENTSOUL","upgradeVariable":"WORKER_YIELD","upgradeFactor":3},{"upgradeIsForWholeType":false,"resourceEnum":"REANIMATEDENT","upgradeVariable":"WORKER_YIELD","upgradeFactor":3}],"resourceCosts":[{"resourceEnum":"ENTSOUL","resourceCost":500},{"resourceEnum":"REFINEDTEMPROUS","resourceCost":150}],"purchased":false},{"id":52,"upgradeType":"WORKER","name":"Miner's Guild","description":"Form a guild to help your workers hone their skills. Miners harvest 15% more material.","upgradeEffects":[{"upgradeIsForWholeType":true,"resourceType":"MINERAL","resourceEnum":"OAK","upgradeVariable":"WORKER_YIELD","upgradeFactor":1.15},{"upgradeIsForWholeType":true,"resourceType":"METAL","resourceEnum":"GOLD","upgradeVariable":"WORKER_YIELD","upgradeFactor":1.15}],"resourceCosts":[{"resourceEnum":"GOLDINGOT","resourceCost":500}],"purchased":false},{"id":53,"upgradeType":"WORKER","name":"Miner Musical","description":"Those who underperform are \"encouraged\" to sing along.","upgradeEffects":[{"upgradeIsForWholeType":true,"resourceType":"MINERAL","resourceEnum":"OAK","upgradeVariable":"WORKER_YIELD","upgradeFactor":2,"maxTier":6},{"upgradeIsForWholeType":true,"resourceType":"METAL","resourceEnum":"GOLD","upgradeVariable":"WORKER_YIELD","upgradeFactor":2,"maxTier":5}],"resourceCosts":[{"resourceEnum":"LATINUMINGOT","resourceCost":1500}],"purchased":false},{"id":54,"upgradeType":"WORKER","name":"Temprous Master","description":"There is no other with the prowess this master posesses in handling temprous metal. Workers generate 50% more temprous.","upgradeEffects":[{"upgradeIsForWholeType":false,"resourceType":"MINERAL","resourceEnum":"TEMPROUSINGOT","upgradeVariable":"WORKER_YIELD","upgradeFactor":1.5},{"upgradeIsForWholeType":false,"resourceEnum":"REFINEDTEMPROUS","upgradeVariable":"WORKER_YIELD","upgradeFactor":1.5}],"resourceCosts":[{"resourceEnum":"REFINEDTEMPROUS","resourceCost":250},{"resourceEnum":"ENTSOUL","resourceCost":50}],"purchased":false}];
 
 /***/ }),
 
@@ -6225,10 +5946,10 @@ module.exports = [{"id":0,"upgradeType":"RESOURCE","name":"Refined Iron Axe","de
 /*!**************************************!*\
   !*** ./src/assets/json/workers.json ***!
   \**************************************/
-/*! exports provided: 0, 1, 2, default */
+/*! exports provided: WOOD, MINERAL, METAL, default */
 /***/ (function(module) {
 
-module.exports = [{"id":0,"cost":250,"resourceType":"WOOD","workerCount":0,"freeWorkers":0,"workersByResource":[{"resourceId":1,"workable":true,"recurringCost":5,"workerCount":0,"workerYield":1,"sliderSettingValid":true},{"resourceId":7,"workable":false,"recurringCost":10,"workerCount":0,"workerYield":1,"sliderSettingValid":true},{"resourceId":8,"workable":false,"recurringCost":20,"workerCount":0,"workerYield":1,"sliderSettingValid":true},{"resourceId":9,"workable":false,"recurringCost":25,"workerCount":0,"workerYield":1,"sliderSettingValid":true},{"resourceId":15,"workable":false,"recurringCost":40,"workerCount":0,"workerYield":1,"sliderSettingValid":true},{"resourceId":25,"workable":false,"recurringCost":50,"workerCount":0,"workerYield":1,"sliderSettingValid":true},{"resourceId":16,"workable":false,"recurringCost":60,"workerCount":0,"workerYield":1,"sliderSettingValid":true},{"resourceId":17,"workable":false,"recurringCost":150,"workerCount":0,"workerYield":1,"sliderSettingValid":true}]},{"id":2,"cost":650,"resourceType":"MINERAL","workerCount":0,"freeWorkers":0,"workersByResource":[{"resourceId":13,"workable":true,"recurringCost":10,"workerCount":0,"workerYield":1,"sliderSettingValid":true},{"resourceId":26,"workable":false,"recurringCost":15,"workerCount":0,"workerYield":1,"sliderSettingValid":true},{"resourceId":27,"workable":false,"recurringCost":20,"workerCount":0,"workerYield":1,"sliderSettingValid":true},{"resourceId":28,"workable":false,"recurringCost":30,"workerCount":0,"workerYield":1,"sliderSettingValid":true},{"resourceId":29,"workable":false,"recurringCost":45,"workerCount":0,"workerYield":1,"sliderSettingValid":true},{"resourceId":30,"workable":false,"recurringCost":55,"workerCount":0,"workerYield":1,"sliderSettingValid":true},{"resourceId":31,"workable":false,"recurringCost":70,"workerCount":0,"workerYield":1,"sliderSettingValid":true}]},{"id":1,"cost":1000,"resourceType":"METAL","workerCount":0,"freeWorkers":0,"workersByResource":[{"resourceId":2,"workable":false,"recurringCost":5,"workerCount":0,"workerYield":1,"sliderSettingValid":true},{"resourceId":3,"workable":false,"recurringCost":5,"workerCount":0,"workerYield":1,"sliderSettingValid":true},{"resourceId":4,"workable":false,"recurringCost":10,"workerCount":0,"workerYield":1,"sliderSettingValid":true},{"resourceId":5,"workable":false,"recurringCost":15,"workerCount":0,"workerYield":1,"sliderSettingValid":true},{"resourceId":6,"workable":false,"recurringCost":25,"workerCount":0,"workerYield":1,"sliderSettingValid":true},{"resourceId":10,"workable":false,"recurringCost":40,"workerCount":0,"workerYield":1,"sliderSettingValid":true},{"resourceId":11,"workable":false,"recurringCost":35,"workerCount":0,"workerYield":1,"sliderSettingValid":true},{"resourceId":12,"workable":false,"recurringCost":60,"workerCount":0,"workerYield":1,"sliderSettingValid":true},{"resourceId":18,"workable":false,"recurringCost":75,"workerCount":0,"workerYield":1,"sliderSettingValid":true},{"resourceId":19,"workable":false,"recurringCost":95,"workerCount":0,"workerYield":1,"sliderSettingValid":true},{"resourceId":20,"workable":false,"recurringCost":120,"workerCount":0,"workerYield":1,"sliderSettingValid":true},{"resourceId":21,"workable":false,"recurringCost":120,"workerCount":0,"workerYield":1,"sliderSettingValid":true},{"resourceId":22,"workable":false,"recurringCost":120,"workerCount":0,"workerYield":1,"sliderSettingValid":true},{"resourceId":23,"workable":false,"recurringCost":200,"workerCount":0,"workerYield":1,"sliderSettingValid":true},{"resourceId":24,"workable":false,"recurringCost":500,"workerCount":0,"workerYield":1,"sliderSettingValid":true}]}];
+module.exports = {"WOOD":{"id":0,"cost":250,"resourceType":"WOOD","workerCount":0,"freeWorkers":0,"resourceWorkers":{"OAK":{"resourceEnum":"OAK","workable":true,"recurringCost":5,"workerCount":0,"workerYield":1,"sliderSettingValid":true},"PINE":{"resourceEnum":"PINE","workable":false,"recurringCost":10,"workerCount":0,"workerYield":1,"sliderSettingValid":true},"BIRCH":{"resourceEnum":"BIRCH","workable":false,"recurringCost":20,"workerCount":0,"workerYield":1,"sliderSettingValid":true},"EUCALYPTUS":{"resourceEnum":"EUCALYPTUS","workable":false,"recurringCost":25,"workerCount":0,"workerYield":1,"sliderSettingValid":true},"WILLOW":{"resourceEnum":"WILLOW","workable":false,"recurringCost":40,"workerCount":0,"workerYield":1,"sliderSettingValid":true},"TEAK":{"resourceEnum":"TEAK","workable":false,"recurringCost":50,"workerCount":0,"workerYield":1,"sliderSettingValid":true},"ENTSOUL":{"resourceEnum":"ENTSOUL","workable":false,"recurringCost":60,"workerCount":0,"workerYield":1,"sliderSettingValid":true},"REANIMATEDENT":{"resourceEnum":"REANIMATEDENT","workable":false,"recurringCost":150,"workerCount":0,"workerYield":1,"sliderSettingValid":true}}},"MINERAL":{"id":2,"cost":650,"resourceType":"MINERAL","workerCount":0,"freeWorkers":0,"resourceWorkers":{"STONE":{"resourceEnum":"STONE","workable":true,"recurringCost":10,"workerCount":0,"workerYield":1,"sliderSettingValid":true},"GRAPHITE":{"resourceEnum":"GRAPHITE","workable":false,"recurringCost":15,"workerCount":0,"workerYield":1,"sliderSettingValid":true},"LIMESTONE":{"resourceEnum":"LIMESTONE","workable":false,"recurringCost":20,"workerCount":0,"workerYield":1,"sliderSettingValid":true},"MARBLE":{"resourceEnum":"MARBLE","workable":false,"recurringCost":30,"workerCount":0,"workerYield":1,"sliderSettingValid":true},"QUARTZ":{"resourceEnum":"QUARTZ","workable":false,"recurringCost":45,"workerCount":0,"workerYield":1,"sliderSettingValid":true},"OBSIDIAN":{"resourceEnum":"OBSIDIAN","workable":false,"recurringCost":55,"workerCount":0,"workerYield":1,"sliderSettingValid":true},"DIAMOND":{"resourceEnum":"DIAMOND","workable":false,"recurringCost":70,"workerCount":0,"workerYield":1,"sliderSettingValid":true}}},"METAL":{"id":1,"cost":1000,"resourceType":"METAL","workerCount":0,"freeWorkers":0,"resourceWorkers":{"COPPERORE":{"resourceEnum":"COPPERORE","workable":false,"recurringCost":5,"workerCount":0,"workerYield":1,"sliderSettingValid":true},"TINORE":{"resourceEnum":"TINORE","workable":false,"recurringCost":5,"workerCount":0,"workerYield":1,"sliderSettingValid":true},"BRONZEINGOT":{"resourceEnum":"BRONZEINGOT","workable":false,"recurringCost":10,"workerCount":0,"workerYield":1,"sliderSettingValid":true},"IRONORE":{"resourceEnum":"IRONORE","workable":false,"recurringCost":15,"workerCount":0,"workerYield":1,"sliderSettingValid":true},"IRONINGOT":{"resourceEnum":"IRONINGOT","workable":false,"recurringCost":25,"workerCount":0,"workerYield":1,"sliderSettingValid":true},"STEELINGOT":{"resourceEnum":"STEELINGOT","workable":false,"recurringCost":40,"workerCount":0,"workerYield":1,"sliderSettingValid":true},"GOLDORE":{"resourceEnum":"GOLDORE","workable":false,"recurringCost":35,"workerCount":0,"workerYield":1,"sliderSettingValid":true},"GOLDINGOT":{"resourceEnum":"GOLDINGOT","workable":false,"recurringCost":60,"workerCount":0,"workerYield":1,"sliderSettingValid":true},"LATINUMORE":{"resourceEnum":"LATINUMORE","workable":false,"recurringCost":75,"workerCount":0,"workerYield":1,"sliderSettingValid":true},"LATINUMINGOT":{"resourceEnum":"LATINUMINGOT","workable":false,"recurringCost":95,"workerCount":0,"workerYield":1,"sliderSettingValid":true},"UNBELIEVIUMORE":{"resourceEnum":"UNBELIEVIUMORE","workable":false,"recurringCost":120,"workerCount":0,"workerYield":1,"sliderSettingValid":true},"LUSTRIALORE":{"resourceEnum":"LUSTRIALORE","workable":false,"recurringCost":120,"workerCount":0,"workerYield":1,"sliderSettingValid":true},"SPECTRUSORE":{"resourceEnum":"SPECTRUSORE","workable":false,"recurringCost":120,"workerCount":0,"workerYield":1,"sliderSettingValid":true},"TEMPROUSINGOT":{"resourceEnum":"TEMPROUSINGOT","workable":false,"recurringCost":200,"workerCount":0,"workerYield":1,"sliderSettingValid":true},"REFINEDTEMPROUS":{"resourceEnum":"REFINEDTEMPROUS","workable":false,"recurringCost":500,"workerCount":0,"workerYield":1,"sliderSettingValid":true}}}};
 
 /***/ }),
 
