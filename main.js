@@ -2969,7 +2969,7 @@ var Resource = /** @class */ (function () {
     };
     Object.defineProperty(Resource.prototype, "resourceAccessible", {
         get: function () {
-            return this.resourceTier <= this.resourcesService.highestTierReached;
+            return this.resourceTier <= this.resourcesService.highestTierReached + 1;
         },
         enumerable: true,
         configurable: true
