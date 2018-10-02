@@ -195,22 +195,24 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_map_map_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./components/map/map.component */ "./src/app/components/map/map.component.ts");
 /* harmony import */ var _components_settings_settings_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./components/settings/settings.component */ "./src/app/components/settings/settings.component.ts");
 /* harmony import */ var _components_admin_debug_admin_debug_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./components/admin-debug/admin-debug.component */ "./src/app/components/admin-debug/admin-debug.component.ts");
-/* harmony import */ var _components_save_dialog_save_dialog_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./components/save-dialog/save-dialog.component */ "./src/app/components/save-dialog/save-dialog.component.ts");
-/* harmony import */ var _directives_crop_crop_directive__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./directives/crop/crop.directive */ "./src/app/directives/crop/crop.directive.ts");
-/* harmony import */ var _directives_map_map_directive__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./directives/map/map.directive */ "./src/app/directives/map/map.directive.ts");
-/* harmony import */ var _directives_no_scroll_no_scroll_directive__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./directives/no-scroll/no-scroll.directive */ "./src/app/directives/no-scroll/no-scroll.directive.ts");
-/* harmony import */ var _components_enemy_enemy_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./components/enemy/enemy.component */ "./src/app/components/enemy/enemy.component.ts");
-/* harmony import */ var _components_fighter_fighter_component__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./components/fighter/fighter.component */ "./src/app/components/fighter/fighter.component.ts");
-/* harmony import */ var _components_buildings_buildings_buildings_component__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./components/buildings/buildings/buildings.component */ "./src/app/components/buildings/buildings/buildings.component.ts");
-/* harmony import */ var _components_tile_detail_tile_detail_component__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./components/tile-detail/tile-detail.component */ "./src/app/components/tile-detail/tile-detail.component.ts");
-/* harmony import */ var _components_fighter_detail_fighter_detail_component__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./components/fighter-detail/fighter-detail.component */ "./src/app/components/fighter-detail/fighter-detail.component.ts");
-/* harmony import */ var _directives_snap_snap_directive__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./directives/snap/snap.directive */ "./src/app/directives/snap/snap.directive.ts");
+/* harmony import */ var _components_about_dialog_about_dialog_about_dialog_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./components/about-dialog/about-dialog/about-dialog.component */ "./src/app/components/about-dialog/about-dialog/about-dialog.component.ts");
+/* harmony import */ var _components_save_dialog_save_dialog_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./components/save-dialog/save-dialog.component */ "./src/app/components/save-dialog/save-dialog.component.ts");
+/* harmony import */ var _directives_crop_crop_directive__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./directives/crop/crop.directive */ "./src/app/directives/crop/crop.directive.ts");
+/* harmony import */ var _directives_map_map_directive__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./directives/map/map.directive */ "./src/app/directives/map/map.directive.ts");
+/* harmony import */ var _directives_no_scroll_no_scroll_directive__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./directives/no-scroll/no-scroll.directive */ "./src/app/directives/no-scroll/no-scroll.directive.ts");
+/* harmony import */ var _components_enemy_enemy_component__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./components/enemy/enemy.component */ "./src/app/components/enemy/enemy.component.ts");
+/* harmony import */ var _components_fighter_fighter_component__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./components/fighter/fighter.component */ "./src/app/components/fighter/fighter.component.ts");
+/* harmony import */ var _components_buildings_buildings_buildings_component__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./components/buildings/buildings/buildings.component */ "./src/app/components/buildings/buildings/buildings.component.ts");
+/* harmony import */ var _components_tile_detail_tile_detail_component__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./components/tile-detail/tile-detail.component */ "./src/app/components/tile-detail/tile-detail.component.ts");
+/* harmony import */ var _components_fighter_detail_fighter_detail_component__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./components/fighter-detail/fighter-detail.component */ "./src/app/components/fighter-detail/fighter-detail.component.ts");
+/* harmony import */ var _directives_snap_snap_directive__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./directives/snap/snap.directive */ "./src/app/directives/snap/snap.directive.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -247,6 +249,7 @@ var AppModule = /** @class */ (function () {
             declarations: [
                 _app_component__WEBPACK_IMPORTED_MODULE_9__["AppComponent"],
                 _durwella_zoomable_canvas__WEBPACK_IMPORTED_MODULE_4__["ZoomableCanvasComponent"],
+                _pipes_long_number_pipe__WEBPACK_IMPORTED_MODULE_7__["LongNumberPipe"],
                 _components_clicker_main_clicker_main_component__WEBPACK_IMPORTED_MODULE_10__["ClickerMainComponent"],
                 _components_messages_messages_component__WEBPACK_IMPORTED_MODULE_11__["MessagesComponent"],
                 _components_workers_workers_component__WEBPACK_IMPORTED_MODULE_12__["WorkersComponent"],
@@ -255,17 +258,17 @@ var AppModule = /** @class */ (function () {
                 _components_settings_settings_component__WEBPACK_IMPORTED_MODULE_16__["SettingsComponent"],
                 _components_admin_debug_admin_debug_component__WEBPACK_IMPORTED_MODULE_17__["AdminDebugComponent"],
                 _components_map_map_component__WEBPACK_IMPORTED_MODULE_15__["MapComponent"],
-                _directives_crop_crop_directive__WEBPACK_IMPORTED_MODULE_19__["CropDirective"],
-                _components_save_dialog_save_dialog_component__WEBPACK_IMPORTED_MODULE_18__["SaveDialogComponent"],
-                _directives_map_map_directive__WEBPACK_IMPORTED_MODULE_20__["MapDirective"],
-                _directives_no_scroll_no_scroll_directive__WEBPACK_IMPORTED_MODULE_21__["NoScrollDirective"],
-                _components_enemy_enemy_component__WEBPACK_IMPORTED_MODULE_22__["EnemyComponent"],
-                _components_fighter_fighter_component__WEBPACK_IMPORTED_MODULE_23__["FighterComponent"],
-                _components_buildings_buildings_buildings_component__WEBPACK_IMPORTED_MODULE_24__["BuildingsComponent"],
-                _components_tile_detail_tile_detail_component__WEBPACK_IMPORTED_MODULE_25__["TileDetailComponent"],
-                _components_fighter_detail_fighter_detail_component__WEBPACK_IMPORTED_MODULE_26__["FighterDetailComponent"],
-                _directives_snap_snap_directive__WEBPACK_IMPORTED_MODULE_27__["SnapDirective"],
-                _pipes_long_number_pipe__WEBPACK_IMPORTED_MODULE_7__["LongNumberPipe"]
+                _directives_crop_crop_directive__WEBPACK_IMPORTED_MODULE_20__["CropDirective"],
+                _components_save_dialog_save_dialog_component__WEBPACK_IMPORTED_MODULE_19__["SaveDialogComponent"],
+                _directives_map_map_directive__WEBPACK_IMPORTED_MODULE_21__["MapDirective"],
+                _directives_no_scroll_no_scroll_directive__WEBPACK_IMPORTED_MODULE_22__["NoScrollDirective"],
+                _components_enemy_enemy_component__WEBPACK_IMPORTED_MODULE_23__["EnemyComponent"],
+                _components_fighter_fighter_component__WEBPACK_IMPORTED_MODULE_24__["FighterComponent"],
+                _components_buildings_buildings_buildings_component__WEBPACK_IMPORTED_MODULE_25__["BuildingsComponent"],
+                _components_tile_detail_tile_detail_component__WEBPACK_IMPORTED_MODULE_26__["TileDetailComponent"],
+                _components_fighter_detail_fighter_detail_component__WEBPACK_IMPORTED_MODULE_27__["FighterDetailComponent"],
+                _directives_snap_snap_directive__WEBPACK_IMPORTED_MODULE_28__["SnapDirective"],
+                _components_about_dialog_about_dialog_about_dialog_component__WEBPACK_IMPORTED_MODULE_18__["AboutDialogComponent"]
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
@@ -277,13 +280,88 @@ var AppModule = /** @class */ (function () {
                 ngx_color_picker__WEBPACK_IMPORTED_MODULE_8__["ColorPickerModule"]
             ],
             entryComponents: [
-                _components_save_dialog_save_dialog_component__WEBPACK_IMPORTED_MODULE_18__["SaveDialogComponent"]
+                _components_about_dialog_about_dialog_about_dialog_component__WEBPACK_IMPORTED_MODULE_18__["AboutDialogComponent"],
+                _components_save_dialog_save_dialog_component__WEBPACK_IMPORTED_MODULE_19__["SaveDialogComponent"]
             ],
             providers: [],
             bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_9__["AppComponent"]]
         })
     ], AppModule);
     return AppModule;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/components/about-dialog/about-dialog/about-dialog.component.css":
+/*!*********************************************************************************!*\
+  !*** ./src/app/components/about-dialog/about-dialog/about-dialog.component.css ***!
+  \*********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "h1 {\r\n  font-size: 1.2em;\r\n  color: #999;\r\n  margin-bottom: 0;\r\n}\r\n\r\n\r\nh2 {\r\n  font-size: 2em;\r\n  margin-top: 0;\r\n  padding-top: 0;\r\n}\r\n\r\n\r\n* {\r\n  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;\r\n}\r\n\r\n\r\na {\r\n  padding: 5px 10px;\r\n  text-decoration: none;\r\n  margin-top: 10px;\r\n  display: inline-block;\r\n  background-color: #eee;\r\n  border-radius: 4px;\r\n}\r\n\r\n\r\nnav a:visited, a:link {\r\n  color: #607d8b;\r\n}\r\n\r\n\r\nnav a:hover {\r\n  color: #039be5;\r\n  background-color: #cfd8dc;\r\n}\r\n\r\n\r\nnav a.active {\r\n  color: #039be5;\r\n}\r\n"
+
+/***/ }),
+
+/***/ "./src/app/components/about-dialog/about-dialog/about-dialog.component.html":
+/*!**********************************************************************************!*\
+  !*** ./src/app/components/about-dialog/about-dialog/about-dialog.component.html ***!
+  \**********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<h1>Age Of Clicking - Version Alpha 3.4</h1>\r\n<br />\r\n\r\n<div>\r\n  An exploration-based incremental game by Ratheronfire.\r\n  <br />\r\n  Thanks to the <a href=\"http://reddit.com/r/incremental_games/\" target=\"_blank\">/r/incremental_games</a> community for helping to test the game!\r\n  <br />\r\n  <a href=\"https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=8DTWKHUT9DYZN\" target=\"_blank\">Donate</a> If you enjoyed the game and want to help support me, feel free to drop a few bucks here! It's not at all required, but it's appreciated.\r\n\r\n  <div>\r\n    <h2>Also Check Out:</h2>\r\n    <li>\r\n      <a href=\"http://orteil.dashnet.org/cookieclicker/\" target=\"_blank\">Cookie Clicker</a> The incremental game that started them all!\r\n    </li>\r\n    <li>\r\n      <a href=\"http://scholtek.com/minedefense\" target=\"_blank\">Mine Defense</a> A seemingly simple game with a surprising amount of depth.\r\n    </li>\r\n    <li>\r\n      <a href=\"http://bloodrizer.ru/games/kittens/\" target=\"_blank\">Kittens Game</a> Filled with gradually unfolding systems and resources that all feed off of eachother.\r\n    </li>\r\n  </div>\r\n</div>\r\n\r\n<div>\r\n  <h2>Version History</h2>\r\n\r\n  Pre-Alpha 3\r\n  <li>\r\n    Complete lack of usable UI\r\n  </li>\r\n  <li>\r\n    Only a few resources & upgrades were added at this point.\r\n  </li>\r\n\r\n  <br />\r\n  Alpha 3\r\n  <li>\r\n    UI Overhaul\r\n  </li>\r\n  <li>\r\n    New map mystem\r\n  </li>\r\n  <li>\r\n    Expanded endgame resources\r\n  </li>\r\n  <li>\r\n    Added enemies, tower defense, and tile upgrading.\r\n  </li>\r\n  <li>\r\n    Added new market resources which automatically sell your stored resources.\r\n  </li>\r\n  <li>\r\n    Added food resources used to keep workers active.\r\n  </li>\r\n</div>\r\n"
+
+/***/ }),
+
+/***/ "./src/app/components/about-dialog/about-dialog/about-dialog.component.ts":
+/*!********************************************************************************!*\
+  !*** ./src/app/components/about-dialog/about-dialog/about-dialog.component.ts ***!
+  \********************************************************************************/
+/*! exports provided: AboutDialogComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AboutDialogComponent", function() { return AboutDialogComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var __param = (undefined && undefined.__param) || function (paramIndex, decorator) {
+    return function (target, key) { decorator(target, key, paramIndex); }
+};
+
+
+var AboutDialogComponent = /** @class */ (function () {
+    function AboutDialogComponent(dialogRef, data) {
+        this.dialogRef = dialogRef;
+        this.data = data;
+    }
+    AboutDialogComponent.prototype.ngOnInit = function () {
+    };
+    AboutDialogComponent.prototype.onNoClick = function () {
+        this.dialogRef.close();
+    };
+    AboutDialogComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-about-dialog',
+            template: __webpack_require__(/*! ./about-dialog.component.html */ "./src/app/components/about-dialog/about-dialog/about-dialog.component.html"),
+            styles: [__webpack_require__(/*! ./about-dialog.component.css */ "./src/app/components/about-dialog/about-dialog/about-dialog.component.css")]
+        }),
+        __param(1, Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"])(_angular_material__WEBPACK_IMPORTED_MODULE_1__["MAT_DIALOG_DATA"])),
+        __metadata("design:paramtypes", [_angular_material__WEBPACK_IMPORTED_MODULE_1__["MatDialogRef"], Object])
+    ], AboutDialogComponent);
+    return AboutDialogComponent;
 }());
 
 
@@ -1244,7 +1322,7 @@ var SaveDialogComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "mat-panel-title {\r\n  display: -ms-grid;\r\n  display: grid;\r\n}\r\n\r\n.color-input {\r\n    color: rgb(108, 88, 88);\r\n    font-weight: bolder;\r\n}\r\n\r\n.full-width {\r\n  width: 100%;\r\n}\r\n"
+module.exports = "h1 {\r\n  font-size: 1.2em;\r\n  color: #999;\r\n  margin-bottom: 0;\r\n  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;\r\n}\r\n\r\nh2 {\r\n  font-size: 2em;\r\n  margin-top: 0;\r\n  padding-top: 0;\r\n}\r\n\r\na {\r\n  padding: 5px 10px;\r\n  text-decoration: none;\r\n  margin-top: 10px;\r\n  display: inline-block;\r\n  background-color: #eee;\r\n  border-radius: 4px;\r\n  cursor: pointer;\r\n}\r\n\r\na:visited, a:link {\r\n  color: #607d8b;\r\n}\r\n\r\na:hover {\r\n  color: #039be5;\r\n  background-color: #cfd8dc;\r\n}\r\n\r\na.active {\r\n  color: #039be5;\r\n}\r\n\r\nmat-panel-title {\r\n  display: -ms-grid;\r\n  display: grid;\r\n}\r\n\r\n.color-input {\r\n    color: rgb(108, 88, 88);\r\n    font-weight: bolder;\r\n}\r\n\r\n.full-width {\r\n  width: 100%;\r\n}\r\n"
 
 /***/ }),
 
@@ -1255,7 +1333,7 @@ module.exports = "mat-panel-title {\r\n  display: -ms-grid;\r\n  display: grid;\
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<h3>Version {{settingsService.gameVersion}}</h3>\r\n\r\n<mat-accordion multi=\"true\">\r\n  <mat-expansion-panel expanded=\"true\">\r\n    <mat-expansion-panel-header>\r\n      <mat-panel-title>\r\n        <mat-icon color=\"primary\">save</mat-icon>\r\n        Save/Load\r\n      </mat-panel-title>\r\n    </mat-expansion-panel-header>\r\n\r\n    <mat-form-field class=\"full-width\">\r\n      <mat-select placeholder=\"Autosave Interval (Minutes)\" [(ngModel)]=\"autosaveInterval\" (valueChange)=\"settingsService.setAutosave()\">\r\n        <mat-option [value]=\"-1\">Disable</mat-option>\r\n        <mat-option [value]=\"60000\">1</mat-option>\r\n        <mat-option [value]=\"900000\">15</mat-option>\r\n        <mat-option [value]=\"1800000\">30</mat-option>\r\n        <mat-option [value]=\"3600000\">60</mat-option>\r\n      </mat-select>\r\n    </mat-form-field>\r\n\r\n    <button mat-raised-button color=\"primary\" (click)=\"saveGame()\">Save</button>\r\n    <button mat-raised-button color=\"warn\" (click)=\"deleteGame()\">Delete Save</button>\r\n\r\n    <button mat-raised-button (click)=\"exportSave()\">Export Save</button>\r\n    <button mat-raised-button (click)=\"importSave()\">Import Save</button>\r\n  </mat-expansion-panel>\r\n\r\n  <mat-expansion-panel expanded=\"true\">\r\n    <mat-expansion-panel-header>\r\n      <mat-panel-title>\r\n        <mat-icon color=\"primary\">list</mat-icon>\r\n        Interface\r\n      </mat-panel-title>\r\n    </mat-expansion-panel-header>\r\n\r\n    <!-- <mat-checkbox [(ngModel)]=\"disableAnimations\">Disable Animations</mat-checkbox>\r\n    <br /> -->\r\n    <mat-checkbox [(ngModel)]=\"slimInterface\">Slim Mode</mat-checkbox>\r\n    <br />\r\n    <mat-checkbox [(ngModel)]=\"organizeLeftPanelByType\">Organize Left Pane By Resource Type</mat-checkbox>\r\n\r\n    <mat-form-field class=\"full-width\">\r\n      <mat-select placeholder=\"Resource Shortcuts\" [formControl]=\"bindSelected\" multiple (selectionChange)=\"resourceBindChange($event)\">\r\n        <mat-option *ngFor=\"let resource of resourcesService.getResources(false, false, true)\" [(value)]=\"resource.resourceEnum\">\r\n          {{resource.name | titlecase}}\r\n        </mat-option>\r\n      </mat-select>\r\n      <mat-error *ngIf=\"bindSelected.hasError('length')\">\r\n        No more than 10 resource shortcuts allowed.\r\n      </mat-error>\r\n    </mat-form-field>\r\n\r\n  </mat-expansion-panel>\r\n\r\n  <mat-expansion-panel expanded=\"true\">\r\n    <mat-expansion-panel-header>\r\n      <mat-panel-title>\r\n        <mat-icon color=\"primary\">map</mat-icon>\r\n        Map\r\n      </mat-panel-title>\r\n    </mat-expansion-panel-header>\r\n\r\n    <mat-checkbox [(ngModel)]=\"mapLowFramerate\">Limit Framerate</mat-checkbox>\r\n    <br />\r\n\r\n    <mat-form-field class=\"full-width\">\r\n      <input class=\"color-input\" matInput placeholder=\"Player Harvest Color\" [(colorPicker)]=\"resourceAnimationColors['PLAYERSPAWNED']\"\r\n        [style.background]=\"resourceAnimationColors['PLAYERSPAWNED']\" [value]=\"resourceAnimationColors['PLAYERSPAWNED']\" />\r\n    </mat-form-field>\r\n\r\n    <mat-form-field class=\"full-width\">\r\n      <input class=\"color-input\" matInput placeholder=\"Worker Harvest Color\" [(colorPicker)]=\"resourceAnimationColors['WORKERSPAWNED']\"\r\n        [style.background]=\"resourceAnimationColors['WORKERSPAWNED']\" [value]=\"resourceAnimationColors['WORKERSPAWNED']\" />\r\n    </mat-form-field>\r\n\r\n    <mat-form-field class=\"full-width\">\r\n      <input class=\"color-input\" matInput placeholder=\"Sold Resource Color\" [(colorPicker)]=\"resourceAnimationColors['SOLD']\"\r\n        [style.background]=\"resourceAnimationColors['SOLD']\" [value]=\"resourceAnimationColors['SOLD']\" />\r\n    </mat-form-field>\r\n  </mat-expansion-panel>\r\n\r\n  <mat-expansion-panel expanded=\"true\">\r\n    <mat-expansion-panel-header>\r\n      <mat-panel-title>\r\n        <mat-icon color=\"primary\">assessment</mat-icon>\r\n        Log\r\n      </mat-panel-title>\r\n    </mat-expansion-panel-header>\r\n\r\n    <button mat-raised-button (click)=\"messagesService.clear()\">Clear</button>\r\n\r\n    <br />\r\n\r\n    <mat-form-field class=\"full-width\">\r\n      <input matInput type=\"number\" placeholder=\"Log History\" min=\"0\" max=\"10000\" [(ngModel)]=\"messagesService.messageLimit\">\r\n    </mat-form-field>\r\n\r\n    <br />\r\n\r\n    <mat-form-field class=\"full-width\">\r\n      <mat-select placeholder=\"Visible Log Sources\" [(ngModel)]=\"messagesService.visibleSources\" (ngModelChange)=\"messagesService.getFilteredMessages()\"\r\n        multiple>\r\n        <mat-option *ngFor=\"let messageSource of messageSources | enumToArray\" [(value)]=\"messageSources[messageSource]\">\r\n          {{messageSource | titlecase}}\r\n        </mat-option>\r\n      </mat-select>\r\n    </mat-form-field>\r\n  </mat-expansion-panel>\r\n\r\n  <mat-expansion-panel expanded=\"true\">\r\n    <mat-expansion-panel-header>\r\n      <mat-panel-title>\r\n        <mat-icon color=\"primary\">bug_report</mat-icon>\r\n        Debug\r\n      </mat-panel-title>\r\n    </mat-expansion-panel-header>\r\n\r\n    <mat-checkbox [(ngModel)]=\"debugMode\">Debug Mode</mat-checkbox>\r\n  </mat-expansion-panel>\r\n</mat-accordion>\r\n"
+module.exports = "<h3>\r\n  Version {{settingsService.gameVersion}} -\r\n  <a (click)=\"openAboutDialog()\">About</a>\r\n</h3>\r\n\r\n<mat-accordion multi=\"true\">\r\n  <mat-expansion-panel expanded=\"true\">\r\n    <mat-expansion-panel-header>\r\n      <mat-panel-title>\r\n        <mat-icon color=\"primary\">save</mat-icon>\r\n        Save/Load\r\n      </mat-panel-title>\r\n    </mat-expansion-panel-header>\r\n\r\n    <mat-form-field class=\"full-width\">\r\n      <mat-select placeholder=\"Autosave Interval (Minutes)\" [(ngModel)]=\"autosaveInterval\" (valueChange)=\"settingsService.setAutosave()\">\r\n        <mat-option [value]=\"-1\">Disable</mat-option>\r\n        <mat-option [value]=\"60000\">1</mat-option>\r\n        <mat-option [value]=\"900000\">15</mat-option>\r\n        <mat-option [value]=\"1800000\">30</mat-option>\r\n        <mat-option [value]=\"3600000\">60</mat-option>\r\n      </mat-select>\r\n    </mat-form-field>\r\n\r\n    <button mat-raised-button color=\"primary\" (click)=\"saveGame()\">Save</button>\r\n    <button mat-raised-button color=\"warn\" (click)=\"deleteGame()\">Delete Save</button>\r\n\r\n    <button mat-raised-button (click)=\"exportSave()\">Export Save</button>\r\n    <button mat-raised-button (click)=\"importSave()\">Import Save</button>\r\n  </mat-expansion-panel>\r\n\r\n  <mat-expansion-panel expanded=\"true\">\r\n    <mat-expansion-panel-header>\r\n      <mat-panel-title>\r\n        <mat-icon color=\"primary\">list</mat-icon>\r\n        Interface\r\n      </mat-panel-title>\r\n    </mat-expansion-panel-header>\r\n\r\n    <!-- <mat-checkbox [(ngModel)]=\"disableAnimations\">Disable Animations</mat-checkbox>\r\n    <br /> -->\r\n    <mat-checkbox [(ngModel)]=\"slimInterface\">Slim Mode</mat-checkbox>\r\n    <br />\r\n    <mat-checkbox [(ngModel)]=\"organizeLeftPanelByType\">Organize Left Pane By Resource Type</mat-checkbox>\r\n\r\n    <mat-form-field class=\"full-width\">\r\n      <mat-select placeholder=\"Resource Shortcuts\" [formControl]=\"bindSelected\" multiple (selectionChange)=\"resourceBindChange($event)\">\r\n        <mat-option *ngFor=\"let resource of resourcesService.getResources(false, false, true)\" [(value)]=\"resource.resourceEnum\">\r\n          {{resource.name | titlecase}}\r\n        </mat-option>\r\n      </mat-select>\r\n      <mat-error *ngIf=\"bindSelected.hasError('length')\">\r\n        No more than 10 resource shortcuts allowed.\r\n      </mat-error>\r\n    </mat-form-field>\r\n\r\n  </mat-expansion-panel>\r\n\r\n  <mat-expansion-panel expanded=\"true\">\r\n    <mat-expansion-panel-header>\r\n      <mat-panel-title>\r\n        <mat-icon color=\"primary\">map</mat-icon>\r\n        Map\r\n      </mat-panel-title>\r\n    </mat-expansion-panel-header>\r\n\r\n    <mat-checkbox [(ngModel)]=\"mapLowFramerate\">Limit Framerate</mat-checkbox>\r\n    <br />\r\n\r\n    <mat-form-field class=\"full-width\">\r\n      <input class=\"color-input\" matInput placeholder=\"Player Harvest Color\" [(colorPicker)]=\"resourceAnimationColors['PLAYERSPAWNED']\"\r\n        [style.background]=\"resourceAnimationColors['PLAYERSPAWNED']\" [value]=\"resourceAnimationColors['PLAYERSPAWNED']\" />\r\n    </mat-form-field>\r\n\r\n    <mat-form-field class=\"full-width\">\r\n      <input class=\"color-input\" matInput placeholder=\"Worker Harvest Color\" [(colorPicker)]=\"resourceAnimationColors['WORKERSPAWNED']\"\r\n        [style.background]=\"resourceAnimationColors['WORKERSPAWNED']\" [value]=\"resourceAnimationColors['WORKERSPAWNED']\" />\r\n    </mat-form-field>\r\n\r\n    <mat-form-field class=\"full-width\">\r\n      <input class=\"color-input\" matInput placeholder=\"Sold Resource Color\" [(colorPicker)]=\"resourceAnimationColors['SOLD']\"\r\n        [style.background]=\"resourceAnimationColors['SOLD']\" [value]=\"resourceAnimationColors['SOLD']\" />\r\n    </mat-form-field>\r\n  </mat-expansion-panel>\r\n\r\n  <mat-expansion-panel expanded=\"true\">\r\n    <mat-expansion-panel-header>\r\n      <mat-panel-title>\r\n        <mat-icon color=\"primary\">assessment</mat-icon>\r\n        Log\r\n      </mat-panel-title>\r\n    </mat-expansion-panel-header>\r\n\r\n    <button mat-raised-button (click)=\"messagesService.clear()\">Clear</button>\r\n\r\n    <br />\r\n\r\n    <mat-form-field class=\"full-width\">\r\n      <input matInput type=\"number\" placeholder=\"Log History\" min=\"0\" max=\"10000\" [(ngModel)]=\"messagesService.messageLimit\">\r\n    </mat-form-field>\r\n\r\n    <br />\r\n\r\n    <mat-form-field class=\"full-width\">\r\n      <mat-select placeholder=\"Visible Log Sources\" [(ngModel)]=\"messagesService.visibleSources\" (ngModelChange)=\"messagesService.getFilteredMessages()\"\r\n        multiple>\r\n        <mat-option *ngFor=\"let messageSource of messageSources | enumToArray\" [(value)]=\"messageSources[messageSource]\">\r\n          {{messageSource | titlecase}}\r\n        </mat-option>\r\n      </mat-select>\r\n    </mat-form-field>\r\n  </mat-expansion-panel>\r\n\r\n  <mat-expansion-panel expanded=\"true\">\r\n    <mat-expansion-panel-header>\r\n      <mat-panel-title>\r\n        <mat-icon color=\"primary\">bug_report</mat-icon>\r\n        Debug\r\n      </mat-panel-title>\r\n    </mat-expansion-panel-header>\r\n\r\n    <mat-checkbox [(ngModel)]=\"debugMode\">Debug Mode</mat-checkbox>\r\n  </mat-expansion-panel>\r\n</mat-accordion>\r\n"
 
 /***/ }),
 
@@ -1318,6 +1396,9 @@ var SettingsComponent = /** @class */ (function () {
     };
     SettingsComponent.prototype.resourceBindChange = function (event) {
         this.settingsService.resourceBindChange(event);
+    };
+    SettingsComponent.prototype.openAboutDialog = function () {
+        this.settingsService.openAboutDialog();
     };
     SettingsComponent.prototype.exportSave = function () {
         this.settingsService.openSaveDialog(this.settingsService.exportSave());
@@ -5120,19 +5201,20 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
-/* harmony import */ var _components_save_dialog_save_dialog_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../components/save-dialog/save-dialog.component */ "./src/app/components/save-dialog/save-dialog.component.ts");
-/* harmony import */ var _resources_resources_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./../resources/resources.service */ "./src/app/services/resources/resources.service.ts");
-/* harmony import */ var _upgrades_upgrades_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./../upgrades/upgrades.service */ "./src/app/services/upgrades/upgrades.service.ts");
-/* harmony import */ var _workers_workers_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./../workers/workers.service */ "./src/app/services/workers/workers.service.ts");
-/* harmony import */ var _messages_messages_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../messages/messages.service */ "./src/app/services/messages/messages.service.ts");
-/* harmony import */ var _map_map_service__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./../map/map.service */ "./src/app/services/map/map.service.ts");
-/* harmony import */ var _enemy_enemy_service__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./../enemy/enemy.service */ "./src/app/services/enemy/enemy.service.ts");
-/* harmony import */ var _fighter_fighter_service__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./../fighter/fighter.service */ "./src/app/services/fighter/fighter.service.ts");
-/* harmony import */ var _objects_resourceData__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./../../objects/resourceData */ "./src/app/objects/resourceData.ts");
-/* harmony import */ var _objects_tile__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../../objects/tile */ "./src/app/objects/tile.ts");
-/* harmony import */ var _objects_entity__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../../objects/entity */ "./src/app/objects/entity.ts");
-/* harmony import */ var _objects_message__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./../../objects/message */ "./src/app/objects/message.ts");
-/* harmony import */ var _objects_vector__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../../objects/vector */ "./src/app/objects/vector.ts");
+/* harmony import */ var _components_about_dialog_about_dialog_about_dialog_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./../../components/about-dialog/about-dialog/about-dialog.component */ "./src/app/components/about-dialog/about-dialog/about-dialog.component.ts");
+/* harmony import */ var _components_save_dialog_save_dialog_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../components/save-dialog/save-dialog.component */ "./src/app/components/save-dialog/save-dialog.component.ts");
+/* harmony import */ var _resources_resources_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./../resources/resources.service */ "./src/app/services/resources/resources.service.ts");
+/* harmony import */ var _upgrades_upgrades_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./../upgrades/upgrades.service */ "./src/app/services/upgrades/upgrades.service.ts");
+/* harmony import */ var _workers_workers_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./../workers/workers.service */ "./src/app/services/workers/workers.service.ts");
+/* harmony import */ var _messages_messages_service__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../messages/messages.service */ "./src/app/services/messages/messages.service.ts");
+/* harmony import */ var _map_map_service__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./../map/map.service */ "./src/app/services/map/map.service.ts");
+/* harmony import */ var _enemy_enemy_service__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./../enemy/enemy.service */ "./src/app/services/enemy/enemy.service.ts");
+/* harmony import */ var _fighter_fighter_service__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./../fighter/fighter.service */ "./src/app/services/fighter/fighter.service.ts");
+/* harmony import */ var _objects_resourceData__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./../../objects/resourceData */ "./src/app/objects/resourceData.ts");
+/* harmony import */ var _objects_tile__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../../objects/tile */ "./src/app/objects/tile.ts");
+/* harmony import */ var _objects_entity__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../../objects/entity */ "./src/app/objects/entity.ts");
+/* harmony import */ var _objects_message__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./../../objects/message */ "./src/app/objects/message.ts");
+/* harmony import */ var _objects_vector__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../../objects/vector */ "./src/app/objects/vector.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -5158,8 +5240,9 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
-var defaultResourceBinds = [_objects_resourceData__WEBPACK_IMPORTED_MODULE_11__["ResourceEnum"].Oak, _objects_resourceData__WEBPACK_IMPORTED_MODULE_11__["ResourceEnum"].Pine, _objects_resourceData__WEBPACK_IMPORTED_MODULE_11__["ResourceEnum"].Birch, _objects_resourceData__WEBPACK_IMPORTED_MODULE_11__["ResourceEnum"].Stone, _objects_resourceData__WEBPACK_IMPORTED_MODULE_11__["ResourceEnum"].Graphite,
-    _objects_resourceData__WEBPACK_IMPORTED_MODULE_11__["ResourceEnum"].Limestone, _objects_resourceData__WEBPACK_IMPORTED_MODULE_11__["ResourceEnum"].CopperOre, _objects_resourceData__WEBPACK_IMPORTED_MODULE_11__["ResourceEnum"].TinOre, _objects_resourceData__WEBPACK_IMPORTED_MODULE_11__["ResourceEnum"].BronzeIngot, _objects_resourceData__WEBPACK_IMPORTED_MODULE_11__["ResourceEnum"].IronOre];
+
+var defaultResourceBinds = [_objects_resourceData__WEBPACK_IMPORTED_MODULE_12__["ResourceEnum"].Oak, _objects_resourceData__WEBPACK_IMPORTED_MODULE_12__["ResourceEnum"].Pine, _objects_resourceData__WEBPACK_IMPORTED_MODULE_12__["ResourceEnum"].Birch, _objects_resourceData__WEBPACK_IMPORTED_MODULE_12__["ResourceEnum"].Stone, _objects_resourceData__WEBPACK_IMPORTED_MODULE_12__["ResourceEnum"].Graphite,
+    _objects_resourceData__WEBPACK_IMPORTED_MODULE_12__["ResourceEnum"].Limestone, _objects_resourceData__WEBPACK_IMPORTED_MODULE_12__["ResourceEnum"].CopperOre, _objects_resourceData__WEBPACK_IMPORTED_MODULE_12__["ResourceEnum"].TinOre, _objects_resourceData__WEBPACK_IMPORTED_MODULE_12__["ResourceEnum"].BronzeIngot, _objects_resourceData__WEBPACK_IMPORTED_MODULE_12__["ResourceEnum"].IronOre];
 var SettingsService = /** @class */ (function () {
     function SettingsService(resourcesService, upgradesService, workersService, mapService, enemyService, fighterService, messagesService, snackbar, dialog) {
         this.resourcesService = resourcesService;
@@ -5171,8 +5254,8 @@ var SettingsService = /** @class */ (function () {
         this.messagesService = messagesService;
         this.snackbar = snackbar;
         this.dialog = dialog;
-        this.versionHistory = ['1.2', 'Alpha 3', 'Alpha 3.1', 'Alpha 3.2', 'Alpha 3.3'];
-        this.gameVersion = 'Alpha 3.3';
+        this.versionHistory = ['1.2', 'Alpha 3', 'Alpha 3.1', 'Alpha 3.2', 'Alpha 3.3', 'Alpha 3.4'];
+        this.gameVersion = 'Alpha 3.4';
         this.bindSelected = new _angular_forms__WEBPACK_IMPORTED_MODULE_0__["FormControl"]();
         this.autosaveInterval = 60000;
         this.lastAutosave = this.autosaveInterval;
@@ -5216,7 +5299,7 @@ var SettingsService = /** @class */ (function () {
     };
     SettingsService.prototype.openSaveDialog = function (saveData) {
         var _this = this;
-        var dialogRef = this.dialog.open(_components_save_dialog_save_dialog_component__WEBPACK_IMPORTED_MODULE_3__["SaveDialogComponent"], {
+        var dialogRef = this.dialog.open(_components_save_dialog_save_dialog_component__WEBPACK_IMPORTED_MODULE_4__["SaveDialogComponent"], {
             width: '750px',
             height: '150px',
             data: saveData === undefined ? {} : { saveData: saveData }
@@ -5226,6 +5309,19 @@ var SettingsService = /** @class */ (function () {
                 if (_this.importSave(result)) {
                     _this.snackbar.open('Game successfully loaded!', '', { duration: 2000 });
                     _this.log('Game successfully loaded!');
+                }
+            }
+        });
+    };
+    SettingsService.prototype.openAboutDialog = function () {
+        var _this = this;
+        var dialogRef = this.dialog.open(_components_about_dialog_about_dialog_about_dialog_component__WEBPACK_IMPORTED_MODULE_3__["AboutDialogComponent"], {
+            width: '750px',
+            height: '550px'
+        });
+        dialogRef.afterClosed().subscribe(function (result) {
+            if (result !== undefined) {
+                if (_this.importSave(result)) {
                 }
             }
         });
@@ -5268,9 +5364,9 @@ var SettingsService = /** @class */ (function () {
         this.resourceBinds = defaultResourceBinds;
         this.bindSelected.setValue(this.resourceBinds);
         this.resourceBindChange({ 'source': null, 'value': this.resourceBinds });
-        this.messagesService.visibleSources = [_objects_message__WEBPACK_IMPORTED_MODULE_14__["MessageSource"].Admin, _objects_message__WEBPACK_IMPORTED_MODULE_14__["MessageSource"].Buildings, _objects_message__WEBPACK_IMPORTED_MODULE_14__["MessageSource"].Main, _objects_message__WEBPACK_IMPORTED_MODULE_14__["MessageSource"].Enemy,
-            _objects_message__WEBPACK_IMPORTED_MODULE_14__["MessageSource"].Fighter, _objects_message__WEBPACK_IMPORTED_MODULE_14__["MessageSource"].Map, _objects_message__WEBPACK_IMPORTED_MODULE_14__["MessageSource"].Resources, _objects_message__WEBPACK_IMPORTED_MODULE_14__["MessageSource"].Settings,
-            _objects_message__WEBPACK_IMPORTED_MODULE_14__["MessageSource"].Store, _objects_message__WEBPACK_IMPORTED_MODULE_14__["MessageSource"].Upgrades, _objects_message__WEBPACK_IMPORTED_MODULE_14__["MessageSource"].Workers];
+        this.messagesService.visibleSources = [_objects_message__WEBPACK_IMPORTED_MODULE_15__["MessageSource"].Admin, _objects_message__WEBPACK_IMPORTED_MODULE_15__["MessageSource"].Buildings, _objects_message__WEBPACK_IMPORTED_MODULE_15__["MessageSource"].Main, _objects_message__WEBPACK_IMPORTED_MODULE_15__["MessageSource"].Enemy,
+            _objects_message__WEBPACK_IMPORTED_MODULE_15__["MessageSource"].Fighter, _objects_message__WEBPACK_IMPORTED_MODULE_15__["MessageSource"].Map, _objects_message__WEBPACK_IMPORTED_MODULE_15__["MessageSource"].Resources, _objects_message__WEBPACK_IMPORTED_MODULE_15__["MessageSource"].Settings,
+            _objects_message__WEBPACK_IMPORTED_MODULE_15__["MessageSource"].Store, _objects_message__WEBPACK_IMPORTED_MODULE_15__["MessageSource"].Upgrades, _objects_message__WEBPACK_IMPORTED_MODULE_15__["MessageSource"].Workers];
         this.enemyService.enemiesActive = false;
         this.disableAnimations = false;
         this.slimInterface = false;
@@ -5338,7 +5434,7 @@ var SettingsService = /** @class */ (function () {
         }
         for (var _f = 0, _g = this.mapService.tiledMap; _f < _g.length; _f++) {
             var tile = _g[_f];
-            if (tile.buildingTileType === undefined && tile.buildingTileType !== _objects_tile__WEBPACK_IMPORTED_MODULE_12__["BuildingTileType"].EnemyPortal) {
+            if (tile.buildingTileType === undefined && tile.buildingTileType !== _objects_tile__WEBPACK_IMPORTED_MODULE_13__["BuildingTileType"].EnemyPortal) {
                 continue;
             }
             var tileData = {
@@ -5474,26 +5570,26 @@ var SettingsService = /** @class */ (function () {
                     var tileData = _j[_h];
                     _loop_1(tileData);
                 }
-                var marketTiles = saveData.tiles.filter(function (tile) { return tile.buildingTileType && _this.mapService.buildingTiles.get(tile.buildingTileType).subType === _objects_tile__WEBPACK_IMPORTED_MODULE_12__["BuildingSubType"].Market; });
+                var marketTiles = saveData.tiles.filter(function (tile) { return tile.buildingTileType && _this.mapService.buildingTiles.get(tile.buildingTileType).subType === _objects_tile__WEBPACK_IMPORTED_MODULE_13__["BuildingSubType"].Market; });
                 for (var _k = 0, marketTiles_1 = marketTiles; _k < marketTiles_1.length; _k++) {
                     var tileData = marketTiles_1[_k];
                     var tile = this.mapService.tiledMap[tileData.id];
                     var resourceType = void 0;
                     switch (tileData.buildingTileType) {
-                        case _objects_tile__WEBPACK_IMPORTED_MODULE_12__["BuildingTileType"].WoodMarket: {
-                            resourceType = _objects_resourceData__WEBPACK_IMPORTED_MODULE_11__["ResourceType"].Wood;
+                        case _objects_tile__WEBPACK_IMPORTED_MODULE_13__["BuildingTileType"].WoodMarket: {
+                            resourceType = _objects_resourceData__WEBPACK_IMPORTED_MODULE_12__["ResourceType"].Wood;
                             break;
                         }
-                        case _objects_tile__WEBPACK_IMPORTED_MODULE_12__["BuildingTileType"].MineralMarket: {
-                            resourceType = _objects_resourceData__WEBPACK_IMPORTED_MODULE_11__["ResourceType"].Mineral;
+                        case _objects_tile__WEBPACK_IMPORTED_MODULE_13__["BuildingTileType"].MineralMarket: {
+                            resourceType = _objects_resourceData__WEBPACK_IMPORTED_MODULE_12__["ResourceType"].Mineral;
                             break;
                         }
-                        case _objects_tile__WEBPACK_IMPORTED_MODULE_12__["BuildingTileType"].MetalMarket: {
-                            resourceType = _objects_resourceData__WEBPACK_IMPORTED_MODULE_11__["ResourceType"].Metal;
+                        case _objects_tile__WEBPACK_IMPORTED_MODULE_13__["BuildingTileType"].MetalMarket: {
+                            resourceType = _objects_resourceData__WEBPACK_IMPORTED_MODULE_12__["ResourceType"].Metal;
                             break;
                         }
                     }
-                    tile.market = new _objects_tile__WEBPACK_IMPORTED_MODULE_12__["Market"](this.mapService, this.resourcesService, resourceType, tile, false);
+                    tile.market = new _objects_tile__WEBPACK_IMPORTED_MODULE_13__["Market"](this.mapService, this.resourcesService, resourceType, tile, false);
                     tile.market.sellInterval = tileData.sellInterval ? tileData.sellInterval : 1000;
                     tile.market.sellQuantity = tileData.sellQuantity ? tileData.sellQuantity : 50;
                 }
@@ -5503,8 +5599,8 @@ var SettingsService = /** @class */ (function () {
                     var enemyData = _m[_l];
                     var tilePosition = this.mapService.clampTileCoordinates(enemyData.position.x, enemyData.position.y);
                     var tile = this.mapService.getTile(tilePosition[0], tilePosition[1]);
-                    var enemy = new _objects_entity__WEBPACK_IMPORTED_MODULE_13__["Enemy"](enemyData.name, new _objects_vector__WEBPACK_IMPORTED_MODULE_15__["Vector"](enemyData.position.x, enemyData.position.y), tile, enemyData.health, enemyData.animationSpeed, enemyData.attack, enemyData.defense, enemyData.attackRange, enemyData.targetableBuildingTypes, enemyData.resourcesToSteal, enemyData.stealMax, enemyData.resourceCapacity);
-                    enemy.spawnPosition = new _objects_vector__WEBPACK_IMPORTED_MODULE_15__["Vector"](enemyData.spawnPosition.x, enemyData.spawnPosition.y);
+                    var enemy = new _objects_entity__WEBPACK_IMPORTED_MODULE_14__["Enemy"](enemyData.name, new _objects_vector__WEBPACK_IMPORTED_MODULE_16__["Vector"](enemyData.position.x, enemyData.position.y), tile, enemyData.health, enemyData.animationSpeed, enemyData.attack, enemyData.defense, enemyData.attackRange, enemyData.targetableBuildingTypes, enemyData.resourcesToSteal, enemyData.stealMax, enemyData.resourceCapacity);
+                    enemy.spawnPosition = new _objects_vector__WEBPACK_IMPORTED_MODULE_16__["Vector"](enemyData.spawnPosition.x, enemyData.spawnPosition.y);
                     this.enemyService.findTargets(enemy);
                     this.enemyService.pickTarget(enemy);
                     this.enemyService.enemies.push(enemy);
@@ -5515,7 +5611,7 @@ var SettingsService = /** @class */ (function () {
                     var fighterData = _p[_o];
                     var tilePosition = this.mapService.clampTileCoordinates(fighterData.position.x, fighterData.position.y);
                     var tile = this.mapService.getTile(tilePosition[0], tilePosition[1]);
-                    var fighter = new _objects_entity__WEBPACK_IMPORTED_MODULE_13__["Fighter"](fighterData.name, new _objects_vector__WEBPACK_IMPORTED_MODULE_15__["Vector"](fighterData.position.x, fighterData.position.y), tile, fighterData.health, fighterData.animationSpeed, fighterData.attack, fighterData.defense, fighterData.attackRange, fighterData.description, fighterData.cost ? fighterData.cost : 50, fighterData.moveable, fighterData.fireMilliseconds ? fighterData.fireMilliseconds : 1000, this.resourcesService, this.enemyService, this.mapService);
+                    var fighter = new _objects_entity__WEBPACK_IMPORTED_MODULE_14__["Fighter"](fighterData.name, new _objects_vector__WEBPACK_IMPORTED_MODULE_16__["Vector"](fighterData.position.x, fighterData.position.y), tile, fighterData.health, fighterData.animationSpeed, fighterData.attack, fighterData.defense, fighterData.attackRange, fighterData.description, fighterData.cost ? fighterData.cost : 50, fighterData.moveable, fighterData.fireMilliseconds ? fighterData.fireMilliseconds : 1000, this.resourcesService, this.enemyService, this.mapService);
                     fighter.maxHealth = fighterData.maxHealth;
                     if (fighterData.statLevels) {
                         fighter.statLevels = fighterData.statLevels;
@@ -5537,9 +5633,9 @@ var SettingsService = /** @class */ (function () {
                 this.bindSelected.setValue(this.resourceBinds);
                 this.resourceBindChange({ 'source': null, 'value': this.resourceBinds });
                 this.messagesService.visibleSources = saveData.settings.visibleSources ? saveData.settings.visibleSources :
-                    [_objects_message__WEBPACK_IMPORTED_MODULE_14__["MessageSource"].Admin, _objects_message__WEBPACK_IMPORTED_MODULE_14__["MessageSource"].Buildings, _objects_message__WEBPACK_IMPORTED_MODULE_14__["MessageSource"].Main, _objects_message__WEBPACK_IMPORTED_MODULE_14__["MessageSource"].Enemy,
-                        _objects_message__WEBPACK_IMPORTED_MODULE_14__["MessageSource"].Fighter, _objects_message__WEBPACK_IMPORTED_MODULE_14__["MessageSource"].Map, _objects_message__WEBPACK_IMPORTED_MODULE_14__["MessageSource"].Resources, _objects_message__WEBPACK_IMPORTED_MODULE_14__["MessageSource"].Settings,
-                        _objects_message__WEBPACK_IMPORTED_MODULE_14__["MessageSource"].Store, _objects_message__WEBPACK_IMPORTED_MODULE_14__["MessageSource"].Upgrades, _objects_message__WEBPACK_IMPORTED_MODULE_14__["MessageSource"].Workers];
+                    [_objects_message__WEBPACK_IMPORTED_MODULE_15__["MessageSource"].Admin, _objects_message__WEBPACK_IMPORTED_MODULE_15__["MessageSource"].Buildings, _objects_message__WEBPACK_IMPORTED_MODULE_15__["MessageSource"].Main, _objects_message__WEBPACK_IMPORTED_MODULE_15__["MessageSource"].Enemy,
+                        _objects_message__WEBPACK_IMPORTED_MODULE_15__["MessageSource"].Fighter, _objects_message__WEBPACK_IMPORTED_MODULE_15__["MessageSource"].Map, _objects_message__WEBPACK_IMPORTED_MODULE_15__["MessageSource"].Resources, _objects_message__WEBPACK_IMPORTED_MODULE_15__["MessageSource"].Settings,
+                        _objects_message__WEBPACK_IMPORTED_MODULE_15__["MessageSource"].Store, _objects_message__WEBPACK_IMPORTED_MODULE_15__["MessageSource"].Upgrades, _objects_message__WEBPACK_IMPORTED_MODULE_15__["MessageSource"].Workers];
                 this.enemyService.enemiesActive = saveData.settings.enemiesActive ? saveData.settings.enemiesActive : false;
                 this.slimInterface = saveData.settings.slimInterface ? saveData.settings.slimInterface : false;
                 this.organizeLeftPanelByType = saveData.settings.organizeLeftPanelByType ? saveData.settings.organizeLeftPanelByType : true;
@@ -5613,11 +5709,11 @@ var SettingsService = /** @class */ (function () {
         }
         if (oldVersionIndex <= this.versionHistory.indexOf('Alpha 3')) {
             saveData.settings.resourceAnimationColors = {};
-            saveData.settings.resourceAnimationColors[_objects_entity__WEBPACK_IMPORTED_MODULE_13__["ResourceAnimationType"].PlayerSpawned] = saveData.settings.harvestDetailColor;
-            saveData.settings.resourceAnimationColors[_objects_entity__WEBPACK_IMPORTED_MODULE_13__["ResourceAnimationType"].WorkerSpawned] = saveData.settings.workerDetailColor;
-            saveData.settings.resourceAnimationColors[_objects_entity__WEBPACK_IMPORTED_MODULE_13__["ResourceAnimationType"].Sold] = '#ffc089';
+            saveData.settings.resourceAnimationColors[_objects_entity__WEBPACK_IMPORTED_MODULE_14__["ResourceAnimationType"].PlayerSpawned] = saveData.settings.harvestDetailColor;
+            saveData.settings.resourceAnimationColors[_objects_entity__WEBPACK_IMPORTED_MODULE_14__["ResourceAnimationType"].WorkerSpawned] = saveData.settings.workerDetailColor;
+            saveData.settings.resourceAnimationColors[_objects_entity__WEBPACK_IMPORTED_MODULE_14__["ResourceAnimationType"].Sold] = '#ffc089';
             saveData.tiles.map(function (tileData) {
-                var isMarket = _this.mapService.buildingTiles.get(tileData.buildingTileType).subType === _objects_tile__WEBPACK_IMPORTED_MODULE_12__["BuildingSubType"].Market;
+                var isMarket = _this.mapService.buildingTiles.get(tileData.buildingTileType).subType === _objects_tile__WEBPACK_IMPORTED_MODULE_13__["BuildingSubType"].Market;
                 tileData.statLevels = isMarket ? { 'MAXHEALTH': 1, 'SELLAMOUNT': 1, 'SELLRATE': 1 } : { 'MAXHEALTH': 1 };
                 tileData.statCosts = isMarket ? { 'MAXHEALTH': 1500, 'SELLAMOUNT': 1500, 'SELLRATE': 1500 } : { 'MAXHEALTH': 1500 };
             });
@@ -5662,19 +5758,19 @@ var SettingsService = /** @class */ (function () {
         return saveData;
     };
     SettingsService.prototype.log = function (message) {
-        this.messagesService.add(_objects_message__WEBPACK_IMPORTED_MODULE_14__["MessageSource"].Settings, message);
+        this.messagesService.add(_objects_message__WEBPACK_IMPORTED_MODULE_15__["MessageSource"].Settings, message);
     };
     SettingsService = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
             providedIn: 'root'
         }),
-        __metadata("design:paramtypes", [_resources_resources_service__WEBPACK_IMPORTED_MODULE_4__["ResourcesService"],
-            _upgrades_upgrades_service__WEBPACK_IMPORTED_MODULE_5__["UpgradesService"],
-            _workers_workers_service__WEBPACK_IMPORTED_MODULE_6__["WorkersService"],
-            _map_map_service__WEBPACK_IMPORTED_MODULE_8__["MapService"],
-            _enemy_enemy_service__WEBPACK_IMPORTED_MODULE_9__["EnemyService"],
-            _fighter_fighter_service__WEBPACK_IMPORTED_MODULE_10__["FighterService"],
-            _messages_messages_service__WEBPACK_IMPORTED_MODULE_7__["MessagesService"],
+        __metadata("design:paramtypes", [_resources_resources_service__WEBPACK_IMPORTED_MODULE_5__["ResourcesService"],
+            _upgrades_upgrades_service__WEBPACK_IMPORTED_MODULE_6__["UpgradesService"],
+            _workers_workers_service__WEBPACK_IMPORTED_MODULE_7__["WorkersService"],
+            _map_map_service__WEBPACK_IMPORTED_MODULE_9__["MapService"],
+            _enemy_enemy_service__WEBPACK_IMPORTED_MODULE_10__["EnemyService"],
+            _fighter_fighter_service__WEBPACK_IMPORTED_MODULE_11__["FighterService"],
+            _messages_messages_service__WEBPACK_IMPORTED_MODULE_8__["MessagesService"],
             _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatSnackBar"],
             _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatDialog"]])
     ], SettingsService);
