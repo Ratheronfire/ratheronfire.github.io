@@ -30,7 +30,7 @@ webpackEmptyAsyncContext.id = "./src/$$_lazy_route_resource lazy recursive";
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "/* AppComponent's private CSS styles */\r\nh1 {\r\n  font-size: 1.2em;\r\n  color: #999;\r\n  margin-bottom: 0;\r\n  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;\r\n}\r\nh2 {\r\n  font-size: 2em;\r\n  margin-top: 0;\r\n  padding-top: 0;\r\n}\r\nnav a {\r\n  padding: 5px 10px;\r\n  text-decoration: none;\r\n  margin-top: 10px;\r\n  display: inline-block;\r\n  background-color: #eee;\r\n  border-radius: 4px;\r\n}\r\nnav a:visited, a:link {\r\n  color: #607d8b;\r\n}\r\nnav a:hover {\r\n  color: #039be5;\r\n  background-color: #cfd8dc;\r\n}\r\nnav a.active {\r\n  color: #039be5;\r\n}\r\n.resource-list {\r\n  float: left;\r\n}\r\n.tab-group {\r\n  margin-left: 15px;\r\n}\r\n.game-container {\r\n  display: flex;\r\n  flex-direction: column;\r\n  position: absolute;\r\n  top: 0;\r\n  bottom: 0;\r\n  left: 0;\r\n  right: 0;\r\n}\r\n.game-is-mobile .game-toolbar {\r\n  position: fixed;\r\n  /* Make sure the toolbar will stay on top of the content as it scrolls past. */\r\n  z-index: 2;\r\n}\r\nh1.game-app-name {\r\n  margin-left: 8px;\r\n}\r\n.game-sidenav-container {\r\n  /* When the sidenav is not fixed, stretch the sidenav container to fill the available space. This\r\n     causes `<mat-sidenav-content>` to act as our scrolling element for desktop layouts. */\r\n  flex: 1;\r\n}\r\n.game-sidenav-container mat-sidenav {\r\n  width: 500px;\r\n  overflow-x: hidden;\r\n}\r\n.game-is-mobile .game-sidenav-container mat-sidenav {\r\n  width: 100%;\r\n}\r\n.game-is-mobile .game-sidenav-container {\r\n  /* When the sidenav is fixed, don't constrain the height of the sidenav container. This allows the\r\n     `<body>` to be our scrolling element for mobile layouts. */\r\n  flex: 1 0 auto;\r\n}\r\n.sidenav-buttons {\r\n  position: absolute;\r\n  right: 0;\r\n}\r\n.toolbar-button-text {\r\n  display: inline-block;\r\n}\r\n.main-pane {\r\n  height: 100%;\r\n}\r\napp-clicker-main {\r\n  overflow: auto;\r\n  max-height: 100%;\r\n}\r\n\r\n"
+module.exports = "/* AppComponent's private CSS styles */\nh1 {\n  font-size: 1.2em;\n  color: #999;\n  margin-bottom: 0;\n  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;\n}\nh2 {\n  font-size: 2em;\n  margin-top: 0;\n  padding-top: 0;\n}\nnav a {\n  padding: 5px 10px;\n  text-decoration: none;\n  margin-top: 10px;\n  display: inline-block;\n  background-color: #eee;\n  border-radius: 4px;\n}\nnav a:visited, a:link {\n  color: #607d8b;\n}\nnav a:hover {\n  color: #039be5;\n  background-color: #cfd8dc;\n}\nnav a.active {\n  color: #039be5;\n}\n.resource-list {\n  float: left;\n}\n.tab-group {\n  margin-left: 15px;\n}\n.game-container {\n  display: flex;\n  flex-direction: column;\n  position: absolute;\n  top: 0;\n  bottom: 0;\n  left: 0;\n  right: 0;\n}\n.game-is-mobile .game-toolbar {\n  position: fixed;\n  /* Make sure the toolbar will stay on top of the content as it scrolls past. */\n  z-index: 2;\n}\nh1.game-app-name {\n  margin-left: 8px;\n}\n.game-sidenav-container {\n  /* When the sidenav is not fixed, stretch the sidenav container to fill the available space. This\n     causes `<mat-sidenav-content>` to act as our scrolling element for desktop layouts. */\n  flex: 1;\n}\n.game-sidenav-container mat-sidenav {\n  width: 500px;\n  overflow-x: hidden;\n}\n.game-is-mobile .game-sidenav-container mat-sidenav {\n  width: 100%;\n}\n.game-is-mobile .game-sidenav-container {\n  /* When the sidenav is fixed, don't constrain the height of the sidenav container. This allows the\n     `<body>` to be our scrolling element for mobile layouts. */\n  flex: 1 0 auto;\n}\n.sidenav-buttons {\n  position: absolute;\n  right: 0;\n}\n.toolbar-button-text {\n  display: inline-block;\n}\n.main-pane {\n  height: 100%;\n}\napp-clicker-main {\n  overflow: auto;\n  max-height: 100%;\n}\n\n"
 
 /***/ }),
 
@@ -41,7 +41,7 @@ module.exports = "/* AppComponent's private CSS styles */\r\nh1 {\r\n  font-size
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"game-container\" [class.game-is-mobile]=\"mobileQuery.matches\" [@.disabled]=\"disableAnimations\">\r\n  <mat-toolbar color=\"primary\" class=\"game-toolbar\">\r\n    <h1 class=\"game-app-name\">Age of Clicking</h1>\r\n    <div class=\"sidenav-buttons\">\r\n      <button mat-flat-button (click)=\"hideResourceList = !hideResourceList\">\r\n        <mat-icon>map</mat-icon><p class=\"toolbar-button-text\" *ngIf=\"!mobileQuery.matches\">Expand Map</p>\r\n      </button>\r\n      <button mat-flat-button (click)=\"snav.toggle()\" [matBadge]=\"affordableUpgradeCount\" [matBadgeHidden]=\"affordableUpgradeCount <= 0\" matBadgePosition=\"before\" matBadgeColor=\"accent\">\r\n        <mat-icon>menu</mat-icon><p class=\"toolbar-button-text\" *ngIf=\"!mobileQuery.matches\">Menu</p>\r\n      </button>\r\n    </div>\r\n  </mat-toolbar>\r\n\r\n  <mat-sidenav-container class=\"game-sidenav-container\" [style.marginTop.px]=\"mobileQuery.matches ? 56 : 0\">\r\n    <mat-sidenav #snav [mode]=\"mobileQuery.matches ? 'over' : 'side'\" [opened]=\"!mobileQuery.matches\" [fixedInViewport]=\"mobileQuery.matches\" position=\"end\"\r\n      fixedTopGap=\"56\">\r\n      <mat-nav-list>\r\n        <mat-tab-group class=\"tab-group\" dynamicHeight>\r\n          <mat-tab label=\"Workers\">\r\n            <app-workers></app-workers>\r\n          </mat-tab>\r\n          <mat-tab label=\"Store\">\r\n            <app-store></app-store>\r\n          </mat-tab>\r\n          <mat-tab label=\"Upgrades{{affordableUpgradeCount > 0 ? ' (' + affordableUpgradeCount + ')' : ''}}\">\r\n            <app-upgrades></app-upgrades>\r\n          </mat-tab>\r\n          <mat-tab label=\"Log\">\r\n            <app-messages></app-messages>\r\n          </mat-tab>\r\n          <mat-tab label=\"Settings\">\r\n            <app-settings></app-settings>\r\n            <app-admin-debug *ngIf=\"debugMode\"></app-admin-debug>\r\n          </mat-tab>\r\n        </mat-tab-group>\r\n      </mat-nav-list>\r\n    </mat-sidenav>\r\n    <mat-sidenav-content>\r\n      <div class=\"main-pane\">\r\n        <app-clicker-main class=\"resource-list\" [style.display]=\"hideResourceList? 'none': ''\"></app-clicker-main>\r\n        <app-map class=\"map\" [style.display]=\"mobileQuery.matches && !hideResourceList? 'none': ''\"></app-map>\r\n      </div>\r\n    </mat-sidenav-content>\r\n  </mat-sidenav-container>\r\n</div>\r\n"
+module.exports = "<div class=\"game-container\" [class.game-is-mobile]=\"mobileQuery.matches\" [@.disabled]=\"disableAnimations\">\n  <mat-toolbar color=\"primary\" class=\"game-toolbar\">\n    <h1 class=\"game-app-name\">Age of Clicking</h1>\n    <div class=\"sidenav-buttons\">\n      <button mat-flat-button (click)=\"hideResourceList = !hideResourceList\">\n        <mat-icon>map</mat-icon><p class=\"toolbar-button-text\" *ngIf=\"!mobileQuery.matches\">Expand Map</p>\n      </button>\n      <button mat-flat-button (click)=\"snav.toggle()\" [matBadge]=\"affordableUpgradeCount\" [matBadgeHidden]=\"affordableUpgradeCount <= 0\" matBadgePosition=\"before\" matBadgeColor=\"accent\">\n        <mat-icon>menu</mat-icon><p class=\"toolbar-button-text\" *ngIf=\"!mobileQuery.matches\">Menu</p>\n      </button>\n    </div>\n  </mat-toolbar>\n\n  <mat-sidenav-container class=\"game-sidenav-container\" [style.marginTop.px]=\"mobileQuery.matches ? 56 : 0\">\n    <mat-sidenav #snav [mode]=\"mobileQuery.matches ? 'over' : 'side'\" [opened]=\"!mobileQuery.matches\" [fixedInViewport]=\"mobileQuery.matches\" position=\"end\"\n      fixedTopGap=\"56\">\n      <mat-nav-list>\n        <mat-tab-group class=\"tab-group\" dynamicHeight>\n          <mat-tab label=\"Workers\">\n            <app-workers></app-workers>\n          </mat-tab>\n          <mat-tab label=\"Store\">\n            <app-store></app-store>\n          </mat-tab>\n          <mat-tab label=\"Upgrades{{affordableUpgradeCount > 0 ? ' (' + affordableUpgradeCount + ')' : ''}}\">\n            <app-upgrades></app-upgrades>\n          </mat-tab>\n          <mat-tab label=\"Log\">\n            <app-messages></app-messages>\n          </mat-tab>\n          <mat-tab label=\"Settings\">\n            <app-settings></app-settings>\n            <app-admin-debug *ngIf=\"debugMode\"></app-admin-debug>\n          </mat-tab>\n        </mat-tab-group>\n      </mat-nav-list>\n    </mat-sidenav>\n    <mat-sidenav-content>\n      <div class=\"main-pane\">\n        <app-clicker-main class=\"resource-list\" [style.display]=\"hideResourceList? 'none': ''\"></app-clicker-main>\n        <app-map class=\"map\" [style.display]=\"mobileQuery.matches && !hideResourceList? 'none': ''\"></app-map>\n      </div>\n    </mat-sidenav-content>\n  </mat-sidenav-container>\n</div>\n"
 
 /***/ }),
 
@@ -206,12 +206,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_tile_detail_tile_detail_component__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./components/tile-detail/tile-detail.component */ "./src/app/components/tile-detail/tile-detail.component.ts");
 /* harmony import */ var _components_fighter_detail_fighter_detail_component__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./components/fighter-detail/fighter-detail.component */ "./src/app/components/fighter-detail/fighter-detail.component.ts");
 /* harmony import */ var _directives_snap_snap_directive__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./directives/snap/snap.directive */ "./src/app/directives/snap/snap.directive.ts");
+/* harmony import */ var _directives_minimap_minimap_directive__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./directives/minimap/minimap.directive */ "./src/app/directives/minimap/minimap.directive.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -268,7 +270,8 @@ var AppModule = /** @class */ (function () {
                 _components_tile_detail_tile_detail_component__WEBPACK_IMPORTED_MODULE_26__["TileDetailComponent"],
                 _components_fighter_detail_fighter_detail_component__WEBPACK_IMPORTED_MODULE_27__["FighterDetailComponent"],
                 _directives_snap_snap_directive__WEBPACK_IMPORTED_MODULE_28__["SnapDirective"],
-                _components_about_dialog_about_dialog_about_dialog_component__WEBPACK_IMPORTED_MODULE_18__["AboutDialogComponent"]
+                _components_about_dialog_about_dialog_about_dialog_component__WEBPACK_IMPORTED_MODULE_18__["AboutDialogComponent"],
+                _directives_minimap_minimap_directive__WEBPACK_IMPORTED_MODULE_29__["MinimapDirective"]
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
@@ -301,7 +304,7 @@ var AppModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "h1 {\r\n  font-size: 1.2em;\r\n  color: #999;\r\n  margin-bottom: 0;\r\n}\r\n\r\n\r\nh2 {\r\n  font-size: 2em;\r\n  margin-top: 0;\r\n  padding-top: 0;\r\n}\r\n\r\n\r\n* {\r\n  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;\r\n}\r\n\r\n\r\na {\r\n  padding: 5px 10px;\r\n  text-decoration: none;\r\n  margin-top: 10px;\r\n  display: inline-block;\r\n  background-color: #eee;\r\n  border-radius: 4px;\r\n}\r\n\r\n\r\nnav a:visited, a:link {\r\n  color: #607d8b;\r\n}\r\n\r\n\r\nnav a:hover {\r\n  color: #039be5;\r\n  background-color: #cfd8dc;\r\n}\r\n\r\n\r\nnav a.active {\r\n  color: #039be5;\r\n}\r\n"
+module.exports = "h1 {\n  font-size: 1.2em;\n  color: #999;\n  margin-bottom: 0;\n}\n\n\nh2 {\n  font-size: 2em;\n  margin-top: 0;\n  padding-top: 0;\n}\n\n\n* {\n  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;\n}\n\n\na {\n  padding: 5px 10px;\n  text-decoration: none;\n  margin-top: 10px;\n  display: inline-block;\n  background-color: #eee;\n  border-radius: 4px;\n}\n\n\nnav a:visited, a:link {\n  color: #607d8b;\n}\n\n\nnav a:hover {\n  color: #039be5;\n  background-color: #cfd8dc;\n}\n\n\nnav a.active {\n  color: #039be5;\n}\n"
 
 /***/ }),
 
@@ -312,7 +315,7 @@ module.exports = "h1 {\r\n  font-size: 1.2em;\r\n  color: #999;\r\n  margin-bott
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<h1>Age Of Clicking - Version Alpha 3.4</h1>\r\n<br />\r\n\r\n<div>\r\n  An exploration-based incremental game by Ratheronfire.\r\n  <br />\r\n  Thanks to the <a href=\"http://reddit.com/r/incremental_games/\" target=\"_blank\">/r/incremental_games</a> community for helping to test the game!\r\n  <br />\r\n  <a href=\"https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=8DTWKHUT9DYZN\" target=\"_blank\">Donate</a> If you enjoyed the game and want to help support me, feel free to drop a few bucks here! It's not at all required, but it's appreciated.\r\n\r\n  <div>\r\n    <h2>Also Check Out:</h2>\r\n    <li>\r\n      <a href=\"http://orteil.dashnet.org/cookieclicker/\" target=\"_blank\">Cookie Clicker</a> The incremental game that started them all!\r\n    </li>\r\n    <li>\r\n      <a href=\"http://scholtek.com/minedefense\" target=\"_blank\">Mine Defense</a> A seemingly simple game with a surprising amount of depth.\r\n    </li>\r\n    <li>\r\n      <a href=\"http://bloodrizer.ru/games/kittens/\" target=\"_blank\">Kittens Game</a> Filled with gradually unfolding systems and resources that all feed off of eachother.\r\n    </li>\r\n  </div>\r\n</div>\r\n\r\n<div>\r\n  <h2>Version History</h2>\r\n\r\n  Pre-Alpha 3\r\n  <li>\r\n    Complete lack of usable UI\r\n  </li>\r\n  <li>\r\n    Only a few resources & upgrades were added at this point.\r\n  </li>\r\n\r\n  <br />\r\n  Alpha 3\r\n  <li>\r\n    UI Overhaul\r\n  </li>\r\n  <li>\r\n    New map mystem\r\n  </li>\r\n  <li>\r\n    Expanded endgame resources\r\n  </li>\r\n  <li>\r\n    Added enemies, tower defense, and tile upgrading.\r\n  </li>\r\n  <li>\r\n    Added new market resources which automatically sell your stored resources.\r\n  </li>\r\n  <li>\r\n    Added food resources used to keep workers active.\r\n  </li>\r\n</div>\r\n"
+module.exports = "<h1>Age Of Clicking - Version Alpha 3.4</h1>\n<br />\n\n<div>\n  An exploration-based incremental game by Ratheronfire.\n  <br />\n  Thanks to the <a href=\"http://reddit.com/r/incremental_games/\" target=\"_blank\">/r/incremental_games</a> community for helping to test the game!\n  <br />\n  <a href=\"https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=8DTWKHUT9DYZN\" target=\"_blank\">Donate</a> If you enjoyed the game and want to help support me, feel free to drop a few bucks here! It's not at all required, but it's appreciated.\n\n  <div>\n    <h2>Also Check Out:</h2>\n    <li>\n      <a href=\"http://orteil.dashnet.org/cookieclicker/\" target=\"_blank\">Cookie Clicker</a> The incremental game that started them all!\n    </li>\n    <li>\n      <a href=\"http://scholtek.com/minedefense\" target=\"_blank\">Mine Defense</a> A seemingly simple game with a surprising amount of depth.\n    </li>\n    <li>\n      <a href=\"http://bloodrizer.ru/games/kittens/\" target=\"_blank\">Kittens Game</a> Filled with gradually unfolding systems and resources that all feed off of eachother.\n    </li>\n  </div>\n</div>\n\n<div>\n  <h2>Version History</h2>\n\n  Pre-Alpha 3\n  <li>\n    Complete lack of usable UI\n  </li>\n  <li>\n    Only a few resources & upgrades were added at this point.\n  </li>\n\n  <br />\n  Alpha 3\n  <li>\n    UI Overhaul\n  </li>\n  <li>\n    New map mystem\n  </li>\n  <li>\n    Expanded endgame resources\n  </li>\n  <li>\n    Added enemies, tower defense, and tile upgrading.\n  </li>\n  <li>\n    Added new market resources which automatically sell your stored resources.\n  </li>\n  <li>\n    Added food resources used to keep workers active.\n  </li>\n  <li>\n    Added procedural map generation.\n  </li>\n</div>\n"
 
 /***/ }),
 
@@ -386,7 +389,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<h2>Debug</h2>\r\n\r\n<mat-checkbox class=\"filterAccessible\" checked=\"true\" [(ngModel)]=\"adminService.filterAccessible\">Hide Inaccessible\r\n  Upgrades</mat-checkbox>\r\n<br />\r\n\r\n<mat-divider></mat-divider>\r\n<br />\r\n\r\n<div>\r\n  <mat-select placeholder=\"Resource\" style=\"width: 200px\" [(ngModel)]=\"selectedResource\">\r\n    <mat-option *ngFor=\"let resource of resourcesService.getResources()\" [value]=\"resource\">\r\n      {{resource.name | titlecase}}\r\n    </mat-option>\r\n  </mat-select>\r\n\r\n  <mat-form-field>\r\n    <input matInput [(ngModel)]=\"amount\">\r\n  </mat-form-field>\r\n  <button mat-raised-button (click)=\"addResourceAmount()\">Add to all resources</button>\r\n  <div *ngIf=\"selectedResource !== undefined\">\r\n    <button mat-raised-button (click)=\"addResourceAmount(selectedResource)\">Add to {{selectedResource.name |\r\n      titlecase}}</button>\r\n  </div>\r\n</div>\r\n"
+module.exports = "<h2>Debug</h2>\n\n<mat-checkbox class=\"filterAccessible\" checked=\"true\" [(ngModel)]=\"adminService.filterAccessible\">Hide Inaccessible\n  Upgrades</mat-checkbox>\n<br />\n\n<mat-divider></mat-divider>\n<br />\n\n<div>\n  <mat-select placeholder=\"Resource\" style=\"width: 200px\" [(ngModel)]=\"selectedResource\">\n    <mat-option *ngFor=\"let resource of resourcesService.getResources()\" [value]=\"resource\">\n      {{resource.name | titlecase}}\n    </mat-option>\n  </mat-select>\n\n  <mat-form-field>\n    <input matInput [(ngModel)]=\"amount\">\n  </mat-form-field>\n  <button mat-raised-button (click)=\"addResourceAmount()\">Add to all resources</button>\n  <div *ngIf=\"selectedResource !== undefined\">\n    <button mat-raised-button (click)=\"addResourceAmount(selectedResource)\">Add to {{selectedResource.name |\n      titlecase}}</button>\n  </div>\n</div>\n"
 
 /***/ }),
 
@@ -456,7 +459,7 @@ var AdminDebugComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "/* BuildingsComponent's private CSS styles */\r\n.buildings {\r\n  position: absolute;\r\n  top: 72px;\r\n  width: 140px;\r\n  display: -ms-grid;\r\n  display: grid;\r\n\r\n  background: white;\r\n\r\n  flex-direction: column;\r\n}\r\nbutton {\r\n  background-color: #eee;\r\n  border: none;\r\n  padding: 5px 10px;\r\n  border-radius: 4px;\r\n  cursor: pointer;\r\n  cursor: hand;\r\n  font-family: Arial;\r\n}\r\n.resource-list {\r\n  text-align: center;\r\n}\r\n.resource-list div {\r\n  display: inline-block;\r\n}\r\n.resource-list img {\r\n  width: 16px;\r\n  height: 16px;\r\n}\r\n"
+module.exports = "/* BuildingsComponent's private CSS styles */\n.buildings {\n  position: absolute;\n  top: 72px;\n  width: 140px;\n  display: -ms-grid;\n  display: grid;\n\n  background: white;\n\n  flex-direction: column;\n}\nbutton {\n  background-color: #eee;\n  border: none;\n  padding: 5px 10px;\n  border-radius: 4px;\n  cursor: pointer;\n  cursor: hand;\n  font-family: Arial;\n}\n.resource-list {\n  text-align: center;\n}\n.resource-list div {\n  display: inline-block;\n}\n.resource-list img {\n  width: 16px;\n  height: 16px;\n}\n"
 
 /***/ }),
 
@@ -467,7 +470,7 @@ module.exports = "/* BuildingsComponent's private CSS styles */\r\n.buildings {\
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<mat-button-toggle-group #group=\"matButtonToggleGroup\" [(ngModel)]=\"selectedBuilding\"\r\nclass=\"buildings\">\r\n<mat-button-toggle *ngFor=\"let buildingTile of getBuildingTileArray(true)\" [value]=\"buildingTile\" class=\"building\"\r\n  [disabled]=\"!canAffordBuilding(buildingTile.tileType)\" (click)=\"mapService.buildingListVisible = false\">\r\n  <div class=\"title\" matTooltip=\"{{buildingTile.description}}\" matTooltipPosition=\"above\">\r\n    {{buildingTile.name}}\r\n  </div>\r\n  <div class=\"resource-list\">\r\n    <div *ngFor=\"let resourceCost of buildingTile.resourceCosts\" matTooltip=\"{{resourceCost.resourceCost}} {{getResource(resourceCost.resourceEnum).name | titlecase}}\"\r\n      matTooltipPosition=\"below\">\r\n      <img src=\"{{getResource(resourceCost.resourceEnum).iconPath}}\" alt=\"{{getResource(resourceCost.resourceEnum).name}}\">\r\n      {{resourceCost.resourceCost | longNumber}}\r\n    </div>\r\n  </div>\r\n</mat-button-toggle>\r\n</mat-button-toggle-group>\r\n"
+module.exports = "<mat-button-toggle-group #group=\"matButtonToggleGroup\" [(ngModel)]=\"selectedBuilding\"\nclass=\"buildings\">\n<mat-button-toggle *ngFor=\"let buildingTile of getBuildingTileArray(true)\" [value]=\"buildingTile\" class=\"building\"\n  [disabled]=\"!canAffordBuilding(buildingTile.tileType)\" (click)=\"mapService.buildingListVisible = false\">\n  <div class=\"title\" matTooltip=\"{{buildingTile.description}}\" matTooltipPosition=\"above\">\n    {{buildingTile.name}}\n  </div>\n  <div class=\"resource-list\">\n    <div *ngFor=\"let resourceCost of buildingTile.resourceCosts\" matTooltip=\"{{resourceCost.resourceCost}} {{getResource(resourceCost.resourceEnum).name | titlecase}}\"\n      matTooltipPosition=\"below\">\n      <img src=\"{{getResource(resourceCost.resourceEnum).iconPath}}\" alt=\"{{getResource(resourceCost.resourceEnum).name}}\">\n      {{resourceCost.resourceCost | longNumber}}\n    </div>\n  </div>\n</mat-button-toggle>\n</mat-button-toggle-group>\n"
 
 /***/ }),
 
@@ -583,7 +586,7 @@ var BuildingsComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "/* ClickerMainComponent's private CSS styles */\r\n.resources {\r\n  margin: 0 0 2em 0;\r\n  list-style-type: none;\r\n  padding: 0;\r\n  width: 25em;\r\n}\r\n.resources mat-expansion-panel {\r\n  margin: 0;\r\n}\r\n.resources mat-expansion-panel-header {\r\n  height: 30px !important;\r\n}\r\n.resources mat-card-subtitle {\r\n  position: absolute;\r\n  top: 10px;\r\n  right: 10px;\r\n  font-weight: bold;\r\n}\r\n.resources .resource-button {\r\n  position: relative;\r\n  cursor: pointer;\r\n  margin: .5em;\r\n  padding: .4em 0;\r\n  height: 3.6em;\r\n  width: 100%;\r\n  border-radius: 4px;\r\n}\r\n.resources .resource-button.warn {\r\n  background-color: darkred;\r\n}\r\n.resources .resource-button:hover {\r\n  left: .1em;\r\n}\r\n.resources .resource-button.mat-disabled {\r\n  cursor: default;\r\n}\r\n.resources .badge {\r\n  display: inline-block;\r\n  font-size: small;\r\n  color: white;\r\n  padding: 0.8em 0.7em 0 0.7em;\r\n  background-color: #607D8B;\r\n  line-height: 1em;\r\n  position: absolute;\r\n  right: -9px;\r\n  top: 1px;\r\n  height: 1.8em;\r\n  min-width: 16px;\r\n  text-align: center;\r\n  margin-right: .8em;\r\n  border-radius: 0 4px 4px 0;\r\n}\r\n.button-container {\r\n  position: relative;\r\n}\r\n.travelling-count {\r\n  position: absolute;\r\n  top: 22px;\r\n  right: 3px;\r\n}\r\n.resource-button {\r\n  background-color: #eee;\r\n  border: none;\r\n  padding: 5px 10px;\r\n  border-radius: 4px;\r\n  cursor: pointer;\r\n  cursor: hand;\r\n  font-family: Arial;\r\n}\r\n.resources button.resource-button.currency-button {\r\n  width: 95%;\r\n  cursor: auto;\r\n\r\n  z-index: 2;\r\n\r\n  position: -webkit-sticky;\r\n\r\n  position: sticky;\r\n  top: 0;\r\n  left: 5%;\r\n\r\n  background-color: #eee;\r\n  color: black;\r\n}\r\n.currency-button:hover {\r\n  left: unset;\r\n}\r\n.harvest-progress {\r\n  display: flex;\r\n  align-content: center;\r\n  align-items: center;\r\n\r\n  height: 100%;\r\n  top: 0px;\r\n\r\n  position: absolute;\r\n  opacity: 0.5;\r\n}\r\n.resource-img {\r\n  position: absolute;\r\n\r\n  top: 0;\r\n  left: 0;\r\n}\r\n.key-container {\r\n  position: absolute;\r\n  left: 50px;\r\n}\r\n.key-container img {\r\n  width: 24px;\r\n  height: 24px;\r\n}\r\n.key-container p {\r\n  z-index: 1;\r\n  position: absolute;\r\n\r\n  top: 9px;\r\n  right: 5px;\r\n\r\n  margin: 0;\r\n  line-height: 0;\r\n}\r\n"
+module.exports = "/* ClickerMainComponent's private CSS styles */\n.resources {\n  margin: 0 0 2em 0;\n  list-style-type: none;\n  padding: 0;\n  width: 25em;\n}\n.resources mat-expansion-panel {\n  margin: 0;\n}\n.resources mat-expansion-panel-header {\n  height: 30px !important;\n}\n.resources mat-card-subtitle {\n  position: absolute;\n  top: 10px;\n  right: 10px;\n  font-weight: bold;\n}\n.resources .resource-button {\n  position: relative;\n  cursor: pointer;\n  margin: .5em;\n  padding: .4em 0;\n  height: 3.6em;\n  width: 100%;\n  border-radius: 4px;\n}\n.resources .resource-button.warn {\n  background-color: darkred;\n}\n.resources .resource-button:hover {\n  left: .1em;\n}\n.resources .resource-button.mat-disabled {\n  cursor: default;\n}\n.resources .badge {\n  display: inline-block;\n  font-size: small;\n  color: white;\n  padding: 0.8em 0.7em 0 0.7em;\n  background-color: #607D8B;\n  line-height: 1em;\n  position: absolute;\n  right: -9px;\n  top: 1px;\n  height: 1.8em;\n  min-width: 16px;\n  text-align: center;\n  margin-right: .8em;\n  border-radius: 0 4px 4px 0;\n}\n.button-container {\n  position: relative;\n}\n.travelling-count {\n  position: absolute;\n  top: 22px;\n  right: 3px;\n}\n.resource-button {\n  background-color: #eee;\n  border: none;\n  padding: 5px 10px;\n  border-radius: 4px;\n  cursor: pointer;\n  cursor: hand;\n  font-family: Arial;\n}\n.resources button.resource-button.currency-button {\n  width: 95%;\n  cursor: auto;\n\n  z-index: 2;\n\n  position: -webkit-sticky;\n\n  position: sticky;\n  top: 0;\n  left: 5%;\n\n  background-color: #eee;\n  color: black;\n}\n.currency-button:hover {\n  left: unset;\n}\n.harvest-progress {\n  display: flex;\n  align-content: center;\n  align-items: center;\n\n  height: 100%;\n  top: 0px;\n\n  position: absolute;\n  opacity: 0.5;\n}\n.resource-img {\n  position: absolute;\n\n  top: 0;\n  left: 0;\n}\n.key-container {\n  position: absolute;\n  left: 50px;\n}\n.key-container img {\n  width: 24px;\n  height: 24px;\n}\n.key-container p {\n  z-index: 1;\n  position: absolute;\n\n  top: 9px;\n  right: 5px;\n\n  margin: 0;\n  line-height: 0;\n}\n"
 
 /***/ }),
 
@@ -594,7 +597,7 @@ module.exports = "/* ClickerMainComponent's private CSS styles */\r\n.resources 
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ul class=\"resources noselect\">\r\n  <button mat-raised-button disabled=\"true\" class=\"resource-button currency-button\" [ngClass]=\"{'warn': resourceIsBeingStolen(goldResource)}\">\r\n    <mat-card-title>{{goldResource.name | titlecase }}</mat-card-title>\r\n    <mat-card-subtitle>{{goldResource.amount | longNumber}}</mat-card-subtitle>\r\n\r\n    <img class=\"resource-img\" src=\"{{goldResource.iconPath}}\" alt=\"{{goldResource.name}}\" *ngIf=\"goldResource.iconPath !== ''\">\r\n  </button>\r\n\r\n  <mat-accordion multi=\"true\" *ngIf=\"organizeLeftPanelByType\">\r\n    <mat-expansion-panel expanded=\"true\" *ngFor=\"let resourceType of resourceTypes | enumToArray\">\r\n      <mat-expansion-panel-header *ngIf=\"resourceType !== 'Currency'\">\r\n        <mat-panel-title>\r\n          {{resourceType}}\r\n        </mat-panel-title>\r\n        <mat-panel-description>\r\n        </mat-panel-description>\r\n      </mat-expansion-panel-header>\r\n\r\n      <div class='button-container' *ngFor=\"let resource of getResources(resourceType, adminService.filterAccessible)\"\r\n        matTooltip=\"{{getTooltipMessage(resource)}}\" matTooltipPosition=\"right\">\r\n        <button mat-raised-button class=\"resource-button\" [ngClass]=\"{'warn': resourceIsBeingStolen(resource)}\"\r\n          [disabled]=\"!canHarvest(resource, resource.harvestYield)\" (click)='startHarvesting(resource)'\r\n          *ngIf=\"resource.resourceType != 'CURRENCY'\">\r\n          <div class=\"key-container\" *ngIf=\"resource.bindIndex >= 0\">\r\n            <img src=\"./assets/sprites/key.png\">\r\n            <p>{{resource.bindIndex}}</p>\r\n          </div>\r\n\r\n          <mat-card-title>{{resource.name | titlecase }}</mat-card-title>\r\n          <mat-card-subtitle>{{resource.amount | longNumber}}</mat-card-subtitle>\r\n          <mat-progress-bar [class.hidden]=\"!resource.harvesting\" class=\"harvest-progress\" [value]=\"resource.progressBarValue\"></mat-progress-bar>\r\n\r\n          <img class=\"resource-img\" src=\"{{resource.iconPath}}\" alt=\"{{resource.name}}\" *ngIf=\"resource.iconPath !== ''\">\r\n          <div class='travelling-count' *ngIf=\"resource.amountTravelling > 0\">{{resource.amountTravelling}}\r\n            Travelling</div>\r\n        </button>\r\n      </div>\r\n    </mat-expansion-panel>\r\n  </mat-accordion>\r\n\r\n  <mat-accordion multi=\"true\" *ngIf=\"!organizeLeftPanelByType\">\r\n      <mat-expansion-panel expanded=\"true\" *ngFor=\"let resourceTier of tiers\">\r\n        <mat-expansion-panel-header>\r\n          <mat-panel-title>\r\n            Tier {{resourceTier + 1}}\r\n          </mat-panel-title>\r\n          <mat-panel-description>\r\n          </mat-panel-description>\r\n        </mat-expansion-panel-header>\r\n\r\n        <div class='button-container' *ngFor=\"let resource of getResources(undefined, [resourceTier], adminService.filterAccessible)\"\r\n          matTooltip=\"{{getTooltipMessage(resource)}}\" matTooltipPosition=\"right\">\r\n          <button mat-raised-button class=\"resource-button\" [ngClass]=\"{'warn': resourceIsBeingStolen(resource)}\"\r\n            [disabled]=\"!canHarvest(resource, resource.harvestYield)\" (click)='startHarvesting(resource)'\r\n            *ngIf=\"resource.resourceType != 'CURRENCY'\">\r\n            <div class=\"key-container\" *ngIf=\"resource.bindIndex >= 0\">\r\n              <img src=\"./assets/sprites/key.png\">\r\n              <p>{{resource.bindIndex}}</p>\r\n            </div>\r\n\r\n            <mat-card-title>{{resource.name | titlecase }}</mat-card-title>\r\n            <mat-card-subtitle>{{resource.amount | longNumber}}</mat-card-subtitle>\r\n            <mat-progress-bar [class.hidden]=\"!resource.harvesting\" class=\"harvest-progress\" [value]=\"resource.progressBarValue\"></mat-progress-bar>\r\n\r\n            <img class=\"resource-img\" src=\"{{resource.iconPath}}\" alt=\"{{resource.name}}\" *ngIf=\"resource.iconPath !== ''\">\r\n            <div class='travelling-count' *ngIf=\"resource.amountTravelling > 0\">{{resource.amountTravelling}}\r\n              Travelling</div>\r\n          </button>\r\n        </div>\r\n      </mat-expansion-panel>\r\n    </mat-accordion>\r\n</ul>\r\n"
+module.exports = "<ul class=\"resources noselect\">\n  <button mat-raised-button disabled=\"true\" class=\"resource-button currency-button\" [ngClass]=\"{'warn': resourceIsBeingStolen(goldResource)}\">\n    <mat-card-title>{{goldResource.name | titlecase }}</mat-card-title>\n    <mat-card-subtitle>{{goldResource.amount | longNumber}}</mat-card-subtitle>\n\n    <img class=\"resource-img\" src=\"{{goldResource.iconPath}}\" alt=\"{{goldResource.name}}\" *ngIf=\"goldResource.iconPath !== ''\">\n  </button>\n\n  <mat-accordion multi=\"true\" *ngIf=\"organizeLeftPanelByType\">\n    <mat-expansion-panel expanded=\"true\" *ngFor=\"let resourceType of resourceTypes | enumToArray\">\n      <mat-expansion-panel-header *ngIf=\"resourceType !== 'Currency'\">\n        <mat-panel-title>\n          {{resourceType}}\n        </mat-panel-title>\n        <mat-panel-description>\n        </mat-panel-description>\n      </mat-expansion-panel-header>\n\n      <div class='button-container' *ngFor=\"let resource of getResources(resourceType, adminService.filterAccessible)\"\n        matTooltip=\"{{getTooltipMessage(resource)}}\" matTooltipPosition=\"right\">\n        <button mat-raised-button class=\"resource-button\" [ngClass]=\"{'warn': resourceIsBeingStolen(resource)}\"\n          [disabled]=\"!canHarvest(resource, resource.harvestYield)\" (click)='startHarvesting(resource)'\n          *ngIf=\"resource.resourceType != 'CURRENCY'\">\n          <div class=\"key-container\" *ngIf=\"resource.bindIndex >= 0\">\n            <img src=\"./assets/sprites/key.png\">\n            <p>{{resource.bindIndex}}</p>\n          </div>\n\n          <mat-card-title>{{resource.name | titlecase }}</mat-card-title>\n          <mat-card-subtitle>{{resource.amount | longNumber}}</mat-card-subtitle>\n          <mat-progress-bar [class.hidden]=\"!resource.harvesting\" class=\"harvest-progress\" [value]=\"resource.progressBarValue\"></mat-progress-bar>\n\n          <img class=\"resource-img\" src=\"{{resource.iconPath}}\" alt=\"{{resource.name}}\" *ngIf=\"resource.iconPath !== ''\">\n          <div class='travelling-count' *ngIf=\"resource.amountTravelling > 0\">{{resource.amountTravelling}}\n            Travelling</div>\n        </button>\n      </div>\n    </mat-expansion-panel>\n  </mat-accordion>\n\n  <mat-accordion multi=\"true\" *ngIf=\"!organizeLeftPanelByType\">\n      <mat-expansion-panel expanded=\"true\" *ngFor=\"let resourceTier of tiers\">\n        <mat-expansion-panel-header>\n          <mat-panel-title>\n            Tier {{resourceTier + 1}}\n          </mat-panel-title>\n          <mat-panel-description>\n          </mat-panel-description>\n        </mat-expansion-panel-header>\n\n        <div class='button-container' *ngFor=\"let resource of getResources(undefined, [resourceTier], adminService.filterAccessible)\"\n          matTooltip=\"{{getTooltipMessage(resource)}}\" matTooltipPosition=\"right\">\n          <button mat-raised-button class=\"resource-button\" [ngClass]=\"{'warn': resourceIsBeingStolen(resource)}\"\n            [disabled]=\"!canHarvest(resource, resource.harvestYield)\" (click)='startHarvesting(resource)'\n            *ngIf=\"resource.resourceType != 'CURRENCY'\">\n            <div class=\"key-container\" *ngIf=\"resource.bindIndex >= 0\">\n              <img src=\"./assets/sprites/key.png\">\n              <p>{{resource.bindIndex}}</p>\n            </div>\n\n            <mat-card-title>{{resource.name | titlecase }}</mat-card-title>\n            <mat-card-subtitle>{{resource.amount | longNumber}}</mat-card-subtitle>\n            <mat-progress-bar [class.hidden]=\"!resource.harvesting\" class=\"harvest-progress\" [value]=\"resource.progressBarValue\"></mat-progress-bar>\n\n            <img class=\"resource-img\" src=\"{{resource.iconPath}}\" alt=\"{{resource.name}}\" *ngIf=\"resource.iconPath !== ''\">\n            <div class='travelling-count' *ngIf=\"resource.amountTravelling > 0\">{{resource.amountTravelling}}\n              Travelling</div>\n          </button>\n        </div>\n      </mat-expansion-panel>\n    </mat-accordion>\n</ul>\n"
 
 /***/ }),
 
@@ -736,7 +739,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<button (click)=\"enemyService.spawnEnemy()\">Spawn Enemy</button>\r\n"
+module.exports = "<button (click)=\"enemyService.spawnEnemy()\">Spawn Enemy</button>\n"
 
 /***/ }),
 
@@ -791,7 +794,7 @@ var EnemyComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "#fighter-tooltip {\r\n  top: var(--detail-tooltip-top);\r\n  left: var(--detail-tooltip-left);\r\n\r\n  position: absolute;\r\n}\r\n\r\nmat-card {\r\n  text-align: center;\r\n  min-width: 300px;\r\n  max-width: 400px;\r\n}\r\n\r\n.resource-list div {\r\n  display: inline-block;\r\n}\r\n\r\n.resource-list img {\r\n  width: 16px;\r\n  height: 16px;\r\n}\r\n\r\n.repair-container {\r\n  display: inline-flex;\r\n  white-space: pre-wrap;\r\n}\r\n\r\n.repair-container button {\r\n  position: relative;\r\n  top: -25%;\r\n}\r\n\r\n.stats-container {\r\n  width: 100%;\r\n}\r\n\r\n.upgrade-button {\r\n  width: -webkit-fit-content;\r\n  width: -moz-fit-content;\r\n  width: fit-content;\r\n}\r\n\r\n.upgrade-button mat-icon {\r\n  position: relative;\r\n  top: 5px;\r\n}\r\n\r\n.anchor-container {\r\n  position: absolute;\r\n  top: 0;\r\n  left: 0;\r\n\r\n  width: 55px;\r\n  height: 55px;\r\n}\r\n\r\n.anchor-container #center {\r\n  position: absolute;\r\n\r\n  left: 15px;\r\n  top: 15px;\r\n}\r\n\r\n.anchor-container .corner {\r\n  display: none;\r\n}\r\n\r\n.anchor-container:hover .corner {\r\n  display: inherit;\r\n}\r\n\r\n.anchor-container a {\r\n  cursor: pointer;\r\n  color: gray;\r\n}\r\n\r\n.anchor-container a:hover {\r\n  color: black;\r\n}\r\n\r\n.anchor-container #arrow-upper-left {\r\n  -webkit-transform: rotate(225deg);\r\n  transform: rotate(225deg);\r\n\r\n  position: absolute;\r\n  top: 0;\r\n  left: 0;\r\n}\r\n\r\n.anchor-container #arrow-upper-right {\r\n  -webkit-transform: rotate(315deg);\r\n  transform: rotate(315deg);\r\n\r\n  position: absolute;\r\n  top: 0;\r\n  right: 0;\r\n}\r\n\r\n.anchor-container #arrow-lower-left {\r\n  -webkit-transform: rotate(135deg);\r\n  transform: rotate(135deg);\r\n\r\n  position: absolute;\r\n  bottom: 0;\r\n  left: 0;\r\n}\r\n\r\n.anchor-container #arrow-lower-right {\r\n  -webkit-transform: rotate(45deg);\r\n  transform: rotate(45deg);\r\n\r\n  position: absolute;\r\n  bottom: 0;\r\n  right: 0;\r\n}\r\n"
+module.exports = "#fighter-tooltip {\n  top: var(--detail-tooltip-top);\n  left: var(--detail-tooltip-left);\n\n  position: absolute;\n}\n\nmat-card {\n  text-align: center;\n  min-width: 300px;\n  max-width: 400px;\n}\n\n.resource-list div {\n  display: inline-block;\n}\n\n.resource-list img {\n  width: 16px;\n  height: 16px;\n}\n\n.repair-container {\n  display: inline-flex;\n  white-space: pre-wrap;\n}\n\n.repair-container button {\n  position: relative;\n  top: -25%;\n}\n\n.stats-container {\n  width: 100%;\n}\n\n.upgrade-button {\n  width: -webkit-fit-content;\n  width: -moz-fit-content;\n  width: fit-content;\n}\n\n.upgrade-button mat-icon {\n  position: relative;\n  top: 5px;\n}\n\n.anchor-container {\n  position: absolute;\n  top: 0;\n  left: 0;\n\n  width: 55px;\n  height: 55px;\n}\n\n.anchor-container #center {\n  position: absolute;\n\n  left: 15px;\n  top: 15px;\n}\n\n.anchor-container .corner {\n  display: none;\n}\n\n.anchor-container:hover .corner {\n  display: inherit;\n}\n\n.anchor-container a {\n  cursor: pointer;\n  color: gray;\n}\n\n.anchor-container a:hover {\n  color: black;\n}\n\n.anchor-container #arrow-upper-left {\n  -webkit-transform: rotate(225deg);\n  transform: rotate(225deg);\n\n  position: absolute;\n  top: 0;\n  left: 0;\n}\n\n.anchor-container #arrow-upper-right {\n  -webkit-transform: rotate(315deg);\n  transform: rotate(315deg);\n\n  position: absolute;\n  top: 0;\n  right: 0;\n}\n\n.anchor-container #arrow-lower-left {\n  -webkit-transform: rotate(135deg);\n  transform: rotate(135deg);\n\n  position: absolute;\n  bottom: 0;\n  left: 0;\n}\n\n.anchor-container #arrow-lower-right {\n  -webkit-transform: rotate(45deg);\n  transform: rotate(45deg);\n\n  position: absolute;\n  bottom: 0;\n  right: 0;\n}\n"
 
 /***/ }),
 
@@ -802,7 +805,7 @@ module.exports = "#fighter-tooltip {\r\n  top: var(--detail-tooltip-top);\r\n  l
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<mat-card appSnap [snapSetting]=\"snapSetting\" id=\"fighter-tooltip\">\r\n  <div class=\"anchor-container\">\r\n    <a>\r\n      <mat-icon class=\"corner\" id=\"arrow-upper-left\" (click)=\"snapSetting = 'upperLeft'\">arrow_forward</mat-icon>\r\n    </a>\r\n    <a>\r\n      <mat-icon class=\"corner\" id=\"arrow-upper-right\" (click)=\"snapSetting = 'upperRight'\">arrow_forward</mat-icon>\r\n    </a>\r\n    <a>\r\n      <mat-icon id=\"center\" (click)=\"snapSetting = 'free'\">all_out</mat-icon>\r\n    </a>\r\n    <a>\r\n      <mat-icon class=\"corner\" id=\"arrow-lower-left\" (click)=\"snapSetting = 'lowerLeft'\">arrow_forward</mat-icon>\r\n    </a>\r\n    <a>\r\n      <mat-icon class=\"corner\" id=\"arrow-lower-right\" (click)=\"snapSetting = 'lowerRight'\">arrow_forward</mat-icon>\r\n    </a>\r\n  </div>\r\n  <div *ngIf=\"focusedFighter\">\r\n    <mat-card-title>{{focusedFighter.name}}</mat-card-title>\r\n    <mat-card-subtitle>{{focusedFighter.description}}</mat-card-subtitle>\r\n\r\n    <div class=\"repair-container\">\r\n      {{focusedFighter.health}}/{{focusedFighter.maxHealth | longNumber}} Health\r\n      <div *ngIf=\"focusedFighter.health < focusedFighter.maxHealth\">\r\n        <button mat-raised-button (click)=\"focusedFighter.heal()\" color=\"accent\" [disabled]=\"!focusedFighter.canHeal()\">\r\n          Heal\r\n          <div class=\"resource-list\">\r\n            <div matTooltip=\"{{focusedFighter.healCost | longNumber}} {{getResource('GOLD').name | titlecase}}\"\r\n              matTooltipPosition=\"below\">\r\n              <img src=\"{{getResource('GOLD').iconPath}}\" alt=\"{{getResource('GOLD').name}}\">\r\n              {{focusedFighter.healCost | longNumber}}\r\n            </div>\r\n          </div>\r\n        </button>\r\n      </div>\r\n    </div>\r\n\r\n    <mat-card-content>\r\n      <button mat-raised-button color=\"warn\" (click)=\"removeFighter()\">Remove Fighter</button>\r\n\r\n      <h3>Stats</h3>\r\n      <table class=\"stats-container\">\r\n        <tbody>\r\n          <tr class=\"stat-row\">\r\n            <td>\r\n              <p>\r\n                Max Health: {{focusedFighter.maxHealth | longNumber}}\r\n              </p>\r\n            </td>\r\n            <td>\r\n              <b>\r\n                Level {{focusedFighter.statLevels['MAXHEALTH']}}\r\n              </b>\r\n            </td>\r\n            <td>\r\n              <button class=\"upgrade-button\" color=\"accent\" mat-raised-button (click)=\"focusedFighter.upgradeStat('MAXHEALTH')\"\r\n                [disabled]=\"!focusedFighter.canUpgradeStat('MAXHEALTH')\" matTooltip=\"Level {{focusedFighter.statLevels['MAXHEALTH'] + 1}}: {{focusedFighter.getUpgradedStat('MAXHEALTH') | longNumber}} Max Health\"\r\n                matTooltipPosition=\"below\">\r\n                <mat-icon color=\"primary\">arrow_upward</mat-icon>\r\n                <div class=\"resource-list\">\r\n                  <div>\r\n                    <img src=\"{{getResource('GOLD').iconPath}}\" alt=\"{{getResource('GOLD').name}}\">\r\n                    {{focusedFighter.statCosts['MAXHEALTH'] | longNumber}}\r\n                  </div>\r\n                </div>\r\n              </button>\r\n            </td>\r\n          </tr>\r\n\r\n          <tr class=\"stat-row\">\r\n            <td>\r\n              <p>\r\n                Attack: {{focusedFighter.attack | longNumber}}\r\n              </p>\r\n            </td>\r\n            <td>\r\n              <b>\r\n                Level {{focusedFighter.statLevels['ATTACK']}}\r\n              </b>\r\n            </td>\r\n            <td>\r\n              <button class=\"upgrade-button\" color=\"accent\" mat-raised-button (click)=\"focusedFighter.upgradeStat('ATTACK')\"\r\n                [disabled]=\"!focusedFighter.canUpgradeStat('ATTACK')\" matTooltip=\"Level {{focusedFighter.statLevels['ATTACK'] + 1}}: {{focusedFighter.getUpgradedStat('ATTACK') | longNumber}} Attack\"\r\n                matTooltipPosition=\"below\">\r\n                <mat-icon color=\"primary\">arrow_upward</mat-icon>\r\n                <div class=\"resource-list\">\r\n                  <div>\r\n                    <img src=\"{{getResource('GOLD').iconPath}}\" alt=\"{{getResource('GOLD').name}}\">\r\n                    {{focusedFighter.statCosts['ATTACK'] | longNumber}}\r\n                  </div>\r\n                </div>\r\n              </button>\r\n            </td>\r\n          </tr>\r\n\r\n          <tr class=\"stat-row\">\r\n            <td>\r\n              <p>\r\n                Defense: {{focusedFighter.defense | longNumber}}\r\n              </p>\r\n            </td>\r\n            <td>\r\n              <b>\r\n                Level {{focusedFighter.statLevels['DEFENSE']}}\r\n              </b>\r\n            </td>\r\n            <td>\r\n              <button class=\"upgrade-button\" color=\"accent\" mat-raised-button (click)=\"focusedFighter.upgradeStat('DEFENSE')\"\r\n                [disabled]=\"!focusedFighter.canUpgradeStat('DEFENSE')\" matTooltip=\"Level {{focusedFighter.statLevels['DEFENSE'] + 1}}: {{focusedFighter.getUpgradedStat('DEFENSE') | longNumber}} Defense\"\r\n                matTooltipPosition=\"below\">\r\n                <mat-icon color=\"primary\">arrow_upward</mat-icon>\r\n                <div class=\"resource-list\">\r\n                  <div>\r\n                    <img src=\"{{getResource('GOLD').iconPath}}\" alt=\"{{getResource('GOLD').name}}\">\r\n                    {{focusedFighter.statCosts['DEFENSE'] | longNumber}}\r\n                  </div>\r\n                </div>\r\n              </button>\r\n            </td>\r\n          </tr>\r\n\r\n          <tr class=\"stat-row\">\r\n            <td>\r\n              <p>\r\n                Attack Range: {{focusedFighter.attackRange | longNumber}}\r\n                Tile{{focusedFighter.attackRange === 1 ? '' : 's'}}\r\n              </p>\r\n            </td>\r\n            <td>\r\n              <b>\r\n                Level {{focusedFighter.statLevels['RANGE']}}\r\n              </b>\r\n            </td>\r\n            <td>\r\n              <button class=\"upgrade-button\" color=\"accent\" mat-raised-button (click)=\"focusedFighter.upgradeStat('RANGE')\"\r\n                [disabled]=\"!focusedFighter.canUpgradeStat('RANGE')\" matTooltip=\"Level {{focusedFighter.statLevels['RANGE'] + 1}}: {{focusedFighter.getUpgradedStat('RANGE') | longNumber}} Attack Range\"\r\n                matTooltipPosition=\"below\">\r\n                <mat-icon color=\"primary\">arrow_upward</mat-icon>\r\n                <div class=\"resource-list\">\r\n                  <div>\r\n                    <img src=\"{{getResource('GOLD').iconPath}}\" alt=\"{{getResource('GOLD').name}}\">\r\n                    {{focusedFighter.statCosts['RANGE'] | longNumber}}\r\n                  </div>\r\n                </div>\r\n              </button>\r\n            </td>\r\n          </tr>\r\n\r\n          <tr class=\"stat-row\" *ngIf=\"focusedFighter.moveable\">\r\n            <td>\r\n              <p>\r\n                Movement Speed: {{focusedFighter.animationSpeed * 100 | longNumber}}\r\n                Tile{{focusedFighter.animationSpeed === 1 ? '' : 's'}}/second\r\n              </p>\r\n            </td>\r\n            <td>\r\n              <b>\r\n                Level {{focusedFighter.statLevels['MOVEMENTSPEED']}}\r\n              </b>\r\n            </td>\r\n            <td>\r\n              <button class=\"upgrade-button\" color=\"accent\" mat-raised-button (click)=\"focusedFighter.upgradeStat('MOVEMENTSPEED')\"\r\n                [disabled]=\"!focusedFighter.canUpgradeStat('MOVEMENTSPEED')\" matTooltip=\"Level {{focusedFighter.statLevels['MOVEMENTSPEED'] + 1}}: {{focusedFighter.getUpgradedStat('MOVEMENTSPEED') * 100 | longNumber}} Tiles/Second\"\r\n                matTooltipPosition=\"below\">\r\n                <mat-icon color=\"primary\">arrow_upward</mat-icon>\r\n                <div class=\"resource-list\">\r\n                  <div>\r\n                    <img src=\"{{getResource('GOLD').iconPath}}\" alt=\"{{getResource('GOLD').name}}\">\r\n                    {{focusedFighter.statCosts['MOVEMENTSPEED'] | longNumber}}\r\n                  </div>\r\n                </div>\r\n              </button>\r\n            </td>\r\n          </tr>\r\n\r\n          <tr class=\"stat-row\">\r\n            <td>\r\n              <p>\r\n                Fire Rate: {{1000 / focusedFighter.fireMilliseconds | longNumber}}/Second\r\n              </p>\r\n            </td>\r\n            <td>\r\n              <b>\r\n                Level {{focusedFighter.statLevels['FIRERATE']}}\r\n              </b>\r\n            </td>\r\n            <td>\r\n              <button class=\"upgrade-button\" color=\"accent\" mat-raised-button (click)=\"focusedFighter.upgradeStat('FIRERATE')\"\r\n                [disabled]=\"!focusedFighter.canUpgradeStat('FIRERATE')\" matTooltip=\"Level {{focusedFighter.statLevels['FIRERATE'] + 1}}: {{1000 / focusedFighter.getUpgradedStat('FIRERATE') | longNumber}}/Second\"\r\n                matTooltipPosition=\"below\">\r\n                <mat-icon color=\"primary\">arrow_upward</mat-icon>\r\n                <div class=\"resource-list\">\r\n                  <div>\r\n                    <img src=\"{{getResource('GOLD').iconPath}}\" alt=\"{{getResource('GOLD').name}}\">\r\n                    {{focusedFighter.statCosts['FIRERATE'] | longNumber}}\r\n                  </div>\r\n                </div>\r\n              </button>\r\n            </td>\r\n          </tr>\r\n        </tbody>\r\n      </table>\r\n    </mat-card-content>\r\n  </div>\r\n</mat-card>\r\n"
+module.exports = "<mat-card appSnap [snapSetting]=\"snapSetting\" id=\"fighter-tooltip\">\n  <div class=\"anchor-container\">\n    <a>\n      <mat-icon class=\"corner\" id=\"arrow-upper-left\" (click)=\"snapSetting = 'upperLeft'\">arrow_forward</mat-icon>\n    </a>\n    <a>\n      <mat-icon class=\"corner\" id=\"arrow-upper-right\" (click)=\"snapSetting = 'upperRight'\">arrow_forward</mat-icon>\n    </a>\n    <a>\n      <mat-icon id=\"center\" (click)=\"snapSetting = 'free'\">all_out</mat-icon>\n    </a>\n    <a>\n      <mat-icon class=\"corner\" id=\"arrow-lower-left\" (click)=\"snapSetting = 'lowerLeft'\">arrow_forward</mat-icon>\n    </a>\n    <a>\n      <mat-icon class=\"corner\" id=\"arrow-lower-right\" (click)=\"snapSetting = 'lowerRight'\">arrow_forward</mat-icon>\n    </a>\n  </div>\n  <div *ngIf=\"focusedFighter\">\n    <mat-card-title>{{focusedFighter.name}}</mat-card-title>\n    <mat-card-subtitle>{{focusedFighter.description}}</mat-card-subtitle>\n\n    <div class=\"repair-container\">\n      {{focusedFighter.health}}/{{focusedFighter.maxHealth | longNumber}} Health\n      <div *ngIf=\"focusedFighter.health < focusedFighter.maxHealth\">\n        <button mat-raised-button (click)=\"focusedFighter.heal()\" color=\"accent\" [disabled]=\"!focusedFighter.canHeal()\">\n          Heal\n          <div class=\"resource-list\">\n            <div matTooltip=\"{{focusedFighter.healCost | longNumber}} {{getResource('GOLD').name | titlecase}}\"\n              matTooltipPosition=\"below\">\n              <img src=\"{{getResource('GOLD').iconPath}}\" alt=\"{{getResource('GOLD').name}}\">\n              {{focusedFighter.healCost | longNumber}}\n            </div>\n          </div>\n        </button>\n      </div>\n    </div>\n\n    <mat-card-content>\n      <button mat-raised-button color=\"warn\" (click)=\"removeFighter()\">Remove Fighter</button>\n\n      <h3>Stats</h3>\n      <table class=\"stats-container\">\n        <tbody>\n          <tr class=\"stat-row\">\n            <td>\n              <p>\n                Max Health: {{focusedFighter.maxHealth | longNumber}}\n              </p>\n            </td>\n            <td>\n              <b>\n                Level {{focusedFighter.statLevels['MAXHEALTH']}}\n              </b>\n            </td>\n            <td>\n              <button class=\"upgrade-button\" color=\"accent\" mat-raised-button (click)=\"focusedFighter.upgradeStat('MAXHEALTH')\"\n                [disabled]=\"!focusedFighter.canUpgradeStat('MAXHEALTH')\" matTooltip=\"Level {{focusedFighter.statLevels['MAXHEALTH'] + 1}}: {{focusedFighter.getUpgradedStat('MAXHEALTH') | longNumber}} Max Health\"\n                matTooltipPosition=\"below\">\n                <mat-icon color=\"primary\">arrow_upward</mat-icon>\n                <div class=\"resource-list\">\n                  <div>\n                    <img src=\"{{getResource('GOLD').iconPath}}\" alt=\"{{getResource('GOLD').name}}\">\n                    {{focusedFighter.statCosts['MAXHEALTH'] | longNumber}}\n                  </div>\n                </div>\n              </button>\n            </td>\n          </tr>\n\n          <tr class=\"stat-row\">\n            <td>\n              <p>\n                Attack: {{focusedFighter.attack | longNumber}}\n              </p>\n            </td>\n            <td>\n              <b>\n                Level {{focusedFighter.statLevels['ATTACK']}}\n              </b>\n            </td>\n            <td>\n              <button class=\"upgrade-button\" color=\"accent\" mat-raised-button (click)=\"focusedFighter.upgradeStat('ATTACK')\"\n                [disabled]=\"!focusedFighter.canUpgradeStat('ATTACK')\" matTooltip=\"Level {{focusedFighter.statLevels['ATTACK'] + 1}}: {{focusedFighter.getUpgradedStat('ATTACK') | longNumber}} Attack\"\n                matTooltipPosition=\"below\">\n                <mat-icon color=\"primary\">arrow_upward</mat-icon>\n                <div class=\"resource-list\">\n                  <div>\n                    <img src=\"{{getResource('GOLD').iconPath}}\" alt=\"{{getResource('GOLD').name}}\">\n                    {{focusedFighter.statCosts['ATTACK'] | longNumber}}\n                  </div>\n                </div>\n              </button>\n            </td>\n          </tr>\n\n          <tr class=\"stat-row\">\n            <td>\n              <p>\n                Defense: {{focusedFighter.defense | longNumber}}\n              </p>\n            </td>\n            <td>\n              <b>\n                Level {{focusedFighter.statLevels['DEFENSE']}}\n              </b>\n            </td>\n            <td>\n              <button class=\"upgrade-button\" color=\"accent\" mat-raised-button (click)=\"focusedFighter.upgradeStat('DEFENSE')\"\n                [disabled]=\"!focusedFighter.canUpgradeStat('DEFENSE')\" matTooltip=\"Level {{focusedFighter.statLevels['DEFENSE'] + 1}}: {{focusedFighter.getUpgradedStat('DEFENSE') | longNumber}} Defense\"\n                matTooltipPosition=\"below\">\n                <mat-icon color=\"primary\">arrow_upward</mat-icon>\n                <div class=\"resource-list\">\n                  <div>\n                    <img src=\"{{getResource('GOLD').iconPath}}\" alt=\"{{getResource('GOLD').name}}\">\n                    {{focusedFighter.statCosts['DEFENSE'] | longNumber}}\n                  </div>\n                </div>\n              </button>\n            </td>\n          </tr>\n\n          <tr class=\"stat-row\">\n            <td>\n              <p>\n                Attack Range: {{focusedFighter.attackRange | longNumber}}\n                Tile{{focusedFighter.attackRange === 1 ? '' : 's'}}\n              </p>\n            </td>\n            <td>\n              <b>\n                Level {{focusedFighter.statLevels['RANGE']}}\n              </b>\n            </td>\n            <td>\n              <button class=\"upgrade-button\" color=\"accent\" mat-raised-button (click)=\"focusedFighter.upgradeStat('RANGE')\"\n                [disabled]=\"!focusedFighter.canUpgradeStat('RANGE')\" matTooltip=\"Level {{focusedFighter.statLevels['RANGE'] + 1}}: {{focusedFighter.getUpgradedStat('RANGE') | longNumber}} Attack Range\"\n                matTooltipPosition=\"below\">\n                <mat-icon color=\"primary\">arrow_upward</mat-icon>\n                <div class=\"resource-list\">\n                  <div>\n                    <img src=\"{{getResource('GOLD').iconPath}}\" alt=\"{{getResource('GOLD').name}}\">\n                    {{focusedFighter.statCosts['RANGE'] | longNumber}}\n                  </div>\n                </div>\n              </button>\n            </td>\n          </tr>\n\n          <tr class=\"stat-row\" *ngIf=\"focusedFighter.moveable\">\n            <td>\n              <p>\n                Movement Speed: {{focusedFighter.animationSpeed * 100 | longNumber}}\n                Tile{{focusedFighter.animationSpeed === 1 ? '' : 's'}}/second\n              </p>\n            </td>\n            <td>\n              <b>\n                Level {{focusedFighter.statLevels['MOVEMENTSPEED']}}\n              </b>\n            </td>\n            <td>\n              <button class=\"upgrade-button\" color=\"accent\" mat-raised-button (click)=\"focusedFighter.upgradeStat('MOVEMENTSPEED')\"\n                [disabled]=\"!focusedFighter.canUpgradeStat('MOVEMENTSPEED')\" matTooltip=\"Level {{focusedFighter.statLevels['MOVEMENTSPEED'] + 1}}: {{focusedFighter.getUpgradedStat('MOVEMENTSPEED') * 100 | longNumber}} Tiles/Second\"\n                matTooltipPosition=\"below\">\n                <mat-icon color=\"primary\">arrow_upward</mat-icon>\n                <div class=\"resource-list\">\n                  <div>\n                    <img src=\"{{getResource('GOLD').iconPath}}\" alt=\"{{getResource('GOLD').name}}\">\n                    {{focusedFighter.statCosts['MOVEMENTSPEED'] | longNumber}}\n                  </div>\n                </div>\n              </button>\n            </td>\n          </tr>\n\n          <tr class=\"stat-row\">\n            <td>\n              <p>\n                Fire Rate: {{1000 / focusedFighter.fireMilliseconds | longNumber}}/Second\n              </p>\n            </td>\n            <td>\n              <b>\n                Level {{focusedFighter.statLevels['FIRERATE']}}\n              </b>\n            </td>\n            <td>\n              <button class=\"upgrade-button\" color=\"accent\" mat-raised-button (click)=\"focusedFighter.upgradeStat('FIRERATE')\"\n                [disabled]=\"!focusedFighter.canUpgradeStat('FIRERATE')\" matTooltip=\"Level {{focusedFighter.statLevels['FIRERATE'] + 1}}: {{1000 / focusedFighter.getUpgradedStat('FIRERATE') | longNumber}}/Second\"\n                matTooltipPosition=\"below\">\n                <mat-icon color=\"primary\">arrow_upward</mat-icon>\n                <div class=\"resource-list\">\n                  <div>\n                    <img src=\"{{getResource('GOLD').iconPath}}\" alt=\"{{getResource('GOLD').name}}\">\n                    {{focusedFighter.statCosts['FIRERATE'] | longNumber}}\n                  </div>\n                </div>\n              </button>\n            </td>\n          </tr>\n        </tbody>\n      </table>\n    </mat-card-content>\n  </div>\n</mat-card>\n"
 
 /***/ }),
 
@@ -897,7 +900,7 @@ var FighterDetailComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "/* FightersComponent's private CSS styles */\r\n.fighters {\r\n  position: absolute;\r\n  top: 72px;\r\n  left: 392px;\r\n  width: 134px;\r\n  display: -ms-grid;\r\n  display: grid;\r\n\r\n  background: white;\r\n\r\n  flex-direction: column;\r\n}\r\nbutton {\r\n  background-color: #eee;\r\n  border: none;\r\n  padding: 5px 10px;\r\n  border-radius: 4px;\r\n  cursor: pointer;\r\n  cursor: hand;\r\n  font-family: Arial;\r\n}\r\n.resource-list {\r\n  text-align: center;\r\n}\r\n.resource-list div {\r\n  display: inline-block;\r\n}\r\n.resource-list img {\r\n  width: 16px;\r\n  height: 16px;\r\n}\r\n"
+module.exports = "/* FightersComponent's private CSS styles */\n.fighters {\n  position: absolute;\n  top: 72px;\n  left: 392px;\n  width: 134px;\n  display: -ms-grid;\n  display: grid;\n\n  background: white;\n\n  flex-direction: column;\n}\nbutton {\n  background-color: #eee;\n  border: none;\n  padding: 5px 10px;\n  border-radius: 4px;\n  cursor: pointer;\n  cursor: hand;\n  font-family: Arial;\n}\n.resource-list {\n  text-align: center;\n}\n.resource-list div {\n  display: inline-block;\n}\n.resource-list img {\n  width: 16px;\n  height: 16px;\n}\n"
 
 /***/ }),
 
@@ -908,7 +911,7 @@ module.exports = "/* FightersComponent's private CSS styles */\r\n.fighters {\r\
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<mat-button-toggle-group #group=\"matButtonToggleGroup\" [(ngModel)]=\"selectedFighterType\" class=\"fighters\">\r\n  <mat-button-toggle *ngFor=\"let fighterType of fighterService.fighterTypes\" [value]=\"fighterType\" class=\"fighter\"\r\n    [disabled]=\"!canAffordFighter(fighterType)\" (click)=\"mapService.fighterListVisible = false\">\r\n    <div class=\"title\" matTooltip=\"{{fighterType.description}}\" matTooltipPosition=\"above\">\r\n      {{fighterType.name}}\r\n    </div>\r\n    <div class=\"resource-list\">\r\n      <div matTooltip=\"{{fighterType.cost | longNumber}} {{getResource('GOLD').name | titlecase}}\"\r\n        matTooltipPosition=\"below\">\r\n        <img src=\"{{getResource('GOLD').iconPath}}\" alt=\"{{getResource('GOLD').name}}\">\r\n        {{fighterType.cost | longNumber}}\r\n      </div>\r\n    </div>\r\n  </mat-button-toggle>\r\n</mat-button-toggle-group>\r\n"
+module.exports = "<mat-button-toggle-group #group=\"matButtonToggleGroup\" [(ngModel)]=\"selectedFighterType\" class=\"fighters\">\n  <mat-button-toggle *ngFor=\"let fighterType of fighterService.fighterTypes\" [value]=\"fighterType\" class=\"fighter\"\n    [disabled]=\"!canAffordFighter(fighterType)\" (click)=\"mapService.fighterListVisible = false\">\n    <div class=\"title\" matTooltip=\"{{fighterType.description}}\" matTooltipPosition=\"above\">\n      {{fighterType.name}}\n    </div>\n    <div class=\"resource-list\">\n      <div matTooltip=\"{{fighterType.cost | longNumber}} {{getResource('GOLD').name | titlecase}}\"\n        matTooltipPosition=\"below\">\n        <img src=\"{{getResource('GOLD').iconPath}}\" alt=\"{{getResource('GOLD').name}}\">\n        {{fighterType.cost | longNumber}}\n      </div>\n    </div>\n  </mat-button-toggle>\n</mat-button-toggle-group>\n"
 
 /***/ }),
 
@@ -1013,7 +1016,7 @@ var FighterComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "/* MapComponent's private CSS styles */\r\nh1 {\r\n  font-size: 1.2em;\r\n  color: #999;\r\n  margin-bottom: 0;\r\n  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;\r\n}\r\nh2 {\r\n  font-size: 2em;\r\n  margin-top: 0;\r\n  padding-top: 0;\r\n}\r\nh3 {\r\n  font-family: Arial, Helvetica, sans-serif;\r\n}\r\nnav a {\r\n  padding: 5px 10px;\r\n  text-decoration: none;\r\n  margin-top: 10px;\r\n  display: inline-block;\r\n  background-color: #eee;\r\n  border-radius: 4px;\r\n}\r\nnav a:visited, a:link {\r\n  color: #607d8b;\r\n}\r\nnav a:hover {\r\n  color: #039be5;\r\n  background-color: #cfd8dc;\r\n}\r\nnav a.active {\r\n  color: #039be5;\r\n}\r\n#canvas-container {\r\n  display: flex;\r\n  height: 100%;\r\n  position: relative;\r\n  overflow: hidden;\r\n}\r\n.cursor-tools {\r\n  position: absolute;\r\n  top: 0;\r\n\r\n  overflow-x: auto;\r\n  max-width: 100%;\r\n\r\n  background: white;\r\n}\r\n.key-container {\r\n  position: absolute;\r\n}\r\n.key-container img {\r\n  width: 24px;\r\n  height: 24px;\r\n}\r\n.key-container p {\r\n  z-index: 1;\r\n  position: absolute;\r\n\r\n  top: 10px;\r\n  right: 3px;\r\n\r\n  margin: 0;\r\n  line-height: 0;\r\n}\r\n"
+module.exports = "/* MapComponent's private CSS styles */\nh1 {\n  font-size: 1.2em;\n  color: #999;\n  margin-bottom: 0;\n  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;\n}\nh2 {\n  font-size: 2em;\n  margin-top: 0;\n  padding-top: 0;\n}\nh3 {\n  font-family: Arial, Helvetica, sans-serif;\n}\nnav a {\n  padding: 5px 10px;\n  text-decoration: none;\n  margin-top: 10px;\n  display: inline-block;\n  background-color: #eee;\n  border-radius: 4px;\n}\nnav a:visited, a:link {\n  color: #607d8b;\n}\nnav a:hover {\n  color: #039be5;\n  background-color: #cfd8dc;\n}\nnav a.active {\n  color: #039be5;\n}\n#map-canvas-container {\n  display: flex;\n  height: 100%;\n  position: relative;\n  overflow: hidden;\n}\n#minimap-canvas-container {\n  position: absolute;\n  top: 0;\n  right: 0;\n\n  width: 375px;\n  height: 375px;\n}\n#minimap-canvas-container canvas {\n  position: absolute;\n\n  background: transparent;\n}\n.cursor-tools {\n  position: absolute;\n  top: 0;\n\n  overflow-x: auto;\n  max-width: 100%;\n\n  background: white;\n}\n.key-container {\n  position: absolute;\n}\n.key-container img {\n  width: 24px;\n  height: 24px;\n}\n.key-container p {\n  z-index: 1;\n  position: absolute;\n\n  top: 10px;\n  right: 3px;\n\n  margin: 0;\n  line-height: 0;\n}\n"
 
 /***/ }),
 
@@ -1024,7 +1027,7 @@ module.exports = "/* MapComponent's private CSS styles */\r\nh1 {\r\n  font-size
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div id=\"canvas-container\" tabindex=\"1\">\r\n  <canvas class=\"noselect\" appNoScroll appMap width=\"{{canvasWidth}}\" height=\"{{canvasHeight}}\" oncontextmenu=\"return false\"></canvas>\r\n\r\n  <mat-button-toggle-group #group=\"matButtonToggleGroup\" [(ngModel)]=\"mapService.cursorTool\" class=\"cursor-tools\"\r\n    (valueChange)=\"clearFocus()\">\r\n    <mat-button-toggle value=\"PLACEBUILDINGS\" class=\"cursor-tool\" (click)=\"setPlacementGroupVisibility(!mapService.buildingListVisible, false)\">\r\n      <div class=\"key-container\">\r\n        <img src=\"./assets/sprites/key.png\">\r\n        <p>Q</p>\r\n      </div>\r\n      <mat-icon color=\"primary\">add_photo_alternate</mat-icon>\r\n      <br />\r\n      Place Buildings\r\n    </mat-button-toggle>\r\n    <mat-button-toggle value=\"CLEARBUILDINGS\" class=\"cursor-tool\" (click)=\"setPlacementGroupVisibility(false, false)\">\r\n      <div class=\"key-container\">\r\n        <img src=\"./assets/sprites/key.png\">\r\n        <p>W</p>\r\n      </div>\r\n      <mat-icon color=\"primary\">delete</mat-icon>\r\n      <br />\r\n      Clear Buildings\r\n    </mat-button-toggle>\r\n    <mat-button-toggle value=\"TILEDETAIL\" class=\"cursor-tool\" (click)=\"setPlacementGroupVisibility(false, false)\">\r\n      <div class=\"key-container\">\r\n        <img src=\"./assets/sprites/key.png\">\r\n        <p>E</p>\r\n      </div>\r\n      <mat-icon color=\"primary\">mode_comment</mat-icon>\r\n      <br />\r\n      Tile Details\r\n    </mat-button-toggle>\r\n    <mat-button-toggle *ngIf=\"enemyService.enemiesActive\" value=\"PLACEFIGHTERS\" class=\"cursor-tool\" (click)=\"setPlacementGroupVisibility(false, !this.mapService.fighterListVisible)\">\r\n      <div class=\"key-container\">\r\n        <img src=\"./assets/sprites/key.png\">\r\n        <p>R</p>\r\n      </div>\r\n      <mat-icon color=\"primary\">directions_walk</mat-icon>\r\n      <br />\r\n      Place Fighters\r\n    </mat-button-toggle>\r\n    <mat-button-toggle *ngIf=\"enemyService.enemiesActive\" value=\"FIGHTERDETAIL\" class=\"cursor-tool\" (click)=\"setPlacementGroupVisibility(false, false)\">\r\n      <div class=\"key-container\">\r\n        <img src=\"./assets/sprites/key.png\">\r\n        <p>T</p>\r\n      </div>\r\n      <mat-icon color=\"primary\">directions_run</mat-icon>\r\n      <br />\r\n      Fighter Details\r\n    </mat-button-toggle>\r\n  </mat-button-toggle-group>\r\n\r\n  <app-buildings *ngIf=\"mapService.buildingListVisible\"></app-buildings>\r\n  <app-fighter *ngIf=\"mapService.fighterListVisible\"></app-fighter>\r\n\r\n  <app-tile-detail [ngClass]=\"{'hidden': !mapService.focusedBuildingTile && !mapService.focusedResourceTile}\"></app-tile-detail>\r\n  <app-fighter-detail [ngClass]=\"{'hidden': !mapService.focusedFighter}\"></app-fighter-detail>\r\n</div>\r\n"
+module.exports = "<div id=\"map-canvas-container\" tabindex=\"1\">\n  <canvas id=\"map\" class=\"noselect\" appNoScroll appMap oncontextmenu=\"return false\"></canvas>\n\n  <mat-button-toggle-group #group=\"matButtonToggleGroup\" [(ngModel)]=\"mapService.cursorTool\" class=\"cursor-tools\"\n    (valueChange)=\"clearFocus()\">\n    <mat-button-toggle value=\"PLACEBUILDINGS\" class=\"cursor-tool\" (click)=\"setPlacementGroupVisibility(!mapService.buildingListVisible, false)\">\n      <div class=\"key-container\">\n        <img src=\"./assets/sprites/key.png\">\n        <p>Q</p>\n      </div>\n      <mat-icon color=\"primary\">add_photo_alternate</mat-icon>\n      <br />\n      Place Buildings\n    </mat-button-toggle>\n    <mat-button-toggle value=\"CLEARBUILDINGS\" class=\"cursor-tool\" (click)=\"setPlacementGroupVisibility(false, false)\">\n      <div class=\"key-container\">\n        <img src=\"./assets/sprites/key.png\">\n        <p>W</p>\n      </div>\n      <mat-icon color=\"primary\">delete</mat-icon>\n      <br />\n      Clear Buildings\n    </mat-button-toggle>\n    <mat-button-toggle value=\"TILEDETAIL\" class=\"cursor-tool\" (click)=\"setPlacementGroupVisibility(false, false)\">\n      <div class=\"key-container\">\n        <img src=\"./assets/sprites/key.png\">\n        <p>E</p>\n      </div>\n      <mat-icon color=\"primary\">mode_comment</mat-icon>\n      <br />\n      Tile Details\n    </mat-button-toggle>\n    <mat-button-toggle *ngIf=\"enemyService.enemiesActive\" value=\"PLACEFIGHTERS\" class=\"cursor-tool\" (click)=\"setPlacementGroupVisibility(false, !this.mapService.fighterListVisible)\">\n      <div class=\"key-container\">\n        <img src=\"./assets/sprites/key.png\">\n        <p>R</p>\n      </div>\n      <mat-icon color=\"primary\">directions_walk</mat-icon>\n      <br />\n      Place Fighters\n    </mat-button-toggle>\n    <mat-button-toggle *ngIf=\"enemyService.enemiesActive\" value=\"FIGHTERDETAIL\" class=\"cursor-tool\" (click)=\"setPlacementGroupVisibility(false, false)\">\n      <div class=\"key-container\">\n        <img src=\"./assets/sprites/key.png\">\n        <p>T</p>\n      </div>\n      <mat-icon color=\"primary\">directions_run</mat-icon>\n      <br />\n      Fighter Details\n    </mat-button-toggle>\n  </mat-button-toggle-group>\n\n  <div id=\"minimap-canvas-container\" class=\"minimap\" appMinimap oncontextmenu=\"return false\">\n      <canvas id=\"minimap_background\" class=\"noselect\"></canvas>\n      <canvas id=\"minimap_foreground\" class=\"noselect\"></canvas>\n  </div>\n\n  <app-buildings *ngIf=\"mapService.buildingListVisible\"></app-buildings>\n  <app-fighter *ngIf=\"mapService.fighterListVisible\"></app-fighter>\n\n  <app-tile-detail [ngClass]=\"{'hidden': !mapService.focusedBuildingTile && !mapService.focusedResourceTile}\"></app-tile-detail>\n  <app-fighter-detail [ngClass]=\"{'hidden': !mapService.focusedFighter}\"></app-fighter-detail>\n</div>\n"
 
 /***/ }),
 
@@ -1085,40 +1088,12 @@ var MapComponent = /** @class */ (function () {
         this.mapService.buildingListVisible = buildingVisibility;
         this.mapService.fighterListVisible = fighterVisibility;
     };
-    Object.defineProperty(MapComponent.prototype, "canvasWidth", {
-        get: function () {
-            return this.mapService.canvasWidth;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(MapComponent.prototype, "canvasHeight", {
-        get: function () {
-            return this.mapService.canvasHeight;
-        },
-        enumerable: true,
-        configurable: true
-    });
     Object.defineProperty(MapComponent.prototype, "deleteMode", {
         get: function () {
             return this.mapService.deleteMode;
         },
         set: function (value) {
             this.mapService.deleteMode = value;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(MapComponent.prototype, "rowCount", {
-        get: function () {
-            return this.mapService.getRowCount();
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(MapComponent.prototype, "columnCount", {
-        get: function () {
-            return this.mapService.getColumnCount();
         },
         enumerable: true,
         configurable: true
@@ -1149,7 +1124,7 @@ var MapComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "/* MessagesComponent's private CSS styles */\r\nh2 {\r\n  color: red;\r\n  font-family: Arial, Helvetica, sans-serif;\r\n  font-weight: lighter;\r\n}\r\nbody {\r\n  margin: 2em;\r\n}\r\nbody, input[text], button {\r\n  color: crimson;\r\n  font-family: Cambria, Georgia;\r\n}\r\nbutton.clear {\r\n  font-family: Arial;\r\n  background-color: #eee;\r\n  border: none;\r\n  padding: 5px 10px;\r\n  border-radius: 4px;\r\n  cursor: pointer;\r\n  cursor: hand;\r\n}\r\nbutton:hover {\r\n  background-color: #cfd8dc;\r\n}\r\nbutton:disabled {\r\n  background-color: #eee;\r\n  color: #aaa;\r\n  cursor: auto;\r\n}\r\nbutton.clear {\r\n  color: #888;\r\n  margin-bottom: 12px;\r\n}\r\ntable.message-table {\r\n  width: 100%;\r\n}\r\n"
+module.exports = "/* MessagesComponent's private CSS styles */\nh2 {\n  color: red;\n  font-family: Arial, Helvetica, sans-serif;\n  font-weight: lighter;\n}\nbody {\n  margin: 2em;\n}\nbody, input[text], button {\n  color: crimson;\n  font-family: Cambria, Georgia;\n}\nbutton.clear {\n  font-family: Arial;\n  background-color: #eee;\n  border: none;\n  padding: 5px 10px;\n  border-radius: 4px;\n  cursor: pointer;\n  cursor: hand;\n}\nbutton:hover {\n  background-color: #cfd8dc;\n}\nbutton:disabled {\n  background-color: #eee;\n  color: #aaa;\n  cursor: auto;\n}\nbutton.clear {\n  color: #888;\n  margin-bottom: 12px;\n}\ntable.message-table {\n  width: 100%;\n}\n"
 
 /***/ }),
 
@@ -1160,7 +1135,7 @@ module.exports = "/* MessagesComponent's private CSS styles */\r\nh2 {\r\n  colo
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<table mat-table [dataSource]=\"messagesService.messagesDataSource\" matSort matSortActive=\"timestamp\" matSortDirection=\"desc\" class=\"message-table mat-elevation-z8\">\r\n    <ng-container matColumnDef=\"source\">\r\n      <mat-header-cell *matHeaderCellDef mat-sort-header> Source </mat-header-cell>\r\n      <mat-cell *matCellDef=\"let message\"> {{message.source | titlecase}} </mat-cell>\r\n    </ng-container>\r\n\r\n    <ng-container matColumnDef=\"timestamp\">\r\n        <mat-header-cell *matHeaderCellDef mat-sort-header> Timestamp </mat-header-cell>\r\n        <mat-cell *matCellDef=\"let message\"> {{message.timestamp | date:'h:mm a'}} </mat-cell>\r\n    </ng-container>\r\n\r\n    <ng-container matColumnDef=\"message\">\r\n      <mat-header-cell *matHeaderCellDef mat-sort-header> Message </mat-header-cell>\r\n      <mat-cell *matCellDef=\"let message\"> {{message.message}} </mat-cell>\r\n    </ng-container>\r\n\r\n    <mat-header-row *matHeaderRowDef=\"displayedColumns\"></mat-header-row>\r\n    <mat-row *matRowDef=\"let row; columns: displayedColumns;\"></mat-row>\r\n  </table>\r\n"
+module.exports = "<table mat-table [dataSource]=\"messagesService.messagesDataSource\" matSort matSortActive=\"timestamp\" matSortDirection=\"desc\" class=\"message-table mat-elevation-z8\">\n    <ng-container matColumnDef=\"source\">\n      <mat-header-cell *matHeaderCellDef mat-sort-header> Source </mat-header-cell>\n      <mat-cell *matCellDef=\"let message\"> {{message.source | titlecase}} </mat-cell>\n    </ng-container>\n\n    <ng-container matColumnDef=\"timestamp\">\n        <mat-header-cell *matHeaderCellDef mat-sort-header> Timestamp </mat-header-cell>\n        <mat-cell *matCellDef=\"let message\"> {{message.timestamp | date:'h:mm a'}} </mat-cell>\n    </ng-container>\n\n    <ng-container matColumnDef=\"message\">\n      <mat-header-cell *matHeaderCellDef mat-sort-header> Message </mat-header-cell>\n      <mat-cell *matCellDef=\"let message\"> {{message.message}} </mat-cell>\n    </ng-container>\n\n    <mat-header-row *matHeaderRowDef=\"displayedColumns\"></mat-header-row>\n    <mat-row *matRowDef=\"let row; columns: displayedColumns;\"></mat-row>\n  </table>\n"
 
 /***/ }),
 
@@ -1236,7 +1211,7 @@ var MessagesComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".full-width {\r\n  width: 100%;\r\n}\r\n"
+module.exports = ".full-width {\n  width: 100%;\n}\n"
 
 /***/ }),
 
@@ -1247,7 +1222,7 @@ module.exports = ".full-width {\r\n  width: 100%;\r\n}\r\n"
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div *ngIf=\"!exportMode\">\r\n  Paste Save\r\n  <mat-form-field class=\"full-width\">\r\n    <input matInput placeholder=\"Save Data\" [(ngModel)]=\"saveData\" (submit)=\"exportData()\">\r\n  </mat-form-field>\r\n\r\n  <div>\r\n    <button mat-raised-button color=\"accent\" (click)=\"exportData()\">Load</button>\r\n    <button mat-raised-button (click)=\"onNoClick()\">Cancel</button>\r\n  </div>\r\n</div>\r\n\r\n<div *ngIf=\"exportMode\" style=\"word-wrap: break-word\">\r\n  <textarea readonly id=\"saveData\" class=\"full-width\">{{saveData}}</textarea>\r\n  <div>\r\n    <button mat-raised-button class=\"copy-button\" color=\"accent\" data-clipboard-action=\"copy\" data-clipboard-target=\"#saveData\">Copy to Clipboard</button>\r\n    <button mat-raised-button (click)=\"onNoClick()\">Close</button>\r\n  </div>\r\n</div>\r\n"
+module.exports = "<div *ngIf=\"!exportMode\">\n  Paste Save\n  <mat-form-field class=\"full-width\">\n    <input matInput placeholder=\"Save Data\" [(ngModel)]=\"saveData\" (submit)=\"exportData()\">\n  </mat-form-field>\n\n  <div>\n    <button mat-raised-button color=\"accent\" (click)=\"exportData()\">Load</button>\n    <button mat-raised-button (click)=\"onNoClick()\">Cancel</button>\n  </div>\n</div>\n\n<div *ngIf=\"exportMode\" style=\"word-wrap: break-word\">\n  <textarea readonly id=\"saveData\" class=\"full-width\">{{saveData}}</textarea>\n  <div>\n    <button mat-raised-button class=\"copy-button\" color=\"accent\" data-clipboard-action=\"copy\" data-clipboard-target=\"#saveData\">Copy to Clipboard</button>\n    <button mat-raised-button (click)=\"onNoClick()\">Close</button>\n  </div>\n</div>\n"
 
 /***/ }),
 
@@ -1322,7 +1297,7 @@ var SaveDialogComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "h1 {\r\n  font-size: 1.2em;\r\n  color: #999;\r\n  margin-bottom: 0;\r\n  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;\r\n}\r\n\r\nh2 {\r\n  font-size: 2em;\r\n  margin-top: 0;\r\n  padding-top: 0;\r\n}\r\n\r\na {\r\n  padding: 5px 10px;\r\n  text-decoration: none;\r\n  margin-top: 10px;\r\n  display: inline-block;\r\n  background-color: #eee;\r\n  border-radius: 4px;\r\n  cursor: pointer;\r\n}\r\n\r\na:visited, a:link {\r\n  color: #607d8b;\r\n}\r\n\r\na:hover {\r\n  color: #039be5;\r\n  background-color: #cfd8dc;\r\n}\r\n\r\na.active {\r\n  color: #039be5;\r\n}\r\n\r\nmat-panel-title {\r\n  display: -ms-grid;\r\n  display: grid;\r\n}\r\n\r\n.color-input {\r\n    color: rgb(108, 88, 88);\r\n    font-weight: bolder;\r\n}\r\n\r\n.full-width {\r\n  width: 100%;\r\n}\r\n"
+module.exports = "h1 {\n  font-size: 1.2em;\n  color: #999;\n  margin-bottom: 0;\n  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;\n}\n\nh2 {\n  font-size: 2em;\n  margin-top: 0;\n  padding-top: 0;\n}\n\na {\n  padding: 5px 10px;\n  text-decoration: none;\n  margin-top: 10px;\n  display: inline-block;\n  background-color: #eee;\n  border-radius: 4px;\n  cursor: pointer;\n}\n\na:visited, a:link {\n  color: #607d8b;\n}\n\na:hover {\n  color: #039be5;\n  background-color: #cfd8dc;\n}\n\na.active {\n  color: #039be5;\n}\n\nmat-panel-title {\n  display: -ms-grid;\n  display: grid;\n}\n\n.color-input {\n    color: rgb(108, 88, 88);\n    font-weight: bolder;\n}\n\n.full-width {\n  width: 100%;\n}\n"
 
 /***/ }),
 
@@ -1333,7 +1308,7 @@ module.exports = "h1 {\r\n  font-size: 1.2em;\r\n  color: #999;\r\n  margin-bott
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<h3>\r\n  Version {{settingsService.gameVersion}} -\r\n  <a (click)=\"openAboutDialog()\">About</a>\r\n</h3>\r\n\r\n<mat-accordion multi=\"true\">\r\n  <mat-expansion-panel expanded=\"true\">\r\n    <mat-expansion-panel-header>\r\n      <mat-panel-title>\r\n        <mat-icon color=\"primary\">save</mat-icon>\r\n        Save/Load\r\n      </mat-panel-title>\r\n    </mat-expansion-panel-header>\r\n\r\n    <mat-form-field class=\"full-width\">\r\n      <mat-select placeholder=\"Autosave Interval (Minutes)\" [(ngModel)]=\"autosaveInterval\" (valueChange)=\"settingsService.setAutosave()\">\r\n        <mat-option [value]=\"-1\">Disable</mat-option>\r\n        <mat-option [value]=\"60000\">1</mat-option>\r\n        <mat-option [value]=\"900000\">15</mat-option>\r\n        <mat-option [value]=\"1800000\">30</mat-option>\r\n        <mat-option [value]=\"3600000\">60</mat-option>\r\n      </mat-select>\r\n    </mat-form-field>\r\n\r\n    <button mat-raised-button color=\"primary\" (click)=\"saveGame()\">Save</button>\r\n    <button mat-raised-button color=\"warn\" (click)=\"deleteGame()\">Delete Save</button>\r\n\r\n    <button mat-raised-button (click)=\"exportSave()\">Export Save</button>\r\n    <button mat-raised-button (click)=\"importSave()\">Import Save</button>\r\n  </mat-expansion-panel>\r\n\r\n  <mat-expansion-panel expanded=\"true\">\r\n    <mat-expansion-panel-header>\r\n      <mat-panel-title>\r\n        <mat-icon color=\"primary\">list</mat-icon>\r\n        Interface\r\n      </mat-panel-title>\r\n    </mat-expansion-panel-header>\r\n\r\n    <!-- <mat-checkbox [(ngModel)]=\"disableAnimations\">Disable Animations</mat-checkbox>\r\n    <br /> -->\r\n    <mat-checkbox [(ngModel)]=\"slimInterface\">Slim Mode</mat-checkbox>\r\n    <br />\r\n    <mat-checkbox [(ngModel)]=\"organizeLeftPanelByType\">Organize Left Pane By Resource Type</mat-checkbox>\r\n\r\n    <mat-form-field class=\"full-width\">\r\n      <mat-select placeholder=\"Resource Shortcuts\" [formControl]=\"bindSelected\" multiple (selectionChange)=\"resourceBindChange($event)\">\r\n        <mat-option *ngFor=\"let resource of resourcesService.getResources(false, false, true)\" [(value)]=\"resource.resourceEnum\">\r\n          {{resource.name | titlecase}}\r\n        </mat-option>\r\n      </mat-select>\r\n      <mat-error *ngIf=\"bindSelected.hasError('length')\">\r\n        No more than 10 resource shortcuts allowed.\r\n      </mat-error>\r\n    </mat-form-field>\r\n\r\n  </mat-expansion-panel>\r\n\r\n  <mat-expansion-panel expanded=\"true\">\r\n    <mat-expansion-panel-header>\r\n      <mat-panel-title>\r\n        <mat-icon color=\"primary\">map</mat-icon>\r\n        Map\r\n      </mat-panel-title>\r\n    </mat-expansion-panel-header>\r\n\r\n    <mat-checkbox [(ngModel)]=\"mapLowFramerate\">Limit Framerate</mat-checkbox>\r\n    <br />\r\n\r\n    <mat-form-field class=\"full-width\">\r\n      <input class=\"color-input\" matInput placeholder=\"Player Harvest Color\" [(colorPicker)]=\"resourceAnimationColors['PLAYERSPAWNED']\"\r\n        [style.background]=\"resourceAnimationColors['PLAYERSPAWNED']\" [value]=\"resourceAnimationColors['PLAYERSPAWNED']\" />\r\n    </mat-form-field>\r\n\r\n    <mat-form-field class=\"full-width\">\r\n      <input class=\"color-input\" matInput placeholder=\"Worker Harvest Color\" [(colorPicker)]=\"resourceAnimationColors['WORKERSPAWNED']\"\r\n        [style.background]=\"resourceAnimationColors['WORKERSPAWNED']\" [value]=\"resourceAnimationColors['WORKERSPAWNED']\" />\r\n    </mat-form-field>\r\n\r\n    <mat-form-field class=\"full-width\">\r\n      <input class=\"color-input\" matInput placeholder=\"Sold Resource Color\" [(colorPicker)]=\"resourceAnimationColors['SOLD']\"\r\n        [style.background]=\"resourceAnimationColors['SOLD']\" [value]=\"resourceAnimationColors['SOLD']\" />\r\n    </mat-form-field>\r\n  </mat-expansion-panel>\r\n\r\n  <mat-expansion-panel expanded=\"true\">\r\n    <mat-expansion-panel-header>\r\n      <mat-panel-title>\r\n        <mat-icon color=\"primary\">assessment</mat-icon>\r\n        Log\r\n      </mat-panel-title>\r\n    </mat-expansion-panel-header>\r\n\r\n    <button mat-raised-button (click)=\"messagesService.clear()\">Clear</button>\r\n\r\n    <br />\r\n\r\n    <mat-form-field class=\"full-width\">\r\n      <input matInput type=\"number\" placeholder=\"Log History\" min=\"0\" max=\"10000\" [(ngModel)]=\"messagesService.messageLimit\">\r\n    </mat-form-field>\r\n\r\n    <br />\r\n\r\n    <mat-form-field class=\"full-width\">\r\n      <mat-select placeholder=\"Visible Log Sources\" [(ngModel)]=\"messagesService.visibleSources\" (ngModelChange)=\"messagesService.getFilteredMessages()\"\r\n        multiple>\r\n        <mat-option *ngFor=\"let messageSource of messageSources | enumToArray\" [(value)]=\"messageSources[messageSource]\">\r\n          {{messageSource | titlecase}}\r\n        </mat-option>\r\n      </mat-select>\r\n    </mat-form-field>\r\n  </mat-expansion-panel>\r\n\r\n  <mat-expansion-panel expanded=\"true\">\r\n    <mat-expansion-panel-header>\r\n      <mat-panel-title>\r\n        <mat-icon color=\"primary\">bug_report</mat-icon>\r\n        Debug\r\n      </mat-panel-title>\r\n    </mat-expansion-panel-header>\r\n\r\n    <mat-checkbox [(ngModel)]=\"debugMode\">Debug Mode</mat-checkbox>\r\n  </mat-expansion-panel>\r\n</mat-accordion>\r\n"
+module.exports = "<h3>\n  Version {{settingsService.gameVersion}} -\n  <a (click)=\"openAboutDialog()\">About</a>\n</h3>\n\n<mat-accordion multi=\"true\">\n  <mat-expansion-panel expanded=\"true\">\n    <mat-expansion-panel-header>\n      <mat-panel-title>\n        <mat-icon color=\"primary\">save</mat-icon>\n        Save/Load\n      </mat-panel-title>\n    </mat-expansion-panel-header>\n\n    <mat-form-field class=\"full-width\">\n      <mat-select placeholder=\"Autosave Interval (Minutes)\" [(ngModel)]=\"autosaveInterval\" (valueChange)=\"settingsService.setAutosave()\">\n        <mat-option [value]=\"-1\">Disable</mat-option>\n        <mat-option [value]=\"60000\">1</mat-option>\n        <mat-option [value]=\"900000\">15</mat-option>\n        <mat-option [value]=\"1800000\">30</mat-option>\n        <mat-option [value]=\"3600000\">60</mat-option>\n      </mat-select>\n    </mat-form-field>\n\n    <button mat-raised-button color=\"primary\" (click)=\"saveGame()\">Save</button>\n    <button mat-raised-button color=\"warn\" (click)=\"deleteGame()\">Delete Save</button>\n\n    <button mat-raised-button (click)=\"exportSave()\">Export Save</button>\n    <button mat-raised-button (click)=\"importSave()\">Import Save</button>\n  </mat-expansion-panel>\n\n  <mat-expansion-panel expanded=\"true\">\n    <mat-expansion-panel-header>\n      <mat-panel-title>\n        <mat-icon color=\"primary\">list</mat-icon>\n        Interface\n      </mat-panel-title>\n    </mat-expansion-panel-header>\n\n    <!-- <mat-checkbox [(ngModel)]=\"disableAnimations\">Disable Animations</mat-checkbox>\n    <br /> -->\n    <mat-checkbox [(ngModel)]=\"slimInterface\">Slim Mode</mat-checkbox>\n    <br />\n    <mat-checkbox [(ngModel)]=\"organizeLeftPanelByType\">Organize Left Pane By Resource Type</mat-checkbox>\n\n    <mat-form-field class=\"full-width\">\n      <mat-select placeholder=\"Resource Shortcuts\" [formControl]=\"bindSelected\" multiple (selectionChange)=\"resourceBindChange($event)\">\n        <mat-option *ngFor=\"let resource of resourcesService.getResources(false, false, true)\" [(value)]=\"resource.resourceEnum\">\n          {{resource.name | titlecase}}\n        </mat-option>\n      </mat-select>\n      <mat-error *ngIf=\"bindSelected.hasError('length')\">\n        No more than 10 resource shortcuts allowed.\n      </mat-error>\n    </mat-form-field>\n\n  </mat-expansion-panel>\n\n  <mat-expansion-panel expanded=\"true\">\n    <mat-expansion-panel-header>\n      <mat-panel-title>\n        <mat-icon color=\"primary\">map</mat-icon>\n        Map\n      </mat-panel-title>\n    </mat-expansion-panel-header>\n\n    <mat-checkbox [(ngModel)]=\"mapLowFramerate\">Limit Framerate</mat-checkbox>\n    <br />\n\n    <mat-form-field class=\"full-width\">\n      <input class=\"color-input\" matInput placeholder=\"Player Harvest Color\" [(colorPicker)]=\"resourceAnimationColors['PLAYERSPAWNED']\"\n        [style.background]=\"resourceAnimationColors['PLAYERSPAWNED']\" [value]=\"resourceAnimationColors['PLAYERSPAWNED']\" />\n    </mat-form-field>\n\n    <mat-form-field class=\"full-width\">\n      <input class=\"color-input\" matInput placeholder=\"Worker Harvest Color\" [(colorPicker)]=\"resourceAnimationColors['WORKERSPAWNED']\"\n        [style.background]=\"resourceAnimationColors['WORKERSPAWNED']\" [value]=\"resourceAnimationColors['WORKERSPAWNED']\" />\n    </mat-form-field>\n\n    <mat-form-field class=\"full-width\">\n      <input class=\"color-input\" matInput placeholder=\"Sold Resource Color\" [(colorPicker)]=\"resourceAnimationColors['SOLD']\"\n        [style.background]=\"resourceAnimationColors['SOLD']\" [value]=\"resourceAnimationColors['SOLD']\" />\n    </mat-form-field>\n  </mat-expansion-panel>\n\n  <mat-expansion-panel expanded=\"true\">\n    <mat-expansion-panel-header>\n      <mat-panel-title>\n        <mat-icon color=\"primary\">assessment</mat-icon>\n        Log\n      </mat-panel-title>\n    </mat-expansion-panel-header>\n\n    <button mat-raised-button (click)=\"messagesService.clear()\">Clear</button>\n\n    <br />\n\n    <mat-form-field class=\"full-width\">\n      <input matInput type=\"number\" placeholder=\"Log History\" min=\"0\" max=\"10000\" [(ngModel)]=\"messagesService.messageLimit\">\n    </mat-form-field>\n\n    <br />\n\n    <mat-form-field class=\"full-width\">\n      <mat-select placeholder=\"Visible Log Sources\" [(ngModel)]=\"messagesService.visibleSources\" (ngModelChange)=\"messagesService.getFilteredMessages()\"\n        multiple>\n        <mat-option *ngFor=\"let messageSource of messageSources | enumToArray\" [(value)]=\"messageSources[messageSource]\">\n          {{messageSource | titlecase}}\n        </mat-option>\n      </mat-select>\n    </mat-form-field>\n  </mat-expansion-panel>\n\n  <mat-expansion-panel expanded=\"true\">\n    <mat-expansion-panel-header>\n      <mat-panel-title>\n        <mat-icon color=\"primary\">bug_report</mat-icon>\n        Debug\n      </mat-panel-title>\n    </mat-expansion-panel-header>\n\n    <mat-checkbox [(ngModel)]=\"debugMode\">Debug Mode</mat-checkbox>\n  </mat-expansion-panel>\n</mat-accordion>\n"
 
 /***/ }),
 
@@ -1517,7 +1492,7 @@ var SettingsComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "/* StoreComponent's private CSS styles */\r\n.store {\r\n  margin: 0 0 2em 0;\r\n  list-style-type: none;\r\n  padding: 0;\r\n  width: 100%;\r\n}\r\n.store mat-expansion-panel {\r\n  margin: 0;\r\n}\r\n.store mat-expansion-panel-header {\r\n  height: 30px !important;\r\n}\r\n.store mat-card-subtitle {\r\n  position: absolute;\r\n  top: 10px;\r\n  right: 10px;\r\n}\r\n.store mat-card {\r\n  position: relative;\r\n  cursor: pointer;\r\n  background-color: #EEE;\r\n  margin: .5em;\r\n  padding: .4em 0;\r\n  height: 1.6em;\r\n  border-radius: 4px;\r\n}\r\n.store mat-card:hover {\r\n  color: #607D8B;\r\n  background-color: #DDD;\r\n  left: .1em;\r\n}\r\n.store a {\r\n  color: #888;\r\n  text-decoration: none;\r\n  position: relative;\r\n  display: block;\r\n  width: 250px;\r\n}\r\n.store a:hover {\r\n  color:#607D8B;\r\n}\r\n.store .harvestable {\r\n  background-color: antiquewhite;\r\n}\r\n.store .harvestable:hover {\r\n  background-color: blanchedalmond;\r\n}\r\n.store .badge {\r\n  display: inline-block;\r\n  font-size: small;\r\n  color: white;\r\n  padding: 0.8em 0.7em 0 0.7em;\r\n  background-color: #607D8B;\r\n  line-height: 1em;\r\n  position: absolute;\r\n  right: -9px;\r\n  top: 1px;\r\n  height: 1.8em;\r\n  min-width: 16px;\r\n  text-align: center;\r\n  margin-right: .8em;\r\n  border-radius: 0 4px 4px 0;\r\n}\r\n.right {\r\n  position: absolute;\r\n  right: 3px;\r\n  top: 3px;\r\n}\r\nbutton {\r\n  min-width: unset;\r\n  height: 27px;\r\n  line-height: unset;\r\n}\r\nbutton:hover {\r\n  background-color: #cfd8dc;\r\n}\r\nbutton.delete {\r\n  position: relative;\r\n  left: 194px;\r\n  top: -32px;\r\n  background-color: gray !important;\r\n  color: white;\r\n}\r\n.full-width {\r\n  width: 100%;\r\n}\r\n.sell-button {\r\n  width: 80%;\r\n}\r\n.cutoff-input {\r\n  width: 20%;\r\n}\r\n"
+module.exports = "/* StoreComponent's private CSS styles */\n.store {\n  margin: 0 0 2em 0;\n  list-style-type: none;\n  padding: 0;\n  width: 100%;\n}\n.store mat-expansion-panel {\n  margin: 0;\n}\n.store mat-expansion-panel-header {\n  height: 30px !important;\n}\n.store mat-card-subtitle {\n  position: absolute;\n  top: 10px;\n  right: 10px;\n}\n.store mat-card {\n  position: relative;\n  cursor: pointer;\n  background-color: #EEE;\n  margin: .5em;\n  padding: .4em 0;\n  height: 1.6em;\n  border-radius: 4px;\n}\n.store mat-card:hover {\n  color: #607D8B;\n  background-color: #DDD;\n  left: .1em;\n}\n.store a {\n  color: #888;\n  text-decoration: none;\n  position: relative;\n  display: block;\n  width: 250px;\n}\n.store a:hover {\n  color:#607D8B;\n}\n.store .harvestable {\n  background-color: antiquewhite;\n}\n.store .harvestable:hover {\n  background-color: blanchedalmond;\n}\n.store .badge {\n  display: inline-block;\n  font-size: small;\n  color: white;\n  padding: 0.8em 0.7em 0 0.7em;\n  background-color: #607D8B;\n  line-height: 1em;\n  position: absolute;\n  right: -9px;\n  top: 1px;\n  height: 1.8em;\n  min-width: 16px;\n  text-align: center;\n  margin-right: .8em;\n  border-radius: 0 4px 4px 0;\n}\n.right {\n  position: absolute;\n  right: 3px;\n  top: 3px;\n}\nbutton {\n  min-width: unset;\n  height: 27px;\n  line-height: unset;\n}\nbutton:hover {\n  background-color: #cfd8dc;\n}\nbutton.delete {\n  position: relative;\n  left: 194px;\n  top: -32px;\n  background-color: gray !important;\n  color: white;\n}\n.full-width {\n  width: 100%;\n}\n.sell-button {\n  width: 80%;\n}\n.cutoff-input {\n  width: 20%;\n}\n"
 
 /***/ }),
 
@@ -1528,7 +1503,7 @@ module.exports = "/* StoreComponent's private CSS styles */\r\n.store {\r\n  mar
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "Amount to sell:<mat-button-toggle-group #group=\"matButtonToggleGroup\" [(ngModel)]=\"sellAmount\">\r\n  <mat-button-toggle value=\"1\" checked=\"true\">\r\n    1x\r\n  </mat-button-toggle>\r\n  <mat-button-toggle value=\"10\">\r\n    10x\r\n  </mat-button-toggle>\r\n  <mat-button-toggle value=\"100\">\r\n    100x\r\n  </mat-button-toggle>\r\n  <mat-button-toggle value=\"1000\">\r\n    1000x\r\n  </mat-button-toggle>\r\n  <mat-button-toggle value=\"-1\">\r\n    All\r\n  </mat-button-toggle>\r\n</mat-button-toggle-group>\r\n\r\n<ul class=\"store\">\r\n  <mat-accordion multi=\"true\">\r\n    <mat-expansion-panel expanded=\"true\" *ngFor=\"let resourceType of sellableTypes\">\r\n      <mat-expansion-panel-header>\r\n        <mat-panel-title>\r\n          {{resourceType | titlecase}}\r\n        </mat-panel-title>\r\n        <mat-panel-description>\r\n        </mat-panel-description>\r\n      </mat-expansion-panel-header>\r\n\r\n      <div *ngFor=\"let resource of getResources(resourceType, false, adminService.filterAccessible)\">\r\n        <button class=\"sell-button\" color=\"accent\" mat-flat-button *ngIf=\"resource.sellable\" (click)=\"sellResource(resource)\"\r\n          [disabled]=\"!canSellResource(resource)\">\r\n          {{(sellAmount == -1 ? resource.amount : sellAmount) | longNumber}} {{resource.name | titlecase }} -\r\n          {{resource.sellsFor * (+sellAmount === -1 ? resource.amount : sellAmount) | longNumber}} Gold\r\n        </button>\r\n        <button disabled class=\"sell-button\" color=\"warn\" mat-flat-button *ngIf=\"!resource.sellable\">\r\n          {{(sellAmount == -1 ? resource.amount : sellAmount) | longNumber}} {{resource.name | titlecase }} -\r\n          Unsellable\r\n        </button>\r\n        <mat-form-field class=\"cutoff-input\">\r\n          <input matInput placeholder=\"Autosell Cutoff\" type=\"number\" min=\"0\" [disabled]=\"!resource.sellable\" [(ngModel)]=\"resource.autoSellCutoff\" />\r\n        </mat-form-field>\r\n      </div>\r\n    </mat-expansion-panel>\r\n  </mat-accordion>\r\n</ul>\r\n"
+module.exports = "Amount to sell:<mat-button-toggle-group #group=\"matButtonToggleGroup\" [(ngModel)]=\"sellAmount\">\n  <mat-button-toggle value=\"1\" checked=\"true\">\n    1x\n  </mat-button-toggle>\n  <mat-button-toggle value=\"10\">\n    10x\n  </mat-button-toggle>\n  <mat-button-toggle value=\"100\">\n    100x\n  </mat-button-toggle>\n  <mat-button-toggle value=\"1000\">\n    1000x\n  </mat-button-toggle>\n  <mat-button-toggle value=\"-1\">\n    All\n  </mat-button-toggle>\n</mat-button-toggle-group>\n\n<ul class=\"store\">\n  <mat-accordion multi=\"true\">\n    <mat-expansion-panel expanded=\"true\" *ngFor=\"let resourceType of sellableTypes\">\n      <mat-expansion-panel-header>\n        <mat-panel-title>\n          {{resourceType | titlecase}}\n        </mat-panel-title>\n        <mat-panel-description>\n        </mat-panel-description>\n      </mat-expansion-panel-header>\n\n      <div *ngFor=\"let resource of getResources(resourceType, false, adminService.filterAccessible)\">\n        <button class=\"sell-button\" color=\"accent\" mat-flat-button *ngIf=\"resource.sellable\" (click)=\"sellResource(resource)\"\n          [disabled]=\"!canSellResource(resource)\">\n          {{(sellAmount == -1 ? resource.amount : sellAmount) | longNumber}} {{resource.name | titlecase }} -\n          {{resource.sellsFor * (+sellAmount === -1 ? resource.amount : sellAmount) | longNumber}} Gold\n        </button>\n        <button disabled class=\"sell-button\" color=\"warn\" mat-flat-button *ngIf=\"!resource.sellable\">\n          {{(sellAmount == -1 ? resource.amount : sellAmount) | longNumber}} {{resource.name | titlecase }} -\n          Unsellable\n        </button>\n        <mat-form-field class=\"cutoff-input\">\n          <input matInput placeholder=\"Autosell Cutoff\" type=\"number\" min=\"0\" [disabled]=\"!resource.sellable\" [(ngModel)]=\"resource.autoSellCutoff\" />\n        </mat-form-field>\n      </div>\n    </mat-expansion-panel>\n  </mat-accordion>\n</ul>\n"
 
 /***/ }),
 
@@ -1605,7 +1580,7 @@ var StoreComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "#tile-tooltip {\r\n  top: var(--detail-tooltip-top);\r\n  left: var(--detail-tooltip-left);\r\n\r\n  position: absolute;\r\n}\r\n\r\nmat-card {\r\n  text-align: center;\r\n  min-width: 300px;\r\n  max-width: 400px;\r\n}\r\n\r\n.resource-list div {\r\n  display: inline-block;\r\n}\r\n\r\n.resource-list img {\r\n  width: 16px;\r\n  height: 16px;\r\n}\r\n\r\n.repair-container {\r\n  display: inline-flex;\r\n  white-space: pre-wrap;\r\n}\r\n\r\n.repair-container button {\r\n  position: relative;\r\n  top: -25%;\r\n}\r\n\r\n.stats-container {\r\n  width: 100%;\r\n}\r\n\r\n.upgrade-button {\r\n  width: -webkit-fit-content;\r\n  width: -moz-fit-content;\r\n  width: fit-content;\r\n}\r\n\r\n.upgrade-button mat-icon {\r\n  position: relative;\r\n  top: 5px;\r\n}\r\n\r\n.anchor-container {\r\n  position: absolute;\r\n  top: 0;\r\n  left: 0;\r\n\r\n  width: 55px;\r\n  height: 55px;\r\n}\r\n\r\n.anchor-container #center {\r\n  position: absolute;\r\n\r\n  left: 15px;\r\n  top: 15px;\r\n}\r\n\r\n.anchor-container .corner {\r\n  display: none;\r\n}\r\n\r\n.anchor-container:hover .corner {\r\n  display: inherit;\r\n}\r\n\r\n.anchor-container a {\r\n  cursor: pointer;\r\n  color: gray;\r\n}\r\n\r\n.anchor-container a:hover {\r\n  color: black;\r\n}\r\n\r\n.anchor-container #arrow-upper-left {\r\n  -webkit-transform: rotate(225deg);\r\n  transform: rotate(225deg);\r\n\r\n  position: absolute;\r\n  top: 0;\r\n  left: 0;\r\n}\r\n\r\n.anchor-container #arrow-upper-right {\r\n  -webkit-transform: rotate(315deg);\r\n  transform: rotate(315deg);\r\n\r\n  position: absolute;\r\n  top: 0;\r\n  right: 0;\r\n}\r\n\r\n.anchor-container #arrow-lower-left {\r\n  -webkit-transform: rotate(135deg);\r\n  transform: rotate(135deg);\r\n\r\n  position: absolute;\r\n  bottom: 0;\r\n  left: 0;\r\n}\r\n\r\n.anchor-container #arrow-lower-right {\r\n  -webkit-transform: rotate(45deg);\r\n  transform: rotate(45deg);\r\n\r\n  position: absolute;\r\n  bottom: 0;\r\n  right: 0;\r\n}\r\n"
+module.exports = "#tile-tooltip {\n  top: var(--detail-tooltip-top);\n  left: var(--detail-tooltip-left);\n\n  position: absolute;\n}\n\nmat-card {\n  text-align: center;\n  min-width: 300px;\n  max-width: 400px;\n}\n\n.resource-list div {\n  display: inline-block;\n}\n\n.resource-list img {\n  width: 16px;\n  height: 16px;\n}\n\n.repair-container {\n  display: inline-flex;\n  white-space: pre-wrap;\n}\n\n.repair-container button {\n  position: relative;\n  top: -25%;\n}\n\n.stats-container {\n  width: 100%;\n}\n\n.upgrade-button {\n  width: -webkit-fit-content;\n  width: -moz-fit-content;\n  width: fit-content;\n}\n\n.upgrade-button mat-icon {\n  position: relative;\n  top: 5px;\n}\n\n.anchor-container {\n  position: absolute;\n  top: 0;\n  left: 0;\n\n  width: 55px;\n  height: 55px;\n}\n\n.anchor-container #center {\n  position: absolute;\n\n  left: 15px;\n  top: 15px;\n}\n\n.anchor-container .corner {\n  display: none;\n}\n\n.anchor-container:hover .corner {\n  display: inherit;\n}\n\n.anchor-container a {\n  cursor: pointer;\n  color: gray;\n}\n\n.anchor-container a:hover {\n  color: black;\n}\n\n.anchor-container #arrow-upper-left {\n  -webkit-transform: rotate(225deg);\n  transform: rotate(225deg);\n\n  position: absolute;\n  top: 0;\n  left: 0;\n}\n\n.anchor-container #arrow-upper-right {\n  -webkit-transform: rotate(315deg);\n  transform: rotate(315deg);\n\n  position: absolute;\n  top: 0;\n  right: 0;\n}\n\n.anchor-container #arrow-lower-left {\n  -webkit-transform: rotate(135deg);\n  transform: rotate(135deg);\n\n  position: absolute;\n  bottom: 0;\n  left: 0;\n}\n\n.anchor-container #arrow-lower-right {\n  -webkit-transform: rotate(45deg);\n  transform: rotate(45deg);\n\n  position: absolute;\n  bottom: 0;\n  right: 0;\n}\n"
 
 /***/ }),
 
@@ -1616,7 +1591,7 @@ module.exports = "#tile-tooltip {\r\n  top: var(--detail-tooltip-top);\r\n  left
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<mat-card appSnap [snapSetting]=\"snapSetting\" id=\"tile-tooltip\">\r\n  <div class=\"anchor-container\">\r\n    <a>\r\n      <mat-icon class=\"corner\" id=\"arrow-upper-left\" (click)=\"snapSetting = 'upperLeft'\">arrow_forward</mat-icon>\r\n    </a>\r\n    <a>\r\n      <mat-icon class=\"corner\" id=\"arrow-upper-right\" (click)=\"snapSetting = 'upperRight'\">arrow_forward</mat-icon>\r\n    </a>\r\n    <a>\r\n      <mat-icon id=\"center\" (click)=\"snapSetting = 'free'\">all_out</mat-icon>\r\n    </a>\r\n    <a>\r\n      <mat-icon class=\"corner\" id=\"arrow-lower-left\" (click)=\"snapSetting = 'lowerLeft'\">arrow_forward</mat-icon>\r\n    </a>\r\n    <a>\r\n      <mat-icon class=\"corner\" id=\"arrow-lower-right\" (click)=\"snapSetting = 'lowerRight'\">arrow_forward</mat-icon>\r\n    </a>\r\n  </div>\r\n  <div *ngIf=\"focusedBuildingTile\">\r\n    <mat-card-title>{{focusedBuildingTile.name}}</mat-card-title>\r\n    <mat-card-subtitle>{{focusedBuildingTile.description}}</mat-card-subtitle>\r\n    <div class=\"repair-container\">\r\n      {{focusedTile.health}}/{{focusedTile.maxHealth}} Health\r\n      <div *ngIf=\"focusedTile.health < focusedTile.maxHealth\">\r\n        <button mat-raised-button (click)=\"repairBuilding(focusedTile)\" color=\"accent\" [disabled]=\"!canRepairBuilding(focusedTile)\">\r\n          Repair\r\n          <div class=\"resource-list\">\r\n            <div matTooltip=\"{{focusedBuildingTile.repairCostPerPoint * (focusedTile.maxHealth - focusedTile.health)}} {{getResource(focusedBuildingTile.repairResourceEnum).name | titlecase}}\"\r\n              matTooltipPosition=\"below\">\r\n              <img src=\"{{getResource(focusedBuildingTile.repairResourceEnum).iconPath}}\" alt=\"{{getResource(focusedBuildingTile.repairResourceEnum).name}}\">\r\n              {{focusedBuildingTile.repairCostPerPoint * (focusedTile.maxHealth - focusedTile.health)}}\r\n            </div>\r\n          </div>\r\n        </button>\r\n      </div>\r\n    </div>\r\n  </div>\r\n\r\n  <div *ngIf=\"!focusedBuildingTile && focusedResourceTile\">\r\n    <mat-card-title>{{focusedResourceTile.name}}</mat-card-title>\r\n  </div>\r\n\r\n  <mat-card-content *ngIf=\"focusedTile\">\r\n    <div *ngIf=\"focusedResourceTile\" class=\"resource-list\">\r\n      Travel Time: {{focusedTile.buildingPath.length / this.mapService.tileAnimationSpeed / 1000 | longNumber}}\r\n      Seconds\r\n      <br />\r\n      Produces:\r\n      <div *ngFor=\"let resource of focusedResources\">\r\n        <img src=\"{{resource.iconPath}}\" alt=\"{{resource.name}}\"> {{resource.name | titlecase}}\r\n      </div>\r\n    </div>\r\n    <div *ngIf=\"focusedBuildingTile && focusedBuildingTile.upgradeBuilding\">\r\n      <h3>Upgrade</h3>\r\n      <button mat-raised-button (click)=\"upgradeBuilding(focusedTile)\" color=\"accent\" [disabled]=\"!canAffordUpgrade(this.mapService.buildingTiles.get(focusedBuildingTile.upgradeBuilding))\">\r\n        <div class=\"title\" matTooltip=\"{{this.mapService.buildingTiles.get(focusedBuildingTile.upgradeBuilding).description}}\"\r\n          matTooltipPosition=\"above\">\r\n          {{this.mapService.buildingTiles.get(focusedBuildingTile.upgradeBuilding).name}}\r\n        </div>\r\n        <div class=\"resource-list\">\r\n          <div *ngFor=\"let resourceCost of mapService.buildingTiles.get(focusedBuildingTile.upgradeBuilding).resourceCosts\"\r\n            matTooltip=\"{{resourceCost.resourceCost}} {{getResource(resourceCost.resourceEnum).name | titlecase}}\"\r\n            matTooltipPosition=\"below\">\r\n            <img src=\"{{getResource(resourceCost.resourceEnum).iconPath}}\" alt=\"{{getResource(resourceCost.resourceEnum).name}}\">\r\n            {{resourceCost.resourceCost}}\r\n          </div>\r\n        </div>\r\n      </button>\r\n    </div>\r\n\r\n    <div *ngIf=\"focusedTile.market\">\r\n      Profit (Average of recent sales): {{focusedTile.market.averageRecentProfit | longNumber}} {{getResource('GOLD').name | titlecase}}/Second\r\n    </div>\r\n\r\n    <h3>Stats</h3>\r\n      <table class=\"stats-container\">\r\n        <tbody>\r\n          <tr class=\"stat-row\">\r\n            <td>\r\n              <p>\r\n                Max Health: {{focusedTile.maxHealth | longNumber}}\r\n              </p>\r\n            </td>\r\n            <td>\r\n              <b>\r\n                Level {{focusedTile.statLevels['MAXHEALTH']}}\r\n              </b>\r\n            </td>\r\n            <td>\r\n              <button class=\"upgrade-button\" color=\"accent\" mat-raised-button (click)=\"focusedTile.upgradeStat('MAXHEALTH')\"\r\n                [disabled]=\"!focusedTile.canUpgradeStat('MAXHEALTH')\" matTooltip=\"Level {{focusedTile.statLevels['MAXHEALTH'] + 1}}: {{focusedTile.getUpgradedStat('MAXHEALTH') | longNumber}} Max Health\"\r\n                matTooltipPosition=\"below\">\r\n                <mat-icon color=\"primary\">arrow_upward</mat-icon>\r\n                <div class=\"resource-list\">\r\n                  <div>\r\n                    <img src=\"{{getResource('GOLD').iconPath}}\" alt=\"{{getResource('GOLD').name}}\">\r\n                    {{focusedTile.statCosts['MAXHEALTH'] | longNumber}}\r\n                  </div>\r\n                </div>\r\n              </button>\r\n            </td>\r\n          </tr>\r\n\r\n          <tr class=\"stat-row\" *ngIf=\"focusedTile.market\">\r\n            <td>\r\n              <p>\r\n                Sell Rate: {{1000 / focusedTile.market.sellInterval | longNumber}} Sale{{focusedTile.market.sellInterval === 1000 ? '' : 's'}}/Second\r\n              </p>\r\n            </td>\r\n            <td>\r\n              <b>\r\n                Level {{focusedTile.statLevels['SELLRATE']}}\r\n              </b>\r\n            </td>\r\n            <td>\r\n              <button class=\"upgrade-button\" color=\"accent\" mat-raised-button (click)=\"focusedTile.upgradeStat('SELLRATE')\"\r\n                [disabled]=\"!focusedTile.canUpgradeStat('SELLRATE')\" matTooltip=\"Level {{focusedTile.statLevels['SELLRATE'] + 1}}: {{1000 / focusedTile.getUpgradedStat('SELLRATE') | longNumber}} Sales/Second\"\r\n                matTooltipPosition=\"below\">\r\n                <mat-icon color=\"primary\">arrow_upward</mat-icon>\r\n                <div class=\"resource-list\">\r\n                  <div>\r\n                    <img src=\"{{getResource('GOLD').iconPath}}\" alt=\"{{getResource('GOLD').name}}\">\r\n                    {{focusedTile.statCosts['SELLRATE'] | longNumber}}\r\n                  </div>\r\n                </div>\r\n              </button>\r\n            </td>\r\n          </tr>\r\n\r\n          <tr class=\"stat-row\" *ngIf=\"focusedTile.market\">\r\n            <td>\r\n              <p>\r\n                Sell Amount: {{focusedTile.market.sellQuantity | longNumber}} Items/Sale\r\n              </p>\r\n            </td>\r\n            <td>\r\n              <b>\r\n                Level {{focusedTile.statLevels['SELLAMOUNT']}}\r\n              </b>\r\n            </td>\r\n            <td>\r\n              <button class=\"upgrade-button\" color=\"accent\" mat-raised-button (click)=\"focusedTile.upgradeStat('SELLAMOUNT')\"\r\n                [disabled]=\"!focusedTile.canUpgradeStat('SELLAMOUNT')\" matTooltip=\"Level {{focusedTile.statLevels['SELLAMOUNT'] + 1}}: {{focusedTile.getUpgradedStat('SELLAMOUNT') | longNumber}} Items/Sale\"\r\n                matTooltipPosition=\"below\">\r\n                <mat-icon color=\"primary\">arrow_upward</mat-icon>\r\n                <div class=\"resource-list\">\r\n                  <div>\r\n                    <img src=\"{{getResource('GOLD').iconPath}}\" alt=\"{{getResource('GOLD').name}}\">\r\n                    {{focusedTile.statCosts['SELLAMOUNT'] | longNumber}}\r\n                  </div>\r\n                </div>\r\n              </button>\r\n            </td>\r\n          </tr>\r\n        </tbody>\r\n      </table>\r\n  </mat-card-content>\r\n</mat-card>\r\n"
+module.exports = "<mat-card appSnap [snapSetting]=\"snapSetting\" id=\"tile-tooltip\">\n  <div class=\"anchor-container\">\n    <a>\n      <mat-icon class=\"corner\" id=\"arrow-upper-left\" (click)=\"snapSetting = 'upperLeft'\">arrow_forward</mat-icon>\n    </a>\n    <a>\n      <mat-icon class=\"corner\" id=\"arrow-upper-right\" (click)=\"snapSetting = 'upperRight'\">arrow_forward</mat-icon>\n    </a>\n    <a>\n      <mat-icon id=\"center\" (click)=\"snapSetting = 'free'\">all_out</mat-icon>\n    </a>\n    <a>\n      <mat-icon class=\"corner\" id=\"arrow-lower-left\" (click)=\"snapSetting = 'lowerLeft'\">arrow_forward</mat-icon>\n    </a>\n    <a>\n      <mat-icon class=\"corner\" id=\"arrow-lower-right\" (click)=\"snapSetting = 'lowerRight'\">arrow_forward</mat-icon>\n    </a>\n  </div>\n  <div *ngIf=\"focusedBuildingTile\">\n    <mat-card-title>{{focusedBuildingTile.name}}</mat-card-title>\n    <mat-card-subtitle>{{focusedBuildingTile.description}}</mat-card-subtitle>\n    <div class=\"repair-container\">\n      {{focusedTile.health}}/{{focusedTile.maxHealth}} Health\n      <div *ngIf=\"focusedTile.health < focusedTile.maxHealth\">\n        <button mat-raised-button (click)=\"repairBuilding(focusedTile)\" color=\"accent\" [disabled]=\"!canRepairBuilding(focusedTile)\">\n          Repair\n          <div class=\"resource-list\">\n            <div matTooltip=\"{{focusedBuildingTile.repairCostPerPoint * (focusedTile.maxHealth - focusedTile.health)}} {{getResource(focusedBuildingTile.repairResourceEnum).name | titlecase}}\"\n              matTooltipPosition=\"below\">\n              <img src=\"{{getResource(focusedBuildingTile.repairResourceEnum).iconPath}}\" alt=\"{{getResource(focusedBuildingTile.repairResourceEnum).name}}\">\n              {{focusedBuildingTile.repairCostPerPoint * (focusedTile.maxHealth - focusedTile.health)}}\n            </div>\n          </div>\n        </button>\n      </div>\n    </div>\n  </div>\n\n  <div *ngIf=\"!focusedBuildingTile && focusedResourceTile\">\n    <mat-card-title>{{focusedResourceTile.name}}</mat-card-title>\n  </div>\n\n  <mat-card-content *ngIf=\"focusedTile\">\n    <div *ngIf=\"focusedResourceTile\" class=\"resource-list\">\n      Travel Time: {{focusedTile.buildingPath.length / this.mapService.tileAnimationSpeed / 1000 | longNumber}}\n      Seconds\n      <br />\n      Produces:\n      <div *ngFor=\"let resource of focusedResources\">\n        <img src=\"{{resource.iconPath}}\" alt=\"{{resource.name}}\"> {{resource.name | titlecase}}\n      </div>\n    </div>\n    <div *ngIf=\"focusedBuildingTile && focusedBuildingTile.upgradeBuilding\">\n      <h3>Upgrade</h3>\n      <button mat-raised-button (click)=\"upgradeBuilding(focusedTile)\" color=\"accent\" [disabled]=\"!canAffordUpgrade(this.mapService.buildingTiles.get(focusedBuildingTile.upgradeBuilding))\">\n        <div class=\"title\" matTooltip=\"{{this.mapService.buildingTiles.get(focusedBuildingTile.upgradeBuilding).description}}\"\n          matTooltipPosition=\"above\">\n          {{this.mapService.buildingTiles.get(focusedBuildingTile.upgradeBuilding).name}}\n        </div>\n        <div class=\"resource-list\">\n          <div *ngFor=\"let resourceCost of mapService.buildingTiles.get(focusedBuildingTile.upgradeBuilding).resourceCosts\"\n            matTooltip=\"{{resourceCost.resourceCost}} {{getResource(resourceCost.resourceEnum).name | titlecase}}\"\n            matTooltipPosition=\"below\">\n            <img src=\"{{getResource(resourceCost.resourceEnum).iconPath}}\" alt=\"{{getResource(resourceCost.resourceEnum).name}}\">\n            {{resourceCost.resourceCost}}\n          </div>\n        </div>\n      </button>\n    </div>\n\n    <div *ngIf=\"focusedTile.market\">\n      Profit (Average of recent sales): {{focusedTile.market.averageRecentProfit | longNumber}} {{getResource('GOLD').name | titlecase}}/Second\n    </div>\n\n    <h3>Stats</h3>\n      <table class=\"stats-container\">\n        <tbody>\n          <tr class=\"stat-row\">\n            <td>\n              <p>\n                Max Health: {{focusedTile.maxHealth | longNumber}}\n              </p>\n            </td>\n            <td>\n              <b>\n                Level {{focusedTile.statLevels['MAXHEALTH']}}\n              </b>\n            </td>\n            <td>\n              <button class=\"upgrade-button\" color=\"accent\" mat-raised-button (click)=\"focusedTile.upgradeStat('MAXHEALTH')\"\n                [disabled]=\"!focusedTile.canUpgradeStat('MAXHEALTH')\" matTooltip=\"Level {{focusedTile.statLevels['MAXHEALTH'] + 1}}: {{focusedTile.getUpgradedStat('MAXHEALTH') | longNumber}} Max Health\"\n                matTooltipPosition=\"below\">\n                <mat-icon color=\"primary\">arrow_upward</mat-icon>\n                <div class=\"resource-list\">\n                  <div>\n                    <img src=\"{{getResource('GOLD').iconPath}}\" alt=\"{{getResource('GOLD').name}}\">\n                    {{focusedTile.statCosts['MAXHEALTH'] | longNumber}}\n                  </div>\n                </div>\n              </button>\n            </td>\n          </tr>\n\n          <tr class=\"stat-row\" *ngIf=\"focusedTile.market\">\n            <td>\n              <p>\n                Sell Rate: {{1000 / focusedTile.market.sellInterval | longNumber}} Sale{{focusedTile.market.sellInterval === 1000 ? '' : 's'}}/Second\n              </p>\n            </td>\n            <td>\n              <b>\n                Level {{focusedTile.statLevels['SELLRATE']}}\n              </b>\n            </td>\n            <td>\n              <button class=\"upgrade-button\" color=\"accent\" mat-raised-button (click)=\"focusedTile.upgradeStat('SELLRATE')\"\n                [disabled]=\"!focusedTile.canUpgradeStat('SELLRATE')\" matTooltip=\"Level {{focusedTile.statLevels['SELLRATE'] + 1}}: {{1000 / focusedTile.getUpgradedStat('SELLRATE') | longNumber}} Sales/Second\"\n                matTooltipPosition=\"below\">\n                <mat-icon color=\"primary\">arrow_upward</mat-icon>\n                <div class=\"resource-list\">\n                  <div>\n                    <img src=\"{{getResource('GOLD').iconPath}}\" alt=\"{{getResource('GOLD').name}}\">\n                    {{focusedTile.statCosts['SELLRATE'] | longNumber}}\n                  </div>\n                </div>\n              </button>\n            </td>\n          </tr>\n\n          <tr class=\"stat-row\" *ngIf=\"focusedTile.market\">\n            <td>\n              <p>\n                Sell Amount: {{focusedTile.market.sellQuantity | longNumber}} Items/Sale\n              </p>\n            </td>\n            <td>\n              <b>\n                Level {{focusedTile.statLevels['SELLAMOUNT']}}\n              </b>\n            </td>\n            <td>\n              <button class=\"upgrade-button\" color=\"accent\" mat-raised-button (click)=\"focusedTile.upgradeStat('SELLAMOUNT')\"\n                [disabled]=\"!focusedTile.canUpgradeStat('SELLAMOUNT')\" matTooltip=\"Level {{focusedTile.statLevels['SELLAMOUNT'] + 1}}: {{focusedTile.getUpgradedStat('SELLAMOUNT') | longNumber}} Items/Sale\"\n                matTooltipPosition=\"below\">\n                <mat-icon color=\"primary\">arrow_upward</mat-icon>\n                <div class=\"resource-list\">\n                  <div>\n                    <img src=\"{{getResource('GOLD').iconPath}}\" alt=\"{{getResource('GOLD').name}}\">\n                    {{focusedTile.statCosts['SELLAMOUNT'] | longNumber}}\n                  </div>\n                </div>\n              </button>\n            </td>\n          </tr>\n        </tbody>\n      </table>\n  </mat-card-content>\n</mat-card>\n"
 
 /***/ }),
 
@@ -1765,7 +1740,7 @@ var TileDetailComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "/* UpgradesComponent's private CSS styles */\r\n.upgrades {\r\n  margin: 0 0 2em 0;\r\n  list-style-type: none;\r\n  padding: 0;\r\n  /* width: 25em; */\r\n}\r\n.upgrades mat-expansion-panel {\r\n  margin: 0;\r\n}\r\n.upgrades mat-expansion-panel-header {\r\n  height: 30px !important;\r\n}\r\n.upgrades .full .title {\r\n  white-space: pre-line;\r\n\r\n  font-size: 24px;\r\n  font-weight: 400;\r\n  margin: 2px;\r\n}\r\n.upgrades mat-card-subtitle {\r\n  position: absolute;\r\n  top: 10px;\r\n  right: 10px;\r\n  font-weight: bold;\r\n}\r\n.upgrades button {\r\n  position: relative;\r\n  cursor: pointer;\r\n  width: 100%;\r\n  border-radius: 4px;\r\n}\r\n.upgrades button:hover {\r\n  left: .1em;\r\n}\r\n.upgrades button.mat-disabled {\r\n  cursor: default;\r\n}\r\n.upgrades .badge {\r\n  display: inline-block;\r\n  font-size: small;\r\n  color: white;\r\n  padding: 0.8em 0.7em 0 0.7em;\r\n  background-color: #607D8B;\r\n  line-height: 1em;\r\n  position: absolute;\r\n  right: -9px;\r\n  top: 1px;\r\n  height: 1.8em;\r\n  min-width: 16px;\r\n  text-align: center;\r\n  margin-right: .8em;\r\n  border-radius: 0 4px 4px 0;\r\n}\r\nbutton {\r\n  background-color: #eee;\r\n  border: none;\r\n  padding: 5px 10px;\r\n  border-radius: 4px;\r\n  cursor: pointer;\r\n  cursor: hand;\r\n  font-family: Arial;\r\n}\r\n.upgrades {\r\n  text-align: center;\r\n}\r\n.upgrades.slim-interface button {\r\n  width: auto;\r\n  height: auto;\r\n}\r\n.upgrade {\r\n  display: inline-block;\r\n  max-width: 300px;\r\n  width: 15vw;\r\n}\r\n.resource-list {\r\n  text-align: center;\r\n}\r\n.resource-list div {\r\n  display: inline-block;\r\n}\r\n.resource-list img {\r\n  width: 16px;\r\n  height: 16px;\r\n}\r\n"
+module.exports = "/* UpgradesComponent's private CSS styles */\n.upgrades {\n  margin: 0 0 2em 0;\n  list-style-type: none;\n  padding: 0;\n  /* width: 25em; */\n}\n.upgrades mat-expansion-panel {\n  margin: 0;\n}\n.upgrades mat-expansion-panel-header {\n  height: 30px !important;\n}\n.upgrades .full .title {\n  white-space: pre-line;\n\n  font-size: 24px;\n  font-weight: 400;\n  margin: 2px;\n}\n.upgrades mat-card-subtitle {\n  position: absolute;\n  top: 10px;\n  right: 10px;\n  font-weight: bold;\n}\n.upgrades button {\n  position: relative;\n  cursor: pointer;\n  width: 100%;\n  border-radius: 4px;\n}\n.upgrades button:hover {\n  left: .1em;\n}\n.upgrades button.mat-disabled {\n  cursor: default;\n}\n.upgrades .badge {\n  display: inline-block;\n  font-size: small;\n  color: white;\n  padding: 0.8em 0.7em 0 0.7em;\n  background-color: #607D8B;\n  line-height: 1em;\n  position: absolute;\n  right: -9px;\n  top: 1px;\n  height: 1.8em;\n  min-width: 16px;\n  text-align: center;\n  margin-right: .8em;\n  border-radius: 0 4px 4px 0;\n}\nbutton {\n  background-color: #eee;\n  border: none;\n  padding: 5px 10px;\n  border-radius: 4px;\n  cursor: pointer;\n  cursor: hand;\n  font-family: Arial;\n}\n.upgrades {\n  text-align: center;\n}\n.upgrades.slim-interface button {\n  width: auto;\n  height: auto;\n}\n.upgrade {\n  display: inline-block;\n  max-width: 300px;\n  width: 15vw;\n}\n.resource-list {\n  text-align: center;\n}\n.resource-list div {\n  display: inline-block;\n}\n.resource-list img {\n  width: 16px;\n  height: 16px;\n}\n"
 
 /***/ }),
 
@@ -1776,7 +1751,7 @@ module.exports = "/* UpgradesComponent's private CSS styles */\r\n.upgrades {\r\
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<mat-checkbox class=\"hidePurchased\" checked=\"true\" [(ngModel)]=\"hidePurchasedUpgrades\">Hide Purchased Upgrades</mat-checkbox>\r\n<br />\r\n<br />\r\n\r\n<mat-accordion multi=\"true\" class=\"upgrades\" [ngClass]=\"{'slim-interface': settingsService.slimInterface}\">\r\n  <mat-expansion-panel expanded=\"true\" *ngFor=\"let upgradeVariable of upgradeVariables | enumToArray\">\r\n    <mat-expansion-panel-header>\r\n      <mat-panel-title>\r\n        {{upgradeVariableNames[upgradeVariable]}}\r\n      </mat-panel-title>\r\n    </mat-expansion-panel-header>\r\n    <div *ngIf=\"!settingsService.slimInterface\">\r\n      <mat-card class=\"upgrade full\" *ngFor=\"let upgrade of getUpgrades(false, hidePurchasedUpgrades, adminService.filterAccessible, undefined, upgradeVariable)\">\r\n        <button mat-raised-button color=\"accent\" [disabled]='upgrade.purchased || !canAffordUpgrade(upgrade.id)'\r\n          (click)='purchaseUpgrade(upgrade.id)'>\r\n          <p class=\"title\">\r\n            <b>\r\n              <mat-icon *ngIf=\"upgrade.purchased\" color=\"primary\">check</mat-icon>\r\n            </b>\r\n            {{upgrade.name}}\r\n          </p>\r\n        </button>\r\n        <mat-card-subtitle>{{upgradesService.getUpgradeTypeString(upgrade.id)}}</mat-card-subtitle>\r\n        <mat-card-content>\r\n          {{upgrade.description}}\r\n          <div class=\"resource-list\">\r\n            <div *ngFor=\"let resourceCost of upgrade.resourceCosts\" matTooltip=\"{{resourceCost.resourceCost | longNumber}} {{getResource(resourceCost.resourceEnum).name | titlecase}}\"\r\n              matTooltipPosition=\"below\">\r\n              <img src=\"{{getResource(resourceCost.resourceEnum).iconPath}}\" alt=\"{{getResource(resourceCost.resourceEnum).name}}\">\r\n              {{resourceCost.resourceCost | longNumber}}\r\n            </div>\r\n          </div>\r\n        </mat-card-content>\r\n      </mat-card>\r\n    </div>\r\n\r\n    <div *ngIf=\"settingsService.slimInterface\">\r\n      <button class=\"slim\" mat-raised-button *ngFor=\"let upgrade of getUpgrades(false, hidePurchasedUpgrades, adminService.filterAccessible, undefined, upgradeVariable)\"\r\n        color=\"accent\" [disabled]='upgrade.purchased || !canAffordUpgrade(upgrade.id)' (click)='purchaseUpgrade(upgrade.id)'>\r\n        <div class=\"title\" matTooltip=\"{{upgrade.description}}\" matTooltipPosition=\"above\">\r\n          <b>\r\n            <mat-icon *ngIf=\"upgrade.purchased\" color=\"primary\">check</mat-icon>\r\n          </b>\r\n          {{upgrade.name}}\r\n        </div>\r\n        <div class=\"resource-list\">\r\n          <div *ngFor=\"let resourceCost of upgrade.resourceCosts\" matTooltip=\"{{resourceCost.resourceCost | longNumber}} {{getResource(resourceCost.resourceEnum).name | titlecase}}\"\r\n            matTooltipPosition=\"below\">\r\n            <img src=\"{{getResource(resourceCost.resourceEnum).iconPath}}\" alt=\"{{getResource(resourceCost.resourceEnum).name}}\">\r\n            {{resourceCost.resourceCost | longNumber}}\r\n          </div>\r\n        </div>\r\n      </button>\r\n    </div>\r\n  </mat-expansion-panel>\r\n</mat-accordion>\r\n"
+module.exports = "<mat-checkbox class=\"hidePurchased\" checked=\"true\" [(ngModel)]=\"hidePurchasedUpgrades\">Hide Purchased Upgrades</mat-checkbox>\n<br />\n<br />\n\n<mat-accordion multi=\"true\" class=\"upgrades\" [ngClass]=\"{'slim-interface': settingsService.slimInterface}\">\n  <mat-expansion-panel expanded=\"true\" *ngFor=\"let upgradeVariable of upgradeVariables | enumToArray\">\n    <mat-expansion-panel-header>\n      <mat-panel-title>\n        {{upgradeVariableNames[upgradeVariable]}}\n      </mat-panel-title>\n    </mat-expansion-panel-header>\n    <div *ngIf=\"!settingsService.slimInterface\">\n      <mat-card class=\"upgrade full\" *ngFor=\"let upgrade of getUpgrades(false, hidePurchasedUpgrades, adminService.filterAccessible, undefined, upgradeVariable)\">\n        <button mat-raised-button color=\"accent\" [disabled]='upgrade.purchased || !canAffordUpgrade(upgrade.id)'\n          (click)='purchaseUpgrade(upgrade.id)'>\n          <p class=\"title\">\n            <b>\n              <mat-icon *ngIf=\"upgrade.purchased\" color=\"primary\">check</mat-icon>\n            </b>\n            {{upgrade.name}}\n          </p>\n        </button>\n        <mat-card-subtitle>{{upgradesService.getUpgradeTypeString(upgrade.id)}}</mat-card-subtitle>\n        <mat-card-content>\n          {{upgrade.description}}\n          <div class=\"resource-list\">\n            <div *ngFor=\"let resourceCost of upgrade.resourceCosts\" matTooltip=\"{{resourceCost.resourceCost | longNumber}} {{getResource(resourceCost.resourceEnum).name | titlecase}}\"\n              matTooltipPosition=\"below\">\n              <img src=\"{{getResource(resourceCost.resourceEnum).iconPath}}\" alt=\"{{getResource(resourceCost.resourceEnum).name}}\">\n              {{resourceCost.resourceCost | longNumber}}\n            </div>\n          </div>\n        </mat-card-content>\n      </mat-card>\n    </div>\n\n    <div *ngIf=\"settingsService.slimInterface\">\n      <button class=\"slim\" mat-raised-button *ngFor=\"let upgrade of getUpgrades(false, hidePurchasedUpgrades, adminService.filterAccessible, undefined, upgradeVariable)\"\n        color=\"accent\" [disabled]='upgrade.purchased || !canAffordUpgrade(upgrade.id)' (click)='purchaseUpgrade(upgrade.id)'>\n        <div class=\"title\" matTooltip=\"{{upgrade.description}}\" matTooltipPosition=\"above\">\n          <b>\n            <mat-icon *ngIf=\"upgrade.purchased\" color=\"primary\">check</mat-icon>\n          </b>\n          {{upgrade.name}}\n        </div>\n        <div class=\"resource-list\">\n          <div *ngFor=\"let resourceCost of upgrade.resourceCosts\" matTooltip=\"{{resourceCost.resourceCost | longNumber}} {{getResource(resourceCost.resourceEnum).name | titlecase}}\"\n            matTooltipPosition=\"below\">\n            <img src=\"{{getResource(resourceCost.resourceEnum).iconPath}}\" alt=\"{{getResource(resourceCost.resourceEnum).name}}\">\n            {{resourceCost.resourceCost | longNumber}}\n          </div>\n        </div>\n      </button>\n    </div>\n  </mat-expansion-panel>\n</mat-accordion>\n"
 
 /***/ }),
 
@@ -1880,7 +1855,7 @@ var UpgradesComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "/* WorkersComponent's private CSS styles */\r\n.workers {\r\n  margin: 0 0 2em 0;\r\n  list-style-type: none;\r\n  padding: 0;\r\n  width: 100%;\r\n}\r\n.workers mat-expansion-panel {\r\n  margin: 0;\r\n}\r\n.workers mat-expansion-panel-header {\r\n  height: 30px !important;\r\n}\r\n.workers mat-card-title {\r\n  text-align: left;\r\n}\r\n.workers mat-card-subtitle {\r\n  position: absolute;\r\n  top: 10px;\r\n  right: 10px;\r\n}\r\n.workers mat-slider {\r\n  width: 100%;\r\n  top: -22px;\r\n}\r\n.workers mat-card {\r\n  position: relative;\r\n  margin: .5em;\r\n  padding: .4em 0;\r\n  height: 3.6em;\r\n  width: 100%;\r\n  border-radius: 4px;\r\n  background: antiquewhite;\r\n}\r\n.workers mat-card.hunger-card {\r\n  height: 1.3em;\r\n  width: 95%;\r\n}\r\n.hunger-card mat-card-title {\r\n  font-size: 18px;\r\n}\r\n.hunger-card mat-progress-bar {\r\n  position: absolute;\r\n  top: 0;\r\n\r\n  height: 100%;\r\n  opacity: 0.5;\r\n}\r\n.workers button {\r\n  position: relative;\r\n  cursor: pointer;\r\n  margin: .5em;\r\n  padding: .4em 0;\r\n  height: 3.6em;\r\n  width: 100%;\r\n  border-radius: 4px;\r\n}\r\n.workers button:hover {\r\n  color: #607D8B;\r\n  background-color: #DDD;\r\n  left: .1em;\r\n}\r\n.workers a {\r\n  color: #888;\r\n  text-decoration: none;\r\n  position: relative;\r\n  display: block;\r\n  width: 250px;\r\n}\r\n.workers a:hover {\r\n  color:#607D8B;\r\n}\r\n.workers .harvestable {\r\n  background-color: antiquewhite;\r\n}\r\n.worker-input {\r\n  width: 50px;\r\n  border: none;\r\n}\r\n.mat-card-subtitle {\r\n  z-index: 1;\r\n}\r\n.workers .badge {\r\n  display: inline-block;\r\n  font-size: small;\r\n  color: white;\r\n  padding: 0.8em 0.7em 0 0.7em;\r\n  background-color: #607D8B;\r\n  line-height: 1em;\r\n  position: absolute;\r\n  right: -9px;\r\n  top: 1px;\r\n  height: 1.8em;\r\n  min-width: 16px;\r\n  text-align: center;\r\n  margin-right: .8em;\r\n  border-radius: 0 4px 4px 0;\r\n}\r\n.path-broken-warn {\r\n  position: absolute;\r\n  top: 5px;\r\n  right: 125px;\r\n}\r\nbutton {\r\n  background-color: #eee;\r\n  border: none;\r\n  padding: 5px 10px;\r\n  border-radius: 4px;\r\n  cursor: pointer;\r\n  cursor: hand;\r\n  font-family: Arial;\r\n}\r\nbutton:hover {\r\n  background-color: #cfd8dc;\r\n}\r\nbutton.delete {\r\n  position: relative;\r\n  left: 194px;\r\n  top: -32px;\r\n  background-color: gray !important;\r\n  color: white;\r\n}\r\n"
+module.exports = "/* WorkersComponent's private CSS styles */\n.workers {\n  margin: 0 0 2em 0;\n  list-style-type: none;\n  padding: 0;\n  width: 100%;\n}\n.workers mat-expansion-panel {\n  margin: 0;\n}\n.workers mat-expansion-panel-header {\n  height: 30px !important;\n}\n.workers mat-card-title {\n  text-align: left;\n}\n.workers mat-card-subtitle {\n  position: absolute;\n  top: 10px;\n  right: 10px;\n}\n.workers mat-slider {\n  width: 100%;\n  top: -22px;\n}\n.workers mat-card {\n  position: relative;\n  margin: .5em;\n  padding: .4em 0;\n  height: 3.6em;\n  width: 100%;\n  border-radius: 4px;\n  background: antiquewhite;\n}\n.workers mat-card.hunger-card {\n  height: 1.3em;\n  width: 95%;\n}\n.hunger-card mat-card-title {\n  font-size: 18px;\n}\n.hunger-card mat-progress-bar {\n  position: absolute;\n  top: 0;\n\n  height: 100%;\n  opacity: 0.5;\n}\n.workers button {\n  position: relative;\n  cursor: pointer;\n  margin: .5em;\n  padding: .4em 0;\n  height: 3.6em;\n  width: 100%;\n  border-radius: 4px;\n}\n.workers button:hover {\n  color: #607D8B;\n  background-color: #DDD;\n  left: .1em;\n}\n.workers a {\n  color: #888;\n  text-decoration: none;\n  position: relative;\n  display: block;\n  width: 250px;\n}\n.workers a:hover {\n  color:#607D8B;\n}\n.workers .harvestable {\n  background-color: antiquewhite;\n}\n.worker-input {\n  width: 50px;\n  border: none;\n}\n.mat-card-subtitle {\n  z-index: 1;\n}\n.workers .badge {\n  display: inline-block;\n  font-size: small;\n  color: white;\n  padding: 0.8em 0.7em 0 0.7em;\n  background-color: #607D8B;\n  line-height: 1em;\n  position: absolute;\n  right: -9px;\n  top: 1px;\n  height: 1.8em;\n  min-width: 16px;\n  text-align: center;\n  margin-right: .8em;\n  border-radius: 0 4px 4px 0;\n}\n.path-broken-warn {\n  position: absolute;\n  top: 5px;\n  right: 125px;\n}\nbutton {\n  background-color: #eee;\n  border: none;\n  padding: 5px 10px;\n  border-radius: 4px;\n  cursor: pointer;\n  cursor: hand;\n  font-family: Arial;\n}\nbutton:hover {\n  background-color: #cfd8dc;\n}\nbutton.delete {\n  position: relative;\n  left: 194px;\n  top: -32px;\n  background-color: gray !important;\n  color: white;\n}\n"
 
 /***/ }),
 
@@ -1891,7 +1866,7 @@ module.exports = "/* WorkersComponent's private CSS styles */\r\n.workers {\r\n 
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ul class=\"workers\">\r\n  <mat-checkbox [(ngModel)]=\"workersPaused\" color=\"accent\">Pause Workers</mat-checkbox>\r\n\r\n  <mat-card class=\"hunger-card\">\r\n    <mat-card-title>\r\n      Food Supply - {{foodStockpile | longNumber}}/{{foodCapacity | longNumber}}\r\n    </mat-card-title>\r\n    <mat-progress-bar mode=\"determinate\" [value]=\"foodPercentage\" [color]=\"foodPercentage < 20 ? 'warn' : 'accent'\"></mat-progress-bar>\r\n  </mat-card>\r\n\r\n  <mat-accordion multi=\"true\">\r\n    <mat-expansion-panel expanded=\"true\" *ngFor=\"let worker of getWorkers(true, true, true)\">\r\n      <mat-expansion-panel-header>\r\n        <mat-panel-title>\r\n          {{worker.resourceType | titlecase}}\r\n        </mat-panel-title>\r\n        <mat-panel-description>\r\n        </mat-panel-description>\r\n      </mat-expansion-panel-header>\r\n\r\n      <button mat-raised-button [color]=\"worker.canAffordToHire() ? 'accent' : 'disabled'\" (click)=\"worker.hireWorker()\">\r\n        <mat-card-title>{{worker.workerCount}} Workers ({{worker.freeWorkers}} Idle)</mat-card-title>\r\n        <mat-card-subtitle>{{worker.cost | longNumber}} Gold</mat-card-subtitle>\r\n      </button>\r\n\r\n      <div *ngFor=\"let resourceWorker of getAccessibleResourceWorkers(worker)\">\r\n        <mat-card [ngClass]=\"{'resource-disabled': !canHarvest(resourceWorker.resourceEnum)}\"\r\n        *ngIf=\"shouldShowResource(resourceWorker.resourceEnum)\" matTooltip=\"{{getTooltipMessage(resourceWorker.resourceEnum)}}\" matTooltipPosition=\"right\">\r\n          <mat-card-title [style.color]=\"canHarvest(resourceWorker.resourceEnum) ? 'black' : 'red'\">\r\n            {{getResource(resourceWorker.resourceEnum).name | titlecase}}\r\n          </mat-card-title>\r\n          <div class=\"path-broken-warn\" *ngIf=\"!pathAvailable(resourceWorker.resourceEnum)\">(Path Broken)</div>\r\n          <mat-card-subtitle>\r\n            Workers: <input class=\"worker-input\" type=\"number\" min=\"0\" [max]=\"worker.workerCount\"\r\n              [(ngModel)]=\"resourceWorker.sliderSetting\" (input)=\"checkSliderValue(resourceWorker.resourceEnum)\" (change)=\"updateResourceWorker(resourceWorker.resourceEnum, resourceWorker.sliderSetting)\"/>\r\n          </mat-card-subtitle>\r\n          <mat-slider [color]=\"resourceWorker.sliderSettingValid ? 'accent' : 'warn'\" [id]=\"resourceWorker.resourceEnum\" [max]=\"worker.workerCount\"\r\n              [tickInterval]=\"1\" [(ngModel)]=\"resourceWorker.sliderSetting\" (input)=\"checkSliderValue($event)\" (change)=\"updateResourceWorker($event)\">\r\n          </mat-slider>\r\n        </mat-card>\r\n      </div>\r\n    </mat-expansion-panel>\r\n  </mat-accordion>\r\n</ul>\r\n"
+module.exports = "<ul class=\"workers\">\n  <mat-checkbox [(ngModel)]=\"workersPaused\" color=\"accent\">Pause Workers</mat-checkbox>\n\n  <mat-card class=\"hunger-card\">\n    <mat-card-title>\n      Food Supply - {{foodStockpile | longNumber}}/{{foodCapacity | longNumber}}\n    </mat-card-title>\n    <mat-progress-bar mode=\"determinate\" [value]=\"foodPercentage\" [color]=\"foodPercentage < 20 ? 'warn' : 'accent'\"></mat-progress-bar>\n  </mat-card>\n\n  <mat-accordion multi=\"true\">\n    <mat-expansion-panel expanded=\"true\" *ngFor=\"let worker of getWorkers(true, true, true)\">\n      <mat-expansion-panel-header>\n        <mat-panel-title>\n          {{worker.resourceType | titlecase}}\n        </mat-panel-title>\n        <mat-panel-description>\n        </mat-panel-description>\n      </mat-expansion-panel-header>\n\n      <button mat-raised-button [color]=\"worker.canAffordToHire() ? 'accent' : 'disabled'\" (click)=\"worker.hireWorker()\">\n        <mat-card-title>{{worker.workerCount}} Workers ({{worker.freeWorkers}} Idle)</mat-card-title>\n        <mat-card-subtitle>{{worker.cost | longNumber}} Gold</mat-card-subtitle>\n      </button>\n\n      <div *ngFor=\"let resourceWorker of getAccessibleResourceWorkers(worker)\">\n        <mat-card [ngClass]=\"{'resource-disabled': !canHarvest(resourceWorker.resourceEnum)}\"\n        *ngIf=\"shouldShowResource(resourceWorker.resourceEnum)\" matTooltip=\"{{getTooltipMessage(resourceWorker.resourceEnum)}}\" matTooltipPosition=\"right\">\n          <mat-card-title [style.color]=\"canHarvest(resourceWorker.resourceEnum) ? 'black' : 'red'\">\n            {{getResource(resourceWorker.resourceEnum).name | titlecase}}\n          </mat-card-title>\n          <div class=\"path-broken-warn\" *ngIf=\"!pathAvailable(resourceWorker.resourceEnum)\">(Path Broken)</div>\n          <mat-card-subtitle>\n            Workers: <input class=\"worker-input\" type=\"number\" min=\"0\" [max]=\"worker.workerCount\"\n              [(ngModel)]=\"resourceWorker.sliderSetting\" (input)=\"checkSliderValue(resourceWorker.resourceEnum)\" (change)=\"updateResourceWorker(resourceWorker.resourceEnum, resourceWorker.sliderSetting)\"/>\n          </mat-card-subtitle>\n          <mat-slider [color]=\"resourceWorker.sliderSettingValid ? 'accent' : 'warn'\" [id]=\"resourceWorker.resourceEnum\" [max]=\"worker.workerCount\"\n              [tickInterval]=\"1\" [(ngModel)]=\"resourceWorker.sliderSetting\" (input)=\"checkSliderValue($event)\" (change)=\"updateResourceWorker($event)\">\n          </mat-slider>\n        </mat-card>\n      </div>\n    </mat-expansion-panel>\n  </mat-accordion>\n</ul>\n"
 
 /***/ }),
 
@@ -2088,13 +2063,14 @@ var CropDirective = /** @class */ (function () {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MapDirective", function() { return MapDirective; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _objects_vector__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../objects/vector */ "./src/app/objects/vector.ts");
-/* harmony import */ var _services_resources_resources_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./../../services/resources/resources.service */ "./src/app/services/resources/resources.service.ts");
-/* harmony import */ var _services_settings_settings_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./../../services/settings/settings.service */ "./src/app/services/settings/settings.service.ts");
-/* harmony import */ var _services_enemy_enemy_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../services/enemy/enemy.service */ "./src/app/services/enemy/enemy.service.ts");
-/* harmony import */ var _services_fighter_fighter_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./../../services/fighter/fighter.service */ "./src/app/services/fighter/fighter.service.ts");
-/* harmony import */ var _services_buildings_buildings_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./../../services/buildings/buildings.service */ "./src/app/services/buildings/buildings.service.ts");
-/* harmony import */ var _services_map_map_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./../../services/map/map.service */ "./src/app/services/map/map.service.ts");
+/* harmony import */ var _objects_tile__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../objects/tile */ "./src/app/objects/tile.ts");
+/* harmony import */ var _objects_vector__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../objects/vector */ "./src/app/objects/vector.ts");
+/* harmony import */ var _services_resources_resources_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./../../services/resources/resources.service */ "./src/app/services/resources/resources.service.ts");
+/* harmony import */ var _services_settings_settings_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./../../services/settings/settings.service */ "./src/app/services/settings/settings.service.ts");
+/* harmony import */ var _services_enemy_enemy_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../services/enemy/enemy.service */ "./src/app/services/enemy/enemy.service.ts");
+/* harmony import */ var _services_fighter_fighter_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./../../services/fighter/fighter.service */ "./src/app/services/fighter/fighter.service.ts");
+/* harmony import */ var _services_buildings_buildings_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./../../services/buildings/buildings.service */ "./src/app/services/buildings/buildings.service.ts");
+/* harmony import */ var _services_map_map_service__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./../../services/map/map.service */ "./src/app/services/map/map.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2147,6 +2123,7 @@ var __generator = (undefined && undefined.__generator) || function (thisArg, bod
 
 
 
+
 var MapDirective = /** @class */ (function () {
     function MapDirective(element, renderer, resourcesService, settingsService, enemyService, fighterService, buildingsService, mapService) {
         this.element = element;
@@ -2160,32 +2137,26 @@ var MapDirective = /** @class */ (function () {
         this.lastEnemyReprosessTime = Date.now();
         this.enemyReprocessDelay = 2000;
         this.headerPixels = 64;
-        this.imageElements = {};
-        this.transform = d3.zoomIdentity;
         this.lowFramerateActive = false;
     }
     MapDirective.prototype.ngAfterViewInit = function () {
-        this.canvas = d3.select('canvas');
+        this.canvas = d3.select('canvas#map');
         this.context = this.canvas.node().getContext('2d');
-        this.canvasContainer = document.getElementById('canvas-container');
+        this.canvasContainer = document.getElementById('map-canvas-container');
         this.tileTooltip = document.getElementById('tile-tooltip');
         this.fighterTooltip = document.getElementById('fighter-tooltip');
-        var imageElementContainer = document.getElementById('tile-images');
-        for (var i = 0; i < imageElementContainer.children.length; i++) {
-            var imageElement = imageElementContainer.children[i];
-            this.imageElements[imageElement.id] = imageElement;
-        }
         this.context.font = 'bold 4px Arial';
         this.resizeCanvas();
-        this.transform.k = 2;
         this.canvas.call(d3.zoom()
             .filter(this.scrollFilter(this))
             .scaleExtent([1, 5])
-            .translateExtent([[0, 0], [this.mapService.gridWidth * this.mapService.tilePixelSize,
-                this.mapService.gridHeight * this.mapService.tilePixelSize]])
+            .translateExtent([[0, 0], [this.mapService.chunkWidth * this.mapService.tilePixelSize * this.mapService.totalChunkX,
+                this.mapService.chunkHeight * this.mapService.tilePixelSize * this.mapService.totalChunkY]])
             .on('zoom', this.zoomed(this)));
         this.canvas.on('mousedown mousemove mouseup', this.clickTile(this));
         this.refreshTimer = d3.interval(this.refreshCanvas(this), 25);
+        var homeTile = this.mapService.tileMap.find(function (tile) { return tile && tile.buildingTileType === _objects_tile__WEBPACK_IMPORTED_MODULE_1__["BuildingTileType"].Home; });
+        this.mapService.setCameraCenter(homeTile.position.multiply(-1));
     };
     MapDirective.prototype.tick = function (elapsed) {
     };
@@ -2212,24 +2183,24 @@ var MapDirective = /** @class */ (function () {
                             coordinates = d3.mouse(this);
                             coordinates[0] = Math.floor(self.transform.invertX(coordinates[0]) / self.mapService.tilePixelSize);
                             coordinates[1] = Math.floor(self.transform.invertY(coordinates[1]) / self.mapService.tilePixelSize);
-                            tile = self.mapService.tiledMap[coordinates[0] + coordinates[1] * self.mapService.mapWidth];
+                            tile = self.mapService.getTile(coordinates[0], coordinates[1]);
                             shouldUpdateEnemies = false;
-                            if (d3.event.type === 'mousedown' && self.mapService.cursorTool === _services_map_map_service__WEBPACK_IMPORTED_MODULE_7__["CursorTool"].TileDetail) {
+                            if (d3.event.type === 'mousedown' && self.mapService.cursorTool === _services_map_map_service__WEBPACK_IMPORTED_MODULE_8__["CursorTool"].TileDetail) {
                                 self.updateTileTooltip(coordinates);
                             }
-                            else if (d3.event.type === 'mousedown' && self.mapService.cursorTool === _services_map_map_service__WEBPACK_IMPORTED_MODULE_7__["CursorTool"].FighterDetail) {
+                            else if (d3.event.type === 'mousedown' && self.mapService.cursorTool === _services_map_map_service__WEBPACK_IMPORTED_MODULE_8__["CursorTool"].FighterDetail) {
                                 self.updateFighterTooltip(coordinates);
                             }
-                            else if (self.mapService.cursorTool === _services_map_map_service__WEBPACK_IMPORTED_MODULE_7__["CursorTool"].PlaceBuildings && self.buildingsService.selectedBuilding) {
+                            else if (self.mapService.cursorTool === _services_map_map_service__WEBPACK_IMPORTED_MODULE_8__["CursorTool"].PlaceBuildings && self.buildingsService.selectedBuilding) {
                                 buildingCreated = self.buildingsService.createBuilding(tile, self.buildingsService.selectedBuilding.tileType);
                                 shouldUpdateEnemies = d3.event.type === 'mouseup' && buildingCreated;
                             }
-                            else if (self.mapService.cursorTool === _services_map_map_service__WEBPACK_IMPORTED_MODULE_7__["CursorTool"].ClearBuildings) {
+                            else if (self.mapService.cursorTool === _services_map_map_service__WEBPACK_IMPORTED_MODULE_8__["CursorTool"].ClearBuildings) {
                                 buildingCleared = self.buildingsService.clearBuilding(tile);
                                 shouldUpdateEnemies = d3.event.type === 'mouseup' && buildingCleared;
                             }
                             else if (d3.event.type === 'mousedown' &&
-                                self.mapService.cursorTool === _services_map_map_service__WEBPACK_IMPORTED_MODULE_7__["CursorTool"].PlaceFighters && self.fighterService.selectedFighterType) {
+                                self.mapService.cursorTool === _services_map_map_service__WEBPACK_IMPORTED_MODULE_8__["CursorTool"].PlaceFighters && self.fighterService.selectedFighterType) {
                                 self.fighterService.createFighter(tile, self.fighterService.selectedFighterType);
                             }
                             if (!(shouldUpdateEnemies && Date.now() - self.lastEnemyReprosessTime > self.enemyReprocessDelay)) return [3 /*break*/, 2];
@@ -2246,7 +2217,7 @@ var MapDirective = /** @class */ (function () {
     };
     MapDirective.prototype.updateTileTooltip = function (coordinates) {
         var _this = this;
-        var focusedTile = this.mapService.tiledMap[coordinates[0] + coordinates[1] * this.mapService.mapWidth];
+        var focusedTile = this.mapService.getTile(coordinates[0], coordinates[1]);
         if (focusedTile.buildingTileType || focusedTile.resourceTileType) {
             this.mapService.focusedTile = focusedTile;
             this.mapService.focusedBuildingTile = this.mapService.buildingTiles.get(focusedTile.buildingTileType);
@@ -2262,7 +2233,7 @@ var MapDirective = /** @class */ (function () {
         }
     };
     MapDirective.prototype.updateFighterTooltip = function (coordinates) {
-        var focusedTile = this.mapService.tiledMap[coordinates[0] + coordinates[1] * this.mapService.mapWidth];
+        var focusedTile = this.mapService.getTile(coordinates[0], coordinates[1]);
         var focusedFighter = this.fighterService.fighters.find(function (fighter) { return fighter.currentTile === focusedTile; });
         if (focusedFighter) {
             this.mapService.focusedTile = focusedTile;
@@ -2276,8 +2247,8 @@ var MapDirective = /** @class */ (function () {
     MapDirective.prototype.resizeCanvas = function () {
         this.element.nativeElement.width = this.canvasContainer.clientWidth;
         this.element.nativeElement.height = window.innerHeight - this.headerPixels;
-        this.mapService.canvasPixelWidth = this.canvasContainer.clientWidth;
-        this.mapService.canvasPixelHeight = window.innerHeight - this.headerPixels;
+        this.canvasPixelWidth = this.canvasContainer.clientWidth;
+        this.canvasPixelHeight = window.innerHeight - this.headerPixels;
     };
     MapDirective.prototype.refreshCanvas = function (self) {
         return function (elapsed) {
@@ -2288,7 +2259,7 @@ var MapDirective = /** @class */ (function () {
             }
             self.resizeCanvas();
             self.context.save();
-            self.context.clearRect(0, 0, self.mapService.canvasPixelWidth, self.mapService.canvasPixelHeight);
+            self.context.clearRect(0, 0, self.canvasPixelWidth, self.canvasPixelHeight);
             self.context.translate(self.transform.x, self.transform.y);
             self.context.scale(self.transform.k, self.transform.k);
             self.drawCanvas();
@@ -2296,60 +2267,62 @@ var MapDirective = /** @class */ (function () {
         };
     };
     MapDirective.prototype.drawCanvas = function () {
-        var upperLeftPixel = [(-this.transform.x - this.mapService.tilePixelSize * 5) / this.transform.k,
-            (-this.transform.y - this.mapService.tilePixelSize * 5) / this.transform.k];
-        var lowerRightPixel = [upperLeftPixel[0] + (this.mapService.canvasPixelWidth + this.mapService.tilePixelSize * 5) / this.transform.k,
-            upperLeftPixel[1] + (this.mapService.canvasPixelHeight + this.mapService.tilePixelSize * 5) / this.transform.k];
-        for (var _i = 0, _a = this.mapService.tiledMap; _i < _a.length; _i++) {
-            var tile = _a[_i];
-            if (tile.x < upperLeftPixel[0] || tile.x > lowerRightPixel[0] ||
-                tile.y < upperLeftPixel[1] || tile.y > lowerRightPixel[1]) {
-                continue;
-            }
-            var mapTileName = tile.mapTileType.toLowerCase();
-            this.drawTile(tile.position, mapTileName);
-            if (tile.buildingTileType) {
-                var buildingTileName = tile.buildingTileType.toLowerCase();
-                this.drawTile(tile.position, buildingTileName);
-            }
-            if (tile.resourceTileType) {
-                var resourceTileName = tile.resourceTileType.toLowerCase().replace(' ', '-');
-                this.drawTile(tile.position, resourceTileName, 1, tile.health / tile.maxHealth);
-            }
-            if (tile.health === 0) {
-                this.context.globalAlpha = 0.5;
-                this.drawTile(tile.position, 'disabled');
-                this.context.globalAlpha = 1;
-            }
-            else if (tile.buildingTileType && !tile.buildingRemovable && this.mapService.cursorTool === _services_map_map_service__WEBPACK_IMPORTED_MODULE_7__["CursorTool"].ClearBuildings) {
-                this.context.globalAlpha = 0.5;
-                this.drawTile(tile.position, 'locked');
-                this.context.globalAlpha = 1;
+        var cameraBounds = this.mapService.getMapCameraBounds(5);
+        var upperLeftTile = [Math.max(0, Math.floor(cameraBounds[0].x / this.mapService.tilePixelSize)),
+            Math.max(0, Math.floor(cameraBounds[0].y / this.mapService.tilePixelSize))];
+        var lowerRightTile = [Math.floor(cameraBounds[1].x / this.mapService.tilePixelSize),
+            Math.floor(cameraBounds[1].y / this.mapService.tilePixelSize)];
+        for (var y = upperLeftTile[1]; y <= lowerRightTile[1]; y++) {
+            for (var x = upperLeftTile[0]; x <= lowerRightTile[0]; x++) {
+                var tile = this.mapService.getTile(x, y);
+                if (!tile) {
+                    continue;
+                }
+                var mapTileName = tile.mapTileType.toLowerCase();
+                this.drawTile(tile.position, mapTileName);
+                if (tile.buildingTileType) {
+                    var buildingTileName = tile.buildingTileType.toLowerCase();
+                    this.drawTile(tile.position, buildingTileName);
+                }
+                if (tile.resourceTileType) {
+                    var resourceTileName = tile.resourceTileType.toLowerCase().replace(' ', '-');
+                    this.drawTile(tile.position, resourceTileName, 1, tile.health / tile.maxHealth);
+                }
+                if (tile.health === 0) {
+                    this.context.globalAlpha = 0.5;
+                    this.drawTile(tile.position, 'disabled');
+                    this.context.globalAlpha = 1;
+                }
+                else if (tile.buildingTileType && !tile.buildingRemovable && this.mapService.cursorTool === _services_map_map_service__WEBPACK_IMPORTED_MODULE_8__["CursorTool"].ClearBuildings) {
+                    this.context.globalAlpha = 0.5;
+                    this.drawTile(tile.position, 'locked');
+                    this.context.globalAlpha = 1;
+                }
             }
         }
-        for (var _b = 0, _c = this.mapService.resourceAnimations; _b < _c.length; _b++) {
-            var resourceAnimation = _c[_b];
+        for (var _i = 0, _a = this.mapService.resourceAnimations; _i < _a.length; _i++) {
+            var resourceAnimation = _a[_i];
             var resourceTileName = this.resourcesService.resources.get(resourceAnimation.resourceEnum).name.toLowerCase().replace(/ /g, '-');
             this.drawTile(resourceAnimation.position, resourceTileName, 0.5);
             this.context.fillStyle = this.settingsService.resourceAnimationColors[resourceAnimation.animationType];
             this.context.fillText(Math.floor(resourceAnimation.multiplier).toString(), resourceAnimation.x + this.mapService.tilePixelSize / 2, resourceAnimation.y + this.mapService.tilePixelSize / 2);
         }
-        for (var _d = 0, _e = this.enemyService.enemies; _d < _e.length; _d++) {
-            var enemy = _e[_d];
+        for (var _b = 0, _c = this.enemyService.enemies; _b < _c.length; _b++) {
+            var enemy = _c[_b];
             var enemyTileName = enemy.name.toLowerCase().replace(' ', '-');
             this.drawTile(enemy.position, enemyTileName, 1, enemy.health / enemy.maxHealth);
         }
-        for (var _f = 0, _g = this.fighterService.fighters; _f < _g.length; _f++) {
-            var fighter = _g[_f];
+        for (var _d = 0, _e = this.fighterService.fighters; _d < _e.length; _d++) {
+            var fighter = _e[_d];
             var fighterTileName = fighter.name.toLowerCase().replace(' ', '-');
             this.drawTile(fighter.position, fighterTileName, 1, fighter.health / fighter.maxHealth);
         }
-        for (var _h = 0, _j = this.mapService.projectiles; _h < _j.length; _h++) {
-            var projectile = _j[_h];
+        for (var _f = 0, _g = this.mapService.projectiles; _f < _g.length; _f++) {
+            var projectile = _g[_f];
             var projectileTileName = projectile.name.toLowerCase().replace(' ', '-');
             this.context.translate(projectile.x, projectile.y);
             this.context.rotate(projectile.rotation);
-            this.drawTile(new _objects_vector__WEBPACK_IMPORTED_MODULE_1__["Vector"](-this.mapService.tilePixelSize / 2, -this.mapService.tilePixelSize / 2), projectileTileName);
+            this.drawTile(new _objects_vector__WEBPACK_IMPORTED_MODULE_2__["Vector"](-this.mapService.tilePixelSize / 2, -this.mapService.tilePixelSize / 2), projectileTileName);
             this.context.rotate(-projectile.rotation);
             this.context.translate(-projectile.x, -projectile.y);
         }
@@ -2359,8 +2332,8 @@ var MapDirective = /** @class */ (function () {
             this.tileTooltip.style.setProperty('--detail-tooltip-top', tooltipPosition.y + 'px');
             this.context.globalAlpha = 0.5;
             this.context.fillStyle = 'cyan';
-            for (var _k = 0, _l = this.mapService.focusedTile.buildingPath; _k < _l.length; _k++) {
-                var pathTile = _l[_k];
+            for (var _h = 0, _j = this.mapService.focusedTile.buildingPath; _h < _j.length; _h++) {
+                var pathTile = _j[_h];
                 this.context.fillRect(pathTile.x, pathTile.y, this.mapService.tilePixelSize, this.mapService.tilePixelSize);
             }
             this.context.fillStyle = 'black';
@@ -2381,12 +2354,13 @@ var MapDirective = /** @class */ (function () {
         }
     };
     MapDirective.prototype.getTooltipPosition = function (targetPosition) {
-        return new _objects_vector__WEBPACK_IMPORTED_MODULE_1__["Vector"]((targetPosition.x + this.mapService.tilePixelSize) * this.transform.k + this.transform.x, targetPosition.y * this.transform.k + this.transform.y - this.tileTooltip.clientHeight);
+        return new _objects_vector__WEBPACK_IMPORTED_MODULE_2__["Vector"]((targetPosition.x + this.mapService.tilePixelSize) * this.transform.k + this.transform.x, targetPosition.y * this.transform.k + this.transform.y - this.tileTooltip.clientHeight);
     };
     MapDirective.prototype.drawTile = function (position, imageName, scale, healthRatio) {
         if (scale === void 0) { scale = 1; }
         if (healthRatio === void 0) { healthRatio = 1; }
-        var image = this.imageElements[imageName] ? this.imageElements[imageName] : this.imageElements['placeholder'];
+        var imageElements = this.mapService.imageElements;
+        var image = imageElements[imageName] ? imageElements[imageName] : imageElements['placeholder'];
         this.context.drawImage(image, position.x, position.y, this.mapService.tilePixelSize * scale, this.mapService.tilePixelSize * scale);
         if (healthRatio > 0 && healthRatio < 1) {
             this.context.fillStyle = 'red';
@@ -2395,20 +2369,195 @@ var MapDirective = /** @class */ (function () {
             this.context.strokeRect(position.x, position.y + this.mapService.tilePixelSize, this.mapService.tilePixelSize, -2);
         }
     };
+    Object.defineProperty(MapDirective.prototype, "transform", {
+        get: function () {
+            return this.mapService.transform;
+        },
+        set: function (value) {
+            this.mapService.transform = value;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(MapDirective.prototype, "canvasPixelWidth", {
+        get: function () {
+            return this.mapService.canvasPixelWidth;
+        },
+        set: function (value) {
+            this.mapService.canvasPixelWidth = value;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(MapDirective.prototype, "canvasPixelHeight", {
+        get: function () {
+            return this.mapService.canvasPixelHeight;
+        },
+        set: function (value) {
+            this.mapService.canvasPixelHeight = value;
+        },
+        enumerable: true,
+        configurable: true
+    });
     MapDirective = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Directive"])({
             selector: '[appMap]'
         }),
         __metadata("design:paramtypes", [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ElementRef"],
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["Renderer2"],
-            _services_resources_resources_service__WEBPACK_IMPORTED_MODULE_2__["ResourcesService"],
-            _services_settings_settings_service__WEBPACK_IMPORTED_MODULE_3__["SettingsService"],
-            _services_enemy_enemy_service__WEBPACK_IMPORTED_MODULE_4__["EnemyService"],
-            _services_fighter_fighter_service__WEBPACK_IMPORTED_MODULE_5__["FighterService"],
-            _services_buildings_buildings_service__WEBPACK_IMPORTED_MODULE_6__["BuildingsService"],
-            _services_map_map_service__WEBPACK_IMPORTED_MODULE_7__["MapService"]])
+            _services_resources_resources_service__WEBPACK_IMPORTED_MODULE_3__["ResourcesService"],
+            _services_settings_settings_service__WEBPACK_IMPORTED_MODULE_4__["SettingsService"],
+            _services_enemy_enemy_service__WEBPACK_IMPORTED_MODULE_5__["EnemyService"],
+            _services_fighter_fighter_service__WEBPACK_IMPORTED_MODULE_6__["FighterService"],
+            _services_buildings_buildings_service__WEBPACK_IMPORTED_MODULE_7__["BuildingsService"],
+            _services_map_map_service__WEBPACK_IMPORTED_MODULE_8__["MapService"]])
     ], MapDirective);
     return MapDirective;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/directives/minimap/minimap.directive.ts":
+/*!*********************************************************!*\
+  !*** ./src/app/directives/minimap/minimap.directive.ts ***!
+  \*********************************************************/
+/*! exports provided: MinimapDirective */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MinimapDirective", function() { return MinimapDirective; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _objects_tile__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../objects/tile */ "./src/app/objects/tile.ts");
+/* harmony import */ var _services_map_map_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../services/map/map.service */ "./src/app/services/map/map.service.ts");
+/* harmony import */ var src_app_objects_vector__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/objects/vector */ "./src/app/objects/vector.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+var MinimapDirective = /** @class */ (function () {
+    function MinimapDirective(element, renderer, mapService) {
+        this.element = element;
+        this.renderer = renderer;
+        this.mapService = mapService;
+    }
+    MinimapDirective.prototype.ngAfterViewInit = function () {
+        var _this = this;
+        this.backgroundCanvas = d3.select('canvas#minimap_background');
+        this.foregroundCanvas = d3.select('canvas#minimap_foreground');
+        this.backgroundContext = this.backgroundCanvas.node().getContext('2d');
+        this.foregroundContext = this.foregroundCanvas.node().getContext('2d');
+        this.canvasContainer = document.getElementById('minimap-canvas-container');
+        this.renderMinimapBackground();
+        this.mapService.onMapUpdate.subscribe(function (_) { return _this.renderMinimapBackground(); });
+        this.foregroundCanvas.call(d3.zoom()
+            .filter(this.scrollFilter(this))
+            .scaleExtent([1, 5])
+            .translateExtent([[0, 0], [this.mapService.chunkWidth * this.mapService.tilePixelSize * this.mapService.totalChunkX,
+                this.mapService.chunkHeight * this.mapService.tilePixelSize * this.mapService.totalChunkY]])
+            .on('zoom', this.zoomed(this)));
+        this.foregroundCanvas.on('mousedown mousemove', this.clickTile(this));
+        this.refreshTimer = d3.interval(this.renderMinimapForeground(this), 25);
+    };
+    MinimapDirective.prototype.scrollFilter = function (self) {
+        return function (elapsed) {
+            return d3.event.type !== 'dblclick' && (d3.event.type !== 'mousedown' || d3.event.button === 2);
+        };
+    };
+    MinimapDirective.prototype.zoomed = function (self) {
+        return function (elapsed) {
+        };
+    };
+    MinimapDirective.prototype.clickTile = function (self) {
+        return function (elapsed) {
+            if (!d3.event.buttons) {
+                return;
+            }
+            var coordinates = d3.mouse(this);
+            coordinates[0] *= -self.mapService.tilePixelSize * self.transform.k;
+            coordinates[1] *= -self.mapService.tilePixelSize * self.transform.k;
+            self.mapService.setCameraCenter(new src_app_objects_vector__WEBPACK_IMPORTED_MODULE_3__["Vector"](coordinates[0], coordinates[1]));
+        };
+    };
+    MinimapDirective.prototype.renderMinimapBackground = function () {
+        if (!this.backgroundCanvas) {
+            return;
+        }
+        this.backgroundCanvas.attr('width', this.canvasContainer.clientWidth);
+        this.backgroundCanvas.attr('height', this.canvasContainer.clientHeight);
+        for (var _i = 0, _a = this.mapService.tileMap; _i < _a.length; _i++) {
+            var tile = _a[_i];
+            if (!tile) {
+                continue;
+            }
+            var biome = this.mapService.getBiome(tile.noiseValue);
+            switch (biome) {
+                case _objects_tile__WEBPACK_IMPORTED_MODULE_1__["MapTileType"].Water: {
+                    this.backgroundContext.fillStyle = 'aqua';
+                    break;
+                }
+                case _objects_tile__WEBPACK_IMPORTED_MODULE_1__["MapTileType"].Grass: {
+                    this.backgroundContext.fillStyle = "rgb(" + 200 * tile.noiseValue + ", 255, " + 200 * tile.noiseValue + ")";
+                    break;
+                }
+                case _objects_tile__WEBPACK_IMPORTED_MODULE_1__["MapTileType"].Mountain: {
+                    this.backgroundContext.fillStyle = "rgb(" + 100 * tile.noiseValue + ", " + 100 * tile.noiseValue + ", " + 100 * tile.noiseValue + ")";
+                }
+            }
+            this.backgroundContext.fillRect(tile.x / this.mapService.tilePixelSize, tile.y / this.mapService.tilePixelSize, 1, 1);
+        }
+    };
+    MinimapDirective.prototype.renderMinimapForeground = function (self) {
+        return function (elapsed) {
+            if (!self.foregroundCanvas) {
+                return;
+            }
+            self.foregroundCanvas.attr('width', self.canvasContainer.clientWidth);
+            self.foregroundCanvas.attr('height', self.canvasContainer.clientHeight);
+            var homeTile = self.mapService.tileMap.find(function (tile) { return tile && tile.buildingTileType === _objects_tile__WEBPACK_IMPORTED_MODULE_1__["BuildingTileType"].Home; });
+            self.foregroundContext.clearRect(0, 0, self.element.nativeElement.width, self.element.nativeElement.height);
+            if (homeTile) {
+                var homeImage = self.mapService.imageElements['home'];
+                self.foregroundContext.drawImage(homeImage, homeTile.x / self.mapService.tilePixelSize - 8, homeTile.y / self.mapService.tilePixelSize - 8, 16, 16);
+            }
+            var mapCameraBounds = self.mapService.getMapCameraBounds();
+            self.foregroundContext.fillStyle = 'gray';
+            self.foregroundContext.globalAlpha = 0.5;
+            self.foregroundContext.strokeRect(mapCameraBounds[0].x / self.mapService.tilePixelSize, mapCameraBounds[0].y / self.mapService.tilePixelSize, (mapCameraBounds[1].x - mapCameraBounds[0].x) / self.mapService.tilePixelSize, (mapCameraBounds[1].y - mapCameraBounds[0].y) / self.mapService.tilePixelSize);
+            self.foregroundContext.fillStyle = 'violet';
+            self.foregroundContext.fillRect(mapCameraBounds[0].x / self.mapService.tilePixelSize, mapCameraBounds[0].y / self.mapService.tilePixelSize, (mapCameraBounds[1].x - mapCameraBounds[0].x) / self.mapService.tilePixelSize, (mapCameraBounds[1].y - mapCameraBounds[0].y) / self.mapService.tilePixelSize);
+        };
+    };
+    Object.defineProperty(MinimapDirective.prototype, "transform", {
+        get: function () {
+            return this.mapService.transform;
+        },
+        set: function (value) {
+            this.mapService.transform = value;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    MinimapDirective = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Directive"])({
+            selector: '[appMinimap]'
+        }),
+        __metadata("design:paramtypes", [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ElementRef"],
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["Renderer2"],
+            _services_map_map_service__WEBPACK_IMPORTED_MODULE_2__["MapService"]])
+    ], MinimapDirective);
+    return MinimapDirective;
 }());
 
 
@@ -2522,6 +2671,31 @@ var SnapDirective = /** @class */ (function () {
             }
         }
     };
+    SnapDirective.prototype.onMouseMove = function () {
+        if (this.snapSetting !== 'free') {
+            return;
+        }
+        var nativeElement = this.element.nativeElement;
+        var containerElement = this.element.nativeElement.parentElement.parentElement;
+        if (nativeElement.offsetTop < 0) {
+            nativeElement.style.top = 0;
+        }
+        else if (nativeElement.offsetTop + nativeElement.clientHeight > containerElement.clientHeight) {
+            nativeElement.style.top = containerElement.clientHeight - nativeElement.clientHeight;
+        }
+        else {
+            nativeElement.style.top = 'var(--detail-tooltip-top)';
+        }
+        if (nativeElement.offsetLeft < 0) {
+            nativeElement.style.left = 0;
+        }
+        else if (nativeElement.offsetLeft + nativeElement.clientWidth > containerElement.clientWidth) {
+            nativeElement.style.left = containerElement.clientWidth - nativeElement.clientWidth;
+        }
+        else {
+            nativeElement.style.left = 'var(--detail-tooltip-left)';
+        }
+    };
     __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])('snapSetting'),
         __metadata("design:type", String)
@@ -2532,6 +2706,12 @@ var SnapDirective = /** @class */ (function () {
         __metadata("design:paramtypes", []),
         __metadata("design:returntype", void 0)
     ], SnapDirective.prototype, "onClick", null);
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["HostListener"])('mousemove'),
+        __metadata("design:type", Function),
+        __metadata("design:paramtypes", []),
+        __metadata("design:returntype", void 0)
+    ], SnapDirective.prototype, "onMouseMove", null);
     SnapDirective = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Directive"])({
             selector: '[appSnap]'
@@ -3299,6 +3479,7 @@ var BuildingTileType;
     BuildingTileType["Road"] = "ROAD";
     BuildingTileType["Home"] = "HOME";
     BuildingTileType["Bridge"] = "BRIDGE";
+    BuildingTileType["Tunnel"] = "TUNNEL";
     BuildingTileType["CrackedForge"] = "CRACKEDFORGE";
     BuildingTileType["StoneForge"] = "STONEFORGE";
     BuildingTileType["IronForge"] = "IRONFORGE";
@@ -3330,7 +3511,7 @@ var TileStat;
     TileStat["MaxHealth"] = "MAXHEALTH";
 })(TileStat || (TileStat = {}));
 var Tile = /** @class */ (function () {
-    function Tile(id, mapTileType, resourceTileType, buildingTileType, buildingRemovable, position, tileCropDetail, health, resourcesService) {
+    function Tile(id, mapTileType, resourceTileType, buildingTileType, buildingRemovable, position, tileCropDetail, health, noiseValue, resourcesService) {
         if (health === void 0) { health = -1; }
         this.statLevels = {};
         this.statCosts = {};
@@ -3345,6 +3526,7 @@ var Tile = /** @class */ (function () {
         this.health = health;
         this.maxHealth = health;
         this.position = position;
+        this.noiseValue = noiseValue;
         this.tileCropDetail = tileCropDetail;
         this.resourcesService = resourcesService;
     }
@@ -3429,7 +3611,7 @@ var Market = /** @class */ (function () {
         this.mapService = mapService;
         this.resourcesService = resourcesService;
         this.soldResources = resourcesService.getResources(resourceType);
-        this.homeTile = mapService.tiledMap.filter(function (tile) { return tile.buildingTileType === BuildingTileType.Home; })[0];
+        this.homeTile = mapService.tileMap.filter(function (tile) { return tile.buildingTileType === BuildingTileType.Home; })[0];
         this.owningTile = owningTile;
         this.calculateConnection();
     }
@@ -3664,6 +3846,9 @@ var Vector = /** @class */ (function () {
     };
     Vector.prototype.subtract = function (other) {
         return new Vector(this.x - other.x, this.y - other.y);
+    };
+    Vector.prototype.multiply = function (scalar) {
+        return new Vector(this.x * scalar, this.y * scalar);
     };
     Object.defineProperty(Vector, "identity", {
         get: function () {
@@ -3987,6 +4172,7 @@ var BuildingsService = /** @class */ (function () {
     function BuildingsService(resourcesService, mapService) {
         this.resourcesService = resourcesService;
         this.mapService = mapService;
+        this.totalBuildingsPlaced = new Map();
     }
     BuildingsService.prototype.createBuilding = function (tile, buildingType) {
         var buildingTile = this.mapService.buildingTiles.get(buildingType);
@@ -3995,6 +4181,12 @@ var BuildingsService = /** @class */ (function () {
             !buildingTile.buildableSurfaces.some(function (bs) { return bs === tile.mapTileType; }) ||
             !this.canAffordBuilding(buildingTile)) {
             return false;
+        }
+        if (!this.totalBuildingsPlaced.has(buildingType)) {
+            this.totalBuildingsPlaced.set(buildingType, 1);
+        }
+        else {
+            this.totalBuildingsPlaced.set(buildingType, this.totalBuildingsPlaced.get(buildingType) + 1);
         }
         for (var _i = 0, _a = buildingTile.resourceCosts; _i < _a.length; _i++) {
             var resourceCost = _a[_i];
@@ -4007,7 +4199,6 @@ var BuildingsService = /** @class */ (function () {
         tile.maxHealth = buildingTile.baseHealth;
         tile.buildingRemovable = true;
         tile.buildingTileType = buildingType;
-        this.mapService.calculateResourceConnections();
         if (buildingTile.subType === _objects_tile__WEBPACK_IMPORTED_MODULE_2__["BuildingSubType"].Market) {
             var resourceType = void 0;
             switch (buildingTile.tileType) {
@@ -4026,11 +4217,11 @@ var BuildingsService = /** @class */ (function () {
             }
             tile.market = new _objects_tile__WEBPACK_IMPORTED_MODULE_2__["Market"](this.mapService, this.resourcesService, resourceType, tile, true);
         }
+        this.mapService.updatePaths(tile, true);
         return true;
     };
     BuildingsService.prototype.canAffordBuilding = function (buildingTile) {
-        if (buildingTile.maxPlaceable > 0 &&
-            this.mapService.tiledMap.filter(function (tile) { return tile.buildingTileType === buildingTile.tileType; }).length >= buildingTile.maxPlaceable) {
+        if (buildingTile.maxPlaceable > 0 && this.totalBuildingsPlaced.get(buildingTile.tileType) >= buildingTile.maxPlaceable) {
             return false;
         }
         for (var _i = 0, _a = buildingTile.resourceCosts; _i < _a.length; _i++) {
@@ -4045,6 +4236,12 @@ var BuildingsService = /** @class */ (function () {
         if (!tile.buildingRemovable || !tile.buildingTileType) {
             return false;
         }
+        if (!this.totalBuildingsPlaced.has(tile.buildingTileType)) {
+            this.totalBuildingsPlaced.set(tile.buildingTileType, 0);
+        }
+        else {
+            this.totalBuildingsPlaced.set(tile.buildingTileType, this.totalBuildingsPlaced.get(tile.buildingTileType) - 1);
+        }
         var buildingTile = this.mapService.buildingTiles.get(tile.buildingTileType);
         if (buildingTile.placesResourceTile) {
             tile.resourceTileType = undefined;
@@ -4056,7 +4253,7 @@ var BuildingsService = /** @class */ (function () {
             var resourceCost = _a[_i];
             this.resourcesService.resources.get(resourceCost.resourceEnum).addAmount(resourceCost.resourceCost * 0.85);
         }
-        this.mapService.calculateResourceConnections();
+        this.mapService.updatePaths(tile, true);
         return true;
     };
     BuildingsService.prototype.canRepairBuilding = function (tile) {
@@ -4073,7 +4270,7 @@ var BuildingsService = /** @class */ (function () {
         var repairResource = this.resourcesService.resources.get(buildingTile.repairResourceEnum);
         repairResource.addAmount(-buildingTile.repairCostPerPoint * healAmount);
         tile.health = tile.maxHealth;
-        this.mapService.calculateResourceConnections();
+        this.mapService.updatePaths(tile, true);
     };
     BuildingsService = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
@@ -4334,7 +4531,7 @@ var EnemyService = /** @class */ (function () {
         this.maxEnemyCount = 25;
     }
     EnemyService.prototype.ngAfterViewInit = function () {
-        this.openPortal(this.mapService.enemySpawnTiles[0]);
+        this.openPortal();
     };
     EnemyService.prototype.tick = function (elapsed, deltaTime) {
         if (elapsed - this.lastSpawnTime >= this.spawnInterval) {
@@ -4369,7 +4566,7 @@ var EnemyService = /** @class */ (function () {
             enemy.targets.push({ tile: this.mapService.getRandomTile([_objects_tile__WEBPACK_IMPORTED_MODULE_4__["MapTileType"].Grass]), accessible: true, wanderTarget: true });
             enemy.targetIndex = enemy.targets.length - 1;
         }
-        this.mapService.findPath(enemy.currentTile, enemy.targets[enemy.targetIndex].tile, false, true, 250).subscribe(function (tilePath) {
+        this.mapService.findPath(enemy.currentTile, enemy.targets[enemy.targetIndex].tile, false, true).subscribe(function (tilePath) {
             enemy.tilePath = tilePath;
             if (!enemy.tilePath.length) {
                 enemy.pathAttempt++;
@@ -4381,23 +4578,23 @@ var EnemyService = /** @class */ (function () {
             }
         });
     };
-    EnemyService.prototype.openPortal = function (tile) {
-        for (var _i = 0, _a = this.mapService.tiledMap.filter(function (_tile) { return _tile.buildingTileType === _objects_tile__WEBPACK_IMPORTED_MODULE_4__["BuildingTileType"].EnemyPortal; }); _i < _a.length; _i++) {
+    EnemyService.prototype.openPortal = function () {
+        for (var _i = 0, _a = this.mapService.tileMap.filter(function (_tile) { return _tile.buildingTileType === _objects_tile__WEBPACK_IMPORTED_MODULE_4__["BuildingTileType"].EnemyPortal; }); _i < _a.length; _i++) {
             var existingTile = _a[_i];
             existingTile.buildingTileType = undefined;
         }
+        var tile = this.mapService.getRandomTile([_objects_tile__WEBPACK_IMPORTED_MODULE_4__["MapTileType"].Grass]);
         tile.buildingTileType = _objects_tile__WEBPACK_IMPORTED_MODULE_4__["BuildingTileType"].EnemyPortal;
         this.activePortalTile = tile;
     };
     EnemyService.prototype.getTilePosition = function (enemy) {
-        var x = Math.floor(enemy.x / 16) * 16;
-        var y = Math.floor(enemy.y / 16) * 16;
-        return this.mapService.tiledMap.filter(function (tile) { return tile.x === x && tile.y === y; })[0];
+        var x = Math.floor(enemy.x / this.mapService.tilePixelSize);
+        var y = Math.floor(enemy.y / this.mapService.tilePixelSize);
+        return this.mapService.getTile(x, y);
     };
     EnemyService.prototype.spawnEnemy = function () {
         if (Math.random() > 0.2) {
-            var spawnIndex = Math.floor(Math.random() * this.mapService.enemySpawnTiles.length);
-            this.openPortal(this.mapService.enemySpawnTiles[spawnIndex]);
+            this.openPortal();
         }
         if (this.enemies.length >= this.maxEnemyCount || !this.enemiesActive) {
             return;
@@ -4422,7 +4619,7 @@ var EnemyService = /** @class */ (function () {
                     enemy.targets.push({ tile: tile, accessible: true, wanderTarget: false });
                 }
             };
-            for (var _i = 0, _a = this_1.mapService.tiledMap.filter(function (_tile) { return _tile.buildingTileType === buildingType; }); _i < _a.length; _i++) {
+            for (var _i = 0, _a = this_1.mapService.tileMap.filter(function (_tile) { return _tile.buildingTileType === buildingType; }); _i < _a.length; _i++) {
                 var tile = _a[_i];
                 _loop_2(tile);
             }
@@ -4656,6 +4853,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _objects_tile__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../objects/tile */ "./src/app/objects/tile.ts");
 /* harmony import */ var _objects_entity__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../objects/entity */ "./src/app/objects/entity.ts");
 /* harmony import */ var _objects_vector__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../objects/vector */ "./src/app/objects/vector.ts");
+/* harmony import */ var prng_parkmiller_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! prng-parkmiller-js */ "./node_modules/prng-parkmiller-js/pm_prng.js");
+/* harmony import */ var prng_parkmiller_js__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(prng_parkmiller_js__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var simplex_noise__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! simplex-noise */ "./node_modules/simplex-noise/simplex-noise.js");
+/* harmony import */ var simplex_noise__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(simplex_noise__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var d3_zoom__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! d3-zoom */ "./node_modules/d3-zoom/src/index.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -4674,6 +4876,9 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 var Jimp = __webpack_require__(/*! jimp */ "./node_modules/jimp/browser/lib/jimp.js");
 var baseTiles = __webpack_require__(/*! ../../../assets/json/tileTypes.json */ "./src/assets/json/tileTypes.json");
+
+
+
 var CursorTool;
 (function (CursorTool) {
     CursorTool["PlaceBuildings"] = "PLACEBUILDINGS";
@@ -4692,8 +4897,12 @@ var MapService = /** @class */ (function () {
         this.resourceTiles = new Map();
         this.buildingListVisible = false;
         this.fighterListVisible = false;
-        this.enemySpawnTiles = [];
-        this.tiledMap = [];
+        this.chunkWidth = 75;
+        this.chunkHeight = 75;
+        this.totalChunkX = 5;
+        this.totalChunkY = 5;
+        this.elevationMap = [];
+        this.tileMap = [];
         this.resourceAnimations = [];
         this.projectiles = [];
         this.deleteMode = false;
@@ -4702,11 +4911,12 @@ var MapService = /** @class */ (function () {
         this.projectileAnimationSpeed = 0.003;
         this.highFramerate = 25;
         this.lowFramerate = 125;
-        this.canvasWidth = 750;
-        this.canvasHeight = 750;
         this.tilePixelSize = 16;
-        this.gridWidth = 150;
-        this.gridHeight = 150;
+        // Shared canvas elements
+        this.onMapUpdate = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
+        this.transform = d3_zoom__WEBPACK_IMPORTED_MODULE_9__["zoomIdentity"];
+        this.imageElements = {};
+        this.seedRng(Math.random());
         for (var tileTypeString in _objects_tile__WEBPACK_IMPORTED_MODULE_4__["MapTileType"]) {
             if (typeof tileTypeString === 'string') {
                 var tileType = _objects_tile__WEBPACK_IMPORTED_MODULE_4__["MapTileType"][tileTypeString];
@@ -4725,66 +4935,169 @@ var MapService = /** @class */ (function () {
                 this.resourceTiles.set(tileType, baseTiles.resourceTiles[tileType]);
             }
         }
-    }
-    MapService.prototype.initializeMap = function () {
-        var _tiledMap = [];
-        var mapTileIds, resourceTileIds, buildingTileIds, flagTileIds;
-        var _mapWidth, _mapHeight;
-        var xmlRequest = new XMLHttpRequest();
-        xmlRequest.onload = function () {
-            var xmlDoc = new DOMParser().parseFromString(xmlRequest.responseText, 'text/xml');
-            var layers = xmlDoc.getElementsByTagName('layer');
-            var mapLayer, resourceLayer, buildingLayer, flagLayer;
-            for (var i = 0; i < layers.length; i++) {
-                switch (layers[i].attributes['name'].value) {
-                    case 'Map Layer':
-                        mapLayer = layers[i];
-                        break;
-                    case 'Resource Layer':
-                        resourceLayer = layers[i];
-                        break;
-                    case 'Building Layer':
-                        buildingLayer = layers[i];
-                        break;
-                    case 'Flag Layer':
-                        flagLayer = layers[i];
-                        break;
-                }
-            }
-            _mapWidth = +mapLayer.attributes.getNamedItem('width').value;
-            _mapHeight = +mapLayer.attributes.getNamedItem('height').value;
-            mapTileIds = mapLayer.textContent.split(',').map(function (tileId) { return +tileId; });
-            resourceTileIds = resourceLayer.textContent.split(',').map(function (tileId) { return +tileId; });
-            buildingTileIds = buildingLayer.textContent.split(',').map(function (tileId) { return +tileId; });
-            flagTileIds = flagLayer.textContent.split(',').map(function (tileId) { return +tileId; });
-        };
-        xmlRequest.open('GET', './assets/tilemap/map.tmx', false);
-        xmlRequest.send();
-        for (var i = 0; i < mapTileIds.length; i++) {
-            var mapTileId = mapTileIds[i];
-            var resourceTileId = resourceTileIds[i];
-            var buildingTileId = buildingTileIds[i];
-            var flagTileId = flagTileIds[i];
-            var position = new _objects_vector__WEBPACK_IMPORTED_MODULE_6__["Vector"](16 * (_tiledMap.length % _mapWidth), 16 * Math.floor(_tiledMap.length / _mapWidth));
-            var tileCropDetail = { x: 0, y: 0, width: 16, height: 16 };
-            var resourceTileType = void 0, buildingTileType = void 0;
-            if (resourceTileId > 0) {
-                resourceTileType = this.tileTypes[resourceTileId];
-            }
-            if (buildingTileId > 0) {
-                buildingTileType = this.tileTypes[buildingTileId];
-            }
-            var tile = new _objects_tile__WEBPACK_IMPORTED_MODULE_4__["Tile"](_tiledMap.length, this.tileTypes[mapTileId], resourceTileType, buildingTileType, false, position, tileCropDetail, 50, this.resourcesService);
-            var flagTileType = this.tileTypes[flagTileId];
-            if (flagTileType === _objects_tile__WEBPACK_IMPORTED_MODULE_4__["BuildingTileType"].EnemyPortal) {
-                this.enemySpawnTiles.push(tile);
-            }
-            _tiledMap.push(tile);
+        var imageElementContainer = document.getElementById('tile-images');
+        for (var i = 0; i < imageElementContainer.children.length; i++) {
+            var imageElement = imageElementContainer.children[i];
+            this.imageElements[imageElement.id] = imageElement;
         }
-        this.tiledMap = _tiledMap;
-        this.mapWidth = _mapWidth;
-        this.mapHeight = _mapHeight;
+    }
+    MapService.prototype.seedRng = function (seed) {
+        this.prngSeed = seed;
+        this.rng = prng_parkmiller_js__WEBPACK_IMPORTED_MODULE_7__["create"](seed);
+        this.mapSeed = this.rng.nextInt();
+        this.resourceSeed = this.rng.nextInt();
+    };
+    MapService.prototype.initializeMap = function () {
+        var _this = this;
+        this.tileMap = [];
+        for (var y = 0; y < this.totalChunkY; y++) {
+            for (var x = 0; x < this.totalChunkX; x++) {
+                this.generateChunk(x, y);
+            }
+        }
+        // Placing home (unless one already exists)
+        // We want to place the home closer to the center of the map.
+        var homeTile = this.getRandomTile([_objects_tile__WEBPACK_IMPORTED_MODULE_4__["MapTileType"].Grass], true, this.totalChunkX * 0.4 * this.chunkWidth, this.totalChunkX * 0.6 * this.chunkWidth, this.totalChunkY * 0.4 * this.chunkHeight, this.totalChunkY * 0.6 * this.chunkHeight);
+        homeTile.buildingTileType = _objects_tile__WEBPACK_IMPORTED_MODULE_4__["BuildingTileType"].Home;
+        homeTile.buildingRemovable = false;
+        // Placing an oak tree & stone mine near the home, to ensure they're always available.
+        // We want to vary up their positions a bit to feel more natural.
+        var grassTiles = [], mountainTiles = [];
+        var placedRoads = [];
+        var oakTile, stoneTile;
+        var currentTile = homeTile;
+        for (var i = 0; i < this.rng.nextIntRange(7, 16); i++) {
+            var neighbors = this.getNeighborTiles(currentTile);
+            var existingOakTile = neighbors.find(function (tile) { return tile.resourceTileType === _objects_tile__WEBPACK_IMPORTED_MODULE_4__["ResourceTileType"].OakTree; });
+            if (existingOakTile) {
+                oakTile = existingOakTile;
+            }
+            var existingStoneTile = neighbors.find(function (tile) { return tile.resourceTileType === _objects_tile__WEBPACK_IMPORTED_MODULE_4__["ResourceTileType"].StoneMine; });
+            if (existingStoneTile) {
+                stoneTile = existingStoneTile;
+            }
+            grassTiles = grassTiles.concat(neighbors.filter(function (tile) { return tile.mapTileType === _objects_tile__WEBPACK_IMPORTED_MODULE_4__["MapTileType"].Grass; }));
+            mountainTiles = mountainTiles.concat(neighbors.filter(function (tile) { return tile.mapTileType === _objects_tile__WEBPACK_IMPORTED_MODULE_4__["MapTileType"].Mountain; }));
+            neighbors = neighbors.filter(function (tile) { return !tile.buildingTileType && !tile.resourceTileType && tile.mapTileType === _objects_tile__WEBPACK_IMPORTED_MODULE_4__["MapTileType"].Grass; });
+            if (!neighbors.length) {
+                currentTile = grassTiles[this.rng.nextIntRange(0, grassTiles.length - 1)];
+            }
+            else {
+                currentTile = neighbors[this.rng.nextIntRange(0, neighbors.length - 1)];
+            }
+            currentTile.buildingTileType = _objects_tile__WEBPACK_IMPORTED_MODULE_4__["BuildingTileType"].Road;
+            placedRoads.push(currentTile);
+        }
+        grassTiles = grassTiles.filter(function (tile) { return !tile.buildingTileType && !tile.resourceTileType; });
+        mountainTiles = mountainTiles.filter(function (tile) { return !tile.buildingTileType && !tile.resourceTileType; });
+        if (!oakTile) {
+            oakTile = grassTiles[this.rng.nextIntRange(0, grassTiles.length - 1)];
+            grassTiles = grassTiles.filter(function (tile) { return tile !== oakTile; });
+        }
+        if (!stoneTile) {
+            stoneTile = mountainTiles.length ? mountainTiles[this.rng.nextIntRange(0, mountainTiles.length - 1)] :
+                grassTiles[this.rng.nextIntRange(0, grassTiles.length - 1)];
+        }
+        oakTile.resourceTileType = _objects_tile__WEBPACK_IMPORTED_MODULE_4__["ResourceTileType"].OakTree;
+        stoneTile.resourceTileType = _objects_tile__WEBPACK_IMPORTED_MODULE_4__["ResourceTileType"].StoneMine;
+        this.updatePaths(homeTile, true);
+        for (var _i = 0, placedRoads_1 = placedRoads; _i < placedRoads_1.length; _i++) {
+            var roadTile = placedRoads_1[_i];
+            if (!oakTile.buildingPath.includes(roadTile) && !stoneTile.buildingPath.includes(roadTile)) {
+                roadTile.buildingTileType = undefined;
+            }
+            else {
+                roadTile.buildingRemovable = false;
+            }
+        }
+        // Final sweep to make sure all spawnable resources exist at least once.
+        var naturalResources = Array.from(this.resourceTiles.values());
+        naturalResources = naturalResources.filter(function (resource) { return resource.isNaturalResource; });
+        naturalResources = naturalResources.filter(function (resource) { return !_this.tileMap.some(function (tile) { return tile.resourceTileType === resource.tileType; }); });
+        for (var _a = 0, naturalResources_1 = naturalResources; _a < naturalResources_1.length; _a++) {
+            var missingResource = naturalResources_1[_a];
+            var resourceTile = this.getRandomTile(missingResource.spawnsOn, true);
+            resourceTile.resourceTileType = missingResource.tileType;
+        }
         this.calculateResourceConnections();
+        this.onMapUpdate.emit();
+    };
+    MapService.prototype.generateChunk = function (chunkX, chunkY) {
+        var _this = this;
+        var mapGen = new simplex_noise__WEBPACK_IMPORTED_MODULE_8__(this.mapSeed.toString());
+        var resourceGen = new simplex_noise__WEBPACK_IMPORTED_MODULE_8__(this.resourceSeed.toString());
+        var chunkTopLeft = new _objects_vector__WEBPACK_IMPORTED_MODULE_6__["Vector"](chunkX * this.chunkWidth, chunkY * this.chunkHeight);
+        var chunkBottomRight = new _objects_vector__WEBPACK_IMPORTED_MODULE_6__["Vector"](chunkTopLeft.x + this.chunkWidth, chunkTopLeft.y + this.chunkHeight);
+        // Creating the map itself
+        for (var y = chunkTopLeft.y; y < chunkBottomRight.y; y++) {
+            for (var x = chunkTopLeft.x; x < chunkBottomRight.x; x++) {
+                var noiseValue = this.adjustedNoise(x, y, mapGen);
+                var tileId = this.getChunkOffset(x, y) + y * this.chunkWidth + x;
+                var tile = new _objects_tile__WEBPACK_IMPORTED_MODULE_4__["Tile"](tileId, this.getBiome(noiseValue), undefined, undefined, true, new _objects_vector__WEBPACK_IMPORTED_MODULE_6__["Vector"](16 * x, 16 * y), undefined, 50, noiseValue, this.resourcesService);
+                this.setTile(x, y, tile);
+            }
+        }
+        var centerVector = new _objects_vector__WEBPACK_IMPORTED_MODULE_6__["Vector"](this.totalChunkX * this.chunkWidth * this.tilePixelSize / 2, this.totalChunkY * this.chunkHeight * this.tilePixelSize / 2);
+        var maxTier = Math.max.apply(Math, this.resourcesService.getResources().map(function (resource) { return resource.resourceTier; }));
+        var tierRingSize = centerVector.magnitude / maxTier;
+        // Placing resources
+        for (var y = chunkTopLeft.y; y < chunkBottomRight.y; y++) {
+            var _loop_1 = function (x) {
+                var adjustX = x / this_1.chunkWidth - 0.5, adjustY = y / this_1.chunkHeight - 0.5;
+                var noiseValue = this_1.noise(adjustX, adjustY, resourceGen);
+                var maxNoise = 0;
+                var scanRange = 2;
+                // Check nearby tiles to see if this tile is higher than all of them
+                for (var ny = y - scanRange; ny < y + scanRange; ny++) {
+                    for (var nx = x - scanRange; nx < x + scanRange; nx++) {
+                        var neighborTile = this_1.getTile(nx, ny);
+                        if (neighborTile && neighborTile.noiseValue > maxNoise) {
+                            maxNoise = neighborTile.noiseValue;
+                        }
+                    }
+                }
+                var tile = this_1.getTile(x, y);
+                if (tile.noiseValue === maxNoise) {
+                    var distanceToCenter = new _objects_vector__WEBPACK_IMPORTED_MODULE_6__["Vector"](Math.abs(tile.x - centerVector.x), Math.abs(tile.y - centerVector.y)).magnitude;
+                    var tierValue_1 = Math.floor(distanceToCenter / tierRingSize);
+                    var naturalResources = Array.from(this_1.resourceTiles.values());
+                    naturalResources = naturalResources.filter(function (resource) { return resource.spawnsOn.includes(tile.mapTileType); });
+                    naturalResources = naturalResources.filter(function (resource) {
+                        var resourceTiers = resource.resourceEnums.map(function (resourceEnum) {
+                            return _this.resourcesService.resources.get(resourceEnum).resourceTier;
+                        });
+                        return resourceTiers.some(function (tier) { return tierValue_1 - tier <= 3; });
+                    });
+                    if (!naturalResources.length) {
+                        return "continue";
+                    }
+                    var rollRange = naturalResources.map(function (resource) { return resource.spawnRate; }).reduce(function (total, rate) { return total += rate; });
+                    var resourceDiceRoll = this_1.rng.nextDouble() * rollRange;
+                    for (var _i = 0, naturalResources_2 = naturalResources; _i < naturalResources_2.length; _i++) {
+                        var resource = naturalResources_2[_i];
+                        resourceDiceRoll -= resource.spawnRate;
+                        if (resourceDiceRoll <= 0) {
+                            tile.resourceTileType = resource.tileType;
+                            break;
+                        }
+                    }
+                }
+            };
+            var this_1 = this;
+            for (var x = chunkTopLeft.x; x < chunkBottomRight.x; x++) {
+                _loop_1(x);
+            }
+        }
+    };
+    MapService.prototype.clearChunk = function (chunkX, chunkY) {
+        var chunkTopLeft = new _objects_vector__WEBPACK_IMPORTED_MODULE_6__["Vector"](chunkX * this.chunkWidth, chunkY * this.chunkHeight);
+        var chunkBottomRight = new _objects_vector__WEBPACK_IMPORTED_MODULE_6__["Vector"](chunkTopLeft.x + this.chunkWidth, chunkTopLeft.y + this.chunkHeight);
+        // TODO: Store building data outside of tile map, simulate offscreen production
+        for (var y = chunkTopLeft.y; y < chunkBottomRight.y; y++) {
+            for (var x = chunkTopLeft.x; x < chunkBottomRight.x; x++) {
+                this.setTile(x, y, undefined);
+            }
+        }
     };
     MapService.prototype.tick = function (elapsed, deltaTime) {
         for (var _i = 0, _a = this.resourceAnimations; _i < _a.length; _i++) {
@@ -4794,7 +5107,7 @@ var MapService = /** @class */ (function () {
                 resourceAnimation.finishAnimation();
             }
         }
-        for (var _b = 0, _c = this.tiledMap.filter(function (_tile) { return _tile.market; }); _b < _c.length; _b++) {
+        for (var _b = 0, _c = this.tileMap.filter(function (_tile) { return _tile.market; }); _b < _c.length; _b++) {
             var tile = _c[_b];
             tile.market.tick(elapsed, deltaTime);
         }
@@ -4805,6 +5118,61 @@ var MapService = /** @class */ (function () {
         }
         this.projectiles = this.projectiles.filter(function (projectile) { return !projectile.hitTarget; });
     };
+    MapService.prototype.adjustedNoise = function (x, y, generator) {
+        var nx = x / this.chunkWidth - 0.5, ny = y / this.chunkHeight - 0.5;
+        var noiseValue = this.noise(1 * nx, 1 * ny, generator) +
+            0.25 * this.noise(4 * nx, 4 * ny, generator) +
+            0.125 * this.noise(8 * nx, 8 * ny, generator);
+        return Math.pow(noiseValue, 6);
+    };
+    MapService.prototype.noise = function (x, y, generator) {
+        return generator.noise2D(x, y) / 2 + 0.5;
+    };
+    MapService.prototype.getBiome = function (noiseValue) {
+        if (noiseValue <= 0.25) {
+            return _objects_tile__WEBPACK_IMPORTED_MODULE_4__["MapTileType"].Water;
+        }
+        else if (noiseValue < 0.9999999) {
+            return _objects_tile__WEBPACK_IMPORTED_MODULE_4__["MapTileType"].Grass;
+        }
+        else {
+            return _objects_tile__WEBPACK_IMPORTED_MODULE_4__["MapTileType"].Mountain;
+        }
+    };
+    MapService.prototype.updatePaths = function (updatedTile, onlyPathable) {
+        var _this = this;
+        var visitedTiles = [];
+        var tileQueue = [];
+        var currentTile;
+        tileQueue.push(updatedTile);
+        var homeTile = this.tileMap.filter(function (tile) { return tile.buildingTileType === _objects_tile__WEBPACK_IMPORTED_MODULE_4__["BuildingTileType"].Home; })[0];
+        while (tileQueue.length) {
+            currentTile = tileQueue.pop();
+            var neighborTiles = this.getNeighborTiles(currentTile);
+            visitedTiles.push(currentTile);
+            for (var _i = 0, neighborTiles_1 = neighborTiles; _i < neighborTiles_1.length; _i++) {
+                var neighbor = neighborTiles_1[_i];
+                var buildingTile = this.buildingTiles.get(neighbor.buildingTileType);
+                if (!visitedTiles.includes(neighbor) &&
+                    (!onlyPathable || ((buildingTile && buildingTile.resourcePathable)) || neighbor.resourceTileType)) {
+                    tileQueue.push(neighbor);
+                }
+            }
+            if (!currentTile.resourceTileType) {
+                continue;
+            }
+            this.findPath(currentTile, homeTile, true, true).subscribe(function (tilePath) {
+                currentTile.buildingPath = tilePath;
+                var pathAvailable = currentTile.buildingPath.length && !currentTile.buildingPath.some(function (tile) { return tile.health <= 0; });
+                var resources = _this.resourceTiles.get(currentTile.resourceTileType).resourceEnums
+                    .map(function (resourceEnum) { return _this.resourcesService.resources.get(resourceEnum); });
+                for (var _i = 0, resources_1 = resources; _i < resources_1.length; _i++) {
+                    var resource = resources_1[_i];
+                    resource.pathAvailable = pathAvailable;
+                }
+            });
+        }
+    };
     MapService.prototype.calculateResourceConnections = function () {
         var _this = this;
         var resourceTiles = this.getResourceTiles();
@@ -4812,29 +5180,29 @@ var MapService = /** @class */ (function () {
             var resource = _a[_i];
             resource.pathAvailable = false;
         }
-        var homeTile = this.tiledMap.filter(function (tile) { return tile.buildingTileType === _objects_tile__WEBPACK_IMPORTED_MODULE_4__["BuildingTileType"].Home; })[0];
-        var _loop_1 = function (resourceTile) {
+        var homeTile = this.tileMap.filter(function (tile) { return tile.buildingTileType === _objects_tile__WEBPACK_IMPORTED_MODULE_4__["BuildingTileType"].Home; })[0];
+        var _loop_2 = function (resourceTile) {
             if (resourceTile.health <= 0) {
                 return "continue";
             }
-            this_1.findPath(resourceTile, homeTile, true, true).subscribe(function (tilePath) {
+            this_2.findPath(resourceTile, homeTile, true, true).subscribe(function (tilePath) {
                 resourceTile.buildingPath = tilePath;
                 if (resourceTile.buildingPath.length && !resourceTile.buildingPath.some(function (tile) { return tile.health <= 0; })) {
                     var resources = _this.resourceTiles.get(resourceTile.resourceTileType).resourceEnums
                         .map(function (resourceEnum) { return _this.resourcesService.resources.get(resourceEnum); });
-                    for (var _i = 0, resources_1 = resources; _i < resources_1.length; _i++) {
-                        var resource = resources_1[_i];
+                    for (var _i = 0, resources_2 = resources; _i < resources_2.length; _i++) {
+                        var resource = resources_2[_i];
                         resource.pathAvailable = true;
                     }
                 }
             });
         };
-        var this_1 = this;
+        var this_2 = this;
         for (var _b = 0, resourceTiles_1 = resourceTiles; _b < resourceTiles_1.length; _b++) {
             var resourceTile = resourceTiles_1[_b];
-            _loop_1(resourceTile);
+            _loop_2(resourceTile);
         }
-        for (var _c = 0, _d = this.tiledMap.filter(function (tile) { return tile.market; }); _c < _d.length; _c++) {
+        for (var _c = 0, _d = this.tileMap.filter(function (tile) { return tile.market; }); _c < _d.length; _c++) {
             var marketTile = _d[_c];
             marketTile.market.calculateConnection();
         }
@@ -4843,8 +5211,8 @@ var MapService = /** @class */ (function () {
         if (maxAttempts === void 0) { maxAttempts = Infinity; }
         var visitedTiles = [];
         var tileQueue = [];
-        var tileDistances = this.tiledMap.map(function (_) { return Infinity; });
-        var tileHeuristicDistances = this.tiledMap.map(function (_) { return Infinity; });
+        var tileDistances = this.tileMap.map(function (_) { return Infinity; });
+        var tileHeuristicDistances = this.tileMap.map(function (_) { return Infinity; });
         var nodeMap = new Map();
         var currentNode;
         tileDistances[startTile.id] = 0;
@@ -4855,8 +5223,8 @@ var MapService = /** @class */ (function () {
             if (nodesProcessed > maxAttempts) {
                 break;
             }
-            currentNode = tileQueue.sort(function (a, b) { return tileHeuristicDistances[a.id] - tileHeuristicDistances[b.id]; })[0];
-            tileQueue = tileQueue.filter(function (tile) { return tile !== currentNode; });
+            tileQueue = tileQueue.sort(function (a, b) { return tileHeuristicDistances[a.id] - tileHeuristicDistances[b.id]; });
+            currentNode = tileQueue.pop();
             if (currentNode === targetTile) {
                 var buildingPath = [];
                 var backtrackNode = currentNode;
@@ -4884,13 +5252,6 @@ var MapService = /** @class */ (function () {
         }
         return Object(rxjs__WEBPACK_IMPORTED_MODULE_1__["of"])([]);
     };
-    MapService.prototype.getRandomTile = function (tileTypes) {
-        var tiles = this.tiledMap;
-        if (tileTypes) {
-            tiles = tiles.filter(function (tile) { return tileTypes.some(function (tileType) { return tileType === tile.mapTileType; }); });
-        }
-        return tiles[Math.floor(Math.random() * tiles.length)];
-    };
     MapService.prototype.spawnHarvestedResourceAnimation = function (resource, multiplier, spawnedByPlayer) {
         if (multiplier === void 0) { multiplier = 1; }
         var matchingTiles = this.getResourceTiles(resource.resourceEnum).filter(function (_tile) { return _tile.buildingPath.length > 0; });
@@ -4915,6 +5276,24 @@ var MapService = /** @class */ (function () {
         var projectile = new _objects_entity__WEBPACK_IMPORTED_MODULE_5__["Projectile"]('Arrow', new _objects_vector__WEBPACK_IMPORTED_MODULE_6__["Vector"](owner.x, owner.y), owner.currentTile, 0.006, owner, target);
         this.projectiles.push(projectile);
     };
+    MapService.prototype.getRandomTile = function (tileTypes, avoidResources, minX, maxX, minY, maxY) {
+        var _this = this;
+        if (avoidResources === void 0) { avoidResources = false; }
+        if (minX === void 0) { minX = 0; }
+        if (maxX === void 0) { maxX = Infinity; }
+        if (minY === void 0) { minY = 0; }
+        if (maxY === void 0) { maxY = Infinity; }
+        var tiles = this.tileMap;
+        if (minX > 0 || minY > 0 || maxX < Infinity || maxY < Infinity) {
+            tiles = tiles.filter(function (_tile) { return _tile.x / _this.tilePixelSize >= minX && _tile.x / _this.tilePixelSize <= maxX &&
+                _tile.y / _this.tilePixelSize >= minY && _tile.y / _this.tilePixelSize <= maxY; });
+        }
+        var tile;
+        do {
+            tile = tiles[Math.floor(this.rng.nextDouble() * tiles.length)];
+        } while (!tile || !(!tileTypes || tileTypes.includes(tile.mapTileType)) || (avoidResources && tile.resourceTileType));
+        return tile;
+    };
     MapService.prototype.getNeighborTiles = function (tile) {
         var tileCoordinates = this.getTileCoordinates(tile);
         var neighborPositions = [
@@ -4926,52 +5305,69 @@ var MapService = /** @class */ (function () {
         var tiles = [];
         for (var _i = 0, neighborPositions_1 = neighborPositions; _i < neighborPositions_1.length; _i++) {
             var position = neighborPositions_1[_i];
-            if (position.x >= 0 && position.x < this.mapWidth &&
-                position.y >= 0 && position.y < this.mapHeight) {
+            if (position.x >= 0 && position.x < this.totalChunkX * this.chunkWidth &&
+                position.y >= 0 && position.y < this.totalChunkY * this.chunkHeight) {
                 tiles.push(this.getTile(position.x, position.y));
             }
         }
         return tiles;
     };
-    MapService.prototype.getRowCount = function () {
-        return this.mapHeight;
-    };
-    MapService.prototype.getColumnCount = function () {
-        return this.mapWidth;
-    };
     MapService.prototype.getTileCoordinates = function (tile) {
-        var tileIndex = this.tiledMap.indexOf(tile);
         return {
-            x: tileIndex % this.mapWidth,
-            y: Math.floor(tileIndex / this.mapWidth)
+            x: Math.floor(tile.x / this.tilePixelSize),
+            y: Math.floor(tile.y / this.tilePixelSize)
         };
     };
+    MapService.prototype.getChunkOffset = function (x, y) {
+        var chunkIndex = Math.floor(x / this.chunkWidth) + this.totalChunkX * Math.floor(y / this.chunkHeight);
+        return chunkIndex * this.chunkWidth * this.chunkHeight;
+    };
     MapService.prototype.getTile = function (x, y) {
-        return this.tiledMap[x + y * this.mapWidth];
+        return this.tileMap[this.getChunkOffset(x, y) + y * this.chunkWidth + x];
+    };
+    MapService.prototype.setTile = function (x, y, tile) {
+        this.tileMap[this.getChunkOffset(x, y) + y * this.chunkWidth + x] = tile;
+    };
+    MapService.prototype.setCameraCenter = function (center) {
+        var bounds = this.getMapCameraBounds();
+        var oldCenter = bounds[1].add(bounds[0]).multiply(0.5);
+        var centerOffset = oldCenter.subtract(bounds[0]);
+        this.transform.x = center.x + centerOffset.x;
+        this.transform.y = center.y + centerOffset.y;
+        var newBounds = this.getMapCameraBounds();
+        var upperLeftBorder = [0, 0];
+        var bottomRightBorder = [-this.totalChunkX * this.chunkWidth * this.tilePixelSize,
+            -this.totalChunkY * this.chunkHeight * this.tilePixelSize];
+        // Adjust the camera to stay in-bounds
+        if (this.transform.x > upperLeftBorder[0]) {
+            this.transform.x = upperLeftBorder[0];
+        }
+        else if (-newBounds[1].x < bottomRightBorder[0]) {
+            this.transform.x = (bottomRightBorder[0] + centerOffset.x * 2) * this.transform.k;
+        }
+        if (this.transform.y > upperLeftBorder[1]) {
+            this.transform.y = upperLeftBorder[1];
+        }
+        else if (-newBounds[1].y < bottomRightBorder[1]) {
+            this.transform.y = (bottomRightBorder[1] + centerOffset.y * 2) * this.transform.k;
+        }
     };
     MapService.prototype.clampTileCoordinates = function (x, y) {
         return [Math.floor(x / this.tilePixelSize), Math.floor(y / this.tilePixelSize)];
     };
     MapService.prototype.getResourceTiles = function (resourceEnum) {
-        var tiles = this.tiledMap.filter(function (tile) { return tile.resourceTileType !== undefined; });
-        if (resourceEnum !== undefined) {
+        var tiles = this.tileMap.filter(function (tile) { return tile.resourceTileType; });
+        if (resourceEnum) {
             var matchingTypes_1 = Array.from(this.resourceTiles.values()).filter(function (tile) { return tile.resourceEnums.includes(resourceEnum); }).map(function (tile) { return tile.tileType; });
             tiles = tiles.filter(function (tile) { return matchingTypes_1.includes(tile.resourceTileType); });
         }
         return tiles;
     };
-    MapService.prototype.getTileType = function (tileId) {
-        if (tileId in [37, 38, 39, 40, 41, 42, 43, 44, 54, 55, 56, 57, 58, 59, 60, 61, 71, 72, 73, 74, 75, 76, 77, 78, 88,
-            89, 90, 91, 92, 93, 94, 95, 105, 106, 107, 108, 109, 110, 111, 112, 123, 124, 125, 126, 127, 128, 129, 130]) {
-            return _objects_tile__WEBPACK_IMPORTED_MODULE_4__["MapTileType"].Grass;
-        }
-        else if (tileId in [53, 122]) {
-            return _objects_tile__WEBPACK_IMPORTED_MODULE_4__["MapTileType"].Water;
-        }
-        return _objects_tile__WEBPACK_IMPORTED_MODULE_4__["MapTileType"].Mountain;
-    };
-    MapService.prototype.getTileCropDetail = function (tileId) {
-        return { x: 0, y: 0, width: 16, height: 16 };
+    MapService.prototype.getMapCameraBounds = function (extendedBorder) {
+        if (extendedBorder === void 0) { extendedBorder = 0; }
+        var upperLeftPixel = new _objects_vector__WEBPACK_IMPORTED_MODULE_6__["Vector"]((-this.transform.x - this.tilePixelSize * extendedBorder) / this.transform.k, (-this.transform.y - this.tilePixelSize * extendedBorder) / this.transform.k);
+        var lowerRightPixel = new _objects_vector__WEBPACK_IMPORTED_MODULE_6__["Vector"](upperLeftPixel.x + (this.canvasPixelWidth + this.tilePixelSize * extendedBorder) / this.transform.k, upperLeftPixel.y + (this.canvasPixelHeight + this.tilePixelSize * extendedBorder) / this.transform.k);
+        return [upperLeftPixel, lowerRightPixel];
     };
     MapService = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
@@ -5350,6 +5746,7 @@ var SettingsService = /** @class */ (function () {
         this.resourcesService.loadBaseResources();
         this.upgradesService.loadBaseUpgrades();
         this.workersService.loadBaseWorkers();
+        this.mapService.seedRng(Math.random());
         this.mapService.initializeMap();
         this.enemyService.enemies = [];
         this.fighterService.fighters = [];
@@ -5400,7 +5797,8 @@ var SettingsService = /** @class */ (function () {
                 slimInterface: this.slimInterface,
                 organizeLeftPanelByType: this.organizeLeftPanelByType,
                 mapLowFramerate: this.mapLowFramerate,
-                resourceAnimationColors: this.resourceAnimationColors
+                resourceAnimationColors: this.resourceAnimationColors,
+                prngSeed: this.mapService.prngSeed
             },
             foodStockpile: this.workersService.foodStockpile,
             gameVersion: this.gameVersion
@@ -5432,9 +5830,9 @@ var SettingsService = /** @class */ (function () {
             }
             saveData.workers.push(workerData);
         }
-        for (var _f = 0, _g = this.mapService.tiledMap; _f < _g.length; _f++) {
+        for (var _f = 0, _g = this.mapService.tileMap; _f < _g.length; _f++) {
             var tile = _g[_f];
-            if (tile.buildingTileType === undefined && tile.buildingTileType !== _objects_tile__WEBPACK_IMPORTED_MODULE_13__["BuildingTileType"].EnemyPortal) {
+            if (!tile || tile.buildingTileType === undefined && tile.buildingTileType !== _objects_tile__WEBPACK_IMPORTED_MODULE_13__["BuildingTileType"].EnemyPortal) {
                 continue;
             }
             var tileData = {
@@ -5509,6 +5907,34 @@ var SettingsService = /** @class */ (function () {
             if (!saveData.gameVersion) {
                 throw new Error('Save data is incompatible with the current version.');
             }
+            if (saveData.settings !== undefined) {
+                this.autosaveInterval = saveData.settings.autosaveInterval ? saveData.settings.autosaveInterval : 900000;
+                this.debugMode = saveData.settings.debugMode ? saveData.settings.debugMode : false;
+                this.resourcesService.highestTierReached = saveData.settings.highestTierReached ? saveData.settings.highestTierReached : 0;
+                this.workersService.workersPaused = saveData.settings.workersPaused ? saveData.settings.workersPaused : false;
+                this.upgradesService.hidePurchasedUpgrades =
+                    saveData.settings.hidePurchasedUpgrades ? saveData.settings.hidePurchasedUpgrades : false;
+                this.resourceBinds = saveData.settings.resourceBinds ? saveData.settings.resourceBinds : defaultResourceBinds;
+                this.bindSelected.setValue(this.resourceBinds);
+                this.resourceBindChange({ 'source': null, 'value': this.resourceBinds });
+                this.messagesService.visibleSources = saveData.settings.visibleSources ? saveData.settings.visibleSources :
+                    [_objects_message__WEBPACK_IMPORTED_MODULE_15__["MessageSource"].Admin, _objects_message__WEBPACK_IMPORTED_MODULE_15__["MessageSource"].Buildings, _objects_message__WEBPACK_IMPORTED_MODULE_15__["MessageSource"].Main, _objects_message__WEBPACK_IMPORTED_MODULE_15__["MessageSource"].Enemy,
+                        _objects_message__WEBPACK_IMPORTED_MODULE_15__["MessageSource"].Fighter, _objects_message__WEBPACK_IMPORTED_MODULE_15__["MessageSource"].Map, _objects_message__WEBPACK_IMPORTED_MODULE_15__["MessageSource"].Resources, _objects_message__WEBPACK_IMPORTED_MODULE_15__["MessageSource"].Settings,
+                        _objects_message__WEBPACK_IMPORTED_MODULE_15__["MessageSource"].Store, _objects_message__WEBPACK_IMPORTED_MODULE_15__["MessageSource"].Upgrades, _objects_message__WEBPACK_IMPORTED_MODULE_15__["MessageSource"].Workers];
+                this.enemyService.enemiesActive = saveData.settings.enemiesActive ? saveData.settings.enemiesActive : false;
+                this.slimInterface = saveData.settings.slimInterface ? saveData.settings.slimInterface : false;
+                this.organizeLeftPanelByType = saveData.settings.organizeLeftPanelByType ? saveData.settings.organizeLeftPanelByType : true;
+                this.mapLowFramerate = saveData.settings.mapLowFramerate ? saveData.settings.mapLowFramerate : false;
+                this.harvestDetailColor = saveData.settings.harvestDetailColor ? saveData.settings.harvestDetailColor : '#a4ff89';
+                this.workerDetailColor = saveData.settings.workerDetailColor ? saveData.settings.workerDetailColor : '#ae89ff';
+                if (saveData.settings.resourceAnimationColors) {
+                    this.resourceAnimationColors = saveData.settings.resourceAnimationColors;
+                }
+                if (saveData.settings.prngSeed) {
+                    this.mapService.seedRng(saveData.settings.prngSeed);
+                    this.mapService.initializeMap();
+                }
+            }
             if (saveData.resources !== undefined) {
                 for (var _i = 0, _a = saveData.resources; _i < _a.length; _i++) {
                     var resourceData = _a[_i];
@@ -5552,8 +5978,8 @@ var SettingsService = /** @class */ (function () {
             }
             if (saveData.tiles !== undefined) {
                 var _loop_1 = function (tileData) {
-                    var tile = this_1.mapService.tiledMap.find(function (_tile) { return _tile.id === tileData.id; });
-                    if (tile === undefined) {
+                    var tile = this_1.mapService.tileMap.find(function (_tile) { return _tile && _tile.id === tileData.id; });
+                    if (!tile || [_objects_tile__WEBPACK_IMPORTED_MODULE_13__["BuildingTileType"].Home, _objects_tile__WEBPACK_IMPORTED_MODULE_13__["BuildingTileType"].EnemyPortal].includes(tileData.buildingTileType)) {
                         return "continue";
                     }
                     tile.health = tileData.health ? tileData.health : 50;
@@ -5573,7 +5999,7 @@ var SettingsService = /** @class */ (function () {
                 var marketTiles = saveData.tiles.filter(function (tile) { return tile.buildingTileType && _this.mapService.buildingTiles.get(tile.buildingTileType).subType === _objects_tile__WEBPACK_IMPORTED_MODULE_13__["BuildingSubType"].Market; });
                 for (var _k = 0, marketTiles_1 = marketTiles; _k < marketTiles_1.length; _k++) {
                     var tileData = marketTiles_1[_k];
-                    var tile = this.mapService.tiledMap[tileData.id];
+                    var tile = this.mapService.tileMap[tileData.id];
                     var resourceType = void 0;
                     switch (tileData.buildingTileType) {
                         case _objects_tile__WEBPACK_IMPORTED_MODULE_13__["BuildingTileType"].WoodMarket: {
@@ -5620,30 +6046,6 @@ var SettingsService = /** @class */ (function () {
                         fighter.statCosts = fighterData.statCosts;
                     }
                     this.fighterService.fighters.push(fighter);
-                }
-            }
-            if (saveData.settings !== undefined) {
-                this.autosaveInterval = saveData.settings.autosaveInterval ? saveData.settings.autosaveInterval : 900000;
-                this.debugMode = saveData.settings.debugMode ? saveData.settings.debugMode : false;
-                this.resourcesService.highestTierReached = saveData.settings.highestTierReached ? saveData.settings.highestTierReached : 0;
-                this.workersService.workersPaused = saveData.settings.workersPaused ? saveData.settings.workersPaused : false;
-                this.upgradesService.hidePurchasedUpgrades =
-                    saveData.settings.hidePurchasedUpgrades ? saveData.settings.hidePurchasedUpgrades : false;
-                this.resourceBinds = saveData.settings.resourceBinds ? saveData.settings.resourceBinds : defaultResourceBinds;
-                this.bindSelected.setValue(this.resourceBinds);
-                this.resourceBindChange({ 'source': null, 'value': this.resourceBinds });
-                this.messagesService.visibleSources = saveData.settings.visibleSources ? saveData.settings.visibleSources :
-                    [_objects_message__WEBPACK_IMPORTED_MODULE_15__["MessageSource"].Admin, _objects_message__WEBPACK_IMPORTED_MODULE_15__["MessageSource"].Buildings, _objects_message__WEBPACK_IMPORTED_MODULE_15__["MessageSource"].Main, _objects_message__WEBPACK_IMPORTED_MODULE_15__["MessageSource"].Enemy,
-                        _objects_message__WEBPACK_IMPORTED_MODULE_15__["MessageSource"].Fighter, _objects_message__WEBPACK_IMPORTED_MODULE_15__["MessageSource"].Map, _objects_message__WEBPACK_IMPORTED_MODULE_15__["MessageSource"].Resources, _objects_message__WEBPACK_IMPORTED_MODULE_15__["MessageSource"].Settings,
-                        _objects_message__WEBPACK_IMPORTED_MODULE_15__["MessageSource"].Store, _objects_message__WEBPACK_IMPORTED_MODULE_15__["MessageSource"].Upgrades, _objects_message__WEBPACK_IMPORTED_MODULE_15__["MessageSource"].Workers];
-                this.enemyService.enemiesActive = saveData.settings.enemiesActive ? saveData.settings.enemiesActive : false;
-                this.slimInterface = saveData.settings.slimInterface ? saveData.settings.slimInterface : false;
-                this.organizeLeftPanelByType = saveData.settings.organizeLeftPanelByType ? saveData.settings.organizeLeftPanelByType : true;
-                this.mapLowFramerate = saveData.settings.mapLowFramerate ? saveData.settings.mapLowFramerate : false;
-                this.harvestDetailColor = saveData.settings.harvestDetailColor ? saveData.settings.harvestDetailColor : '#a4ff89';
-                this.workerDetailColor = saveData.settings.workerDetailColor ? saveData.settings.workerDetailColor : '#ae89ff';
-                if (saveData.settings.resourceAnimationColors) {
-                    this.resourceAnimationColors = saveData.settings.resourceAnimationColors;
                 }
             }
             this.workersService.foodStockpile = saveData.foodStockpile ? saveData.foodStockpile : 0;
@@ -5719,6 +6121,7 @@ var SettingsService = /** @class */ (function () {
             });
         }
         if (oldVersionIndex <= this.versionHistory.indexOf('Alpha 3.1')) {
+            saveData.purchasedUpgrades = saveData.upgrades.map(function (upgrade) { return upgrade.id; });
             for (var _b = 0, _c = saveData.resources; _b < _c.length; _b++) {
                 var resourceData = _c[_b];
                 resourceData.resourceEnum = legacyResourceIds[resourceData.id];
@@ -5746,14 +6149,16 @@ var SettingsService = /** @class */ (function () {
                 enemyData.resourcesToSteal = newResourcesToSteal;
                 enemyData.resourcesHeld = newResourcesHeld;
             }
-            saveData.settings.resourceBinds = saveData.settings.resourceBinds.map(function (resourceId) { return legacyResourceIds[resourceId]; });
+            if (saveData.settings.resourceBinds) {
+                saveData.settings.resourceBinds = saveData.settings.resourceBinds.map(function (resourceId) { return legacyResourceIds[resourceId]; });
+            }
             var accessedTiers = saveData.resources.filter(function (resource) { return resource.amount; }).map(function (resource) {
                 return _this.resourcesService.resources.get(resource.resourceEnum).resourceTier;
             });
             saveData.settings.highestTierReached = accessedTiers.sort()[accessedTiers.length - 1];
         }
-        if (oldVersionIndex <= this.versionHistory.indexOf('Alpha 3.1')) {
-            saveData.purchasedUpgrades = saveData.upgrades.map(function (upgrade) { return upgrade.id; });
+        if (oldVersionIndex <= this.versionHistory.indexOf('Alpha 3.3')) {
+            saveData.tiles = [];
         }
         return saveData;
     };
@@ -6224,7 +6629,6 @@ var WorkersService = /** @class */ (function () {
         this.mapService = mapService;
         this.messagesService = messagesService;
         this.workers = new Map();
-        this.workersPaused = false;
         this.foodStockpile = 0;
         this.foodCollectAmount = 1000;
         this.foodCollectInterval = 100;
@@ -6363,10 +6767,10 @@ module.exports = {"GOLD":{"name":"Gold","resourceType":"CURRENCY","resourceEnum"
 /*!****************************************!*\
   !*** ./src/assets/json/tileTypes.json ***!
   \****************************************/
-/*! exports provided: tileTypes, mapTiles, buildingTiles, resourceTiles, default */
+/*! exports provided: mapTiles, buildingTiles, resourceTiles, default */
 /***/ (function(module) {
 
-module.exports = {"tileTypes":{"1":"GRASS","2":"WATER","3":"MOUNTAIN","5":"OAKTREE","6":"PINETREE","7":"BIRCHTREE","8":"EUCALYPTUSTREE","9":"WILLOWTREE","10":"TEAKTREE","11":"DEADENT","12":"STONEMINE","13":"GRAPHITEMINE","14":"LIMESTONEMINE","15":"MARBLEMINE","16":"QUARTZMINE","17":"OBSIDIANMINE","18":"DIAMONDMINE","19":"COPPERMINE","20":"TINMINE","21":"IRONMINE","22":"GOLDMINE","23":"LATINUMMINE","24":"UNBELIEVIUMMINE","25":"LUSTRIALMINE","26":"SPECTRUSMINE","27":"CRACKEDFORGE","28":"STONEFORGE","29":"IRONFORGE","30":"GOLDFORGE","31":"LATINUMFORGE","32":"TEMPROUSDISTILLERY","33":"WHEATFARM","35":"RAWPOTATOFARM","36":"RICEFARM","37":"FISHINGSPOT","74":"HOME","75":"WALL","76":"ROAD","77":"BRIDGE","78":"ENEMYPORTAL","79":"WOODMARKET","80":"MINERALMARKET","81":"METALMARKET","83":"OAKOVEN","84":"STONEOVEN","86":"MARBLEOVEN","87":"TEMPROUSOVEN","88":"CHICKENFARM","89":"COWFARM","90":"DRAGONFARM"},"mapTiles":{"GRASS":{"tileType":"GRASS","name":"Grass","walkable":true},"WATER":{"tileType":"WATER","name":"Water","walkable":false},"MOUNTAIN":{"tileType":"MOUNTAIN","name":"Mountain","walkable":false}},"buildingTiles":{"HOME":{"tileType":"HOME","subType":"MISC","name":"Home","description":"","placeable":false,"maxPlaceable":1,"baseHealth":50,"resourceCosts":[],"buildableSurfaces":[],"resourcePathable":true},"WALL":{"tileType":"WALL","subType":"MISC","name":"Wall","description":"Keeps invaders out.","placeable":true,"maxPlaceable":-1,"baseHealth":50,"repairResourceEnum":"OAK","repairCostPerPoint":0.2,"resourceCosts":[{"resourceEnum":"OAK","resourceCost":20}],"buildableSurfaces":["GRASS"],"resourcePathable":false},"ROAD":{"tileType":"ROAD","subType":"MISC","name":"Road","description":"Allows access between buildings.","placeable":true,"maxPlaceable":-1,"baseHealth":50,"repairResourceEnum":"STONE","repairCostPerPoint":0.2,"resourceCosts":[{"resourceEnum":"STONE","resourceCost":20}],"buildableSurfaces":["GRASS"],"resourcePathable":true},"BRIDGE":{"tileType":"BRIDGE","subType":"MISC","name":"Bridge","description":"Allows access between islands.","placeable":true,"maxPlaceable":-1,"baseHealth":50,"repairResourceEnum":"PINE","repairCostPerPoint":0.25,"resourceCosts":[{"resourceEnum":"PINE","resourceCost":40}],"buildableSurfaces":["WATER"],"resourcePathable":true},"CRACKEDFORGE":{"tileType":"CRACKEDFORGE","subType":"RESOURCE","name":"Cracked Forge","description":"An old, weary forge. Bronze ingots are probably all this thing is capable of producing.","placeable":true,"maxPlaceable":-1,"baseHealth":50,"repairResourceEnum":"GOLD","repairCostPerPoint":1,"upgradeBuilding":"STONEFORGE","resourceCosts":[{"resourceEnum":"GOLD","resourceCost":150}],"buildableSurfaces":["GRASS"],"placesResourceTile":true,"resourceTileType":"CRACKEDFORGE","resourcePathable":true},"STONEFORGE":{"tileType":"STONEFORGE","subType":"RESOURCE","name":"Stone Forge","description":"This forge burns hotter, allowing you to create more precious ingots.","placeable":false,"maxPlaceable":-1,"baseHealth":75,"repairResourceEnum":"GOLD","repairCostPerPoint":0.3,"upgradeBuilding":"IRONFORGE","resourceCosts":[{"resourceEnum":"BRONZEINGOT","resourceCost":20},{"resourceEnum":"STONE","resourceCost":50},{"resourceEnum":"PINE","resourceCost":75}],"buildableSurfaces":["GRASS"],"placesResourceTile":true,"resourceTileType":"STONEFORGE","resourcePathable":true},"IRONFORGE":{"tileType":"IRONFORGE","subType":"RESOURCE","name":"Iron Forge","description":"This forge burns hotter, allowing you to create more precious ingots.","placeable":false,"maxPlaceable":-1,"baseHealth":125,"repairResourceEnum":"IRONINGOT","repairCostPerPoint":0.3,"upgradeBuilding":"GOLDFORGE","resourceCosts":[{"resourceEnum":"IRONINGOT","resourceCost":500},{"resourceEnum":"EUCALYPTUS","resourceCost":700},{"resourceEnum":"MARBLE","resourceCost":250}],"buildableSurfaces":["GRASS"],"placesResourceTile":true,"resourceTileType":"IRONFORGE","resourcePathable":true},"GOLDFORGE":{"tileType":"GOLDFORGE","subType":"RESOURCE","name":"Gold Forge","description":"For reasons unknown to science, gold forges are particularly effective in forging latinum.","placeable":false,"maxPlaceable":-1,"baseHealth":150,"repairResourceEnum":"GOLDINGOT","repairCostPerPoint":0.35,"upgradeBuilding":"LATINUMFORGE","resourceCosts":[{"resourceEnum":"GOLDINGOT","resourceCost":1200},{"resourceEnum":"WILLOW","resourceCost":1500},{"resourceEnum":"QUARTZ","resourceCost":250}],"buildableSurfaces":["GRASS"],"placesResourceTile":true,"resourceTileType":"GOLDFORGE","resourcePathable":true},"LATINUMFORGE":{"tileType":"LATINUMFORGE","subType":"RESOURCE","name":"Latinum Forge","description":"A forge that burns hot enough to fuse together the world's most precious and rare metals.","placeable":false,"maxPlaceable":-1,"baseHealth":200,"repairResourceEnum":"LATINUMINGOT","repairCostPerPoint":0.5,"upgradeBuilding":"TEMPROUSDISTILLERY","resourceCosts":[{"resourceEnum":"LATINUMINGOT","resourceCost":2500},{"resourceEnum":"TEAK","resourceCost":1500},{"resourceEnum":"OBSIDIAN","resourceCost":700}],"buildableSurfaces":["GRASS"],"placesResourceTile":true,"resourceTileType":"LATINUMFORGE","resourcePathable":true},"TEMPROUSDISTILLERY":{"tileType":"TEMPROUSDISTILLERY","subType":"RESOURCE","name":"Temprous Distillery","description":"With this device, all impurities can be removed from temprous ingots, unlocking their limitless potential.","placeable":false,"maxPlaceable":-1,"baseHealth":350,"repairResourceEnum":"TEMPROUSINGOT","repairCostPerPoint":0.65,"resourceCosts":[{"resourceEnum":"TEMPROUSINGOT","resourceCost":5000},{"resourceEnum":"ENTSOUL","resourceCost":500},{"resourceEnum":"DIAMOND","resourceCost":1200}],"buildableSurfaces":["GRASS"],"placesResourceTile":true,"resourceTileType":"TEMPROUSDISTILLERY","resourcePathable":true},"WOODMARKET":{"tileType":"WOODMARKET","subType":"MARKET","name":"Wood Market","description":"A marketstand that automatically collects and sells wood resources. (Only one may be placed at a time.)","placeable":true,"maxPlaceable":1,"baseHealth":50,"repairResourceEnum":"GOLD","repairCostPerPoint":1,"resourceCosts":[{"resourceEnum":"GOLD","resourceCost":150}],"buildableSurfaces":["GRASS"],"placesResourceTile":false,"resourcePathable":true},"MINERALMARKET":{"tileType":"MINERALMARKET","subType":"MARKET","name":"Mineral Market","description":"A marketstand that automatically collects and sells mineral resources. (Only one may be placed at a time.)","placeable":true,"maxPlaceable":1,"baseHealth":50,"repairResourceEnum":"GOLD","repairCostPerPoint":1,"resourceCosts":[{"resourceEnum":"GOLD","resourceCost":150}],"buildableSurfaces":["GRASS"],"placesResourceTile":false,"resourcePathable":true},"METALMARKET":{"tileType":"METALMARKET","subType":"MARKET","name":"Metal Market","description":"A marketstand that automatically collects and sells metal resources. (Only one may be placed at a time.)","placeable":true,"maxPlaceable":1,"baseHealth":50,"repairResourceEnum":"GOLD","repairCostPerPoint":1,"resourceCosts":[{"resourceEnum":"GOLD","resourceCost":150}],"buildableSurfaces":["GRASS"],"placesResourceTile":false,"resourcePathable":true},"ENEMYPORTAL":{"tileType":"ENEMYPORTAL","subType":"MISC","name":"Enemy Portal","baseHealth":50,"description":"","placeable":false,"maxPlaceable":-1,"resourceCosts":[],"buildableSurfaces":[],"resourcePathable":true},"OAKOVEN":{"tileType":"OAKOVEN","subType":"RESOURCE","name":"Oak Oven","description":"Capable of heating up some basic kinds of food.","placeable":true,"maxPlaceable":-1,"baseHealth":50,"repairResourceEnum":"OAK","repairCostPerPoint":2,"upgradeBuilding":"STONEOVEN","resourceCosts":[{"resourceEnum":"OAK","resourceCost":50},{"resourceEnum":"STONE","resourceCost":25}],"buildableSurfaces":["GRASS"],"placesResourceTile":true,"resourceTileType":"OAKOVEN","resourcePathable":true},"STONEOVEN":{"tileType":"STONEOVEN","subType":"RESOURCE","name":"Stone Oven","description":"Its hardened stone structure allows you to cook more filling and nutritious meals.","placeable":false,"maxPlaceable":-1,"baseHealth":75,"repairResourceEnum":"STONE","repairCostPerPoint":3,"upgradeBuilding":"MARBLEOVEN","resourceCosts":[{"resourceEnum":"PINE","resourceCost":75},{"resourceEnum":"STONE","resourceCost":150}],"buildableSurfaces":["GRASS"],"placesResourceTile":true,"resourceTileType":"STONEOVEN","resourcePathable":true},"MARBLEOVEN":{"tileType":"MARBLEOVEN","subType":"RESOURCE","name":"Marble Oven","description":"Some would say that marble ovens are needlessly lavish. I say they have no imagination.","placeable":false,"maxPlaceable":-1,"baseHealth":75,"repairResourceEnum":"MARBLE","repairCostPerPoint":3,"upgradeBuilding":"TEMPROUSOVEN","resourceCosts":[{"resourceEnum":"MARBLE","resourceCost":600},{"resourceEnum":"GOLDINGOT","resourceCost":200},{"resourceEnum":"WILLOW","resourceCost":250}],"buildableSurfaces":["GRASS"],"placesResourceTile":true,"resourceTileType":"MARBLEOVEN","resourcePathable":true},"TEMPROUSOVEN":{"tileType":"TEMPROUSOVEN","subType":"RESOURCE","name":"Temprous Oven","description":"Utilizes the power of time itself to cook your food before you even find it!","placeable":false,"maxPlaceable":-1,"baseHealth":150,"repairResourceEnum":"TEMPROUSINGOT","repairCostPerPoint":5,"resourceCosts":[{"resourceEnum":"TEMPROUSINGOT","resourceCost":2350},{"resourceEnum":"ENTSOUL","resourceCost":60},{"resourceEnum":"DIAMOND","resourceCost":250}],"buildableSurfaces":["GRASS"],"placesResourceTile":true,"resourceTileType":"TEMPROUSOVEN","resourcePathable":true},"CHICKENFARM":{"tileType":"CHICKENFARM","subType":"RESOURCE","name":"Chicken Farm","description":"A small farm to provide a source of food for your workers.","placeable":true,"maxPlaceable":-1,"baseHealth":50,"repairResourceEnum":"EUCALYPTUS","repairCostPerPoint":3,"upgradeBuilding":"COWFARM","resourceCosts":[{"resourceEnum":"EUCALYPTUS","resourceCost":350},{"resourceEnum":"IRONINGOT","resourceCost":100}],"buildableSurfaces":["GRASS"],"placesResourceTile":true,"resourceTileType":"CHICKENFARM","resourcePathable":true},"COWFARM":{"tileType":"COWFARM","subType":"RESOURCE","name":"Cow Farm","description":"A larger farm that can feed more workers.","placeable":false,"maxPlaceable":-1,"baseHealth":100,"repairResourceEnum":"WILLOW","repairCostPerPoint":4,"upgradeBuilding":"DRAGONFARM","resourceCosts":[{"resourceEnum":"RAWCHICKEN","resourceCost":20},{"resourceEnum":"STEELINGOT","resourceCost":600},{"resourceEnum":"WILLOW","resourceCost":425}],"buildableSurfaces":["GRASS"],"placesResourceTile":true,"resourceTileType":"COWFARM","resourcePathable":true},"DRAGONFARM":{"tileType":"DRAGONFARM","subType":"RESOURCE","name":"Dragon Farm","description":"Fun for the whole family!","placeable":false,"maxPlaceable":-1,"baseHealth":150,"repairResourceEnum":"TEMPROUSINGOT","repairCostPerPoint":5,"resourceCosts":[{"resourceEnum":"RAWSTEAK","resourceCost":30},{"resourceEnum":"TEMPROUSINGOT","resourceCost":1200},{"resourceEnum":"DIAMOND","resourceCost":500}],"buildableSurfaces":["GRASS"],"placesResourceTile":true,"resourceTileType":"DRAGONFARM","resourcePathable":true}},"resourceTiles":{"OAKTREE":{"tileType":"OAKTREE","name":"Oak Tree","placeable":false,"resourceEnums":["OAK"]},"PINETREE":{"tileType":"PINETREE","name":"Pine Tree","placeable":false,"resourceEnums":["PINE"]},"BIRCHTREE":{"tileType":"BIRCHTREE","name":"Birch Tree","placeable":false,"resourceEnums":["BIRCH"]},"EUCALYPTUSTREE":{"tileType":"EUCALYPTUSTREE","name":"Eucalptus Tree","placeable":false,"resourceEnums":["EUCALYPTUS"]},"WILLOWTREE":{"tileType":"WILLOWTREE","name":"Willow Tree","placeable":false,"resourceEnums":["WILLOW"]},"TEAKTREE":{"tileType":"TEAKTREE","name":"Teak Tree","placeable":false,"resourceEnums":["TEAK"]},"DEADENT":{"tileType":"DEADENT","name":"Dead Ent","placeable":false,"resourceEnums":["ENTSOUL","REANIMATEDENT"]},"STONEMINE":{"tileType":"STONEMINE","name":"Stone Mine","placeable":false,"resourceEnums":["STONE"]},"GRAPHITEMINE":{"tileType":"GRAPHITEMINE","name":"Graphite Mine","placeable":false,"resourceEnums":["GRAPHITE"]},"LIMESTONEMINE":{"tileType":"LIMESTONEMINE","name":"Limestone Mine","placeable":false,"resourceEnums":["LIMESTONE"]},"MARBLEMINE":{"tileType":"MARBLEMINE","name":"Marble Mine","placeable":false,"resourceEnums":["MARBLE"]},"QUARTZMINE":{"tileType":"QUARTZMINE","name":"Quartz Mine","placeable":false,"resourceEnums":["QUARTZ"]},"OBSIDIANMINE":{"tileType":"OBSIDIANMINE","name":"Obsidian Mine","placeable":false,"resourceEnums":["OBSIDIAN"]},"DIAMONDMINE":{"tileType":"DIAMONDMINE","name":"Diamond Mine","placeable":false,"resourceEnums":["DIAMOND"]},"COPPERMINE":{"tileType":"COPPERMINE","name":"Copper Mine","placeable":false,"resourceEnums":["COPPERORE"]},"TINMINE":{"tileType":"TINMINE","name":"Tin Mine","placeable":false,"resourceEnums":["TINORE"]},"IRONMINE":{"tileType":"IRONMINE","name":"Iron Mine","placeable":false,"resourceEnums":["IRONORE"]},"GOLDMINE":{"tileType":"GOLDMINE","name":"Gold Mine","placeable":false,"resourceEnums":["GOLDORE"]},"LATINUMMINE":{"tileType":"LATINUMMINE","name":"Latinum Mine","placeable":false,"resourceEnums":["LATINUMORE"]},"UNBELIEVIUMMINE":{"tileType":"UNBELIEVIUMMINE","name":"Unbelievium Mine","placeable":false,"resourceEnums":["UNBELIEVIUMORE"]},"LUSTRIALMINE":{"tileType":"LUSTRIALMINE","name":"Lustrial Mine","placeable":false,"resourceEnums":["LUSTRIALORE"]},"SPECTRUSMINE":{"tileType":"SPECTRUSMINE","name":"Spectrus Mine","placeable":false,"resourceEnums":["SPECTRUSORE"]},"CRACKEDFORGE":{"tileType":"CRACKEDFORGE","name":"Cracked Forge","placeable":true,"resourceEnums":["BRONZEINGOT"]},"STONEFORGE":{"tileType":"STONEFORGE","name":"Stone Forge","placeable":true,"resourceEnums":["BRONZEINGOT","IRONINGOT"]},"IRONFORGE":{"tileType":"IRONFORGE","name":"Iron Forge","placeable":true,"resourceEnums":["BRONZEINGOT","IRONINGOT","STEELINGOT","GOLDINGOT"]},"GOLDFORGE":{"tileType":"GOLDFORGE","name":"Gold Forge","placeable":true,"resourceEnums":["BRONZEINGOT","IRONINGOT","STEELINGOT","GOLDINGOT","LATINUMINGOT"]},"LATINUMFORGE":{"tileType":"LATINUMFORGE","name":"Latinum Forge","placeable":true,"resourceEnums":["BRONZEINGOT","IRONINGOT","STEELINGOT","GOLDINGOT","LATINUMINGOT","TEMPROUSINGOT"]},"TEMPROUSDISTILLERY":{"tileType":"TEMPROUSDISTILLERY","name":"Temprous Distillery","placeable":true,"resourceEnums":["BRONZEINGOT","IRONINGOT","STEELINGOT","GOLDINGOT","LATINUMINGOT","TEMPROUSINGOT","REFINEDTEMPROUS"]},"FISHINGSPOT":{"tileType":"FISHINGSPOT","name":"Fishing Spot","placeable":false,"resourceEnums":["RAWHERRING","RAWBASS","RAWSHARK"]},"WHEATFARM":{"tileType":"WHEATFARM","name":"Wheat Farm","placeable":true,"resourceEnums":["WHEAT"]},"RAWPOTATOFARM":{"tileType":"RAWPOTATOFARM","name":"Raw Potato Farm","placeable":true,"resourceEnums":["RAWPOTATO"]},"RICEFARM":{"tileType":"RICEFARM","name":"Rice Farm","placeable":true,"resourceEnums":["RICE"]},"OAKDOCK":{"tileType":"OAKDOCK","name":"Oak Dock","placeable":true,"resourceEnums":["RAWHERRING"]},"OAKOVEN":{"tileType":"OAKOVEN","name":"Oak Oven","placeable":true,"resourceEnums":["BREAD","POTATO","HERRING"]},"STONEOVEN":{"tileType":"STONEOVEN","name":"Stone Oven","placeable":true,"resourceEnums":["BREAD","POTATO","HERRING","JELLYDONUT","HERRING","BASS"]},"MARBLEOVEN":{"tileType":"MARBLEOVEN","name":"Marble Oven","placeable":true,"resourceEnums":["BREAD","POTATO","HERRING","JELLYDONUT","HERRING","BASS","SHARK"]},"TEMPROUSOVEN":{"tileType":"TEMPROUSOVEN","name":"Temprous Oven","placeable":true,"resourceEnums":["BREAD","POTATO","HERRING","JELLYDONUT","HERRING","BASS","SHARK","CHICKEN","STEAK","DRAGONMEAT"]},"CHICKENFARM":{"tileType":"CHICKENFARM","name":"Chicken Farm","placeable":true,"resourceEnums":["RAWCHICKEN"]},"COWFARM":{"tileType":"COWFARM","name":"Cow Farm","placeable":true,"resourceEnums":["RAWCHICKEN","RAWSTEAK"]},"DRAGONFARM":{"tileType":"DRAGONFARM","name":"Dragon Farm","placeable":true,"resourceEnums":["RAWCHICKEN","RAWSTEAK","RAWDRAGONMEAT"]}}};
+module.exports = {"mapTiles":{"GRASS":{"tileType":"GRASS","name":"Grass","walkable":true},"WATER":{"tileType":"WATER","name":"Water","walkable":false},"MOUNTAIN":{"tileType":"MOUNTAIN","name":"Mountain","walkable":false}},"buildingTiles":{"HOME":{"tileType":"HOME","subType":"MISC","name":"Home","description":"","placeable":false,"maxPlaceable":1,"baseHealth":50,"resourceCosts":[],"buildableSurfaces":[],"resourcePathable":true},"WALL":{"tileType":"WALL","subType":"MISC","name":"Wall","description":"Keeps invaders out.","placeable":true,"maxPlaceable":-1,"baseHealth":50,"repairResourceEnum":"OAK","repairCostPerPoint":0.2,"resourceCosts":[{"resourceEnum":"OAK","resourceCost":20}],"buildableSurfaces":["GRASS"],"resourcePathable":false},"ROAD":{"tileType":"ROAD","subType":"MISC","name":"Road","description":"Allows access between buildings.","placeable":true,"maxPlaceable":-1,"baseHealth":50,"repairResourceEnum":"STONE","repairCostPerPoint":0.2,"resourceCosts":[{"resourceEnum":"STONE","resourceCost":20}],"buildableSurfaces":["GRASS"],"resourcePathable":true},"TUNNEL":{"tileType":"TUNNEL","subType":"MISC","name":"Tunnel","description":"Allows access to resources buried within rock.","placeable":true,"maxPlaceable":-1,"baseHealth":50,"repairResourceEnum":"STONE","repairCostPerPoint":0.2,"resourceCosts":[{"resourceEnum":"STONE","resourceCost":35}],"buildableSurfaces":["MOUNTAIN"],"resourcePathable":true},"BRIDGE":{"tileType":"BRIDGE","subType":"MISC","name":"Bridge","description":"Allows access between islands.","placeable":true,"maxPlaceable":-1,"baseHealth":50,"repairResourceEnum":"OAK","repairCostPerPoint":0.25,"resourceCosts":[{"resourceEnum":"OAK","resourceCost":40}],"buildableSurfaces":["WATER"],"resourcePathable":true},"CRACKEDFORGE":{"tileType":"CRACKEDFORGE","subType":"RESOURCE","name":"Cracked Forge","description":"An old, weary forge. Bronze ingots are probably all this thing is capable of producing.","placeable":true,"maxPlaceable":-1,"baseHealth":50,"repairResourceEnum":"GOLD","repairCostPerPoint":1,"upgradeBuilding":"STONEFORGE","resourceCosts":[{"resourceEnum":"GOLD","resourceCost":150}],"buildableSurfaces":["GRASS"],"placesResourceTile":true,"resourceTileType":"CRACKEDFORGE","resourcePathable":true},"STONEFORGE":{"tileType":"STONEFORGE","subType":"RESOURCE","name":"Stone Forge","description":"This forge burns hotter, allowing you to create more precious ingots.","placeable":false,"maxPlaceable":-1,"baseHealth":75,"repairResourceEnum":"GOLD","repairCostPerPoint":0.3,"upgradeBuilding":"IRONFORGE","resourceCosts":[{"resourceEnum":"BRONZEINGOT","resourceCost":20},{"resourceEnum":"STONE","resourceCost":50},{"resourceEnum":"PINE","resourceCost":75}],"buildableSurfaces":["GRASS"],"placesResourceTile":true,"resourceTileType":"STONEFORGE","resourcePathable":true},"IRONFORGE":{"tileType":"IRONFORGE","subType":"RESOURCE","name":"Iron Forge","description":"This forge burns hotter, allowing you to create more precious ingots.","placeable":false,"maxPlaceable":-1,"baseHealth":125,"repairResourceEnum":"IRONINGOT","repairCostPerPoint":0.3,"upgradeBuilding":"GOLDFORGE","resourceCosts":[{"resourceEnum":"IRONINGOT","resourceCost":500},{"resourceEnum":"EUCALYPTUS","resourceCost":700},{"resourceEnum":"MARBLE","resourceCost":250}],"buildableSurfaces":["GRASS"],"placesResourceTile":true,"resourceTileType":"IRONFORGE","resourcePathable":true},"GOLDFORGE":{"tileType":"GOLDFORGE","subType":"RESOURCE","name":"Gold Forge","description":"For reasons unknown to science, gold forges are particularly effective in forging latinum.","placeable":false,"maxPlaceable":-1,"baseHealth":150,"repairResourceEnum":"GOLDINGOT","repairCostPerPoint":0.35,"upgradeBuilding":"LATINUMFORGE","resourceCosts":[{"resourceEnum":"GOLDINGOT","resourceCost":1200},{"resourceEnum":"WILLOW","resourceCost":1500},{"resourceEnum":"QUARTZ","resourceCost":250}],"buildableSurfaces":["GRASS"],"placesResourceTile":true,"resourceTileType":"GOLDFORGE","resourcePathable":true},"LATINUMFORGE":{"tileType":"LATINUMFORGE","subType":"RESOURCE","name":"Latinum Forge","description":"A forge that burns hot enough to fuse together the world's most precious and rare metals.","placeable":false,"maxPlaceable":-1,"baseHealth":200,"repairResourceEnum":"LATINUMINGOT","repairCostPerPoint":0.5,"upgradeBuilding":"TEMPROUSDISTILLERY","resourceCosts":[{"resourceEnum":"LATINUMINGOT","resourceCost":2500},{"resourceEnum":"TEAK","resourceCost":1500},{"resourceEnum":"OBSIDIAN","resourceCost":700}],"buildableSurfaces":["GRASS"],"placesResourceTile":true,"resourceTileType":"LATINUMFORGE","resourcePathable":true},"TEMPROUSDISTILLERY":{"tileType":"TEMPROUSDISTILLERY","subType":"RESOURCE","name":"Temprous Distillery","description":"With this device, all impurities can be removed from temprous ingots, unlocking their limitless potential.","placeable":false,"maxPlaceable":-1,"baseHealth":350,"repairResourceEnum":"TEMPROUSINGOT","repairCostPerPoint":0.65,"resourceCosts":[{"resourceEnum":"TEMPROUSINGOT","resourceCost":5000},{"resourceEnum":"ENTSOUL","resourceCost":500},{"resourceEnum":"DIAMOND","resourceCost":1200}],"buildableSurfaces":["GRASS"],"placesResourceTile":true,"resourceTileType":"TEMPROUSDISTILLERY","resourcePathable":true},"WOODMARKET":{"tileType":"WOODMARKET","subType":"MARKET","name":"Wood Market","description":"A marketstand that automatically collects and sells wood resources. (Only one may be placed at a time.)","placeable":true,"maxPlaceable":1,"baseHealth":50,"repairResourceEnum":"GOLD","repairCostPerPoint":1,"resourceCosts":[{"resourceEnum":"GOLD","resourceCost":150}],"buildableSurfaces":["GRASS"],"placesResourceTile":false,"resourcePathable":true},"MINERALMARKET":{"tileType":"MINERALMARKET","subType":"MARKET","name":"Mineral Market","description":"A marketstand that automatically collects and sells mineral resources. (Only one may be placed at a time.)","placeable":true,"maxPlaceable":1,"baseHealth":50,"repairResourceEnum":"GOLD","repairCostPerPoint":1,"resourceCosts":[{"resourceEnum":"GOLD","resourceCost":150}],"buildableSurfaces":["GRASS"],"placesResourceTile":false,"resourcePathable":true},"METALMARKET":{"tileType":"METALMARKET","subType":"MARKET","name":"Metal Market","description":"A marketstand that automatically collects and sells metal resources. (Only one may be placed at a time.)","placeable":true,"maxPlaceable":1,"baseHealth":50,"repairResourceEnum":"GOLD","repairCostPerPoint":1,"resourceCosts":[{"resourceEnum":"GOLD","resourceCost":150}],"buildableSurfaces":["GRASS"],"placesResourceTile":false,"resourcePathable":true},"ENEMYPORTAL":{"tileType":"ENEMYPORTAL","subType":"MISC","name":"Enemy Portal","baseHealth":50,"description":"","placeable":false,"maxPlaceable":-1,"resourceCosts":[],"buildableSurfaces":[],"resourcePathable":true},"OAKOVEN":{"tileType":"OAKOVEN","subType":"RESOURCE","name":"Oak Oven","description":"Capable of heating up some basic kinds of food.","placeable":true,"maxPlaceable":-1,"baseHealth":50,"repairResourceEnum":"OAK","repairCostPerPoint":2,"upgradeBuilding":"STONEOVEN","resourceCosts":[{"resourceEnum":"OAK","resourceCost":50},{"resourceEnum":"STONE","resourceCost":25}],"buildableSurfaces":["GRASS"],"placesResourceTile":true,"resourceTileType":"OAKOVEN","resourcePathable":true},"STONEOVEN":{"tileType":"STONEOVEN","subType":"RESOURCE","name":"Stone Oven","description":"Its hardened stone structure allows you to cook more filling and nutritious meals.","placeable":false,"maxPlaceable":-1,"baseHealth":75,"repairResourceEnum":"STONE","repairCostPerPoint":3,"upgradeBuilding":"MARBLEOVEN","resourceCosts":[{"resourceEnum":"PINE","resourceCost":75},{"resourceEnum":"STONE","resourceCost":150}],"buildableSurfaces":["GRASS"],"placesResourceTile":true,"resourceTileType":"STONEOVEN","resourcePathable":true},"MARBLEOVEN":{"tileType":"MARBLEOVEN","subType":"RESOURCE","name":"Marble Oven","description":"Some would say that marble ovens are needlessly lavish. I say they have no imagination.","placeable":false,"maxPlaceable":-1,"baseHealth":75,"repairResourceEnum":"MARBLE","repairCostPerPoint":3,"upgradeBuilding":"TEMPROUSOVEN","resourceCosts":[{"resourceEnum":"MARBLE","resourceCost":600},{"resourceEnum":"GOLDINGOT","resourceCost":200},{"resourceEnum":"WILLOW","resourceCost":250}],"buildableSurfaces":["GRASS"],"placesResourceTile":true,"resourceTileType":"MARBLEOVEN","resourcePathable":true},"TEMPROUSOVEN":{"tileType":"TEMPROUSOVEN","subType":"RESOURCE","name":"Temprous Oven","description":"Utilizes the power of time itself to cook your food before you even find it!","placeable":false,"maxPlaceable":-1,"baseHealth":150,"repairResourceEnum":"TEMPROUSINGOT","repairCostPerPoint":5,"resourceCosts":[{"resourceEnum":"TEMPROUSINGOT","resourceCost":2350},{"resourceEnum":"ENTSOUL","resourceCost":60},{"resourceEnum":"DIAMOND","resourceCost":250}],"buildableSurfaces":["GRASS"],"placesResourceTile":true,"resourceTileType":"TEMPROUSOVEN","resourcePathable":true},"CHICKENFARM":{"tileType":"CHICKENFARM","subType":"RESOURCE","name":"Chicken Farm","description":"A small farm to provide a source of food for your workers.","placeable":true,"maxPlaceable":-1,"baseHealth":50,"repairResourceEnum":"EUCALYPTUS","repairCostPerPoint":3,"upgradeBuilding":"COWFARM","resourceCosts":[{"resourceEnum":"EUCALYPTUS","resourceCost":350},{"resourceEnum":"IRONINGOT","resourceCost":100}],"buildableSurfaces":["GRASS"],"placesResourceTile":true,"resourceTileType":"CHICKENFARM","resourcePathable":true},"COWFARM":{"tileType":"COWFARM","subType":"RESOURCE","name":"Cow Farm","description":"A larger farm that can feed more workers.","placeable":false,"maxPlaceable":-1,"baseHealth":100,"repairResourceEnum":"WILLOW","repairCostPerPoint":4,"upgradeBuilding":"DRAGONFARM","resourceCosts":[{"resourceEnum":"RAWCHICKEN","resourceCost":20},{"resourceEnum":"STEELINGOT","resourceCost":600},{"resourceEnum":"WILLOW","resourceCost":425}],"buildableSurfaces":["GRASS"],"placesResourceTile":true,"resourceTileType":"COWFARM","resourcePathable":true},"DRAGONFARM":{"tileType":"DRAGONFARM","subType":"RESOURCE","name":"Dragon Farm","description":"Fun for the whole family!","placeable":false,"maxPlaceable":-1,"baseHealth":150,"repairResourceEnum":"TEMPROUSINGOT","repairCostPerPoint":5,"resourceCosts":[{"resourceEnum":"RAWSTEAK","resourceCost":30},{"resourceEnum":"TEMPROUSINGOT","resourceCost":1200},{"resourceEnum":"DIAMOND","resourceCost":500}],"buildableSurfaces":["GRASS"],"placesResourceTile":true,"resourceTileType":"DRAGONFARM","resourcePathable":true}},"resourceTiles":{"OAKTREE":{"tileType":"OAKTREE","name":"Oak Tree","placeable":false,"spawnsOn":["GRASS"],"isNaturalResource":true,"spawnRate":0.65,"resourceEnums":["OAK"]},"PINETREE":{"tileType":"PINETREE","name":"Pine Tree","placeable":false,"spawnsOn":["GRASS"],"isNaturalResource":true,"spawnRate":0.45,"resourceEnums":["PINE"]},"BIRCHTREE":{"tileType":"BIRCHTREE","name":"Birch Tree","placeable":false,"spawnsOn":["GRASS"],"isNaturalResource":true,"spawnRate":0.2,"resourceEnums":["BIRCH"]},"EUCALYPTUSTREE":{"tileType":"EUCALYPTUSTREE","name":"Eucalptus Tree","placeable":false,"spawnsOn":["GRASS"],"isNaturalResource":true,"spawnRate":0.15,"resourceEnums":["EUCALYPTUS"]},"WILLOWTREE":{"tileType":"WILLOWTREE","name":"Willow Tree","placeable":false,"spawnsOn":["GRASS"],"isNaturalResource":true,"spawnRate":0.1,"resourceEnums":["WILLOW"]},"TEAKTREE":{"tileType":"TEAKTREE","name":"Teak Tree","placeable":false,"spawnsOn":["GRASS"],"isNaturalResource":true,"spawnRate":0.05,"resourceEnums":["TEAK"]},"DEADENT":{"tileType":"DEADENT","name":"Dead Ent","placeable":false,"spawnsOn":["GRASS"],"isNaturalResource":true,"spawnRate":0.01,"resourceEnums":["ENTSOUL","REANIMATEDENT"]},"STONEMINE":{"tileType":"STONEMINE","name":"Stone Mine","placeable":false,"spawnsOn":["MOUNTAIN"],"isNaturalResource":true,"spawnRate":0.8,"resourceEnums":["STONE"]},"GRAPHITEMINE":{"tileType":"GRAPHITEMINE","name":"Graphite Mine","placeable":false,"spawnsOn":["MOUNTAIN"],"isNaturalResource":true,"spawnRate":0.15,"resourceEnums":["GRAPHITE"]},"LIMESTONEMINE":{"tileType":"LIMESTONEMINE","name":"Limestone Mine","placeable":false,"spawnsOn":["MOUNTAIN"],"isNaturalResource":true,"spawnRate":0.1,"resourceEnums":["LIMESTONE"]},"MARBLEMINE":{"tileType":"MARBLEMINE","name":"Marble Mine","placeable":false,"spawnsOn":["MOUNTAIN"],"isNaturalResource":true,"spawnRate":0.05,"resourceEnums":["MARBLE"]},"QUARTZMINE":{"tileType":"QUARTZMINE","name":"Quartz Mine","placeable":false,"spawnsOn":["MOUNTAIN"],"isNaturalResource":true,"spawnRate":0.03,"resourceEnums":["QUARTZ"]},"OBSIDIANMINE":{"tileType":"OBSIDIANMINE","name":"Obsidian Mine","placeable":false,"spawnsOn":["MOUNTAIN"],"isNaturalResource":true,"spawnRate":0.02,"resourceEnums":["OBSIDIAN"]},"DIAMONDMINE":{"tileType":"DIAMONDMINE","name":"Diamond Mine","placeable":false,"spawnsOn":["MOUNTAIN"],"isNaturalResource":true,"spawnRate":0.01,"resourceEnums":["DIAMOND"]},"COPPERMINE":{"tileType":"COPPERMINE","name":"Copper Mine","placeable":false,"spawnsOn":["MOUNTAIN"],"isNaturalResource":true,"spawnRate":0.25,"resourceEnums":["COPPERORE"]},"TINMINE":{"tileType":"TINMINE","name":"Tin Mine","placeable":false,"spawnsOn":["MOUNTAIN"],"isNaturalResource":true,"spawnRate":0.25,"resourceEnums":["TINORE"]},"IRONMINE":{"tileType":"IRONMINE","name":"Iron Mine","placeable":false,"spawnsOn":["MOUNTAIN"],"isNaturalResource":true,"spawnRate":0.15,"resourceEnums":["IRONORE"]},"GOLDMINE":{"tileType":"GOLDMINE","name":"Gold Mine","placeable":false,"spawnsOn":["MOUNTAIN"],"isNaturalResource":true,"spawnRate":0.1,"resourceEnums":["GOLDORE"]},"LATINUMMINE":{"tileType":"LATINUMMINE","name":"Latinum Mine","placeable":false,"spawnsOn":["MOUNTAIN"],"isNaturalResource":true,"spawnRate":0.05,"resourceEnums":["LATINUMORE"]},"UNBELIEVIUMMINE":{"tileType":"UNBELIEVIUMMINE","name":"Unbelievium Mine","placeable":false,"spawnsOn":["MOUNTAIN"],"isNaturalResource":true,"spawnRate":0.03,"resourceEnums":["UNBELIEVIUMORE"]},"LUSTRIALMINE":{"tileType":"LUSTRIALMINE","name":"Lustrial Mine","placeable":false,"spawnsOn":["MOUNTAIN"],"isNaturalResource":true,"spawnRate":0.03,"resourceEnums":["LUSTRIALORE"]},"SPECTRUSMINE":{"tileType":"SPECTRUSMINE","name":"Spectrus Mine","placeable":false,"spawnsOn":["MOUNTAIN"],"isNaturalResource":true,"spawnRate":0.03,"resourceEnums":["SPECTRUSORE"]},"CRACKEDFORGE":{"tileType":"CRACKEDFORGE","name":"Cracked Forge","placeable":true,"spawnsOn":[],"isNaturalResource":false,"spawnRate":0,"resourceEnums":["BRONZEINGOT"]},"STONEFORGE":{"tileType":"STONEFORGE","name":"Stone Forge","placeable":true,"spawnsOn":[],"isNaturalResource":false,"spawnRate":0,"resourceEnums":["BRONZEINGOT","IRONINGOT"]},"IRONFORGE":{"tileType":"IRONFORGE","name":"Iron Forge","placeable":true,"spawnsOn":[],"isNaturalResource":false,"spawnRate":0,"resourceEnums":["BRONZEINGOT","IRONINGOT","STEELINGOT","GOLDINGOT"]},"GOLDFORGE":{"tileType":"GOLDFORGE","name":"Gold Forge","placeable":true,"spawnsOn":[],"isNaturalResource":false,"spawnRate":0,"resourceEnums":["BRONZEINGOT","IRONINGOT","STEELINGOT","GOLDINGOT","LATINUMINGOT"]},"LATINUMFORGE":{"tileType":"LATINUMFORGE","name":"Latinum Forge","placeable":true,"spawnsOn":[],"isNaturalResource":false,"spawnRate":0,"resourceEnums":["BRONZEINGOT","IRONINGOT","STEELINGOT","GOLDINGOT","LATINUMINGOT","TEMPROUSINGOT"]},"TEMPROUSDISTILLERY":{"tileType":"TEMPROUSDISTILLERY","name":"Temprous Distillery","placeable":true,"spawnsOn":[],"isNaturalResource":false,"spawnRate":0,"resourceEnums":["BRONZEINGOT","IRONINGOT","STEELINGOT","GOLDINGOT","LATINUMINGOT","TEMPROUSINGOT","REFINEDTEMPROUS"]},"FISHINGSPOT":{"tileType":"FISHINGSPOT","name":"Fishing Spot","placeable":false,"spawnsOn":["WATER"],"isNaturalResource":true,"spawnRate":0.1,"resourceEnums":["RAWHERRING","RAWBASS","RAWSHARK"]},"WHEATFARM":{"tileType":"WHEATFARM","name":"Wheat Farm","placeable":true,"spawnsOn":["GRASS"],"isNaturalResource":true,"spawnRate":0.1,"resourceEnums":["WHEAT"]},"RAWPOTATOFARM":{"tileType":"RAWPOTATOFARM","name":"Raw Potato Farm","placeable":true,"spawnsOn":["GRASS"],"isNaturalResource":true,"spawnRate":0.1,"resourceEnums":["RAWPOTATO"]},"RICEFARM":{"tileType":"RICEFARM","name":"Rice Farm","placeable":true,"spawnsOn":["GRASS"],"isNaturalResource":true,"spawnRate":0.1,"resourceEnums":["RICE"]},"OAKOVEN":{"tileType":"OAKOVEN","name":"Oak Oven","placeable":true,"spawnsOn":[],"isNaturalResource":false,"spawnRate":0,"resourceEnums":["BREAD","POTATO","HERRING"]},"STONEOVEN":{"tileType":"STONEOVEN","name":"Stone Oven","placeable":true,"spawnsOn":[],"isNaturalResource":false,"spawnRate":0,"resourceEnums":["BREAD","POTATO","HERRING","JELLYDONUT","HERRING","BASS"]},"MARBLEOVEN":{"tileType":"MARBLEOVEN","name":"Marble Oven","placeable":true,"spawnsOn":[],"isNaturalResource":false,"spawnRate":0,"resourceEnums":["BREAD","POTATO","HERRING","JELLYDONUT","HERRING","BASS","SHARK"]},"TEMPROUSOVEN":{"tileType":"TEMPROUSOVEN","name":"Temprous Oven","placeable":true,"spawnsOn":[],"isNaturalResource":false,"spawnRate":0,"resourceEnums":["BREAD","POTATO","HERRING","JELLYDONUT","HERRING","BASS","SHARK","CHICKEN","STEAK","DRAGONMEAT"]},"CHICKENFARM":{"tileType":"CHICKENFARM","name":"Chicken Farm","placeable":true,"spawnsOn":[],"isNaturalResource":false,"spawnRate":0,"resourceEnums":["RAWCHICKEN"]},"COWFARM":{"tileType":"COWFARM","name":"Cow Farm","placeable":true,"spawnsOn":[],"isNaturalResource":false,"spawnRate":0,"resourceEnums":["RAWCHICKEN","RAWSTEAK"]},"DRAGONFARM":{"tileType":"DRAGONFARM","name":"Dragon Farm","placeable":true,"spawnsOn":[],"isNaturalResource":false,"spawnRate":0,"resourceEnums":["RAWCHICKEN","RAWSTEAK","RAWDRAGONMEAT"]}}};
 
 /***/ }),
 
@@ -6455,7 +6859,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\Rathe\clicker-game\src\main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! /home/david/clickergame/src/main.ts */"./src/main.ts");
 
 
 /***/ })
