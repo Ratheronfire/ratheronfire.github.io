@@ -1,4 +1,16 @@
 {
+  "tileIndices": {
+    "GRASS": 14,
+    "MOUNTAIN": 18,
+    "WATER": 36,
+    "HOME": 0,
+    "WALL": 1,
+    "ROAD": 2,
+    "TUNNEL": 3,
+    "BRIDGE": 4,
+    "CRACKEDFORGE": 5,
+    "STONEFORGE": 6
+  },
   "mapTiles": {
     "GRASS": {
       "tileType": "GRASS",
@@ -21,17 +33,21 @@
       "tileType": "HOME",
       "subType": "MISC",
       "name": "Home",
-      "description": "",
+      "description": "Your harvested resources will be collected and stored here.",
       "placeable": false,
       "maxPlaceable": 1,
       "baseHealth": 50,
+      "repairResourceEnum": "GOLD",
+      "repairCostPerPoint": 0,
       "resourceCosts": [],
-      "buildableSurfaces": [],
+      "buildableSurfaces": [
+        "GRASS"
+      ],
       "resourcePathable": true
     },
     "WALL": {
       "tileType": "WALL",
-      "subType": "MISC",
+      "subType": "OBSTACLE",
       "name": "Wall",
       "description": "Keeps invaders out.",
       "placeable": true,
@@ -50,7 +66,7 @@
     },
     "ROAD": {
       "tileType": "ROAD",
-      "subType": "MISC",
+      "subType": "PATH",
       "name": "Road",
       "description": "Allows access between buildings.",
       "placeable": true,
@@ -69,7 +85,7 @@
     },
     "TUNNEL": {
       "tileType": "TUNNEL",
-      "subType": "MISC",
+      "subType": "PATH",
       "name": "Tunnel",
       "description": "Allows access to resources buried within rock.",
       "placeable": true,
@@ -88,7 +104,7 @@
     },
     "BRIDGE": {
       "tileType": "BRIDGE",
-      "subType": "MISC",
+      "subType": "PATH",
       "name": "Bridge",
       "description": "Allows access between islands.",
       "placeable": true,
@@ -335,7 +351,9 @@
       "placeable": false,
       "maxPlaceable": -1,
       "resourceCosts": [],
-      "buildableSurfaces": [],
+      "buildableSurfaces": [
+        "GRASS"
+      ],
       "resourcePathable": true
     },
     "OAKOVEN": {
