@@ -6,6 +6,7 @@
       "frames": [
         { "key": "actor", "frame": 0, "duration": 0, "visible": false },
         { "key": "actor", "frame": 1, "duration": 0, "visible": false },
+        { "key": "actor", "frame": 0, "duration": 0, "visible": false },
         { "key": "actor", "frame": 2, "duration": 0, "visible": false }
       ],
       "frameRate": 24,
@@ -23,6 +24,7 @@
       "frames": [
         { "key": "actor", "frame": 3, "duration": 0, "visible": false },
         { "key": "actor", "frame": 4, "duration": 0, "visible": false },
+        { "key": "actor", "frame": 3, "duration": 0, "visible": false },
         { "key": "actor", "frame": 5, "duration": 0, "visible": false }
       ],
       "frameRate": 24,
@@ -41,6 +43,7 @@
       "frames": [
         { "key": "actor", "frame": 6, "duration": 0, "visible": false },
         { "key": "actor", "frame": 7, "duration": 0, "visible": false },
+        { "key": "actor", "frame": 6, "duration": 0, "visible": false },
         { "key": "actor", "frame": 8, "duration": 0, "visible": false }
       ],
       "frameRate": 24,
