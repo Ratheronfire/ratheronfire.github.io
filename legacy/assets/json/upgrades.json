@@ -1,0 +1,1463 @@
+[
+  {
+    "id": 0,
+    "spriteIndex": 5,
+    "upgradeType": "RESOURCE",
+    "name": "Refined Iron Axe",
+    "description": "Harvests 20% more wood per task.",
+    "flavorText": "A stronger, more durable axe.",
+    "upgradeEffects": [
+      {"upgradeIsForWholeType": true, "resourceType": "WOOD", "resourceEnum": "OAK", "upgradeVariable": "HARVEST_YIELD", "upgradeFactor": 1.2, "maxTier": "1"}
+    ],
+    "resourceCosts": [
+      {"resourceEnum": "IRONINGOT", "resourceCost": 60},
+      {"resourceEnum": "BIRCH",     "resourceCost": 30}
+    ]
+  }, {
+    "id": 1,
+    "spriteIndex": 9,
+    "upgradeType": "RESOURCE",
+    "name": "Twin Axes",
+    "description": "Reduces wood harvesting time by 50%.",
+    "flavorText": "One axe in each hand means double productivity. It makes sense.",
+    "upgradeEffects": [
+      {"upgradeIsForWholeType": true, "resourceType": "WOOD", "resourceEnum": "OAK", "upgradeVariable": "HARVEST_MILLISECONDS", "upgradeFactor": 0.9, "maxTier": "1"}
+    ],
+    "resourceCosts": [
+      {"resourceEnum": "IRONINGOT", "resourceCost": 35},
+      {"resourceEnum": "BIRCH",     "resourceCost": 15}
+    ]
+  }, {
+    "id": 2,
+    "spriteIndex": 11,
+    "upgradeType": "RESOURCE",
+    "name": "Worn Pickaxe",
+    "description": "Allows harvesting of basic metals and minerals.",
+    "flavorText": "A basic pickaxe. Not much, but it gets the job done.",
+    "upgradeEffects": [
+      {"upgradeIsForWholeType": false, "resourceEnum": "COPPERORE", "upgradeVariable": "HARVESTABILITY", "upgradeFactor": 1},
+      {"upgradeIsForWholeType": false, "resourceEnum": "TINORE",    "upgradeVariable": "HARVESTABILITY", "upgradeFactor": 1},
+      {"upgradeIsForWholeType": false, "resourceEnum": "STONE",     "upgradeVariable": "HARVESTABILITY", "upgradeFactor": 1}
+    ],
+    "resourceCosts": [
+      {"resourceEnum": "GOLD", "resourceCost": 50}
+      ],"purchased": false
+  }, {
+    "id": 3,
+    "spriteIndex": 66,
+    "upgradeType": "WORKER",
+    "name": "Lumberjack's Guild",
+    "description": "Lumberjacks harvest 15% more wood.",
+    "flavorText": "Form a guild to help your workers hone their skills.",
+    "upgradeEffects": [
+      {"upgradeIsForWholeType": true, "resourceType": "WOOD", "resourceEnum": "OAK", "upgradeVariable": "WORKER_YIELD", "upgradeFactor": 1.15, "maxTier": 2}
+    ],
+    "resourceCosts": [
+      {"resourceEnum": "OAK", "resourceCost": 20}
+      ],"purchased": false
+  }, {
+    "id": 5,
+    "spriteIndex": 12,
+    "upgradeType": "RESOURCE",
+    "name": "Bronze Pickaxe",
+    "description": "Allows harvesting of graphite and iron ore.",
+    "flavorText": "A stronger and more durable pickaxe, capable of mining more valuable metals.",
+    "upgradeEffects": [
+      {"upgradeIsForWholeType": false, "resourceEnum": "GRAPHITE", "upgradeVariable": "HARVESTABILITY", "upgradeFactor": 1},
+      {"upgradeIsForWholeType": false, "resourceEnum": "IRONORE", "upgradeVariable":  "HARVESTABILITY", "upgradeFactor": 1}
+    ],
+    "resourceCosts": [
+      {"resourceEnum": "BRONZEINGOT", "resourceCost": 5},
+      {"resourceEnum": "PINE", "resourceCost": 15}
+    ]
+  }, {
+    "id": 6,
+    "spriteIndex": 16,
+    "upgradeType": "RESOURCE",
+    "name": "Sharpened Pickaxe",
+    "description": "Decreases metal and mineral harvest time by 10%.",
+    "flavorText": "A highly sharpened pickaxe. Mines at a much higher rate.",
+    "upgradeEffects": [
+      {"upgradeIsForWholeType": false, "resourceEnum": "COPPERORE", "upgradeVariable": "HARVEST_MILLISECONDS", "upgradeFactor": 0.9},
+      {"upgradeIsForWholeType": false, "resourceEnum": "TINORE",    "upgradeVariable": "HARVEST_MILLISECONDS", "upgradeFactor": 0.9},
+      {"upgradeIsForWholeType": false, "resourceEnum": "IRONORE",   "upgradeVariable": "HARVEST_MILLISECONDS", "upgradeFactor": 0.9},
+      {"upgradeIsForWholeType": false, "resourceEnum": "STONE",     "upgradeVariable": "HARVEST_MILLISECONDS", "upgradeFactor": 0.9},
+      {"upgradeIsForWholeType": false, "resourceEnum": "GRAPHITE",  "upgradeVariable": "HARVEST_MILLISECONDS", "upgradeFactor": 0.9}
+    ],
+    "resourceCosts": [
+      {"resourceEnum": "IRONINGOT", "resourceCost": 20},
+      {"resourceEnum": "BIRCH",     "resourceCost": 30}
+    ]
+  }, {
+    "id": 8,
+    "spriteIndex": 0,
+    "upgradeType": "RESOURCE",
+    "name": "Bronze Axe",
+    "description": "Allows harvesting of pine and birch trees.",
+    "flavorText": "With this, you can bring down stronger and taller trees.",
+    "upgradeEffects": [
+      {"upgradeIsForWholeType": true, "resourceType": "WOOD", "upgradeVariable": "HARVESTABILITY", "upgradeFactor": 1, "maxTier": 2}
+    ],
+    "resourceCosts": [
+      {"resourceEnum": "BRONZEINGOT", "resourceCost": 10},
+      {"resourceEnum": "OAK",         "resourceCost": 30}
+    ]
+  }, {
+    "id": 9,
+    "spriteIndex": 1,
+    "upgradeType": "RESOURCE",
+    "name": "Iron Axe",
+    "description": "Allows harvesting of eucalyptus and willow trees.",
+    "flavorText": "With this, you can bring down stronger and taller trees.",
+    "upgradeEffects": [
+      {"upgradeIsForWholeType": true, "resourceType": "WOOD", "upgradeVariable": "HARVESTABILITY", "upgradeFactor": 1, "maxTier": 4}
+    ],
+    "resourceCosts": [
+      {"resourceEnum": "IRONINGOT", "resourceCost": 25},
+      {"resourceEnum": "PINE",      "resourceCost": 10}
+    ]
+  }, {
+    "id": 10,
+    "spriteIndex": 2,
+    "upgradeType": "RESOURCE",
+    "name": "Steel Axe",
+    "description": "Allows harvesting of teak trees.",
+    "flavorText": "With this, you can bring down stronger and taller trees.",
+    "upgradeEffects": [
+      {"upgradeIsForWholeType": true, "resourceType": "WOOD", "resourceEnum": "GRAPHITE", "upgradeVariable": "HARVESTABILITY", "upgradeFactor": 1, "maxTier": 5}
+    ],
+    "resourceCosts": [
+      {"resourceEnum": "STEELINGOT", "resourceCost": 100},
+      {"resourceEnum": "WILLOW",     "resourceCost": 200}
+    ]
+  }, {
+    "id": 11,
+    "spriteIndex": 3,
+    "upgradeType": "RESOURCE",
+    "name": "Latinum Axe",
+    "description": "Allows harvesting of ent souls.",
+    "flavorText": "An axe strong enough to free the spirits of ents from the bodies that entomb them.",
+    "upgradeEffects": [
+      {"upgradeIsForWholeType": true, "resourceType": "WOOD", "resourceEnum": "GRAPHITE", "upgradeVariable": "HARVESTABILITY", "upgradeFactor": 1, "maxTier": 6}
+    ],
+    "resourceCosts": [
+      {"resourceEnum": "LATINUMINGOT", "resourceCost": 500},
+      {"resourceEnum": "TEAK",         "resourceCost": 1000},
+      {"resourceEnum": "QUARTZ",       "resourceCost": 250}
+    ]
+  }, {
+    "id": 12,
+    "spriteIndex": 4,
+    "upgradeType": "RESOURCE",
+    "name": "Temprous Staff",
+    "description": "Allows harvesting of reanimated ents.",
+    "flavorText": "Imbued with the power of ages past, this staff can reunite ent spirits with their former bodies, granting them new life.",
+    "upgradeEffects": [
+      {"upgradeIsForWholeType": true, "resourceType": "WOOD", "upgradeVariable": "HARVESTABILITY", "upgradeFactor": 1}
+    ],
+    "resourceCosts": [
+      {"resourceEnum": "TEMPROUSINGOT", "resourceCost": 1500},
+      {"resourceEnum": "ENTSOUL",       "resourceCost": 10},
+      {"resourceEnum": "DIAMOND",       "resourceCost": 750}
+    ]
+  }, {
+    "id": 13,
+    "spriteIndex": 13,
+    "upgradeType": "RESOURCE",
+    "name": "Iron Pickaxe",
+    "description": "Allows harvesting of limestone, marble, and gold ore.",
+    "flavorText": "A stronger and more durable pickaxe, capable of mining more valuable metals.",
+    "upgradeEffects": [
+      {"upgradeIsForWholeType": false, "resourceEnum": "LIMESTONE", "upgradeVariable": "HARVESTABILITY", "upgradeFactor": 1},
+      {"upgradeIsForWholeType": false, "resourceEnum": "MARBLE",    "upgradeVariable": "HARVESTABILITY", "upgradeFactor": 1},
+      {"upgradeIsForWholeType": false, "resourceEnum": "GOLDORE",   "upgradeVariable": "HARVESTABILITY", "upgradeFactor": 1}
+    ],
+    "resourceCosts": [
+      {"resourceEnum": "IRONINGOT", "resourceCost": 30},
+      {"resourceEnum": "BIRCH",     "resourceCost": 45}
+    ]
+  }, {
+    "id": 14,
+    "spriteIndex": 14,
+    "upgradeType": "RESOURCE",
+    "name": "Steel Pickaxe",
+    "description": "Allows harvesting of quartz, obsidian, and latinum ore.",
+    "flavorText": "A stronger and more durable pickaxe, capable of mining more valuable metals.",
+    "upgradeEffects": [
+      {"upgradeIsForWholeType": false, "resourceEnum": "QUARTZ",     "upgradeVariable": "HARVESTABILITY", "upgradeFactor": 1},
+      {"upgradeIsForWholeType": false, "resourceEnum": "LATINUMORE", "upgradeVariable": "HARVESTABILITY", "upgradeFactor": 1},
+      {"upgradeIsForWholeType": false, "resourceEnum": "OBSIDIAN",   "upgradeVariable": "HARVESTABILITY", "upgradeFactor": 1}
+    ],
+    "resourceCosts": [
+      {"resourceEnum": "STEELINGOT", "resourceCost": 100},
+      {"resourceEnum": "EUCALYPTUS", "resourceCost": 200}
+    ]
+  }, {
+    "id": 15,
+    "spriteIndex": 15,
+    "upgradeType": "RESOURCE",
+    "name": "Latinum Pickaxe",
+    "description": "Allows harvesting of diamond, unbelievium ore, lustrial ore, and spectrus ore.",
+    "flavorText": "A stronger and more durable pickaxe, capable of mining more valuable metals.",
+    "upgradeEffects": [
+      {"upgradeIsForWholeType": false, "resourceEnum": "DIAMOND",        "upgradeVariable": "HARVESTABILITY", "upgradeFactor": 1},
+      {"upgradeIsForWholeType": false, "resourceEnum": "UNBELIEVIUMORE", "upgradeVariable": "HARVESTABILITY", "upgradeFactor": 1},
+      {"upgradeIsForWholeType": false, "resourceEnum": "LUSTRIALORE",    "upgradeVariable": "HARVESTABILITY", "upgradeFactor": 1},
+      {"upgradeIsForWholeType": false, "resourceEnum": "SPECTRUSORE",    "upgradeVariable": "HARVESTABILITY", "upgradeFactor": 1}
+    ],
+    "resourceCosts": [
+      {"resourceEnum": "LATINUMINGOT", "resourceCost": 500},
+      {"resourceEnum": "TEAK", "resourceCost": 800},
+      {"resourceEnum": "QUARTZ", "resourceCost": 250}
+    ]
+  }, {
+    "id": 20,
+    "spriteIndex": 6,
+    "upgradeType": "RESOURCE",
+    "name": "Refined Steel Axe",
+    "description": "Harvests 45% more wood per task.",
+    "flavorText": "A stronger, more durable axe.",
+    "upgradeEffects": [
+      {"upgradeIsForWholeType": true, "resourceType": "WOOD", "resourceEnum": "OAK", "upgradeVariable": "HARVEST_YIELD", "upgradeFactor": 1.45}
+    ],
+    "resourceCosts": [
+      {"resourceEnum": "WILLOW",     "resourceCost": 100},
+      {"resourceEnum": "STEELINGOT", "resourceCost": 80}
+    ]
+  }, {
+    "id": 21,
+    "spriteIndex": 7,
+    "upgradeType": "RESOURCE",
+    "name": "Refined Latinum Axe",
+    "description": "Harvests 150% more wood per task.",
+    "flavorText": "A stronger, more durable axe.",
+    "upgradeEffects": [
+      {"upgradeIsForWholeType": true, "resourceType": "WOOD", "resourceEnum": "OAK", "upgradeVariable": "HARVEST_YIELD", "upgradeFactor": 2.5}
+    ],
+    "resourceCosts": [
+      {"resourceEnum": "TEAK",         "resourceCost": 500},
+      {"resourceEnum": "LATINUMINGOT", "resourceCost": 375},
+      {"resourceEnum": "QUARTZ",       "resourceCost": 200}
+    ]
+  }, {
+    "id": 22,
+    "spriteIndex": 49,
+    "upgradeType": "RESOURCE",
+    "name": "Emblem of the Ents",
+    "description": "Grants an extra 75% ents reanimated per harvest.",
+    "flavorText": "Imbues revived ents with far greater power.",
+    "upgradeEffects": [
+      {"upgradeIsForWholeType": false, "resourceEnum": "REANIMATEDENT", "upgradeVariable": "HARVEST_YIELD", "upgradeFactor": 1.75}
+    ],
+    "resourceCosts": [
+      {"resourceEnum": "ENTSOUL",       "resourceCost": 1000},
+      {"resourceEnum": "TEMPROUSINGOT", "resourceCost": 600},
+      {"resourceEnum": "DIAMOND",       "resourceCost": 425}
+    ]
+  }, {
+    "id": 23,
+    "spriteIndex": 17,
+    "upgradeType": "RESOURCE",
+    "name": "Refined Iron Pickaxe",
+    "description": "Harvests 20% more material per task.",
+    "flavorText": "A stronger, more durable pickaxe.",
+    "upgradeEffects": [
+      {"upgradeIsForWholeType": false, "resourceEnum": "STONE",     "upgradeVariable": "HARVEST_YIELD", "upgradeFactor": 1.2},
+      {"upgradeIsForWholeType": false, "resourceEnum": "GRAPHITE",  "upgradeVariable": "HARVEST_YIELD", "upgradeFactor": 1.2},
+      {"upgradeIsForWholeType": false, "resourceEnum": "COPPERORE", "upgradeVariable": "HARVEST_YIELD", "upgradeFactor": 1.2},
+      {"upgradeIsForWholeType": false, "resourceEnum": "TINORE",    "upgradeVariable": "HARVEST_YIELD", "upgradeFactor": 1.2},
+      {"upgradeIsForWholeType": false, "resourceEnum": "IRONORE",   "upgradeVariable": "HARVEST_YIELD", "upgradeFactor": 1.2}
+    ],
+    "resourceCosts": [
+      {"resourceEnum": "EUCALYPTUS", "resourceCost": 25},
+      {"resourceEnum": "IRONINGOT",  "resourceCost": 25}
+    ]
+  }, {
+    "id": 24,
+    "spriteIndex": 18,
+    "upgradeType": "RESOURCE",
+    "name": "Refined Steel Pickaxe",
+    "description": "Harvests 75% more material per task.",
+    "flavorText": "A stronger, more durable pickaxe.",
+    "upgradeEffects": [
+      {"upgradeIsForWholeType": false, "resourceEnum": "STONE",     "upgradeVariable": "HARVEST_YIELD", "upgradeFactor": 1.75},
+      {"upgradeIsForWholeType": false, "resourceEnum": "GRAPHITE",  "upgradeVariable": "HARVEST_YIELD", "upgradeFactor": 1.75},
+      {"upgradeIsForWholeType": false, "resourceEnum": "COPPERORE", "upgradeVariable": "HARVEST_YIELD", "upgradeFactor": 1.75},
+      {"upgradeIsForWholeType": false, "resourceEnum": "TINORE",    "upgradeVariable": "HARVEST_YIELD", "upgradeFactor": 1.75},
+      {"upgradeIsForWholeType": false, "resourceEnum": "IRONORE",   "upgradeVariable": "HARVEST_YIELD", "upgradeFactor": 1.75},
+      {"upgradeIsForWholeType": false, "resourceEnum": "LIMESTONE", "upgradeVariable": "HARVEST_YIELD", "upgradeFactor": 1.75},
+      {"upgradeIsForWholeType": false, "resourceEnum": "MARBLE",    "upgradeVariable": "HARVEST_YIELD", "upgradeFactor": 1.75},
+      {"upgradeIsForWholeType": false, "resourceEnum": "GOLDORE",   "upgradeVariable": "HARVEST_YIELD", "upgradeFactor": 1.75}
+    ],
+    "resourceCosts": [
+      {"resourceEnum": "TEAK",       "resourceCost": 150},
+      {"resourceEnum": "STEELINGOT", "resourceCost": 85}
+    ]
+  }, {
+    "id": 25,
+    "spriteIndex": 19,
+    "upgradeType": "RESOURCE",
+    "name": "Refined Latinum Pickaxe",
+    "description": "Harvests 200% more material per task.",
+    "flavorText": "A stronger, more durable pickaxe.",
+    "upgradeEffects": [
+      {"upgradeIsForWholeType": false, "resourceEnum": "STONE",          "upgradeVariable": "HARVEST_YIELD", "upgradeFactor": 3},
+      {"upgradeIsForWholeType": false, "resourceEnum": "GRAPHITE",       "upgradeVariable": "HARVEST_YIELD", "upgradeFactor": 3},
+      {"upgradeIsForWholeType": false, "resourceEnum": "COPPERORE",      "upgradeVariable": "HARVEST_YIELD", "upgradeFactor": 3},
+      {"upgradeIsForWholeType": false, "resourceEnum": "TINORE",         "upgradeVariable": "HARVEST_YIELD", "upgradeFactor": 3},
+      {"upgradeIsForWholeType": false, "resourceEnum": "IRONORE",        "upgradeVariable": "HARVEST_YIELD", "upgradeFactor": 3},
+      {"upgradeIsForWholeType": false, "resourceEnum": "LIMESTONE",      "upgradeVariable": "HARVEST_YIELD", "upgradeFactor": 3},
+      {"upgradeIsForWholeType": false, "resourceEnum": "MARBLE",         "upgradeVariable": "HARVEST_YIELD", "upgradeFactor": 3},
+      {"upgradeIsForWholeType": false, "resourceEnum": "GOLDORE",        "upgradeVariable": "HARVEST_YIELD", "upgradeFactor": 3},
+      {"upgradeIsForWholeType": false, "resourceEnum": "QUARTZ",         "upgradeVariable": "HARVEST_YIELD", "upgradeFactor": 3},
+      {"upgradeIsForWholeType": false, "resourceEnum": "OBSIDIAN",       "upgradeVariable": "HARVEST_YIELD", "upgradeFactor": 3},
+      {"upgradeIsForWholeType": false, "resourceEnum": "DIAMOND",        "upgradeVariable": "HARVEST_YIELD", "upgradeFactor": 3},
+      {"upgradeIsForWholeType": false, "resourceEnum": "LATINUMORE",     "upgradeVariable": "HARVEST_YIELD", "upgradeFactor": 3},
+      {"upgradeIsForWholeType": false, "resourceEnum": "UNBELIEVIUMORE", "upgradeVariable": "HARVEST_YIELD", "upgradeFactor": 3},
+      {"upgradeIsForWholeType": false, "resourceEnum": "LUSTRIALORE",    "upgradeVariable": "HARVEST_YIELD", "upgradeFactor": 3},
+      {"upgradeIsForWholeType": false, "resourceEnum": "TEMPROUSINGOT",  "upgradeVariable": "HARVEST_YIELD", "upgradeFactor": 3}
+    ],
+    "resourceCosts": [
+      {"resourceEnum": "TEAK",         "resourceCost": 550},
+      {"resourceEnum": "LATINUMINGOT", "resourceCost": 1000},
+      {"resourceEnum": "OBSIDIAN",     "resourceCost": 750}
+    ]
+  }, {
+    "id": 26,
+    "spriteIndex": 30,
+    "upgradeType": "RESOURCE",
+    "name": "Expanded Burner",
+    "description": "Produces 20% more ingots.",
+    "flavorText": "A larger burner for your forge, capable of smelting ores more efficiently.",
+    "upgradeEffects": [
+      {"upgradeIsForWholeType": false, "resourceEnum": "BRONZEINGOT", "upgradeVariable": "HARVEST_YIELD", "upgradeFactor": 1.2}
+    ],
+    "resourceCosts": [
+      {"resourceEnum": "BIRCH",     "resourceCost": 25},
+      {"resourceEnum": "IRONINGOT", "resourceCost": 25}
+    ]
+  }, {
+    "id": 27,
+    "spriteIndex": 31,
+    "upgradeType": "RESOURCE",
+    "name": "Enhanced Burner",
+    "description": "Produces 80% more ingots.",
+    "flavorText": "A larger burner for your forge, capable of smelting ores more efficiently.",
+    "upgradeEffects": [
+      {"upgradeIsForWholeType": false, "resourceEnum": "BRONZEINGOT", "upgradeVariable": "HARVEST_YIELD", "upgradeFactor": 1.8},
+      {"upgradeIsForWholeType": false, "resourceEnum": "IRONINGOT",   "upgradeVariable": "HARVEST_YIELD", "upgradeFactor": 1.8},
+      {"upgradeIsForWholeType": false, "resourceEnum": "STEELINGOT",  "upgradeVariable": "HARVEST_YIELD", "upgradeFactor": 1.8}
+    ],
+    "resourceCosts": [
+      {"resourceEnum": "EUCALYPTUS", "resourceCost": 200},
+      {"resourceEnum": "IRONINGOT",  "resourceCost": 100}
+    ]
+  }, {
+    "id": 28,
+    "spriteIndex": 32,
+    "upgradeType": "RESOURCE",
+    "name": "Refined Burner",
+    "description": "Produces 150% more ingots.",
+    "flavorText": "A larger burner for your forge, capable of smelting ores more efficiently.",
+    "upgradeEffects": [
+      {"upgradeIsForWholeType": false, "resourceEnum": "BRONZEINGOT", "upgradeVariable": "HARVEST_YIELD", "upgradeFactor": 2.5},
+      {"upgradeIsForWholeType": false, "resourceEnum": "IRONINGOT",   "upgradeVariable": "HARVEST_YIELD", "upgradeFactor": 2.5},
+      {"upgradeIsForWholeType": false, "resourceEnum": "STEELINGOT",  "upgradeVariable": "HARVEST_YIELD", "upgradeFactor": 2.5},
+      {"upgradeIsForWholeType": false, "resourceEnum": "GOLDINGOT",   "upgradeVariable": "HARVEST_YIELD", "upgradeFactor": 2.5}
+    ],
+    "resourceCosts": [
+      {"resourceEnum": "WILLOW",     "resourceCost": 200},
+      {"resourceEnum": "STEELINGOT", "resourceCost": 100}
+    ]
+  }, {
+    "id": 29,
+    "spriteIndex": 33,
+    "upgradeType": "RESOURCE",
+    "name": "Lavish Burner",
+    "description": "Produces 180% more ingots.",
+    "flavorText": "A larger burner for your forge, capable of smelting ores more efficiently.",
+    "upgradeEffects": [
+      {"upgradeIsForWholeType": false, "resourceEnum": "BRONZEINGOT",  "upgradeVariable": "HARVEST_YIELD", "upgradeFactor": 2.8},
+      {"upgradeIsForWholeType": false, "resourceEnum": "IRONINGOT",    "upgradeVariable": "HARVEST_YIELD", "upgradeFactor": 2.8},
+      {"upgradeIsForWholeType": false, "resourceEnum": "STEELINGOT",   "upgradeVariable": "HARVEST_YIELD", "upgradeFactor": 2.8},
+      {"upgradeIsForWholeType": false, "resourceEnum": "GOLDINGOT",    "upgradeVariable": "HARVEST_YIELD", "upgradeFactor": 2.8},
+      {"upgradeIsForWholeType": false, "resourceEnum": "LATINUMINGOT", "upgradeVariable": "HARVEST_YIELD", "upgradeFactor": 2.8}
+    ],
+    "resourceCosts": [
+      {"resourceEnum": "TEAK",         "resourceCost": 500},
+      {"resourceEnum": "LATINUMINGOT", "resourceCost": 350}
+    ]
+  }, {
+    "id": 30,
+    "spriteIndex": 34,
+    "upgradeType": "RESOURCE",
+    "name": "Excessive Burner",
+    "description": "Produces 220% more ingots.",
+    "flavorText": "Alright, you can't possibly need this much space.",
+    "upgradeEffects": [
+      {"upgradeIsForWholeType": false, "resourceEnum": "BRONZEINGOT",   "upgradeVariable": "HARVEST_YIELD", "upgradeFactor": 3.2},
+      {"upgradeIsForWholeType": false, "resourceEnum": "IRONINGOT",     "upgradeVariable": "HARVEST_YIELD", "upgradeFactor": 3.2},
+      {"upgradeIsForWholeType": false, "resourceEnum": "STEELINGOT",    "upgradeVariable": "HARVEST_YIELD", "upgradeFactor": 3.2},
+      {"upgradeIsForWholeType": false, "resourceEnum": "GOLDINGOT",     "upgradeVariable": "HARVEST_YIELD", "upgradeFactor": 3.2},
+      {"upgradeIsForWholeType": false, "resourceEnum": "LATINUMINGOT",  "upgradeVariable": "HARVEST_YIELD", "upgradeFactor": 3.2},
+      {"upgradeIsForWholeType": false, "resourceEnum": "TEMPROUSINGOT", "upgradeVariable": "HARVEST_YIELD", "upgradeFactor": 3.2}
+    ],
+    "resourceCosts": [
+      {"resourceEnum": "TEAK",          "resourceCost": 1500},
+      {"resourceEnum": "TEMPROUSINGOT", "resourceCost": 600}
+    ]
+  }, {
+    "id": 31,
+    "spriteIndex": 35,
+    "upgradeType": "RESOURCE",
+    "name": "Temprous Purifier",
+    "description": "Produces 100% more refined temprous ingots.",
+    "flavorText": "Increases the purity of temprous ingots processed by the temprous distillery.",
+    "upgradeEffects": [
+      {"upgradeIsForWholeType": false, "resourceEnum": "REFINEDTEMPROUS", "upgradeVariable": "HARVEST_YIELD", "upgradeFactor": 2}
+    ],
+    "resourceCosts": [
+      {"resourceEnum": "ENTSOUL",       "resourceCost": 500},
+      {"resourceEnum": "TEMPROUSINGOT", "resourceCost": 800}
+    ]
+  }, {
+    "id": 32,
+    "spriteIndex": 10,
+    "upgradeType": "RESOURCE",
+    "name": "Triplet Axes",
+    "description": "Reduces wood harvesting time by 15%.",
+    "flavorText": "I'm not even going try and figure out how this works, okay?",
+    "upgradeEffects": [
+      {"upgradeIsForWholeType": true, "resourceType": "WOOD", "resourceEnum": "OAK", "upgradeVariable": "HARVEST_MILLISECONDS", "upgradeFactor": 0.85, "maxTier": 3}
+    ],
+    "resourceCosts": [
+      {"resourceEnum": "WILLOW",     "resourceCost": 55},
+      {"resourceEnum": "STEELINGOT", "resourceCost": 85}
+    ]
+  }, {
+    "id": 33,
+    "spriteIndex": 50,
+    "upgradeType": "RESOURCE",
+    "name": "Lumber Mill",
+    "description": "Reduces wood harvesting time by 20%.",
+    "flavorText": "Processes logs at a rate far beyond what's possible manually.",
+    "upgradeEffects": [
+      {"upgradeIsForWholeType": true, "resourceType": "WOOD", "resourceEnum": "OAK", "upgradeVariable": "HARVEST_MILLISECONDS", "upgradeFactor": 0.8, "maxTier": 5}
+    ],
+    "resourceCosts": [
+      {"resourceEnum": "TEAK",         "resourceCost": 850},
+      {"resourceEnum": "LATINUMINGOT", "resourceCost": 650},
+      {"resourceEnum": "OBSIDIAN",     "resourceCost": 200}
+    ]
+  }, {
+    "id": 34,
+    "spriteIndex": 8,
+    "upgradeType": "RESOURCE",
+    "name": "Enchanted Latinum Axe",
+    "description": "Reduces wood harvesting time by 25%.",
+    "flavorText": "Enchanted by the spirits of fallen ents allows this axe's wielder to operate at an unnatural speed.",
+    "upgradeEffects": [
+      {"upgradeIsForWholeType": true, "resourceType": "WOOD", "resourceEnum": "OAK", "upgradeVariable": "HARVEST_MILLISECONDS", "upgradeFactor": 0.75, "maxTier": 6}
+    ],
+    "resourceCosts": [
+      {"resourceEnum": "ENTSOUL",      "resourceCost": 500},
+      {"resourceEnum": "LATINUMINGOT", "resourceCost": 1000},
+      {"resourceEnum": "DIAMOND",      "resourceCost": 255}
+    ]
+  }, {
+    "id": 35,
+    "spriteIndex": 37,
+    "upgradeType": "RESOURCE",
+    "name": "Temprous Siphon",
+    "description": "Reduces reanimated ent harvesting time by 30%.",
+    "flavorText": "Using this siphon, ents can regain their full strength much more quickly.",
+    "upgradeEffects": [
+      {"upgradeIsForWholeType": false, "resourceEnum": "REANIMATEDENT", "upgradeVariable": "HARVEST_MILLISECONDS", "upgradeFactor": 0.7}
+    ],
+    "resourceCosts": [
+      {"resourceEnum": "ENTSOUL",      "resourceCost": 1500},
+      {"resourceEnum": "LATINUMINGOT", "resourceCost": 1250},
+      {"resourceEnum": "DIAMOND",      "resourceCost": 600}
+    ]
+  }, {
+    "id": 36,
+    "spriteIndex": 20,
+    "upgradeType": "RESOURCE",
+    "name": "Decorated Pickaxe",
+    "description": "Reduces mining time for metals up to gold ore and minerals up to marble by 12%.",
+    "flavorText": "Technically these pickaxes aren't any better, but they look pretty. And that's pretty nice.",
+    "upgradeEffects": [
+      {"upgradeIsForWholeType": false, "resourceEnum": "COPPERORE", "upgradeVariable": "HARVEST_MILLISECONDS", "upgradeFactor": 0.88},
+      {"upgradeIsForWholeType": false, "resourceEnum": "TINORE",    "upgradeVariable": "HARVEST_MILLISECONDS", "upgradeFactor": 0.88},
+      {"upgradeIsForWholeType": false, "resourceEnum": "IRONORE",   "upgradeVariable": "HARVEST_MILLISECONDS", "upgradeFactor": 0.88},
+      {"upgradeIsForWholeType": false, "resourceEnum": "STONE",     "upgradeVariable": "HARVEST_MILLISECONDS", "upgradeFactor": 0.88},
+      {"upgradeIsForWholeType": false, "resourceEnum": "GRAPHITE",  "upgradeVariable": "HARVEST_MILLISECONDS", "upgradeFactor": 0.88},
+      {"upgradeIsForWholeType": false, "resourceEnum": "LIMESTONE", "upgradeVariable": "HARVEST_MILLISECONDS", "upgradeFactor": 0.88},
+      {"upgradeIsForWholeType": false, "resourceEnum": "MARBLE",    "upgradeVariable": "HARVEST_MILLISECONDS", "upgradeFactor": 0.88},
+      {"upgradeIsForWholeType": false, "resourceEnum": "GOLDORE",   "upgradeVariable": "HARVEST_MILLISECONDS", "upgradeFactor": 0.88}
+    ],
+    "resourceCosts": [
+      {"resourceEnum": "STEELINGOT", "resourceCost": 120},
+      {"resourceEnum": "WILLOW",     "resourceCost": 60},
+      {"resourceEnum": "QUARTZ",     "resourceCost": 110}
+    ]
+  }, {
+    "id": 37,
+    "spriteIndex": 21,
+    "upgradeType": "RESOURCE",
+    "name": "Explosive Mining",
+    "description": "Reduces mining time for metals up to spectrus ore and minerals up to diamond by 15%.",
+    "flavorText": "Pickaxes laced with a tiny, tiny amount of black powder. The science seems to add up.",
+    "upgradeEffects": [
+      {"upgradeIsForWholeType": false, "resourceEnum": "COPPERORE",      "upgradeVariable": "HARVEST_MILLISECONDS", "upgradeFactor": 0.85},
+      {"upgradeIsForWholeType": false, "resourceEnum": "TINORE",         "upgradeVariable": "HARVEST_MILLISECONDS", "upgradeFactor": 0.85},
+      {"upgradeIsForWholeType": false, "resourceEnum": "IRONORE",        "upgradeVariable": "HARVEST_MILLISECONDS", "upgradeFactor": 0.85},
+      {"upgradeIsForWholeType": false, "resourceEnum": "STONE",          "upgradeVariable": "HARVEST_MILLISECONDS", "upgradeFactor": 0.85},
+      {"upgradeIsForWholeType": false, "resourceEnum": "GRAPHITE",       "upgradeVariable": "HARVEST_MILLISECONDS", "upgradeFactor": 0.85},
+      {"upgradeIsForWholeType": false, "resourceEnum": "LIMESTONE",      "upgradeVariable": "HARVEST_MILLISECONDS", "upgradeFactor": 0.85},
+      {"upgradeIsForWholeType": false, "resourceEnum": "MARBLE",         "upgradeVariable": "HARVEST_MILLISECONDS", "upgradeFactor": 0.85},
+      {"upgradeIsForWholeType": false, "resourceEnum": "GOLDORE",        "upgradeVariable": "HARVEST_MILLISECONDS", "upgradeFactor": 0.85},
+      {"upgradeIsForWholeType": false, "resourceEnum": "QUARTZ",         "upgradeVariable": "HARVEST_MILLISECONDS", "upgradeFactor": 0.85},
+      {"upgradeIsForWholeType": false, "resourceEnum": "OBSIDIAN",       "upgradeVariable": "HARVEST_MILLISECONDS", "upgradeFactor": 0.85},
+      {"upgradeIsForWholeType": false, "resourceEnum": "DIAMOND",        "upgradeVariable": "HARVEST_MILLISECONDS", "upgradeFactor": 0.85},
+      {"upgradeIsForWholeType": false, "resourceEnum": "LATINUMORE",     "upgradeVariable": "HARVEST_MILLISECONDS", "upgradeFactor": 0.85},
+      {"upgradeIsForWholeType": false, "resourceEnum": "UNBELIEVIUMORE", "upgradeVariable": "HARVEST_MILLISECONDS", "upgradeFactor": 0.85},
+      {"upgradeIsForWholeType": false, "resourceEnum": "LUSTRIALORE",    "upgradeVariable": "HARVEST_MILLISECONDS", "upgradeFactor": 0.85},
+      {"upgradeIsForWholeType": false, "resourceEnum": "SPECTRUSORE",    "upgradeVariable": "HARVEST_MILLISECONDS", "upgradeFactor": 0.85}
+    ],
+    "resourceCosts": [
+      {"resourceEnum": "LATINUMINGOT", "resourceCost": 500},
+      {"resourceEnum": "TEAK",         "resourceCost": 250},
+      {"resourceEnum": "OBSIDIAN",     "resourceCost": 110}
+    ]
+  }, {
+    "id": 38,
+    "spriteIndex": 36,
+    "upgradeType": "RESOURCE",
+    "name": "Temprous Catalyst",
+    "description": "Reduces harvesting time for refined temprous ingots by 50%.",
+    "flavorText": "Speeds up the temprous purification process.",
+    "upgradeEffects": [
+      {"upgradeIsForWholeType": false, "resourceEnum": "REFINEDTEMPROUS", "upgradeVariable": "HARVEST_MILLISECONDS", "upgradeFactor": 0.5}
+    ],
+    "resourceCosts": [
+      {"resourceEnum": "REFINEDTEMPROUS", "resourceCost": 750},
+      {"resourceEnum": "ENTSOUL",         "resourceCost": 350},
+      {"resourceEnum": "DIAMOND",         "resourceCost": 160}
+    ]
+  }, {
+    "id": 39,
+    "spriteIndex": 38,
+    "upgradeType": "RESOURCE",
+    "name": "Limestone Burner",
+    "description": "Reduces mining time for bronze ingots by 10%.",
+    "flavorText": "This reinforced burner can withstand much higher temperatures, allowing you to produce ingots much faster.",
+    "upgradeEffects": [
+      {"upgradeIsForWholeType": false, "resourceEnum": "BRONZEINGOT", "upgradeVariable": "HARVEST_MILLISECONDS", "upgradeFactor": 0.9}
+    ],
+    "resourceCosts": [
+      {"resourceEnum": "BIRCH",     "resourceCost": 50},
+      {"resourceEnum": "LIMESTONE", "resourceCost": 80}
+    ]
+  }, {
+    "id": 40,
+    "spriteIndex": 39,
+    "upgradeType": "RESOURCE",
+    "name": "Marble Burner",
+    "description": "Reduces mining time for ingots up to steel by 12%.",
+    "flavorText": "This reinforced burner can withstand much higher temperatures, allowing you to produce ingots much faster.",
+    "upgradeEffects": [
+      {"upgradeIsForWholeType": false, "resourceEnum": "BRONZEINGOT", "upgradeVariable": "HARVEST_MILLISECONDS", "upgradeFactor": 0.88},
+      {"upgradeIsForWholeType": false, "resourceEnum": "IRONINGOT",   "upgradeVariable": "HARVEST_MILLISECONDS", "upgradeFactor": 0.88},
+      {"upgradeIsForWholeType": false, "resourceEnum": "STEELINGOT",  "upgradeVariable": "HARVEST_MILLISECONDS", "upgradeFactor": 0.88}
+    ],
+    "resourceCosts": [
+      {"resourceEnum": "EUCALYPTUS", "resourceCost": 120},
+      {"resourceEnum": "MARBLE",     "resourceCost": 220}
+    ]
+  }, {
+    "id": 41,
+    "spriteIndex": 40,
+    "upgradeType": "RESOURCE",
+    "name": "Obsidian Burner",
+    "description": "Reduces mining time for ingots up to gold by 15%.",
+    "flavorText": "This reinforced burner can withstand much higher temperatures, allowing you to produce ingots much faster.",
+    "upgradeEffects": [
+      {"upgradeIsForWholeType": false, "resourceEnum": "BRONZEINGOT", "upgradeVariable": "HARVEST_MILLISECONDS", "upgradeFactor": 0.85},
+      {"upgradeIsForWholeType": false, "resourceEnum": "IRONINGOT",   "upgradeVariable": "HARVEST_MILLISECONDS", "upgradeFactor": 0.85},
+      {"upgradeIsForWholeType": false, "resourceEnum": "STEELINGOT",  "upgradeVariable": "HARVEST_MILLISECONDS", "upgradeFactor": 0.85},
+      {"upgradeIsForWholeType": false, "resourceEnum": "GOLDINGOT",   "upgradeVariable": "HARVEST_MILLISECONDS", "upgradeFactor": 0.85}
+    ],
+    "resourceCosts": [
+      {"resourceEnum": "TEAK",     "resourceCost": 350},
+      {"resourceEnum": "OBSIDIAN", "resourceCost": 475}
+    ]
+  }, {
+    "id": 42,
+    "spriteIndex": 41,
+    "upgradeType": "RESOURCE",
+    "name": "Diamond Burner",
+    "description": "Reduces mining time for ingots up to latinum by 15%.",
+    "flavorText": "This reinforced burner can withstand much higher temperatures, allowing you to produce ingots much faster.",
+    "upgradeEffects": [
+      {"upgradeIsForWholeType": false, "resourceEnum": "BRONZEINGOT",  "upgradeVariable": "HARVEST_MILLISECONDS", "upgradeFactor": 0.85},
+      {"upgradeIsForWholeType": false, "resourceEnum": "IRONINGOT",    "upgradeVariable": "HARVEST_MILLISECONDS", "upgradeFactor": 0.85},
+      {"upgradeIsForWholeType": false, "resourceEnum": "STEELINGOT",   "upgradeVariable": "HARVEST_MILLISECONDS", "upgradeFactor": 0.85},
+      {"upgradeIsForWholeType": false, "resourceEnum": "GOLDINGOT",    "upgradeVariable": "HARVEST_MILLISECONDS", "upgradeFactor": 0.85},
+      {"upgradeIsForWholeType": false, "resourceEnum": "LATINUMINGOT", "upgradeVariable": "HARVEST_MILLISECONDS", "upgradeFactor": 0.85}
+    ],
+    "resourceCosts": [
+      {"resourceEnum": "TEAK",     "resourceCost": 750},
+      {"resourceEnum": "OBSIDIAN", "resourceCost": 200},
+      {"resourceEnum": "DIAMOND",  "resourceCost": 1000}
+    ]
+  }, {
+    "id": 43,
+    "spriteIndex": 42,
+    "upgradeType": "RESOURCE",
+    "name": "Temprous Burner",
+    "description": "Reduces mining time for ingots up to temprous by 25%.",
+    "flavorText": "This reinforced burner can withstand much higher temperatures, allowing you to produce ingots much faster.",
+    "upgradeEffects": [
+      {"upgradeIsForWholeType": false, "resourceEnum": "BRONZEINGOT",   "upgradeVariable": "HARVEST_MILLISECONDS", "upgradeFactor": 0.75},
+      {"upgradeIsForWholeType": false, "resourceEnum": "IRONINGOT",     "upgradeVariable": "HARVEST_MILLISECONDS", "upgradeFactor": 0.75},
+      {"upgradeIsForWholeType": false, "resourceEnum": "STEELINGOT",    "upgradeVariable": "HARVEST_MILLISECONDS", "upgradeFactor": 0.75},
+      {"upgradeIsForWholeType": false, "resourceEnum": "GOLDINGOT",     "upgradeVariable": "HARVEST_MILLISECONDS", "upgradeFactor": 0.75},
+      {"upgradeIsForWholeType": false, "resourceEnum": "LATINUMINGOT",  "upgradeVariable": "HARVEST_MILLISECONDS", "upgradeFactor": 0.75},
+      {"upgradeIsForWholeType": false, "resourceEnum": "TEMPROUSINGOT", "upgradeVariable": "HARVEST_MILLISECONDS", "upgradeFactor": 0.75}
+    ],
+    "resourceCosts": [
+      {"resourceEnum": "ENTSOUL",       "resourceCost": 500},
+      {"resourceEnum": "DIAMOND",       "resourceCost": 350},
+      {"resourceEnum": "TEMPROUSINGOT", "resourceCost": 1350}
+    ]
+  }, {
+    "id": 44,
+    "spriteIndex": 51,
+    "upgradeType": "WORKER",
+    "name": "Kelley the Deforester",
+    "description": "",
+    "flavorText": "Dammit, Jim! I'm a lumberjack, not a doctor!",
+    "upgradeEffects": [
+      {"upgradeIsForWholeType": true, "resourceEnum": "GOLD", "upgradeVariable": "WORKABLE", "upgradeFactor": 1, "resourceType": "WOOD", "maxTier": 5}
+      ],
+    "resourceCosts": [
+      {"resourceEnum": "GOLD", "resourceCost": 3000}
+      ],"purchased": false
+  }, {
+    "id": 45,
+    "spriteIndex": 64,
+    "upgradeType": "WORKER",
+    "name": "Elder Ent",
+    "description": "",
+    "flavorText": "This respected ent elder will offer his services to help guide more of his kin back into this world.",
+    "upgradeEffects": [
+      {"upgradeIsForWholeType": false, "resourceEnum": "ENTSOUL",       "upgradeVariable": "WORKABLE", "upgradeFactor": 1},
+      {"upgradeIsForWholeType": false, "resourceEnum": "REANIMATEDENT", "upgradeVariable": "WORKABLE", "upgradeFactor": 1}
+    ],
+    "resourceCosts": [
+      {"resourceEnum": "GOLD",          "resourceCost": 60000},
+      {"resourceEnum": "REANIMATEDENT", "resourceCost": 1}
+    ]
+  }, {
+    "id": 46,
+    "spriteIndex": 52,
+    "upgradeType": "WORKER",
+    "name": "Mineral Enthusiast",
+    "description": "",
+    "flavorText": "Once an officer of the law, this man has put his career aside to pursue his true passion: mining minerals.",
+    "upgradeEffects": [
+      {"upgradeIsForWholeType": false, "resourceEnum": "STONE",     "upgradeVariable": "WORKABLE", "upgradeFactor": 1},
+      {"upgradeIsForWholeType": false, "resourceEnum": "GRAPHITE",  "upgradeVariable": "WORKABLE", "upgradeFactor": 1},
+      {"upgradeIsForWholeType": false, "resourceEnum": "LIMESTONE", "upgradeVariable": "WORKABLE", "upgradeFactor": 1},
+      {"upgradeIsForWholeType": false, "resourceEnum": "MARBLE",    "upgradeVariable": "WORKABLE", "upgradeFactor": 1},
+      {"upgradeIsForWholeType": false, "resourceEnum": "QUARTZ",    "upgradeVariable": "WORKABLE", "upgradeFactor": 1}
+    ],
+    "resourceCosts": [
+      {"resourceEnum": "GOLD", "resourceCost": 4000}
+    ]
+  }, {
+    "id": 47,
+    "spriteIndex": 53,
+    "upgradeType": "WORKER",
+    "name": "Mineral Obsessive",
+    "description": "",
+    "flavorText": "This guy REALLY likes minerals!",
+    "upgradeEffects": [
+      {"upgradeIsForWholeType": false, "resourceEnum": "OBSIDIAN", "upgradeVariable": "WORKABLE", "upgradeFactor": 1},
+      {"upgradeIsForWholeType": false, "resourceEnum": "DIAMOND",  "upgradeVariable": "WORKABLE", "upgradeFactor": 1}
+    ],
+    "resourceCosts": [
+      {"resourceEnum": "MARBLE",   "resourceCost": 375},
+      {"resourceEnum": "QUARTZ",   "resourceCost": 300},
+      {"resourceEnum": "OBSIDIAN", "resourceCost": 30},
+      {"resourceEnum": "DIAMOND",  "resourceCost": 20}
+    ]
+  }, {
+    "id": 48,
+    "spriteIndex": 54,
+    "upgradeType": "WORKER",
+    "name": "Dwarven Miner",
+    "description": "",
+    "flavorText": "Dwarves aren't actually very active miners. This guy just loves his job.",
+    "upgradeEffects": [
+      {"upgradeIsForWholeType": true, "resourceType": "METAL", "resourceEnum": "OBSIDIAN", "upgradeVariable": "WORKABLE", "upgradeFactor": 1, "maxTier": 5}
+    ],
+    "resourceCosts": [
+      {"resourceEnum": "GOLD", "resourceCost": 4500}
+    ]
+  }, {
+    "id": 49,
+    "spriteIndex": 55,
+    "upgradeType": "WORKER",
+    "name": "Dwarven Champion",
+    "description": "",
+    "flavorText": "Dwarves are naturally inclined to be the best at whatever they do, even things that are totally un-dwarfish like mining.",
+    "upgradeEffects": [
+      {"upgradeIsForWholeType": true, "resourceType": "METAL", "resourceEnum": "OBSIDIAN", "upgradeVariable": "WORKABLE", "upgradeFactor": 1, "maxTier": 7}
+    ],
+    "resourceCosts": [
+      {"resourceEnum": "GOLD",          "resourceCost": 60000},
+      {"resourceEnum": "TEMPROUSINGOT", "resourceCost": 10}
+    ]
+  }, {
+    "id": 50,
+    "upgradeType": "WORKER",
+    "spriteIndex": 58,
+    "name": "Musical Lumberjacks",
+    "description": "Increases lumberjack yield by 60%.",
+    "flavorText": "This funny little tune helps the lumberjacks stay focused, but you'll NEVER get it out of your head.",
+    "upgradeEffects": [
+      {"upgradeIsForWholeType": true, "resourceType": "WOOD", "resourceEnum": "OAK", "upgradeVariable": "WORKER_YIELD", "upgradeFactor": 1.6, "maxTier": 5}
+    ],
+    "resourceCosts": [
+      {"resourceEnum": "EUCALYPTUS", "resourceCost": 300}
+    ]
+  }, {
+    "id": 51,
+    "spriteIndex": 65,
+    "upgradeType": "WORKER",
+    "name": "Entking",
+    "description": "Increases ent yield by 200%.",
+    "flavorText": "With their king at last restored to his former glory, the ents find themselves greatly invigorated.",
+    "upgradeEffects": [
+      {"upgradeIsForWholeType": false, "resourceEnum": "ENTSOUL",       "upgradeVariable": "WORKER_YIELD", "upgradeFactor": 3},
+      {"upgradeIsForWholeType": false, "resourceEnum": "REANIMATEDENT", "upgradeVariable": "WORKER_YIELD", "upgradeFactor": 3}
+    ],
+    "resourceCosts": [
+      {"resourceEnum": "ENTSOUL",         "resourceCost": 500},
+      {"resourceEnum": "REFINEDTEMPROUS", "resourceCost": 150}
+    ]
+  }, {
+    "id": 52,
+    "spriteIndex": 67,
+    "upgradeType": "WORKER",
+    "name": "Miner's Guild",
+    "description": "Increases miner yield by 15%.",
+    "flavorText": "Form a guild to help your workers hone their skills.",
+    "upgradeEffects": [
+      {"upgradeIsForWholeType": true, "resourceType": "MINERAL", "upgradeVariable": "WORKER_YIELD", "upgradeFactor": 1.15},
+      {"upgradeIsForWholeType": true, "resourceType": "METAL",   "upgradeVariable": "WORKER_YIELD", "upgradeFactor": 1.15}
+    ],
+    "resourceCosts": [
+      {"resourceEnum": "GOLDINGOT", "resourceCost": 500}
+    ]
+  }, {
+    "id": 53,
+    "spriteIndex": 56,
+    "upgradeType": "WORKER",
+    "name": "Miner Musical",
+    "description": "Increases miner yield by 100%.",
+    "flavorText": "Those who underperform are \"encouraged\" to sing along.",
+    "upgradeEffects": [
+      {"upgradeIsForWholeType": true, "resourceType": "MINERAL", "upgradeVariable": "WORKER_YIELD", "upgradeFactor": 2, "maxTier": 6},
+      {"upgradeIsForWholeType": true, "resourceType": "METAL",   "upgradeVariable": "WORKER_YIELD", "upgradeFactor": 2, "maxTier": 5}
+    ],
+    "resourceCosts": [
+      {"resourceEnum": "LATINUMINGOT", "resourceCost": 1500}
+    ]
+  }, {
+    "id": 54,
+    "spriteIndex": 57,
+    "upgradeType": "WORKER",
+    "name": "Temprous Master",
+    "description": "Increases temprous ingot yield by 50%.",
+    "flavorText": "There is no other with the prowess this master posesses in handling temprous metal.",
+    "upgradeEffects": [
+      {"upgradeIsForWholeType": false, "resourceEnum": "TEMPROUSINGOT",   "upgradeVariable": "WORKER_YIELD", "upgradeFactor": 1.5},
+      {"upgradeIsForWholeType": false, "resourceEnum": "REFINEDTEMPROUS", "upgradeVariable": "WORKER_YIELD", "upgradeFactor": 1.5}
+    ],
+    "resourceCosts": [
+      {"resourceEnum": "REFINEDTEMPROUS", "resourceCost": 250},
+      {"resourceEnum": "ENTSOUL",         "resourceCost": 50}
+    ]
+  }, {
+    "id": 55,
+    "spriteIndex": 22,
+    "upgradeType": "RESOURCE",
+    "name": "Bronze Hoe",
+    "description": "Allows harvesting of raw potatoes.",
+    "flavorText": "",
+    "upgradeEffects": [
+      {"upgradeIsForWholeType": false, "resourceEnum": "RAWPOTATO", "upgradeVariable": "HARVESTABILITY", "upgradeFactor": 1}
+    ],
+    "resourceCosts": [
+      {"resourceEnum": "WHEAT",  "resourceCost": 10},
+      {"resourceEnum": "BRONZEINGOT", "resourceCost": 5},
+      {"resourceEnum": "PINE",   "resourceCost": 10}
+    ]
+  }, {
+    "id": 57,
+    "spriteIndex": 23,
+    "upgradeType": "RESOURCE",
+    "name": "Iron Hoe",
+    "description": "Allows harvesting of rice.",
+    "flavorText": "",
+    "upgradeEffects": [
+      {"upgradeIsForWholeType": false, "resourceEnum": "RICE", "upgradeVariable": "HARVESTABILITY", "upgradeFactor": 1}
+    ],
+    "resourceCosts": [
+      {"resourceEnum": "RAWPOTATO", "resourceCost": 15},
+      {"resourceEnum": "IRONINGOT",      "resourceCost": 30},
+      {"resourceEnum": "BIRCH",     "resourceCost": 45}
+    ]
+  }, {
+    "id": 58,
+    "spriteIndex": 24,
+    "upgradeType": "RESOURCE",
+    "name": "Fishing Rod",
+    "description": "Allows harvesting of herring and bass.",
+    "flavorText": "With this, you can catch some small fish.",
+    "upgradeEffects": [
+      {"upgradeIsForWholeType": false, "resourceEnum": "RAWHERRING", "upgradeVariable": "HARVESTABILITY", "upgradeFactor": 1},
+      {"upgradeIsForWholeType": false, "resourceEnum": "RAWBASS",    "upgradeVariable": "HARVESTABILITY", "upgradeFactor": 1}
+    ],
+    "resourceCosts": [
+      {"resourceEnum": "IRONINGOT",  "resourceCost": 50},
+      {"resourceEnum": "BIRCH", "resourceCost": 80}
+    ]
+  }, {
+    "id": 59,
+    "spriteIndex": 25,
+    "upgradeType": "RESOURCE",
+    "name": "Gold-tipped Rod",
+    "description": "Allows harvesting of sharks.",
+    "flavorText": "The bright metallic tip can attract some highly dangerous, and highly lucrative, fish.",
+    "upgradeEffects": [
+      {"upgradeIsForWholeType": false, "resourceEnum": "RAWSHARK", "upgradeVariable": "HARVESTABILITY", "upgradeFactor": 1}
+    ],
+    "resourceCosts": [
+      {"resourceEnum": "RAWHERRING", "resourceCost": 20},
+      {"resourceEnum": "GOLDINGOT",  "resourceCost": 120},
+      {"resourceEnum": "EUCALYPTUS", "resourceCost": 80}
+    ]
+  }, {
+    "id": 60,
+    "spriteIndex": 74,
+    "upgradeType": "RESOURCE",
+    "name": "Expanded Plots",
+    "description": "Harvests 200% more crops per task.",
+    "flavorText": "Less Hobbit, more Lord of the Rings.",
+    "upgradeEffects": [
+      {"upgradeIsForWholeType": false, "resourceEnum": "WHEAT",     "upgradeVariable": "HARVEST_YIELD", "upgradeFactor": 3},
+      {"upgradeIsForWholeType": false, "resourceEnum": "RAWPOTATO", "upgradeVariable": "HARVEST_YIELD", "upgradeFactor": 3},
+      {"upgradeIsForWholeType": false, "resourceEnum": "RICE",      "upgradeVariable": "HARVEST_YIELD", "upgradeFactor": 3}
+    ],
+    "resourceCosts": [
+      {"resourceEnum": "WHEAT", "resourceCost": 50}
+    ]
+  }, {
+    "id": 61,
+    "spriteIndex": 75,
+    "upgradeType": "RESOURCE",
+    "name": "Scarecrow",
+    "description": "Harvests 300% more crops per task.",
+    "flavorText": "We tried scarycrows first, but they just made things worse.",
+    "upgradeEffects": [
+      {"upgradeIsForWholeType": false, "resourceEnum": "WHEAT",     "upgradeVariable": "HARVEST_YIELD", "upgradeFactor": 4},
+      {"upgradeIsForWholeType": false, "resourceEnum": "RAWPOTATO", "upgradeVariable": "HARVEST_YIELD", "upgradeFactor": 4},
+      {"upgradeIsForWholeType": false, "resourceEnum": "RICE",      "upgradeVariable": "HARVEST_YIELD", "upgradeFactor": 4}
+    ],
+    "resourceCosts": [
+      {"resourceEnum": "WHEAT", "resourceCost": 250},
+      {"resourceEnum": "BIRCH", "resourceCost": 120}
+    ]
+  }, {
+    "id": 62,
+    "spriteIndex": 28,
+    "upgradeType": "RESOURCE",
+    "name": "Fishing Net",
+    "description": "Harvests 200% more fish per task.",
+    "flavorText": "The latest in fishing technology!",
+    "upgradeEffects": [
+      {"upgradeIsForWholeType": false, "resourceEnum": "RAWHERRING", "upgradeVariable": "HARVEST_YIELD", "upgradeFactor": 3},
+      {"upgradeIsForWholeType": false, "resourceEnum": "RAWBASS",    "upgradeVariable": "HARVEST_YIELD", "upgradeFactor": 3},
+      {"upgradeIsForWholeType": false, "resourceEnum": "RAWSHARK",   "upgradeVariable": "HARVEST_YIELD", "upgradeFactor": 3}
+    ],
+    "resourceCosts": [
+      {"resourceEnum": "RAWHERRING", "resourceCost": 400}
+    ]
+  }, {
+    "id": 63,
+    "spriteIndex": 29,
+    "upgradeType": "RESOURCE",
+    "name": "Sign That Says \"Please Swim Into This Net\"",
+    "description": "Harvests 300% more fish per task.",
+    "flavorText": "That I just found.",
+    "upgradeEffects": [
+      {"upgradeIsForWholeType": false, "resourceEnum": "RAWHERRING", "upgradeVariable": "HARVEST_YIELD", "upgradeFactor": 4},
+      {"upgradeIsForWholeType": false, "resourceEnum": "RAWBASS",    "upgradeVariable": "HARVEST_YIELD", "upgradeFactor": 4},
+      {"upgradeIsForWholeType": false, "resourceEnum": "RAWSHARK",   "upgradeVariable": "HARVEST_YIELD", "upgradeFactor": 4}
+    ],
+    "resourceCosts": [
+      {"resourceEnum": "RAWBASS",    "resourceCost": 650},
+      {"resourceEnum": "EUCALYPTUS", "resourceCost": 300}
+    ]
+  }, {
+    "id": 64,
+    "spriteIndex": 76,
+    "upgradeType": "RESOURCE",
+    "name": "Expanded Farm",
+    "description": "Harvests 200% more creatures per task.",
+    "flavorText": "",
+    "upgradeEffects": [
+      {"upgradeIsForWholeType": false, "resourceEnum": "RAWCHICKEN",    "upgradeVariable": "HARVEST_YIELD", "upgradeFactor": 3},
+      {"upgradeIsForWholeType": false, "resourceEnum": "RAWSTEAK",      "upgradeVariable": "HARVEST_YIELD", "upgradeFactor": 3},
+      {"upgradeIsForWholeType": false, "resourceEnum": "RAWDRAGONMEAT", "upgradeVariable": "HARVEST_YIELD", "upgradeFactor": 3}
+    ],
+    "resourceCosts": [
+      {"resourceEnum": "WILLOW", "resourceCost": 1200},
+      {"resourceEnum": "MARBLE", "resourceCost": 650}
+    ]
+  }, {
+    "id": 65,
+    "spriteIndex": 77,
+    "upgradeType": "RESOURCE",
+    "name": "Massive Farm",
+    "description": "Harvests 300% more creatures per task.",
+    "flavorText": "",
+    "upgradeEffects": [
+      {"upgradeIsForWholeType": false, "resourceEnum": "RAWCHICKEN",    "upgradeVariable": "HARVEST_YIELD", "upgradeFactor": 4},
+      {"upgradeIsForWholeType": false, "resourceEnum": "RAWSTEAK",      "upgradeVariable": "HARVEST_YIELD", "upgradeFactor": 4},
+      {"upgradeIsForWholeType": false, "resourceEnum": "RAWDRAGONMEAT", "upgradeVariable": "HARVEST_YIELD", "upgradeFactor": 4}
+    ],
+    "resourceCosts": [
+      {"resourceEnum": "TEAK",    "resourceCost": 2000},
+      {"resourceEnum": "LATINUMINGOT", "resourceCost": 800}
+    ]
+  }, {
+    "id": 66,
+    "spriteIndex": 68,
+    "upgradeType": "RESOURCE",
+    "name": "Sharpened Tools",
+    "description": "Reduces farming time by 50%.",
+    "flavorText": "",
+    "upgradeEffects": [
+      {"upgradeIsForWholeType": false, "resourceEnum": "WHEAT",     "upgradeVariable": "HARVEST_MILLISECONDS", "upgradeFactor": 0.5},
+      {"upgradeIsForWholeType": false, "resourceEnum": "RAWPOTATO", "upgradeVariable": "HARVEST_MILLISECONDS", "upgradeFactor": 0.5},
+      {"upgradeIsForWholeType": false, "resourceEnum": "RICE",      "upgradeVariable": "HARVEST_MILLISECONDS", "upgradeFactor": 0.5}
+    ],
+    "resourceCosts": [
+      {"resourceEnum": "STONE", "resourceCost": 50},
+      {"resourceEnum": "OAK",   "resourceCost": 20}
+    ]
+  }, {
+    "id": 67,
+    "spriteIndex": 69,
+    "upgradeType": "RESOURCE",
+    "name": "Automated Harvesting",
+    "description": "Reduces farming time by 50%.",
+    "flavorText": "These tools practically move themselves!",
+    "upgradeEffects": [
+      {"upgradeIsForWholeType": false, "resourceEnum": "WHEAT",     "upgradeVariable": "HARVEST_MILLISECONDS", "upgradeFactor": 0.5},
+      {"upgradeIsForWholeType": false, "resourceEnum": "RAWPOTATO", "upgradeVariable": "HARVEST_MILLISECONDS", "upgradeFactor": 0.5},
+      {"upgradeIsForWholeType": false, "resourceEnum": "RICE",      "upgradeVariable": "HARVEST_MILLISECONDS", "upgradeFactor": 0.5}
+    ],
+    "resourceCosts": [
+      {"resourceEnum": "BRONZEINGOT", "resourceCost": 150},
+      {"resourceEnum": "PINE",   "resourceCost": 60}
+    ]
+  }, {
+    "id": 68,
+    "spriteIndex": 26,
+    "upgradeType": "RESOURCE",
+    "name": "Decent Rod",
+    "description": "Reduces fishing time by 50%.",
+    "flavorText": "",
+    "upgradeEffects": [
+      {"upgradeIsForWholeType": false, "resourceEnum": "RAWHERRING", "upgradeVariable": "HARVEST_MILLISECONDS", "upgradeFactor": 0.5},
+      {"upgradeIsForWholeType": false, "resourceEnum": "RAWBASS",    "upgradeVariable": "HARVEST_MILLISECONDS", "upgradeFactor": 0.5},
+      {"upgradeIsForWholeType": false, "resourceEnum": "RAWSHARK",   "upgradeVariable": "HARVEST_MILLISECONDS", "upgradeFactor": 0.5}
+    ],
+    "resourceCosts": [
+      {"resourceEnum": "RAWHERRING", "resourceCost": 60},
+      {"resourceEnum": "BIRCH",      "resourceCost": 200}
+    ]
+  }, {
+    "id": 69,
+    "spriteIndex": 27,
+    "upgradeType": "RESOURCE",
+    "name": "Not-too-shabby Rod",
+    "description": "Reduces fishing time by 50%.",
+    "flavorText": "",
+    "upgradeEffects": [
+      {"upgradeIsForWholeType": false, "resourceEnum": "RAWHERRING", "upgradeVariable": "HARVEST_MILLISECONDS", "upgradeFactor": 0.5},
+      {"upgradeIsForWholeType": false, "resourceEnum": "RAWBASS",    "upgradeVariable": "HARVEST_MILLISECONDS", "upgradeFactor": 0.5},
+      {"upgradeIsForWholeType": false, "resourceEnum": "RAWSHARK",   "upgradeVariable": "HARVEST_MILLISECONDS", "upgradeFactor": 0.5}
+    ],
+    "resourceCosts": [
+      {"resourceEnum": "RAWBASS", "resourceCost": 70},
+      {"resourceEnum": "MARBLE",  "resourceCost": 250}
+    ]
+  }, {
+    "id": 70,
+    "upgradeType": "RESOURCE",
+    "spriteIndex" : 78,
+    "name": "Marble Walls",
+    "description": "Reduces creature hunting time by 50%.",
+    "flavorText": "",
+    "upgradeEffects": [
+      {"upgradeIsForWholeType": false, "resourceEnum": "RAWCHICKEN",    "upgradeVariable": "HARVEST_MILLISECONDS", "upgradeFactor": 0.5},
+      {"upgradeIsForWholeType": false, "resourceEnum": "RAWSTEAK",      "upgradeVariable": "HARVEST_MILLISECONDS", "upgradeFactor": 0.5},
+      {"upgradeIsForWholeType": false, "resourceEnum": "RAWDRAGONMEAT", "upgradeVariable": "HARVEST_MILLISECONDS", "upgradeFactor": 0.5}
+    ],
+    "resourceCosts": [
+      {"resourceEnum": "MARBLE", "resourceCost": 400},
+      {"resourceEnum": "EUCALYPTUS",  "resourceCost": 250}
+    ]
+  }, {
+    "id": 71,
+    "spriteIndex": 79,
+    "upgradeType": "RESOURCE",
+    "name": "Obsidian Walls",
+    "description": "Reduces creature hunting time by 50%.",
+    "flavorText": "",
+    "upgradeEffects": [
+      {"upgradeIsForWholeType": false, "resourceEnum": "RAWCHICKEN",    "upgradeVariable": "HARVEST_MILLISECONDS", "upgradeFactor": 0.5},
+      {"upgradeIsForWholeType": false, "resourceEnum": "RAWSTEAK",      "upgradeVariable": "HARVEST_MILLISECONDS", "upgradeFactor": 0.5},
+      {"upgradeIsForWholeType": false, "resourceEnum": "RAWDRAGONMEAT", "upgradeVariable": "HARVEST_MILLISECONDS", "upgradeFactor": 0.5}
+    ],
+    "resourceCosts": [
+      {"resourceEnum": "OBSIDIAN", "resourceCost": 650},
+      {"resourceEnum": "TEAK",     "resourceCost": 325},
+      {"resourceEnum": "LATINUMINGOT",  "resourceCost": 120}
+    ]
+  }, {
+    "id": 72,
+    "spriteIndex": 43,
+    "upgradeType": "RESOURCE",
+    "name": "Stone Oven Frame",
+    "description": "Reduces oven harvest time by 10%.",
+    "flavorText": "",
+    "upgradeEffects": [
+      {"upgradeIsForWholeType": false, "resourceEnum": "BREAD",      "upgradeVariable": "HARVEST_MILLISECONDS", "upgradeFactor": 0.9},
+      {"upgradeIsForWholeType": false, "resourceEnum": "POTATO",     "upgradeVariable": "HARVEST_MILLISECONDS", "upgradeFactor": 0.9},
+      {"upgradeIsForWholeType": false, "resourceEnum": "JELLYDONUT", "upgradeVariable": "HARVEST_MILLISECONDS", "upgradeFactor": 0.9},
+      {"upgradeIsForWholeType": false, "resourceEnum": "HERRING",    "upgradeVariable": "HARVEST_MILLISECONDS", "upgradeFactor": 0.9},
+      {"upgradeIsForWholeType": false, "resourceEnum": "BASS",       "upgradeVariable": "HARVEST_MILLISECONDS", "upgradeFactor": 0.9},
+      {"upgradeIsForWholeType": false, "resourceEnum": "SHARK",      "upgradeVariable": "HARVEST_MILLISECONDS", "upgradeFactor": 0.9},
+      {"upgradeIsForWholeType": false, "resourceEnum": "CHICKEN",    "upgradeVariable": "HARVEST_MILLISECONDS", "upgradeFactor": 0.9},
+      {"upgradeIsForWholeType": false, "resourceEnum": "STEAK",      "upgradeVariable": "HARVEST_MILLISECONDS", "upgradeFactor": 0.9},
+      {"upgradeIsForWholeType": false, "resourceEnum": "DRAGONMEAT", "upgradeVariable": "HARVEST_MILLISECONDS", "upgradeFactor": 0.9}
+    ],
+    "resourceCosts": [
+      {"resourceEnum": "STONE", "resourceCost": 60},
+      {"resourceEnum": "OAK",   "resourceCost": 45}
+    ]
+  }, {
+    "id": 73,
+    "spriteIndex": 44,
+    "upgradeType": "RESOURCE",
+    "name": "Iron Oven Frame",
+    "description": "Reduces oven harvest time by 15%.",
+    "flavorText": "",
+    "upgradeEffects": [
+      {"upgradeIsForWholeType": false, "resourceEnum": "BREAD",      "upgradeVariable": "HARVEST_MILLISECONDS", "upgradeFactor": 0.85},
+      {"upgradeIsForWholeType": false, "resourceEnum": "POTATO",     "upgradeVariable": "HARVEST_MILLISECONDS", "upgradeFactor": 0.85},
+      {"upgradeIsForWholeType": false, "resourceEnum": "JELLYDONUT", "upgradeVariable": "HARVEST_MILLISECONDS", "upgradeFactor": 0.85},
+      {"upgradeIsForWholeType": false, "resourceEnum": "HERRING",    "upgradeVariable": "HARVEST_MILLISECONDS", "upgradeFactor": 0.85},
+      {"upgradeIsForWholeType": false, "resourceEnum": "BASS",       "upgradeVariable": "HARVEST_MILLISECONDS", "upgradeFactor": 0.85},
+      {"upgradeIsForWholeType": false, "resourceEnum": "SHARK",      "upgradeVariable": "HARVEST_MILLISECONDS", "upgradeFactor": 0.85},
+      {"upgradeIsForWholeType": false, "resourceEnum": "CHICKEN",    "upgradeVariable": "HARVEST_MILLISECONDS", "upgradeFactor": 0.85},
+      {"upgradeIsForWholeType": false, "resourceEnum": "STEAK",      "upgradeVariable": "HARVEST_MILLISECONDS", "upgradeFactor": 0.85},
+      {"upgradeIsForWholeType": false, "resourceEnum": "DRAGONMEAT", "upgradeVariable": "HARVEST_MILLISECONDS", "upgradeFactor": 0.85}
+    ],
+    "resourceCosts": [
+      {"resourceEnum": "IRONINGOT",  "resourceCost": 100},
+      {"resourceEnum": "BIRCH", "resourceCost": 65}
+    ]
+  }, {
+    "id": 74,
+    "spriteIndex": 45,
+    "upgradeType": "RESOURCE",
+    "name": "Steel Oven Frame",
+    "description": "Reduces oven harvest time by 15%.",
+    "flavorText": "",
+    "upgradeEffects": [
+      {"upgradeIsForWholeType": false, "resourceEnum": "BREAD",      "upgradeVariable": "HARVEST_MILLISECONDS", "upgradeFactor": 0.85},
+      {"upgradeIsForWholeType": false, "resourceEnum": "POTATO",     "upgradeVariable": "HARVEST_MILLISECONDS", "upgradeFactor": 0.85},
+      {"upgradeIsForWholeType": false, "resourceEnum": "JELLYDONUT", "upgradeVariable": "HARVEST_MILLISECONDS", "upgradeFactor": 0.85},
+      {"upgradeIsForWholeType": false, "resourceEnum": "HERRING",    "upgradeVariable": "HARVEST_MILLISECONDS", "upgradeFactor": 0.85},
+      {"upgradeIsForWholeType": false, "resourceEnum": "BASS",       "upgradeVariable": "HARVEST_MILLISECONDS", "upgradeFactor": 0.85},
+      {"upgradeIsForWholeType": false, "resourceEnum": "SHARK",      "upgradeVariable": "HARVEST_MILLISECONDS", "upgradeFactor": 0.85},
+      {"upgradeIsForWholeType": false, "resourceEnum": "CHICKEN",    "upgradeVariable": "HARVEST_MILLISECONDS", "upgradeFactor": 0.85},
+      {"upgradeIsForWholeType": false, "resourceEnum": "STEAK",      "upgradeVariable": "HARVEST_MILLISECONDS", "upgradeFactor": 0.85},
+      {"upgradeIsForWholeType": false, "resourceEnum": "DRAGONMEAT", "upgradeVariable": "HARVEST_MILLISECONDS", "upgradeFactor": 0.85}
+    ],
+    "resourceCosts": [
+      {"resourceEnum": "STEELINGOT",  "resourceCost": 225},
+      {"resourceEnum": "WILLOW", "resourceCost": 100}
+    ]
+  }, {
+    "id": 75,
+    "spriteIndex": 46,
+    "upgradeType": "RESOURCE",
+    "name": "Obsidian Oven Frame",
+    "description": "Reduces oven harvest time by 20%.",
+    "flavorText": "",
+    "upgradeEffects": [
+      {"upgradeIsForWholeType": false, "resourceEnum": "BREAD",      "upgradeVariable": "HARVEST_MILLISECONDS", "upgradeFactor": 0.8},
+      {"upgradeIsForWholeType": false, "resourceEnum": "POTATO",     "upgradeVariable": "HARVEST_MILLISECONDS", "upgradeFactor": 0.8},
+      {"upgradeIsForWholeType": false, "resourceEnum": "JELLYDONUT", "upgradeVariable": "HARVEST_MILLISECONDS", "upgradeFactor": 0.8},
+      {"upgradeIsForWholeType": false, "resourceEnum": "HERRING",    "upgradeVariable": "HARVEST_MILLISECONDS", "upgradeFactor": 0.8},
+      {"upgradeIsForWholeType": false, "resourceEnum": "BASS",       "upgradeVariable": "HARVEST_MILLISECONDS", "upgradeFactor": 0.8},
+      {"upgradeIsForWholeType": false, "resourceEnum": "SHARK",      "upgradeVariable": "HARVEST_MILLISECONDS", "upgradeFactor": 0.8},
+      {"upgradeIsForWholeType": false, "resourceEnum": "CHICKEN",    "upgradeVariable": "HARVEST_MILLISECONDS", "upgradeFactor": 0.8},
+      {"upgradeIsForWholeType": false, "resourceEnum": "STEAK",      "upgradeVariable": "HARVEST_MILLISECONDS", "upgradeFactor": 0.8},
+      {"upgradeIsForWholeType": false, "resourceEnum": "DRAGONMEAT", "upgradeVariable": "HARVEST_MILLISECONDS", "upgradeFactor": 0.8}
+    ],
+    "resourceCosts": [
+      {"resourceEnum": "OBSIDIAN", "resourceCost": 330},
+      {"resourceEnum": "TEAK",     "resourceCost": 150}
+    ]
+  }, {
+    "id": 76,
+    "spriteIndex": 47,
+    "upgradeType": "RESOURCE",
+    "name": "Diamond Oven Frame",
+    "description": "Reduces oven harvest time by 25%.",
+    "flavorText": "",
+    "upgradeEffects": [
+      {"upgradeIsForWholeType": false, "resourceEnum": "BREAD",      "upgradeVariable": "HARVEST_MILLISECONDS", "upgradeFactor": 0.75},
+      {"upgradeIsForWholeType": false, "resourceEnum": "POTATO",     "upgradeVariable": "HARVEST_MILLISECONDS", "upgradeFactor": 0.75},
+      {"upgradeIsForWholeType": false, "resourceEnum": "JELLYDONUT", "upgradeVariable": "HARVEST_MILLISECONDS", "upgradeFactor": 0.75},
+      {"upgradeIsForWholeType": false, "resourceEnum": "HERRING",    "upgradeVariable": "HARVEST_MILLISECONDS", "upgradeFactor": 0.75},
+      {"upgradeIsForWholeType": false, "resourceEnum": "BASS",       "upgradeVariable": "HARVEST_MILLISECONDS", "upgradeFactor": 0.75},
+      {"upgradeIsForWholeType": false, "resourceEnum": "SHARK",      "upgradeVariable": "HARVEST_MILLISECONDS", "upgradeFactor": 0.75},
+      {"upgradeIsForWholeType": false, "resourceEnum": "CHICKEN",    "upgradeVariable": "HARVEST_MILLISECONDS", "upgradeFactor": 0.75},
+      {"upgradeIsForWholeType": false, "resourceEnum": "STEAK",      "upgradeVariable": "HARVEST_MILLISECONDS", "upgradeFactor": 0.75},
+      {"upgradeIsForWholeType": false, "resourceEnum": "DRAGONMEAT", "upgradeVariable": "HARVEST_MILLISECONDS", "upgradeFactor": 0.75}
+    ],
+    "resourceCosts": [
+      {"resourceEnum": "DIAMOND", "resourceCost": 450},
+      {"resourceEnum": "TEAK",    "resourceCost": 250}
+    ]
+  }, {
+    "id": 77,
+    "spriteIndex": 48,
+    "upgradeType": "RESOURCE",
+    "name": "Temprous Oven Frame",
+    "description": "Reduces oven harvest time by 50%.",
+    "flavorText": "",
+    "upgradeEffects": [
+      {"upgradeIsForWholeType": false, "resourceEnum": "BREAD",      "upgradeVariable": "HARVEST_MILLISECONDS", "upgradeFactor": 0.5},
+      {"upgradeIsForWholeType": false, "resourceEnum": "POTATO",     "upgradeVariable": "HARVEST_MILLISECONDS", "upgradeFactor": 0.5},
+      {"upgradeIsForWholeType": false, "resourceEnum": "JELLYDONUT", "upgradeVariable": "HARVEST_MILLISECONDS", "upgradeFactor": 0.5},
+      {"upgradeIsForWholeType": false, "resourceEnum": "HERRING",    "upgradeVariable": "HARVEST_MILLISECONDS", "upgradeFactor": 0.5},
+      {"upgradeIsForWholeType": false, "resourceEnum": "BASS",       "upgradeVariable": "HARVEST_MILLISECONDS", "upgradeFactor": 0.5},
+      {"upgradeIsForWholeType": false, "resourceEnum": "SHARK",      "upgradeVariable": "HARVEST_MILLISECONDS", "upgradeFactor": 0.5},
+      {"upgradeIsForWholeType": false, "resourceEnum": "CHICKEN",    "upgradeVariable": "HARVEST_MILLISECONDS", "upgradeFactor": 0.5},
+      {"upgradeIsForWholeType": false, "resourceEnum": "STEAK",      "upgradeVariable": "HARVEST_MILLISECONDS", "upgradeFactor": 0.5},
+      {"upgradeIsForWholeType": false, "resourceEnum": "DRAGONMEAT", "upgradeVariable": "HARVEST_MILLISECONDS", "upgradeFactor": 0.5}
+    ],
+    "resourceCosts": [
+      {"resourceEnum": "TEMPROUSINGOT", "resourceCost": 675},
+      {"resourceEnum": "DIAMOND",  "resourceCost": 500},
+      {"resourceEnum": "TEAK",     "resourceCost": 300}
+    ]
+  }, {
+    "id": 92,
+    "spriteIndex": 59,
+    "upgradeType": "WORKER",
+    "name": "Fisherman",
+    "description": "Allows workers to be assigned to hunting fish.",
+    "flavorText": "",
+    "upgradeEffects": [
+      {"upgradeIsForWholeType": false, "resourceEnum": "RAWHERRING", "upgradeVariable": "WORKABLE", "upgradeFactor": 1},
+      {"upgradeIsForWholeType": false, "resourceEnum": "RAWBASS",    "upgradeVariable": "WORKABLE", "upgradeFactor": 1},
+      {"upgradeIsForWholeType": false, "resourceEnum": "RAWSHARK",   "upgradeVariable": "WORKABLE", "upgradeFactor": 1}
+    ],
+    "resourceCosts": [
+      {"resourceEnum": "GOLD", "resourceCost": 4000}
+    ]
+  }, {
+    "id": 78,
+    "spriteIndex": 60,
+    "upgradeType": "WORKER",
+    "name": "Monster Pocketer",
+    "description": "Allows workers to be assigned to hunting creatures.",
+    "flavorText": "",
+    "upgradeEffects": [
+      {"upgradeIsForWholeType": false, "resourceEnum": "RAWCHICKEN",    "upgradeVariable": "WORKABLE", "upgradeFactor": 1},
+      {"upgradeIsForWholeType": false, "resourceEnum": "RAWSTEAK",      "upgradeVariable": "WORKABLE", "upgradeFactor": 1},
+      {"upgradeIsForWholeType": false, "resourceEnum": "RAWDRAGONMEAT", "upgradeVariable": "WORKABLE", "upgradeFactor": 1}
+    ],
+    "resourceCosts": [
+      {"resourceEnum": "GOLD", "resourceCost": 15000}
+    ]
+  }, {
+    "id": 79,
+    "spriteIndex": 61,
+    "upgradeType": "WORKER",
+    "name": "Personal Chef",
+    "description": "Allows workers to be assigned to some cooking tasks.",
+    "flavorText": "Finally, fresh-baked food whenever you like! (Jelly donuts are totally not rice balls shut up)",
+    "upgradeEffects": [
+      {"upgradeIsForWholeType": false, "resourceEnum": "POTATO",     "upgradeVariable": "WORKABLE", "upgradeFactor": 1},
+      {"upgradeIsForWholeType": false, "resourceEnum": "JELLYDONUT", "upgradeVariable": "WORKABLE", "upgradeFactor": 1}
+    ],
+    "resourceCosts": [
+      {"resourceEnum": "GOLD", "resourceCost": 1250}
+    ]
+  }, {
+    "id": 80,
+    "spriteIndex": 62,
+    "upgradeType": "WORKER",
+    "name": "Noseless Chef",
+    "description": "Allows workers to be assigned to cooking fish.",
+    "flavorText": "This chef is powerful enough to withstand the overwhelming smell of the sea.",
+    "upgradeEffects": [
+      {"upgradeIsForWholeType": false, "resourceEnum": "HERRING", "upgradeVariable": "WORKABLE", "upgradeFactor": 1},
+      {"upgradeIsForWholeType": false, "resourceEnum": "BASS",    "upgradeVariable": "WORKABLE", "upgradeFactor": 1},
+      {"upgradeIsForWholeType": false, "resourceEnum": "SHARK",   "upgradeVariable": "WORKABLE", "upgradeFactor": 1}
+    ],
+    "resourceCosts": [
+      {"resourceEnum": "GOLD", "resourceCost": 15000}
+    ]
+  }, {
+    "id": 81,
+    "spriteIndex": 72,
+    "upgradeType": "WORKER",
+    "name": "Five-star Restaurant",
+    "description": "Allows workers to be assigned to cooking creatures.",
+    "flavorText": "Only the finest in anachronistic dining!",
+    "upgradeEffects": [
+      {"upgradeIsForWholeType": false, "resourceEnum": "CHICKEN",    "upgradeVariable": "WORKABLE", "upgradeFactor": 1},
+      {"upgradeIsForWholeType": false, "resourceEnum": "STEAK",      "upgradeVariable": "WORKABLE", "upgradeFactor": 1},
+      {"upgradeIsForWholeType": false, "resourceEnum": "DRAGONMEAT", "upgradeVariable": "WORKABLE", "upgradeFactor": 1}
+    ],
+    "resourceCosts": [
+      {"resourceEnum": "GOLD",          "resourceCost": 30000},
+      {"resourceEnum": "RAWCHICKEN",    "resourceCost": 50},
+      {"resourceEnum": "RAWSTEAK",      "resourceCost": 20},
+      {"resourceEnum": "RAWDRAGONMEAT", "resourceCost": 10}
+    ]
+  }, {
+    "id": 82,
+    "spriteIndex": 70,
+    "upgradeType": "WORKER",
+    "name": "Farmer Dating App",
+    "description": "Workers gain 200% more crops per harvest.",
+    "flavorText": "Our top scientists have yet to determine what an \"app\" is.",
+    "upgradeEffects": [
+      {"upgradeIsForWholeType": false, "resourceEnum": "WHEAT",     "upgradeVariable": "WORKER_YIELD", "upgradeFactor": 3},
+      {"upgradeIsForWholeType": false, "resourceEnum": "RAWPOTATO", "upgradeVariable": "WORKER_YIELD", "upgradeFactor": 3},
+      {"upgradeIsForWholeType": false, "resourceEnum": "RICE",      "upgradeVariable": "WORKER_YIELD", "upgradeFactor": 3}
+    ],
+    "resourceCosts": [
+      {"resourceEnum": "WHEAT", "resourceCost": 60}
+    ]
+  }, {
+    "id": 83,
+    "spriteIndex": 71,
+    "upgradeType": "WORKER",
+    "name": "Hunting Season",
+    "description": "Workers gain 200% more fish/animals per harvest.",
+    "flavorText": "Wabbit season! Dragon season!",
+    "upgradeEffects": [
+      {"upgradeIsForWholeType": false, "resourceEnum": "RAWCHICKEN",    "upgradeVariable": "WORKER_YIELD", "upgradeFactor": 3},
+      {"upgradeIsForWholeType": false, "resourceEnum": "RAWSTEAK",      "upgradeVariable": "WORKER_YIELD", "upgradeFactor": 3},
+      {"upgradeIsForWholeType": false, "resourceEnum": "RAWDRAGONMEAT", "upgradeVariable": "WORKER_YIELD", "upgradeFactor": 3}
+    ],
+    "resourceCosts": [
+      {"resourceEnum": "RAWHERRING", "resourceCost": 100},
+      {"resourceEnum": "RAWBASS",    "resourceCost": 40}
+    ]
+  }, {
+    "id": 84,
+    "spriteIndex": 63,
+    "upgradeType": "WORKER",
+    "name": "Food Critic",
+    "description": "Workers cook 200% more food per harvest.",
+    "flavorText": "",
+    "upgradeEffects": [
+      {"upgradeIsForWholeType": false, "resourceEnum": "BREAD",      "upgradeVariable": "WORKER_YIELD", "upgradeFactor": 3},
+      {"upgradeIsForWholeType": false, "resourceEnum": "POTATO",     "upgradeVariable": "WORKER_YIELD", "upgradeFactor": 3},
+      {"upgradeIsForWholeType": false, "resourceEnum": "JELLYDONUT", "upgradeVariable": "WORKER_YIELD", "upgradeFactor": 3},
+      {"upgradeIsForWholeType": false, "resourceEnum": "HERRING",    "upgradeVariable": "WORKER_YIELD", "upgradeFactor": 3},
+      {"upgradeIsForWholeType": false, "resourceEnum": "BASS",       "upgradeVariable": "WORKER_YIELD", "upgradeFactor": 3},
+      {"upgradeIsForWholeType": false, "resourceEnum": "SHARK",      "upgradeVariable": "WORKER_YIELD", "upgradeFactor": 3},
+      {"upgradeIsForWholeType": false, "resourceEnum": "RAWCHICKEN", "upgradeVariable": "WORKER_YIELD", "upgradeFactor": 3},
+      {"upgradeIsForWholeType": false, "resourceEnum": "RAWSTEAK",   "upgradeVariable": "WORKER_YIELD", "upgradeFactor": 3}
+    ],
+    "resourceCosts": [
+      {"resourceEnum": "HERRING", "resourceCost": 80},
+      {"resourceEnum": "BASS",    "resourceCost": 60}
+    ]
+  }, {
+    "id": 85,
+    "spriteIndex": 73,
+    "upgradeType": "WORKER",
+    "name": "Temporal Cooking",
+    "description": "Workers cook 500% more food per harvest.",
+    "flavorText": "Transports your food to a time when the world was covered in flames. It helps cook your steaks a bit quicker, if a tiny bit irradiated.",
+    "upgradeEffects": [
+      {"upgradeIsForWholeType": false, "resourceEnum": "BREAD",         "upgradeVariable": "WORKER_YIELD", "upgradeFactor": 6},
+      {"upgradeIsForWholeType": false, "resourceEnum": "POTATO",        "upgradeVariable": "WORKER_YIELD", "upgradeFactor": 6},
+      {"upgradeIsForWholeType": false, "resourceEnum": "JELLYDONUT",    "upgradeVariable": "WORKER_YIELD", "upgradeFactor": 6},
+      {"upgradeIsForWholeType": false, "resourceEnum": "HERRING",       "upgradeVariable": "WORKER_YIELD", "upgradeFactor": 6},
+      {"upgradeIsForWholeType": false, "resourceEnum": "BASS",          "upgradeVariable": "WORKER_YIELD", "upgradeFactor": 6},
+      {"upgradeIsForWholeType": false, "resourceEnum": "SHARK",         "upgradeVariable": "WORKER_YIELD", "upgradeFactor": 6},
+      {"upgradeIsForWholeType": false, "resourceEnum": "RAWCHICKEN",    "upgradeVariable": "WORKER_YIELD", "upgradeFactor": 6},
+      {"upgradeIsForWholeType": false, "resourceEnum": "RAWSTEAK",      "upgradeVariable": "WORKER_YIELD", "upgradeFactor": 6},
+      {"upgradeIsForWholeType": false, "resourceEnum": "RAWDRAGONMEAT", "upgradeVariable": "WORKER_YIELD", "upgradeFactor": 6}
+    ],
+    "resourceCosts": [
+      {"resourceEnum": "REFINEDTEMPROUS", "resourceCost": 300},
+      {"resourceEnum": "TEAK",            "resourceCost": 85}
+    ]
+  }, {
+    "id": 86,
+    "spriteIndex": 80,
+    "upgradeType": "RESOURCE",
+    "name": "Reinforced Oven",
+    "description": "Cooks 20% more food per harvest.",
+    "flavorText": "",
+    "upgradeEffects": [
+      {"upgradeIsForWholeType": false, "resourceEnum": "BREAD",         "upgradeVariable": "HARVEST_YIELD", "upgradeFactor": 1.2},
+      {"upgradeIsForWholeType": false, "resourceEnum": "POTATO",        "upgradeVariable": "HARVEST_YIELD", "upgradeFactor": 1.2},
+      {"upgradeIsForWholeType": false, "resourceEnum": "JELLYDONUT",    "upgradeVariable": "HARVEST_YIELD", "upgradeFactor": 1.2},
+      {"upgradeIsForWholeType": false, "resourceEnum": "HERRING",       "upgradeVariable": "HARVEST_YIELD", "upgradeFactor": 1.2},
+      {"upgradeIsForWholeType": false, "resourceEnum": "BASS",          "upgradeVariable": "HARVEST_YIELD", "upgradeFactor": 1.2},
+      {"upgradeIsForWholeType": false, "resourceEnum": "SHARK",         "upgradeVariable": "HARVEST_YIELD", "upgradeFactor": 1.2},
+      {"upgradeIsForWholeType": false, "resourceEnum": "RAWCHICKEN",    "upgradeVariable": "HARVEST_YIELD", "upgradeFactor": 1.2},
+      {"upgradeIsForWholeType": false, "resourceEnum": "RAWSTEAK",      "upgradeVariable": "HARVEST_YIELD", "upgradeFactor": 1.2},
+      {"upgradeIsForWholeType": false, "resourceEnum": "RAWDRAGONMEAT", "upgradeVariable": "HARVEST_YIELD", "upgradeFactor": 1.2}
+    ],
+    "resourceCosts": [
+      {"resourceEnum": "BRONZEINGOT", "resourceCost": 60},
+      {"resourceEnum": "PINE",        "resourceCost": 20}
+    ]
+  }, {
+    "id": 87,
+    "spriteIndex": 81,
+    "upgradeType": "RESOURCE",
+    "name": "Cleaned Oven",
+    "description": "Cooks 45% more food per harvest.",
+    "flavorText": "",
+    "upgradeEffects": [
+      {"upgradeIsForWholeType": false, "resourceEnum": "BREAD",         "upgradeVariable": "HARVEST_YIELD", "upgradeFactor": 1.45},
+      {"upgradeIsForWholeType": false, "resourceEnum": "POTATO",        "upgradeVariable": "HARVEST_YIELD", "upgradeFactor": 1.45},
+      {"upgradeIsForWholeType": false, "resourceEnum": "JELLYDONUT",    "upgradeVariable": "HARVEST_YIELD", "upgradeFactor": 1.45},
+      {"upgradeIsForWholeType": false, "resourceEnum": "HERRING",       "upgradeVariable": "HARVEST_YIELD", "upgradeFactor": 1.45},
+      {"upgradeIsForWholeType": false, "resourceEnum": "BASS",          "upgradeVariable": "HARVEST_YIELD", "upgradeFactor": 1.45},
+      {"upgradeIsForWholeType": false, "resourceEnum": "SHARK",         "upgradeVariable": "HARVEST_YIELD", "upgradeFactor": 1.45},
+      {"upgradeIsForWholeType": false, "resourceEnum": "RAWCHICKEN",    "upgradeVariable": "HARVEST_YIELD", "upgradeFactor": 1.45},
+      {"upgradeIsForWholeType": false, "resourceEnum": "RAWSTEAK",      "upgradeVariable": "HARVEST_YIELD", "upgradeFactor": 1.45},
+      {"upgradeIsForWholeType": false, "resourceEnum": "RAWDRAGONMEAT", "upgradeVariable": "HARVEST_YIELD", "upgradeFactor": 1.45}
+    ],
+    "resourceCosts": [
+      {"resourceEnum": "IRONINGOT", "resourceCost": 60},
+      {"resourceEnum": "LIMESTONE", "resourceCost": 125}
+    ]
+  }, {
+    "id": 88,
+    "spriteIndex": 82,
+    "upgradeType": "RESOURCE",
+    "name": "Fortified Oven",
+    "description": "Cooks 60% more food per harvest.",
+    "flavorText": "",
+    "upgradeEffects": [
+      {"upgradeIsForWholeType": false, "resourceEnum": "BREAD",         "upgradeVariable": "HARVEST_YIELD", "upgradeFactor": 1.6},
+      {"upgradeIsForWholeType": false, "resourceEnum": "POTATO",        "upgradeVariable": "HARVEST_YIELD", "upgradeFactor": 1.6},
+      {"upgradeIsForWholeType": false, "resourceEnum": "JELLYDONUT",    "upgradeVariable": "HARVEST_YIELD", "upgradeFactor": 1.6},
+      {"upgradeIsForWholeType": false, "resourceEnum": "HERRING",       "upgradeVariable": "HARVEST_YIELD", "upgradeFactor": 1.6},
+      {"upgradeIsForWholeType": false, "resourceEnum": "BASS",          "upgradeVariable": "HARVEST_YIELD", "upgradeFactor": 1.6},
+      {"upgradeIsForWholeType": false, "resourceEnum": "SHARK",         "upgradeVariable": "HARVEST_YIELD", "upgradeFactor": 1.6},
+      {"upgradeIsForWholeType": false, "resourceEnum": "RAWCHICKEN",    "upgradeVariable": "HARVEST_YIELD", "upgradeFactor": 1.6},
+      {"upgradeIsForWholeType": false, "resourceEnum": "RAWSTEAK",      "upgradeVariable": "HARVEST_YIELD", "upgradeFactor": 1.6},
+      {"upgradeIsForWholeType": false, "resourceEnum": "RAWDRAGONMEAT", "upgradeVariable": "HARVEST_YIELD", "upgradeFactor": 1.6}
+    ],
+    "resourceCosts": [
+      {"resourceEnum": "IRONINGOT",  "resourceCost": 200},
+      {"resourceEnum": "EUCALYPTUS", "resourceCost": 100}
+    ]
+  }, {
+    "id": 89,
+    "spriteIndex": 83,
+    "upgradeType": "RESOURCE",
+    "name": "Artisan Oven",
+    "description": "Cooks 80% more food per harvest.",
+    "flavorText": "",
+    "upgradeEffects": [
+      {"upgradeIsForWholeType": false, "resourceEnum": "BREAD",         "upgradeVariable": "HARVEST_YIELD", "upgradeFactor": 1.8},
+      {"upgradeIsForWholeType": false, "resourceEnum": "POTATO",        "upgradeVariable": "HARVEST_YIELD", "upgradeFactor": 1.8},
+      {"upgradeIsForWholeType": false, "resourceEnum": "JELLYDONUT",    "upgradeVariable": "HARVEST_YIELD", "upgradeFactor": 1.8},
+      {"upgradeIsForWholeType": false, "resourceEnum": "HERRING",       "upgradeVariable": "HARVEST_YIELD", "upgradeFactor": 1.8},
+      {"upgradeIsForWholeType": false, "resourceEnum": "BASS",          "upgradeVariable": "HARVEST_YIELD", "upgradeFactor": 1.8},
+      {"upgradeIsForWholeType": false, "resourceEnum": "SHARK",         "upgradeVariable": "HARVEST_YIELD", "upgradeFactor": 1.8},
+      {"upgradeIsForWholeType": false, "resourceEnum": "RAWCHICKEN",    "upgradeVariable": "HARVEST_YIELD", "upgradeFactor": 1.8},
+      {"upgradeIsForWholeType": false, "resourceEnum": "RAWSTEAK",      "upgradeVariable": "HARVEST_YIELD", "upgradeFactor": 1.8},
+      {"upgradeIsForWholeType": false, "resourceEnum": "RAWDRAGONMEAT", "upgradeVariable": "HARVEST_YIELD", "upgradeFactor": 1.8}
+    ],
+    "resourceCosts": [
+      {"resourceEnum": "GOLDINGOT", "resourceCost": 600},
+      {"resourceEnum": "QUARTZ",    "resourceCost": 250}
+    ]
+  }, {
+    "id": 90,
+    "spriteIndex": 84,
+    "upgradeType": "RESOURCE",
+    "name": "Semi-Perfect Oven",
+    "description": "Cooks 100% more food per harvest.",
+    "flavorText": "",
+    "upgradeEffects": [
+      {"upgradeIsForWholeType": false, "resourceEnum": "BREAD",         "upgradeVariable": "HARVEST_YIELD", "upgradeFactor": 2},
+      {"upgradeIsForWholeType": false, "resourceEnum": "POTATO",        "upgradeVariable": "HARVEST_YIELD", "upgradeFactor": 2},
+      {"upgradeIsForWholeType": false, "resourceEnum": "JELLYDONUT",    "upgradeVariable": "HARVEST_YIELD", "upgradeFactor": 2},
+      {"upgradeIsForWholeType": false, "resourceEnum": "HERRING",       "upgradeVariable": "HARVEST_YIELD", "upgradeFactor": 2},
+      {"upgradeIsForWholeType": false, "resourceEnum": "BASS",          "upgradeVariable": "HARVEST_YIELD", "upgradeFactor": 2},
+      {"upgradeIsForWholeType": false, "resourceEnum": "SHARK",         "upgradeVariable": "HARVEST_YIELD", "upgradeFactor": 2},
+      {"upgradeIsForWholeType": false, "resourceEnum": "RAWCHICKEN",    "upgradeVariable": "HARVEST_YIELD", "upgradeFactor": 2},
+      {"upgradeIsForWholeType": false, "resourceEnum": "RAWSTEAK",      "upgradeVariable": "HARVEST_YIELD", "upgradeFactor": 2},
+      {"upgradeIsForWholeType": false, "resourceEnum": "RAWDRAGONMEAT", "upgradeVariable": "HARVEST_YIELD", "upgradeFactor": 2}
+    ],
+    "resourceCosts": [
+      {"resourceEnum": "LATINUMINGOT", "resourceCost": 800},
+      {"resourceEnum": "OBSIDIAN",     "resourceCost": 550}
+    ]
+  }, {
+    "id": 91,
+    "spriteIndex": 85,
+    "upgradeType": "RESOURCE",
+    "name": "Perfect Oven",
+    "description": "Cooks 250% more food per harvest.",
+    "flavorText": "\"And now, the end is near...\"",
+    "upgradeEffects": [
+      {"upgradeIsForWholeType": false, "resourceEnum": "BREAD",         "upgradeVariable": "HARVEST_YIELD", "upgradeFactor": 2.5},
+      {"upgradeIsForWholeType": false, "resourceEnum": "POTATO",        "upgradeVariable": "HARVEST_YIELD", "upgradeFactor": 2.5},
+      {"upgradeIsForWholeType": false, "resourceEnum": "JELLYDONUT",    "upgradeVariable": "HARVEST_YIELD", "upgradeFactor": 2.5},
+      {"upgradeIsForWholeType": false, "resourceEnum": "HERRING",       "upgradeVariable": "HARVEST_YIELD", "upgradeFactor": 2.5},
+      {"upgradeIsForWholeType": false, "resourceEnum": "BASS",          "upgradeVariable": "HARVEST_YIELD", "upgradeFactor": 2.5},
+      {"upgradeIsForWholeType": false, "resourceEnum": "SHARK",         "upgradeVariable": "HARVEST_YIELD", "upgradeFactor": 2.5},
+      {"upgradeIsForWholeType": false, "resourceEnum": "RAWCHICKEN",    "upgradeVariable": "HARVEST_YIELD", "upgradeFactor": 2.5},
+      {"upgradeIsForWholeType": false, "resourceEnum": "RAWSTEAK",      "upgradeVariable": "HARVEST_YIELD", "upgradeFactor": 2.5},
+      {"upgradeIsForWholeType": false, "resourceEnum": "RAWDRAGONMEAT", "upgradeVariable": "HARVEST_YIELD", "upgradeFactor": 2.5}
+    ],
+    "resourceCosts": [
+      {"resourceEnum": "TEMPROUSINGOT", "resourceCost": 1200},
+      {"resourceEnum": "DIAMOND",       "resourceCost": 800},
+      {"resourceEnum": "RAWDRAGONMEAT", "resourceCost": 250}
+    ]
+  }
+]

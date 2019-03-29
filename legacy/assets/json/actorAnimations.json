@@ -1,0 +1,340 @@
+{
+  "anims": [
+    {
+      "frames": [
+        { "key": "actor", "frame": 0, "duration": 0, "visible": false },
+        { "key": "actor", "frame": 1, "duration": 0, "visible": false },
+        { "key": "actor", "frame": 0, "duration": 0, "visible": false },
+        { "key": "actor", "frame": 2, "duration": 0, "visible": false }
+      ],
+      "key": "actorWalkDown", "type": "frame", "frameRate": 24, "duration": 1.5, "skipMissedFrames": true,
+      "delay": 0, "repeat": -1, "repeatDelay": 0, "yoyo": false, "showOnStart": false, "hideOnComplete": false
+    }, {
+      "frames": [
+        { "key": "actor", "frame": 6, "duration": 0, "visible": false },
+        { "key": "actor", "frame": 7, "duration": 0, "visible": false },
+        { "key": "actor", "frame": 6, "duration": 0, "visible": false },
+        { "key": "actor", "frame": 8, "duration": 0, "visible": false }
+      ],
+      "key": "actorWalkUp", "type": "frame", "frameRate": 24, "duration": 1.5, "skipMissedFrames": true,
+      "delay": 0, "repeat": -1, "repeatDelay": 0, "yoyo": false, "showOnStart": false, "hideOnComplete": false
+    },
+    {
+      "frames": [
+        { "key": "actor", "frame": 12, "duration": 0, "visible": false },
+        { "key": "actor", "frame": 13, "duration": 0, "visible": false },
+        { "key": "actor", "frame": 12, "duration": 0, "visible": false },
+        { "key": "actor", "frame": 14, "duration": 0, "visible": false }
+      ],
+      "key": "actorWalkRight", "type": "frame", "frameRate": 24, "duration": 1.5, "skipMissedFrames": true,
+      "delay": 0, "repeat": -1, "repeatDelay": 0, "yoyo": false, "showOnStart": false, "hideOnComplete": false
+    },
+    {
+      "frames": [
+        { "key": "actor", "frame": 3, "duration": 0, "visible": false },
+        { "key": "actor", "frame": 4, "duration": 0, "visible": false },
+        { "key": "actor", "frame": 5, "duration": 0, "visible": false }
+      ],
+      "key": "actorActionDown", "type": "frame", "frameRate": 12, "duration": 1.5, "skipMissedFrames": true,
+      "delay": 0, "repeat": -1, "repeatDelay": 0, "yoyo": false, "showOnStart": false, "hideOnComplete": false
+    },
+    {
+      "frames": [
+        { "key": "actor", "frame": 9, "duration": 0, "visible": false },
+        { "key": "actor", "frame": 10, "duration": 0, "visible": false },
+        { "key": "actor", "frame": 11, "duration": 0, "visible": false }
+      ],
+      "key": "actorActionUp", "type": "frame", "frameRate": 12, "duration": 1.5, "skipMissedFrames": true,
+      "delay": 0, "repeat": -1, "repeatDelay": 0, "yoyo": false, "showOnStart": false, "hideOnComplete": false
+    },
+    {
+      "frames": [
+        { "key": "actor", "frame": 15, "duration": 0, "visible": false },
+        { "key": "actor", "frame": 16, "duration": 0, "visible": false },
+        { "key": "actor", "frame": 17, "duration": 0, "visible": false }
+      ],
+      "key": "actorActionRight", "type": "frame", "frameRate": 12, "duration": 1.5, "skipMissedFrames": true,
+      "delay": 0, "repeat": -1, "repeatDelay": 0, "yoyo": false, "showOnStart": false, "hideOnComplete": false
+    },
+    {
+      "frames": [
+        { "key": "builder", "frame": 0, "duration": 0, "visible": false },
+        { "key": "builder", "frame": 1, "duration": 0, "visible": false },
+        { "key": "builder", "frame": 0, "duration": 0, "visible": false },
+        { "key": "builder", "frame": 2, "duration": 0, "visible": false }
+      ],
+      "key": "builderWalkDown","type": "frame", "frameRate": 24, "duration": 1.5, "skipMissedFrames": true,
+      "delay": 0, "repeat": -1, "repeatDelay": 0, "yoyo": false, "showOnStart": false, "hideOnComplete": false
+    }, {
+      "frames": [
+        { "key": "builder", "frame": 6, "duration": 0, "visible": false },
+        { "key": "builder", "frame": 7, "duration": 0, "visible": false },
+        { "key": "builder", "frame": 6, "duration": 0, "visible": false },
+        { "key": "builder", "frame": 8, "duration": 0, "visible": false }
+      ],
+      "key": "builderWalkUp", "type": "frame", "frameRate": 24, "duration": 1.5, "skipMissedFrames": true,
+      "delay": 0, "repeat": -1, "repeatDelay": 0, "yoyo": false, "showOnStart": false, "hideOnComplete": false
+    },
+    {
+      "frames": [
+        { "key": "builder", "frame": 12, "duration": 0, "visible": false },
+        { "key": "builder", "frame": 13, "duration": 0, "visible": false },
+        { "key": "builder", "frame": 12, "duration": 0, "visible": false },
+        { "key": "builder", "frame": 14, "duration": 0, "visible": false }
+      ],
+      "key": "builderWalkRight", "type": "frame", "frameRate": 24, "duration": 1.5, "skipMissedFrames": true,
+      "delay": 0, "repeat": -1, "repeatDelay": 0, "yoyo": false, "showOnStart": false, "hideOnComplete": false
+    },
+    {
+      "frames": [
+        { "key": "builder", "frame": 3, "duration": 0, "visible": false },
+        { "key": "builder", "frame": 4, "duration": 0, "visible": false },
+        { "key": "builder", "frame": 5, "duration": 0, "visible": false }
+      ],
+      "key": "builderActionDown", "type": "frame", "frameRate": 24, "duration": 1.5, "skipMissedFrames": true,
+      "delay": 0, "repeat": -1, "repeatDelay": 0, "yoyo": false, "showOnStart": false, "hideOnComplete": false
+    },
+    {
+      "frames": [
+        { "key": "builder", "frame": 9, "duration": 0, "visible": false },
+        { "key": "builder", "frame": 10, "duration": 0, "visible": false },
+        { "key": "builder", "frame": 11, "duration": 0, "visible": false }
+      ],
+      "key": "builderActionUp", "type": "frame", "frameRate": 24, "duration": 1.5, "skipMissedFrames": true,
+      "delay": 0, "repeat": -1, "repeatDelay": 0, "yoyo": false, "showOnStart": false, "hideOnComplete": false
+    },
+    {
+      "frames": [
+        { "key": "builder", "frame": 12, "duration": 0, "visible": false },
+        { "key": "builder", "frame": 13, "duration": 0, "visible": false },
+        { "key": "builder", "frame": 14, "duration": 0, "visible": false }
+      ],
+      "key": "builderActionRight", "type": "frame", "frameRate": 24, "duration": 1.5, "skipMissedFrames": true,
+      "delay": 0, "repeat": -1, "repeatDelay": 0, "yoyo": false, "showOnStart": false, "hideOnComplete": false
+    },
+    {
+      "frames": [
+        { "key": "lumberjack", "frame": 0, "duration": 0, "visible": false },
+        { "key": "lumberjack", "frame": 1, "duration": 0, "visible": false },
+        { "key": "lumberjack", "frame": 0, "duration": 0, "visible": false },
+        { "key": "lumberjack", "frame": 2, "duration": 0, "visible": false }
+      ],
+      "key": "lumberjackWalkDown", "type": "frame", "frameRate": 24, "duration": 1.5, "skipMissedFrames": true,
+      "delay": 0, "repeat": -1, "repeatDelay": 0, "yoyo": false, "showOnStart": false, "hideOnComplete": false
+    }, {
+      "frames": [
+        { "key": "lumberjack", "frame": 6, "duration": 0, "visible": false },
+        { "key": "lumberjack", "frame": 7, "duration": 0, "visible": false },
+        { "key": "lumberjack", "frame": 6, "duration": 0, "visible": false },
+        { "key": "lumberjack", "frame": 8, "duration": 0, "visible": false }
+      ],
+      "key": "lumberjackWalkUp", "type": "frame", "frameRate": 24, "duration": 1.5, "skipMissedFrames": true,
+      "delay": 0, "repeat": -1, "repeatDelay": 0, "yoyo": false, "showOnStart": false, "hideOnComplete": false
+    },
+    {
+      "frames": [
+        { "key": "lumberjack", "frame": 12, "duration": 0, "visible": false },
+        { "key": "lumberjack", "frame": 13, "duration": 0, "visible": false },
+        { "key": "lumberjack", "frame": 12, "duration": 0, "visible": false },
+        { "key": "lumberjack", "frame": 14, "duration": 0, "visible": false }
+      ],
+      "key": "lumberjackWalkRight", "type": "frame", "frameRate": 24, "duration": 1.5, "skipMissedFrames": true,
+      "delay": 0, "repeat": -1, "repeatDelay": 0, "yoyo": false, "showOnStart": false, "hideOnComplete": false
+    },
+    {
+      "frames": [
+        { "key": "lumberjack", "frame": 3, "duration": 0, "visible": false },
+        { "key": "lumberjack", "frame": 4, "duration": 0, "visible": false },
+        { "key": "lumberjack", "frame": 5, "duration": 0, "visible": false }
+      ],
+      "key": "lumberjackActionDown", "type": "frame", "frameRate": 12, "duration": 1.5, "skipMissedFrames": true,
+      "delay": 0, "repeat": -1, "repeatDelay": 0, "yoyo": false, "showOnStart": false, "hideOnComplete": false
+    },
+    {
+      "frames": [
+        { "key": "lumberjack", "frame": 9, "duration": 0, "visible": false },
+        { "key": "lumberjack", "frame": 10, "duration": 0, "visible": false },
+        { "key": "lumberjack", "frame": 11, "duration": 0, "visible": false }
+      ],
+      "key": "lumberjackActionUp", "type": "frame", "frameRate": 12, "duration": 1.5, "skipMissedFrames": true,
+      "delay": 0, "repeat": -1, "repeatDelay": 0, "yoyo": false, "showOnStart": false, "hideOnComplete": false
+    },
+    {
+      "frames": [
+        { "key": "lumberjack", "frame": 15, "duration": 0, "visible": false },
+        { "key": "lumberjack", "frame": 16, "duration": 0, "visible": false },
+        { "key": "lumberjack", "frame": 17, "duration": 0, "visible": false }
+      ],
+      "key": "lumberjackActionRight", "type": "frame", "frameRate": 12, "duration": 1.5, "skipMissedFrames": true,
+      "delay": 0, "repeat": -1, "repeatDelay": 0, "yoyo": false, "showOnStart": false, "hideOnComplete": false
+    },
+    {
+      "frames": [
+        { "key": "mineralminer", "frame": 0, "duration": 0, "visible": false },
+        { "key": "mineralminer", "frame": 1, "duration": 0, "visible": false },
+        { "key": "mineralminer", "frame": 0, "duration": 0, "visible": false },
+        { "key": "mineralminer", "frame": 2, "duration": 0, "visible": false }
+      ],
+      "key": "mineralminerWalkDown", "type": "frame", "frameRate": 24, "duration": 1.5, "skipMissedFrames": true,
+      "delay": 0, "repeat": -1, "repeatDelay": 0, "yoyo": false, "showOnStart": false, "hideOnComplete": false
+    }, {
+      "frames": [
+        { "key": "mineralminer", "frame": 6, "duration": 0, "visible": false },
+        { "key": "mineralminer", "frame": 7, "duration": 0, "visible": false },
+        { "key": "mineralminer", "frame": 6, "duration": 0, "visible": false },
+        { "key": "mineralminer", "frame": 8, "duration": 0, "visible": false }
+      ],
+      "key": "mineralminerWalkUp", "type": "frame", "frameRate": 24, "duration": 1.5, "skipMissedFrames": true,
+      "delay": 0, "repeat": -1, "repeatDelay": 0, "yoyo": false, "showOnStart": false, "hideOnComplete": false
+    },
+    {
+      "frames": [
+        { "key": "mineralminer", "frame": 12, "duration": 0, "visible": false },
+        { "key": "mineralminer", "frame": 13, "duration": 0, "visible": false },
+        { "key": "mineralminer", "frame": 12, "duration": 0, "visible": false },
+        { "key": "mineralminer", "frame": 14, "duration": 0, "visible": false }
+      ],
+      "key": "mineralminerWalkRight", "type": "frame", "frameRate": 24, "duration": 1.5, "skipMissedFrames": true,
+      "delay": 0, "repeat": -1, "repeatDelay": 0, "yoyo": false, "showOnStart": false, "hideOnComplete": false
+    },
+    {
+      "frames": [
+        { "key": "mineralminer", "frame": 3, "duration": 0, "visible": false },
+        { "key": "mineralminer", "frame": 4, "duration": 0, "visible": false },
+        { "key": "mineralminer", "frame": 5, "duration": 0, "visible": false }
+      ],
+      "key": "mineralminerActionDown", "type": "frame", "frameRate": 12, "duration": 1.5, "skipMissedFrames": true,
+      "delay": 0, "repeat": -1, "repeatDelay": 0, "yoyo": false, "showOnStart": false, "hideOnComplete": false
+    },
+    {
+      "frames": [
+        { "key": "mineralminer", "frame": 9, "duration": 0, "visible": false },
+        { "key": "mineralminer", "frame": 10, "duration": 0, "visible": false },
+        { "key": "mineralminer", "frame": 11, "duration": 0, "visible": false }
+      ],
+      "key": "mineralminerActionUp", "type": "frame", "frameRate": 12, "duration": 1.5, "skipMissedFrames": true,
+      "delay": 0, "repeat": -1, "repeatDelay": 0, "yoyo": false, "showOnStart": false, "hideOnComplete": false
+    },
+    {
+      "frames": [
+        { "key": "mineralminer", "frame": 15, "duration": 0, "visible": false },
+        { "key": "mineralminer", "frame": 16, "duration": 0, "visible": false },
+        { "key": "mineralminer", "frame": 17, "duration": 0, "visible": false }
+      ],
+      "key": "mineralminerActionRight", "type": "frame", "frameRate": 12, "duration": 1.5, "skipMissedFrames": true,
+      "delay": 0, "repeat": -1, "repeatDelay": 0, "yoyo": false, "showOnStart": false, "hideOnComplete": false
+    },
+    {
+      "frames": [
+        { "key": "metalminer", "frame": 0, "duration": 0, "visible": false },
+        { "key": "metalminer", "frame": 1, "duration": 0, "visible": false },
+        { "key": "metalminer", "frame": 0, "duration": 0, "visible": false },
+        { "key": "metalminer", "frame": 2, "duration": 0, "visible": false }
+      ],
+      "key": "metalminerWalkDown", "type": "frame", "frameRate": 24, "duration": 1.5, "skipMissedFrames": true,
+      "delay": 0, "repeat": -1, "repeatDelay": 0, "yoyo": false, "showOnStart": false, "hideOnComplete": false
+    }, {
+      "frames": [
+        { "key": "metalminer", "frame": 6, "duration": 0, "visible": false },
+        { "key": "metalminer", "frame": 7, "duration": 0, "visible": false },
+        { "key": "metalminer", "frame": 6, "duration": 0, "visible": false },
+        { "key": "metalminer", "frame": 8, "duration": 0, "visible": false }
+      ],
+      "key": "metalminerWalkUp", "type": "frame", "frameRate": 24, "duration": 1.5, "skipMissedFrames": true,
+      "delay": 0, "repeat": -1, "repeatDelay": 0, "yoyo": false, "showOnStart": false, "hideOnComplete": false
+    },
+    {
+      "frames": [
+        { "key": "metalminer", "frame": 12, "duration": 0, "visible": false },
+        { "key": "metalminer", "frame": 13, "duration": 0, "visible": false },
+        { "key": "metalminer", "frame": 12, "duration": 0, "visible": false },
+        { "key": "metalminer", "frame": 14, "duration": 0, "visible": false }
+      ],
+      "key": "metalminerWalkRight", "type": "frame", "frameRate": 24, "duration": 1.5, "skipMissedFrames": true,
+      "delay": 0, "repeat": -1, "repeatDelay": 0, "yoyo": false, "showOnStart": false, "hideOnComplete": false
+    },
+    {
+      "frames": [
+        { "key": "metalminer", "frame": 3, "duration": 0, "visible": false },
+        { "key": "metalminer", "frame": 4, "duration": 0, "visible": false },
+        { "key": "metalminer", "frame": 5, "duration": 0, "visible": false }
+      ],
+      "key": "metalminerActionDown", "type": "frame", "frameRate": 12, "duration": 1.5, "skipMissedFrames": true,
+      "delay": 0, "repeat": -1, "repeatDelay": 0, "yoyo": false, "showOnStart": false, "hideOnComplete": false
+    },
+    {
+      "frames": [
+        { "key": "metalminer", "frame": 9, "duration": 0, "visible": false },
+        { "key": "metalminer", "frame": 10, "duration": 0, "visible": false },
+        { "key": "metalminer", "frame": 11, "duration": 0, "visible": false }
+      ],
+      "key": "metalminerActionUp", "type": "frame", "frameRate": 12, "duration": 1.5, "skipMissedFrames": true,
+      "delay": 0, "repeat": -1, "repeatDelay": 0, "yoyo": false, "showOnStart": false, "hideOnComplete": false
+    },
+    {
+      "frames": [
+        { "key": "metalminer", "frame": 15, "duration": 0, "visible": false },
+        { "key": "metalminer", "frame": 16, "duration": 0, "visible": false },
+        { "key": "metalminer", "frame": 17, "duration": 0, "visible": false }
+      ],
+      "key": "metalminerActionRight", "type": "frame", "frameRate": 12, "duration": 1.5, "skipMissedFrames": true,
+      "delay": 0, "repeat": -1, "repeatDelay": 0, "yoyo": false, "showOnStart": false, "hideOnComplete": false
+    },
+    {
+      "frames": [
+        { "key": "hunter", "frame": 0, "duration": 0, "visible": false },
+        { "key": "hunter", "frame": 1, "duration": 0, "visible": false },
+        { "key": "hunter", "frame": 0, "duration": 0, "visible": false },
+        { "key": "hunter", "frame": 2, "duration": 0, "visible": false }
+      ],
+      "key": "hunterWalkDown", "type": "frame", "frameRate": 24, "duration": 1.5, "skipMissedFrames": true,
+      "delay": 0, "repeat": -1, "repeatDelay": 0, "yoyo": false, "showOnStart": false, "hideOnComplete": false
+    }, {
+      "frames": [
+        { "key": "hunter", "frame": 6, "duration": 0, "visible": false },
+        { "key": "hunter", "frame": 7, "duration": 0, "visible": false },
+        { "key": "hunter", "frame": 6, "duration": 0, "visible": false },
+        { "key": "hunter", "frame": 8, "duration": 0, "visible": false }
+      ],
+      "key": "hunterWalkUp", "type": "frame", "frameRate": 24, "duration": 1.5, "skipMissedFrames": true,
+      "delay": 0, "repeat": -1, "repeatDelay": 0, "yoyo": false, "showOnStart": false, "hideOnComplete": false
+    },
+    {
+      "frames": [
+        { "key": "hunter", "frame": 12, "duration": 0, "visible": false },
+        { "key": "hunter", "frame": 13, "duration": 0, "visible": false },
+        { "key": "hunter", "frame": 12, "duration": 0, "visible": false },
+        { "key": "hunter", "frame": 14, "duration": 0, "visible": false }
+      ],
+      "key": "hunterWalkRight", "type": "frame", "frameRate": 24, "duration": 1.5, "skipMissedFrames": true,
+      "delay": 0, "repeat": -1, "repeatDelay": 0, "yoyo": false, "showOnStart": false, "hideOnComplete": false
+    },
+    {
+      "frames": [
+        { "key": "hunter", "frame": 3, "duration": 0, "visible": false },
+        { "key": "hunter", "frame": 4, "duration": 0, "visible": false },
+        { "key": "hunter", "frame": 5, "duration": 0, "visible": false }
+      ],
+      "key": "hunterActionDown", "type": "frame", "frameRate": 12, "duration": 1.5, "skipMissedFrames": true,
+      "delay": 0, "repeat": -1, "repeatDelay": 0, "yoyo": false, "showOnStart": false, "hideOnComplete": false
+    },
+    {
+      "frames": [
+        { "key": "hunter", "frame": 9, "duration": 0, "visible": false },
+        { "key": "hunter", "frame": 10, "duration": 0, "visible": false },
+        { "key": "hunter", "frame": 11, "duration": 0, "visible": false }
+      ],
+      "key": "hunterActionUp", "type": "frame", "frameRate": 12, "duration": 1.5, "skipMissedFrames": true,
+      "delay": 0, "repeat": -1, "repeatDelay": 0, "yoyo": false, "showOnStart": false, "hideOnComplete": false
+    },
+    {
+      "frames": [
+        { "key": "hunter", "frame": 15, "duration": 0, "visible": false },
+        { "key": "hunter", "frame": 16, "duration": 0, "visible": false },
+        { "key": "hunter", "frame": 17, "duration": 0, "visible": false }
+      ],
+      "key": "hunterActionRight", "type": "frame", "frameRate": 12, "duration": 1.5, "skipMissedFrames": true,
+      "delay": 0, "repeat": -1, "repeatDelay": 0, "yoyo": false, "showOnStart": false, "hideOnComplete": false
+    }
+  ]
+}
